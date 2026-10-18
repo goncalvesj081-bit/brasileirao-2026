@@ -4,24 +4,68 @@
   "nome": "Copa do Brasil",
   "finalUnica": true,
   "confrontos": [
-   { "a": "Palmeiras", "b": "Vasco", "saldoA": 0, "faltam": ["a", "b"] },
-   { "a": "Atlético-MG", "b": "Grêmio", "saldoA": 0, "faltam": ["a", "b"] }
+   {
+    "a": "Palmeiras",
+    "b": "Vasco",
+    "saldoA": 0,
+    "faltam": [
+     "a",
+     "b"
+    ]
+   },
+   {
+    "a": "Grêmio",
+    "b": "Atlético-MG",
+    "saldoA": 0,
+    "faltam": [
+     "a",
+     "b"
+    ]
+   }
   ]
  },
  "libertadores": {
   "nome": "Libertadores",
   "finalUnica": true,
   "confrontos": [
-   { "a": "Palmeiras", "b": "Fluminense", "saldoA": 1, "faltam": ["a"] },
-   { "a": "Flamengo", "b": "Estudiantes", "saldoA": 0, "faltam": ["a"] }
+   {
+    "a": "Fluminense",
+    "b": "Palmeiras",
+    "saldoA": -1,
+    "faltam": [
+     "b"
+    ]
+   },
+   {
+    "a": "Estudiantes de La Plata",
+    "b": "Flamengo",
+    "saldoA": 0,
+    "faltam": [
+     "b"
+    ]
+   }
   ]
  },
  "sulAmericana": {
   "nome": "Sul-Americana",
   "finalUnica": true,
   "confrontos": [
-   { "a": "Vasco", "b": "Boca Juniors", "saldoA": 1, "faltam": ["a"] },
-   { "a": "Atlético-MG", "b": "Montevideo City Torque", "saldoA": 3, "faltam": ["b"] }
+   {
+    "a": "Boca Juniors",
+    "b": "Vasco",
+    "saldoA": -1,
+    "faltam": [
+     "b"
+    ]
+   },
+   {
+    "a": "Atlético-MG",
+    "b": "Montevideo City Torque",
+    "saldoA": 3,
+    "faltam": [
+     "b"
+    ]
+   }
   ]
  }
 }
