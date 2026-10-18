@@ -1,0 +1,19 @@
+# Temporário: testa boletins da CBF e temporadas passadas na ESPN. Apagar depois.
+name: Sonda de fontes
+on: workflow_dispatch
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testar
+        run: |
+          set +e
+          which pdftotext || sudo apt-get install -y -qq poppler-utils >/dev/null
+          for n in 261 300 1 5; do
+            echo "== boletim $n"; curl -s -o b.pdf -w "%{http_code} %{content_type} %{size_download}\n" "https://conteudo.cbf.com.br/sumulas/2026/142${n}b.pdf"
+            pdftotext -layout b.pdf - 2>/dev/null | grep -iE "p[úu]blico|pagante|presente|x |jogo|partida" | head -12
+          done
+          echo "== sumula 261 (sem b)"; curl -s -o s.pdf -w "%{http_code} %{size_download}\n" "https://conteudo.cbf.com.br/sumulas/2026/142261se.pdf"
+          E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1
+          for m in 202505 202411 202306; do echo "== espn $m"; curl -s "$E/scoreboard?dates=$m&limit=500" | jq -c '{n: (.events|length), um: (.events[0] | {date, season: .season.slug, st: .status.type.name, c: [.competitions[0].competitors[] | [.homeAway, .team.displayName, .score]]})}'; done
+          echo "== detalhes tipos (jogo encerrado hoje)"; curl -s "$E/scoreboard?dates=20261018" | jq -c '[.events[].competitions[0].details[]? | {t: .type.text, min: .clock.displayValue, a: .athletesInvolved[0].displayName, team: .team.id}] | .[0:6]'
