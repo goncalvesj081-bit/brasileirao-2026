@@ -70,3 +70,33 @@ export function situacao(): string {
   const jogados = resultados.filter((r) => r.rodada === proximaRodada).length;
   return jogados ? `${proximaRodada}ª rodada: falta${faltam > 1 ? "m" : ""} ${faltam} jogo${faltam > 1 ? "s" : ""}` : `Próxima: ${proximaRodada}ª rodada`;
 }
+
+/**
+ * Placar ao vivo (ESPN, no navegador): marca o jogo em andamento e, quando ele termina, já o conta como
+ * resultado (provisório até a próxima atualização oficial). Devolve se mudou algo e se entrou resultado novo.
+ */
+export function aplicarPlacares(ps: { mandante: string; visitante: string; gm: number; gv: number; fim: boolean; minuto: string }[]): { mudou: boolean; resultadoNovo: boolean } {
+  let mudou = false,
+    resultadoNovo = false;
+  for (const p of ps) {
+    const k = restantes.findIndex((g) => g.mandante === p.mandante && g.visitante === p.visitante);
+    if (k < 0) continue;
+    const g = restantes[k];
+    if (p.fim) {
+      const { aoVivo: _v, ...base } = g;
+      resultados.push({ ...base, data: g.data ?? new Date().toISOString(), gm: p.gm, gv: p.gv, provisorio: true });
+      restantes.splice(k, 1);
+      mudou = resultadoNovo = true;
+      continue;
+    }
+    const min = Number.parseInt(p.minuto, 10);
+    const novo = { gm: p.gm, gv: p.gv, minuto: Number.isFinite(min) ? min : null, rotulo: p.minuto };
+    if (JSON.stringify(g.aoVivo) !== JSON.stringify(novo)) {
+      g.aoVivo = novo;
+      mudou = true;
+    }
+  }
+  if (resultadoNovo) tabela.splice(0, tabela.length, ...classificacao(nomesClubes, resultados));
+  meta.aoVivo = restantes.some((g) => g.aoVivo);
+  return { mudou, resultadoNovo };
+}

@@ -121,7 +121,7 @@ export function telaRodada(numero: number | null): Html {
         const E = porId.get(g.id);
         const vivo = g.aoVivo;
         return html`<article class="jogo ${vivo ? "ao-vivo" : ""}">
-          <div class="quando">${vivo ? html`<span class="live">Ao vivo${vivo.minuto != null ? `, ${vivo.minuto}'` : ""}</span>` : quando(g)}</div>
+          <div class="quando">${vivo ? html`<span class="live">Ao vivo${vivo.rotulo ? `, ${vivo.rotulo}` : vivo.minuto != null ? `, ${vivo.minuto}'` : ""}</span>` : quando(g)}</div>
           <div class="confronto">${lado(g.mandante, "m")}${vivo ? html`<span class="placar">${vivo.gm}<i>x</i>${vivo.gv}</span>` : html`<span class="x">x</span>`}${lado(g.visitante, "v")}</div>
           ${vivo && E ? seTerminarAssim(g, efeitosRelevantes(g, E)) : ""}
           <div class="odds" aria-label="Chances: ${g.mandante} ${pct(H)}, empate ${pct(D)}, ${g.visitante} ${pct(A)}">
@@ -133,7 +133,7 @@ export function telaRodada(numero: number | null): Html {
       })}
       ${disputados.map(
         (g) => html`<article class="jogo feito">
-          <div class="quando">Encerrado</div>
+          <div class="quando">${g.provisorio ? "Encerrado, placar da ESPN (a oficial chega na próxima atualização)" : "Encerrado"}</div>
           <div class="confronto">${lado(g.mandante, "m")}<span class="placar">${g.gm}<i>x</i>${g.gv}</span>${lado(g.visitante, "v")}</div>
         </article>`,
       )}

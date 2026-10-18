@@ -1,5 +1,6 @@
 import "./estilos.css";
-import { meta, situacao } from "./dados";
+import { aplicarPlacares, meta, situacao } from "./dados";
+import { iniciarAoVivo, ultimaBusca } from "./aovivo";
 import { aoMudar, agendarUsuario, simularReal } from "./estado";
 import { lerRota, link, redirecionamento, ROTA_INICIAL, SECOES, tituloDa, type Rota } from "./router";
 import { aindaJogam } from "./telas/andamento";
@@ -76,7 +77,8 @@ function conteudo(r: Rota): Html {
 }
 
 function fonte(): Html {
-  return html`${meta.aoVivo ? html`<span class="live">Jogo em andamento</span>` : ""}<span>${situacao()}</span><span>Atualizado ${dataHora(meta.atualizado)}</span>`;
+  const vivo = meta.aoVivo && ultimaBusca ? `, placar ao vivo às ${ultimaBusca.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}` : "";
+  return html`${meta.aoVivo ? html`<span class="live">Jogo em andamento</span>` : ""}<span>${situacao()}</span><span>Atualizado ${dataHora(meta.atualizado)}${vivo}</span>`;
 }
 
 /** Redesenha sem perder a rolagem lateral das barras de filtro; o filtro escolhido fica à vista. */
@@ -209,6 +211,15 @@ aoCalcularSerieB(() => {
 
 desenhar();
 simularReal();
+
+// placar ao vivo de minuto em minuto (ESPN); jogo encerrado já conta na tabela e nas chances
+iniciarAoVivo((ps) => {
+  const { mudou, resultadoNovo } = aplicarPlacares(ps);
+  if (resultadoNovo) simularReal();
+  // telas com campos de digitar não são redesenhadas, para não perder o que está sendo escrito
+  const digitando = rota.secao === "simular" || rota.secao === "bolao" || (rota.secao === "serie-b" && rota.vista === "simular");
+  if ((mudou || meta.aoVivo) && !digitando) desenhar();
+});
 
 // app instalável e uso sem internet (só no site publicado; no desenvolvimento atrapalharia o recarregamento)
 if (import.meta.env.PROD && "serviceWorker" in navigator) {

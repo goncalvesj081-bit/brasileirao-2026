@@ -8,12 +8,14 @@ export interface Jogo {
   /** dia definido, horário ainda não */
   semHora?: boolean;
   /** jogo em andamento: placar parcial e minuto (quando a fonte informa) */
-  aoVivo?: { gm: number; gv: number; minuto: number | null };
+  aoVivo?: { gm: number; gv: number; minuto: number | null; rotulo?: string };
 }
 
 export interface Resultado extends Jogo {
   gm: number;
   gv: number;
+  /** placar ao vivo já encerrado, antes da atualização oficial */
+  provisorio?: boolean;
 }
 
 export interface Linha {
