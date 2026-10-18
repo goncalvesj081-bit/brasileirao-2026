@@ -11,7 +11,7 @@ import { pct } from "./formato";
 const W = 1080,
   H = 1350;
 const FONTE = '"Archivo", system-ui, sans-serif';
-const COR = { fundo: "#111417", tinta: "#eceff2", apagado: "#8b939c", linha: "#23282e", destaque: "#9be15d" };
+const COR = { fundo: "#16191d", tinta: "#e6e9ec", apagado: "#8a929b", linha: "#262b31", destaque: "#4fb883" };
 
 /** Carrega o escudo com CORS; se o servidor não permitir, desenha sem ele. */
 function carregarEscudo(url: string | undefined): Promise<HTMLImageElement | null> {
@@ -77,10 +77,10 @@ export async function gerarImagem(clube: string): Promise<Blob | null> {
   g.fillText(`${t.v}V ${t.e}E ${t.d}D, saldo ${t.gp - t.gc > 0 ? "+" : ""}${t.gp - t.gc}`, 420, 450);
 
   const itens: [string, number, string][] = [
-    ["Título", ch.c, "#f2c14e"],
-    ["Libertadores", ch.l, "#4f8ff7"],
-    ["Sul-Americana", ch.s, "#b48cf2"],
-    ["Rebaixamento", ch.r, "#ff6b5e"],
+    ["Título", ch.c, "#d9b25a"],
+    ["Libertadores", ch.l, "#5b8fe0"],
+    ["Sul-Americana", ch.s, "#a68bd6"],
+    ["Rebaixamento", ch.r, "#e5675c"],
   ];
   let y = 600;
   g.strokeStyle = COR.linha;
@@ -161,7 +161,7 @@ export async function gerarImagemRodada(r: number): Promise<Blob | null> {
     if (em) g.drawImage(em, meio - 100, y - 26, 44, 44);
     if (ev) g.drawImage(ev, meio + 56, y - 26, 44, 44);
     g.font = `900 42px ${FONTE}`;
-    g.fillStyle = j.vivo ? "#ff6b5e" : COR.tinta;
+    g.fillStyle = j.vivo ? "#e5675c" : COR.tinta;
     const placar = `${j.gm}–${j.gv}`;
     g.fillText(placar, meio - g.measureText(placar).width / 2, y + 14);
     y += linhaH;
@@ -187,8 +187,8 @@ export async function gerarImagemRodada(r: number): Promise<Blob | null> {
       g.fillText(`${it.p}º ${it.c}`, x + 80, y + 78 + k * 54, 360);
     });
   };
-  coluna("Mais subiu", subiram, 70, "#9be15d", "▲");
-  coluna("Mais desceu", desceram, W / 2 + 20, "#ff6b5e", "▼");
+  coluna("Mais subiu", subiram, 70, "#4fb883", "▲");
+  coluna("Mais desceu", desceram, W / 2 + 20, "#e5675c", "▼");
 
   g.fillStyle = COR.tinta;
   g.font = `800 34px ${FONTE}`;
