@@ -14,7 +14,7 @@ const OUTRAS = /copa|cup|libertadores|sudamericana|sul-americana|paulista|carioc
 /** Blocos {{football box…}} com o título de seção mais próximo antes deles. */
 function caixas(wikitext: string): { secao: string; corpo: string }[] {
   const out: { secao: string; corpo: string }[] = [];
-  const re = /\{\{\s*football box/gi;
+  const re = /\{\{\s*football ?box/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(wikitext))) {
     let prof = 0,

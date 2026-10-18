@@ -100,6 +100,11 @@ describe("público na página do clube", () => {
 |team2=[[Bahia]]
 |attendance=
 }}
+{{Footballbox collapsible
+|team1 = Flamengo
+|team2 = [[Esporte Clube Vitória|Vitória]]
+|attendance = 50,100
+}}
 ===Copa Libertadores===
 {{football box collapsible
 |team1=[[CR Flamengo|Flamengo]]
@@ -113,6 +118,6 @@ describe("público na página do clube", () => {
 |team2=[[Fluminense FC|Fluminense]]
 |attendance=40,000
 }}`;
-    expect(lerPublicoDoClube("Flamengo", txt)).toEqual([["", "Flamengo", "Palmeiras", 67251]]);
+    expect(lerPublicoDoClube("Flamengo", txt)).toEqual([["", "Flamengo", "Palmeiras", 67251], ["", "Flamengo", "Vitória", 50100]]);
   });
 });
