@@ -6,21 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testar
-        env:
-          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
         run: |
           set +e
           E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1
-          echo "== times ESPN"; curl -s $E/teams | jq -c '[.sports[0].leagues[0].teams[].team | {id, displayName}]'
-          ID=$(curl -s $E/teams | jq -r '.sports[0].leagues[0].teams[] | select(.team.displayName|test("Cruzeiro")) | .team.id')
-          echo "== roster chaves"; curl -s "$E/teams/$ID/roster" | jq -c 'keys'
-          echo "== roster coach"; curl -s "$E/teams/$ID/roster" | jq -c '.coach'
-          echo "== roster atleta exemplo"; curl -s "$E/teams/$ID/roster" | jq -c '.athletes[0] | {displayName, statistics: (.statistics|tostring|.[0:600])}'
-          echo "== team chaves"; curl -s "$E/teams/$ID" | jq -c '.team | keys'
-          echo "== team coach?"; curl -s "$E/teams/$ID" | jq -c '.team.coaches // .team.coach // "nada"'
-          echo "== statistics site"; curl -s "$E/statistics" | jq -c '{keys: keys, stats: (.stats // [] | map({name, n: (.leaders|length), primeiro: .leaders[0].athlete.displayName, v: .leaders[0].displayValue}))}' | cut -c1-1500
-          echo "== core leaders"; curl -s "https://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.1/seasons/2026/types/1/leaders" | jq -c '{keys: keys, cats: (.categories // [] | map({name, n: (.leaders|length), a: .leaders[0].athlete["$ref"], v: .leaders[0].value}))}' | cut -c1-1500
-          echo "== byathlete"; curl -s "https://site.web.api.espn.com/apis/common/v3/sports/soccer/bra.1/statistics/byathlete?season=2026&limit=5" | jq -c '{keys: keys, cats: .categories, um: .athletes[0]}' | cut -c1-1500
-          echo "== core coaches"; curl -s "https://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.1/seasons/2026/teams/$ID/coaches" | jq -c '.' | cut -c1-800
-          echo "== fd scorers limit 300"; curl -s -H "X-Auth-Token: $FOOTBALL_DATA_KEY" "https://api.football-data.org/v4/competitions/BSA/scorers?season=2026&limit=300" | jq -c '{n: (.scorers|length), comAst: ([.scorers[]|select((.assists//0)>0)]|length), maxAst: ([.scorers[].assists//0]|max)}'
-          echo "== fd coaches"; curl -s -H "X-Auth-Token: $FOOTBALL_DATA_KEY" "https://api.football-data.org/v4/competitions/BSA/teams?season=2026" | jq -c '[.teams[] | {t: .shortName, c: .coach.name, s: .coach.contract.start}]'
+          echo "== lider assist estrutura"; curl -s "$E/statistics" | jq -c '.stats[1].leaders[0:2]' | cut -c1-1500
+          echo "== ultimos assist"; curl -s "$E/statistics" | jq -c '[.stats[1].leaders[-3:][] | .displayValue]'
+          UA="brasileirao-2026 (github.com/goncalvesj081-bit/brasileirao-2026)"
+          for T in "2026_Campeonato_Brasileiro_S%C3%A9rie_A"; do
+            echo "== en secoes $T"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=sections&format=json" | jq -c '[.parse.sections[] | {i: .index, l: .line}]' | cut -c1-1500
+          done
+          echo "== pt busca"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=query&list=search&srsearch=Campeonato%20Brasileiro%202026%20S%C3%A9rie%20A&format=json" | jq -c '[.query.search[].title]'
+          P="Campeonato_Brasileiro_de_Futebol_de_2026_-_S%C3%A9rie_A"
+          echo "== pt secoes"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=sections&format=json&redirects=1" | jq -c '[.parse.sections[] | {i: .index, l: .line}]' | cut -c1-1500
