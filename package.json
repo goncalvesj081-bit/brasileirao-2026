@@ -12,7 +12,8 @@
     "update-data": "tsx scripts/update-data.ts",
     "deve-rodar": "tsx scripts/deve-rodar.ts",
     "validar": "tsx scripts/validar-dados.ts",
-    "copas": "tsx scripts/buscar-copas.ts"
+    "copas": "tsx scripts/buscar-copas.ts",
+    "escudos": "tsx scripts/baixar-escudos.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

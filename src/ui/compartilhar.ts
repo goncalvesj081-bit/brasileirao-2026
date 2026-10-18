@@ -1,6 +1,6 @@
 // Gera uma imagem com as chances do clube e abre o compartilhamento do celular (ou baixa a imagem).
 
-import { cores, escudoFixo } from "../../config/clubes";
+import { cores, escudoFixo, slug } from "../../config/clubes";
 import { escudos, linhaDe, meta, posicao } from "../dados";
 import { sims } from "../estado";
 import { chancesSim } from "../modelo/simular";
@@ -52,10 +52,15 @@ export async function gerarImagem(clube: string): Promise<Blob | null> {
   g.fillStyle = c2;
   g.fillRect(W / 2, 0, W / 2, 18);
 
-  const esc = await carregarEscudo(escudoFixo(clube) ?? escudos[clube]);
+  // a cópia no próprio site (feita na publicação) não esbarra em CORS; a original fica de reserva
+  const esc = (await carregarEscudo(`escudos/${slug(clube)}.png`)) ?? (await carregarEscudo(escudoFixo(clube) ?? escudos[clube]));
   let x = 90;
   if (esc) {
-    g.drawImage(esc, 90, 120, 130, 130);
+    // cabe num quadrado de 130 sem deformar
+    const k = 130 / Math.max(esc.naturalWidth || 130, esc.naturalHeight || 130);
+    const w = (esc.naturalWidth || 130) * k,
+      h = (esc.naturalHeight || 130) * k;
+    g.drawImage(esc, 90 + (130 - w) / 2, 120 + (130 - h) / 2, w, h);
     x = 250;
   }
   g.fillStyle = COR.tinta;
