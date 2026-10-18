@@ -18,6 +18,7 @@ import {
 import { collection, doc, getDoc, getDocs, getFirestore, query, serverTimestamp, setDoc, deleteDoc, where } from "firebase/firestore";
 import { FIREBASE } from "../../config/firebase";
 import type { LinhaRanking } from "../modelo/bolao";
+import type { Perfil } from "../modelo/perfil";
 
 const app = initializeApp(FIREBASE);
 const auth = getAuth(app);
@@ -61,6 +62,14 @@ export async function registrar(u: User) {
   return (atual.data()?.nome as string | undefined) ?? (u.displayName ?? "Torcedor").slice(0, 30);
 }
 export const mudarNome = (u: User, nome: string) => setDoc(doc(db, "usuarios", u.uid), { nome: nome.trim().slice(0, 30), foto: u.photoURL ?? "" });
+
+/** Cadastro privado (nome completo, nascimento, WhatsApp): só o dono lê. */
+export async function lerPerfil(uid: string): Promise<Perfil | null> {
+  const d = (await getDoc(doc(db, "perfis", uid))).data();
+  return d ? { nome: d.nome as string, nascimento: d.nascimento as string, whatsapp: d.whatsapp as string } : null;
+}
+export const salvarPerfil = (uid: string, p: Perfil) =>
+  setDoc(doc(db, "perfis", uid), { nome: p.nome.trim(), nascimento: p.nascimento, whatsapp: p.whatsapp, aceite: true, em: serverTimestamp() });
 
 export async function meusPalpites(uid: string): Promise<Record<string, [number, number]>> {
   const snap = await getDocs(query(collection(db, "palpites"), where("uid", "==", uid)));

@@ -1,9 +1,10 @@
-// Bolão: entrar com o Google, palpitar nos jogos da rodada (até a hora do jogo) e ranking.
+// Bolão: entrar (Google ou e-mail), completar o cadastro, palpitar nos jogos da rodada (até a hora do jogo) e ranking.
 // O Firebase só é carregado quando alguém abre esta seção.
 
 import { bolaoConfigurado } from "../../config/firebase";
 import { porData, proximaRodada, restantes, resultados, rodadasComJogo } from "../dados";
 import { PONTOS, pontosDoPalpite, type LinhaRanking } from "../modelo/bolao";
+import { normalizarWhatsapp, problemaNoPerfil, whatsappParaTela, type Perfil } from "../modelo/perfil";
 import type { Jogo, Resultado } from "../modelo/tipos";
 import { link, SECOES } from "../router";
 import { escudo, seletor, vazio } from "../ui/componentes";
@@ -19,6 +20,13 @@ let usuario: import("../bolao/cliente").User | null = null;
 /** O Firebase já disse se há alguém conectado (antes disso, não dá para decidir entre login e palpites). */
 let authPronto = false;
 let nome = "";
+/** Cadastro privado; null = ainda não preencheu (sem ele, não há palpite). */
+let perfil: Perfil | null = null;
+let editandoPerfil = false;
+/** O que foi digitado no cadastro, para não perder num redesenho. */
+let rascunho = { nome: "", apelido: "", nascimento: "", whatsapp: "", aceite: false };
+/** Cadastro feito junto com a conta de e-mail; gravado quando o Firebase avisa que a pessoa entrou. */
+let perfilNovo: Perfil | null = null;
 let meus: Record<string, [number, number]> = {};
 let rank: { linhas: LinhaRanking[]; atualizado: Date | null } | null = null;
 const revelados = new Map<number, Record<string, [string, number, number][]>>();
@@ -28,14 +36,20 @@ let nomes: Record<string, { nome: string; foto: string }> | null = null;
 type ModoLogin = "entrar" | "criar" | "recuperar";
 let modo: ModoLogin = "entrar";
 let emailDigitado = "";
-let nomeDigitado = "";
 let infoLogin = "";
 let enviando = false;
 /** Nome escolhido ao criar a conta; gravado quando o Firebase avisa que a pessoa entrou. */
 let nomeNovo = "";
 
+let vistaAtual = "";
 let redesenhar: () => void = () => {};
-export const aoMudarBolao = (f: () => void) => (redesenhar = f);
+/** Antes de redesenhar, guarda o que já foi digitado no login ou no cadastro (a senha não). */
+export const aoMudarBolao = (f: () => void) =>
+  (redesenhar = () => {
+    const form = document.querySelector<HTMLFormElement>("form[data-bolao-form], form[data-bolao-perfil]");
+    if (form) guardarDigitado(form);
+    f();
+  });
 
 function carregar() {
   if (cli || carregando || !bolaoConfigurado()) return;
@@ -51,6 +65,8 @@ function carregar() {
         usuario = u;
         authPronto = true;
         meus = {};
+        perfil = null;
+        editandoPerfil = false;
         if (u) {
           try {
             if (nomeNovo) {
@@ -58,6 +74,11 @@ function carregar() {
               nome = nomeNovo;
               nomeNovo = "";
             } else nome = await c.registrar(u);
+            if (perfilNovo) {
+              await c.salvarPerfil(u.uid, perfilNovo);
+              perfil = perfilNovo;
+              perfilNovo = null;
+            } else perfil = await c.lerPerfil(u.uid);
             meus = await c.meusPalpites(u.uid);
           } catch (e) {
             erro = `Não deu para carregar seus palpites (${(e as Error).message}).`;
@@ -67,7 +88,7 @@ function carregar() {
       });
       return c.ranking().then((r) => {
         rank = r;
-        redesenhar();
+        if (vistaAtual === "ranking") redesenhar();
       });
     })
     .catch((e) => {
@@ -99,9 +120,10 @@ function telaLogin(): Html {
   const campoEmail = html`<label>E-mail<input type="email" name="email" autocomplete="email" required value="${emailDigitado}"></label>`;
   const campos =
     modo === "criar"
-      ? html`<label>Seu nome no ranking<input name="nome" autocomplete="nickname" maxlength="30" required value="${nomeDigitado}"></label>
+      ? html`${camposPerfil(false)}
           ${campoEmail}
-          <label>Senha<input type="password" name="senha" autocomplete="new-password" minlength="6" required><small>Pelo menos 6 caracteres.</small></label>`
+          <label>Senha<input type="password" name="senha" autocomplete="new-password" minlength="6" required><small>Pelo menos 6 caracteres.</small></label>
+          ${campoAceite()}`
       : modo === "recuperar"
         ? campoEmail
         : html`${campoEmail}
@@ -127,6 +149,51 @@ function telaLogin(): Html {
   </div>`;
 }
 
+const hojeISO = () => new Date().toLocaleDateString("sv-SE");
+
+/** Nome completo, nascimento e WhatsApp (e o nome do ranking, quando `comApelido`). */
+function camposPerfil(comApelido: boolean): Html {
+  return html`<label>Nome completo<input name="nome" autocomplete="name" maxlength="60" required value="${rascunho.nome}"></label>
+    ${comApelido ? html`<label>Nome no ranking<input name="apelido" autocomplete="nickname" maxlength="30" required value="${rascunho.apelido}"><small>É o único dado que aparece para os outros participantes.</small></label>` : ""}
+    <div class="login-dupla">
+      <label>Data de nascimento<input type="date" name="nascimento" autocomplete="bday" min="1900-01-01" max="${hojeISO()}" required value="${rascunho.nascimento}"></label>
+      <label>WhatsApp<input type="tel" name="whatsapp" autocomplete="tel-national" inputmode="tel" placeholder="(11) 98765-4321" data-whats required value="${rascunho.whatsapp}"></label>
+    </div>`;
+}
+const campoAceite = () =>
+  html`<label class="login-aceite"><input type="checkbox" name="aceite" ${rascunho.aceite ? "checked" : ""}><span>Autorizo o uso do meu nome, nascimento e WhatsApp só para entrarem em contato comigo se eu ganhar. Esses dados não aparecem no site.</span></label>`;
+
+/** Ranking mostra "Maria S." em vez do nome completo. */
+function apelidoDe(nomeCompleto: string): string {
+  const p = nomeCompleto.trim().split(/\s+/);
+  return (p.length > 1 ? `${p[0]} ${p[p.length - 1]![0]!.toUpperCase()}.` : p[0] ?? "").slice(0, 30);
+}
+
+/** Cadastro: obrigatório na primeira vez (quem entrou pelo Google) e editável em "Meus dados". */
+function telaPerfil(): Html {
+  const primeira = !perfil;
+  if (!rascunho.nome && !rascunho.nascimento) {
+    rascunho = perfil
+      ? { nome: perfil.nome, apelido: nome, nascimento: perfil.nascimento, whatsapp: whatsappParaTela(perfil.whatsapp), aceite: true }
+      : { nome: usuario?.displayName ?? "", apelido: nome, nascimento: "", whatsapp: "", aceite: false };
+  }
+  return html`<div class="login">
+    <div class="login-cartao">
+      <h2>${primeira ? "Complete seu cadastro" : "Meus dados"}</h2>
+      <p class="login-sub">${primeira ? "Falta pouco: precisamos de alguns dados para falar com você se ganhar o bolão." : "Nascimento e WhatsApp só servem para o contato com quem ganhar."}</p>
+      <form class="login-form" data-bolao-perfil novalidate>
+        ${camposPerfil(true)}
+        ${primeira ? campoAceite() : ""}
+        ${erro ? html`<p class="login-erro" role="alert">${erro}</p>` : ""}
+        <button type="submit" class="botao-principal" ${enviando ? "disabled" : ""}>${enviando ? "Salvando…" : primeira ? "Salvar e palpitar" : "Salvar"}</button>
+      </form>
+      <p class="login-troca">${primeira
+        ? html`Entrou com a conta errada? <button type="button" class="link" data-bolao-sair>Sair</button>`
+        : html`<button type="button" class="link" data-bolao-cancelar-perfil>Voltar aos palpites</button>`}</p>
+    </div>
+  </div>`;
+}
+
 const iniciais = (n: string) =>
   n
     .split(/\s+/)
@@ -139,9 +206,9 @@ function cabecalhoUsuario(): Html {
   if (!usuario) return html``;
   return html`<div class="bolao-eu">
     ${usuario.photoURL ? html`<img src="${usuario.photoURL}" alt="" width="36" height="36" referrerpolicy="no-referrer">` : html`<span class="avatar" aria-hidden="true">${iniciais(nome)}</span>`}
-    <label>Nome no ranking <input data-bolao-nome value="${nome}" maxlength="30"></label>
-    <button type="button" class="discreto" data-bolao-salvar-nome>Salvar</button>
-    <button type="button" class="discreto sair" data-bolao-sair>Sair</button></div>`;
+    <span class="bolao-nome"><b>${nome}</b><small>${usuario.email ?? ""}</small></span>
+    <button type="button" class="discreto" data-bolao-meus-dados>Meus dados</button>
+    <button type="button" class="discreto" data-bolao-sair>Sair</button></div>`;
 }
 
 function telaPalpites(numero: number | null): Html {
@@ -149,6 +216,7 @@ function telaPalpites(numero: number | null): Html {
   const r = numero != null && R.includes(numero) ? numero : (proximaRodada ?? R[R.length - 1]);
   if (r == null) return vazio("Não há rodadas.");
   if (!usuario) return telaLogin();
+  if (!perfil || editandoPerfil) return telaPerfil();
   const jogos: (Jogo | Resultado)[] = [...resultados.filter((g) => g.rodada === r), ...restantes.filter((g) => g.rodada === r)].sort(porData);
   const algumFechado = jogos.some((g) => !aberto(g));
   if (algumFechado) pedirRevelados(r);
@@ -199,7 +267,7 @@ function telaRanking(): Html {
 function telaRegras(): Html {
   return html`<div class="texto">
     <h2>Como funciona</h2>
-    <p>Entre com o Google ou com e-mail e senha e dê seu palpite de placar para os jogos da Série A. Dá para mudar quantas vezes quiser até a hora marcada do jogo; depois disso o palpite fecha.</p>
+    <p>Entre com o Google ou com e-mail e senha, complete o cadastro e dê seu palpite de placar para os jogos da Série A. Dá para mudar quantas vezes quiser até a hora marcada do jogo; depois disso o palpite fecha.</p>
     <h2>Pontos</h2>
     <p><b>${PONTOS.exato} pontos</b>: placar exato. <b>${PONTOS.saldo} pontos</b>: acertou o vencedor e o saldo de gols (palpite 3 x 1, deu 2 x 0). <b>${PONTOS.resultado} pontos</b>: acertou só o vencedor, ou acertou que seria empate. <b>0</b>: errou o resultado.</p>
     <h2>Ranking</h2>
@@ -213,6 +281,7 @@ export function telaBolao(vista: string, numero: number | null): Html {
   const topo = seletor(SECOES.find((s) => s.id === "bolao")!.vistas, vista, (k) => link("bolao", k), "Bolão");
   if (!bolaoConfigurado())
     return html`${topo}${vista === "regras" ? telaRegras() : vazio("O bolão está quase pronto: falta ligar o projeto do Firebase (login com Google e o banco de palpites).")}`;
+  vistaAtual = vista;
   carregar();
   // sem login, o erro aparece dentro da própria tela de entrada
   const aviso = erro && (usuario || vista !== "palpites") ? html`<p class="aviso">${erro}</p>` : "";
@@ -262,7 +331,36 @@ export function trocarModoLogin(m: string, form?: HTMLFormElement | null) {
 function guardarDigitado(form: HTMLFormElement) {
   const d = new FormData(form);
   emailDigitado = String(d.get("email") ?? emailDigitado);
-  if (d.has("nome")) nomeDigitado = String(d.get("nome"));
+  const txt = (k: string, atual: string) => (d.has(k) ? String(d.get(k)) : atual);
+  rascunho = {
+    nome: txt("nome", rascunho.nome),
+    apelido: txt("apelido", rascunho.apelido),
+    nascimento: txt("nascimento", rascunho.nascimento),
+    whatsapp: txt("whatsapp", rascunho.whatsapp),
+    aceite: form.querySelector('input[name="aceite"]') ? d.has("aceite") : rascunho.aceite,
+  };
+}
+
+/** Aviso de preenchimento sem redesenhar (não apaga a senha que já foi digitada). */
+function avisarNoForm(form: HTMLFormElement, msg: string) {
+  erro = "";
+  let el = form.querySelector<HTMLElement>(".login-erro");
+  if (!el) {
+    el = document.createElement("p");
+    el.className = "login-erro";
+    el.setAttribute("role", "alert");
+    form.querySelector(".botao-principal")!.before(el);
+  }
+  el.textContent = msg;
+}
+
+/** Cadastro do formulário, ou o problema com ele. */
+function perfilDoRascunho(exigeAceite: boolean): Perfil | string {
+  const p: Perfil = { nome: rascunho.nome.trim(), nascimento: rascunho.nascimento, whatsapp: normalizarWhatsapp(rascunho.whatsapp) };
+  const problema = problemaNoPerfil(p, hojeISO());
+  if (problema) return problema;
+  if (exigeAceite && !rascunho.aceite) return "Marque a autorização de contato para continuar.";
+  return p;
 }
 
 /** Formulário de e-mail e senha. */
@@ -271,16 +369,18 @@ export async function enviarLoginBolao(form: HTMLFormElement) {
   guardarDigitado(form);
   const d = new FormData(form);
   const senha = String(d.get("senha") ?? "");
-  erro = infoLogin = "";
-  if (!emailDigitado.trim()) erro = "Digite seu e-mail.";
-  else if (modo === "criar" && !nomeDigitado.trim()) erro = "Escolha um nome para aparecer no ranking.";
-  else if (modo !== "recuperar" && !senha) erro = "Digite a senha.";
-  if (erro) return redesenhar();
+  infoLogin = "";
+  const novo = modo === "criar" ? perfilDoRascunho(true) : null;
+  const aviso =
+    typeof novo === "string" ? novo : !emailDigitado.trim() ? "Digite seu e-mail." : modo !== "recuperar" && !senha ? "Digite a senha." : "";
+  if (aviso) return avisarNoForm(form, aviso);
+  erro = "";
   enviando = true;
   redesenhar();
   try {
-    if (modo === "criar") {
-      nomeNovo = nomeDigitado.trim().slice(0, 30);
+    if (modo === "criar" && novo && typeof novo !== "string") {
+      perfilNovo = novo;
+      nomeNovo = apelidoDe(novo.nome);
       await cli.criarConta(nomeNovo, emailDigitado, senha);
     } else if (modo === "recuperar") {
       await cli.recuperarSenha(emailDigitado);
@@ -289,19 +389,55 @@ export async function enviarLoginBolao(form: HTMLFormElement) {
     } else await cli.entrarComEmail(emailDigitado, senha);
   } catch (e) {
     nomeNovo = "";
+    perfilNovo = null;
     erro = erroDeLogin(e);
   }
   enviando = false;
   redesenhar();
 }
-export const sairBolao = () => void cli?.sair();
-export async function salvarNomeBolao() {
-  const inp = document.querySelector<HTMLInputElement>("input[data-bolao-nome]");
-  if (!cli || !usuario || !inp?.value.trim()) return;
-  await cli.mudarNome(usuario, inp.value);
-  nome = inp.value.trim().slice(0, 30);
+
+/** Formulário do cadastro (primeira vez ou "Meus dados"). */
+export async function salvarPerfilBolao(form: HTMLFormElement) {
+  if (!cli || !usuario || enviando) return;
+  guardarDigitado(form);
+  erro = "";
+  const p = perfilDoRascunho(!perfil);
+  const apelido = rascunho.apelido.trim().slice(0, 30) || apelidoDe(rascunho.nome);
+  if (typeof p === "string") return avisarNoForm(form, p);
+  enviando = true;
+  redesenhar();
+  try {
+    await cli.salvarPerfil(usuario.uid, p);
+    if (apelido !== nome) await cli.mudarNome(usuario, apelido);
+    perfil = p;
+    nome = apelido;
+    editandoPerfil = false;
+    form.remove();
+    rascunho = { ...RASCUNHO_VAZIO };
+  } catch (e) {
+    erro = `Não deu para salvar seus dados (${(e as Error).message}).`;
+  }
+  enviando = false;
   redesenhar();
 }
+
+export function abrirMeusDados(abrir: boolean) {
+  editandoPerfil = abrir;
+  erro = "";
+  document.querySelector("form[data-bolao-perfil]")?.remove();
+  rascunho = { ...RASCUNHO_VAZIO };
+  redesenhar();
+}
+const RASCUNHO_VAZIO = { nome: "", apelido: "", nascimento: "", whatsapp: "", aceite: false };
+
+/** Sai e esquece o que foi digitado, para a próxima pessoa no aparelho não ver os dados. */
+export const sairBolao = () => {
+  erro = "";
+  document.querySelector("form[data-bolao-perfil]")?.remove();
+  rascunho = { ...RASCUNHO_VAZIO };
+  emailDigitado = "";
+  void cli?.sair();
+};
 
 const esperas = new Map<string, ReturnType<typeof setTimeout>>();
 /** Digitação de palpite: salva quando os dois lados têm número; apaga quando os dois ficam vazios. */

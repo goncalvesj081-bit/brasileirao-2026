@@ -498,13 +498,18 @@ button.link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .login-erro { margin: 0; font-size: 13px; color: var(--rel); background: var(--rel-soft); padding: 8px 10px; border-radius: 6px; }
 .login-info { margin: 0; font-size: 13px; color: var(--ink); background: var(--accent-soft); padding: 8px 10px; border-radius: 6px; }
 .login-troca { margin: 0; text-align: center; font-size: 13.5px; color: var(--muted); }
+.login-dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 380px) { .login-dupla { grid-template-columns: 1fr; } }
+.login-form input[type="date"] { color-scheme: dark; }
+.login-form label.login-aceite { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--muted); font-size: 12.5px; line-height: 1.45; cursor: pointer; }
+.login-form .login-aceite input { width: 18px; height: 18px; min-height: 0; flex: 0 0 18px; margin: 1px 0 0; padding: 0; accent-color: var(--accent); }
 
 .bolao-eu { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .bolao-eu img, .bolao-eu .avatar { border-radius: 50%; width: 36px; height: 36px; flex: 0 0 36px; }
 .bolao-eu .avatar { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px; }
-.bolao-eu label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
-.bolao-eu input { background: var(--paper); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 6px; padding: 6px 8px; font: inherit; width: 170px; }
-.bolao-eu .sair { margin-left: auto; }
+.bolao-nome { display: grid; margin-right: auto; min-width: 0; line-height: 1.25; }
+.bolao-nome b { font-weight: 650; }
+.bolao-nome small { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bolao-jogos { display: grid; border-top: 1px solid var(--line-strong); }
 .bp-jogo { display: grid; gap: 6px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .bp-linha { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); align-items: center; gap: 8px; }
