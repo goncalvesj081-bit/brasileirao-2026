@@ -9,12 +9,13 @@ jobs:
         run: |
           set +e
           E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1
-          echo "== lider assist estrutura"; curl -s "$E/statistics" | jq -c '.stats[1].leaders[0:2]' | cut -c1-1500
-          echo "== ultimos assist"; curl -s "$E/statistics" | jq -c '[.stats[1].leaders[-3:][] | .displayValue]'
+          echo "== atleta chaves"; curl -s "$E/statistics" | jq -c '.stats[1].leaders[0].athlete | del(.links) | with_entries(.value |= (tostring | .[0:150]))'
           UA="brasileirao-2026 (github.com/goncalvesj081-bit/brasileirao-2026)"
-          for T in "2026_Campeonato_Brasileiro_S%C3%A9rie_A"; do
-            echo "== en secoes $T"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=sections&format=json" | jq -c '[.parse.sections[] | {i: .index, l: .line}]' | cut -c1-1500
-          done
-          echo "== pt busca"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=query&list=search&srsearch=Campeonato%20Brasileiro%202026%20S%C3%A9rie%20A&format=json" | jq -c '[.query.search[].title]'
           P="Campeonato_Brasileiro_de_Futebol_de_2026_-_S%C3%A9rie_A"
-          echo "== pt secoes"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=sections&format=json&redirects=1" | jq -c '[.parse.sections[] | {i: .index, l: .line}]' | cut -c1-1500
+          for S in 7 19; do
+            echo "== pt wikitext secao $S"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=wikitext&section=$S&format=json&formatversion=2" | jq -r '.parse.wikitext' | head -c 5000; echo
+          done
+          T="2026_Campeonato_Brasileiro_S%C3%A9rie_A"
+          for S in 4 5; do
+            echo "== en wikitext secao $S"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=wikitext&section=$S&format=json&formatversion=2" | jq -r '.parse.wikitext' | head -c 4000; echo
+          done
