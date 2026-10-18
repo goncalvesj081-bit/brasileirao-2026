@@ -8,6 +8,7 @@ import { link, SECOES } from "../router";
 import { atrLinha, avisoSimulacao, celClube, celProb, classeFaixa, forma, legenda, lerPref, modoVagas, seletor, seletorLocal, seletorVagas, type Tom } from "../ui/componentes";
 import { saldo } from "../ui/formato";
 import { aindaJogam, rodadaEmAndamento } from "./andamento";
+import { cartaoMeuTime } from "./meutime";
 import { html, type Html } from "../ui/html";
 
 const COLUNAS: [keyof Chances, string, Tom][] = [
@@ -61,7 +62,7 @@ export function telaClassificacao(vista: string): Html {
       break;
     default: {
       const chance = lerPref("chance", "c") as keyof Chances;
-      return html`${topo}${avisoSimulacao()}
+      return html`${topo}${avisoSimulacao()}${cartaoMeuTime()}
         <div class="barra-opcoes"><span class="dim">Chance de</span>${seletorLocal("chance", COLUNAS.map(([k, t]) => [k, t]), chance, "Coluna de chance")}</div>
         ${chance === "l" || chance === "s" ? seletorVagas() : ""}
         <div class="com-lado"><div class="coluna">${tabelaClassificacao(tabela, true, true, chance)}${legenda()}</div>${rodadaEmAndamento(chance)}</div>`;

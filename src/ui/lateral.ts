@@ -1,6 +1,7 @@
 import { tabela } from "../dados";
 import { abaInferior, link, SECOES, type Rota } from "../router";
 import { escudo, linkClube } from "./componentes";
+import { favorito } from "./favorito";
 import { cru, html, type Html } from "./html";
 
 const destino = (id: string) => {
@@ -15,6 +16,7 @@ const ICONES: Record<string, string> = {
   jogos: '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   simular: '<path d="M6 4v16M18 4v16M12 4v16"/><circle cx="6" cy="9" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="18" cy="8" r="2"/>',
   "serie-b": '<path d="M7 4h6.5a3.5 3.5 0 0 1 0 7H7zM7 11h7.5a3.5 3.5 0 0 1 0 7H7zM7 4v14"/>',
+  comparar: '<path d="M8 4v16M16 4v16M4 8h8M12 16h8"/>',
   estatisticas: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',
   pessoas: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.5-4 4-5.5 7-5.5s5.5 1.5 7 5.5"/>',
   sobre: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
@@ -32,7 +34,7 @@ export function navegacao(r: Rota): Html {
 
 export function listaClubes(r: Rota): Html {
   return html`${tabela.map(
-    (t, p) => html`<a href="${linkClube(t.clube)}" aria-current="${r.clube === t.clube ? "page" : "false"}"><small>${p + 1}</small>${escudo(t.clube, 18)}<span>${t.clube}</span><em>${t.p}</em></a>`,
+    (t, p) => html`<a href="${linkClube(t.clube)}" aria-current="${r.clube === t.clube ? "page" : "false"}"${favorito() === t.clube ? html` class="fav"` : ""}><small>${p + 1}</small>${escudo(t.clube, 18)}<span>${t.clube}${favorito() === t.clube ? " ★" : ""}</span><em>${t.p}</em></a>`,
   )}`;
 }
 

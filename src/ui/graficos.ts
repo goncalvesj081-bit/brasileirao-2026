@@ -122,3 +122,35 @@ export function evolucaoPosicao(clube: string, serie: PontoSerie[]): Html {
   s += `<circle cx="${x(r1)}" cy="${y(ult.pos)}" r="4" fill="var(--ink)"/><text x="${x(r1) + 8}" y="${y(ult.pos) + 4}" class="v">${ult.pos}º</text>`;
   return cru(s + "</svg>");
 }
+
+/** Posição de dois clubes depois de cada rodada, no mesmo gráfico. */
+export function duasPosicoes(a: { nome: string; cor: string; serie: { r: number; pos: number }[] }, b: { nome: string; cor: string; serie: { r: number; pos: number }[] }): Html {
+  const todas = [...a.serie, ...b.serie];
+  if (a.serie.length < 2 || b.serie.length < 2) return html``;
+  const n = 20,
+    W = 400,
+    H = 190,
+    pl = 32,
+    pr = 40,
+    pt = 10,
+    pb = 26;
+  const r0 = Math.min(...todas.map((p) => p.r)),
+    r1 = Math.max(...todas.map((p) => p.r));
+  const x = (r: number) => pl + ((W - pl - pr) * (r - r0)) / Math.max(1, r1 - r0);
+  const y = (p: number) => pt + ((H - pt - pb) * (p - 1)) / (n - 1);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Posição de ${esc(a.nome)} e ${esc(b.nome)} rodada a rodada">`;
+  const faixa = (de: number, ate: number, cor: string) => {
+    s += `<rect x="${pl}" y="${y(de) - 3}" width="${W - pl - pr}" height="${y(ate) - y(de) + 6}" fill="${cor}" opacity=".1"/>`;
+  };
+  faixa(1, CORTES.lib, "var(--lib)");
+  faixa(CORTES.lib + 1, CORTES.sula, "var(--sula)");
+  faixa(n - CORTES.rebaixados + 1, n, "var(--rel)");
+  for (const p of [1, 5, 10, 15, 20]) s += `<text x="${pl - 6}" y="${y(p) + 4}" text-anchor="end">${p}º</text>`;
+  s += eixoRodadas(r0, r1, x, H - 6);
+  for (const c of [a, b]) {
+    s += `<polyline fill="none" stroke="${c.cor}" stroke-width="2.4" stroke-linejoin="round" points="${c.serie.map((p) => `${x(p.r)},${y(p.pos)}`).join(" ")}"/>`;
+    const u = c.serie[c.serie.length - 1];
+    s += `<circle cx="${x(u.r)}" cy="${y(u.pos)}" r="4" fill="${c.cor}"/><text x="${x(u.r) + 8}" y="${y(u.pos) + 4}" class="v" style="fill:${c.cor}">${u.pos}º</text>`;
+  }
+  return html`${cru(s + "</svg>")}<div class="legend"><span><i style="background:${a.cor}"></i>${a.nome}</span><span><i style="background:${b.cor}"></i>${b.nome}</span></div>`;
+}

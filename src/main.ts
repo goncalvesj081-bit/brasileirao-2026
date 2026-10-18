@@ -11,6 +11,8 @@ import { telaMais, telaSobre } from "./telas/mais";
 import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, telaSerieB } from "./telas/serieb";
+import { telaComparar } from "./telas/comparar";
+import { alternarFavorito } from "./ui/favorito";
 import {
   atualizarResultadosSimulador,
   cliqueSimulador,
@@ -63,6 +65,8 @@ function conteudo(r: Rota): Html {
       return telaClube(r.clube!, r.vista);
     case "serie-b":
       return telaSerieB(r.vista);
+    case "comparar":
+      return telaComparar(r.vista, r.extra);
   }
   return html``;
 }
@@ -130,6 +134,12 @@ $("main").addEventListener("click", (e) => {
     void compartilhar(comp.dataset.compartilhar!, comp);
     return;
   }
+  const fav = alvo.closest<HTMLButtonElement>("button[data-favorito]");
+  if (fav) {
+    alternarFavorito(fav.dataset.favorito!);
+    desenhar();
+    return;
+  }
   const pref = alvo.closest<HTMLButtonElement>("button[data-pref]");
   if (pref) {
     gravarPref(pref.dataset.pref!, pref.dataset.valor!);
@@ -140,6 +150,12 @@ $("main").addEventListener("click", (e) => {
   // a linha inteira leva ao clube (o nome já é link; isto só aumenta a área de toque)
   const tr = alvo.closest<HTMLElement>("tr[data-href]");
   if (tr) location.hash = tr.dataset.href!;
+});
+$("main").addEventListener("change", (e) => {
+  const sel = (e.target as HTMLElement).closest<HTMLSelectElement>("select[data-comparar]");
+  if (!sel) return;
+  const outro = document.querySelector<HTMLSelectElement>(`select[data-comparar="${sel.dataset.comparar === "a" ? "b" : "a"}"]`)!;
+  location.hash = sel.dataset.comparar === "a" ? link("comparar", sel.value, outro.value) : link("comparar", outro.value, sel.value);
 });
 $("main").addEventListener("input", (e) => {
   const inp = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-s]");
@@ -152,7 +168,7 @@ $("main").addEventListener("focusin", (e) => {
 
 /** Telas que mostram a simulação real e precisam ser redesenhadas quando ela termina. */
 const usaSimulacao = (r: Rota) =>
-  r.secao === "chances" || r.secao === "jogos" || (r.secao === "tabela" && r.vista === "geral") || (r.secao === "clube" && (r.vista === "resumo" || r.vista === "rodada-a-rodada"));
+  r.secao === "chances" || r.secao === "jogos" || r.secao === "comparar" || (r.secao === "tabela" && r.vista === "geral") || (r.secao === "clube" && (r.vista === "resumo" || r.vista === "rodada-a-rodada" || r.vista === "torcida"));
 
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();

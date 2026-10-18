@@ -13,6 +13,8 @@ import { comoSomar, quantoFalta, type Objetivo, type ObjetivosPorPontos } from "
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
 import { dataDoDado, fotoTecnico } from "./pessoas";
+import { telaTorcida } from "./torcida";
+import { favorito } from "../ui/favorito";
 
 export function telaClube(clube: string, aba: string): Html {
   const i = posicao(clube);
@@ -30,6 +32,7 @@ export function telaClube(clube: string, aba: string): Html {
       <div><dt>Últimos 5</dt><dd>${forma(clube)}</dd></div>
     </dl>
     ${tec ? html`<p class="note ficha-tec">Técnico <b>${tec[0]}</b>, desde ${tec[1]}</p>` : ""}
+    <button type="button" class="discreto favorito" data-favorito="${clube}" aria-pressed="${favorito() === clube}">${favorito() === clube ? "★ Meu time" : "☆ Marcar como meu time"}</button>
   </div>`;
   const abas = seletor(ABAS_CLUBE, aba, (k) => linkClube(clube, k), "Seções do clube");
 
@@ -37,6 +40,7 @@ export function telaClube(clube: string, aba: string): Html {
   if (aba === "rodada-a-rodada") corpo = rodadaARodada(clube, i);
   else if (aba === "jogos") corpo = jogos(clube);
   else if (aba === "destaques") corpo = destaques(clube);
+  else if (aba === "torcida") corpo = telaTorcida(clube);
   else corpo = resumo(clube, i);
   return html`${ficha}${abas}<div class="colunas">${corpo}</div>`;
 }

@@ -67,6 +67,7 @@ export const SECOES: Secao[] = [
       ["sem-vitorias", "Sem vencer"],
       ["ataque", "Ataque"],
       ["defesa", "Defesa"],
+      ["restante", "Tabela que falta"],
     ],
   },
   {
@@ -80,6 +81,7 @@ export const SECOES: Secao[] = [
       ["trocas", "Trocas"],
     ],
   },
+  { id: "comparar", rotulo: "Comparar times", emMais: true, vistas: [] },
   { id: "sobre", rotulo: "Como calculamos", emMais: true, vistas: [] },
   { id: "mais", rotulo: "Mais", vistas: [] },
 ];
@@ -88,6 +90,7 @@ export const ABAS_CLUBE: [string, string][] = [
   ["resumo", "Resumo"],
   ["rodada-a-rodada", "Rodada a rodada"],
   ["jogos", "Jogos"],
+  ["torcida", "Para quem torcer"],
   ["destaques", "Destaques"],
 ];
 
@@ -124,6 +127,11 @@ export function lerRota(hash = location.hash): Rota | null {
     if (!c) return null;
     const aba = ABAS_CLUBE.some(([k]) => k === b) ? b : "resumo";
     return { secao, vista: aba, extra: "", numero: null, clube: c.nome };
+  }
+  if (secao === "comparar") {
+    const A = clubePorSlug(a)?.nome ?? "",
+      B = clubePorSlug(b)?.nome ?? "";
+    return { secao, vista: A, extra: B, numero: null };
   }
   const s = SECOES.find((x) => x.id === secao);
   if (!s) return null;
