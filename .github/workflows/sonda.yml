@@ -1,0 +1,22 @@
+# Temporário: testa cartões e público na ESPN. Apagar depois.
+name: Sonda de fontes
+on: workflow_dispatch
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testar
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+        run: |
+          set +e
+          E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1
+          curl -s "$E/scoreboard?dates=202610&limit=500" > out.json
+          echo "== n"; jq '.events|length' out.json
+          echo "== comp chaves"; jq -c '.events[0].competitions[0] | keys' out.json
+          echo "== attendance"; jq -c '[.events[] | .competitions[0].attendance] | .[0:10]' out.json
+          echo "== details tipos"; jq -c '[.events[].competitions[0].details[]?.type.text] | unique' out.json
+          echo "== detail exemplo"; jq -c '[.events[].competitions[0].details[]? | select(.type.text|test("Card"))][0:2]' out.json | cut -c1-1500
+          echo "== competitor team"; jq -c '.events[0].competitions[0].competitors[0].team | {id, displayName, abbreviation}' out.json
+          echo "== summary"; ID=$(jq -r '.events[0].id' out.json); curl -s "$E/summary?event=$ID" | jq -c '{keys: keys, gi: .gameInfo, ke: (.keyEvents // [] | map(.type.text) | unique)}' | cut -c1-1200
+          echo "== fd ao vivo"; curl -s -H "X-Auth-Token: $FOOTBALL_DATA_KEY" "https://api.football-data.org/v4/competitions/BSA/matches?season=2026&status=IN_PLAY,PAUSED,FINISHED&dateFrom=2026-10-17&dateTo=2026-10-19" | jq -c '[.matches[] | {status, minute, score: .score.fullTime, h: .homeTeam.shortName}]' | cut -c1-1200
