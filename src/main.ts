@@ -27,7 +27,7 @@ import { escudo, gravarPref, seletor } from "./ui/componentes";
 import { dataHora } from "./ui/formato";
 import { html, type Html } from "./ui/html";
 import { abasInferiores, listaClubes, navegacao } from "./ui/lateral";
-import { compartilhar } from "./ui/compartilhar";
+import { compartilhar, compartilharRodada } from "./ui/compartilhar";
 
 const $ = (id: string) => document.getElementById(id)!;
 
@@ -135,6 +135,11 @@ document.addEventListener("keydown", (e) => {
 $("main").addEventListener("click", (e) => {
   const alvo = e.target as HTMLElement;
   if (rota.secao === "simular" && cliqueSimulador(alvo, desenhar)) return;
+  const compR = alvo.closest<HTMLButtonElement>("button[data-compartilhar-rodada]");
+  if (compR) {
+    void compartilharRodada(Number(compR.dataset.compartilharRodada), compR);
+    return;
+  }
   const comp = alvo.closest<HTMLButtonElement>("button[data-compartilhar]");
   if (comp) {
     void compartilhar(comp.dataset.compartilhar!, comp);

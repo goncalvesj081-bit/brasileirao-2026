@@ -63,3 +63,49 @@ describe("público", () => {
     expect(r.menores[0].slice(0, 4)).toEqual([3558, "Chapecoense", "1-4", "Athletico-PR"]);
   });
 });
+
+import { lerPublicoDoClube } from "../scripts/lib/publico-clubes";
+describe("público na página do clube", () => {
+  it("pega só os jogos em casa da Série A", () => {
+    const txt = `==Competitions==
+===Campeonato Carioca===
+{{football box collapsible
+|date=11 January 2026
+|team1=[[CR Flamengo|Flamengo]]
+|score=2–0
+|team2=[[Associação Atlética Portuguesa (RJ)|Portuguesa (RJ)]]
+|attendance=5,755
+}}
+===Campeonato Brasileiro Série A===
+====Matches====
+{{football box collapsible
+|round=Matchday 1
+|date={{Start date|2026|1|28}}
+|team1=[[CR Flamengo|Flamengo]] {{flagicon|BRA}}
+|score=0–3
+|team2=[[SE Palmeiras|Palmeiras]]
+|attendance={{formatnum:67251}}
+|report=<ref>x</ref>
+}}
+{{football box collapsible
+|date=4 February 2026
+|team1=[[Santos FC|Santos]]
+|score=1–3
+|team2=[[CR Flamengo|Flamengo]]
+|attendance=15,000
+}}
+{{football box collapsible
+|date=8 February 2026
+|team1=[[CR Flamengo|Flamengo]]
+|team2=[[Bahia]]
+|attendance=
+}}
+===Copa Libertadores===
+{{football box collapsible
+|team1=[[CR Flamengo|Flamengo]]
+|team2=[[Cruzeiro EC|Cruzeiro]]
+|attendance=72,481
+}}`;
+    expect(lerPublicoDoClube("Flamengo", txt)).toEqual([["", "Flamengo", "Palmeiras", 67251]]);
+  });
+});

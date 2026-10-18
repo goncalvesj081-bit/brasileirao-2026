@@ -1,5 +1,7 @@
 import { sigla } from "../../config/clubes";
-import { adiado, porData, posicao, proximaRodada, resultados, restantes, rodadasComJogo, tabela } from "../dados";
+import { adiado, porData, posicao, proximaRodada, resultados, restantes, retrospectoAntigo, rodadasComJogo, tabela } from "../dados";
+import { retrospecto } from "../modelo/retrospecto";
+import { temporada } from "../../config/temporada";
 import { sims } from "../estado";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { efeitosDoJogo, maiorEfeito, type Efeito, type ObjetivoJogo } from "../modelo/impacto";
@@ -38,6 +40,16 @@ function oQueMuda(g: Jogo, efs: Efeito[]): Html {
   return html`<details class="muda"><summary>O que muda com o resultado</summary>
     <table><thead><tr><th class="l"></th><th>${sigla(g.mandante)} vence</th><th>Empate</th><th>${sigla(g.visitante)} vence</th></tr></thead>
     <tbody>${efs.map(linha)}</tbody></table></details>`;
+}
+
+/** "Retrospecto desde 2022: Flamengo 3 vitórias, 2 empates, Bahia 1 · último: 2025, Flamengo 2 x 1" */
+function retroLinha(g: Jogo): Html {
+  const r = retrospecto(g.mandante, g.visitante, retrospectoAntigo.jogos, resultados, temporada.ano);
+  if (!r.jogos.length) return html``;
+  const u = r.jogos[r.jogos.length - 1];
+  const desde = Math.min(...r.jogos.map((j) => j[0]));
+  const vit = (n: number) => `${n} vitória${n === 1 ? "" : "s"}`;
+  return html`<p class="retro">Retrospecto desde ${desde}: <b>${sigla(g.mandante)}</b> ${vit(r.v)}, ${r.e} empate${r.e === 1 ? "" : "s"}, <b>${sigla(g.visitante)}</b> ${vit(r.d)} · último: ${u[0]}, ${sigla(u[2])} ${u[4]} x ${u[5]} ${sigla(u[3])}</p>`;
 }
 
 const ICONE: Record<Lance["tipo"], string> = { gol: "⚽", contra: "⚽", amarelo: "🟨", vermelho: "🟥" };
@@ -181,6 +193,7 @@ export function telaRodada(numero: number | null): Html {
             <div class="split"><i style="flex:${H}"></i><i style="flex:${D}"></i><i style="flex:${A}"></i></div>
             <div class="nums"><span class="${H > A ? "fav" : ""}">${pct(H)}</span><span>Empate ${pct(D)}</span><span class="${A > H ? "fav" : ""}">${pct(A)}</span></div>
           </div>
+          ${vivo ? "" : retroLinha(g)}
           ${E ? oQueMuda(g, efeitosRelevantes(g, E)) : ""}
         </article>`;
       })}
@@ -192,5 +205,6 @@ export function telaRodada(numero: number | null): Html {
         </article>`,
       )}
     </div>
+    ${disputados.length || faltam.some((g) => g.aoVivo) ? html`<button type="button" class="discreto compartilhar" data-compartilhar-rodada="${r}">Compartilhar a rodada</button>` : ""}
     <p class="note">Barra: chance de vitória do mandante, empate e vitória do visitante. "O que muda" mostra a chance final de cada time em cada resultado, com o resto do campeonato sorteado. Para testar placares, use <a href="#/simular">Simular</a>.</p>`;
 }

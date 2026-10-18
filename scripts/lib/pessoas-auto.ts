@@ -8,7 +8,7 @@ type Troca = [string, string, string, string, string];
 // ---------- wikitext ----------
 
 /** Divide no separador `sep` só fora de [[ ]] e {{ }}. */
-function dividirTopo(s: string, sep: string): string[] {
+export function dividirTopo(s: string, sep: string): string[] {
   const out: string[] = [];
   let prof = 0,
     ini = 0;

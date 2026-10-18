@@ -15,6 +15,8 @@ import { buscarAssistencias, buscarTecnicos } from "./lib/pessoas-auto";
 import { buscarSerieB } from "./lib/serieb-espn";
 import { buscarCartoes } from "./lib/cartoes-espn";
 import { buscarPublico } from "./lib/publico-wiki";
+import { buscarPublicoClubes, type JogoPublico } from "./lib/publico-clubes";
+import { buscarTemporada, type JogoAntigo } from "./lib/retrospecto-espn";
 import type { SerieB } from "../src/modelo/serieb";
 import { buscarCopas } from "./lib/copas-espn";
 import type { Copas } from "../src/modelo/copas";
@@ -152,6 +154,38 @@ async function main() {
   };
   await guardar("cartoes.json", "cartões (ESPN)", async () => ({ lista: await buscarCartoes(ano) }));
   await guardar("publico.json", "público (Wikipédia)", () => buscarPublico(ano));
+
+  // público de cada jogo em casa (páginas dos clubes na Wikipédia): no máximo a cada 6 horas, são ~40 consultas
+  try {
+    const pc = ler<{ atualizado: string; clubes: Record<string, JogoPublico[]> }>("publico-clubes.json", { atualizado: "", clubes: {} });
+    if (!pc.atualizado || Date.now() - Date.parse(pc.atualizado) > 6 * 3600_000) {
+      const clubes = await buscarPublicoClubes(ano);
+      // clube que sumiu nesta busca (página fora do ar, limite da Wikipédia) mantém o que já tinha
+      const junto = { ...pc.clubes, ...clubes };
+      novos["publico-clubes.json"] = json({ atualizado: new Date().toISOString(), clubes: junto });
+      console.log(`Público por clube: ${Object.keys(clubes).length} clubes com dados.`);
+    }
+  } catch (e) {
+    console.warn(`Aviso: público por clube não atualizado (${(e as Error).message}).`);
+  }
+
+  // retrospecto: temporadas passadas (desde 2022) que ainda não estão no arquivo
+  try {
+    const retro = ler<{ anos: number[]; jogos: JogoAntigo[] }>("retrospecto.json", { anos: [], jogos: [] });
+    const faltam = Array.from({ length: ano - 2022 }, (_, k) => 2022 + k).filter((a) => !retro.anos.includes(a));
+    for (const a of faltam) {
+      retro.jogos.push(...(await buscarTemporada(a)));
+      retro.anos.push(a);
+      console.log(`Retrospecto: temporada ${a} baixada.`);
+    }
+    if (faltam.length) {
+      retro.anos.sort();
+      retro.jogos.sort((x, y) => x[1].localeCompare(y[1]));
+      novos["retrospecto.json"] = JSON.stringify(retro) + "\n";
+    }
+  } catch (e) {
+    console.warn(`Aviso: retrospecto não atualizado (${(e as Error).message}).`);
+  }
 
   // copas (ESPN, sem chave): se falhar, mantém o arquivo anterior; a data só muda quando o conteúdo muda
   try {

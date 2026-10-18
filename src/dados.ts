@@ -9,6 +9,8 @@ import escudosJson from "../data/escudos.json";
 import copasJson from "../data/copas.json";
 import cartoesJson from "../data/cartoes.json";
 import publicoJson from "../data/publico.json";
+import retrospectoJson from "../data/retrospecto.json";
+import publicoClubesJson from "../data/publico-clubes.json";
 import { CLUBES } from "../config/clubes";
 import { classificacao } from "./modelo/classificacao";
 import type { Copas } from "./modelo/copas";
@@ -27,6 +29,8 @@ export const copas = copasJson as unknown as Copas;
 export const cartoes = cartoesJson as unknown as { atualizado: string; lista: [string, string, number, number, "suspenso" | "pendurado" | ""][] };
 /** [público, mandante, placar, visitante, estádio, data, rodada] */
 type LinhaPublico = [number, string, string, string, string, string, number];
+/** Jogos de temporadas passadas entre os clubes atuais (para o retrospecto) */
+export const retrospectoAntigo = retrospectoJson as unknown as { anos: number[]; jogos: [number, string, string, string, number, number][] };
 export const publico = publicoJson as unknown as { atualizado: string; maiores: LinhaPublico[]; menores: LinhaPublico[] };
 
 export const nomesClubes = CLUBES.map((c) => c.nome);
@@ -107,4 +111,16 @@ export function aplicarPlacares(ps: { mandante: string; visitante: string; gm: n
   if (resultadoNovo) tabela.splice(0, tabela.length, ...classificacao(nomesClubes, resultados));
   meta.aoVivo = restantes.some((g) => g.aoVivo);
   return { mudou, resultadoNovo };
+}
+
+/** Público dos jogos em casa (páginas dos clubes na Wikipédia), mais os da lista de maiores e menores públicos. */
+const publicoClubes = publicoClubesJson as unknown as { atualizado: string; clubes: Record<string, [string, string, string, number][]> };
+export function publicoEmCasa(clube: string): { media: number; jogos: number; maior: [string, number] | null; emCasa: number } {
+  const porAdversario = new Map<string, number>();
+  for (const [, m, v, n] of publicoClubes.clubes[clube] ?? []) if (m === clube) porAdversario.set(v, n);
+  for (const l of [...publico.maiores, ...publico.menores]) if (l[1] === clube && !porAdversario.has(l[3])) porAdversario.set(l[3], l[0]);
+  const ns = [...porAdversario.values()];
+  const emCasa = resultados.filter((g) => g.mandante === clube).length;
+  const maior = [...porAdversario.entries()].sort((a, b) => b[1] - a[1])[0] ?? null;
+  return { media: ns.length ? ns.reduce((a, b) => a + b, 0) / ns.length : 0, jogos: ns.length, maior, emCasa };
 }

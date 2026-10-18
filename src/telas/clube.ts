@@ -1,4 +1,4 @@
-import { adiado, cartoes, historico, linhaDe, pessoas, porData, posicao, resultados, restantes, tabela } from "../dados";
+import { adiado, cartoes, historico, linhaDe, pessoas, porData, posicao, publicoEmCasa, resultados, restantes, tabela } from "../dados";
 import { sims } from "../estado";
 import { jogosDoClube } from "../modelo/classificacao";
 import { forcas, golsEsperados } from "../modelo/forcas";
@@ -185,6 +185,15 @@ function destaques(clube: string): Html {
       return c.length
         ? html`<section class="tsec"><h3>Suspensos e pendurados</h3><ol class="plist">${c.map((l) => html`<li><span>${l[0]}</span><b class="${l[4] === "suspenso" ? "down" : ""}">${l[4] === "suspenso" ? "suspenso no próximo jogo" : `pendurado, ${l[2]} amarelos`}</b></li>`)}</ol><p class="note">Pelos cartões da ESPN, de ${cartoes.atualizado}.</p></section>`
         : "";
+    })()}
+    ${(() => {
+      const p = publicoEmCasa(clube);
+      return html`<section class="tsec"><h3>Público em casa</h3>${
+        p.jogos
+          ? html`<p class="big-line">${Math.round(p.media).toLocaleString("pt-BR")} <small class="dim">de média</small></p>
+            <p class="note">Média de ${p.jogos} dos ${p.emCasa} jogos em casa na Série A${p.maior ? `; maior público: ${p.maior[1].toLocaleString("pt-BR")}, contra o ${p.maior[0]}` : ""}. Público da Wikipédia (página do clube e lista de maiores e menores públicos).</p>`
+          : html`<p class="note">A Wikipédia ainda não tem o público dos jogos em casa do ${clube}.</p>`
+      }</section>`;
     })()}
     ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(pessoas.assistencias)}</section>` : ""}
 </div>`;

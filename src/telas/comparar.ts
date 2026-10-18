@@ -1,7 +1,9 @@
 // Comparar dois clubes lado a lado: campanha, chances, confronto direto e posição rodada a rodada.
 
 import { slug } from "../../config/clubes";
-import { historico, linhaDe, nomesClubes, posicao, restantes, resultados } from "../dados";
+import { historico, linhaDe, nomesClubes, posicao, restantes, resultados, retrospectoAntigo } from "../dados";
+import { retrospecto } from "../modelo/retrospecto";
+import { temporada } from "../../config/temporada";
 import { sims } from "../estado";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { probResultado } from "../modelo/poisson";
@@ -47,7 +49,6 @@ export function telaComparar(a: string, b: string): Html {
   const cmp = (x: number, y: number, maior = true) => (x === y ? null : (x > y) === maior ? "a" : "b");
   const p = (x: number | undefined) => (x == null ? "…" : pct(x));
 
-  const diretos = resultados.filter((g) => (g.mandante === A && g.visitante === B) || (g.mandante === B && g.visitante === A));
   const faltam = restantes.filter((g) => (g.mandante === A && g.visitante === B) || (g.mandante === B && g.visitante === A));
   const F = forcas(tabela);
 
@@ -70,8 +71,13 @@ export function telaComparar(a: string, b: string): Html {
         ${linha("Pontos no fim", res ? dec(res.pts[posicao(A)], 0) : "…", res ? dec(res.pts[posicao(B)], 0) : "…")}
       </tbody>
     </table></div>
-    <section class="tsec"><h3>Confronto direto em 2026</h3>
-      ${diretos.length ? html`<ul class="plist">${diretos.map((g) => html`<li><span>${g.rodada}ª: ${g.mandante} ${g.gm} x ${g.gv} ${g.visitante}</span></li>`)}</ul>` : html`<p class="note">Ainda não se enfrentaram.</p>`}
+    <section class="tsec"><h3>Confronto direto</h3>
+      ${(() => {
+        const r = retrospecto(A, B, retrospectoAntigo.jogos, resultados, temporada.ano);
+        if (!r.jogos.length) return html`<p class="note">Não se enfrentaram na Série A desde ${retrospectoAntigo.anos[0] ?? temporada.ano}.</p>`;
+        return html`<p class="note">Desde ${r.jogos[0][0]}: <b>${A}</b> ${r.v} vitória${r.v === 1 ? "" : "s"}, ${r.e} empate${r.e === 1 ? "" : "s"}, <b>${B}</b> ${r.d} vitória${r.d === 1 ? "" : "s"}.</p>
+          <ul class="plist">${[...r.jogos].reverse().map(([ano, data, m, v, gm, gv]) => html`<li><span>${ano}${data ? `, ${data.slice(8, 10)}/${data.slice(5, 7)}` : ""}: ${m} ${gm} x ${gv} ${v}</span></li>`)}</ul>`;
+      })()}
       ${faltam.map((g) => {
         const [H, D, Aw] = probResultado(...golsEsperados(F, g.mandante, g.visitante));
         return html`<p class="note">Falta: ${g.mandante} x ${g.visitante}, ${dataJogo(g.data, g.semHora)}. ${g.mandante} vence ${pct(H)}, empate ${pct(D)}, ${g.visitante} vence ${pct(Aw)}.</p>`;

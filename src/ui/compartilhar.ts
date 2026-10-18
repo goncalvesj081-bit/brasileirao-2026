@@ -1,7 +1,8 @@
 // Gera uma imagem com as chances do clube e abre o compartilhamento do celular (ou baixa a imagem).
 
 import { cores, escudoFixo, slug } from "../../config/clubes";
-import { escudos, linhaDe, meta, posicao } from "../dados";
+import { escudos, linhaDe, meta, nomesClubes, posicao, restantes, resultados, tabela } from "../dados";
+import { classificacao } from "../modelo/classificacao";
 import { sims } from "../estado";
 import { chancesSim } from "../modelo/simular";
 import { modoVagas } from "./componentes";
@@ -110,6 +111,116 @@ export async function gerarImagem(clube: string): Promise<Blob | null> {
   g.fillText(location.host + location.pathname.replace(/\/$/, ""), 90, H - 60);
 
   return new Promise((ok) => cv.toBlob((b) => ok(b), "image/png"));
+}
+
+const escudoDe = (c: string) => carregarEscudo(`escudos/${slug(c)}.png`).then((e) => e ?? carregarEscudo(escudoFixo(c) ?? escudos[c]));
+
+/** Imagem da rodada: resultados (e placares ao vivo) e quem subiu ou desceu na tabela. */
+export async function gerarImagemRodada(r: number): Promise<Blob | null> {
+  await document.fonts?.ready;
+  const feitos = resultados.filter((g) => g.rodada === r);
+  const vivos = restantes.filter((g) => g.rodada === r && g.aoVivo);
+  const jogos = [...feitos.map((g) => ({ g, gm: g.gm, gv: g.gv, vivo: false })), ...vivos.map((g) => ({ g, gm: g.aoVivo!.gm, gv: g.aoVivo!.gv, vivo: true }))].sort((a, b) =>
+    (a.g.data ?? "").localeCompare(b.g.data ?? ""),
+  );
+  if (!jogos.length) return null;
+  const antes = classificacao(nomesClubes, resultados.filter((g) => g.rodada !== r));
+  const posAntes = new Map(antes.map((t, p) => [t.clube, p + 1]));
+  const mov = tabela.map((t, p) => ({ c: t.clube, p: p + 1, d: posAntes.get(t.clube)! - (p + 1) })).filter((x) => x.d !== 0);
+  const subiram = [...mov].sort((a, b) => b.d - a.d).slice(0, 3).filter((x) => x.d > 0);
+  const desceram = [...mov].sort((a, b) => a.d - b.d).slice(0, 3).filter((x) => x.d < 0);
+
+  const cv = document.createElement("canvas");
+  cv.width = W;
+  cv.height = H;
+  const g = cv.getContext("2d")!;
+  g.fillStyle = COR.fundo;
+  g.fillRect(0, 0, W, H);
+  g.fillStyle = COR.destaque;
+  g.fillRect(0, 0, W, 14);
+  g.fillStyle = COR.tinta;
+  g.font = `900 84px ${FONTE}`;
+  g.fillText(`${r}ª rodada`, 70, 150);
+  g.fillStyle = COR.apagado;
+  g.font = `600 34px ${FONTE}`;
+  g.fillText(`Brasileirão 2026${vivos.length ? " · com jogos em andamento" : ""}`, 70, 205);
+
+  const linhaH = Math.min(72, 700 / jogos.length);
+  let y = 270;
+  const escs = await Promise.all(jogos.flatMap((j) => [escudoDe(j.g.mandante), escudoDe(j.g.visitante)]));
+  jogos.forEach((j, k) => {
+    const meio = W / 2;
+    g.font = `700 36px ${FONTE}`;
+    g.fillStyle = COR.tinta;
+    const m = j.g.mandante,
+      v = j.g.visitante;
+    g.fillText(m, meio - 110 - g.measureText(m).width, y + 12, 330);
+    g.fillText(v, meio + 110, y + 12, 330);
+    const em = escs[2 * k],
+      ev = escs[2 * k + 1];
+    if (em) g.drawImage(em, meio - 100, y - 26, 44, 44);
+    if (ev) g.drawImage(ev, meio + 56, y - 26, 44, 44);
+    g.font = `900 42px ${FONTE}`;
+    g.fillStyle = j.vivo ? "#ff6b5e" : COR.tinta;
+    const placar = `${j.gm}–${j.gv}`;
+    g.fillText(placar, meio - g.measureText(placar).width / 2, y + 14);
+    y += linhaH;
+  });
+
+  y += 40;
+  g.strokeStyle = COR.linha;
+  g.lineWidth = 3;
+  g.beginPath();
+  g.moveTo(70, y - 30);
+  g.lineTo(W - 70, y - 30);
+  g.stroke();
+  const coluna = (titulo: string, lista: typeof mov, x: number, cor: string, seta: string) => {
+    g.fillStyle = COR.apagado;
+    g.font = `700 32px ${FONTE}`;
+    g.fillText(titulo, x, y + 20);
+    lista.forEach((it, k) => {
+      g.fillStyle = cor;
+      g.font = `800 34px ${FONTE}`;
+      g.fillText(`${seta}${Math.abs(it.d)}`, x, y + 78 + k * 54);
+      g.fillStyle = COR.tinta;
+      g.font = `600 34px ${FONTE}`;
+      g.fillText(`${it.p}º ${it.c}`, x + 80, y + 78 + k * 54, 360);
+    });
+  };
+  coluna("Mais subiu", subiram, 70, "#9be15d", "▲");
+  coluna("Mais desceu", desceram, W / 2 + 20, "#ff6b5e", "▼");
+
+  g.fillStyle = COR.tinta;
+  g.font = `800 34px ${FONTE}`;
+  g.fillText(location.host + location.pathname.replace(/\/$/, ""), 70, H - 60);
+  return new Promise((ok) => cv.toBlob((b) => ok(b), "image/png"));
+}
+
+async function enviar(blob: Blob, nome: string, titulo: string) {
+  const arquivo = new File([blob], nome, { type: "image/png" });
+  const url = location.href;
+  if (navigator.canShare?.({ files: [arquivo] })) {
+    await navigator.share({ files: [arquivo], title: titulo, text: url }).catch(() => {});
+  } else {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = nome;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }
+}
+
+export async function compartilharRodada(r: number, botao: HTMLButtonElement) {
+  const original = botao.textContent;
+  botao.disabled = true;
+  botao.textContent = "Gerando imagem…";
+  try {
+    const blob = await gerarImagemRodada(r);
+    if (blob) await enviar(blob, `rodada-${r}-brasileirao-2026.png`, `${r}ª rodada do Brasileirão 2026`);
+  } finally {
+    botao.disabled = false;
+    botao.textContent = original;
+  }
 }
 
 export async function compartilhar(clube: string, botao: HTMLButtonElement) {

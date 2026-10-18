@@ -1,4 +1,4 @@
-import { nomesClubes, publico, restantes, resultados, tabela } from "../dados";
+import { nomesClubes, publico, publicoEmCasa, restantes, resultados, tabela } from "../dados";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { probResultado } from "../modelo/poisson";
 import { classificacao, jogosDoClube, sequencia, type Res } from "../modelo/classificacao";
@@ -101,6 +101,15 @@ function telaPublico(): Html {
         ([n, m, pl, v, est, d, r], k) => html`<tr><td class="pos">${k + 1}</td><td class="big">${n.toLocaleString("pt-BR")}</td><td class="l"><span class="quem">${escudo(m, 16)}${m} ${pl} ${v}${escudo(v, 16)}</span></td><td class="l dim w">${est}</td><td class="l dim w">${d}</td><td class="dim w">${r ? `${r}ª` : ""}</td></tr>`,
       )}</tbody>
     </table></div></section>`;
-  return html`${tab("Maiores públicos", publico.maiores)}${tab("Menores públicos", publico.menores)}
+  const medias = nomesClubes
+    .map((c) => ({ c, ...publicoEmCasa(c) }))
+    .filter((x) => x.jogos)
+    .sort((a, b) => b.media - a.media);
+  const tabMedias = html`<section class="tsec"><h3>Média de público em casa</h3>
+    <div class="box"><table class="tab"><thead><tr><th>#</th><th class="l">Clube</th><th>Média</th><th>Jogos com público</th></tr></thead><tbody>${medias.map(
+      (x, k) => html`<tr ${atrLinha(x.c)}><td class="pos">${k + 1}</td>${celClube(x.c)}<td class="big">${Math.round(x.media).toLocaleString("pt-BR")}</td><td class="dim">${x.jogos} de ${x.emCasa}</td></tr>`,
+    )}</tbody></table></div>
+    <p class="note">Só clubes com público informado na Wikipédia; a média usa os jogos que têm o número.</p></section>`;
+  return html`${medias.length ? tabMedias : ""}${tab("Maiores públicos", publico.maiores)}${tab("Menores públicos", publico.menores)}
     <p class="note">Público pagante. A fonte só lista os dez maiores e os dez menores do campeonato. Dados da Wikipédia${publico.atualizado ? `, de ${publico.atualizado}` : ""}.</p>`;
 }
