@@ -32,7 +32,8 @@ async function opcional<T>(o: string, f: () => Promise<T>): Promise<T | null> {
 }
 
 async function main() {
-  const chave = process.env.FOOTBALL_DATA_KEY;
+  // tira espaços e quebras de linha que às vezes vêm junto ao colar a chave
+  const chave = process.env.FOOTBALL_DATA_KEY?.trim();
   if (!chave) {
     console.error("Defina FOOTBALL_DATA_KEY (no GitHub: Settings > Secrets and variables > Actions).");
     process.exit(1);
