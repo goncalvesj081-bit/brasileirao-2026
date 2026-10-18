@@ -1,7 +1,3379 @@
 {
- "atualizado": "",
- "clubes": [],
- "resultados": [],
- "restantes": [],
- "escudos": {}
+ "atualizado": "2026-10-18T17:36:30.890Z",
+ "clubes": [
+  "América Mineiro",
+  "Athletic",
+  "Atlético Goianiense",
+  "Avaí",
+  "Botafogo-SP",
+  "Ceará",
+  "CRB",
+  "Criciúma",
+  "Cuiabá",
+  "Fortaleza",
+  "Goiás",
+  "Juventude",
+  "Londrina",
+  "Náutico",
+  "Novorizontino",
+  "Operário PR",
+  "Ponte Preta",
+  "São Bernardo",
+  "Sport",
+  "Vila Nova"
+ ],
+ "resultados": [
+  {
+   "id": "b401860064",
+   "rodada": 1,
+   "mandante": "Vila Nova",
+   "visitante": "CRB",
+   "data": "2026-03-21T20:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860070",
+   "rodada": 1,
+   "mandante": "Ceará",
+   "visitante": "São Bernardo",
+   "data": "2026-03-21T21:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860065",
+   "rodada": 1,
+   "mandante": "Operário PR",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-03-21T21:15Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860071",
+   "rodada": 1,
+   "mandante": "Botafogo-SP",
+   "visitante": "Fortaleza",
+   "data": "2026-03-21T22:15Z",
+   "gm": 4,
+   "gv": 0
+  },
+  {
+   "id": "b401860069",
+   "rodada": 1,
+   "mandante": "Cuiabá",
+   "visitante": "Sport",
+   "data": "2026-03-21T23:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860063",
+   "rodada": 1,
+   "mandante": "Avaí",
+   "visitante": "Juventude",
+   "data": "2026-03-22T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860066",
+   "rodada": 1,
+   "mandante": "Náutico",
+   "visitante": "Criciúma",
+   "data": "2026-03-22T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860062",
+   "rodada": 1,
+   "mandante": "Athletic",
+   "visitante": "Ponte Preta",
+   "data": "2026-03-22T21:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860068",
+   "rodada": 1,
+   "mandante": "Goiás",
+   "visitante": "América Mineiro",
+   "data": "2026-03-22T21:00Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860067",
+   "rodada": 1,
+   "mandante": "Novorizontino",
+   "visitante": "Londrina",
+   "data": "2026-03-22T23:00Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860081",
+   "rodada": 2,
+   "mandante": "Juventude",
+   "visitante": "Novorizontino",
+   "data": "2026-03-31T21:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860077",
+   "rodada": 2,
+   "mandante": "Fortaleza",
+   "visitante": "Cuiabá",
+   "data": "2026-03-31T22:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860072",
+   "rodada": 2,
+   "mandante": "América Mineiro",
+   "visitante": "Botafogo-SP",
+   "data": "2026-04-01T21:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860080",
+   "rodada": 2,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Náutico",
+   "data": "2026-04-01T22:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860075",
+   "rodada": 2,
+   "mandante": "Londrina",
+   "visitante": "Goiás",
+   "data": "2026-04-01T22:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860073",
+   "rodada": 2,
+   "mandante": "Sport",
+   "visitante": "Vila Nova",
+   "data": "2026-04-01T22:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860074",
+   "rodada": 2,
+   "mandante": "Ponte Preta",
+   "visitante": "Ceará",
+   "data": "2026-04-02T00:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860079",
+   "rodada": 2,
+   "mandante": "CRB",
+   "visitante": "Avaí",
+   "data": "2026-04-02T00:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860078",
+   "rodada": 2,
+   "mandante": "Criciúma",
+   "visitante": "Athletic",
+   "data": "2026-04-02T00:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860076",
+   "rodada": 2,
+   "mandante": "São Bernardo",
+   "visitante": "Operário PR",
+   "data": "2026-04-02T22:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860091",
+   "rodada": 3,
+   "mandante": "Fortaleza",
+   "visitante": "Juventude",
+   "data": "2026-04-04T19:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860087",
+   "rodada": 3,
+   "mandante": "Cuiabá",
+   "visitante": "Ceará",
+   "data": "2026-04-04T21:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860082",
+   "rodada": 3,
+   "mandante": "Náutico",
+   "visitante": "Ponte Preta",
+   "data": "2026-04-04T21:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860086",
+   "rodada": 3,
+   "mandante": "Vila Nova",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-04-04T23:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860084",
+   "rodada": 3,
+   "mandante": "Londrina",
+   "visitante": "Sport",
+   "data": "2026-04-04T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860089",
+   "rodada": 3,
+   "mandante": "Avaí",
+   "visitante": "Operário PR",
+   "data": "2026-04-05T19:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860083",
+   "rodada": 3,
+   "mandante": "Novorizontino",
+   "visitante": "CRB",
+   "data": "2026-04-05T21:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860090",
+   "rodada": 3,
+   "mandante": "Athletic",
+   "visitante": "América Mineiro",
+   "data": "2026-04-05T23:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860088",
+   "rodada": 3,
+   "mandante": "Botafogo-SP",
+   "visitante": "São Bernardo",
+   "data": "2026-04-05T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860085",
+   "rodada": 3,
+   "mandante": "Goiás",
+   "visitante": "Criciúma",
+   "data": "2026-04-07T00:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860096",
+   "rodada": 4,
+   "mandante": "Criciúma",
+   "visitante": "Botafogo-SP",
+   "data": "2026-04-10T23:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860095",
+   "rodada": 4,
+   "mandante": "Juventude",
+   "visitante": "Goiás",
+   "data": "2026-04-11T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860093",
+   "rodada": 4,
+   "mandante": "Ponte Preta",
+   "visitante": "Vila Nova",
+   "data": "2026-04-11T21:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860092",
+   "rodada": 4,
+   "mandante": "Sport",
+   "visitante": "Avaí",
+   "data": "2026-04-11T21:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860097",
+   "rodada": 4,
+   "mandante": "Ceará",
+   "visitante": "Náutico",
+   "data": "2026-04-11T23:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860100",
+   "rodada": 4,
+   "mandante": "América Mineiro",
+   "visitante": "Novorizontino",
+   "data": "2026-04-12T21:00Z",
+   "gm": 0,
+   "gv": 3
+  },
+  {
+   "id": "b401860094",
+   "rodada": 4,
+   "mandante": "Operário PR",
+   "visitante": "Cuiabá",
+   "data": "2026-04-12T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860101",
+   "rodada": 4,
+   "mandante": "São Bernardo",
+   "visitante": "Fortaleza",
+   "data": "2026-04-12T21:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860098",
+   "rodada": 4,
+   "mandante": "CRB",
+   "visitante": "Athletic",
+   "data": "2026-04-12T23:00Z",
+   "gm": 2,
+   "gv": 3
+  },
+  {
+   "id": "b401860099",
+   "rodada": 4,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Londrina",
+   "data": "2026-04-12T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860102",
+   "rodada": 5,
+   "mandante": "América Mineiro",
+   "visitante": "Sport",
+   "data": "2026-04-18T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860105",
+   "rodada": 5,
+   "mandante": "Náutico",
+   "visitante": "São Bernardo",
+   "data": "2026-04-18T21:00Z",
+   "gm": 0,
+   "gv": 3
+  },
+  {
+   "id": "b401860104",
+   "rodada": 5,
+   "mandante": "Vila Nova",
+   "visitante": "Operário PR",
+   "data": "2026-04-18T21:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860103",
+   "rodada": 5,
+   "mandante": "Avaí",
+   "visitante": "Ponte Preta",
+   "data": "2026-04-18T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860110",
+   "rodada": 5,
+   "mandante": "CRB",
+   "visitante": "Juventude",
+   "data": "2026-04-18T23:45Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860111",
+   "rodada": 5,
+   "mandante": "Botafogo-SP",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-04-19T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860107",
+   "rodada": 5,
+   "mandante": "Londrina",
+   "visitante": "Ceará",
+   "data": "2026-04-19T19:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860108",
+   "rodada": 5,
+   "mandante": "Goiás",
+   "visitante": "Cuiabá",
+   "data": "2026-04-19T21:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860109",
+   "rodada": 5,
+   "mandante": "Fortaleza",
+   "visitante": "Criciúma",
+   "data": "2026-04-19T23:00Z",
+   "gm": 3,
+   "gv": 2
+  },
+  {
+   "id": "b401860106",
+   "rodada": 5,
+   "mandante": "Novorizontino",
+   "visitante": "Athletic",
+   "data": "2026-04-19T23:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860117",
+   "rodada": 6,
+   "mandante": "Cuiabá",
+   "visitante": "Botafogo-SP",
+   "data": "2026-04-23T00:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860114",
+   "rodada": 6,
+   "mandante": "Ponte Preta",
+   "visitante": "América Mineiro",
+   "data": "2026-04-24T23:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860113",
+   "rodada": 6,
+   "mandante": "Sport",
+   "visitante": "Novorizontino",
+   "data": "2026-04-25T23:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860121",
+   "rodada": 6,
+   "mandante": "Juventude",
+   "visitante": "Londrina",
+   "data": "2026-04-26T00:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860116",
+   "rodada": 6,
+   "mandante": "São Bernardo",
+   "visitante": "Goiás",
+   "data": "2026-04-26T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860119",
+   "rodada": 6,
+   "mandante": "Ceará",
+   "visitante": "Vila Nova",
+   "data": "2026-04-26T21:00Z",
+   "gm": 3,
+   "gv": 3
+  },
+  {
+   "id": "b401860115",
+   "rodada": 6,
+   "mandante": "Operário PR",
+   "visitante": "Fortaleza",
+   "data": "2026-04-26T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860120",
+   "rodada": 6,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Avaí",
+   "data": "2026-04-26T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860118",
+   "rodada": 6,
+   "mandante": "Criciúma",
+   "visitante": "CRB",
+   "data": "2026-04-26T23:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860112",
+   "rodada": 6,
+   "mandante": "Athletic",
+   "visitante": "Náutico",
+   "data": "2026-04-27T22:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860130",
+   "rodada": 7,
+   "mandante": "Botafogo-SP",
+   "visitante": "Náutico",
+   "data": "2026-05-02T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860131",
+   "rodada": 7,
+   "mandante": "Cuiabá",
+   "visitante": "Criciúma",
+   "data": "2026-05-02T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860123",
+   "rodada": 7,
+   "mandante": "Fortaleza",
+   "visitante": "Goiás",
+   "data": "2026-05-02T23:30Z",
+   "gm": 4,
+   "gv": 1
+  },
+  {
+   "id": "b401860122",
+   "rodada": 7,
+   "mandante": "Operário PR",
+   "visitante": "Londrina",
+   "data": "2026-05-03T19:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860125",
+   "rodada": 7,
+   "mandante": "São Bernardo",
+   "visitante": "Ponte Preta",
+   "data": "2026-05-03T19:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860126",
+   "rodada": 7,
+   "mandante": "Sport",
+   "visitante": "Ceará",
+   "data": "2026-05-03T21:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860128",
+   "rodada": 7,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Juventude",
+   "data": "2026-05-03T21:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860127",
+   "rodada": 7,
+   "mandante": "América Mineiro",
+   "visitante": "CRB",
+   "data": "2026-05-03T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860129",
+   "rodada": 7,
+   "mandante": "Avaí",
+   "visitante": "Novorizontino",
+   "data": "2026-05-03T23:30Z",
+   "gm": 3,
+   "gv": 3
+  },
+  {
+   "id": "b401860124",
+   "rodada": 7,
+   "mandante": "Vila Nova",
+   "visitante": "Athletic",
+   "data": "2026-05-04T22:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860133",
+   "rodada": 8,
+   "mandante": "Goiás",
+   "visitante": "Vila Nova",
+   "data": "2026-05-09T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860139",
+   "rodada": 8,
+   "mandante": "Athletic",
+   "visitante": "Cuiabá",
+   "data": "2026-05-09T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860135",
+   "rodada": 8,
+   "mandante": "Ponte Preta",
+   "visitante": "Sport",
+   "data": "2026-05-09T21:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860141",
+   "rodada": 8,
+   "mandante": "Ceará",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-05-09T22:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860137",
+   "rodada": 8,
+   "mandante": "CRB",
+   "visitante": "Operário PR",
+   "data": "2026-05-09T23:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860132",
+   "rodada": 8,
+   "mandante": "Juventude",
+   "visitante": "Criciúma",
+   "data": "2026-05-10T00:15Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860134",
+   "rodada": 8,
+   "mandante": "Náutico",
+   "visitante": "América Mineiro",
+   "data": "2026-05-10T19:00Z",
+   "gm": 4,
+   "gv": 0
+  },
+  {
+   "id": "b401860138",
+   "rodada": 8,
+   "mandante": "Avaí",
+   "visitante": "Fortaleza",
+   "data": "2026-05-10T21:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860136",
+   "rodada": 8,
+   "mandante": "Novorizontino",
+   "visitante": "Botafogo-SP",
+   "data": "2026-05-10T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860140",
+   "rodada": 8,
+   "mandante": "Londrina",
+   "visitante": "São Bernardo",
+   "data": "2026-05-12T22:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860143",
+   "rodada": 9,
+   "mandante": "Operário PR",
+   "visitante": "Náutico",
+   "data": "2026-05-16T19:00Z",
+   "gm": 2,
+   "gv": 6
+  },
+  {
+   "id": "b401860150",
+   "rodada": 9,
+   "mandante": "São Bernardo",
+   "visitante": "América Mineiro",
+   "data": "2026-05-16T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860144",
+   "rodada": 9,
+   "mandante": "Goiás",
+   "visitante": "Botafogo-SP",
+   "data": "2026-05-16T21:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860145",
+   "rodada": 9,
+   "mandante": "Cuiabá",
+   "visitante": "Novorizontino",
+   "data": "2026-05-16T23:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860148",
+   "rodada": 9,
+   "mandante": "Athletic",
+   "visitante": "Juventude",
+   "data": "2026-05-17T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860151",
+   "rodada": 9,
+   "mandante": "Vila Nova",
+   "visitante": "Avaí",
+   "data": "2026-05-17T21:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860147",
+   "rodada": 9,
+   "mandante": "Ceará",
+   "visitante": "Fortaleza",
+   "data": "2026-05-17T21:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860146",
+   "rodada": 9,
+   "mandante": "Criciúma",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-05-17T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860149",
+   "rodada": 9,
+   "mandante": "Sport",
+   "visitante": "CRB",
+   "data": "2026-05-17T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860142",
+   "rodada": 9,
+   "mandante": "Ponte Preta",
+   "visitante": "Londrina",
+   "data": "2026-05-18T22:00Z",
+   "gm": 1,
+   "gv": 4
+  },
+  {
+   "id": "b401860158",
+   "rodada": 10,
+   "mandante": "Náutico",
+   "visitante": "Cuiabá",
+   "data": "2026-05-22T22:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860157",
+   "rodada": 10,
+   "mandante": "Novorizontino",
+   "visitante": "Ceará",
+   "data": "2026-05-23T19:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860155",
+   "rodada": 10,
+   "mandante": "Fortaleza",
+   "visitante": "Londrina",
+   "data": "2026-05-23T21:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860156",
+   "rodada": 10,
+   "mandante": "Juventude",
+   "visitante": "Sport",
+   "data": "2026-05-23T23:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860161",
+   "rodada": 10,
+   "mandante": "Atlético Goianiense",
+   "visitante": "São Bernardo",
+   "data": "2026-05-24T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860154",
+   "rodada": 10,
+   "mandante": "CRB",
+   "visitante": "Ponte Preta",
+   "data": "2026-05-24T19:30Z",
+   "gm": 4,
+   "gv": 2
+  },
+  {
+   "id": "b401860160",
+   "rodada": 10,
+   "mandante": "América Mineiro",
+   "visitante": "Vila Nova",
+   "data": "2026-05-24T21:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860152",
+   "rodada": 10,
+   "mandante": "Avaí",
+   "visitante": "Goiás",
+   "data": "2026-05-24T22:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860159",
+   "rodada": 10,
+   "mandante": "Operário PR",
+   "visitante": "Criciúma",
+   "data": "2026-05-24T23:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860153",
+   "rodada": 10,
+   "mandante": "Botafogo-SP",
+   "visitante": "Athletic",
+   "data": "2026-05-25T22:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860167",
+   "rodada": 11,
+   "mandante": "Juventude",
+   "visitante": "América Mineiro",
+   "data": "2026-05-30T00:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401873876",
+   "rodada": 11,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Goiás",
+   "data": "2026-05-30T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860164",
+   "rodada": 11,
+   "mandante": "Avaí",
+   "visitante": "Criciúma",
+   "data": "2026-05-30T19:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860162",
+   "rodada": 11,
+   "mandante": "Athletic",
+   "visitante": "Fortaleza",
+   "data": "2026-05-30T21:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860170",
+   "rodada": 11,
+   "mandante": "Sport",
+   "visitante": "Náutico",
+   "data": "2026-05-30T23:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860168",
+   "rodada": 11,
+   "mandante": "Londrina",
+   "visitante": "Vila Nova",
+   "data": "2026-05-31T14:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860166",
+   "rodada": 11,
+   "mandante": "São Bernardo",
+   "visitante": "Novorizontino",
+   "data": "2026-05-31T14:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860165",
+   "rodada": 11,
+   "mandante": "Ceará",
+   "visitante": "Operário PR",
+   "data": "2026-05-31T19:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860171",
+   "rodada": 11,
+   "mandante": "Cuiabá",
+   "visitante": "CRB",
+   "data": "2026-05-31T23:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860169",
+   "rodada": 11,
+   "mandante": "Ponte Preta",
+   "visitante": "Botafogo-SP",
+   "data": "2026-06-01T22:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401873965",
+   "rodada": 12,
+   "mandante": "Operário PR",
+   "visitante": "Juventude",
+   "data": "2026-06-05T23:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873959",
+   "rodada": 12,
+   "mandante": "Criciúma",
+   "visitante": "Londrina",
+   "data": "2026-06-06T14:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873940",
+   "rodada": 12,
+   "mandante": "CRB",
+   "visitante": "São Bernardo",
+   "data": "2026-06-07T19:00Z",
+   "gm": 2,
+   "gv": 3
+  },
+  {
+   "id": "b401873960",
+   "rodada": 12,
+   "mandante": "América Mineiro",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-06-08T23:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401873942",
+   "rodada": 12,
+   "mandante": "Vila Nova",
+   "visitante": "Botafogo-SP",
+   "data": "2026-06-08T23:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860175",
+   "rodada": 12,
+   "mandante": "Náutico",
+   "visitante": "Fortaleza",
+   "data": "2026-06-09T22:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860173",
+   "rodada": 12,
+   "mandante": "Ponte Preta",
+   "visitante": "Cuiabá",
+   "data": "2026-06-09T22:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401873943",
+   "rodada": 12,
+   "mandante": "Ceará",
+   "visitante": "Avaí",
+   "data": "2026-06-10T23:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873961",
+   "rodada": 12,
+   "mandante": "Goiás",
+   "visitante": "Novorizontino",
+   "data": "2026-06-10T23:00Z",
+   "gm": 0,
+   "gv": 4
+  },
+  {
+   "id": "b401873941",
+   "rodada": 12,
+   "mandante": "Sport",
+   "visitante": "Athletic",
+   "data": "2026-06-11T00:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860189",
+   "rodada": 13,
+   "mandante": "Atlético Goianiense",
+   "visitante": "CRB",
+   "data": "2026-06-12T22:00Z",
+   "gm": 3,
+   "gv": 3
+  },
+  {
+   "id": "b401873967",
+   "rodada": 13,
+   "mandante": "Juventude",
+   "visitante": "Ponte Preta",
+   "data": "2026-06-14T14:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401873947",
+   "rodada": 13,
+   "mandante": "São Bernardo",
+   "visitante": "Sport",
+   "data": "2026-06-14T14:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401873962",
+   "rodada": 13,
+   "mandante": "Athletic",
+   "visitante": "Goiás",
+   "data": "2026-06-14T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401873963",
+   "rodada": 13,
+   "mandante": "Cuiabá",
+   "visitante": "Vila Nova",
+   "data": "2026-06-14T20:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873976",
+   "rodada": 13,
+   "mandante": "Botafogo-SP",
+   "visitante": "Operário PR",
+   "data": "2026-06-14T22:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873944",
+   "rodada": 13,
+   "mandante": "Novorizontino",
+   "visitante": "Náutico",
+   "data": "2026-06-14T22:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401873946",
+   "rodada": 13,
+   "mandante": "Criciúma",
+   "visitante": "Ceará",
+   "data": "2026-06-16T00:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401873964",
+   "rodada": 13,
+   "mandante": "Londrina",
+   "visitante": "Avaí",
+   "data": "2026-06-16T00:00Z",
+   "gm": 3,
+   "gv": 2
+  },
+  {
+   "id": "b401873948",
+   "rodada": 13,
+   "mandante": "Fortaleza",
+   "visitante": "América Mineiro",
+   "data": "2026-06-16T23:00Z",
+   "gm": 0,
+   "gv": 3
+  },
+  {
+   "id": "b401873945",
+   "rodada": 14,
+   "mandante": "Sport",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-06-19T00:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401873952",
+   "rodada": 14,
+   "mandante": "Londrina",
+   "visitante": "Athletic",
+   "data": "2026-06-20T14:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401873966",
+   "rodada": 14,
+   "mandante": "Ceará",
+   "visitante": "Botafogo-SP",
+   "data": "2026-06-20T22:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873974",
+   "rodada": 14,
+   "mandante": "Vila Nova",
+   "visitante": "Náutico",
+   "data": "2026-06-20T22:00Z",
+   "gm": 4,
+   "gv": 3
+  },
+  {
+   "id": "b401873983",
+   "rodada": 14,
+   "mandante": "Avaí",
+   "visitante": "Cuiabá",
+   "data": "2026-06-21T14:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873968",
+   "rodada": 14,
+   "mandante": "CRB",
+   "visitante": "Fortaleza",
+   "data": "2026-06-21T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401873975",
+   "rodada": 14,
+   "mandante": "São Bernardo",
+   "visitante": "Juventude",
+   "data": "2026-06-21T20:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873951",
+   "rodada": 14,
+   "mandante": "Goiás",
+   "visitante": "Operário PR",
+   "data": "2026-06-21T21:30Z",
+   "gm": 0,
+   "gv": 3
+  },
+  {
+   "id": "b401873949",
+   "rodada": 14,
+   "mandante": "Ponte Preta",
+   "visitante": "Novorizontino",
+   "data": "2026-06-22T23:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401873969",
+   "rodada": 14,
+   "mandante": "América Mineiro",
+   "visitante": "Criciúma",
+   "data": "2026-06-23T23:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873972",
+   "rodada": 15,
+   "mandante": "Cuiabá",
+   "visitante": "Londrina",
+   "data": "2026-06-25T23:30Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860204",
+   "rodada": 15,
+   "mandante": "Novorizontino",
+   "visitante": "Vila Nova",
+   "data": "2026-06-26T22:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873953",
+   "rodada": 15,
+   "mandante": "Operário PR",
+   "visitante": "América Mineiro",
+   "data": "2026-06-27T14:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873970",
+   "rodada": 15,
+   "mandante": "Criciúma",
+   "visitante": "São Bernardo",
+   "data": "2026-06-27T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873982",
+   "rodada": 15,
+   "mandante": "Athletic",
+   "visitante": "Avaí",
+   "data": "2026-06-28T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873950",
+   "rodada": 15,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Ponte Preta",
+   "data": "2026-06-28T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401874002",
+   "rodada": 15,
+   "mandante": "Juventude",
+   "visitante": "Ceará",
+   "data": "2026-06-28T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401873971",
+   "rodada": 15,
+   "mandante": "Fortaleza",
+   "visitante": "Sport",
+   "data": "2026-06-28T21:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873973",
+   "rodada": 15,
+   "mandante": "Náutico",
+   "visitante": "Goiás",
+   "data": "2026-06-28T21:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873978",
+   "rodada": 15,
+   "mandante": "Botafogo-SP",
+   "visitante": "CRB",
+   "data": "2026-06-30T23:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873977",
+   "rodada": 16,
+   "mandante": "Cuiabá",
+   "visitante": "América Mineiro",
+   "data": "2026-07-02T23:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401873979",
+   "rodada": 16,
+   "mandante": "Fortaleza",
+   "visitante": "Ponte Preta",
+   "data": "2026-07-03T00:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401873994",
+   "rodada": 16,
+   "mandante": "Criciúma",
+   "visitante": "Sport",
+   "data": "2026-07-04T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401874008",
+   "rodada": 16,
+   "mandante": "Londrina",
+   "visitante": "CRB",
+   "data": "2026-07-04T19:00Z",
+   "gm": 5,
+   "gv": 0
+  },
+  {
+   "id": "b401873997",
+   "rodada": 16,
+   "mandante": "Novorizontino",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-07-04T19:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401873981",
+   "rodada": 16,
+   "mandante": "Goiás",
+   "visitante": "Ceará",
+   "data": "2026-07-04T23:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401873980",
+   "rodada": 16,
+   "mandante": "Náutico",
+   "visitante": "Juventude",
+   "data": "2026-07-05T23:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401873996",
+   "rodada": 16,
+   "mandante": "Botafogo-SP",
+   "visitante": "Avaí",
+   "data": "2026-07-06T22:00Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401873995",
+   "rodada": 16,
+   "mandante": "Vila Nova",
+   "visitante": "São Bernardo",
+   "data": "2026-07-06T22:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873987",
+   "rodada": 16,
+   "mandante": "Athletic",
+   "visitante": "Operário PR",
+   "data": "2026-07-07T23:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401873986",
+   "rodada": 17,
+   "mandante": "Ponte Preta",
+   "visitante": "Criciúma",
+   "data": "2026-07-08T23:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860231",
+   "rodada": 17,
+   "mandante": "Juventude",
+   "visitante": "Vila Nova",
+   "data": "2026-07-10T22:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860223",
+   "rodada": 17,
+   "mandante": "Sport",
+   "visitante": "Botafogo-SP",
+   "data": "2026-07-10T23:00Z",
+   "gm": 3,
+   "gv": 3
+  },
+  {
+   "id": "b401874004",
+   "rodada": 17,
+   "mandante": "Operário PR",
+   "visitante": "Novorizontino",
+   "data": "2026-07-12T14:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401873984",
+   "rodada": 17,
+   "mandante": "Avaí",
+   "visitante": "Náutico",
+   "data": "2026-07-12T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401874001",
+   "rodada": 17,
+   "mandante": "São Bernardo",
+   "visitante": "Cuiabá",
+   "data": "2026-07-12T19:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401873998",
+   "rodada": 17,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Fortaleza",
+   "data": "2026-07-12T21:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401874000",
+   "rodada": 17,
+   "mandante": "CRB",
+   "visitante": "Goiás",
+   "data": "2026-07-12T22:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401873999",
+   "rodada": 17,
+   "mandante": "América Mineiro",
+   "visitante": "Londrina",
+   "data": "2026-07-13T22:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401874003",
+   "rodada": 17,
+   "mandante": "Ceará",
+   "visitante": "Athletic",
+   "data": "2026-07-13T23:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401873985",
+   "rodada": 18,
+   "mandante": "CRB",
+   "visitante": "Náutico",
+   "data": "2026-07-16T23:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860235",
+   "rodada": 18,
+   "mandante": "América Mineiro",
+   "visitante": "Ceará",
+   "data": "2026-07-17T22:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860241",
+   "rodada": 18,
+   "mandante": "Juventude",
+   "visitante": "Cuiabá",
+   "data": "2026-07-17T22:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860237",
+   "rodada": 18,
+   "mandante": "São Bernardo",
+   "visitante": "Avaí",
+   "data": "2026-07-17T22:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860236",
+   "rodada": 18,
+   "mandante": "Fortaleza",
+   "visitante": "Novorizontino",
+   "data": "2026-07-18T00:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401874009",
+   "rodada": 18,
+   "mandante": "Londrina",
+   "visitante": "Botafogo-SP",
+   "data": "2026-07-18T00:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401874006",
+   "rodada": 18,
+   "mandante": "Criciúma",
+   "visitante": "Vila Nova",
+   "data": "2026-07-18T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401874005",
+   "rodada": 18,
+   "mandante": "Ponte Preta",
+   "visitante": "Goiás",
+   "data": "2026-07-18T19:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401874007",
+   "rodada": 18,
+   "mandante": "Sport",
+   "visitante": "Operário PR",
+   "data": "2026-07-18T19:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401873988",
+   "rodada": 18,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Athletic",
+   "data": "2026-07-18T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860243",
+   "rodada": 19,
+   "mandante": "Avaí",
+   "visitante": "América Mineiro",
+   "data": "2026-07-21T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860247",
+   "rodada": 19,
+   "mandante": "Novorizontino",
+   "visitante": "Criciúma",
+   "data": "2026-07-21T22:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860244",
+   "rodada": 19,
+   "mandante": "Vila Nova",
+   "visitante": "Fortaleza",
+   "data": "2026-07-22T00:35Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860250",
+   "rodada": 19,
+   "mandante": "Ceará",
+   "visitante": "CRB",
+   "data": "2026-07-22T22:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860245",
+   "rodada": 19,
+   "mandante": "Operário PR",
+   "visitante": "Ponte Preta",
+   "data": "2026-07-22T22:30Z",
+   "gm": 3,
+   "gv": 2
+  },
+  {
+   "id": "b401860248",
+   "rodada": 19,
+   "mandante": "Goiás",
+   "visitante": "Sport",
+   "data": "2026-07-22T23:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860246",
+   "rodada": 19,
+   "mandante": "Náutico",
+   "visitante": "Londrina",
+   "data": "2026-07-23T00:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860242",
+   "rodada": 19,
+   "mandante": "Athletic",
+   "visitante": "São Bernardo",
+   "data": "2026-07-23T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860249",
+   "rodada": 19,
+   "mandante": "Cuiabá",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-07-23T23:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860251",
+   "rodada": 19,
+   "mandante": "Botafogo-SP",
+   "visitante": "Juventude",
+   "data": "2026-07-24T00:30Z",
+   "gm": 4,
+   "gv": 2
+  },
+  {
+   "id": "b401860258",
+   "rodada": 20,
+   "mandante": "Criciúma",
+   "visitante": "Náutico",
+   "data": "2026-07-26T19:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860256",
+   "rodada": 20,
+   "mandante": "São Bernardo",
+   "visitante": "Ceará",
+   "data": "2026-07-26T19:00Z",
+   "gm": 3,
+   "gv": 4
+  },
+  {
+   "id": "b401860252",
+   "rodada": 20,
+   "mandante": "América Mineiro",
+   "visitante": "Goiás",
+   "data": "2026-07-26T21:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860255",
+   "rodada": 20,
+   "mandante": "Londrina",
+   "visitante": "Novorizontino",
+   "data": "2026-07-26T21:30Z",
+   "gm": 1,
+   "gv": 4
+  },
+  {
+   "id": "b401860260",
+   "rodada": 20,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Operário PR",
+   "data": "2026-07-27T22:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860259",
+   "rodada": 20,
+   "mandante": "CRB",
+   "visitante": "Vila Nova",
+   "data": "2026-07-27T22:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860257",
+   "rodada": 20,
+   "mandante": "Sport",
+   "visitante": "Cuiabá",
+   "data": "2026-07-27T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860254",
+   "rodada": 20,
+   "mandante": "Juventude",
+   "visitante": "Avaí",
+   "data": "2026-07-28T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860261",
+   "rodada": 20,
+   "mandante": "Ponte Preta",
+   "visitante": "Athletic",
+   "data": "2026-07-28T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860253",
+   "rodada": 20,
+   "mandante": "Fortaleza",
+   "visitante": "Botafogo-SP",
+   "data": "2026-07-29T00:35Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860264",
+   "rodada": 21,
+   "mandante": "Operário PR",
+   "visitante": "São Bernardo",
+   "data": "2026-08-07T22:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860269",
+   "rodada": 21,
+   "mandante": "Ceará",
+   "visitante": "Ponte Preta",
+   "data": "2026-08-07T23:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860263",
+   "rodada": 21,
+   "mandante": "Vila Nova",
+   "visitante": "Sport",
+   "data": "2026-08-08T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860270",
+   "rodada": 21,
+   "mandante": "Botafogo-SP",
+   "visitante": "América Mineiro",
+   "data": "2026-08-08T21:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860262",
+   "rodada": 21,
+   "mandante": "Athletic",
+   "visitante": "Criciúma",
+   "data": "2026-08-09T14:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860265",
+   "rodada": 21,
+   "mandante": "Náutico",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-08-09T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860271",
+   "rodada": 21,
+   "mandante": "Novorizontino",
+   "visitante": "Juventude",
+   "data": "2026-08-09T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860268",
+   "rodada": 21,
+   "mandante": "Cuiabá",
+   "visitante": "Fortaleza",
+   "data": "2026-08-09T21:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860267",
+   "rodada": 21,
+   "mandante": "Goiás",
+   "visitante": "Londrina",
+   "data": "2026-08-10T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860266",
+   "rodada": 21,
+   "mandante": "Avaí",
+   "visitante": "CRB",
+   "data": "2026-08-11T22:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860273",
+   "rodada": 22,
+   "mandante": "Ponte Preta",
+   "visitante": "Náutico",
+   "data": "2026-08-14T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860272",
+   "rodada": 22,
+   "mandante": "São Bernardo",
+   "visitante": "Botafogo-SP",
+   "data": "2026-08-14T22:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860274",
+   "rodada": 22,
+   "mandante": "Sport",
+   "visitante": "Londrina",
+   "data": "2026-08-14T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860280",
+   "rodada": 22,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Vila Nova",
+   "data": "2026-08-15T19:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860278",
+   "rodada": 22,
+   "mandante": "Ceará",
+   "visitante": "Cuiabá",
+   "data": "2026-08-15T19:00Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860277",
+   "rodada": 22,
+   "mandante": "Criciúma",
+   "visitante": "Goiás",
+   "data": "2026-08-15T19:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860276",
+   "rodada": 22,
+   "mandante": "Juventude",
+   "visitante": "Fortaleza",
+   "data": "2026-08-15T21:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860275",
+   "rodada": 22,
+   "mandante": "Operário PR",
+   "visitante": "Avaí",
+   "data": "2026-08-16T14:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860281",
+   "rodada": 22,
+   "mandante": "América Mineiro",
+   "visitante": "Athletic",
+   "data": "2026-08-16T21:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860279",
+   "rodada": 22,
+   "mandante": "CRB",
+   "visitante": "Novorizontino",
+   "data": "2026-08-16T21:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860285",
+   "rodada": 23,
+   "mandante": "Londrina",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-08-18T22:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860283",
+   "rodada": 23,
+   "mandante": "Náutico",
+   "visitante": "Ceará",
+   "data": "2026-08-19T00:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860291",
+   "rodada": 23,
+   "mandante": "Goiás",
+   "visitante": "Juventude",
+   "data": "2026-08-19T00:35Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860290",
+   "rodada": 23,
+   "mandante": "Avaí",
+   "visitante": "Sport",
+   "data": "2026-08-19T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860287",
+   "rodada": 23,
+   "mandante": "Fortaleza",
+   "visitante": "São Bernardo",
+   "data": "2026-08-19T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860288",
+   "rodada": 23,
+   "mandante": "Cuiabá",
+   "visitante": "Operário PR",
+   "data": "2026-08-19T23:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860282",
+   "rodada": 23,
+   "mandante": "Vila Nova",
+   "visitante": "Ponte Preta",
+   "data": "2026-08-19T23:30Z",
+   "gm": 6,
+   "gv": 0
+  },
+  {
+   "id": "b401860289",
+   "rodada": 23,
+   "mandante": "Botafogo-SP",
+   "visitante": "Criciúma",
+   "data": "2026-08-20T00:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860286",
+   "rodada": 23,
+   "mandante": "Athletic",
+   "visitante": "CRB",
+   "data": "2026-08-20T22:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860284",
+   "rodada": 23,
+   "mandante": "Novorizontino",
+   "visitante": "América Mineiro",
+   "data": "2026-08-20T23:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860299",
+   "rodada": 24,
+   "mandante": "Ceará",
+   "visitante": "Londrina",
+   "data": "2026-08-22T21:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860297",
+   "rodada": 24,
+   "mandante": "Cuiabá",
+   "visitante": "Goiás",
+   "data": "2026-08-22T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860293",
+   "rodada": 24,
+   "mandante": "Ponte Preta",
+   "visitante": "Avaí",
+   "data": "2026-08-23T19:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860292",
+   "rodada": 24,
+   "mandante": "São Bernardo",
+   "visitante": "Náutico",
+   "data": "2026-08-23T19:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860295",
+   "rodada": 24,
+   "mandante": "Operário PR",
+   "visitante": "Vila Nova",
+   "data": "2026-08-23T21:00Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860298",
+   "rodada": 24,
+   "mandante": "Criciúma",
+   "visitante": "Fortaleza",
+   "data": "2026-08-23T21:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860301",
+   "rodada": 24,
+   "mandante": "Athletic",
+   "visitante": "Novorizontino",
+   "data": "2026-08-24T22:30Z",
+   "gm": 1,
+   "gv": 4
+  },
+  {
+   "id": "b401860294",
+   "rodada": 24,
+   "mandante": "Sport",
+   "visitante": "América Mineiro",
+   "data": "2026-08-24T22:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860300",
+   "rodada": 24,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Botafogo-SP",
+   "data": "2026-08-25T22:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860296",
+   "rodada": 24,
+   "mandante": "Juventude",
+   "visitante": "CRB",
+   "data": "2026-08-25T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860307",
+   "rodada": 25,
+   "mandante": "Goiás",
+   "visitante": "São Bernardo",
+   "data": "2026-08-28T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860310",
+   "rodada": 25,
+   "mandante": "Náutico",
+   "visitante": "Athletic",
+   "data": "2026-08-28T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860309",
+   "rodada": 25,
+   "mandante": "Novorizontino",
+   "visitante": "Sport",
+   "data": "2026-08-28T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860304",
+   "rodada": 25,
+   "mandante": "Botafogo-SP",
+   "visitante": "Cuiabá",
+   "data": "2026-08-29T21:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860302",
+   "rodada": 25,
+   "mandante": "América Mineiro",
+   "visitante": "Ponte Preta",
+   "data": "2026-08-30T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860303",
+   "rodada": 25,
+   "mandante": "Avaí",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-08-30T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860305",
+   "rodada": 25,
+   "mandante": "CRB",
+   "visitante": "Criciúma",
+   "data": "2026-08-30T21:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860306",
+   "rodada": 25,
+   "mandante": "Vila Nova",
+   "visitante": "Ceará",
+   "data": "2026-08-30T21:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860311",
+   "rodada": 25,
+   "mandante": "Fortaleza",
+   "visitante": "Operário PR",
+   "data": "2026-08-31T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860308",
+   "rodada": 25,
+   "mandante": "Londrina",
+   "visitante": "Juventude",
+   "data": "2026-09-01T22:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860315",
+   "rodada": 26,
+   "mandante": "Náutico",
+   "visitante": "Botafogo-SP",
+   "data": "2026-09-03T23:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860312",
+   "rodada": 26,
+   "mandante": "Criciúma",
+   "visitante": "Cuiabá",
+   "data": "2026-09-04T22:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860320",
+   "rodada": 26,
+   "mandante": "Athletic",
+   "visitante": "Vila Nova",
+   "data": "2026-09-04T23:30Z",
+   "gm": 5,
+   "gv": 0
+  },
+  {
+   "id": "b401860321",
+   "rodada": 26,
+   "mandante": "CRB",
+   "visitante": "América Mineiro",
+   "data": "2026-09-05T00:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860319",
+   "rodada": 26,
+   "mandante": "Goiás",
+   "visitante": "Fortaleza",
+   "data": "2026-09-05T19:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860316",
+   "rodada": 26,
+   "mandante": "Novorizontino",
+   "visitante": "Avaí",
+   "data": "2026-09-05T19:00Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860318",
+   "rodada": 26,
+   "mandante": "Juventude",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-09-05T21:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860313",
+   "rodada": 26,
+   "mandante": "Ceará",
+   "visitante": "Sport",
+   "data": "2026-09-05T21:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860317",
+   "rodada": 26,
+   "mandante": "Londrina",
+   "visitante": "Operário PR",
+   "data": "2026-09-06T14:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860314",
+   "rodada": 26,
+   "mandante": "Ponte Preta",
+   "visitante": "São Bernardo",
+   "data": "2026-09-06T21:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860327",
+   "rodada": 27,
+   "mandante": "Cuiabá",
+   "visitante": "Athletic",
+   "data": "2026-09-08T23:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860328",
+   "rodada": 27,
+   "mandante": "Criciúma",
+   "visitante": "Juventude",
+   "data": "2026-09-09T00:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860329",
+   "rodada": 27,
+   "mandante": "Botafogo-SP",
+   "visitante": "Novorizontino",
+   "data": "2026-09-09T22:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860331",
+   "rodada": 27,
+   "mandante": "Fortaleza",
+   "visitante": "Avaí",
+   "data": "2026-09-09T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860322",
+   "rodada": 27,
+   "mandante": "América Mineiro",
+   "visitante": "Náutico",
+   "data": "2026-09-09T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860325",
+   "rodada": 27,
+   "mandante": "Operário PR",
+   "visitante": "CRB",
+   "data": "2026-09-09T23:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860330",
+   "rodada": 27,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Ceará",
+   "data": "2026-09-10T00:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860326",
+   "rodada": 27,
+   "mandante": "Vila Nova",
+   "visitante": "Goiás",
+   "data": "2026-09-10T22:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860323",
+   "rodada": 27,
+   "mandante": "São Bernardo",
+   "visitante": "Londrina",
+   "data": "2026-09-11T00:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860324",
+   "rodada": 27,
+   "mandante": "Sport",
+   "visitante": "Ponte Preta",
+   "data": "2026-09-11T00:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860334",
+   "rodada": 28,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Criciúma",
+   "data": "2026-09-13T19:00Z",
+   "gm": 4,
+   "gv": 0
+  },
+  {
+   "id": "b401860340",
+   "rodada": 28,
+   "mandante": "Juventude",
+   "visitante": "Athletic",
+   "data": "2026-09-13T21:00Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860341",
+   "rodada": 28,
+   "mandante": "Fortaleza",
+   "visitante": "Ceará",
+   "data": "2026-09-13T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860338",
+   "rodada": 28,
+   "mandante": "Novorizontino",
+   "visitante": "Cuiabá",
+   "data": "2026-09-13T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860335",
+   "rodada": 28,
+   "mandante": "América Mineiro",
+   "visitante": "São Bernardo",
+   "data": "2026-09-14T22:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860332",
+   "rodada": 28,
+   "mandante": "Botafogo-SP",
+   "visitante": "Goiás",
+   "data": "2026-09-14T22:30Z",
+   "gm": 1,
+   "gv": 3
+  },
+  {
+   "id": "b401860333",
+   "rodada": 28,
+   "mandante": "Avaí",
+   "visitante": "Vila Nova",
+   "data": "2026-09-15T00:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860339",
+   "rodada": 28,
+   "mandante": "Londrina",
+   "visitante": "Ponte Preta",
+   "data": "2026-09-15T22:30Z",
+   "gm": 6,
+   "gv": 0
+  },
+  {
+   "id": "b401860337",
+   "rodada": 28,
+   "mandante": "Náutico",
+   "visitante": "Operário PR",
+   "data": "2026-09-15T22:30Z",
+   "gm": 3,
+   "gv": 3
+  },
+  {
+   "id": "b401860336",
+   "rodada": 28,
+   "mandante": "CRB",
+   "visitante": "Sport",
+   "data": "2026-09-16T00:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860344",
+   "rodada": 29,
+   "mandante": "Vila Nova",
+   "visitante": "América Mineiro",
+   "data": "2026-09-18T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860343",
+   "rodada": 29,
+   "mandante": "Ceará",
+   "visitante": "Novorizontino",
+   "data": "2026-09-18T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860345",
+   "rodada": 29,
+   "mandante": "São Bernardo",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-09-19T00:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860346",
+   "rodada": 29,
+   "mandante": "Sport",
+   "visitante": "Juventude",
+   "data": "2026-09-19T19:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860342",
+   "rodada": 29,
+   "mandante": "Athletic",
+   "visitante": "Botafogo-SP",
+   "data": "2026-09-19T21:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860347",
+   "rodada": 29,
+   "mandante": "Ponte Preta",
+   "visitante": "CRB",
+   "data": "2026-09-20T14:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860349",
+   "rodada": 29,
+   "mandante": "Goiás",
+   "visitante": "Avaí",
+   "data": "2026-09-20T19:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860348",
+   "rodada": 29,
+   "mandante": "Londrina",
+   "visitante": "Fortaleza",
+   "data": "2026-09-20T21:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860350",
+   "rodada": 29,
+   "mandante": "Cuiabá",
+   "visitante": "Náutico",
+   "data": "2026-09-22T00:30Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860351",
+   "rodada": 29,
+   "mandante": "Criciúma",
+   "visitante": "Operário PR",
+   "data": "2026-09-22T22:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860355",
+   "rodada": 30,
+   "mandante": "Novorizontino",
+   "visitante": "São Bernardo",
+   "data": "2026-09-25T22:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860356",
+   "rodada": 30,
+   "mandante": "Vila Nova",
+   "visitante": "Londrina",
+   "data": "2026-09-25T23:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860361",
+   "rodada": 30,
+   "mandante": "Náutico",
+   "visitante": "Sport",
+   "data": "2026-09-26T19:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860357",
+   "rodada": 30,
+   "mandante": "Operário PR",
+   "visitante": "Ceará",
+   "data": "2026-09-26T19:30Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860354",
+   "rodada": 30,
+   "mandante": "Goiás",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-09-26T21:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860358",
+   "rodada": 30,
+   "mandante": "Criciúma",
+   "visitante": "Avaí",
+   "data": "2026-09-27T14:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860359",
+   "rodada": 30,
+   "mandante": "CRB",
+   "visitante": "Cuiabá",
+   "data": "2026-09-27T19:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860353",
+   "rodada": 30,
+   "mandante": "Fortaleza",
+   "visitante": "Athletic",
+   "data": "2026-09-27T21:30Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860352",
+   "rodada": 30,
+   "mandante": "América Mineiro",
+   "visitante": "Juventude",
+   "data": "2026-09-28T22:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860360",
+   "rodada": 30,
+   "mandante": "Botafogo-SP",
+   "visitante": "Ponte Preta",
+   "data": "2026-09-29T22:30Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860367",
+   "rodada": 31,
+   "mandante": "Athletic",
+   "visitante": "Sport",
+   "data": "2026-10-01T23:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860365",
+   "rodada": 31,
+   "mandante": "Novorizontino",
+   "visitante": "Goiás",
+   "data": "2026-10-02T00:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860364",
+   "rodada": 31,
+   "mandante": "São Bernardo",
+   "visitante": "CRB",
+   "data": "2026-10-02T22:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860366",
+   "rodada": 31,
+   "mandante": "Londrina",
+   "visitante": "Criciúma",
+   "data": "2026-10-02T23:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860362",
+   "rodada": 31,
+   "mandante": "Juventude",
+   "visitante": "Operário PR",
+   "data": "2026-10-02T23:45Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "b401860363",
+   "rodada": 31,
+   "mandante": "Fortaleza",
+   "visitante": "Náutico",
+   "data": "2026-10-03T00:35Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860369",
+   "rodada": 31,
+   "mandante": "Avaí",
+   "visitante": "Ceará",
+   "data": "2026-10-03T14:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860368",
+   "rodada": 31,
+   "mandante": "Atlético Goianiense",
+   "visitante": "América Mineiro",
+   "data": "2026-10-03T19:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860371",
+   "rodada": 31,
+   "mandante": "Cuiabá",
+   "visitante": "Ponte Preta",
+   "data": "2026-10-03T20:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "b401860370",
+   "rodada": 31,
+   "mandante": "Botafogo-SP",
+   "visitante": "Vila Nova",
+   "data": "2026-10-03T21:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860380",
+   "rodada": 32,
+   "mandante": "Sport",
+   "visitante": "São Bernardo",
+   "data": "2026-10-06T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860377",
+   "rodada": 32,
+   "mandante": "Goiás",
+   "visitante": "Athletic",
+   "data": "2026-10-06T23:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860372",
+   "rodada": 32,
+   "mandante": "Ponte Preta",
+   "visitante": "Juventude",
+   "data": "2026-10-07T00:35Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860374",
+   "rodada": 32,
+   "mandante": "Avaí",
+   "visitante": "Londrina",
+   "data": "2026-10-07T22:30Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "b401860373",
+   "rodada": 32,
+   "mandante": "Operário PR",
+   "visitante": "Botafogo-SP",
+   "data": "2026-10-07T22:30Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "b401860379",
+   "rodada": 32,
+   "mandante": "América Mineiro",
+   "visitante": "Fortaleza",
+   "data": "2026-10-07T23:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860375",
+   "rodada": 32,
+   "mandante": "CRB",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-10-07T23:30Z",
+   "gm": 3,
+   "gv": 1
+  },
+  {
+   "id": "b401860376",
+   "rodada": 32,
+   "mandante": "Vila Nova",
+   "visitante": "Cuiabá",
+   "data": "2026-10-07T23:30Z",
+   "gm": 0,
+   "gv": 0
+  },
+  {
+   "id": "b401860378",
+   "rodada": 32,
+   "mandante": "Ceará",
+   "visitante": "Criciúma",
+   "data": "2026-10-08T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860381",
+   "rodada": 32,
+   "mandante": "Náutico",
+   "visitante": "Novorizontino",
+   "data": "2026-10-08T22:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860384",
+   "rodada": 33,
+   "mandante": "Juventude",
+   "visitante": "São Bernardo",
+   "data": "2026-10-11T19:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860389",
+   "rodada": 33,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Sport",
+   "data": "2026-10-11T19:10Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860382",
+   "rodada": 33,
+   "mandante": "Náutico",
+   "visitante": "Vila Nova",
+   "data": "2026-10-11T20:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860386",
+   "rodada": 33,
+   "mandante": "Cuiabá",
+   "visitante": "Avaí",
+   "data": "2026-10-11T21:30Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "b401860391",
+   "rodada": 33,
+   "mandante": "Operário PR",
+   "visitante": "Goiás",
+   "data": "2026-10-11T21:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860385",
+   "rodada": 33,
+   "mandante": "Fortaleza",
+   "visitante": "CRB",
+   "data": "2026-10-12T19:00Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860383",
+   "rodada": 33,
+   "mandante": "Novorizontino",
+   "visitante": "Ponte Preta",
+   "data": "2026-10-12T22:00Z",
+   "gm": 5,
+   "gv": 1
+  },
+  {
+   "id": "b401860387",
+   "rodada": 33,
+   "mandante": "Criciúma",
+   "visitante": "América Mineiro",
+   "data": "2026-10-12T22:30Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860388",
+   "rodada": 33,
+   "mandante": "Botafogo-SP",
+   "visitante": "Ceará",
+   "data": "2026-10-13T00:00Z",
+   "gm": 1,
+   "gv": 0
+  },
+  {
+   "id": "b401860390",
+   "rodada": 33,
+   "mandante": "Athletic",
+   "visitante": "Londrina",
+   "data": "2026-10-13T22:30Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860398",
+   "rodada": 34,
+   "mandante": "Ponte Preta",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-10-16T22:30Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "b401860399",
+   "rodada": 34,
+   "mandante": "Sport",
+   "visitante": "Fortaleza",
+   "data": "2026-10-16T23:30Z",
+   "gm": 0,
+   "gv": 2
+  },
+  {
+   "id": "b401860392",
+   "rodada": 34,
+   "mandante": "Ceará",
+   "visitante": "Juventude",
+   "data": "2026-10-17T19:30Z",
+   "gm": 2,
+   "gv": 2
+  },
+  {
+   "id": "b401860395",
+   "rodada": 34,
+   "mandante": "América Mineiro",
+   "visitante": "Operário PR",
+   "data": "2026-10-17T21:30Z",
+   "gm": 1,
+   "gv": 0
+  }
+ ],
+ "restantes": [
+  {
+   "id": "b401860394",
+   "rodada": 34,
+   "mandante": "Avaí",
+   "visitante": "Athletic",
+   "data": "2026-10-18T19:00Z"
+  },
+  {
+   "id": "b401860393",
+   "rodada": 34,
+   "mandante": "CRB",
+   "visitante": "Botafogo-SP",
+   "data": "2026-10-18T19:00Z"
+  },
+  {
+   "id": "b401860400",
+   "rodada": 34,
+   "mandante": "São Bernardo",
+   "visitante": "Criciúma",
+   "data": "2026-10-18T19:00Z"
+  },
+  {
+   "id": "b401860396",
+   "rodada": 34,
+   "mandante": "Vila Nova",
+   "visitante": "Novorizontino",
+   "data": "2026-10-18T21:00Z"
+  },
+  {
+   "id": "b401860401",
+   "rodada": 34,
+   "mandante": "Goiás",
+   "visitante": "Náutico",
+   "data": "2026-10-19T22:30Z"
+  },
+  {
+   "id": "b401860397",
+   "rodada": 34,
+   "mandante": "Londrina",
+   "visitante": "Cuiabá",
+   "data": "2026-10-20T22:30Z"
+  },
+  {
+   "id": "b401860410",
+   "rodada": 35,
+   "mandante": "Operário PR",
+   "visitante": "Athletic",
+   "data": "2026-10-23T22:30Z"
+  },
+  {
+   "id": "b401860408",
+   "rodada": 35,
+   "mandante": "Sport",
+   "visitante": "Criciúma",
+   "data": "2026-10-24T00:00Z"
+  },
+  {
+   "id": "b401860403",
+   "rodada": 35,
+   "mandante": "Avaí",
+   "visitante": "Botafogo-SP",
+   "data": "2026-10-24T19:00Z"
+  },
+  {
+   "id": "b401860404",
+   "rodada": 35,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Novorizontino",
+   "data": "2026-10-24T19:30Z"
+  },
+  {
+   "id": "b401860407",
+   "rodada": 35,
+   "mandante": "São Bernardo",
+   "visitante": "Vila Nova",
+   "data": "2026-10-24T19:30Z"
+  },
+  {
+   "id": "b401860402",
+   "rodada": 35,
+   "mandante": "CRB",
+   "visitante": "Londrina",
+   "data": "2026-10-24T21:30Z"
+  },
+  {
+   "id": "b401860409",
+   "rodada": 35,
+   "mandante": "Ponte Preta",
+   "visitante": "Fortaleza",
+   "data": "2026-10-24T21:30Z"
+  },
+  {
+   "id": "b401860405",
+   "rodada": 35,
+   "mandante": "América Mineiro",
+   "visitante": "Cuiabá",
+   "data": "2026-10-26T22:30Z"
+  },
+  {
+   "id": "b401860411",
+   "rodada": 35,
+   "mandante": "Juventude",
+   "visitante": "Náutico",
+   "data": "2026-10-26T23:30Z"
+  },
+  {
+   "id": "b401860406",
+   "rodada": 35,
+   "mandante": "Ceará",
+   "visitante": "Goiás",
+   "data": "2026-10-27T23:00Z"
+  },
+  {
+   "id": "b401860414",
+   "rodada": 36,
+   "mandante": "Criciúma",
+   "visitante": "Ponte Preta",
+   "data": "2026-10-30T22:30Z"
+  },
+  {
+   "id": "b401860413",
+   "rodada": 36,
+   "mandante": "Botafogo-SP",
+   "visitante": "Sport",
+   "data": "2026-10-31T19:00Z"
+  },
+  {
+   "id": "b401860416",
+   "rodada": 36,
+   "mandante": "Vila Nova",
+   "visitante": "Juventude",
+   "data": "2026-10-31T21:00Z"
+  },
+  {
+   "id": "b401860421",
+   "rodada": 36,
+   "mandante": "Náutico",
+   "visitante": "Avaí",
+   "data": "2026-10-31T22:30Z"
+  },
+  {
+   "id": "b401860418",
+   "rodada": 36,
+   "mandante": "Londrina",
+   "visitante": "América Mineiro",
+   "data": "2026-11-01T19:00Z"
+  },
+  {
+   "id": "b401860415",
+   "rodada": 36,
+   "mandante": "Cuiabá",
+   "visitante": "São Bernardo",
+   "data": "2026-11-01T21:30Z"
+  },
+  {
+   "id": "b401860417",
+   "rodada": 36,
+   "mandante": "Novorizontino",
+   "visitante": "Operário PR",
+   "data": "2026-11-01T21:30Z"
+  },
+  {
+   "id": "b401860420",
+   "rodada": 36,
+   "mandante": "Fortaleza",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-11-02T19:00Z"
+  },
+  {
+   "id": "b401860412",
+   "rodada": 36,
+   "mandante": "Athletic",
+   "visitante": "Ceará",
+   "data": "2026-11-02T21:00Z"
+  },
+  {
+   "id": "b401860419",
+   "rodada": 36,
+   "mandante": "Goiás",
+   "visitante": "CRB",
+   "data": "2026-11-02T23:30Z"
+  },
+  {
+   "id": "b401860431",
+   "rodada": 37,
+   "mandante": "Botafogo-SP",
+   "visitante": "Londrina",
+   "data": "2026-11-06T22:30Z"
+  },
+  {
+   "id": "b401860425",
+   "rodada": 37,
+   "mandante": "Operário PR",
+   "visitante": "Sport",
+   "data": "2026-11-06T22:30Z"
+  },
+  {
+   "id": "b401860424",
+   "rodada": 37,
+   "mandante": "Vila Nova",
+   "visitante": "Criciúma",
+   "data": "2026-11-06T23:30Z"
+  },
+  {
+   "id": "b401860429",
+   "rodada": 37,
+   "mandante": "Cuiabá",
+   "visitante": "Juventude",
+   "data": "2026-11-07T00:30Z"
+  },
+  {
+   "id": "b401860423",
+   "rodada": 37,
+   "mandante": "Avaí",
+   "visitante": "São Bernardo",
+   "data": "2026-11-07T19:00Z"
+  },
+  {
+   "id": "b401860427",
+   "rodada": 37,
+   "mandante": "Novorizontino",
+   "visitante": "Fortaleza",
+   "data": "2026-11-07T19:10Z"
+  },
+  {
+   "id": "b401860426",
+   "rodada": 37,
+   "mandante": "Náutico",
+   "visitante": "CRB",
+   "data": "2026-11-08T00:30Z"
+  },
+  {
+   "id": "b401860422",
+   "rodada": 37,
+   "mandante": "Athletic",
+   "visitante": "Atlético Goianiense",
+   "data": "2026-11-08T19:00Z"
+  },
+  {
+   "id": "b401860430",
+   "rodada": 37,
+   "mandante": "Ceará",
+   "visitante": "América Mineiro",
+   "data": "2026-11-08T22:15Z"
+  },
+  {
+   "id": "b401860428",
+   "rodada": 37,
+   "mandante": "Goiás",
+   "visitante": "Ponte Preta",
+   "data": "2026-11-08T22:15Z"
+  },
+  {
+   "id": "b401860432",
+   "rodada": 38,
+   "mandante": "América Mineiro",
+   "visitante": "Avaí",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860440",
+   "rodada": 38,
+   "mandante": "Atlético Goianiense",
+   "visitante": "Cuiabá",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860439",
+   "rodada": 38,
+   "mandante": "CRB",
+   "visitante": "Ceará",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860438",
+   "rodada": 38,
+   "mandante": "Criciúma",
+   "visitante": "Novorizontino",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860437",
+   "rodada": 38,
+   "mandante": "Fortaleza",
+   "visitante": "Vila Nova",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860441",
+   "rodada": 38,
+   "mandante": "Juventude",
+   "visitante": "Botafogo-SP",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860435",
+   "rodada": 38,
+   "mandante": "Londrina",
+   "visitante": "Náutico",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860434",
+   "rodada": 38,
+   "mandante": "Ponte Preta",
+   "visitante": "Operário PR",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860436",
+   "rodada": 38,
+   "mandante": "São Bernardo",
+   "visitante": "Athletic",
+   "data": "2026-11-14T19:30Z"
+  },
+  {
+   "id": "b401860433",
+   "rodada": 38,
+   "mandante": "Sport",
+   "visitante": "Goiás",
+   "data": "2026-11-14T19:30Z"
+  }
+ ],
+ "escudos": {
+  "Vila Nova": "https://a.espncdn.com/i/teamlogos/soccer/500/9973.png",
+  "CRB": "https://a.espncdn.com/i/teamlogos/soccer/500/9970.png",
+  "Ceará": "https://a.espncdn.com/i/teamlogos/soccer/500/9969.png",
+  "São Bernardo": "https://a.espncdn.com/i/teamlogos/soccer/500/11268.png",
+  "Operário PR": "https://a.espncdn.com/i/teamlogos/soccer/500/18187.png",
+  "Atlético Goianiense": "https://a.espncdn.com/i/teamlogos/soccer/500/10357.png",
+  "Botafogo-SP": "https://a.espncdn.com/i/teamlogos/soccer/500/10281.png",
+  "Fortaleza": "https://a.espncdn.com/i/teamlogos/soccer/500/6272.png",
+  "Cuiabá": "https://a.espncdn.com/i/teamlogos/soccer/500/17313.png",
+  "Sport": "https://a.espncdn.com/i/teamlogos/soccer/500/7635.png",
+  "Avaí": "https://a.espncdn.com/i/teamlogos/soccer/500/9966.png",
+  "Juventude": "https://a.espncdn.com/i/teamlogos/soccer/500/6270.png",
+  "Náutico": "https://a.espncdn.com/i/teamlogos/soccer/500/7633.png",
+  "Criciúma": "https://a.espncdn.com/i/teamlogos/soccer/500/9971.png",
+  "Athletic": "https://a.espncdn.com/i/teamlogos/soccer/500/20851.png",
+  "Ponte Preta": "https://a.espncdn.com/i/teamlogos/soccer/500/3459.png",
+  "Goiás": "https://a.espncdn.com/i/teamlogos/soccer/500/3395.png",
+  "América Mineiro": "https://a.espncdn.com/i/teamlogos/soccer/500/6154.png",
+  "Novorizontino": "https://a.espncdn.com/i/teamlogos/soccer/500/18127.png",
+  "Londrina": "https://a.espncdn.com/i/teamlogos/soccer/500/17333.png"
+ }
 }
