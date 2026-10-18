@@ -1,0 +1,13 @@
+# Temporário: depurar a página do Palmeiras. Apagar depois.
+name: Sonda de fontes
+on: workflow_dispatch
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx tsx scripts/tmp/sonda.ts
