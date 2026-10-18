@@ -7,6 +7,8 @@ export interface ApiTime {
   name: string;
   shortName?: string;
   tla?: string;
+  /** endereço da imagem do escudo */
+  crest?: string | null;
 }
 
 export interface ApiPartida {

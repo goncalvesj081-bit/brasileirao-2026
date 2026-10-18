@@ -98,6 +98,10 @@ async function main() {
     "historico.json": json(historico),
   };
   if (pessoas) novos["pessoas.json"] = json(pessoas);
+  // escudos: só https e só de clubes conhecidos; se a API não trouxer, mantém os que já existem
+  const escudos = { ...ler<Record<string, string>>("escudos.json", {}) };
+  for (const t of times ?? []) if (t.crest?.startsWith("https://")) escudos[tradutor.nome(t)] = t.crest;
+  novos["escudos.json"] = json(Object.fromEntries(Object.entries(escudos).filter(([c]) => clubes.includes(c)).sort()));
 
   const mudaram = Object.keys(novos).filter((n) => !existsSync(arq(n)) || readFileSync(arq(n), "utf8") !== novos[n]);
   if (mudaram.length || metaAtual?.aoVivo !== aoVivo || !metaAtual) {

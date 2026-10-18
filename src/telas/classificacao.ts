@@ -1,57 +1,68 @@
 import { temporada } from "../../config/temporada";
 import { jogosAdiados, nomesClubes, resultados, tabela } from "../dados";
+import { sims } from "../estado";
 import { classificacao, classificacaoUltimos } from "../modelo/classificacao";
-import type { Linha } from "../modelo/tipos";
-import { atrLinha, celClube, classeFaixa, forma, legenda } from "../ui/componentes";
+import { chancesDaLinha } from "../modelo/simular";
+import type { Chances, Linha } from "../modelo/tipos";
+import { link, SECOES } from "../router";
+import { atrLinha, celClube, celProb, classeFaixa, forma, legenda, lerPref, seletor, seletorLocal, type Tom } from "../ui/componentes";
 import { saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
-export function tabelaClassificacao(linhas: Linha[], zonas: boolean, comForma: boolean): Html {
+const COLUNAS: [keyof Chances, string, Tom][] = [
+  ["c", "Título", "c-title"],
+  ["l", "Liberta", "c-lib"],
+  ["s", "Sula", "c-sula"],
+  ["r", "Queda", "c-rel"],
+];
+
+/** Tabela de classificação. `chance`: coluna de probabilidade a mostrar (só na geral). */
+export function tabelaClassificacao(linhas: Linha[], zonas: boolean, comForma: boolean, chance?: keyof Chances): Html {
   const n = linhas.length;
-  return html`<div class="box"><table style="min-width:${comForma ? 760 : 620}px">
-    <thead><tr><th>#</th><th class="l">Clube</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th><th title="Aproveitamento">%</th>${comForma ? html`<th class="l">Últimos 5</th>` : ""}</tr></thead>
-    <tbody>${linhas.map(
-      (t, p) => html`<tr ${atrLinha(t.clube, zonas ? classeFaixa(p, n) : "")}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td>${t.j}</td><td>${t.v}</td><td>${t.e}</td><td>${t.d}</td><td>${t.gp}</td><td>${t.gc}</td><td>${saldo(t.gp - t.gc)}</td><td class="dim">${t.j ? Math.round((100 * t.p) / (3 * t.j)) : 0}</td>${comForma ? html`<td class="l">${forma(t.clube)}</td>` : ""}</tr>`,
-    )}</tbody>
+  const col = chance ? COLUNAS.find((c) => c[0] === chance)! : null;
+  const res = sims.real;
+  return html`<div class="box"><table class="tab">
+    <thead><tr><th>#</th><th class="l">Clube</th><th>P</th><th>J</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th>${comForma ? html`<th class="l w">Últimos 5</th>` : ""}${col ? html`<th>${col[1]}</th>` : ""}</tr></thead>
+    <tbody>${linhas.map((t, p) => {
+      const i = tabela.indexOf(t);
+      const c = col && res && i >= 0 ? chancesDaLinha(res.pos[i])[col[0]] : null;
+      return html`<tr ${atrLinha(t.clube, zonas ? classeFaixa(p, n) : "")}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="dim">${t.j}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w">${t.gp}</td><td class="w">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td>${comForma ? html`<td class="l w">${forma(t.clube)}</td>` : ""}${col ? (c == null ? html`<td class="dim">…</td>` : celProb(col[2], c)) : ""}</tr>`;
+    })}</tbody>
   </table></div>`;
 }
 
 export function telaClassificacao(vista: string): Html {
   const T = temporada.turnoAte;
+  const sec = SECOES.find((s) => s.id === "tabela")!;
+  const topo = seletor(sec.vistas, vista, (k) => link("tabela", k), "Recorte da tabela");
   let linhas: Linha[],
-    titulo: string,
     nota = "";
   switch (vista) {
     case "mandante":
       linhas = classificacao(nomesClubes, resultados, (_, lado) => lado === "m");
-      titulo = "Classificação como mandante";
       break;
     case "visitante":
       linhas = classificacao(nomesClubes, resultados, (_, lado) => lado === "v");
-      titulo = "Classificação como visitante";
       break;
     case "turno":
       linhas = classificacao(nomesClubes, resultados.filter((r) => r.rodada <= T));
-      titulo = `Classificação do turno (1ª à ${T}ª)`;
+      nota = `Rodadas 1 a ${T}.`;
       break;
     case "returno": {
       linhas = classificacao(nomesClubes, resultados.filter((r) => r.rodada > T));
-      titulo = `Classificação do returno (${T + 1}ª à 38ª)`;
       const pend = jogosAdiados.filter((g) => g.rodada > T);
-      if (pend.length)
-        nota = `${pend.map((g) => `${g.mandante} x ${g.visitante} (${g.rodada}ª)`).join(", ")}, adiado${pend.length > 1 ? "s" : ""}, entra${pend.length > 1 ? "m" : ""} no returno quando for disputado.`;
+      nota = `Rodadas ${T + 1} a 38.` + (pend.length ? ` Falta${pend.length > 1 ? "m" : ""} ${pend.map((g) => `${g.mandante} x ${g.visitante}`).join(", ")}, adiado${pend.length > 1 ? "s" : ""}.` : "");
       break;
     }
     case "ultimas-10":
       linhas = classificacaoUltimos(nomesClubes, resultados, 10);
-      titulo = "Classificação das últimas 10 rodadas";
-      nota = "Considera os 10 últimos jogos de cada time.";
       break;
-    default:
-      linhas = tabela;
-      titulo = "Classificação geral";
+    default: {
+      const chance = lerPref("chance", "c") as keyof Chances;
+      return html`${topo}
+        <div class="barra-opcoes"><span class="dim">Chance de</span>${seletorLocal("chance", COLUNAS.map(([k, t]) => [k, t]), chance, "Coluna de chance")}</div>
+        ${tabelaClassificacao(tabela, true, true, chance)}${legenda()}`;
+    }
   }
-  const geral = vista === "geral" || !["mandante", "visitante", "turno", "returno", "ultimas-10"].includes(vista);
-  return html`<h2>${titulo}</h2>${geral ? legenda() : ""}${nota ? html`<p class="note">${nota}</p>` : ""}
-    ${tabelaClassificacao(linhas, geral, geral || vista === "ultimas-10")}`;
+  return html`${topo}${nota ? html`<p class="note">${nota}</p>` : ""}${tabelaClassificacao(linhas, false, vista === "ultimas-10")}`;
 }

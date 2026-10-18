@@ -1,13 +1,13 @@
 import "./estilos.css";
-import { meta, restantes, resultados, situacao } from "./dados";
-import { aoMudar, simularReal, agendarUsuario } from "./estado";
-import { lerRota, ROTA_INICIAL, tituloDa, type Rota } from "./router";
+import { meta, situacao } from "./dados";
+import { aoMudar, agendarUsuario, simularReal } from "./estado";
+import { lerRota, link, redirecionamento, ROTA_INICIAL, SECOES, tituloDa, type Rota } from "./router";
 import { telaChances } from "./telas/chances";
 import { telaClassificacao } from "./telas/classificacao";
 import { telaClube } from "./telas/clube";
 import { telaEstatisticas } from "./telas/estatisticas";
+import { telaMais, telaSobre } from "./telas/mais";
 import { telaPessoas } from "./telas/pessoas";
-import { telaPontuacao } from "./telas/pontuacao";
 import { telaRodada } from "./telas/rodada";
 import {
   atualizarResultadosSimulador,
@@ -16,87 +16,96 @@ import {
   teclaSimulador,
   telaSimulador,
 } from "./telas/simulador";
+import { escudo, gravarPref, seletor } from "./ui/componentes";
 import { dataHora } from "./ui/formato";
 import { html, type Html } from "./ui/html";
-import { listaClubes, navegacao } from "./ui/lateral";
+import { abasInferiores, listaClubes, navegacao } from "./ui/lateral";
 
 const $ = (id: string) => document.getElementById(id)!;
-let rota: Rota = lerRota() ?? lerRota(ROTA_INICIAL)!;
+
+function rotaAtual(): Rota {
+  const antiga = redirecionamento();
+  if (antiga) history.replaceState(null, "", antiga);
+  const r = lerRota();
+  if (r) return r;
+  history.replaceState(null, "", ROTA_INICIAL);
+  return lerRota(ROTA_INICIAL)!;
+}
+let rota = rotaAtual();
+
+const topoDe = (id: string, vista: string) => {
+  const s = SECOES.find((x) => x.id === id)!;
+  return seletor(s.vistas, vista, (k) => link(id, k), s.rotulo);
+};
 
 function conteudo(r: Rota): Html {
   switch (r.secao) {
-    case "simulador":
-      return telaSimulador(r.numero);
-    case "chances":
-      return telaChances(r.vista);
-    case "pontuacao":
-      return telaPontuacao(r.vista);
-    case "classificacao":
+    case "tabela":
       return telaClassificacao(r.vista);
-    case "rodada":
-      return telaRodada(r.vista, r.numero);
+    case "chances":
+      return telaChances(r.vista, r.extra);
+    case "jogos":
+      return telaRodada(r.numero);
+    case "simular":
+      return telaSimulador(r.vista, r.numero);
     case "estatisticas":
-      return telaEstatisticas(r.vista);
+      return html`${topoDe("estatisticas", r.vista)}${telaEstatisticas(r.vista)}`;
     case "pessoas":
-      return telaPessoas(r.vista);
+      return html`${topoDe("pessoas", r.vista)}${telaPessoas(r.vista)}`;
+    case "mais":
+      return telaMais();
+    case "sobre":
+      return telaSobre();
     case "clube":
-      return telaClube(r.clube!, r.aba!);
+      return telaClube(r.clube!, r.vista);
   }
   return html``;
 }
 
 function fonte(): Html {
-  return html`${meta.aoVivo ? html`<span class="live">Jogo em andamento</span>` : ""}
-    <span>Atualizado em ${dataHora(meta.atualizado)}</span>
-    <span>${situacao()}</span>
-    <span>${resultados.length} jogos disputados, ${restantes.length} por jogar</span>`;
+  return html`${meta.aoVivo ? html`<span class="live">Jogo em andamento</span>` : ""}<span>${situacao()}</span><span>Atualizado ${dataHora(meta.atualizado)}</span>`;
 }
 
 function desenhar() {
   const titulo = tituloDa(rota);
-  document.title = `${titulo}, Brasileirão 2026`;
-  $("pageTitle").textContent = titulo;
-  $("fonte").innerHTML = rota.secao === "clube" ? "" : String(fonte());
+  document.title = rota.secao === "tabela" ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
+  $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : html`${titulo}`);
+  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" ? "" : String(fonte());
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
+  $("abas").innerHTML = String(abasInferiores(rota));
   $("main").innerHTML = String(conteudo(rota));
 }
 
-function abrirMenu(abrir: boolean) {
-  document.body.classList.toggle("nav-open", abrir);
-  $("menuBtn").setAttribute("aria-expanded", String(abrir));
-}
+const escudoTitulo = (c: string) => escudo(c, 34);
 
 window.addEventListener("hashchange", () => {
-  const nova = lerRota();
-  if (!nova) {
-    history.replaceState(null, "", ROTA_INICIAL);
-    rota = lerRota(ROTA_INICIAL)!;
-  } else {
-    const mesmaTela = nova.secao === rota.secao && nova.clube === rota.clube;
-    rota = nova;
-    if (!mesmaTela) window.scrollTo({ top: 0 });
-  }
-  abrirMenu(false);
+  const anterior = rota;
+  rota = rotaAtual();
+  const mesmaTela = anterior.secao === rota.secao && anterior.clube === rota.clube;
   desenhar();
-  if (rota.secao === "simulador" && document.activeElement?.matches("[data-snav]")) $("simRounds")?.scrollIntoView({ block: "start" });
+  if (!mesmaTela) window.scrollTo({ top: 0 });
+  else if (document.activeElement?.closest?.(".seg, .round-nav")) {
+    // trocou de aba ou de rodada: mantém o seletor à vista
+    document.querySelector(".seg")?.scrollIntoView({ block: "nearest" });
+  }
 });
 
-$("menuBtn").addEventListener("click", () => abrirMenu(!document.body.classList.contains("nav-open")));
-$("navFundo").addEventListener("click", () => abrirMenu(false));
-$("side").addEventListener("click", (e) => {
-  if ((e.target as HTMLElement).closest("a")) abrirMenu(false);
-});
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") abrirMenu(false);
-  if (rota.secao === "simulador") teclaSimulador(e);
+  if (rota.secao === "simular") teclaSimulador(e);
 });
 
-// linha da tabela inteira leva ao clube (o nome já é link; isto só aumenta a área de toque)
 $("main").addEventListener("click", (e) => {
   const alvo = e.target as HTMLElement;
-  if (rota.secao === "simulador" && cliqueSimulador(alvo, desenhar)) return;
+  if (rota.secao === "simular" && cliqueSimulador(alvo, desenhar)) return;
+  const pref = alvo.closest<HTMLButtonElement>("button[data-pref]");
+  if (pref) {
+    gravarPref(pref.dataset.pref!, pref.dataset.valor!);
+    $("main").innerHTML = String(conteudo(rota));
+    return;
+  }
   if (alvo.closest("a,button,input")) return;
+  // a linha inteira leva ao clube (o nome já é link; isto só aumenta a área de toque)
   const tr = alvo.closest<HTMLElement>("tr[data-href]");
   if (tr) location.hash = tr.dataset.href!;
 });
@@ -110,11 +119,11 @@ $("main").addEventListener("focusin", (e) => {
 });
 
 aoMudar(() => {
-  if (rota.secao === "simulador") atualizarResultadosSimulador();
+  if (rota.secao === "simular") atualizarResultadosSimulador();
   else $("main").innerHTML = String(conteudo(rota));
 });
 
-if (!lerRota()) history.replaceState(null, "", ROTA_INICIAL);
 desenhar();
 simularReal();
 agendarUsuario(0);
+

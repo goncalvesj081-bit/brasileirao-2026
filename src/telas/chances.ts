@@ -3,58 +3,65 @@ import { tabela } from "../dados";
 import { sims } from "../estado";
 import { chancesDaLinha, type ResultadoSimulacao } from "../modelo/simular";
 import type { Chances } from "../modelo/tipos";
-import { atrLinha, calculando, celClube, celProb, classeFaixa, corFaixa, legenda, type Tom } from "../ui/componentes";
-import { dec, saldo } from "../ui/formato";
+import { link, SECOES } from "../router";
+import { atrLinha, calculando, celClube, celProb, classeFaixa, corFaixa, seletor, type Tom } from "../ui/componentes";
+import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
+import { telaPontuacao } from "./pontuacao";
 
 export const ZONAS: Record<string, { chave: keyof Chances; nome: string; tom: Tom; frase: string }> = {
-  campeao: { chave: "c", nome: "Campeão", tom: "c-title", frase: "ser campeão" },
-  libertadores: { chave: "l", nome: "Libertadores", tom: "c-lib", frase: `ir à Libertadores (1º ao ${CORTES.lib}º, com a pré)` },
-  "sul-americana": { chave: "s", nome: "Sul-Americana", tom: "c-sula", frase: `terminar entre ${CORTES.lib + 1}º e ${CORTES.sula}º` },
-  rebaixamento: { chave: "r", nome: "Rebaixamento", tom: "c-rel", frase: "ser rebaixado" },
+  campeao: { chave: "c", nome: "Título", tom: "c-title", frase: "Chance de ser campeão" },
+  libertadores: { chave: "l", nome: "Libertadores", tom: "c-lib", frase: `Chance de ir à Libertadores (1º ao ${CORTES.lib}º, contando a pré)` },
+  "sul-americana": { chave: "s", nome: "Sul-Americana", tom: "c-sula", frase: `Chance de terminar entre ${CORTES.lib + 1}º e ${CORTES.sula}º` },
+  rebaixamento: { chave: "r", nome: "Queda", tom: "c-rel", frase: "Chance de ser rebaixado" },
 };
 
 const chancesDe = (res: ResultadoSimulacao, i: number) => chancesDaLinha(res.pos[i]);
 
-export function telaChances(vista: string): Html {
+export function telaChances(vista: string, extra: string): Html {
+  const sec = SECOES.find((s) => s.id === "chances")!;
+  const topo = seletor(sec.vistas, vista, (k) => link("chances", k), "Tipo de chance");
   const res = sims.real;
-  if (!res) return calculando();
-  if (vista === "posicoes") return mapaDeCalor(res);
-  if (ZONAS[vista]) return porZona(res, vista);
-  return resumo(res);
+  if (!res) return html`${topo}${calculando()}`;
+  let corpo: Html;
+  if (vista === "posicoes") corpo = mapaDeCalor(res);
+  else if (vista === "pontos") corpo = telaPontuacao(extra);
+  else if (ZONAS[vista]) corpo = porZona(res, vista);
+  else corpo = resumo(res);
+  return html`${topo}${corpo}`;
 }
 
 function resumo(res: ResultadoSimulacao): Html {
-  return html`${legenda()}
-    <p class="note">Libertadores soma fase de grupos e pré-Libertadores (1º ao ${CORTES.lib}º).</p>
-    <div class="box"><table style="min-width:700px">
-      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th>J</th><th>SG</th><th>Campeão</th><th>Liberta</th><th>Sula</th><th>Rebaix.</th><th title="Pontos médios no fim">Pts fim</th></tr></thead>
+  return html`<div class="box"><table class="tab curta">
+      <thead><tr><th>#</th><th class="l">Clube</th><th class="w">Pts</th><th>Título</th><th>Liberta</th><th>Sula</th><th>Queda</th><th class="w" title="Pontos esperados no fim">Fim</th></tr></thead>
       <tbody>${tabela.map((t, p) => {
         const c = chancesDe(res, p);
-        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="dim">${t.j}</td><td class="dim">${saldo(t.gp - t.gc)}</td>
-          ${celProb("c-title", c.c)}${celProb("c-lib", c.l)}${celProb("c-sula", c.s)}${celProb("c-rel", c.r)}<td class="dim">${dec(res.pts[p])}</td></tr>`;
+        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big w">${t.p}</td>
+          ${celProb("c-title", c.c)}${celProb("c-lib", c.l)}${celProb("c-sula", c.s)}${celProb("c-rel", c.r)}<td class="dim w">${dec(res.pts[p], 0)}</td></tr>`;
       })}</tbody>
-    </table></div>`;
+    </table></div>
+    <p class="note">Liberta soma a fase de grupos e a pré (1º ao ${CORTES.lib}º). ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados com os resultados até agora.</p>`;
 }
 
 function porZona(res: ResultadoSimulacao, vista: string): Html {
   const z = ZONAS[vista];
   const linhas = tabela.map((t, i) => ({ t, i, p: chancesDe(res, i)[z.chave] })).sort((a, b) => b.p - a.p || a.i - b.i);
-  return html`<h2>Chance de ${z.frase}</h2>
-    <div class="box"><table>
-      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th>J</th><th class="l">Probabilidade</th></tr></thead>
+  return html`<h2>${z.frase}</h2>
+    <div class="box"><table class="tab">
+      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="l">Chance</th></tr></thead>
       <tbody>${linhas.map(
-        (r, k) => html`<tr ${atrLinha(r.t.clube)}><td class="pos">${k + 1}</td>${celClube(r.t.clube)}<td class="big">${r.t.p}</td><td class="dim">${r.t.j}</td>${celProb(z.tom, r.p, "wide")}</tr>`,
+        (r) => html`<tr ${atrLinha(r.t.clube, classeFaixa(r.i))}><td class="pos">${r.i + 1}</td>${celClube(r.t.clube)}<td class="big">${r.t.p}</td>${celProb(z.tom, r.p, "wide")}</tr>`,
       )}</tbody>
-    </table></div>`;
+    </table></div>
+    <p class="note">O número à esquerda é a posição de hoje.</p>`;
 }
 
 function mapaDeCalor(res: ResultadoSimulacao): Html {
   const n = tabela.length;
   const cols = [...Array(n).keys()];
-  return html`<p class="sub">Chance, em %, de cada time terminar em cada posição. Quanto mais forte a cor, maior a chance.</p>
+  return html`<h2>Chance de cada posição final, em %</h2>
     <div class="box"><table class="heat">
-      <thead><tr><th class="l">Clube</th>${cols.map((p) => html`<th style="color:${corFaixa(p, n)}">${p + 1}º</th>`)}</tr></thead>
+      <thead><tr><th class="l">Clube</th>${cols.map((p) => html`<th style="color:${corFaixa(p, n)}">${p + 1}</th>`)}</tr></thead>
       <tbody>${tabela.map(
         (t, i) => html`<tr ${atrLinha(t.clube)}>${celClube(t.clube)}${cols.map((p) => {
           const v = res.pos[i][p];
@@ -64,6 +71,5 @@ function mapaDeCalor(res: ResultadoSimulacao): Html {
           return html`<td style="background:rgba(var(--heat),${alfa});${forte}" title="${t.clube}, ${p + 1}º: ${dec(v * 100)}%">${v < 0.01 ? html`<small>&lt;1</small>` : Math.round(v * 100)}</td>`;
         })}</tr>`,
       )}</tbody>
-    </table></div>
-    <p class="note">Cada linha soma 100%. ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados.</p>`;
+    </table></div>`;
 }

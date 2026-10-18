@@ -5,6 +5,7 @@ import jogosJson from "../data/jogos.json";
 import historicoJson from "../data/historico.json";
 import pessoasJson from "../data/pessoas.json";
 import metaJson from "../data/meta.json";
+import escudosJson from "../data/escudos.json";
 import { CLUBES } from "../config/clubes";
 import { classificacao } from "./modelo/classificacao";
 import { chaveDosResultados } from "./modelo/historico";
@@ -16,6 +17,7 @@ export const restantes = jogosJson.jogos as Jogo[];
 export const historico = historicoJson as unknown as EntradaHistorico[];
 export const pessoas = pessoasJson as unknown as Pessoas;
 export const meta = metaJson as Meta;
+export const escudos = escudosJson as Record<string, string>;
 
 export const nomesClubes = CLUBES.map((c) => c.nome);
 export const tabela: Linha[] = classificacao(nomesClubes, resultados);

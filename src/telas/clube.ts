@@ -7,7 +7,7 @@ import { ultimaRodadaComJogo } from "../modelo/rodadas";
 import { chancesDaLinha } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { ABAS_CLUBE } from "../router";
-import { calculando, forma, linkClube, vazio } from "../ui/componentes";
+import { calculando, classeFaixa, escudo, forma, linkClube, seletor, vazio } from "../ui/componentes";
 import { pct, saldo } from "../ui/formato";
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
@@ -20,7 +20,7 @@ export function telaClube(clube: string, aba: string): Html {
   const tec = pessoas.tecnicos.lista[clube];
 
   const ficha = html`<div class="ficha">
-    <div class="ficha-pos"><b>${i + 1}º</b><span>lugar</span></div>
+    <div class="ficha-pos ${classeFaixa(i)}"><b>${i + 1}º</b></div>
     <dl>
       <div><dt>Pontos</dt><dd>${t.p}</dd></div>
       <div><dt>Jogos</dt><dd>${t.j}</dd></div>
@@ -28,11 +28,9 @@ export function telaClube(clube: string, aba: string): Html {
       <div><dt>Saldo</dt><dd>${saldo(t.gp - t.gc)}</dd></div>
       <div><dt>Últimos 5</dt><dd>${forma(clube)}</dd></div>
     </dl>
-    ${tec ? html`<p class="note ficha-tec">Técnico: <b>${tec[0]}</b>, desde ${tec[1]}</p>` : ""}
+    ${tec ? html`<p class="note ficha-tec">Técnico <b>${tec[0]}</b>, desde ${tec[1]}</p>` : ""}
   </div>`;
-  const abas = html`<nav class="ttabs" aria-label="Seções do clube">${ABAS_CLUBE.map(
-    ([k, rot]) => html`<a href="${linkClube(clube, k)}" aria-current="${aba === k ? "page" : "false"}">${rot}</a>`,
-  )}</nav>`;
+  const abas = seletor(ABAS_CLUBE, aba, (k) => linkClube(clube, k), "Seções do clube");
 
   let corpo: Html;
   if (aba === "rodada-a-rodada") corpo = rodadaARodada(clube, i);
@@ -49,7 +47,7 @@ function jogosRestantes(clube: string): Jogo[] {
 function tabelaJogos(clube: string, lista: Jogo[]): Html {
   if (!lista.length) return html`<p class="note">Sem jogos restantes.</p>`;
   const F = forcas(tabela);
-  return html`<div class="box sem-linha"><table>
+  return html`<div class="box sem-linha"><table class="tab">
     <thead><tr><th class="l">Rod.</th><th class="l">Jogo</th><th>Vence</th><th>Empata</th><th>Perde</th></tr></thead>
     <tbody>${lista.map((g) => {
       const [H, D, A] = probResultado(...golsEsperados(F, g.mandante, g.visitante));
@@ -57,7 +55,7 @@ function tabelaJogos(clube: string, lista: Jogo[]): Html {
       const v = casa ? H : A,
         d = casa ? A : H;
       const adv = casa ? g.visitante : g.mandante;
-      return html`<tr><td class="l dim">${adiado(g) ? "Adiado" : `${g.rodada}ª`}</td><td class="l">${casa ? "x" : "@"} <a href="${linkClube(adv)}">${adv}</a></td><td class="${v > d ? "up" : ""}">${pct(v)}</td><td class="dim">${pct(D)}</td><td class="${d > v ? "down" : ""}">${pct(d)}</td></tr>`;
+      return html`<tr><td class="l dim">${adiado(g) ? "Adiado" : `${g.rodada}ª`}</td><td class="l team"><a href="${linkClube(adv)}"><span class="dim casa">${casa ? "x" : "@"}</span>${escudo(adv, 18)}<span>${adv}</span></a></td><td class="${v > d ? "up" : ""}">${pct(v)}</td><td class="dim">${pct(D)}</td><td class="${d > v ? "down" : ""}">${pct(d)}</td></tr>`;
     })}</tbody>
   </table></div>`;
 }
@@ -105,10 +103,10 @@ function jogos(clube: string): Html {
   return html`<section class="tsec"><h3>Jogos restantes</h3>${tabelaJogos(clube, jogosRestantes(clube))}
       <p class="note">“x” é jogo em casa e “@”, fora.</p></section>
     <section class="tsec"><h3>Resultados em 2026</h3>
-      <div class="box sem-linha"><table>
+      <div class="box sem-linha"><table class="tab">
         <thead><tr><th class="l">Rod.</th><th class="l">Adversário</th><th>Placar</th><th></th></tr></thead>
         <tbody>${feitos.map(
-          (g) => html`<tr><td class="l dim">${g.rodada}ª</td><td class="l">${g.casa ? "x" : "@"} <a href="${linkClube(g.adversario)}">${g.adversario}</a></td><td class="big">${g.pro}-${g.contra}</td><td><span class="form"><i class="${g.res}">${g.res}</i></span></td></tr>`,
+          (g) => html`<tr><td class="l dim">${g.rodada}ª</td><td class="l team"><a href="${linkClube(g.adversario)}"><span class="dim casa">${g.casa ? "x" : "@"}</span>${escudo(g.adversario, 18)}<span>${g.adversario}</span></a></td><td class="big">${g.pro}-${g.contra}</td><td><span class="form"><i class="${g.res}">${g.res}</i></span></td></tr>`,
         )}</tbody>
       </table></div></section>`;
 }

@@ -3,43 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#1f2328" />
-    <meta name="description" content="Probabilidades, tabela e simulador do Brasileirão Série A 2026." />
+    <meta name="theme-color" content="#111417" />
+    <meta name="description" content="Tabela, chances e simulador do Brasileirão Série A 2026." />
     <title>Brasileirão 2026</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f2328'/%3E%3Cpath d='M7 23h4V13H7zm7 0h4V8h-4zm7 0h4V17h-4z' fill='%239be15d'/%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111417'/%3E%3Cpath d='M7 23h4V13H7zm7 0h4V8h-4zm7 0h4V17h-4z' fill='%239be15d'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://crests.football-data.org" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" />
   </head>
   <body>
-    <div class="topbar">
-      <b>Brasileirão 26</b>
-      <button type="button" id="menuBtn" aria-controls="side" aria-expanded="false">Menu</button>
-    </div>
-    <div class="nav-fundo" id="navFundo"></div>
     <div class="app">
       <aside class="side" id="side">
-        <div class="brand"><b>Brasileirão 26</b><span>Chances, tabela e simulador da Série A</span></div>
-        <nav id="sideNav" aria-label="Seções"></nav>
-        <div>
-          <div class="grp">Clubes</div>
-          <nav class="clubs" id="sideClubs" aria-label="Clubes"></nav>
-        </div>
+        <a class="brand" href="#/tabela/geral"><b>Brasileirão <span>26</span></b><small>Série A</small></a>
+        <nav id="sideNav" class="side-nav" aria-label="Seções"></nav>
+        <nav class="clubs" id="sideClubs" aria-label="Clubes"></nav>
       </aside>
       <main class="content">
-        <div class="page-head">
+        <header class="page-head">
           <h1 id="pageTitle">Brasileirão 2026</h1>
           <div class="fonte" id="fonte"></div>
-        </div>
-        <section class="panel" id="main" tabindex="-1"></section>
-        <details>
-          <summary>Como o modelo calcula</summary>
-          <p>Cada time tem uma força de ataque (gols marcados por jogo) e uma de defesa (gols sofridos por jogo). As duas são puxadas para a média da liga: com poucos jogos, quase tudo é média; a partir da 12ª rodada, o peso do próprio time chega ao máximo, de 60%. Cada jogo restante é sorteado com placares de Poisson, com vantagem para o mandante, 20 mil vezes. Desempate: pontos, vitórias, saldo e gols pró.</p>
-          <p>Faixas de 2026: 1º ao 5º na fase de grupos da Libertadores, 6º e 7º na pré-Libertadores, 8º ao 13º na Sul-Americana, 17º ao 20º rebaixados. Elas podem mudar conforme os campeões da Copa do Brasil e da Libertadores.</p>
-          <p>A tela Por pontuação mostra, em todas as simulações, com que frequência um time que terminou com aquela pontuação ficou na faixa. Classificações e estatísticas são calculadas jogo a jogo a partir dos resultados.</p>
-        </details>
+        </header>
+        <section class="panel" id="main"></section>
       </main>
     </div>
+    <nav class="abas" id="abas" aria-label="Seções"></nav>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
