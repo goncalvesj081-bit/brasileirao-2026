@@ -21,7 +21,7 @@
    [
     "Carlos Vinícius",
     "Grêmio",
-    10
+    11
    ],
    [
     "Danilo dos Santos de Oliveira",
@@ -59,6 +59,11 @@
     9
    ],
    [
+    "Kaio Jorge",
+    "Cruzeiro",
+    9
+   ],
+   [
     "Samuel Lino",
     "Flamengo",
     9
@@ -76,11 +81,6 @@
    [
     "Pedro Rocha",
     "Coritiba",
-    8
-   ],
-   [
-    "Kaio Jorge",
-    "Cruzeiro",
     8
    ],
    [
@@ -204,6 +204,11 @@
     5
    ],
    [
+    "Rodrigo Castillo",
+    "Fluminense",
+    5
+   ],
+   [
     "Carlos Gómez",
     "Vasco",
     5
@@ -296,11 +301,6 @@
    [
     "Alex Telles",
     "Botafogo",
-    4
-   ],
-   [
-    "Rodrigo Castillo",
-    "Fluminense",
     4
    ],
    [
