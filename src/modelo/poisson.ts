@@ -33,3 +33,14 @@ export function sortearPoisson(l: number, rand: () => number): number {
   } while (p > L);
   return k - 1;
 }
+
+/** Igual a sortearPoisson, recebendo e^(-l) já calculado (mais rápido dentro do laço da simulação). */
+export function sortearPoissonExp(expMenosL: number, rand: () => number): number {
+  let k = 0,
+    p = 1;
+  do {
+    k++;
+    p *= rand();
+  } while (p > expMenosL);
+  return k - 1;
+}

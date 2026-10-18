@@ -36,3 +36,10 @@ export function golsEsperados(F: Forcas, mandante: string, visitante: string): [
   const d = (c: string) => F.defesa.get(c) ?? 1;
   return [F.media * a(mandante) * d(visitante) * M.fatorCasa, F.media * a(visitante) * d(mandante) * M.fatorFora];
 }
+
+/** Gols esperados em campo neutro (finais de jogo único). */
+export function golsNeutro(F: Forcas, a: string, b: string): [number, number] {
+  const at = (c: string) => F.ataque.get(c) ?? 1;
+  const df = (c: string) => F.defesa.get(c) ?? 1;
+  return [F.media * at(a) * df(b), F.media * at(b) * df(a)];
+}

@@ -1,6 +1,7 @@
 import { clube } from "../../config/clubes";
-import { copas } from "../dados";
-import { sortearCopa, VAGAS, type Copa } from "../modelo/copas";
+import { copas, tabela } from "../dados";
+import { golsPelasForcas, sortearCopa, VAGAS, type Copa } from "../modelo/copas";
+import { forcas } from "../modelo/forcas";
 import { criarRng } from "../modelo/rng";
 import type { ResultadoSimulacao } from "../modelo/simular";
 import { escudo } from "../ui/componentes";
@@ -25,10 +26,11 @@ function corte(contagem: Record<number, number>, n: number, tom: string): Html {
 function chancesCopa(copa: Copa): [string, number][] {
   if (copa.campeao) return [[copa.campeao, 1]];
   const rand = criarRng(2026);
+  const gols = golsPelasForcas(forcas(tabela));
   const N = 20000;
   const conta = new Map<string, number>();
   for (let s = 0; s < N; s++) {
-    const r = sortearCopa(copa, rand);
+    const r = sortearCopa(copa, rand, gols);
     if (r) conta.set(r.campeao, (conta.get(r.campeao) ?? 0) + 1);
   }
   return [...conta.entries()].map(([t, c]) => [t, c / N] as [string, number]).sort((a, b) => b[1] - a[1]);
@@ -62,5 +64,5 @@ export function telaVagas(res: ResultadoSimulacao): Html {
       ${blocoCopa(copas.libertadores, "Campeão brasileiro ganha vaga na próxima Libertadores.")}
       ${blocoCopa(copas.sulAmericana, "Campeão brasileiro ganha vaga na Libertadores.")}
     </div>
-    <p class="note">Situação das copas em ${copas.atualizado}. O que falta delas é sorteado em cada simulação a partir do placar dos jogos já feitos, com os dois times considerados de força igual.</p>`;
+    <p class="note">Situação das copas em ${copas.atualizado}. O que falta delas é sorteado em cada simulação a partir do placar dos jogos já feitos. Times do Brasileirão entram com a força que têm no campeonato; times de fora contam como de força média.</p>`;
 }

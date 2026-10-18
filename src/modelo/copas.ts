@@ -3,6 +3,7 @@
 // data/copas.json; o que falta disputar é sorteado em cada simulação.
 
 import { temporada } from "../../config/temporada";
+import { golsEsperados, golsNeutro, type Forcas } from "./forcas";
 import { sortearPoisson } from "./poisson";
 
 export type Mando = "a" | "b" | "neutro";
@@ -30,6 +31,8 @@ export interface Copa {
 
 export interface Copas {
   atualizado: string;
+  /** datas (ISO) dos jogos de copa ainda por disputar; deixam a atualização de 30 em 30 minutos ligada nesses dias */
+  jogos?: string[];
   copaDoBrasil: Copa;
   libertadores: Copa;
   sulAmericana: Copa;
@@ -38,33 +41,38 @@ export interface Copas {
 // sem saber a força de times de fora do Brasileirão, cada time é tratado como médio
 const MEDIA = temporada.modelo.mediaGolsPadrao;
 
-function jogo(mando: Mando, rand: () => number): number {
-  const la = MEDIA * (mando === "a" ? temporada.modelo.fatorCasa : mando === "b" ? temporada.modelo.fatorFora : 1);
-  const lb = MEDIA * (mando === "b" ? temporada.modelo.fatorCasa : mando === "a" ? temporada.modelo.fatorFora : 1);
-  return sortearPoisson(la, rand) - sortearPoisson(lb, rand);
-}
+/** Gols esperados de "a" e "b" num jogo da copa; sem informação, os dois são médios. */
+export type GolsCopa = (a: string, b: string, mando: Mando) => [number, number];
+
+const golsMedios: GolsCopa = (_a, _b, mando) => [
+  MEDIA * (mando === "a" ? temporada.modelo.fatorCasa : mando === "b" ? temporada.modelo.fatorFora : 1),
+  MEDIA * (mando === "b" ? temporada.modelo.fatorCasa : mando === "a" ? temporada.modelo.fatorFora : 1),
+];
 
 /** Vencedor de um confronto: soma o saldo dos jogos que faltam; empate no agregado vai aos pênaltis (50%). */
-export function decidir(c: Confronto, rand: () => number): string {
+export function decidir(c: Confronto, rand: () => number, gols: GolsCopa = golsMedios): string {
   if (c.vencedor) return c.vencedor;
   let saldo = c.saldoA;
-  for (const m of c.faltam) saldo += jogo(m, rand);
+  for (const m of c.faltam) {
+    const [la, lb] = gols(c.a, c.b, m);
+    saldo += sortearPoisson(la, rand) - sortearPoisson(lb, rand);
+  }
   if (saldo > 0) return c.a;
   if (saldo < 0) return c.b;
   return rand() < 0.5 ? c.a : c.b;
 }
 
 /** Sorteia o que falta da copa e devolve campeão e vice. */
-export function sortearCopa(copa: Copa, rand: () => number): { campeao: string; vice: string } | null {
+export function sortearCopa(copa: Copa, rand: () => number, gols?: GolsCopa): { campeao: string; vice: string } | null {
   if (copa.campeao && copa.vice) return { campeao: copa.campeao, vice: copa.vice };
   if (!copa.confrontos.length) return null;
   // a fase atual já é a final
   if (copa.confrontos.length === 1) {
     const c = copa.confrontos[0];
-    const campeao = decidir(c, rand);
+    const campeao = decidir(c, rand, gols);
     return { campeao, vice: campeao === c.a ? c.b : c.a };
   }
-  let vivos = copa.confrontos.map((c) => decidir(c, rand));
+  let vivos = copa.confrontos.map((c) => decidir(c, rand, gols));
   for (;;) {
     const final = vivos.length === 2;
     const prox: string[] = [];
@@ -72,7 +80,7 @@ export function sortearCopa(copa: Copa, rand: () => number): { campeao: string; 
       const a = vivos[i],
         b = vivos[i + 1];
       const faltam: Mando[] = final && copa.finalUnica ? ["neutro"] : ["a", "b"];
-      const venc = decidir({ a, b, saldoA: 0, faltam }, rand);
+      const venc = decidir({ a, b, saldoA: 0, faltam }, rand, gols);
       if (final) return { campeao: venc, vice: venc === a ? b : a };
       prox.push(venc);
     }
@@ -86,13 +94,29 @@ export interface Titulos {
   sulAmericana: string | null;
 }
 
-export function sortearTitulos(copas: Copas, rand: () => number): Titulos {
+export function sortearTitulos(copas: Copas, rand: () => number, gols?: GolsCopa): Titulos {
   return {
-    copaDoBrasil: sortearCopa(copas.copaDoBrasil, rand),
-    libertadores: sortearCopa(copas.libertadores, rand)?.campeao ?? null,
-    sulAmericana: sortearCopa(copas.sulAmericana, rand)?.campeao ?? null,
+    copaDoBrasil: sortearCopa(copas.copaDoBrasil, rand, gols),
+    libertadores: sortearCopa(copas.libertadores, rand, gols)?.campeao ?? null,
+    sulAmericana: sortearCopa(copas.sulAmericana, rand, gols)?.campeao ?? null,
   };
 }
+
+/** Força dos times nas copas: a do Brasileirão para quem está nele; times de fora contam como médios. */
+export function golsPelasForcas(F: Forcas): GolsCopa {
+  // poucos confrontos possíveis: calcula cada um uma vez só
+  const memo = new Map<string, [number, number]>();
+  return (a, b, mando) => {
+    const k = a + "|" + b + "|" + mando;
+    let r = memo.get(k);
+    if (!r) {
+      r = mando === "a" ? golsEsperados(F, a, b) : mando === "b" ? inverter(golsEsperados(F, b, a)) : golsNeutro(F, a, b);
+      memo.set(k, r);
+    }
+    return r;
+  };
+}
+const inverter = ([x, y]: [number, number]): [number, number] => [y, x];
 
 export const VAGAS = {
   /** Brasileirão: 1º ao 4º na fase de grupos e 5º na pré */

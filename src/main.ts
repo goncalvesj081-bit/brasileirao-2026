@@ -20,6 +20,7 @@ import { escudo, gravarPref, seletor } from "./ui/componentes";
 import { dataHora } from "./ui/formato";
 import { html, type Html } from "./ui/html";
 import { abasInferiores, listaClubes, navegacao } from "./ui/lateral";
+import { compartilhar } from "./ui/compartilhar";
 
 const $ = (id: string) => document.getElementById(id)!;
 
@@ -98,6 +99,11 @@ document.addEventListener("keydown", (e) => {
 $("main").addEventListener("click", (e) => {
   const alvo = e.target as HTMLElement;
   if (rota.secao === "simular" && cliqueSimulador(alvo, desenhar)) return;
+  const comp = alvo.closest<HTMLButtonElement>("button[data-compartilhar]");
+  if (comp) {
+    void compartilhar(comp.dataset.compartilhar!, comp);
+    return;
+  }
   const pref = alvo.closest<HTMLButtonElement>("button[data-pref]");
   if (pref) {
     gravarPref(pref.dataset.pref!, pref.dataset.valor!);
@@ -120,7 +126,7 @@ $("main").addEventListener("focusin", (e) => {
 
 /** Telas que mostram a simulação real e precisam ser redesenhadas quando ela termina. */
 const usaSimulacao = (r: Rota) =>
-  r.secao === "chances" || (r.secao === "tabela" && r.vista === "geral") || (r.secao === "clube" && (r.vista === "resumo" || r.vista === "rodada-a-rodada"));
+  r.secao === "chances" || r.secao === "jogos" || (r.secao === "tabela" && r.vista === "geral") || (r.secao === "clube" && (r.vista === "resumo" || r.vista === "rodada-a-rodada"));
 
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();
@@ -129,5 +135,10 @@ aoMudar(() => {
 
 desenhar();
 simularReal();
+
+// app instalável e uso sem internet (só no site publicado; no desenvolvimento atrapalharia o recarregamento)
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
 agendarUsuario(0);
 

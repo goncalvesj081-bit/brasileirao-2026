@@ -133,12 +133,22 @@ async function eventos(slug: string, meses: string[]): Promise<EspnEvento[]> {
 /** Meses de julho a dezembro do ano: cobre as fases de mata-mata das três copas. */
 const meses = (ano: number) => ["07", "08", "09", "10", "11", "12"].map((m) => `${ano}${m}`);
 
+/** Datas dos jogos de mata-mata ainda não encerrados (inclusive finais com times a definir). */
+export function datasPendentes(eventos: EspnEvento[]): string[] {
+  return eventos
+    .filter((e) => FASES.includes(e.season?.slug ?? "") && !(e.status.type.completed === true || /FULL_TIME|FINAL/.test(e.status.type.name)))
+    .map((e) => e.date);
+}
+
 export async function buscarCopas(ano: number, agora = new Date()): Promise<Copas> {
   const copas = {} as Record<keyof typeof LIGAS, Copa>;
+  const datas: string[] = [];
   for (const [k, l] of Object.entries(LIGAS) as [keyof typeof LIGAS, (typeof LIGAS)[keyof typeof LIGAS]][]) {
-    const copa = montarCopa(await eventos(l.slug, meses(ano)), l.nome);
+    const evs = await eventos(l.slug, meses(ano));
+    const copa = montarCopa(evs, l.nome);
     if (!copa) throw new Error(`${l.nome}: nenhum jogo de mata-mata encontrado.`);
     copas[k] = copa;
+    datas.push(...datasPendentes(evs));
   }
-  return { atualizado: agora.toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" }), ...copas };
+  return { atualizado: agora.toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" }), jogos: [...new Set(datas)].sort(), ...copas };
 }

@@ -9,6 +9,7 @@ import type { Jogo } from "../modelo/tipos";
 import { ABAS_CLUBE } from "../router";
 import { calculando, classeFaixa, escudo, forma, linkClube, modoVagas, seletor, seletorVagas, vazio } from "../ui/componentes";
 import { pct, saldo } from "../ui/formato";
+import { comoSomar, quantoFalta, type Objetivo, type ObjetivosPorPontos } from "../modelo/quantofalta";
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
 import { dataDoDado } from "./pessoas";
@@ -71,12 +72,57 @@ function resumo(clube: string, i: number): Html {
   const proximos = jogosRestantes(clube);
   return html`<section class="tsec"><h3>Chances no fim do campeonato</h3>${seletorVagas()}
       <div class="kpis">${kpi("Título", ch.c, "t-title")}${kpi("Libertadores", ch.l, "t-lib")}${kpi("Sul-Americana", ch.s, "t-sula")}${kpi("Rebaixamento", ch.r, "t-rel")}</div>
-      <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p></section>
+      <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p>
+      <button type="button" class="discreto compartilhar" data-compartilhar="${clube}">Compartilhar</button></section>
+    ${quantoFaltaHtml(clube, i)}
     <section class="tsec"><h3>Onde deve terminar</h3>
       <p class="note">Chance de terminar em cada posição. A mais provável é ${moda + 1}º, com ${pct(linha[moda])}.</p>
       ${barrasPosicao(linha, clube)}</section>
     <section class="tsec"><h3>Próximos jogos</h3>${tabelaJogos(clube, proximos.filter((g) => !adiado(g)).slice(0, 3))}
       ${proximos.length > 3 ? html`<a class="linkbtn" href="${linkClube(clube, "jogos")}">Ver os ${proximos.length} jogos restantes</a>` : ""}</section>`;
+}
+
+/** "Quanto falta": pontos para chegar a 90% em cada objetivo que ainda está em aberto. */
+function quantoFaltaHtml(clube: string, i: number): Html {
+  const res = sims.real;
+  const dados = res?.objetivosPorPontos?.[i];
+  if (!res || !dados) return html``;
+  const t = linhaDe(clube);
+  const jogos = restantes.filter((g) => g.mandante === clube || g.visitante === clube).length;
+  const ch = chancesSim(res, i, "posicao");
+  const ALVO = 0.9;
+  const itens: [Objetivo, string, number][] = [
+    ["titulo", "Título", ch.c],
+    ["libertadores", "Libertadores", ch.l],
+    ["sulAmericana", "Sul-Americana (ou mais)", ch.l + ch.s],
+    ["fugir", "Fugir da queda", 1 - ch.r],
+  ];
+  const linhas = itens
+    // só objetivos em aberto: nem perdidos (<1%) nem resolvidos (>99%)
+    .filter(([, , p]) => p >= 0.01 && p <= 0.99)
+    .map(([obj, nome]) => {
+      // "Sul-Americana (ou mais)": basta terminar até o corte da Sula
+      const dadosObj = obj === "sulAmericana" ? somarLibSula(dados) : dados;
+      const r = quantoFalta(dadosObj, obj, ALVO, t.p, jogos);
+      let txt: Html;
+      if (r.tipo === "garantido") txt = html`com os pontos de hoje já passa de ${pct(ALVO)}.`;
+      else if (r.tipo === "nao-alcanca")
+        txt = html`nem vencendo os ${jogos} jogos a chance chega a ${pct(ALVO)} (no máximo ${pct(r.chanceMaxima)}). Depende de tropeços dos outros.`;
+      else
+        txt = html`chegar a <b>${r.meta.pontos} pontos</b>: faltam ${r.meta.faltam} em ${jogos} jogo${jogos > 1 ? "s" : ""} (${comoSomar(r.meta.faltam)}).`;
+      return html`<li><span class="obj">${nome}</span><span>${txt}</span></li>`;
+    });
+  if (!linhas.length) return html``;
+  return html`<section class="tsec"><h3>Quanto falta</h3>
+    <ul class="falta">${linhas}</ul>
+    <p class="note">Pontos finais a partir dos quais a chance fica acima de ${pct(ALVO)} nas simulações, contando pela posição.</p></section>`;
+}
+
+/** Junta Libertadores e Sul-Americana: "terminar até o corte da Sula". */
+function somarLibSula(d: ObjetivosPorPontos): ObjetivosPorPontos {
+  const out: ObjetivosPorPontos = {};
+  for (const [p, b] of Object.entries(d)) out[+p] = [b[0], b[1], b[2], b[2] + b[3], b[4]];
+  return out;
 }
 
 function serie(clube: string, i: number): PontoSerie[] | null {

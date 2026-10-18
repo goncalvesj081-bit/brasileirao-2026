@@ -315,3 +315,29 @@ tr.destaque td b { color: var(--accent); }
 .aviso { margin: 0; font-size: 13px; color: var(--ink); background: var(--wash); border-left: 3px solid var(--title); padding: 8px 12px; }
 .aviso a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 a.mini { display: inline-flex; align-items: center; gap: 4px; margin-right: 10px; font-size: 12.5px; font-weight: 650; }
+
+/* ---------- jogos que decidem ---------- */
+.pesa { display: grid; gap: 8px; }
+.pesa ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; border-top: 2px solid var(--line-strong); padding-top: 10px; }
+.pesa li { display: grid; gap: 1px; font-size: 14px; }
+.pesa li small { color: var(--muted); font-size: 12px; }
+.pesa li .esc { vertical-align: -3px; }
+details.muda { border-top: 1px dashed var(--line); padding-top: 6px; }
+details.muda summary { font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; list-style: none; }
+details.muda summary::-webkit-details-marker { display: none; }
+details.muda summary::before { content: "+ "; color: var(--accent); }
+details.muda[open] summary::before { content: "− "; }
+details.muda table { margin-top: 6px; }
+details.muda th { font-size: 11.5px; padding: 4px 6px; }
+details.muda td { padding: 6px; font-size: 13.5px; font-weight: 600; border-bottom: 0; }
+details.muda td.forte { font-weight: 850; }
+.quem { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; color: var(--ink); }
+.quem small { color: var(--muted); font-weight: 500; }
+
+/* ---------- quanto falta / compartilhar ---------- */
+.falta { list-style: none; margin: 0; padding: 0; display: grid; border-top: 2px solid var(--line-strong); }
+.falta li { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr; gap: 4px 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.falta .obj { font-weight: 700; }
+.falta b { color: var(--accent); }
+@media (max-width: 480px) { .falta li { grid-template-columns: 1fr; } }
+button.compartilhar { justify-self: start; }

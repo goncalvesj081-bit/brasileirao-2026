@@ -1,7 +1,7 @@
 import { CORTES } from "../../config/temporada";
-import { distribuirVagas, sortearTitulos, type Copas, type Titulos } from "./copas";
+import { distribuirVagas, golsPelasForcas, sortearTitulos, type Copas, type Titulos } from "./copas";
 import { forcas, golsEsperados } from "./forcas";
-import { sortearPoisson } from "./poisson";
+import { sortearPoissonExp } from "./poisson";
 import type { Chances, Jogo, Linha, Placar } from "./tipos";
 
 export interface EntradaSimulacao {
@@ -39,6 +39,24 @@ export interface ResultadoSimulacao {
   /** em quantas simulações a última vaga da Libertadores (e da Sula) pela tabela parou em cada posição (0-based) */
   corteLib: Record<number, number>;
   corteSula: Record<number, number>;
+  /**
+   * Só no modo detalhado. Para cada jogo restante: em quantas simulações deu mandante (0), empate (1)
+   * e visitante (2), e, em cada caso, quantas vezes cada clube foi campeão, foi à Libertadores pela
+   * posição e caiu. Permite dizer "se o Bahia vencer, o Flamengo cai para X%".
+   */
+  porJogo?: EfeitoJogo[];
+  /** Só no modo detalhado. Por clube: pontos finais → [vezes, campeão, Libertadores, Sul-Americana, rebaixado], pela posição. */
+  objetivosPorPontos?: Record<number, [number, number, number, number, number]>[];
+}
+
+export interface EfeitoJogo {
+  id: string;
+  /** vezes que deu mandante, empate, visitante */
+  n: [number, number, number];
+  /** [resultado][clube] = vezes campeão / Libertadores pela posição / rebaixado */
+  c: number[][];
+  l: number[][];
+  r: number[][];
 }
 
 /**
@@ -70,7 +88,8 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       a: I.get(g.visitante)!,
       f: e.forcados?.[g.id] ?? null,
       L: golsEsperados(F, g.mandante, g.visitante),
-    }));
+    }))
+    .map((G) => ({ ...G, E: [Math.exp(-G.L[0]), Math.exp(-G.L[1])] }));
 
   const pos = Array.from({ length: n }, () => new Float64Array(n));
   const ptsSoma = new Float64Array(n);
@@ -86,6 +105,22 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
     corteSula = new Map<number, number>();
   const semTitulos: Titulos = { copaDoBrasil: null, libertadores: null, sulAmericana: null };
   const indice = (c: string) => I.get(c);
+  const golsCopa = golsPelasForcas(F);
+
+  // detalhado: efeito de cada jogo e objetivos por pontuação de cada clube
+  const ids = e.restantes.filter((g) => I.has(g.mandante) && I.has(g.visitante)).map((g) => g.id);
+  const saida = new Uint8Array(jogos.length);
+  // vetores planos (bem mais rápidos que listas aninhadas nesse volume): [jogo][resultado][clube]
+  const NJ = jogos.length;
+  const efN = e.detalhado ? new Int32Array(NJ * 3) : null;
+  const efC = e.detalhado ? new Int32Array(NJ * 3 * n) : null;
+  const efL = e.detalhado ? new Int32Array(NJ * 3 * n) : null;
+  const efR = e.detalhado ? new Int32Array(NJ * 3 * n) : null;
+  // [clube][pontos][vezes, campeão, Liberta, Sula, queda]
+  const MAXP = 3 * 38 + 1;
+  const objPts = e.detalhado ? new Int32Array(n * MAXP * 5) : null;
+  const naLib = new Int32Array(n),
+    naQueda = new Int32Array(n);
 
   const p0 = T.map((t) => t.p),
     v0 = T.map((t) => t.v),
@@ -105,17 +140,19 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       gc[i] = gc0[i];
       sorteio[i] = e.rand();
     }
-    for (const G of jogos) {
+    for (let g = 0; g < jogos.length; g++) {
+      const G = jogos[g];
       let gh: number, ga: number;
       if (G.f) [gh, ga] = G.f;
       else {
-        gh = sortearPoisson(G.L[0], e.rand);
-        ga = sortearPoisson(G.L[1], e.rand);
+        gh = sortearPoissonExp(G.E[0], e.rand);
+        ga = sortearPoissonExp(G.E[1], e.rand);
       }
       gp[G.h] += gh;
       gc[G.h] += ga;
       gp[G.a] += ga;
       gc[G.a] += gh;
+      saida[g] = gh > ga ? 0 : gh === ga ? 1 : 2;
       if (gh > ga) {
         p[G.h] += 3;
         v[G.h]++;
@@ -128,7 +165,7 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       }
     }
     const ordem = ordemFinal(p, v, gp, gc, sorteio);
-    const d = distribuirVagas(ordem, e.copas ? sortearTitulos(e.copas, e.rand) : semTitulos, indice, CORTES.rebaixados);
+    const d = distribuirVagas(ordem, e.copas ? sortearTitulos(e.copas, e.rand, golsCopa) : semTitulos, indice, CORTES.rebaixados);
     for (const i of d.lib) vagaLib[i]++;
     for (const i of d.sula) vagaSula[i]++;
     corteLib.set(d.corteLib, (corteLib.get(d.corteLib) ?? 0) + 1);
@@ -152,6 +189,29 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       }
       if (q >= n - CORTES.rebaixados) b[5]++;
       if (ptsDist) ptsDist[ti].set(P, (ptsDist[ti].get(P) ?? 0) + 1);
+      if (objPts) {
+        const o = (ti * MAXP + P) * 5;
+        objPts[o]++;
+        if (q === 0) objPts[o + 1]++;
+        if (q <= d.corteLib) objPts[o + 2]++;
+        else if (q <= d.corteSula) objPts[o + 3]++;
+        if (q >= n - CORTES.rebaixados) objPts[o + 4]++;
+      }
+    }
+    if (efN && efC && efL && efR) {
+      const nl = d.corteLib + 1;
+      for (let q = 0; q < nl; q++) naLib[q] = ordem[q];
+      const nq = CORTES.rebaixados;
+      for (let q = 0; q < nq; q++) naQueda[q] = ordem[n - nq + q];
+      const campeao = ordem[0];
+      for (let g = 0; g < NJ; g++) {
+        const go = g * 3 + saida[g];
+        efN[go]++;
+        const base = go * n;
+        efC[base + campeao]++;
+        for (let q = 0; q < nl; q++) efL[base + naLib[q]]++;
+        for (let q = 0; q < nq; q++) efR[base + naQueda[q]]++;
+      }
     }
     if (z4 && lib) {
       const kz = ordem.slice(n - CORTES.rebaixados).sort((a, b) => a - b).join(",");
@@ -176,6 +236,29 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
     posSula: Array.from(posSula, (x) => x / e.n),
     corteLib: Object.fromEntries(corteLib),
     corteSula: Object.fromEntries(corteSula),
+    porJogo:
+      efN && efC && efL && efR
+        ? ids.map((id, g) => {
+            const fatia = (v: Int32Array, o: number) => Array.from(v.subarray((g * 3 + o) * n, (g * 3 + o + 1) * n));
+            return {
+              id,
+              n: [efN[g * 3], efN[g * 3 + 1], efN[g * 3 + 2]] as [number, number, number],
+              c: [0, 1, 2].map((o) => fatia(efC, o)),
+              l: [0, 1, 2].map((o) => fatia(efL, o)),
+              r: [0, 1, 2].map((o) => fatia(efR, o)),
+            };
+          })
+        : undefined,
+    objetivosPorPontos: objPts
+      ? Array.from({ length: n }, (_, ti) => {
+          const m: Record<number, [number, number, number, number, number]> = {};
+          for (let P = 0; P < MAXP; P++) {
+            const o = (ti * MAXP + P) * 5;
+            if (objPts[o]) m[P] = [objPts[o], objPts[o + 1], objPts[o + 2], objPts[o + 3], objPts[o + 4]];
+          }
+          return m;
+        })
+      : undefined,
   };
 }
 
