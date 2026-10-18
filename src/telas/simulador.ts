@@ -1,7 +1,7 @@
 import { sigla } from "../../config/clubes";
 import { CORTES, temporada } from "../../config/temporada";
 import { confronto, jogosAdiados, nomesClubes, porData, resultados, restantes, rodadasAbertas, tabela } from "../dados";
-import { agendarUsuario, limparPlacares, nPlacares, placares, placaresPorId, rascunhos, salvarPlacares, sims, sincronizarComJogosReais } from "../estado";
+import { agendarUsuario, editaveis, limparPlacares, nPlacares, nSimulados, placares, placaresPorId, rascunhos, salvarPlacares, sims, sincronizarComJogosReais } from "../estado";
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
@@ -48,17 +48,17 @@ function htmlTabela(): Html {
 // ---------- resumo no topo ----------
 
 function htmlResumo(): Html {
-  const n = nPlacares();
-  const total = restantes.length;
+  const n = nSimulados();
+  const total = editaveis().length;
   let destaque: Html | "" = "";
-  if (n && sims.usuario && sims.real) {
+  if (nPlacares() && sims.usuario && sims.real) {
     const U = sims.usuario,
       R = sims.real;
     const i = U.pos.reduce((m, r, k) => (r[0] > U.pos[m][0] ? k : m), 0);
     const d = U.pos[i][0] - R.pos[i][0];
     destaque = html`<a class="efeito" href="${link("simular", "chances")}">${escudo(U.clubes[i], 18)}<span>${U.clubes[i]} campeão</span><b>${pct(U.pos[i][0])}</b>${Math.abs(d) >= 0.001 ? html`<small class="${d > 0 ? "up" : "down"}">${difPP(d)}</small>` : ""}</a>`;
   }
-  return html`<div class="progresso"><span><b>${n}</b> de ${total} jogos simulados</span><i style="width:${(100 * n) / total}%"></i></div>${destaque}`;
+  return html`<div class="progresso"><span><b>${n}</b> de ${total} jogos simulados</span><i style="width:${total ? (100 * n) / total : 100}%"></i></div>${destaque}`;
 }
 
 // ---------- jogos ----------
@@ -305,7 +305,7 @@ export function cliqueSimulador(alvo: HTMLElement, redesenhar: () => void): bool
     return true;
   }
   if (alvo.closest("button[data-act='limpar']")) {
-    if (!nPlacares() || !confirm("Apagar todos os placares simulados?")) return true;
+    if (!nSimulados() || !confirm("Apagar todos os placares simulados?")) return true;
     limparPlacares();
     // os jogos em andamento continuam com o placar real
     sincronizarComJogosReais();

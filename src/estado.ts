@@ -50,6 +50,10 @@ export function placaresPorId(): Record<string, Placar> {
 }
 
 export const nPlacares = () => Object.keys(placares).length;
+/** Jogos sem placar real ainda (os em andamento entram com o placar ao vivo, não contam como simulados). */
+export const editaveis = () => restantes.filter((g) => !g.aoVivo);
+/** Placares que o usuário escolheu: os dos jogos em andamento não contam. */
+export const nSimulados = () => editaveis().filter((g) => placares[confronto(g)]).length;
 
 /**
  * Jogos que começaram mandam no simulador: em andamento, o placar ao vivo fica fixo (e se atualiza);

@@ -3,7 +3,7 @@ import { CORTES, temporada } from "../../config/temporada";
 import { jogosDoClube } from "../modelo/classificacao";
 import type { ModoVagas } from "../modelo/simular";
 import { escudos, resultados } from "../dados";
-import { nPlacares, sims } from "../estado";
+import { nSimulados, sims } from "../estado";
 import { link } from "../router";
 import { pct } from "./formato";
 import { html, type Html } from "./html";
@@ -48,7 +48,7 @@ export function corFaixa(p: number, n = n0): string {
 
 /** Aviso nas telas de dados reais quando há placares simulados guardados. */
 export function avisoSimulacao(): Html {
-  const n = nPlacares();
+  const n = nSimulados();
   if (!n) return html``;
   return html`<p class="aviso">Aqui só entram resultados reais. Seus ${n} placare${n > 1 ? "s" : ""} simulado${n > 1 ? "s" : ""} aparece${n > 1 ? "m" : ""} em <a href="${link("simular", "tabela")}">Simular</a>.</p>`;
 }
