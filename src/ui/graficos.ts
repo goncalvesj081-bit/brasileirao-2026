@@ -66,7 +66,7 @@ export function evolucaoChances(clube: string, serie: PontoSerie[]): Html {
   if (serie.length < 2) return vazio("Ainda não há rodadas suficientes.");
   const W = 400,
     H = 210,
-    pl = 36,
+    pl = 42,
     pr = 52,
     pt = 12,
     pb = 26;

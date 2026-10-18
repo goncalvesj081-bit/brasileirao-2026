@@ -76,6 +76,7 @@ function desenhar() {
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
   $("main").innerHTML = String(conteudo(rota));
+  document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos");
 }
 
 const escudoTitulo = (c: string) => escudo(c, 34);

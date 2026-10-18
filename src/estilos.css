@@ -87,6 +87,15 @@ h3 { font-weight: 700; font-size: 15px; }
 .panel { display: grid; gap: 16px; min-width: 0; }
 .panel > section, .panel section { display: grid; gap: 10px; }
 
+/* telas largas: clube e jogos ocupam a largura em duas colunas */
+.colunas, .coluna { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.colunas > .inteira { grid-column: 1 / -1; }
+@media (min-width: 1360px) {
+  .content.larga { max-width: 1480px; }
+  .colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 48px; align-items: start; }
+  .larga .jogos { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; align-items: start; }
+}
+
 .abas { display: none; }
 
 @media (max-width: 899px) {

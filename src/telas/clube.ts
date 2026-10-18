@@ -38,7 +38,7 @@ export function telaClube(clube: string, aba: string): Html {
   else if (aba === "jogos") corpo = jogos(clube);
   else if (aba === "destaques") corpo = destaques(clube);
   else corpo = resumo(clube, i);
-  return html`${ficha}${abas}${corpo}`;
+  return html`${ficha}${abas}<div class="colunas">${corpo}</div>`;
 }
 
 function jogosRestantes(clube: string): Jogo[] {
@@ -70,16 +70,16 @@ function resumo(clube: string, i: number): Html {
   const kpi = (rot: string, v: number, cls: string) =>
     html`<div class="kpi ${v < 0.001 ? "zero" : ""}"><small>${rot}</small><b class="${cls}">${pct(v)}</b></div>`;
   const proximos = jogosRestantes(clube);
-  return html`<section class="tsec"><h3>Chances no fim do campeonato</h3>${seletorVagas()}
+  return html`<div class="coluna"><section class="tsec"><h3>Chances no fim do campeonato</h3>${seletorVagas()}
       <div class="kpis">${kpi("Título", ch.c, "t-title")}${kpi("Libertadores", ch.l, "t-lib")}${kpi("Sul-Americana", ch.s, "t-sula")}${kpi("Rebaixamento", ch.r, "t-rel")}</div>
       <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p>
       <button type="button" class="discreto compartilhar" data-compartilhar="${clube}">Compartilhar</button></section>
     ${quantoFaltaHtml(clube, i)}
+    <section class="tsec"><h3>Próximos jogos</h3>${tabelaJogos(clube, proximos.filter((g) => !adiado(g)).slice(0, 3))}
+      ${proximos.length > 3 ? html`<a class="linkbtn" href="${linkClube(clube, "jogos")}">Ver os ${proximos.length} jogos restantes</a>` : ""}</section></div>
     <section class="tsec"><h3>Onde deve terminar</h3>
       <p class="note">Chance de terminar em cada posição. A mais provável é ${moda + 1}º, com ${pct(linha[moda])}.</p>
-      ${barrasPosicao(linha, clube)}</section>
-    <section class="tsec"><h3>Próximos jogos</h3>${tabelaJogos(clube, proximos.filter((g) => !adiado(g)).slice(0, 3))}
-      ${proximos.length > 3 ? html`<a class="linkbtn" href="${linkClube(clube, "jogos")}">Ver os ${proximos.length} jogos restantes</a>` : ""}</section>`;
+      ${barrasPosicao(linha, clube)}</section>`;
 }
 
 /** "Quanto falta": pontos para chegar a 90% em cada objetivo que ainda está em aberto. */
@@ -139,8 +139,8 @@ function serie(clube: string, i: number): PontoSerie[] | null {
 function rodadaARodada(clube: string, i: number): Html {
   const s = serie(clube, i);
   if (!s) return calculando();
-  return html`<section class="tsec"><h3>Chance de top 5, de 6º ao 11º e de queda, rodada a rodada</h3>
-      <p class="note">Calculadas só com os resultados que existiam até aquela rodada. Aqui as faixas são fixas (top 5 e 6º ao 11º, a regra básica do Brasileirão), sem as vagas que descem das copas; por isso os números podem ser menores que os de Resumo.</p>${evolucaoChances(clube, s)}</section>
+  return html`<p class="note inteira">Chances calculadas só com os resultados que existiam até aquela rodada. Aqui as faixas são fixas (top 5 e 6º ao 11º, a regra básica do Brasileirão), sem as vagas que descem das copas; por isso os números podem ser menores que os de Resumo.</p>
+    <section class="tsec"><h3>Chance de top 5, de 6º ao 11º e de queda, rodada a rodada</h3>${evolucaoChances(clube, s)}</section>
     <section class="tsec"><h3>Posição na tabela depois de cada rodada</h3>${evolucaoPosicao(clube, s)}</section>`;
 }
 
@@ -176,13 +176,13 @@ function destaques(clube: string): Html {
     : manual.ast.filter((r) => r[1] >= 3);
   const lista = (rows: [string, number][], un: string, plural: string) =>
     html`<ol class="plist">${rows.map(([n, v]) => html`<li><span>${n}</span><b>${v} ${v > 1 ? plural : un}</b></li>`)}</ol>`;
-  return html`<section class="tsec"><h3>Técnico</h3>
+  return html`<div class="coluna"><section class="tsec"><h3>Técnico</h3>
       ${tec ? html`<p class="big-line">${tec[0]}</p><p class="note">No cargo desde ${tec[1]}.</p>` : html`<p class="note">Sem informação.</p>`}
       <p class="note">${trocas.length ? `Trocas em 2026: ${trocas.map((t) => `${t[1]} saiu em ${t[3]}, entrou ${t[4]}`).join("; ")}.` : "Sem trocas de técnico em 2026."}</p>
-      ${dataDoDado(pessoas.tecnicos)}</section>
-    <section class="tsec"><h3>Artilheiros no Brasileirão</h3>
+      ${dataDoDado(pessoas.tecnicos)}</section></div>
+    <div class="coluna"><section class="tsec"><h3>Artilheiros no Brasileirão</h3>
       ${art.length ? lista(art, "gol", "gols") : html`<p class="note">Sem dados atualizados.</p>`}
       ${dataDoDado(usarGeral ? pessoas.artilharia : pessoas.destaques)}</section>
     ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(usarGeral ? pessoas.assistencias : pessoas.destaques)}</section>` : ""}
-    ${!usarGeral && manual.obs ? html`<p class="note">${manual.obs}</p>` : ""}`;
+    ${!usarGeral && manual.obs ? html`<p class="note">${manual.obs}</p>` : ""}</div>`;
 }
