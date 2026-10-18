@@ -2,7 +2,7 @@
 // Página: rede primeiro (para pegar dados novos), cache se estiver offline.
 // Arquivos com hash no nome (JS/CSS), fontes e escudos: cache primeiro, porque não mudam.
 
-const CACHE = "brasileirao26-v1";
+const CACHE = "brasileirao26-v2";
 
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (e) => {
@@ -34,7 +34,7 @@ self.addEventListener("fetch", (e) => {
 
   const estatico =
     (url.origin === location.origin && /\/assets\/|\.(png|webmanifest)$/.test(url.pathname)) ||
-    /fonts\.(googleapis|gstatic)\.com|crests\.football-data\.org|upload\.wikimedia\.org/.test(url.host);
+    /fonts\.(googleapis|gstatic)\.com|crests\.football-data\.org|(upload|thumb)\.wikimedia\.org/.test(url.host);
   if (!estatico) return;
   e.respondWith(
     caches.match(req).then(
