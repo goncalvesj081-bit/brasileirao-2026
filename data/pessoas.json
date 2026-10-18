@@ -302,21 +302,1176 @@
     "Rodrigo Castillo",
     "Fluminense",
     4
-   ]
-  ]
- },
- "assistencias": {
-  "atualizado": "17/10/2026",
-  "fonte": "edição manual; até 17/10 para quem está entre os 30 artilheiros; os demais, até meados de setembro",
-  "lista": [
+   ],
    [
-    "Josué",
+    "Everaldo",
+    "Bahia",
+    4
+   ],
+   [
+    "Gabriel Taliari",
+    "Remo",
+    4
+   ],
+   [
+    "David",
+    "Vasco",
+    4
+   ],
+   [
+    "André Luiz",
+    "Corinthians",
+    4
+   ],
+   [
+    "Bernard",
+    "Atlético-MG",
+    4
+   ],
+   [
+    "Reinier",
+    "Atlético-MG",
+    4
+   ],
+   [
+    "Ferreira",
+    "São Paulo",
+    4
+   ],
+   [
+    "Tiago",
     "Coritiba",
-    11
+    4
+   ],
+   [
+    "Alexandro Bernabei",
+    "Internacional",
+    4
+   ],
+   [
+    "Benjamín Rollheiser",
+    "Santos",
+    4
+   ],
+   [
+    "Keny Arroyo",
+    "Cruzeiro",
+    4
+   ],
+   [
+    "Kevin Serna",
+    "Fluminense",
+    4
+   ],
+   [
+    "Vitinho",
+    "Internacional",
+    4
+   ],
+   [
+    "Juninho Capixaba",
+    "Bragantino",
+    3
+   ],
+   [
+    "Walter Clar",
+    "Chapecoense",
+    3
+   ],
+   [
+    "Willian José",
+    "Bahia",
+    3
+   ],
+   [
+    "Giorgian De Arrascaeta",
+    "Flamengo",
+    3
+   ],
+   [
+    "Yago Pikachu",
+    "Remo",
+    3
+   ],
+   [
+    "Julimar",
+    "Athletico-PR",
+    3
+   ],
+   [
+    "Bidu",
+    "Corinthians",
+    3
+   ],
+   [
+    "Rodrigo Garro",
+    "Corinthians",
+    3
+   ],
+   [
+    "Cauan Lucas",
+    "Vasco",
+    3
+   ],
+   [
+    "Hércules",
+    "Fluminense",
+    3
+   ],
+   [
+    "Neizer Villarreal",
+    "Cruzeiro",
+    3
+   ],
+   [
+    "Yuri Alberto",
+    "Corinthians",
+    3
+   ],
+   [
+    "Alerrandro",
+    "Internacional",
+    3
+   ],
+   [
+    "David Duarte",
+    "Bahia",
+    3
+   ],
+   [
+    "André Luis",
+    "Mirassol",
+    3
+   ],
+   [
+    "Mateo Cassierra",
+    "Atlético-MG",
+    3
+   ],
+   [
+    "Edson Carioca",
+    "Mirassol",
+    3
+   ],
+   [
+    "Rodrigo Moledo",
+    "Coritiba",
+    3
+   ],
+   [
+    "Fernando",
+    "Bragantino",
+    3
+   ],
+   [
+    "Vitor Hugo",
+    "Atlético-MG",
+    3
+   ],
+   [
+    "Ignácio",
+    "Fluminense",
+    3
+   ],
+   [
+    "Bruno Oliveira",
+    "Mirassol",
+    3
+   ],
+   [
+    "Alejo Veliz",
+    "Bahia",
+    3
+   ],
+   [
+    "Gustavo Henrique",
+    "Corinthians",
+    3
+   ],
+   [
+    "Facundo Colidio",
+    "Vasco",
+    3
+   ],
+   [
+    "Maurício Garcez",
+    "Chapecoense",
+    3
+   ],
+   [
+    "Gustavo Martins",
+    "Grêmio",
+    3
+   ],
+   [
+    "Erick",
+    "Bahia",
+    3
+   ],
+   [
+    "Gabriel Baralhas",
+    "Vitória",
+    2
+   ],
+   [
+    "Jean Carlos",
+    "Chapecoense",
+    2
+   ],
+   [
+    "Rafael Carvalheira",
+    "Chapecoense",
+    2
+   ],
+   [
+    "Bidon",
+    "Corinthians",
+    2
+   ],
+   [
+    "Gonzalo Plata",
+    "Flamengo",
+    2
+   ],
+   [
+    "Rafael Borré",
+    "Internacional",
+    2
+   ],
+   [
+    "Nathan",
+    "Mirassol",
+    2
+   ],
+   [
+    "Tetê",
+    "Grêmio",
+    2
+   ],
+   [
+    "Murilo Cerqueira",
+    "Palmeiras",
+    2
+   ],
+   [
+    "José Rodríguez",
+    "Vasco",
+    2
+   ],
+   [
+    "Erick Pulgar",
+    "Flamengo",
+    2
+   ],
+   [
+    "Wanderson",
+    "Cruzeiro",
+    2
+   ],
+   [
+    "Negueba",
+    "Mirassol",
+    2
+   ],
+   [
+    "Ruan",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "Dudu",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "Thaciano",
+    "Santos",
+    2
+   ],
+   [
+    "Leonel Picco",
+    "Remo",
+    2
+   ],
+   [
+    "Ramon",
+    "Vitória",
+    2
+   ],
+   [
+    "Cuiabano",
+    "Vasco",
+    2
+   ],
+   [
+    "Rodrigo Huendra",
+    "Bragantino",
+    2
+   ],
+   [
+    "Léo Pereira",
+    "Flamengo",
+    2
+   ],
+   [
+    "José Herrera",
+    "Bragantino",
+    2
+   ],
+   [
+    "Luiz Araújo",
+    "Flamengo",
+    2
+   ],
+   [
+    "Alexander Barboza",
+    "Palmeiras",
+    2
+   ],
+   [
+    "Lucas Esquivel",
+    "Athletico-PR",
+    2
+   ],
+   [
+    "Kauã Moraes",
+    "Cruzeiro",
+    2
+   ],
+   [
+    "Tchê Tchê",
+    "Vasco",
+    2
+   ],
+   [
+    "Moises",
+    "Santos",
+    2
+   ],
+   [
+    "Gabriel",
+    "Bragantino",
+    2
+   ],
+   [
+    "Marlon Freitas",
+    "Palmeiras",
+    2
+   ],
+   [
+    "Neto Pessoa",
+    "Chapecoense",
+    2
+   ],
+   [
+    "Jorginho",
+    "Flamengo",
+    2
+   ],
+   [
+    "Marllon",
+    "Remo",
+    2
+   ],
+   [
+    "Mateo Sanabria",
+    "Bahia",
+    2
+   ],
+   [
+    "Lucas Romero",
+    "Cruzeiro",
+    2
+   ],
+   [
+    "Marcelinho",
+    "Remo",
+    2
+   ],
+   [
+    "Gabriel Mec",
+    "Grêmio",
+    2
+   ],
+   [
+    "Diego Tarzia",
+    "Vitória",
+    2
+   ],
+   [
+    "Alan Minda",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "Maycon",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "Raniele",
+    "Corinthians",
+    2
+   ],
+   [
+    "Felipe Anderson",
+    "Palmeiras",
+    2
+   ],
+   [
+    "Tiago Volpi",
+    "Bragantino",
+    2
+   ],
+   [
+    "Paulinho",
+    "Palmeiras",
+    2
+   ],
+   [
+    "Kaio César",
+    "Corinthians",
+    2
+   ],
+   [
+    "Braian Aguirre",
+    "Internacional",
+    2
+   ],
+   [
+    "Eduardo Sasha",
+    "Bragantino",
+    2
+   ],
+   [
+    "Paulo Roberto",
+    "Coritiba",
+    2
+   ],
+   [
+    "Igor Gomes",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "João Victor",
+    "Mirassol",
+    2
+   ],
+   [
+    "Wallace",
+    "Grêmio",
+    2
+   ],
+   [
+    "Cristian Pavón",
+    "Grêmio",
+    2
+   ],
+   [
+    "Bruno Henrique",
+    "Flamengo",
+    2
+   ],
+   [
+    "Kerwin Vargas",
+    "Athletico-PR",
+    2
+   ],
+   [
+    "Túlio Oliveira",
+    "Chapecoense",
+    2
+   ],
+   [
+    "João Victor",
+    "Athletico-PR",
+    2
+   ],
+   [
+    "Santiago Rodríguez",
+    "Botafogo",
+    2
+   ],
+   [
+    "Thiago Borbas",
+    "Atlético-MG",
+    2
+   ],
+   [
+    "Christian Oliva",
+    "Santos",
+    2
+   ],
+   [
+    "Bruno Henrique",
+    "Internacional",
+    2
+   ],
+   [
+    "Alan Lescano",
+    "Vasco",
+    2
+   ],
+   [
+    "zé Lucas",
+    "Cruzeiro",
+    2
+   ],
+   [
+    "Agustin Giay",
+    "Palmeiras",
+    2
+   ],
+   [
+    "Nonato",
+    "Fluminense",
+    1
+   ],
+   [
+    "Gabriel Menino",
+    "Santos",
+    1
+   ],
+   [
+    "Higor Meritao",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Danielzinho",
+    "São Paulo",
+    1
+   ],
+   [
+    "Philippe Coutinho",
+    "Vasco",
+    1
+   ],
+   [
+    "Gustavinho",
+    "Bragantino",
+    1
+   ],
+   [
+    "João Pedro",
+    "Remo",
+    1
+   ],
+   [
+    "Zé Rafael",
+    "Santos",
+    1
+   ],
+   [
+    "Dudu",
+    "Vitória",
+    1
+   ],
+   [
+    "Cristian Olivera",
+    "Bahia",
+    1
+   ],
+   [
+    "Éverton",
+    "Flamengo",
+    1
+   ],
+   [
+    "Eduardo Doma",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Rubens Tadeu",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Lucas Moura",
+    "São Paulo",
+    1
+   ],
+   [
+    "Gabriel Paulista",
+    "Corinthians",
+    1
+   ],
+   [
+    "Ronaldo",
+    "Internacional",
+    1
    ],
    [
     "Andreas Pereira",
     "Palmeiras",
+    1
+   ],
+   [
+    "Cauly",
+    "São Paulo",
+    1
+   ],
+   [
+    "João Pedro",
+    "Corinthians",
+    1
+   ],
+   [
+    "Erick Noriega",
+    "Grêmio",
+    1
+   ],
+   [
+    "Marlon",
+    "Grêmio",
+    1
+   ],
+   [
+    "Jacy Maranhão",
+    "Coritiba",
+    1
+   ],
+   [
+    "Lucas Ronier",
+    "Coritiba",
+    1
+   ],
+   [
+    "Guilherme Arana",
+    "Fluminense",
+    1
+   ],
+   [
+    "Memphis Depay",
+    "Corinthians",
+    1
+   ],
+   [
+    "José Sabino",
+    "São Paulo",
+    1
+   ],
+   [
+    "Brenner",
+    "Vasco",
+    1
+   ],
+   [
+    "João Wellington",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Juan Ignacio Nardoni",
+    "Grêmio",
+    1
+   ],
+   [
+    "Iván Román",
+    "Atlético-MG",
+    1
+   ],
+   [
+    "Nuno Moreira",
+    "Vasco",
+    1
+   ],
+   [
+    "Claudio Spinelli",
+    "Vasco",
+    1
+   ],
+   [
+    "Francis Amuzu",
+    "Grêmio",
+    1
+   ],
+   [
+    "Leo Ortiz",
+    "Flamengo",
+    1
+   ],
+   [
+    "Dudu",
+    "Athletico-PR",
+    1
+   ],
+   [
+    "Gabriel Mercado",
+    "Internacional",
+    1
+   ],
+   [
+    "Juan Aguirre",
+    "Athletico-PR",
+    1
+   ],
+   [
+    "Shaylon",
+    "Mirassol",
+    1
+   ],
+   [
+    "Júnior Santos",
+    "Botafogo",
+    1
+   ],
+   [
+    "Lucas Villalba",
+    "Botafogo",
+    1
+   ],
+   [
+    "Gustavo Scarpa",
+    "Atlético-MG",
+    1
+   ],
+   [
+    "Lautaro Diaz",
+    "Santos",
+    1
+   ],
+   [
+    "Cacá",
+    "Vitória",
+    1
+   ],
+   [
+    "José Hurtado",
+    "Bragantino",
+    1
+   ],
+   [
+    "Lucas Oliveira",
+    "Mirassol",
+    1
+   ],
+   [
+    "Cristian Medina",
+    "Botafogo",
+    1
+   ],
+   [
+    "Ênio",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Nahuel Ferraresi",
+    "Botafogo",
+    1
+   ],
+   [
+    "Zé Vitor",
+    "Vitória",
+    1
+   ],
+   [
+    "Robert",
+    "Vasco",
+    1
+   ],
+   [
+    "Hugo Moura",
+    "Vasco",
+    1
+   ],
+   [
+    "Yannick Bolasie",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Carlos Eduardo",
+    "Mirassol",
+    1
+   ],
+   [
+    "Dieguinho",
+    "Corinthians",
+    1
+   ],
+   [
+    "Félix Torres",
+    "Internacional",
+    1
+   ],
+   [
+    "Kenji",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Matheuzinho",
+    "Corinthians",
+    1
+   ],
+   [
+    "Adonis Frías",
+    "Santos",
+    1
+   ],
+   [
+    "Willian Machado",
+    "Mirassol",
+    1
+   ],
+   [
+    "Mamady Cissé",
+    "Atlético-MG",
+    1
+   ],
+   [
+    "Matheus Doria",
+    "São Paulo",
+    1
+   ],
+   [
+    "Josué",
+    "Coritiba",
+    1
+   ],
+   [
+    "Viery",
+    "Grêmio",
+    1
+   ],
+   [
+    "Jordan Barrera",
+    "Botafogo",
+    1
+   ],
+   [
+    "Denilson Alves",
+    "Mirassol",
+    1
+   ],
+   [
+    "Luis Sinisterra",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Joao Paulo",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Zakaria Labyad",
+    "Corinthians",
+    1
+   ],
+   [
+    "Bruno Melo",
+    "Coritiba",
+    1
+   ],
+   [
+    "Victor Hugo",
+    "Botafogo",
+    1
+   ],
+   [
+    "Miguelito",
+    "Santos",
+    1
+   ],
+   [
+    "Lucão",
+    "Botafogo",
+    1
+   ],
+   [
+    "Kadir Barría",
+    "Botafogo",
+    1
+   ],
+   [
+    "Rodrigo Nestor",
+    "Bahia",
+    1
+   ],
+   [
+    "Román Gómez",
+    "Bahia",
+    1
+   ],
+   [
+    "Ademir Santos",
+    "Bahia",
+    1
+   ],
+   [
+    "Lorran",
+    "Flamengo",
+    1
+   ],
+   [
+    "Fabrizio Angileri",
+    "Corinthians",
+    1
+   ],
+   [
+    "Gabriel Pereira",
+    "Botafogo",
+    1
+   ],
+   [
+    "Diego Caito",
+    "Grêmio",
+    1
+   ],
+   [
+    "Marcos Antônio",
+    "São Paulo",
+    1
+   ],
+   [
+    "Jajá",
+    "Remo",
+    1
+   ],
+   [
+    "Tulio",
+    "Chapecoense",
+    1
+   ],
+   [
+    "João Marcelo",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Reinaldo",
+    "Mirassol",
+    1
+   ],
+   [
+    "Wesley Gassova",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Pedro Raul",
+    "Corinthians",
+    1
+   ],
+   [
+    "Germán Cano",
+    "Fluminense",
+    1
+   ],
+   [
+    "Pedro Henrique",
+    "Bragantino",
+    1
+   ],
+   [
+    "Pablo Maia",
+    "São Paulo",
+    1
+   ],
+   [
+    "Giovanni Augusto",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Nicolás Acevedo",
+    "Bahia",
+    1
+   ],
+   [
+    "Willian Arão",
+    "Santos",
+    1
+   ],
+   [
+    "Luan Peres",
+    "Santos",
+    1
+   ],
+   [
+    "Bruno Rodrigues",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Gustavo Marques",
+    "Bragantino",
+    1
+   ],
+   [
+    "Bruno Pacheco",
+    "Chapecoense",
+    1
+   ],
+   [
+    "Gustavo Santana",
+    "São Paulo",
+    1
+   ],
+   [
+    "Lucas Freitas",
+    "Vasco",
+    1
+   ],
+   [
+    "Felipe Morais",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Gastón Benavídez",
+    "Athletico-PR",
+    1
+   ],
+   [
+    "Zé Ricardo",
+    "Remo",
+    1
+   ],
+   [
+    "Fabinho",
+    "Coritiba",
+    1
+   ],
+   [
+    "Iago Borduchi",
+    "São Paulo",
+    1
+   ],
+   [
+    "Gustavo Mosquito",
+    "Mirassol",
+    1
+   ],
+   [
+    "Arthur Dias",
+    "Athletico-PR",
+    1
+   ],
+   [
+    "Vitor Fernandes",
+    "Atlético-MG",
+    1
+   ],
+   [
+    "Mathías Villasanti",
+    "Grêmio",
+    1
+   ],
+   [
+    "Vitinho",
+    "Botafogo",
+    1
+   ],
+   [
+    "Guilherme",
+    "Corinthians",
+    1
+   ],
+   [
+    "Jovane Cabral",
+    "Grêmio",
+    1
+   ],
+   [
+    "Alvaro Montoro",
+    "Botafogo",
+    1
+   ],
+   [
+    "Rony",
+    "Santos",
+    1
+   ],
+   [
+    "Bruno Duarte",
+    "Vasco",
+    1
+   ],
+   [
+    "Ramon Rique",
+    "Vasco",
+    1
+   ],
+   [
+    "Lucas Villalba",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Guillermo Varela",
+    "Flamengo",
+    1
+   ],
+   [
+    "Jorge Rivaldo",
+    "Athletico-PR",
+    1
+   ],
+   [
+    "Walter Kannemann",
+    "Grêmio",
+    1
+   ],
+   [
+    "David Braga",
+    "Remo",
+    1
+   ],
+   [
+    "Danilo Luiz da Silva",
+    "Flamengo",
+    1
+   ],
+   [
+    "Lyanco",
+    "Atlético-MG",
+    1
+   ],
+   [
+    "Leandro Martínez",
+    "Vitória",
+    1
+   ],
+   [
+    "Eric Ramires",
+    "Bragantino",
+    1
+   ],
+   [
+    "Matheus Henrique",
+    "Cruzeiro",
+    1
+   ],
+   [
+    "Tiquinho Soares",
+    "Botafogo",
+    1
+   ],
+   [
+    "Joaquín Piquerez",
+    "Palmeiras",
+    1
+   ]
+  ]
+ },
+ "assistencias": {
+  "atualizado": "18/10/2026",
+  "fonte": "ESPN",
+  "lista": [
+   [
+    "Andreas Pereira",
+    "Palmeiras",
+    10
+   ],
+   [
+    "Josué Pesqueira",
+    "Coritiba",
     10
    ],
    [
@@ -332,7 +1487,12 @@
    [
     "Pedro",
     "Flamengo",
-    7
+    6
+   ],
+   [
+    "Erick",
+    "Vitória",
+    6
    ],
    [
     "Rodrigo Garro",
@@ -340,13 +1500,33 @@
     6
    ],
    [
-    "Igor Formiga",
+    "Igor Marques",
     "Mirassol",
     5
    ],
    [
-    "Erick",
-    "Vitória",
+    "José Manuel López",
+    "Palmeiras",
+    5
+   ],
+   [
+    "Matheus Pereira",
+    "Cruzeiro",
+    5
+   ],
+   [
+    "Álvaro Montoro",
+    "Botafogo",
+    5
+   ],
+   [
+    "Alesson",
+    "Mirassol",
+    5
+   ],
+   [
+    "Luciano Acosta",
+    "Fluminense",
     5
    ],
    [
@@ -360,34 +1540,14 @@
     5
    ],
    [
-    "Lucas Esquivel",
-    "Athletico-PR",
-    5
-   ],
-   [
     "Giovanni Augusto",
     "Chapecoense",
     5
    ],
    [
-    "Álvaro Montoro",
-    "Botafogo",
+    "Lucas Esquivel",
+    "Athletico-PR",
     5
-   ],
-   [
-    "Matheus Pereira",
-    "Cruzeiro",
-    5
-   ],
-   [
-    "Hulk",
-    "Fluminense",
-    5
-   ],
-   [
-    "Flaco López",
-    "Palmeiras",
-    4
    ],
    [
     "Johan Carbonero",
@@ -395,15 +1555,170 @@
     4
    ],
    [
-    "Matheuzinho",
+    "Kevin Serna",
+    "Fluminense",
+    4
+   ],
+   [
+    "Reinaldo",
+    "Mirassol",
+    4
+   ],
+   [
+    "Alex Telles",
+    "Botafogo",
+    4
+   ],
+   [
+    "Cristian Pavón",
+    "Grêmio",
+    4
+   ],
+   [
+    "Matheus",
     "Vitória",
     4
+   ],
+   [
+    "Keny Arroyo",
+    "Cruzeiro",
+    4
+   ],
+   [
+    "Alerrando",
+    "Internacional",
+    4
+   ],
+   [
+    "Rodrigo Nestor",
+    "Bahia",
+    4
+   ],
+   [
+    "Henry Mosquera",
+    "Bragantino",
+    4
+   ],
+   [
+    "Giorgian de Arrascaeta",
+    "Flamengo",
+    4
+   ],
+   [
+    "José Luis Rodríguez",
+    "Vasco",
+    4
+   ],
+   [
+    "Cuiabano",
+    "Vasco",
+    4
+   ],
+   [
+    "Fagner",
+    "Cruzeiro",
+    4
+   ],
+   [
+    "Éverton Ribeiro",
+    "Bahia",
+    4
+   ],
+   [
+    "Joaquín Piquerez",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Vitinho",
+    "Internacional",
+    3
+   ],
+   [
+    "Kevin Viveros",
+    "Athletico-PR",
+    3
+   ],
+   [
+    "Vitinho",
+    "Botafogo",
+    3
+   ],
+   [
+    "Alef Manga",
+    "Remo",
+    3
+   ],
+   [
+    "Isidro Pitta",
+    "Bragantino",
+    3
+   ],
+   [
+    "Renan Lodi",
+    "Atlético-MG",
+    3
+   ],
+   [
+    "Gerson",
+    "Cruzeiro",
+    3
+   ],
+   [
+    "Jean Lucas",
+    "Bahia",
+    3
+   ],
+   [
+    "Jhon Arias",
+    "Palmeiras",
+    3
+   ],
+   [
+    "Francis Amuzu",
+    "Grêmio",
+    3
+   ],
+   [
+    "Bernard",
+    "Atlético-MG",
+    3
+   ],
+   [
+    "José Enamorado",
+    "Grêmio",
+    3
+   ],
+   [
+    "Jorginho",
+    "Flamengo",
+    3
+   ],
+   [
+    "Yannick Bolasie",
+    "Chapecoense",
+    3
+   ],
+   [
+    "Bruno Henrique",
+    "Flamengo",
+    3
+   ],
+   [
+    "Martinelli",
+    "Fluminense",
+    3
+   ],
+   [
+    "Guillermo Varela",
+    "Flamengo",
+    3
    ]
   ]
  },
  "tecnicos": {
-  "atualizado": "17/10/2026",
-  "fonte": "edição manual",
+  "atualizado": "18/10/2026",
+  "fonte": "Wikipédia (en)",
   "lista": {
    "Athletico-PR": [
     "Odair Hellmann",
@@ -419,7 +1734,7 @@
    ],
    "Botafogo": [
     "Tite",
-    "setembro de 2026"
+    "16/09/2026"
    ],
    "Chapecoense": [
     "Rafael Lacerda",
@@ -442,8 +1757,8 @@
     "04/03/2026"
    ],
    "Fluminense": [
-    "Marcão",
-    "13/08/2026 (efetivado até o fim do ano)"
+    "Marcão (interino)",
+    "13/08/2026"
    ],
    "Grêmio": [
     "Renato Gaúcho",
@@ -488,8 +1803,8 @@
   }
  },
  "trocas": {
-  "atualizado": "17/10/2026",
-  "fonte": "",
+  "atualizado": "18/10/2026",
+  "fonte": "Wikipédia (en)",
   "lista": [
    [
     "Atlético-MG",
@@ -515,7 +1830,7 @@
    [
     "Flamengo",
     "Filipe Luís",
-    "Saiu",
+    "Demitido",
     "03/03",
     "Leonardo Jardim"
    ],
@@ -529,14 +1844,14 @@
    [
     "Cruzeiro",
     "Tite",
-    "Saiu",
+    "Demitido",
     "15/03",
     "Artur Jorge"
    ],
    [
     "Santos",
     "Juan Pablo Vojvoda",
-    "Saiu",
+    "Demitido",
     "19/03",
     "Cuca"
    ],
@@ -544,7 +1859,7 @@
     "Botafogo",
     "Martín Anselmi",
     "Demitido",
-    "março",
+    "22/03",
     "Franclim Carvalho"
    ],
    [
@@ -558,20 +1873,20 @@
     "Corinthians",
     "Dorival Júnior",
     "Demitido",
-    "abril",
+    "05/04",
     "Fernando Diniz"
    ],
    [
     "São Paulo",
     "Roger Machado",
-    "Saiu",
+    "Demitido",
     "13/05",
     "Dorival Júnior"
    ],
    [
     "Chapecoense",
     "Fábio Matias",
-    "Saiu",
+    "Demitido",
     "25/05",
     "Rafael Lacerda"
    ],
@@ -587,26 +1902,26 @@
     "Luis Zubeldía",
     "Demitido",
     "13/08",
-    "Marcão"
+    "Marcão (interino)"
    ],
    [
     "Botafogo",
     "Franclim Carvalho",
-    "Saiu",
+    "Demitido",
     "18/08",
     "Tite"
    ],
    [
     "Grêmio",
     "Luís Castro",
-    "Saiu",
+    "Demitido",
     "13/09",
     "Renato Gaúcho"
    ],
    [
     "Remo",
     "Léo Condé",
-    "Saiu",
+    "Demitido",
     "15/09",
     "Thiago Carpini"
    ],
@@ -614,7 +1929,7 @@
     "Internacional",
     "Paulo Pezzolano",
     "Demitido",
-    "setembro",
+    "20/09",
     "Eduardo Baptista"
    ],
    [
