@@ -1,11 +1,7 @@
-import { lerPublicoDoClube } from "../lib/publico-clubes";
 const API = "https://en.wikipedia.org/w/api.php?format=json&formatversion=2";
 const UA = { "User-Agent": "brasileirao-2026 (https://github.com/goncalvesj081-bit/brasileirao-2026)" };
-const b = await (await fetch(`${API}&action=query&list=search&srlimit=10&srsearch=${encodeURIComponent("2026 Palmeiras season")}`, { headers: UA })).json();
-console.log(JSON.stringify(b.query.search.map((s: { title: string }) => s.title)));
 const { parse } = await (await fetch(`${API}&action=parse&prop=wikitext&redirects=1&page=${encodeURIComponent("2026 SE Palmeiras season")}`, { headers: UA })).json();
 const w: string = parse.wikitext;
-console.log("jogos:", lerPublicoDoClube("Palmeiras", w).length);
-const i = w.search(/attendance\s*=\s*[0-9]/i);
-console.log(w.slice(Math.max(0, i - 1500), i + 100));
-console.log([...w.matchAll(/^(={2,6})\s*(.+?)\s*\1\s*$/gm)].map((t) => t[0]).join(" | "));
+const a = w.indexOf("=== Série A ===");
+const m = w.indexOf("==== Matches ====", a);
+console.log(w.slice(m, m + 2500));
