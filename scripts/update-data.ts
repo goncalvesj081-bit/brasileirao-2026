@@ -12,6 +12,8 @@ import { validarDados } from "../src/modelo/validar";
 import { api, type ApiArtilheiro, type ApiLinha, type ApiPartida, type ApiTime } from "./lib/api";
 import { atualizarArtilharia, criarTradutor, dataBR, normalizarPartidas, normalizarTabela } from "./lib/normalizar";
 import { buscarAssistencias, buscarTecnicos } from "./lib/pessoas-auto";
+import { buscarSerieB } from "./lib/serieb-espn";
+import type { SerieB } from "../src/modelo/serieb";
 import { buscarCopas } from "./lib/copas-espn";
 import type { Copas } from "../src/modelo/copas";
 
@@ -121,6 +123,19 @@ async function main() {
   const escudos = { ...ler<Record<string, string>>("escudos.json", {}) };
   for (const t of times ?? []) if (t.crest?.startsWith("https://")) escudos[tradutor.nome(t)] = t.crest;
   novos["escudos.json"] = json(Object.fromEntries(Object.entries(escudos).filter(([c]) => clubes.includes(c)).sort()));
+
+  // Série B (ESPN, sem chave): se falhar ou vier incompleta, mantém o arquivo anterior
+  try {
+    const { aoVivo: _vivo, ...b } = await buscarSerieB(ano);
+    const anterior = ler<SerieB | null>("serieb.json", null);
+    const conteudo = (x: Omit<SerieB, "atualizado"> | null) => (x ? JSON.stringify([x.clubes, x.resultados, x.restantes, x.escudos]) : "");
+    if (conteudo(b) !== conteudo(anterior)) {
+      novos["serieb.json"] = json({ atualizado: new Date().toISOString(), ...b } satisfies SerieB);
+      console.log(`Série B: ${b.resultados.length} jogos disputados, ${b.restantes.length} restantes.`);
+    }
+  } catch (e) {
+    console.warn(`Aviso: Série B não atualizada (${(e as Error).message}). Mantendo data/serieb.json.`);
+  }
 
   // copas (ESPN, sem chave): se falhar, mantém o arquivo anterior; a data só muda quando o conteúdo muda
   try {

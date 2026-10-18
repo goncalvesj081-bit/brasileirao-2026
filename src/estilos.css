@@ -372,3 +372,7 @@ button.compartilhar { justify-self: start; }
 .quem-tec { display: inline-flex; align-items: center; gap: 8px; }
 .tab-tec td.team { min-width: 76px; }
 .tab-tec .quem-tec { white-space: normal; line-height: 1.25; }
+
+/* Série B */
+td.team .lado-b { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.lado-b .nome { white-space: nowrap; }

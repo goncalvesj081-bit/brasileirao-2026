@@ -18,5 +18,12 @@ try {
   /* sem copas.json: só o Brasileirão */
 }
 const daCopa: Jogo[] = datasCopas.map((data, k) => ({ id: `copa-${k}`, rodada: 0, mandante: "", visitante: "", data }));
-const rodar = ehDiaDeJogo([...jogos, ...daCopa], meta.aoVivo);
+// e os da Série B
+let daSerieB: Jogo[] = [];
+try {
+  daSerieB = (JSON.parse(readFileSync(join(dir, "serieb.json"), "utf8")) as { restantes: Jogo[] }).restantes ?? [];
+} catch {
+  /* sem serieb.json */
+}
+const rodar = ehDiaDeJogo([...jogos, ...daCopa, ...daSerieB], meta.aoVivo);
 console.log(`rodar=${rodar}`);

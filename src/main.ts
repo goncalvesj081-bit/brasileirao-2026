@@ -10,6 +10,7 @@ import { telaEstatisticas } from "./telas/estatisticas";
 import { telaMais, telaSobre } from "./telas/mais";
 import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
+import { aoCalcularSerieB, telaSerieB } from "./telas/serieb";
 import {
   atualizarResultadosSimulador,
   cliqueSimulador,
@@ -60,6 +61,8 @@ function conteudo(r: Rota): Html {
       return telaSobre();
     case "clube":
       return telaClube(r.clube!, r.vista);
+    case "serie-b":
+      return telaSerieB(r.vista);
   }
   return html``;
 }
@@ -92,7 +95,7 @@ function desenharTudo() {
   const titulo = tituloDa(rota);
   document.title = rota.secao === "tabela" ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
   $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : html`${titulo}`);
-  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" ? "" : String(fonte());
+  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" ? "" : String(fonte());
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
@@ -154,6 +157,10 @@ const usaSimulacao = (r: Rota) =>
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();
   else if (usaSimulacao(rota)) manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
+});
+
+aoCalcularSerieB(() => {
+  if (rota.secao === "serie-b") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
 desenhar();
