@@ -2,7 +2,7 @@ import { pessoas, tabela } from "../dados";
 import { atrLinha, celClube, celProb, classeFaixa, escudo, linkClube } from "../ui/componentes";
 import { html, type Html } from "../ui/html";
 
-/** "Atualizado em 17/10/2026 (edição manual)" */
+/** "Dados de 17/10/2026, ESPN." */
 export const dataDoDado = (d: { atualizado: string; fonte?: string }) =>
   html`<p class="note">Dados de ${d.atualizado || "data desconhecida"}${d.fonte ? `, ${d.fonte}` : ""}.</p>`;
 
@@ -23,7 +23,7 @@ export function telaPessoas(vista: string): Html {
     const art = vista === "artilharia";
     const bloco = art ? pessoas.artilharia : pessoas.assistencias;
     const max = bloco.lista[0]?.[2] || 1;
-    return html`<h2>${art ? "Artilharia" : "Assistências"}</h2>${dataDoDado(bloco)}
+    return html`<h2>${art ? "Artilharia" : "Assistências"}</h2>${dataDoDado(bloco)}${art ? "" : html`<p class="note">Os 50 primeiros do campeonato.</p>`}
       <div class="box"><table class="tab">
         <thead><tr><th>#</th><th class="l">Jogador</th><th class="l">Clube</th><th class="l">${art ? "Gols" : "Assistências"}</th></tr></thead>
         <tbody>${ranking(bloco.lista).map(
@@ -47,7 +47,7 @@ export function telaPessoas(vista: string): Html {
 
   const lista = pessoas.trocas.lista.slice().reverse();
   return html`<h2>Trocas de técnico em 2026</h2>${dataDoDado(pessoas.trocas)}
-    <p class="note">${lista.length} mudanças desde o início do campeonato, da mais recente para a mais antiga. Interinos que ficaram poucos dias foram omitidos.</p>
+    <p class="note">${lista.length} mudanças desde o início do campeonato, da mais recente para a mais antiga. Interinos não contam como troca.</p>
     <div class="box"><table class="tab">
       <thead><tr><th class="l">Data</th><th class="l">Clube</th><th class="l">Saiu</th><th class="l">Motivo</th><th class="l">Entrou</th></tr></thead>
       <tbody>${lista.map(

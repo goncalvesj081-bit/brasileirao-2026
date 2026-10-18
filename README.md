@@ -7,7 +7,7 @@ Probabilidades, tabela e simulador da Série A 2026. Site estático (Vite + Type
 | Pasta | O quê |
 | --- | --- |
 | `config/` | `temporada.ts` (faixas, parâmetros do modelo) e `clubes.ts` (nomes, siglas, slugs, nomes da API) |
-| `data/` | JSON gerados pelo script. `pessoas.json` também aceita edição manual |
+| `data/` | JSON gerados pelo script |
 | `scripts/` | `update-data.ts` busca e valida os dados; `deve-rodar.ts` decide se é dia de jogo |
 | `src/modelo/` | Código puro: classificação, forças, Poisson, simulação, histórico, validação, análise |
 | `src/telas/` | Uma tela por arquivo |
@@ -40,9 +40,15 @@ Se a validação falhar (pontos diferentes de 3V+E, time sem 38 jogos, clube des
 
 Em cada simulação, o que falta das copas é sorteado e as vagas são distribuídas pela regra de 2026 (`src/modelo/copas.ts`): 5 pela tabela, 2 da Copa do Brasil e uma para cada campeão continental brasileiro; vaga de quem já está classificado desce na tabela.
 
-## Edição manual
+## Jogadores e técnicos
 
-Artilharia, assistências, técnicos, trocas e destaques ficam em `data/pessoas.json`. Cada bloco tem `atualizado` (aparece na tela) e `fonte`. Quando a API traz artilheiros, eles substituem a lista manual. Técnicos: o nome exibido é o manual; o script só registra uma troca quando o técnico informado pela API muda.
+Tudo em `data/pessoas.json`, preenchido pelo script, sem edição manual. Cada bloco tem `atualizado` (aparece na tela, muda só quando a lista muda) e `fonte`:
+
+- artilharia: football-data.org (todos os que marcaram);
+- assistências: ESPN (os 50 primeiros, inclusive quem não marcou);
+- técnicos e trocas: Wikipédia em inglês, seções "Personnel and kits" e "Coaching changes" da página da temporada (`scripts/lib/pessoas-auto.ts`). Interinos não contam como troca.
+
+Se uma fonte falhar, o bloco anterior é mantido.
 
 ## Mudanças de regra
 

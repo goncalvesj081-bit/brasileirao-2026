@@ -157,23 +157,11 @@ function jogos(clube: string): Html {
       </table></div></section>`;
 }
 
-const dataBR = (s: string) => {
-  const m = /(\d{2})\/(\d{2})\/(\d{4})/.exec(s);
-  return m ? Date.UTC(+m[3], +m[2] - 1, +m[1]) : 0;
-};
-
 function destaques(clube: string): Html {
   const tec = pessoas.tecnicos.lista[clube];
   const trocas = pessoas.trocas.lista.filter((t) => t[0] === clube);
-  const manual = pessoas.destaques.porClube[clube];
-  // usa a fonte mais recente: os destaques manuais do clube ou a artilharia geral
-  const usarGeral = !manual || dataBR(pessoas.artilharia.atualizado) > dataBR(pessoas.destaques.atualizado);
-  const art: [string, number][] = usarGeral
-    ? pessoas.artilharia.lista.filter((a) => a[1] === clube).map((a) => [a[0], a[2]])
-    : manual.art;
-  const ast: [string, number][] = usarGeral
-    ? pessoas.assistencias.lista.filter((a) => a[1] === clube && a[2] >= 3).map((a) => [a[0], a[2]])
-    : manual.ast.filter((r) => r[1] >= 3);
+  const art: [string, number][] = pessoas.artilharia.lista.filter((a) => a[1] === clube).map((a) => [a[0], a[2]]);
+  const ast: [string, number][] = pessoas.assistencias.lista.filter((a) => a[1] === clube).map((a) => [a[0], a[2]]);
   const lista = (rows: [string, number][], un: string, plural: string) =>
     html`<ol class="plist">${rows.map(([n, v]) => html`<li><span>${n}</span><b>${v} ${v > 1 ? plural : un}</b></li>`)}</ol>`;
   return html`<div class="coluna"><section class="tsec"><h3>Técnico</h3>
@@ -182,7 +170,7 @@ function destaques(clube: string): Html {
       ${dataDoDado(pessoas.tecnicos)}</section></div>
     <div class="coluna"><section class="tsec"><h3>Artilheiros no Brasileirão</h3>
       ${art.length ? lista(art, "gol", "gols") : html`<p class="note">Sem dados atualizados.</p>`}
-      ${dataDoDado(usarGeral ? pessoas.artilharia : pessoas.destaques)}</section>
-    ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(usarGeral ? pessoas.assistencias : pessoas.destaques)}</section>` : ""}
-    ${!usarGeral && manual.obs ? html`<p class="note">${manual.obs}</p>` : ""}</div>`;
+      ${dataDoDado(pessoas.artilharia)}</section>
+    ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(pessoas.assistencias)}</section>` : ""}
+</div>`;
 }

@@ -9,8 +9,9 @@ import { temporada } from "../config/temporada";
 import { atualizarHistorico } from "../src/modelo/historico";
 import type { EntradaHistorico, Jogo, Meta, Pessoas, Resultado } from "../src/modelo/tipos";
 import { validarDados } from "../src/modelo/validar";
-import { api, type ApiArtilheiro, type ApiLinha, type ApiPartida, type ApiTimeCompleto } from "./lib/api";
-import { atualizarPessoas, criarTradutor, normalizarPartidas, normalizarTabela } from "./lib/normalizar";
+import { api, type ApiArtilheiro, type ApiLinha, type ApiPartida, type ApiTime } from "./lib/api";
+import { atualizarArtilharia, criarTradutor, dataBR, normalizarPartidas, normalizarTabela } from "./lib/normalizar";
+import { buscarAssistencias, buscarTecnicos } from "./lib/pessoas-auto";
 import { buscarCopas } from "./lib/copas-espn";
 import type { Copas } from "../src/modelo/copas";
 
@@ -28,7 +29,7 @@ async function opcional<T>(o: string, f: () => Promise<T>): Promise<T | null> {
   try {
     return await f();
   } catch (e) {
-    console.warn(`Aviso: ${o} indisponível (${(e as Error).message}). Mantendo os dados manuais.`);
+    console.warn(`Aviso: ${o} indisponível (${(e as Error).message}). Mantendo os dados anteriores.`);
     return null;
   }
 }
@@ -51,17 +52,33 @@ async function main() {
   const { matches } = await api<{ matches: ApiPartida[] }>(`/competitions/${C}/matches?season=${ano}`, chave);
   const { standings } = await api<{ standings: { type: string; table: ApiLinha[] }[] }>(`/competitions/${C}/standings?season=${ano}`, chave);
   const artilheiros = await opcional("artilharia", () =>
-    api<{ scorers: ApiArtilheiro[] }>(`/competitions/${C}/scorers?season=${ano}&limit=60`, chave).then((r) => r.scorers),
+    // limite alto: todos os que marcaram, para a lista de cada clube ficar completa
+    api<{ scorers: ApiArtilheiro[] }>(`/competitions/${C}/scorers?season=${ano}&limit=500`, chave).then((r) => r.scorers),
   );
-  const times = await opcional("técnicos", () =>
-    api<{ teams: ApiTimeCompleto[] }>(`/competitions/${C}/teams?season=${ano}`, chave).then((r) => r.teams),
-  );
+  // só para os escudos
+  const times = await opcional("times", () => api<{ teams: ApiTime[] }>(`/competitions/${C}/teams?season=${ano}`, chave).then((r) => r.teams));
+  // técnicos e trocas pela Wikipédia; assistências pela ESPN (a football-data só traz as de quem marcou)
+  const tecnicos = await opcional("técnicos (Wikipédia)", () => buscarTecnicos(ano));
+  const assistencias = await opcional("assistências (ESPN)", buscarAssistencias);
 
   const tradutor = criarTradutor();
   const { resultados, restantes, aoVivo } = normalizarPartidas(matches, tradutor.nome);
   const total = standings.find((s) => s.type === "TOTAL")?.table ?? [];
   const oficial = normalizarTabela(total, tradutor.nome);
-  const pessoas = pessoasAtual ? atualizarPessoas(pessoasAtual, artilheiros, times, tradutor.nome) : null;
+  let pessoas = pessoasAtual ? atualizarArtilharia(pessoasAtual, artilheiros, tradutor.nome) : null;
+  if (pessoas) {
+    // a data só muda quando a lista muda, senão o arquivo seria regravado a cada execução
+    const hoje = dataBR(new Date());
+    const bloco = <L>(antes: { atualizado: string; fonte: string; lista: L }, lista: L, fonte: string) =>
+      JSON.stringify(antes.lista) === JSON.stringify(lista) && antes.fonte === fonte ? antes : { atualizado: hoje, fonte, lista };
+    if (tecnicos)
+      pessoas = {
+        ...pessoas,
+        tecnicos: bloco(pessoas.tecnicos, tecnicos.lista, "Wikipédia (en)"),
+        trocas: bloco(pessoas.trocas, tecnicos.trocas, "Wikipédia (en)"),
+      };
+    if (assistencias) pessoas = { ...pessoas, assistencias: bloco(pessoas.assistencias, assistencias, "ESPN") };
+  }
   tradutor.conferir();
 
   // A classificação da API às vezes demora alguns minutos para incluir um jogo recém-encerrado.

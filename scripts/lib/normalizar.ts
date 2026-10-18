@@ -1,6 +1,6 @@
 import { clubePorNomeApi } from "../../config/clubes";
 import type { Jogo, Linha, Pessoas, Resultado } from "../../src/modelo/tipos";
-import type { ApiArtilheiro, ApiLinha, ApiPartida, ApiTime, ApiTimeCompleto } from "./api";
+import type { ApiArtilheiro, ApiLinha, ApiPartida, ApiTime } from "./api";
 
 export class NomesDesconhecidos extends Error {}
 
@@ -68,64 +68,13 @@ export function normalizarTabela(linhas: ApiLinha[], nome: (t: ApiTime) => strin
   }));
 }
 
-const dataBR = (d: Date) => d.toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" });
+export const dataBR = (d: Date) => d.toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" });
 
-/**
- * Atualiza artilharia, assistências e técnicos com o que a API trouxer. O que ela não trouxer
- * continua como estava no pessoas.json (edição manual). Troca de técnico detectada vira registro em `trocas`.
- */
-export function atualizarPessoas(
-  atual: Pessoas,
-  artilheiros: ApiArtilheiro[] | null,
-  times: ApiTimeCompleto[] | null,
-  nome: (t: ApiTime) => string,
-  agora = new Date(),
-): Pessoas {
-  const hoje = dataBR(agora);
-  const p: Pessoas = structuredClone(atual);
-  const fonte = "football-data.org";
-
-  if (artilheiros?.length) {
-    const gols = artilheiros.filter((a) => (a.goals ?? 0) > 0).map((a) => [a.player.name, nome(a.team), a.goals!] as [string, string, number]);
-    if (gols.length) p.artilharia = { atualizado: hoje, fonte, lista: gols.sort((a, b) => b[2] - a[2]) };
-    const ast = artilheiros.filter((a) => (a.assists ?? 0) > 0).map((a) => [a.player.name, nome(a.team), a.assists!] as [string, string, number]);
-    // a lista de artilheiros só traz quem marcou; assistências dela são parciais, então só substitui se a manual estiver vazia
-    if (ast.length && !p.assistencias.lista.length) p.assistencias = { atualizado: hoje, fonte: `${fonte} (só entre os artilheiros)`, lista: ast.sort((a, b) => b[2] - a[2]) };
-  }
-
-  // Técnicos: o nome exibido é o da edição manual ("Tite"); a API usa o nome completo ("Adenor Leonardo Bacchi").
-  // Por isso guardamos o último nome visto na API e só registramos troca quando ELE muda.
-  if (times?.length) {
-    const lista = { ...p.tecnicos.lista };
-    const vistos = { ...(p.tecnicos.api ?? {}) };
-    let trocou = false;
-    for (const t of times) {
-      const tecnico = t.coach?.name?.trim();
-      if (!tecnico) continue;
-      const clube = nome(t);
-      const visto = vistos[clube];
-      vistos[clube] = tecnico;
-      if (!visto && lista[clube]) continue; // primeira vez: só aprende o nome da API
-      if (visto && mesmaPessoa(visto, tecnico)) continue;
-      const inicio = t.coach?.contract?.start ? dataBR(new Date(t.coach.contract.start)) : hoje;
-      if (lista[clube]) p.trocas = { atualizado: hoje, lista: [...p.trocas.lista, [clube, lista[clube][0], "", hoje, tecnico]] };
-      lista[clube] = [tecnico, inicio];
-      trocou = true;
-    }
-    p.tecnicos = { ...p.tecnicos, lista, api: vistos, ...(trocou ? { atualizado: hoje, fonte } : {}) };
-  }
-  return p;
-}
-
-const PARTICULAS = new Set(["da", "de", "do", "das", "dos", "e", "jr", "junior", "filho", "neto"]);
-
-/** A API costuma usar o nome completo ("Abel Fernando Moreira Ferreira"); a edição manual, o nome conhecido ("Abel Ferreira"). */
-export function mesmaPessoa(a: string, b: string): boolean {
-  const partes = (s: string) =>
-    s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 2 && !PARTICULAS.has(w));
-  const A = partes(a),
-    B = new Set(partes(b));
-  if (!A.length || !B.size) return false;
-  const comuns = A.filter((w) => B.has(w)).length;
-  return comuns >= Math.min(2, A.length, B.size);
+/** Artilharia pela football-data.org (todos os que marcaram). Sem lista nova, mantém a anterior. */
+export function atualizarArtilharia(atual: Pessoas, artilheiros: ApiArtilheiro[] | null, nome: (t: ApiTime) => string, agora = new Date()): Pessoas {
+  const gols = (artilheiros ?? []).filter((a) => (a.goals ?? 0) > 0).map((a) => [a.player.name, nome(a.team), a.goals!] as [string, string, number]);
+  if (!gols.length) return atual;
+  gols.sort((a, b) => b[2] - a[2]);
+  if (JSON.stringify(gols) === JSON.stringify(atual.artilharia.lista)) return atual;
+  return { ...atual, artilharia: { atualizado: dataBR(agora), fonte: "football-data.org", lista: gols } };
 }

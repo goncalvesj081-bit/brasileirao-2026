@@ -57,12 +57,8 @@ export interface Meta {
 export interface Pessoas {
   artilharia: { atualizado: string; fonte: string; lista: [string, string, number][] };
   assistencias: { atualizado: string; fonte: string; lista: [string, string, number][] };
-  /** lista: clube → [técnico, no cargo desde]; api: último nome visto na API (para detectar trocas) */
-  tecnicos: { atualizado: string; fonte: string; lista: Record<string, [string, string]>; api?: Record<string, string> };
+  /** lista: clube → [técnico, no cargo desde] */
+  tecnicos: { atualizado: string; fonte: string; lista: Record<string, [string, string]> };
   /** [clube, saiu, motivo, data, entrou] */
-  trocas: { atualizado: string; lista: [string, string, string, string, string][] };
-  destaques: {
-    atualizado: string;
-    porClube: Record<string, { art: [string, number][]; ast: [string, number][]; obs?: string }>;
-  };
+  trocas: { atualizado: string; fonte: string; lista: [string, string, string, string, string][] };
 }

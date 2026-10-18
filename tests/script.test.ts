@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { ehDiaDeJogo } from "../scripts/lib/agenda";
-import { atualizarPessoas, criarTradutor, mesmaPessoa, normalizarPartidas } from "../scripts/lib/normalizar";
+import { criarTradutor, normalizarPartidas } from "../scripts/lib/normalizar";
 import type { ApiPartida } from "../scripts/lib/api";
-import type { Jogo, Pessoas } from "../src/modelo/tipos";
+import type { Jogo } from "../src/modelo/tipos";
 
 const jogo = (data: string | null): Jogo => ({ id: "1", rodada: 1, mandante: "Bahia", visitante: "Remo", data });
 
@@ -61,33 +61,5 @@ describe("normalização da API", () => {
     const t = criarTradutor();
     normalizarPartidas([partida({ homeTeam: { id: 9, name: "Sport Club do Recife", shortName: "Sport" } })], t.nome);
     expect(() => t.conferir()).toThrow(/Sport Club do Recife/);
-  });
-});
-
-describe("técnicos", () => {
-  const base: Pessoas = {
-    artilharia: { atualizado: "", fonte: "", lista: [] },
-    assistencias: { atualizado: "", fonte: "", lista: [] },
-    tecnicos: { atualizado: "01/10/2026", fonte: "manual", lista: { Palmeiras: ["Abel Ferreira", "out/2020"] } },
-    trocas: { atualizado: "", lista: [] },
-    destaques: { atualizado: "", porClube: {} },
-  };
-  const t = criarTradutor();
-  const times = (nome: string) => [{ id: 1, name: "SE Palmeiras", coach: { name: nome } }];
-
-  it("reconhece a mesma pessoa com nome completo", () => {
-    expect(mesmaPessoa("Abel Ferreira", "Abel Fernando Moreira Ferreira")).toBe(true);
-    expect(mesmaPessoa("Abel Ferreira", "Vanderlei Luxemburgo")).toBe(false);
-  });
-
-  it("na primeira vez só aprende o nome da API; troca só quando ele muda", () => {
-    const p1 = atualizarPessoas(base, null, times("Abel Fernando Moreira Ferreira"), t.nome);
-    expect(p1.tecnicos.lista.Palmeiras[0]).toBe("Abel Ferreira");
-    expect(p1.trocas.lista).toHaveLength(0);
-    const p2 = atualizarPessoas(p1, null, times("Abel Fernando Moreira Ferreira"), t.nome);
-    expect(p2.trocas.lista).toHaveLength(0);
-    const p3 = atualizarPessoas(p2, null, times("Renato Portaluppi"), t.nome, new Date("2026-10-20T12:00:00Z"));
-    expect(p3.tecnicos.lista.Palmeiras[0]).toBe("Renato Portaluppi");
-    expect(p3.trocas.lista).toEqual([["Palmeiras", "Abel Ferreira", "", "20/10/2026", "Renato Portaluppi"]]);
   });
 });
