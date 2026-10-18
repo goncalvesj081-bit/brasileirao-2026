@@ -15,6 +15,7 @@ const ICONES: Record<string, string> = {
   chances: '<path d="M5 20V12M12 20V5M19 20v-9"/>',
   jogos: '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   simular: '<path d="M6 4v16M18 4v16M12 4v16"/><circle cx="6" cy="9" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="18" cy="8" r="2"/>',
+  bolao: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM5 5h3M16 5h3M5 5c0 3 1.5 4 3 4M19 5c0 3-1.5 4-3 4M12 13v4M8 20h8"/>',
   "serie-b": '<path d="M7 4h6.5a3.5 3.5 0 0 1 0 7H7zM7 11h7.5a3.5 3.5 0 0 1 0 7H7zM7 4v14"/>',
   comparar: '<path d="M8 4v16M16 4v16M4 8h8M12 16h8"/>',
   estatisticas: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',

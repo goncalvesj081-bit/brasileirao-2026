@@ -1,0 +1,46 @@
+rules_version = '2';
+// Regras do bolão. Publicadas sozinhas pela atualização automática (scripts/bolao.ts).
+// - jogos: horário de início de cada jogo, escrito só pelo script; trava os palpites.
+// - palpites: cada um mexe só nos seus, e só até o jogo começar; ninguém lê os dos outros
+//   (os palpites aparecem para todos depois que o jogo começa, em "publico", escritos pelo script).
+// - usuarios: nome e foto para o ranking; cada um edita só o seu.
+// - publico: ranking e palpites revelados, escritos só pelo script.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /jogos/{jogo} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    function placarValido(d) {
+      return d.gm is int && d.gv is int && d.gm >= 0 && d.gv >= 0 && d.gm <= 20 && d.gv <= 20;
+    }
+    function antesDoJogo(jogo) {
+      let j = get(/databases/$(database)/documents/jogos/$(jogo));
+      return j != null && j.data.inicio != null && request.time < j.data.inicio;
+    }
+
+    match /palpites/{id} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create, update: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && id == request.auth.uid + "_" + request.resource.data.jogo
+        && request.resource.data.keys().hasOnly(["uid", "jogo", "gm", "gv", "rodada", "em"])
+        && placarValido(request.resource.data)
+        && antesDoJogo(request.resource.data.jogo);
+      allow delete: if request.auth != null && resource.data.uid == request.auth.uid && antesDoJogo(resource.data.jogo);
+    }
+
+    match /usuarios/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(["nome", "foto"])
+        && request.resource.data.nome is string && request.resource.data.nome.size() > 0 && request.resource.data.nome.size() <= 30;
+    }
+
+    match /publico/{doc} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

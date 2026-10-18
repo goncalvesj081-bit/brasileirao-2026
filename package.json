@@ -13,13 +13,18 @@
     "deve-rodar": "tsx scripts/deve-rodar.ts",
     "validar": "tsx scripts/validar-dados.ts",
     "copas": "tsx scripts/buscar-copas.ts",
-    "escudos": "tsx scripts/baixar-escudos.ts"
+    "escudos": "tsx scripts/baixar-escudos.ts",
+    "bolao": "tsx scripts/bolao.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
+    "firebase-admin": "^13.10.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "vite": "^6.0.0",
     "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "firebase": "^11.10.0"
   }
 }

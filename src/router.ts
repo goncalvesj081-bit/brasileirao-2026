@@ -47,6 +47,16 @@ export const SECOES: Secao[] = [
     ],
   },
   {
+    id: "bolao",
+    rotulo: "Bolão",
+    emMais: true,
+    vistas: [
+      ["palpites", "Palpites"],
+      ["ranking", "Ranking"],
+      ["regras", "Regras"],
+    ],
+  },
+  {
     id: "serie-b",
     rotulo: "Série B",
     emMais: true,

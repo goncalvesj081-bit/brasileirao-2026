@@ -12,6 +12,7 @@ import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
+import { aoMudarBolao, digitacaoBolao, entrarBolao, sairBolao, salvarNomeBolao, telaBolao } from "./telas/bolao";
 import { alternarFavorito } from "./ui/favorito";
 import { guardarFavoritoParaAvisos, ligarAvisos } from "./ui/avisos";
 import {
@@ -68,6 +69,8 @@ function conteudo(r: Rota): Html {
       return telaSerieB(r.vista, r.extra);
     case "comparar":
       return telaComparar(r.vista, r.extra);
+    case "bolao":
+      return telaBolao(r.vista, r.numero);
   }
   return html``;
 }
@@ -135,6 +138,9 @@ $("main").addEventListener("click", (e) => {
     void compartilhar(comp.dataset.compartilhar!, comp);
     return;
   }
+  if (alvo.closest("button[data-bolao-entrar]")) return void entrarBolao();
+  if (alvo.closest("button[data-bolao-sair]")) return sairBolao();
+  if (alvo.closest("button[data-bolao-salvar-nome]")) return void salvarNomeBolao();
   if (alvo.closest("button[data-sb-limpar]")) {
     limparSerieB();
     desenhar();
@@ -177,6 +183,8 @@ $("main").addEventListener("input", (e) => {
   if (inp) digitacaoSimulador(inp);
   const inpB = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-sb]");
   if (inpB) digitacaoSerieB(inpB);
+  const inpP = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-bp]");
+  if (inpP) digitacaoBolao(inpP);
 });
 $("main").addEventListener("focusin", (e) => {
   const inp = (e.target as HTMLElement).closest?.<HTMLInputElement>("input[data-s]");
@@ -192,6 +200,9 @@ aoMudar(() => {
   else if (usaSimulacao(rota)) manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
+aoMudarBolao(() => {
+  if (rota.secao === "bolao") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
+});
 aoCalcularSerieB(() => {
   if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });

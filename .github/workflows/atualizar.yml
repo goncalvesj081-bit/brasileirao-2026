@@ -66,6 +66,13 @@ jobs:
             echo "mudou=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Bolão (horários, palpites revelados e ranking)
+        if: steps.agenda.outputs.rodar == 'true'
+        continue-on-error: true
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: npm run --silent bolao
+
   publicar:
     needs: dados
     if: needs.dados.outputs.publicar == 'true'
