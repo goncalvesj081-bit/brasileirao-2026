@@ -2736,6 +2736,24 @@
    "data": "2026-10-18T00:00:00Z",
    "gm": 1,
    "gv": 0
+  },
+  {
+   "id": "555045",
+   "rodada": 31,
+   "mandante": "Fluminense",
+   "visitante": "Santos",
+   "data": "2026-10-18T19:00:00Z",
+   "gm": 1,
+   "gv": 2
+  },
+  {
+   "id": "555046",
+   "rodada": 31,
+   "mandante": "Grêmio",
+   "visitante": "Cruzeiro",
+   "data": "2026-10-18T19:00:00Z",
+   "gm": 2,
+   "gv": 4
   }
  ]
 }

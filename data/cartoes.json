@@ -9,15 +9,29 @@
    ""
   ],
   [
-   "Alexander Bernabei",
-   "Internacional",
+   "Álvaro Barreal",
+   "Santos",
+   8,
+   1,
+   "pendurado"
+  ],
+  [
+   "Matheus Pereira",
+   "Cruzeiro",
+   11,
+   0,
+   "pendurado"
+  ],
+  [
+   "Agustín Canobbio",
+   "Fluminense",
    7,
    1,
    ""
   ],
   [
-   "Álvaro Barreal",
-   "Santos",
+   "Alexander Bernabei",
+   "Internacional",
    7,
    1,
    ""
@@ -42,20 +56,6 @@
    4,
    2,
    ""
-  ],
-  [
-   "Matheus Pereira",
-   "Cruzeiro",
-   10,
-   0,
-   ""
-  ],
-  [
-   "Agustín Canobbio",
-   "Fluminense",
-   6,
-   1,
-   "suspenso"
   ],
   [
    "Alix Vinicius",
@@ -167,6 +167,13 @@
    "Flamengo",
    2,
    2,
+   "pendurado"
+  ],
+  [
+   "Keny Arroyo",
+   "Cruzeiro",
+   5,
+   1,
    "pendurado"
   ],
   [
@@ -303,13 +310,6 @@
    ""
   ],
   [
-   "Keny Arroyo",
-   "Cruzeiro",
-   4,
-   1,
-   ""
-  ],
-  [
    "Luan Peres",
    "Santos",
    4,
@@ -378,6 +378,13 @@
    4,
    1,
    ""
+  ],
+  [
+   "Wálter Kannemann",
+   "Grêmio",
+   4,
+   1,
+   "suspenso"
   ],
   [
    "Agustín Giay",
@@ -468,7 +475,7 @@
    "Fluminense",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Ignacio Sosa",
@@ -531,7 +538,7 @@
    "Fluminense",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Marlon Freitas",
@@ -975,6 +982,13 @@
    ""
   ],
   [
+   "João Marcelo",
+   "Cruzeiro",
+   4,
+   0,
+   ""
+  ],
+  [
    "João Schmidt",
    "Santos",
    4,
@@ -1178,13 +1192,6 @@
    ""
   ],
   [
-   "Wálter Kannemann",
-   "Grêmio",
-   4,
-   0,
-   ""
-  ],
-  [
    "Willian Machado",
    "Mirassol",
    4,
@@ -1350,7 +1357,7 @@
    "Cruzeiro",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Félix Torres",
@@ -1392,7 +1399,7 @@
    "Fluminense",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gustavo Gómez",
@@ -1416,6 +1423,13 @@
    ""
   ],
   [
+   "Jefferson Savarino",
+   "Fluminense",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Jemmes",
    "Fluminense",
    3,
@@ -1432,13 +1446,6 @@
   [
    "João Cruz",
    "Athletico-PR",
-   3,
-   0,
-   ""
-  ],
-  [
-   "João Marcelo",
-   "Cruzeiro",
    3,
    0,
    ""
@@ -1595,7 +1602,7 @@
    "Grêmio",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Memphis Depay",
@@ -1742,7 +1749,7 @@
    "Grêmio",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Wallace Yan",
@@ -1763,7 +1770,7 @@
    "Santos",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Yuri",
@@ -2104,13 +2111,6 @@
   [
    "Jean",
    "Chapecoense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Jefferson Savarino",
-   "Fluminense",
    2,
    0,
    "pendurado"

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-18T17:36:30.890Z",
+ "atualizado": "2026-10-18T22:38:39.108Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3028,30 +3028,36 @@
    "data": "2026-10-17T21:30Z",
    "gm": 1,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860394",
    "rodada": 34,
    "mandante": "Avaí",
    "visitante": "Athletic",
-   "data": "2026-10-18T19:00Z"
+   "data": "2026-10-18T19:00Z",
+   "gm": 0,
+   "gv": 0
   },
   {
    "id": "b401860393",
    "rodada": 34,
    "mandante": "CRB",
    "visitante": "Botafogo-SP",
-   "data": "2026-10-18T19:00Z"
+   "data": "2026-10-18T19:00Z",
+   "gm": 0,
+   "gv": 1
   },
   {
    "id": "b401860400",
    "rodada": 34,
    "mandante": "São Bernardo",
    "visitante": "Criciúma",
-   "data": "2026-10-18T19:00Z"
-  },
+   "data": "2026-10-18T19:00Z",
+   "gm": 0,
+   "gv": 1
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860396",
    "rodada": 34,
