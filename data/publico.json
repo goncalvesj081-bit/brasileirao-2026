@@ -1,5 +1,187 @@
 {
- "atualizado": "",
- "maiores": [],
- "menores": []
+ "atualizado": "18/10/2026",
+ "maiores": [
+  [
+   67251,
+   "Flamengo",
+   "0-3",
+   "Palmeiras",
+   "Maracanã",
+   "23 de maio",
+   17
+  ],
+  [
+   66689,
+   "Flamengo",
+   "1-1",
+   "São Paulo",
+   "Maracanã",
+   "26 de julho",
+   20
+  ],
+  [
+   65838,
+   "Flamengo",
+   "2-1",
+   "Corinthians",
+   "Maracanã",
+   "13 de setembro",
+   27
+  ],
+  [
+   65123,
+   "Flamengo",
+   "3-1",
+   "Santos",
+   "Maracanã",
+   "5 de abril",
+   10
+  ],
+  [
+   62324,
+   "Flamengo",
+   "2-1",
+   "Bragantino",
+   "Maracanã",
+   "20 de setembro",
+   28
+  ],
+  [
+   61934,
+   "Flamengo",
+   "3-0",
+   "Botafogo",
+   "Maracanã",
+   "30 de agosto",
+   25
+  ],
+  [
+   60955,
+   "Flamengo",
+   "2-0",
+   "Bahia",
+   "Maracanã",
+   "19 de abril",
+   12
+  ],
+  [
+   59250,
+   "Flamengo",
+   "3-0",
+   "Remo",
+   "Maracanã",
+   "19 de março",
+   7
+  ],
+  [
+   57246,
+   "Flamengo",
+   "1-0",
+   "Fluminense",
+   "Maracanã",
+   "11 de outubro",
+   30
+  ],
+  [
+   57516,
+   "Flamengo",
+   "2-2",
+   "Vasco",
+   "Maracanã",
+   "3 de maio",
+   14
+  ]
+ ],
+ "menores": [
+  [
+   1731,
+   "Bragantino",
+   "2-0",
+   "Vitória",
+   "Cícero de Souza Marques",
+   "17 de maio",
+   16
+  ],
+  [
+   2279,
+   "Bragantino",
+   "1-1",
+   "Mirassol",
+   "Cícero de Souza Marques",
+   "7 de outubro",
+   29
+  ],
+  [
+   2329,
+   "Mirassol",
+   "1-1",
+   "Chapecoense",
+   "Campos Maia",
+   "10 de maio",
+   15
+  ],
+  [
+   2378,
+   "Bragantino",
+   "1-1",
+   "Athletico-PR",
+   "Cícero de Souza Marques",
+   "25 de fevereiro",
+   4
+  ],
+  [
+   2796,
+   "Bragantino",
+   "0-0",
+   "Coritiba",
+   "Cícero de Souza Marques",
+   "26 de julho",
+   20
+  ],
+  [
+   3028,
+   "Bragantino",
+   "2-3",
+   "Bahia",
+   "Cícero de Souza Marques",
+   "5 de setembro",
+   26
+  ],
+  [
+   3456,
+   "Bragantino",
+   "1-0",
+   "Atlético-MG",
+   "Cícero de Souza Marques",
+   "4 de fevereiro",
+   2
+  ],
+  [
+   3558,
+   "Chapecoense",
+   "1-4",
+   "Athletico-PR",
+   "Arena Condá",
+   "12 de outubro",
+   30
+  ],
+  [
+   3585,
+   "Mirassol",
+   "0-1",
+   "Bragantino",
+   "Campos Maia",
+   "5 de abril",
+   10
+  ],
+  [
+   3872,
+   "Bragantino",
+   "4-2",
+   "Cruzeiro",
+   "Cícero de Souza Marques",
+   "12 de outubro",
+   30
+  ]
+ ]
 }
