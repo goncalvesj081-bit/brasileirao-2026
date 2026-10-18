@@ -2,575 +2,575 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "p21-CHA-VAS",
+   "id": "554942",
    "rodada": 21,
    "mandante": "Chapecoense",
    "visitante": "Vasco",
    "data": null
   },
   {
-   "id": "p31-FLU-SAN",
+   "id": "555045",
    "rodada": 31,
    "mandante": "Fluminense",
    "visitante": "Santos",
-   "data": "2026-10-18T19:00:00.000Z"
+   "data": "2026-10-18T19:00:00Z"
   },
   {
-   "id": "p31-GRE-CRU",
+   "id": "555046",
    "rodada": 31,
    "mandante": "Grêmio",
    "visitante": "Cruzeiro",
-   "data": "2026-10-18T19:00:00.000Z"
+   "data": "2026-10-18T19:00:00Z"
   },
   {
-   "id": "p31-BAH-FLA",
+   "id": "555042",
    "rodada": 31,
    "mandante": "Bahia",
    "visitante": "Flamengo",
-   "data": "2026-10-18T21:30:00.000Z"
+   "data": "2026-10-18T21:30:00Z"
   },
   {
-   "id": "p31-REM-RBB",
+   "id": "555048",
    "rodada": 31,
    "mandante": "Remo",
    "visitante": "Bragantino",
-   "data": "2026-10-18T22:30:00.000Z"
+   "data": "2026-10-18T22:30:00Z"
   },
   {
-   "id": "p31-COR-VIT",
+   "id": "555044",
    "rodada": 31,
    "mandante": "Corinthians",
    "visitante": "Vitória",
-   "data": "2026-10-19T23:00:00.000Z"
+   "data": "2026-10-19T23:00:00Z"
   },
   {
-   "id": "p32-CRU-REM",
+   "id": "555052",
    "rodada": 32,
    "mandante": "Cruzeiro",
    "visitante": "Remo",
-   "data": "2026-10-23T23:00:00.000Z"
+   "data": "2026-10-23T23:00:00Z"
   },
   {
-   "id": "p32-INT-BOT",
+   "id": "555054",
    "rodada": 32,
    "mandante": "Internacional",
    "visitante": "Botafogo",
-   "data": "2026-10-24T19:30:00.000Z"
+   "data": "2026-10-24T19:30:00Z"
   },
   {
-   "id": "p32-MIR-SAO",
+   "id": "555055",
    "rodada": 32,
    "mandante": "Mirassol",
    "visitante": "São Paulo",
-   "data": "2026-10-24T19:30:00.000Z"
+   "data": "2026-10-24T19:30:00Z"
   },
   {
-   "id": "p32-VIT-CAP",
+   "id": "555059",
    "rodada": 32,
    "mandante": "Vitória",
    "visitante": "Athletico-PR",
-   "data": "2026-10-24T19:30:00.000Z"
+   "data": "2026-10-24T19:30:00Z"
   },
   {
-   "id": "p32-PAL-RBB",
+   "id": "555056",
    "rodada": 32,
    "mandante": "Palmeiras",
    "visitante": "Bragantino",
-   "data": "2026-10-24T21:30:00.000Z"
+   "data": "2026-10-24T21:30:00Z"
   },
   {
-   "id": "p32-VAS-COR",
+   "id": "555058",
    "rodada": 32,
    "mandante": "Vasco",
    "visitante": "Corinthians",
-   "data": "2026-10-24T21:30:00.000Z"
+   "data": "2026-10-24T21:30:00Z"
   },
   {
-   "id": "p32-CHA-FLU",
+   "id": "555050",
    "rodada": 32,
    "mandante": "Chapecoense",
    "visitante": "Fluminense",
-   "data": "2026-10-24T22:30:00.000Z"
+   "data": "2026-10-24T22:30:00Z"
   },
   {
-   "id": "p32-SAN-BAH",
+   "id": "555057",
    "rodada": 32,
    "mandante": "Santos",
    "visitante": "Bahia",
-   "data": "2026-10-25T01:00:00.000Z"
+   "data": "2026-10-25T01:00:00Z"
   },
   {
-   "id": "p32-CFC-GRE",
+   "id": "555051",
    "rodada": 32,
    "mandante": "Coritiba",
    "visitante": "Grêmio",
-   "data": "2026-10-26T22:30:00.000Z"
+   "data": "2026-10-26T22:30:00Z"
   },
   {
-   "id": "p32-FLA-CAM",
+   "id": "555053",
    "rodada": 32,
    "mandante": "Flamengo",
    "visitante": "Atlético-MG",
-   "data": "2026-10-26T23:00:00.000Z"
+   "data": "2026-10-26T23:00:00Z"
   },
   {
-   "id": "p33-RBB-CHA",
+   "id": "555062",
    "rodada": 33,
    "mandante": "Bragantino",
    "visitante": "Chapecoense",
-   "data": "2026-10-28T22:30:00.000Z"
+   "data": "2026-10-28T22:30:00Z"
   },
   {
-   "id": "p33-FLU-INT",
+   "id": "555065",
    "rodada": 33,
    "mandante": "Fluminense",
    "visitante": "Internacional",
-   "data": "2026-10-28T22:30:00.000Z"
+   "data": "2026-10-28T22:30:00Z"
   },
   {
-   "id": "p33-SAN-PAL",
+   "id": "555068",
    "rodada": 33,
    "mandante": "Santos",
    "visitante": "Palmeiras",
-   "data": "2026-10-28T22:30:00.000Z"
+   "data": "2026-10-28T22:30:00Z"
   },
   {
-   "id": "p33-BAH-SAO",
+   "id": "555061",
    "rodada": 33,
    "mandante": "Bahia",
    "visitante": "São Paulo",
-   "data": "2026-10-29T00:30:00.000Z"
+   "data": "2026-10-29T00:30:00Z"
   },
   {
-   "id": "p33-REM-BOT",
+   "id": "555067",
    "rodada": 33,
    "mandante": "Remo",
    "visitante": "Botafogo",
-   "data": "2026-10-29T00:30:00.000Z"
+   "data": "2026-10-29T00:30:00Z"
   },
   {
-   "id": "p33-CAM-CRU",
+   "id": "555060",
    "rodada": 33,
    "mandante": "Atlético-MG",
    "visitante": "Cruzeiro",
-   "data": "2026-10-29T22:30:00.000Z"
+   "data": "2026-10-29T22:30:00Z"
   },
   {
-   "id": "p33-CFC-VIT",
+   "id": "555064",
    "rodada": 33,
    "mandante": "Coritiba",
    "visitante": "Vitória",
-   "data": "2026-10-29T22:30:00.000Z"
+   "data": "2026-10-29T22:30:00Z"
   },
   {
-   "id": "p33-VAS-FLA",
+   "id": "555069",
    "rodada": 33,
    "mandante": "Vasco",
    "visitante": "Flamengo",
-   "data": "2026-10-29T23:00:00.000Z"
+   "data": "2026-10-29T23:00:00Z"
   },
   {
-   "id": "p33-GRE-CAP",
+   "id": "555066",
    "rodada": 33,
    "mandante": "Grêmio",
    "visitante": "Athletico-PR",
-   "data": "2026-10-30T00:30:00.000Z"
+   "data": "2026-10-30T00:30:00Z"
   },
   {
-   "id": "p33-COR-MIR",
+   "id": "555063",
    "rodada": 33,
    "mandante": "Corinthians",
    "visitante": "Mirassol",
-   "data": "2026-10-30T23:00:00.000Z"
+   "data": "2026-10-30T23:00:00Z"
   },
   {
-   "id": "p34-RBB-SAN",
+   "id": "555072",
    "rodada": 34,
    "mandante": "Bragantino",
    "visitante": "Santos",
-   "data": "2026-11-02T23:00:00.000Z"
+   "data": "2026-11-02T23:00:00Z"
   },
   {
-   "id": "p34-CHA-MIR",
+   "id": "555073",
    "rodada": 34,
    "mandante": "Chapecoense",
    "visitante": "Mirassol",
-   "data": "2026-11-03T22:30:00.000Z"
+   "data": "2026-11-03T22:30:00Z"
   },
   {
-   "id": "p34-INT-CFC",
+   "id": "555076",
    "rodada": 34,
    "mandante": "Internacional",
    "visitante": "Coritiba",
-   "data": "2026-11-04T00:30:00.000Z"
+   "data": "2026-11-04T00:30:00Z"
   },
   {
-   "id": "p34-CAP-VAS",
+   "id": "555070",
    "rodada": 34,
    "mandante": "Athletico-PR",
    "visitante": "Vasco",
-   "data": "2026-11-04T22:30:00.000Z"
+   "data": "2026-11-04T22:30:00Z"
   },
   {
-   "id": "p34-FLA-GRE",
+   "id": "555075",
    "rodada": 34,
    "mandante": "Flamengo",
    "visitante": "Grêmio",
-   "data": "2026-11-04T22:30:00.000Z"
+   "data": "2026-11-04T22:30:00Z"
   },
   {
-   "id": "p34-BOT-CAM",
+   "id": "555071",
    "rodada": 34,
    "mandante": "Botafogo",
    "visitante": "Atlético-MG",
-   "data": "2026-11-05T00:30:00.000Z"
+   "data": "2026-11-05T00:30:00Z"
   },
   {
-   "id": "p34-SAO-COR",
+   "id": "555078",
    "rodada": 34,
    "mandante": "São Paulo",
    "visitante": "Corinthians",
-   "data": "2026-11-05T00:30:00.000Z"
+   "data": "2026-11-05T00:30:00Z"
   },
   {
-   "id": "p34-PAL-REM",
+   "id": "555077",
    "rodada": 34,
    "mandante": "Palmeiras",
    "visitante": "Remo",
-   "data": "2026-11-05T22:30:00.000Z"
+   "data": "2026-11-05T22:30:00Z"
   },
   {
-   "id": "p34-CRU-BAH",
+   "id": "555074",
    "rodada": 34,
    "mandante": "Cruzeiro",
    "visitante": "Bahia",
-   "data": "2026-11-06T00:30:00.000Z"
+   "data": "2026-11-06T00:30:00Z"
   },
   {
-   "id": "p34-VIT-FLU",
+   "id": "555079",
    "rodada": 34,
    "mandante": "Vitória",
    "visitante": "Fluminense",
-   "data": "2026-11-06T23:00:00.000Z"
+   "data": "2026-11-06T23:00:00Z"
   },
   {
-   "id": "p35-COR-BOT",
+   "id": "555080",
    "rodada": 35,
    "mandante": "Corinthians",
    "visitante": "Botafogo",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-CFC-SAN",
+   "id": "555081",
    "rodada": 35,
    "mandante": "Coritiba",
    "visitante": "Santos",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-CRU-PAL",
+   "id": "555082",
    "rodada": 35,
    "mandante": "Cruzeiro",
    "visitante": "Palmeiras",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-FLA-CAP",
+   "id": "555083",
    "rodada": 35,
    "mandante": "Flamengo",
    "visitante": "Athletico-PR",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-GRE-BAH",
+   "id": "555084",
    "rodada": 35,
    "mandante": "Grêmio",
    "visitante": "Bahia",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-MIR-CAM",
+   "id": "555085",
    "rodada": 35,
    "mandante": "Mirassol",
    "visitante": "Atlético-MG",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-REM-CHA",
+   "id": "555086",
    "rodada": 35,
    "mandante": "Remo",
    "visitante": "Chapecoense",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-SAO-FLU",
+   "id": "555087",
    "rodada": 35,
    "mandante": "São Paulo",
    "visitante": "Fluminense",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-VAS-INT",
+   "id": "555088",
    "rodada": 35,
    "mandante": "Vasco",
    "visitante": "Internacional",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p35-VIT-RBB",
+   "id": "555089",
    "rodada": 35,
    "mandante": "Vitória",
    "visitante": "Bragantino",
-   "data": "2026-11-18T15:00:00.000Z",
+   "data": "2026-11-18T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-CAP-REM",
+   "id": "555090",
    "rodada": 36,
    "mandante": "Athletico-PR",
    "visitante": "Remo",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-CAM-COR",
+   "id": "555091",
    "rodada": 36,
    "mandante": "Atlético-MG",
    "visitante": "Corinthians",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-BAH-CFC",
+   "id": "555092",
    "rodada": 36,
    "mandante": "Bahia",
    "visitante": "Coritiba",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-BOT-SAO",
+   "id": "555093",
    "rodada": 36,
    "mandante": "Botafogo",
    "visitante": "São Paulo",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-RBB-VAS",
+   "id": "555094",
    "rodada": 36,
    "mandante": "Bragantino",
    "visitante": "Vasco",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-CHA-CRU",
+   "id": "555095",
    "rodada": 36,
    "mandante": "Chapecoense",
    "visitante": "Cruzeiro",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-FLU-MIR",
+   "id": "555096",
    "rodada": 36,
    "mandante": "Fluminense",
    "visitante": "Mirassol",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-INT-VIT",
+   "id": "555097",
    "rodada": 36,
    "mandante": "Internacional",
    "visitante": "Vitória",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-PAL-FLA",
+   "id": "555098",
    "rodada": 36,
    "mandante": "Palmeiras",
    "visitante": "Flamengo",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p36-SAN-GRE",
+   "id": "555099",
    "rodada": 36,
    "mandante": "Santos",
    "visitante": "Grêmio",
-   "data": "2026-11-21T15:00:00.000Z",
+   "data": "2026-11-21T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-CAM-VAS",
+   "id": "555100",
    "rodada": 37,
    "mandante": "Atlético-MG",
    "visitante": "Vasco",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-BOT-BAH",
+   "id": "555101",
    "rodada": 37,
    "mandante": "Botafogo",
    "visitante": "Bahia",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-CHA-PAL",
+   "id": "555102",
    "rodada": 37,
    "mandante": "Chapecoense",
    "visitante": "Palmeiras",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-COR-GRE",
+   "id": "555103",
    "rodada": 37,
    "mandante": "Corinthians",
    "visitante": "Grêmio",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-CFC-FLA",
+   "id": "555104",
    "rodada": 37,
    "mandante": "Coritiba",
    "visitante": "Flamengo",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-FLU-CRU",
+   "id": "555105",
    "rodada": 37,
    "mandante": "Fluminense",
    "visitante": "Cruzeiro",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-INT-RBB",
+   "id": "555106",
    "rodada": 37,
    "mandante": "Internacional",
    "visitante": "Bragantino",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-MIR-CAP",
+   "id": "555107",
    "rodada": 37,
    "mandante": "Mirassol",
    "visitante": "Athletico-PR",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-SAO-REM",
+   "id": "555108",
    "rodada": 37,
    "mandante": "São Paulo",
    "visitante": "Remo",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p37-VIT-SAN",
+   "id": "555109",
    "rodada": 37,
    "mandante": "Vitória",
    "visitante": "Santos",
-   "data": "2026-11-28T15:00:00.000Z",
+   "data": "2026-11-28T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-CAP-SAO",
+   "id": "555110",
    "rodada": 38,
    "mandante": "Athletico-PR",
    "visitante": "São Paulo",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-BAH-CAM",
+   "id": "555111",
    "rodada": 38,
    "mandante": "Bahia",
    "visitante": "Atlético-MG",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-RBB-FLU",
+   "id": "555112",
    "rodada": 38,
    "mandante": "Bragantino",
    "visitante": "Fluminense",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-CRU-INT",
+   "id": "555113",
    "rodada": 38,
    "mandante": "Cruzeiro",
    "visitante": "Internacional",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-FLA-CHA",
+   "id": "555114",
    "rodada": 38,
    "mandante": "Flamengo",
    "visitante": "Chapecoense",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-GRE-MIR",
+   "id": "555115",
    "rodada": 38,
    "mandante": "Grêmio",
    "visitante": "Mirassol",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-PAL-CFC",
+   "id": "555116",
    "rodada": 38,
    "mandante": "Palmeiras",
    "visitante": "Coritiba",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-REM-COR",
+   "id": "555117",
    "rodada": 38,
    "mandante": "Remo",
    "visitante": "Corinthians",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-SAN-BOT",
+   "id": "555118",
    "rodada": 38,
    "mandante": "Santos",
    "visitante": "Botafogo",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   },
   {
-   "id": "p38-VAS-VIT",
+   "id": "555119",
    "rodada": 38,
    "mandante": "Vasco",
    "visitante": "Vitória",
-   "data": "2026-12-02T15:00:00.000Z",
+   "data": "2026-12-02T00:00:00Z",
    "semHora": true
   }
  ]

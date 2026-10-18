@@ -1,7 +1,7 @@
 {
  "artilharia": {
-  "atualizado": "17/10/2026",
-  "fonte": "edição manual",
+  "atualizado": "18/10/2026",
+  "fonte": "football-data.org",
   "lista": [
    [
     "Kevin Viveros",
@@ -14,12 +14,17 @@
     16
    ],
    [
-    "Gabigol",
+    "Gabriel Barbosa",
     "Santos",
     14
    ],
    [
-    "Danilo",
+    "Carlos Vinícius",
+    "Grêmio",
+    10
+   ],
+   [
+    "Danilo dos Santos de Oliveira",
     "Botafogo",
     10
    ],
@@ -34,13 +39,8 @@
     10
    ],
    [
-    "Carlos Vinícius",
-    "Grêmio",
-    10
-   ],
-   [
-    "John Kennedy",
-    "Fluminense",
+    "José Manuel López",
+    "Palmeiras",
     9
    ],
    [
@@ -49,8 +49,8 @@
     9
    ],
    [
-    "Flaco López",
-    "Palmeiras",
+    "John Kennedy",
+    "Fluminense",
     9
    ],
    [
@@ -64,18 +64,8 @@
     9
    ],
    [
-    "Neymar",
-    "Santos",
-    8
-   ],
-   [
-    "Renê",
-    "Vitória",
-    8
-   ],
-   [
-    "Kaio Jorge",
-    "Cruzeiro",
+    "Mauricio",
+    "Palmeiras",
     8
    ],
    [
@@ -89,13 +79,23 @@
     8
    ],
    [
-    "Carlos Eduardo",
-    "Mirassol",
-    7
+    "Kaio Jorge",
+    "Cruzeiro",
+    8
    ],
    [
-    "Hulk",
-    "Fluminense",
+    "Neymar",
+    "Santos",
+    8
+   ],
+   [
+    "Carlos Renê",
+    "Vitória",
+    8
+   ],
+   [
+    "Carlos Eduardo",
+    "Mirassol",
     7
    ],
    [
@@ -104,8 +104,8 @@
     7
    ],
    [
-    "Maurício",
-    "Palmeiras",
+    "Hulk",
+    "Fluminense",
     7
    ],
    [
@@ -114,17 +114,27 @@
     7
    ],
    [
-    "Lucas Paquetá",
-    "Flamengo",
-    6
-   ],
-   [
-    "Jajá",
-    "Remo",
+    "Matheuzinho",
+    "Vitória",
     6
    ],
    [
     "Jorge Carrascal",
+    "Flamengo",
+    6
+   ],
+   [
+    "Lucas Barbosa",
+    "Bragantino",
+    6
+   ],
+   [
+    "Jája Silva",
+    "Remo",
+    6
+   ],
+   [
+    "Lucas Paquetá",
     "Flamengo",
     6
    ],
@@ -139,19 +149,159 @@
     6
    ],
    [
-    "Lucas Barbosa",
-    "Bragantino",
-    6
-   ],
-   [
-    "Matheuzinho",
-    "Vitória",
-    6
-   ],
-   [
-    "Vitor Roque",
+    "Vítor Roque",
     "Palmeiras",
     5
+   ],
+   [
+    "Stiven Mendoza",
+    "Athletico-PR",
+    5
+   ],
+   [
+    "Luciano Acosta",
+    "Fluminense",
+    5
+   ],
+   [
+    "Álvaro Barreal",
+    "Santos",
+    5
+   ],
+   [
+    "Alef Manga",
+    "Remo",
+    5
+   ],
+   [
+    "Joaquín Lavega",
+    "Coritiba",
+    5
+   ],
+   [
+    "Alan Patrick",
+    "Internacional",
+    5
+   ],
+   [
+    "Tomás Cuello",
+    "Atlético-MG",
+    5
+   ],
+   [
+    "Agustín Canobbio",
+    "Fluminense",
+    5
+   ],
+   [
+    "Erick",
+    "Vitória",
+    5
+   ],
+   [
+    "Christian",
+    "Cruzeiro",
+    5
+   ],
+   [
+    "Carlos Gómez",
+    "Vasco",
+    5
+   ],
+   [
+    "Marcinho",
+    "Chapecoense",
+    5
+   ],
+   [
+    "Leozinho",
+    "Athletico-PR",
+    5
+   ],
+   [
+    "Victor Hugo Gomes",
+    "Atlético-MG",
+    4
+   ],
+   [
+    "Renato Kayzer",
+    "Vitória",
+    4
+   ],
+   [
+    "Jean Lucas",
+    "Bahia",
+    4
+   ],
+   [
+    "Matheus Martins",
+    "Botafogo",
+    4
+   ],
+   [
+    "Artur Guimaraes",
+    "São Paulo",
+    4
+   ],
+   [
+    "Igor Formiga",
+    "Mirassol",
+    4
+   ],
+   [
+    "Edenilson",
+    "Botafogo",
+    4
+   ],
+   [
+    "Gustavo Gómez",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Allan",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Ramón Sosa",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Vitor Bueno",
+    "Remo",
+    4
+   ],
+   [
+    "Thiago Mendes",
+    "Vasco",
+    4
+   ],
+   [
+    "Luiz Gustavo",
+    "Athletico-PR",
+    4
+   ],
+   [
+    "Erick",
+    "Bahia",
+    4
+   ],
+   [
+    "Jhon Arias",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Alex Telles",
+    "Botafogo",
+    4
+   ],
+   [
+    "Rodrigo Castillo",
+    "Fluminense",
+    4
    ]
   ]
  },
@@ -335,6 +485,28 @@
     "Jair Ventura",
     "antes de 2026"
    ]
+  },
+  "api": {
+   "Fluminense": "Luis Zubeldía",
+   "Atlético-MG": "Eduardo Domínguez",
+   "Grêmio": "Jéssica Lima",
+   "Athletico-PR": "João Eduardo Louro Baptista Cr",
+   "Palmeiras": "Abel Ferreira",
+   "Botafogo": "Franclim Carvalho",
+   "Cruzeiro": "Artur Jorge",
+   "Chapecoense": "Fábio Matias",
+   "São Paulo": "Dorival Júnior",
+   "Bahia": "Rogério Ceni",
+   "Corinthians": "Fernando Diniz",
+   "Vasco": "Possato",
+   "Vitória": "Jair Ventura",
+   "Flamengo": "Leonardo Jardim",
+   "Coritiba": "Fernando Seabra",
+   "Bragantino": "Vágner Mancini",
+   "Remo": "Leo Condé",
+   "Mirassol": "Rafael Guanaes",
+   "Internacional": "Leonardo Ramos",
+   "Santos": "Cuca"
   }
  },
  "trocas": {
