@@ -7,12 +7,12 @@ import { condicional, type ObjetivoJogo } from "../modelo/impacto";
 import { chancesDaLinha } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { calculando, escudo, linkClube, vazio } from "../ui/componentes";
-import { dataJogo } from "../ui/formato";
+import { dataJogo, pct } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
 const MINIMO = 0.015;
 /** Uma casa decimal: perto de 90% as diferenças são pequenas e "90%" e "90%" não dizem nada. */
-const pct1 = (p: number) => (p * 100).toFixed(1).replace(".", ",") + "%";
+const pct1 = pct;
 const pontos = (d: number) => `${(d * 100).toFixed(1).replace(".", ",")} ponto${Math.abs(d * 100) >= 1.95 ? "s" : ""}`;
 
 const NOME: Record<ObjetivoJogo, string> = { c: "o título", l: "a Libertadores", r: "fugir da queda" };

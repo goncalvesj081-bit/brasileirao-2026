@@ -2,6 +2,7 @@
 // A simulação é calculada só quando alguém abre a seção.
 
 import serieBJson from "../../data/serieb.json";
+import { slugTexto } from "../../config/clubes";
 import { classificacao, jogosDoClube } from "../modelo/classificacao";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { probResultado } from "../modelo/poisson";
@@ -37,14 +38,15 @@ function pedirChances(): ChancesB | null {
   return null;
 }
 
+/** Escudo da Série B: primeiro a cópia no próprio site; se faltar, o da ESPN; se também falhar, some. */
 const escB = (clube: string, tam = 20) => {
   const url = serieB.escudos[clube];
-  return url
-    ? html`<span class="esc ok" style="--t:${tam}px" aria-hidden="true"><img src="${url}" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" onerror="this.remove()"></span>`
-    : html`<span class="esc" style="--a:#6e757e;--b:#2b3037;--t:${tam}px" aria-hidden="true"></span>`;
+  if (!url) return html`<span class="esc" style="--a:#6e757e;--b:#2b3037;--t:${tam}px" aria-hidden="true"></span>`;
+  const reserva = `if(!this.dataset.r){this.dataset.r=1;this.src='${url}'}else{this.remove()}`;
+  return html`<span class="esc ok" style="--t:${tam}px" aria-hidden="true"><img src="escudos/b/${slugB(clube)}.png" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" onerror="${reserva}"></span>`;
 };
 /** Endereço do clube da Série B: "Atlético Goianiense" → "atletico-goianiense". */
-export const slugB = (c: string) => c.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+export const slugB = slugTexto;
 export const clubePorSlugB = (s: string) => serieB.clubes.find((c) => slugB(c) === s) ?? null;
 const linkB = (c: string) => link("serie-b", "clube", slugB(c));
 const celClubeB = (clube: string) => html`<td class="l team"><a href="${linkB(clube)}">${escB(clube)}<span class="nome">${clube}</span></a></td>`;

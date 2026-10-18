@@ -8,7 +8,7 @@ import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
 import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
-import { dataJogo, dec, milhar, pct, saldo } from "../ui/formato";
+import { dataJogo, dec, difPP, milhar, pct, saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { navRodada } from "./rodada";
 
@@ -56,7 +56,7 @@ function htmlResumo(): Html {
       R = sims.real;
     const i = U.pos.reduce((m, r, k) => (r[0] > U.pos[m][0] ? k : m), 0);
     const d = U.pos[i][0] - R.pos[i][0];
-    destaque = html`<a class="efeito" href="${link("simular", "chances")}">${escudo(U.clubes[i], 18)}<span>${U.clubes[i]} campeão</span><b>${pct(U.pos[i][0])}</b>${Math.abs(d) >= 0.005 ? html`<small class="${d > 0 ? "up" : "down"}">${d > 0 ? "+" : "−"}${Math.round(Math.abs(d) * 100)}</small>` : ""}</a>`;
+    destaque = html`<a class="efeito" href="${link("simular", "chances")}">${escudo(U.clubes[i], 18)}<span>${U.clubes[i]} campeão</span><b>${pct(U.pos[i][0])}</b>${Math.abs(d) >= 0.001 ? html`<small class="${d > 0 ? "up" : "down"}">${difPP(d)}</small>` : ""}</a>`;
   }
   return html`<div class="progresso"><span><b>${n}</b> de ${total} jogos simulados</span><i style="width:${(100 * n) / total}%"></i></div>${destaque}`;
 }
@@ -119,7 +119,7 @@ function htmlChances(): Html {
     .sort((x, y) => y.pts - x.pts);
   const cel = (tom: Tom, v: number, base: number) => {
     const d = v - base;
-    const dif = Math.abs(d) < 0.005 ? "" : html`<small class="${d > 0 ? "up" : "down"}">${d > 0 ? "+" : "−"}${Math.round(Math.abs(d) * 100)}</small>`;
+    const dif = Math.abs(d) < 0.001 ? "" : html`<small class="${d > 0 ? "up" : "down"}">${difPP(d)}</small>`;
     return celProb(tom, v, "", dif || undefined);
   };
   return html`<div class="box"><table class="tab curta">
@@ -156,7 +156,7 @@ function htmlAnalise(): Html {
   const txt = (z: (typeof a.zebras)[number]) =>
     z.resultado === 0 ? `${z.jogo.mandante} vence ${z.jogo.visitante}` : z.resultado === 2 ? `${z.jogo.visitante} vence ${z.jogo.mandante} fora` : `${z.jogo.mandante} empata com ${z.jogo.visitante}`;
   const porClube = new Map(a.surpresas.map((s) => [s.clube, s]));
-  return html`<div class="veredito" style="--cor:${cor}"><small>Veredito</small><b>${nome}</b><p>${frase} Mais provável que ${a.percentil > 0.99 ? "99%" : a.percentil < 0.01 ? "menos de 1%" : `${Math.round(a.percentil * 100)}%`} dos campeonatos simulados.</p></div>
+  return html`<div class="veredito" style="--cor:${cor}"><small>Veredito</small><b>${nome}</b><p>${frase} Mais provável que ${a.percentil > 0.999 ? "99,9%" : a.percentil < 0.001 ? "menos de 0,1%" : pct(a.percentil)} dos campeonatos simulados.</p></div>
     <div class="kpis">
       <div class="kpi"><small>${a.campeao} campeão</small><b>${pct(a.chanceCampeao)}</b></div>
       <div class="kpi"><small>Esses ${CORTES.rebaixados} rebaixados juntos</small><b>${raro(a.chanceRebaixados)}</b><span class="note">${a.rebaixados.join(", ")}</span></div>

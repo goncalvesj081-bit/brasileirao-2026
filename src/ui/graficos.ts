@@ -26,7 +26,7 @@ export function barrasPosicao(linha: number[], clube: string): Html {
     if (v >= 0.0005)
       s += `<rect x="${x}" y="${y(v)}" width="${w}" height="${Math.max(1, H - pb - y(v))}" fill="${corFaixa(p, n)}" rx="2"><title>${p + 1}º: ${pct(v)}</title></rect>`;
     if (v >= 0.02)
-      s += `<text x="${x + w / 2}" y="${y(v) - 5}" text-anchor="middle" class="v">${Math.round(v * 100)}</text>`;
+      s += `<text x="${x + w / 2}" y="${y(v) - 5}" text-anchor="middle" class="v" style="font-size:9.5px">${(v * 100).toFixed(1).replace(".", ",")}</text>`;
     s += `<text x="${x + w / 2}" y="${H - pb + 14}" text-anchor="middle">${p + 1}</text>`;
   });
   const faixa = (a: number, b: number, cor: string, rot: string) => {

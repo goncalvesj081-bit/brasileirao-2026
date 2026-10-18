@@ -1,15 +1,17 @@
 const TZ = "America/Sao_Paulo";
 
-/** Porcentagem do jeito brasileiro, com casas só quando ajudam. */
+/** Porcentagem do jeito brasileiro, sempre com uma casa decimal (só 0% e 100% exatos ficam sem). */
 export function pct(p: number): string {
   if (p <= 0) return "0%";
   if (p < 0.001) return "<0,1%";
   if (p >= 1) return "100%";
   if (p > 0.999) return ">99,9%";
-  return (p * 100).toFixed(p < 0.1 ? 1 : 0).replace(".", ",") + "%";
+  return (p * 100).toFixed(1).replace(".", ",") + "%";
 }
 
 export const dec = (x: number, casas = 1) => x.toFixed(casas).replace(".", ",");
+/** Diferença em pontos percentuais com uma casa: "+3,2" ou "−0,8". */
+export const difPP = (d: number) => (d > 0 ? "+" : "−") + Math.abs(d * 100).toFixed(1).replace(".", ",");
 export const saldo = (x: number) => (x > 0 ? "+" : "") + x;
 export const milhar = (x: number) => x.toLocaleString("pt-BR");
 

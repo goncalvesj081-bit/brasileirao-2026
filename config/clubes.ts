@@ -56,4 +56,6 @@ export const clubePorSlug = (slug: string) => POR_SLUG.get(slug);
 export const sigla = (nome: string) => POR_NOME.get(nome)?.sigla ?? nome.slice(0, 3).toUpperCase();
 export const escudoFixo = (nome: string) => POR_NOME.get(nome)?.escudo;
 export const cores = (nome: string): [string, string] => POR_NOME.get(nome)?.cores ?? ["#6e757e", "#2b3037"];
+/** "Atlético Goianiense" → "atletico-goianiense" (endereço e nome de arquivo de clubes fora da lista acima). */
+export const slugTexto = (nome: string) => semAcento(nome).trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 export const slug = (nome: string) => POR_NOME.get(nome)?.slug ?? semAcento(nome).replace(/ /g, "-");

@@ -73,7 +73,7 @@ function mapaDeCalor(res: ResultadoSimulacao): Html {
           if (v < 0.0005) return html`<td></td>`;
           const alfa = (0.08 + Math.sqrt(v) * 0.85).toFixed(3);
           const forte = v > 0.35 ? "color:var(--paper);font-weight:700" : "";
-          return html`<td style="background:rgba(var(--heat),${alfa});${forte}" title="${t.clube}, ${p + 1}º: ${dec(v * 100)}%">${v < 0.01 ? html`<small>&lt;1</small>` : Math.round(v * 100)}</td>`;
+          return html`<td style="background:rgba(var(--heat),${alfa});${forte}" title="${t.clube}, ${p + 1}º: ${dec(v * 100)}%">${v < 0.001 ? html`<small>&lt;0,1</small>` : dec(v * 100, 1)}</td>`;
         })}</tr>`,
       )}</tbody>
     </table></div>`;
