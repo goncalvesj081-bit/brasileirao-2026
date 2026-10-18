@@ -12,7 +12,6 @@ import { dataJogo, pct } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
 const NOME_OBJ: Record<ObjetivoJogo, string> = { c: "título", l: "Libertadores", r: "queda" };
-const TOM_OBJ: Record<ObjetivoJogo, string> = { c: "c-title", l: "c-lib", r: "c-rel" };
 
 /** Jogos da rodada atual que ainda faltam, só quando a rodada já começou. */
 export function pendentesDaRodada(): Jogo[] {
@@ -55,16 +54,16 @@ export function rodadaEmAndamento(preferido?: keyof Chances): Html {
     }
     const hoje = posicao(clube) + 1;
     return html`<tr><td class="l"><span class="quem">${escudo(clube, 16)}${sigla(clube)}${obj ? html` <small>${NOME_OBJ[obj]}</small>` : ""}</span></td>${pos.map(
-      (p, k) => html`<td><b class="${p < hoje ? "up" : p > hoje ? "down" : ""}">${p}º</b>${obj ? html`<small class="${TOM_OBJ[obj]}">${pct(se[k])}</small>` : ""}</td>`,
+      (p, k) => html`<td><b class="${p < hoje ? "up" : p > hoje ? "down" : ""}">${p}º</b>${obj ? html`<small>${pct(se[k])}</small>` : ""}</td>`,
     )}</tr>`;
   };
 
   return html`<section class="andamento">
     <h3>Rodada em andamento</h3>
-    <p class="note">${jogos.length === 1 ? "Falta 1 jogo" : `Faltam ${jogos.length} jogos`} da ${proximaRodada}ª rodada, então a tabela de hoje ainda vai mudar. As chances já contam esses jogos; aqui está a posição e a chance de cada time conforme o resultado.</p>
+    <p class="note">${jogos.length === 1 ? "Falta 1 jogo" : `Faltam ${jogos.length} jogos`} da ${proximaRodada}ª rodada. Posição de cada time conforme o resultado e, embaixo, a chance no objetivo indicado.</p>
     ${jogos.map(
       (g) => html`<div class="and-jogo">
-        <div class="quando">${dataJogo(g.data, g.semHora)} · <b>${g.mandante} x ${g.visitante}</b></div>
+        <div class="and-topo"><b>${g.mandante} x ${g.visitante}</b><span>${dataJogo(g.data, g.semHora)}</span></div>
         <table><thead><tr><th class="l"></th><th>Vence</th><th>Empata</th><th>Perde</th></tr></thead>
         <tbody>${linha(g, g.mandante)}${linha(g, g.visitante)}</tbody></table>
       </div>`,
