@@ -1,5 +1,5 @@
 import { temporada } from "../../config/temporada";
-import { jogosAdiados, nomesClubes, resultados, tabela } from "../dados";
+import { jogosAdiados, nomesClubes, posicao, restantes, resultados, tabela } from "../dados";
 import { sims } from "../estado";
 import { classificacao, classificacaoUltimos } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
@@ -19,17 +19,33 @@ const COLUNAS: [keyof Chances, string, Tom][] = [
 ];
 
 /** Tabela de classificação. `chance`: coluna de probabilidade a mostrar (só na geral). */
-export function tabelaClassificacao(linhas: Linha[], zonas: boolean, comForma: boolean, chance?: keyof Chances): Html {
+export function tabelaClassificacao(linhas: Linha[], zonas: boolean, comForma: boolean, chance?: keyof Chances, aoVivo = false): Html {
   const n = linhas.length;
   const col = chance ? COLUNAS.find((c) => c[0] === chance)! : null;
   const res = sims.real;
   const jogam = zonas ? aindaJogam() : new Set<string>();
+  // ao vivo: placar de quem está jogando e quantas posições sobe ou desce em relação à tabela oficial
+  const vivos = new Map<string, { pro: number; contra: number; min: string }>();
+  if (aoVivo)
+    for (const g of restantes)
+      if (g.aoVivo) {
+        const min = g.aoVivo.rotulo ?? (g.aoVivo.minuto != null ? `${g.aoVivo.minuto}'` : "");
+        vivos.set(g.mandante, { pro: g.aoVivo.gm, contra: g.aoVivo.gv, min });
+        vivos.set(g.visitante, { pro: g.aoVivo.gv, contra: g.aoVivo.gm, min });
+      }
   return html`<div class="box"><table class="tab">
-    <thead><tr><th>#</th><th class="l">Clube</th><th>P</th><th>J</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th>${comForma ? html`<th class="l w">Últimos 5</th>` : ""}${col ? html`<th>${col[1]}</th>` : ""}</tr></thead>
+    <thead><tr><th>#</th><th class="l">Clube</th>${aoVivo ? html`<th class="vivo-th">Agora</th>` : ""}<th>P</th><th>J</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th>${comForma ? html`<th class="l w">Últimos 5</th>` : ""}${col ? html`<th>${col[1]}</th>` : ""}</tr></thead>
     <tbody>${linhas.map((t, p) => {
-      const i = tabela.indexOf(t);
+      const i = posicao(t.clube);
       const c = col && res && i >= 0 ? chancesSim(res, i, modoVagas())[col[0]] : null;
-      return html`<tr ${atrLinha(t.clube, zonas ? classeFaixa(p, n) : "")}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="dim">${t.j}${jogam.has(t.clube) ? html`<i class="pend" title="Ainda joga nesta rodada"></i>` : ""}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w">${t.gp}</td><td class="w">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td>${comForma ? html`<td class="l w">${forma(t.clube)}</td>` : ""}${col ? (c == null ? html`<td class="dim">…</td>` : celProb(col[2], c)) : ""}</tr>`;
+      const v = vivos.get(t.clube);
+      const mov = aoVivo ? i - p : 0;
+      const marca = v
+        ? html`<td class="vivo-cel"><span class="vivo-placar ${v.pro > v.contra ? "up" : v.pro < v.contra ? "down" : ""}">${v.pro}-${v.contra}</span><small>${v.min}</small></td>`
+        : aoVivo
+          ? html`<td></td>`
+          : "";
+      return html`<tr ${atrLinha(t.clube, zonas ? classeFaixa(p, n) : "")}><td class="pos">${p + 1}${mov ? html`<small class="mov ${mov > 0 ? "up" : "down"}">${mov > 0 ? "▲" : "▼"}${Math.abs(mov)}</small>` : ""}</td>${celClube(t.clube)}${marca}<td class="big">${t.p}</td><td class="dim">${t.j}${jogam.has(t.clube) ? html`<i class="pend" title="Ainda joga nesta rodada"></i>` : ""}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w">${t.gp}</td><td class="w">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td>${comForma ? html`<td class="l w">${forma(t.clube)}</td>` : ""}${col ? (c == null ? html`<td class="dim">…</td>` : celProb(col[2], c)) : ""}</tr>`;
     })}</tbody>
   </table></div>`;
 }
@@ -65,8 +81,17 @@ export function telaClassificacao(vista: string): Html {
       return html`${topo}${avisoSimulacao()}${cartaoMeuTime()}
         <div class="barra-opcoes"><span class="dim">Chance de</span>${seletorLocal("chance", COLUNAS.map(([k, t]) => [k, t]), chance, "Coluna de chance")}</div>
         ${chance === "l" || chance === "s" ? seletorVagas() : ""}
-        <div class="com-lado"><div class="coluna">${tabelaClassificacao(tabela, true, true, chance)}${legenda()}</div>${rodadaEmAndamento(chance)}</div>`;
+        <div class="com-lado"><div class="coluna">${tabelaGeral(chance)}${legenda()}</div>${rodadaEmAndamento(chance)}</div>`;
     }
   }
   return html`${topo}${nota ? html`<p class="note">${nota}</p>` : ""}${tabelaClassificacao(linhas, false, vista === "ultimas-10")}`;
+}
+
+/** Tabela geral; com jogo em andamento, mostra como fica se os placares de agora forem os finais. */
+function tabelaGeral(chance: keyof Chances): Html {
+  const vivos = restantes.filter((g) => g.aoVivo);
+  if (!vivos.length) return tabelaClassificacao(tabela, true, true, chance);
+  const agora = classificacao(nomesClubes, [...resultados, ...vivos.map((g) => ({ ...g, gm: g.aoVivo!.gm, gv: g.aoVivo!.gv }))]);
+  return html`<p class="aviso vivo-aviso"><span class="live">Ao vivo</span> Tabela se os jogos terminassem agora. As setas mostram quantas posições cada time ganha ou perde.</p>
+    ${tabelaClassificacao(agora, true, true, chance, true)}`;
 }
