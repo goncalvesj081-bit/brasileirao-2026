@@ -4,7 +4,7 @@ import { sims } from "../estado";
 import { chancesSim, type ResultadoSimulacao } from "../modelo/simular";
 import type { Chances } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, calculando, celClube, celProb, classeFaixa, corFaixa, seletor, type Tom } from "../ui/componentes";
+import { atrLinha, calculando, celClube, celProb, classeFaixa, corFaixa, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
 import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { telaPontuacao } from "./pontuacao";
@@ -12,12 +12,12 @@ import { telaVagas } from "./vagas";
 
 export const ZONAS: Record<string, { chave: keyof Chances; nome: string; tom: Tom; frase: string }> = {
   campeao: { chave: "c", nome: "Título", tom: "c-title", frase: "Chance de ser campeão" },
-  libertadores: { chave: "l", nome: "Libertadores", tom: "c-lib", frase: "Chance de ir à Libertadores, contando as vagas que descem das copas" },
+  libertadores: { chave: "l", nome: "Libertadores", tom: "c-lib", frase: "Chance de ir à Libertadores" },
   "sul-americana": { chave: "s", nome: "Sul-Americana", tom: "c-sula", frase: "Chance de ir à Sul-Americana" },
   rebaixamento: { chave: "r", nome: "Queda", tom: "c-rel", frase: "Chance de ser rebaixado" },
 };
 
-const chancesDe = (res: ResultadoSimulacao, i: number) => chancesSim(res, i);
+const chancesDe = (res: ResultadoSimulacao, i: number) => chancesSim(res, i, modoVagas());
 
 export function telaChances(vista: string, extra: string): Html {
   const sec = SECOES.find((s) => s.id === "chances")!;
@@ -30,7 +30,8 @@ export function telaChances(vista: string, extra: string): Html {
   else if (vista === "pontos") corpo = telaPontuacao(extra);
   else if (ZONAS[vista]) corpo = porZona(res, vista);
   else corpo = resumo(res);
-  return html`${topo}${corpo}`;
+  const comSeletor = vista === "resumo" || vista === "libertadores" || vista === "sul-americana";
+  return html`${topo}${comSeletor ? seletorVagas() : ""}${corpo}`;
 }
 
 function resumo(res: ResultadoSimulacao): Html {
@@ -42,7 +43,7 @@ function resumo(res: ResultadoSimulacao): Html {
           ${celProb("c-title", c.c)}${celProb("c-lib", c.l)}${celProb("c-sula", c.s)}${celProb("c-rel", c.r)}<td class="dim w">${dec(res.pts[p], 0)}</td></tr>`;
       })}</tbody>
     </table></div>
-    <p class="note">Liberta e Sula já contam as vagas que descem da Copa do Brasil e dos campeões continentais (veja <a href="${link("chances", "vagas")}">Vagas</a>). ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados com os resultados até agora.</p>`;
+    <p class="note">${modoVagas() === "titulos" ? "Com títulos: conta terminar dentro da faixa ou ganhar a vaga por uma copa." : "Pela posição: conta só terminar dentro da faixa, que desce conforme as vagas das copas."} Veja <a href="${link("chances", "vagas")}">Vagas</a>. ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados com os resultados até agora.</p>`;
 }
 
 function porZona(res: ResultadoSimulacao, vista: string): Html {

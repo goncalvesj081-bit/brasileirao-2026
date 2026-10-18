@@ -7,7 +7,7 @@ import { ultimaRodadaComJogo } from "../modelo/rodadas";
 import { chancesDaLinha, chancesSim } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { ABAS_CLUBE } from "../router";
-import { calculando, classeFaixa, escudo, forma, linkClube, seletor, vazio } from "../ui/componentes";
+import { calculando, classeFaixa, escudo, forma, linkClube, modoVagas, seletor, seletorVagas, vazio } from "../ui/componentes";
 import { pct, saldo } from "../ui/formato";
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
@@ -64,12 +64,12 @@ function resumo(clube: string, i: number): Html {
   const res = sims.real;
   if (!res) return calculando();
   const linha = res.pos[i];
-  const ch = chancesSim(res, i);
+  const ch = chancesSim(res, i, modoVagas());
   const moda = linha.indexOf(Math.max(...linha));
   const kpi = (rot: string, v: number, cls: string) =>
     html`<div class="kpi ${v < 0.001 ? "zero" : ""}"><small>${rot}</small><b class="${cls}">${pct(v)}</b></div>`;
   const proximos = jogosRestantes(clube);
-  return html`<section class="tsec"><h3>Chances no fim do campeonato</h3>
+  return html`<section class="tsec"><h3>Chances no fim do campeonato</h3>${seletorVagas()}
       <div class="kpis">${kpi("Título", ch.c, "t-title")}${kpi("Libertadores", ch.l, "t-lib")}${kpi("Sul-Americana", ch.s, "t-sula")}${kpi("Rebaixamento", ch.r, "t-rel")}</div>
       <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p></section>
     <section class="tsec"><h3>Onde deve terminar</h3>

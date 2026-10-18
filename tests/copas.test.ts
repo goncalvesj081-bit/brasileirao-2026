@@ -114,3 +114,28 @@ describe("simulação com copas", () => {
     expect(semCopas.vagaLib.reduce((a, b) => a + b, 0)).toBeCloseTo(5, 5);
   });
 });
+
+describe("pela posição x com títulos", () => {
+  const { resultados, restantes } = disputar(tabelaCompleta(), 36);
+  const tabela = classificacao(NOMES, resultados);
+  const lanterna = tabela[19].clube;
+  const vazia = { nome: "", finalUnica: true, confrontos: [] };
+
+  it("campeão da Sul-Americana lá embaixo: entra com títulos, não pela posição", () => {
+    const copas = { atualizado: "", copaDoBrasil: vazia, libertadores: vazia, sulAmericana: { ...vazia, campeao: lanterna, vice: "Boca Juniors" } };
+    const s = simular({ tabela, restantes, n: 500, rand: criarRng(9), copas });
+    const i = tabela.findIndex((t) => t.clube === lanterna);
+    expect(s.vagaLib[i]).toBe(1);
+    expect(s.posLib[i]).toBe(0);
+    // a vaga dele não desce para a tabela (é vaga própria), então pela posição seguem 5
+    expect(s.posLib.reduce((a, b) => a + b, 0)).toBeCloseTo(5, 5);
+  });
+
+  it("campeão da Sul-Americana já no G5: a vaga desce e a faixa vira G6 pela posição", () => {
+    const lider = tabela[0].clube;
+    const copas = { atualizado: "", copaDoBrasil: vazia, libertadores: vazia, sulAmericana: { ...vazia, campeao: lider, vice: "Boca Juniors" } };
+    const s = simular({ tabela, restantes, n: 500, rand: criarRng(9), copas });
+    expect(s.posLib.reduce((a, b) => a + b, 0)).toBeCloseTo(6, 5);
+    expect(s.vagaLib.reduce((a, b) => a + b, 0)).toBeCloseTo(6, 5);
+  });
+});

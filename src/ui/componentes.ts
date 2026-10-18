@@ -1,6 +1,7 @@
 import { cores, escudoFixo, sigla, slug } from "../../config/clubes";
 import { CORTES, faixaDaPosicao, temporada } from "../../config/temporada";
 import { jogosDoClube } from "../modelo/classificacao";
+import type { ModoVagas } from "../modelo/simular";
 import { escudos, resultados } from "../dados";
 import { link } from "../router";
 import { pct } from "./formato";
@@ -98,4 +99,21 @@ export function gravarPref(nome: string, valor: string) {
   } catch {
     /* sem armazenamento: vale só nesta visita */
   }
+}
+
+// ---------- como contar as vagas ----------
+
+/** "posicao": só quem termina dentro da faixa (que desce com as copas); "titulos": conta também quem ganha copa. */
+export const modoVagas = (): ModoVagas => (lerPref("vagas", "posicao") === "titulos" ? "titulos" : "posicao");
+
+export function seletorVagas(): Html {
+  return html`<div class="barra-opcoes"><span class="dim">Vagas</span>${seletorLocal(
+    "vagas",
+    [
+      ["posicao", "Pela posição"],
+      ["titulos", "Com títulos"],
+    ],
+    modoVagas(),
+    "Como contar as vagas",
+  )}</div>`;
 }

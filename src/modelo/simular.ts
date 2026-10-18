@@ -30,9 +30,12 @@ export interface ResultadoSimulacao {
   ptsDist?: Record<number, number>[];
   z4?: Record<string, number>;
   lib?: Record<string, number>;
-  /** chance de cada clube ir à Libertadores / Sul-Americana já com as vagas que descem das copas */
+  /** chance de ir à Libertadores / Sul-Americana contando também os títulos (Copa do Brasil, continentais) */
   vagaLib: number[];
   vagaSula: number[];
+  /** chance de terminar dentro da faixa, com o corte já descendo pelas copas; título não conta */
+  posLib: number[];
+  posSula: number[];
   /** em quantas simulações a última vaga da Libertadores (e da Sula) pela tabela parou em cada posição (0-based) */
   corteLib: Record<number, number>;
   corteSula: Record<number, number>;
@@ -76,7 +79,9 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
   const z4 = e.detalhado ? new Map<string, number>() : null;
   const lib = e.detalhado ? new Map<string, number>() : null;
   const vagaLib = new Float64Array(n),
-    vagaSula = new Float64Array(n);
+    vagaSula = new Float64Array(n),
+    posLib = new Float64Array(n),
+    posSula = new Float64Array(n);
   const corteLib = new Map<number, number>(),
     corteSula = new Map<number, number>();
   const semTitulos: Titulos = { copaDoBrasil: null, libertadores: null, sulAmericana: null };
@@ -137,8 +142,14 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       if (!b) porPontos.set(P, (b = [P, 0, 0, 0, 0, 0]));
       b[1]++;
       if (q === 0) b[2]++;
-      if (d.lib.has(ti)) b[3]++;
-      else if (d.sula.has(ti)) b[4]++;
+      // pela posição: dentro do corte da Libertadores, ou entre ele e o corte da Sul-Americana
+      if (q <= d.corteLib) {
+        b[3]++;
+        posLib[ti]++;
+      } else if (q <= d.corteSula) {
+        b[4]++;
+        posSula[ti]++;
+      }
       if (q >= n - CORTES.rebaixados) b[5]++;
       if (ptsDist) ptsDist[ti].set(P, (ptsDist[ti].get(P) ?? 0) + 1);
     }
@@ -161,6 +172,8 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
     lib: lib ? Object.fromEntries(lib) : undefined,
     vagaLib: Array.from(vagaLib, (x) => x / e.n),
     vagaSula: Array.from(vagaSula, (x) => x / e.n),
+    posLib: Array.from(posLib, (x) => x / e.n),
+    posSula: Array.from(posSula, (x) => x / e.n),
     corteLib: Object.fromEntries(corteLib),
     corteSula: Object.fromEntries(corteSula),
   };
@@ -178,9 +191,15 @@ export function chancesDaLinha(r: number[]): Chances {
   return { c: r[0], l: somar(r, 0, CORTES.lib), s: somar(r, CORTES.lib, CORTES.sula), r: somar(r, n - CORTES.rebaixados, n) };
 }
 
-/** Chances do clube i já com as vagas que descem das copas. */
-export function chancesSim(res: ResultadoSimulacao, i: number): Chances {
+export type ModoVagas = "posicao" | "titulos";
+
+/**
+ * Chances do clube i. "posicao": só conta terminar dentro da faixa (que desce conforme as copas);
+ * "titulos": conta também quem se classifica por ganhar uma copa.
+ */
+export function chancesSim(res: ResultadoSimulacao, i: number, modo: ModoVagas = "posicao"): Chances {
   const r = res.pos[i];
   const n = r.length;
-  return { c: r[0], l: res.vagaLib[i], s: res.vagaSula[i], r: somar(r, n - CORTES.rebaixados, n) };
+  const [l, s] = modo === "titulos" ? [res.vagaLib[i], res.vagaSula[i]] : [res.posLib[i], res.posSula[i]];
+  return { c: r[0], l, s, r: somar(r, n - CORTES.rebaixados, n) };
 }

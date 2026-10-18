@@ -7,7 +7,7 @@ import { classificacao } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, seletor, type Tom } from "../ui/componentes";
+import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
 import { dataJogo, dec, milhar, pct, saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { navRodada } from "./rodada";
@@ -115,7 +115,7 @@ function htmlChances(): Html {
   const U = sims.usuario,
     R = sims.real;
   const linhas = tabela
-    .map((t, i) => ({ t, a: chancesSim(U, i), b: chancesSim(R, i), pts: U.pts[i] }))
+    .map((t, i) => ({ t, a: chancesSim(U, i, modoVagas()), b: chancesSim(R, i, modoVagas()), pts: U.pts[i] }))
     .sort((x, y) => y.pts - x.pts);
   const cel = (tom: Tom, v: number, base: number) => {
     const d = v - base;
@@ -191,7 +191,7 @@ export function telaSimulador(vista: string, numero: number | null): Html {
   const sec = SECOES.find((s) => s.id === "simular")!;
   let corpo: Html;
   if (vista === "tabela") corpo = html`<div class="box" id="simTable">${htmlTabela()}</div>${legenda()}`;
-  else if (vista === "chances") corpo = html`<div id="simProbs">${htmlChances()}</div>`;
+  else if (vista === "chances") corpo = html`${seletorVagas()}<div id="simProbs">${htmlChances()}</div>`;
   else if (vista === "analise") corpo = html`<div id="simAnalysis">${htmlAnalise()}</div>`;
   else corpo = vistaJogos(numero);
   return html`${seletor(sec.vistas, vista, (k) => link("simular", k), "Parte do simulador")}

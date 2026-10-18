@@ -5,7 +5,7 @@ import { classificacao, classificacaoUltimos } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
 import type { Chances, Linha } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, celClube, celProb, classeFaixa, forma, legenda, lerPref, seletor, seletorLocal, type Tom } from "../ui/componentes";
+import { atrLinha, celClube, celProb, classeFaixa, forma, legenda, lerPref, modoVagas, seletor, seletorLocal, seletorVagas, type Tom } from "../ui/componentes";
 import { saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
@@ -25,7 +25,7 @@ export function tabelaClassificacao(linhas: Linha[], zonas: boolean, comForma: b
     <thead><tr><th>#</th><th class="l">Clube</th><th>P</th><th>J</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th>${comForma ? html`<th class="l w">Últimos 5</th>` : ""}${col ? html`<th>${col[1]}</th>` : ""}</tr></thead>
     <tbody>${linhas.map((t, p) => {
       const i = tabela.indexOf(t);
-      const c = col && res && i >= 0 ? chancesSim(res, i)[col[0]] : null;
+      const c = col && res && i >= 0 ? chancesSim(res, i, modoVagas())[col[0]] : null;
       return html`<tr ${atrLinha(t.clube, zonas ? classeFaixa(p, n) : "")}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="dim">${t.j}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w">${t.gp}</td><td class="w">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td>${comForma ? html`<td class="l w">${forma(t.clube)}</td>` : ""}${col ? (c == null ? html`<td class="dim">…</td>` : celProb(col[2], c)) : ""}</tr>`;
     })}</tbody>
   </table></div>`;
@@ -61,6 +61,7 @@ export function telaClassificacao(vista: string): Html {
       const chance = lerPref("chance", "c") as keyof Chances;
       return html`${topo}
         <div class="barra-opcoes"><span class="dim">Chance de</span>${seletorLocal("chance", COLUNAS.map(([k, t]) => [k, t]), chance, "Coluna de chance")}</div>
+        ${chance === "l" || chance === "s" ? seletorVagas() : ""}
         ${tabelaClassificacao(tabela, true, true, chance)}${legenda()}`;
     }
   }
