@@ -1,0 +1,21 @@
+# Temporário: como as páginas do Palmeiras e do Fluminense escrevem os jogos. Apagar depois.
+name: Sonda de fontes
+on: workflow_dispatch
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Testar
+        run: |
+          set +e
+          UA="brasileirao-2026 (github.com/goncalvesj081-bit/brasileirao-2026)"
+          for T in "2026 SE Palmeiras season" "2026 Fluminense FC season" "2026 Club Athletico Paranaense season" "2026 Red Bull Bragantino season"; do
+            P=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$T")
+            curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$P&prop=wikitext&format=json&formatversion=2&redirects=1" | jq -r '.parse.wikitext // "SEM PAGINA"' > w.txt
+            echo "== $T: $(wc -c < w.txt) bytes"
+            grep -nE "^=+.*=+ *$" w.txt | head -30
+            grep -n -iE "attendance *= *[0-9]" w.txt | head -3
+            L=$(grep -n -iE "attendance *= *[0-9]" w.txt | sed -n 5p | cut -d: -f1); [ -n "$L" ] && sed -n "$((L-12)),$((L+1))p" w.txt
+            sleep 2
+          done
