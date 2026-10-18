@@ -464,3 +464,8 @@ td.vivo-cel small { display: block; font-size: 10.5px; color: var(--rel); font-w
 td.pos .mov { display: block; font-size: 9.5px; font-weight: 800; line-height: 1; }
 .vivo-aviso { border-left-color: var(--rel); }
 .vivo-aviso .live { margin-right: 6px; }
+
+/* simulador: jogo que já começou */
+.sim-jogo.travado .sim-time { grid-template-columns: 22px 1fr auto; }
+.sim-real { font-size: 22px; font-weight: 850; min-width: 44px; text-align: center; }
+.sim-jogo.travado { opacity: 0.92; }

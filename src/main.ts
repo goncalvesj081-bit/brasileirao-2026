@@ -1,7 +1,7 @@
 import "./estilos.css";
 import { aplicarPlacares, meta, situacao } from "./dados";
 import { iniciarAoVivo, ultimaBusca } from "./aovivo";
-import { aoMudar, agendarUsuario, simularReal } from "./estado";
+import { aoMudar, agendarUsuario, simularReal, sincronizarComJogosReais } from "./estado";
 import { lerRota, link, redirecionamento, ROTA_INICIAL, SECOES, tituloDa, type Rota } from "./router";
 import { aindaJogam } from "./telas/andamento";
 import { telaChances } from "./telas/chances";
@@ -209,6 +209,7 @@ aoCalcularSerieB(() => {
   if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
+sincronizarComJogosReais();
 desenhar();
 simularReal();
 
@@ -216,8 +217,10 @@ simularReal();
 iniciarAoVivo((ps) => {
   const { mudou, resultadoNovo } = aplicarPlacares(ps);
   if (resultadoNovo) simularReal();
-  // telas com campos de digitar não são redesenhadas, para não perder o que está sendo escrito
-  const digitando = rota.secao === "simular" || rota.secao === "bolao" || (rota.secao === "serie-b" && rota.vista === "simular");
+  // simulador: jogo em andamento entra com o placar real; encerrado sai dos placares simulados
+  if (sincronizarComJogosReais()) agendarUsuario(0);
+  // não redesenha enquanto alguém digita (perderia o que está sendo escrito)
+  const digitando = document.activeElement instanceof HTMLInputElement;
   if ((mudou || meta.aoVivo) && !digitando) desenhar();
 });
 

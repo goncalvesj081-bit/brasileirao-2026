@@ -51,6 +51,30 @@ export function placaresPorId(): Record<string, Placar> {
 
 export const nPlacares = () => Object.keys(placares).length;
 
+/**
+ * Jogos que começaram mandam no simulador: em andamento, o placar ao vivo fica fixo (e se atualiza);
+ * encerrado, sai dos placares simulados (já é resultado). Devolve se mudou algo.
+ */
+export function sincronizarComJogosReais(): boolean {
+  const abertos = new Map(restantes.map((g) => [confronto(g), g]));
+  let mudou = false;
+  for (const k of Object.keys(placares))
+    if (!abertos.has(k)) {
+      delete placares[k];
+      mudou = true;
+    }
+  for (const [k, g] of abertos)
+    if (g.aoVivo) {
+      const p: Placar = [g.aoVivo.gm, g.aoVivo.gv];
+      if (placares[k]?.[0] !== p[0] || placares[k]?.[1] !== p[1]) {
+        placares[k] = p;
+        mudou = true;
+      }
+    }
+  if (mudou) salvarPlacares();
+  return mudou;
+}
+
 // ---------- simulações ----------
 
 type Ouvinte = () => void;

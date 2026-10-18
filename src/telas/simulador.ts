@@ -1,7 +1,7 @@
 import { sigla } from "../../config/clubes";
 import { CORTES, temporada } from "../../config/temporada";
 import { confronto, jogosAdiados, nomesClubes, porData, resultados, restantes, rodadasAbertas, tabela } from "../dados";
-import { agendarUsuario, limparPlacares, nPlacares, placares, placaresPorId, rascunhos, salvarPlacares, sims } from "../estado";
+import { agendarUsuario, limparPlacares, nPlacares, placares, placaresPorId, rascunhos, salvarPlacares, sims, sincronizarComJogosReais } from "../estado";
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
@@ -63,7 +63,17 @@ function htmlResumo(): Html {
 
 // ---------- jogos ----------
 
+/** Jogo que já começou: placar real, sem campos para mudar (ao vivo se atualiza sozinho). */
+function cartaoTravado(g: Jogo, gm: number, gv: number, rotulo: Html): Html {
+  const time = (c: string, n: number) => html`<div class="sim-time">${escudo(c, 22)}<span class="nome">${c}</span><b class="sim-real">${n}</b></div>`;
+  return html`<article class="sim-jogo done travado"><div class="quando">${rotulo}</div>${time(g.mandante, gm)}${time(g.visitante, gv)}</article>`;
+}
+
 function cartaoJogo(g: Jogo): Html {
+  if (g.aoVivo) {
+    const v = g.aoVivo;
+    return cartaoTravado(g, v.gm, v.gv, html`<span class="live">Ao vivo${v.rotulo ? `, ${v.rotulo}` : v.minuto != null ? `, ${v.minuto}'` : ""}</span> · placar real, atualiza sozinho`);
+  }
   const k = confronto(g);
   const f = placares[k];
   const d = rascunhos[k] ?? { m: "", v: "" };
@@ -87,7 +97,12 @@ function cartaoJogo(g: Jogo): Html {
 }
 
 const abertosDa = (r: number) => restantes.filter((g) => g.rodada === r && !jogosAdiados.includes(g)).sort(porData);
-const todosCom = (jogos: Jogo[], k: Atalho) => jogos.length > 0 && jogos.every((g) => placares[confronto(g)] && resultadoDe(placares[confronto(g)]) === k);
+/** Para os botões de rodada inteira: só os jogos que ainda dá para simular. */
+const editaveisDa = (r: number) => abertosDa(r).filter((g) => !g.aoVivo);
+const todosCom = (jogos: Jogo[], k: Atalho) => {
+  const js = jogos.filter((g) => !g.aoVivo);
+  return js.length > 0 && js.every((g) => placares[confronto(g)] && resultadoDe(placares[confronto(g)]) === k);
+};
 
 function vistaJogos(numero: number | null): Html {
   const R = rodadasAbertas;
@@ -99,7 +114,9 @@ function vistaJogos(numero: number | null): Html {
     ${r != null
       ? html`${navRodada(R, r, (x) => link("simular", "jogos", x), "simRounds")}
         ${faltam.length ? html`<div class="chips rodada-inteira" role="group" aria-label="Preencher a rodada inteira"><span class="dim">Rodada inteira</span>${bt("1", "Mandantes")}${bt("X", "Empates")}${bt("2", "Visitantes")}</div>` : ""}
-        <div class="sim-grade">${faltam.map(cartaoJogo)}</div>`
+        <div class="sim-grade">${faltam.map(cartaoJogo)}${resultados
+          .filter((g) => g.rodada === r)
+          .map((g) => cartaoTravado(g, g.gm, g.gv, html`Encerrado${g.provisorio ? ", placar da ESPN" : ""}`))}</div>`
       : ""}
     ${jogosAdiados.length
       ? html`<section class="pend"><h3>Adiado${jogosAdiados.length > 1 ? "s" : ""}, sem rodada fixa</h3><div class="sim-grade">${jogosAdiados.map(cartaoJogo)}</div></section>`
@@ -216,7 +233,7 @@ export function atualizarSimulador() {
     }
   });
   document.querySelectorAll<HTMLButtonElement>("button[data-bulk]").forEach((b) => {
-    b.setAttribute("aria-pressed", String(todosCom(abertosDa(+b.dataset.r!), b.dataset.bulk as Atalho)));
+    b.setAttribute("aria-pressed", String(todosCom(editaveisDa(+b.dataset.r!), b.dataset.bulk as Atalho)));
   });
   atualizarResultadosSimulador(restantes.length - nPlacares() ? 0 : 400);
 }
@@ -274,7 +291,7 @@ export function cliqueSimulador(alvo: HTMLElement, redesenhar: () => void): bool
   }
   const b = alvo.closest<HTMLButtonElement>("button[data-bulk]");
   if (b) {
-    const jogos = abertosDa(+b.dataset.r!),
+    const jogos = editaveisDa(+b.dataset.r!),
       at = b.dataset.bulk as Atalho;
     const todos = todosCom(jogos, at);
     for (const g of jogos) {
@@ -290,6 +307,8 @@ export function cliqueSimulador(alvo: HTMLElement, redesenhar: () => void): bool
   if (alvo.closest("button[data-act='limpar']")) {
     if (!nPlacares() || !confirm("Apagar todos os placares simulados?")) return true;
     limparPlacares();
+    // os jogos em andamento continuam com o placar real
+    sincronizarComJogosReais();
     agendarUsuario();
     redesenhar();
     return true;
