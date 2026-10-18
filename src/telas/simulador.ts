@@ -1,7 +1,7 @@
 import { sigla } from "../../config/clubes";
 import { CORTES, temporada } from "../../config/temporada";
 import { confronto, jogosAdiados, nomesClubes, porData, resultados, restantes, rodadasAbertas, tabela } from "../dados";
-import { agendarUsuario, limparPlacares, nPlacares, pedirBase, placares, placaresPorId, rascunhos, salvarPlacares, sims } from "../estado";
+import { agendarUsuario, limparPlacares, nPlacares, placares, placaresPorId, rascunhos, salvarPlacares, sims } from "../estado";
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
 import { chancesDaLinha } from "../modelo/simular";
@@ -145,7 +145,6 @@ function htmlAnalise(): Html {
   if (abertos > 0)
     return html`<p class="empty">A análise aparece quando todos os jogos tiverem placar. ${abertos === 1 ? "Falta 1 jogo" : `Faltam ${abertos} jogos`}; use os botões de rodada inteira na aba <a href="${link("simular", "jogos")}">Jogos</a> para ir mais rápido.</p>`;
   if (!sims.base) {
-    pedirBase();
     return html`<p class="empty carregando">Comparando sua tabela com ${milhar(temporada.modelo.simulacoes)} campeonatos</p>`;
   }
   const B = sims.base;

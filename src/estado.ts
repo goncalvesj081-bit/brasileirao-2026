@@ -61,13 +61,12 @@ const avisar = () => ouvintes.forEach((f) => f());
 export const sims: {
   real: ResultadoSimulacao | null;
   usuario: ResultadoSimulacao | null;
-  /** modelo puro com distribuição de pontos e grupos (para a análise de plausibilidade) */
+  /** a mesma simulação real, que já guarda distribuição de pontos e grupos (para a análise de plausibilidade) */
   base: ResultadoSimulacao | null;
 } = { real: null, usuario: null, base: null };
 
 const wReal = new Simulador();
 const wUsuario = new Simulador();
-const wBase = new Simulador();
 
 const ignorarCancelado = (e: unknown) => {
   if (!(e instanceof Cancelado)) console.error(e);
@@ -75,26 +74,14 @@ const ignorarCancelado = (e: unknown) => {
 
 export function simularReal() {
   wReal
-    .executar({ tabela, restantes, n: N, semente: sementeReal })
-    .then((r) => {
-      sims.real = r;
-      avisar();
-    })
-    .catch(ignorarCancelado);
-}
-
-let baseCalculando = false;
-export function pedirBase() {
-  if (sims.base || baseCalculando) return;
-  baseCalculando = true;
-  wBase
+    // detalhado: custa ~15% a mais e deixa a análise do simulador pronta, sem uma segunda simulação
     .executar({ tabela, restantes, n: N, semente: sementeReal, detalhado: true })
     .then((r) => {
+      sims.real = r;
       sims.base = r;
       avisar();
     })
-    .catch(ignorarCancelado)
-    .finally(() => (baseCalculando = false));
+    .catch(ignorarCancelado);
 }
 
 let espera: ReturnType<typeof setTimeout> | undefined;
@@ -107,8 +94,11 @@ export function agendarUsuario(ms = 350) {
     return;
   }
   espera = setTimeout(() => {
+    const forcados = placaresPorId();
+    // com todos os jogos preenchidos não há o que sortear: uma simulação basta
+    const n = Object.keys(forcados).length === restantes.length ? 1 : N;
     wUsuario
-      .executar({ tabela, restantes, forcados: placaresPorId(), n: N, semente: sementeReal + 1 })
+      .executar({ tabela, restantes, forcados, n, semente: sementeReal + 1 })
       .then((r) => {
         sims.usuario = r;
         avisar();
