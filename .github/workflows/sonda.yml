@@ -6,22 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testar
-        env:
-          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
         run: |
           set +e
-          echo "== fd BSB"; curl -s -H "X-Auth-Token: $FOOTBALL_DATA_KEY" "https://api.football-data.org/v4/competitions/BSB/standings?season=2026" | head -c 400; echo
-          E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.2
-          echo "== times"; curl -s $E/teams | jq -c '[.sports[0].leagues[0].teams[].team | {id, displayName, logo: .logos[0].href}]' | cut -c1-3000
-          echo "== standings"; curl -s "https://site.api.espn.com/apis/v2/sports/soccer/bra.2/standings" | jq -c '.children[0].standings.entries[0:2] | map({t: .team.displayName, s: [.stats[] | {name, value}]})' | cut -c1-1500
-          for m in 202604 202610 202611; do
-            echo "== scoreboard $m"; curl -s "$E/scoreboard?dates=$m&limit=500" | jq -c '{n: (.events|length), um: (.events[0] | {date, name, week, season, status: .status.type.name, notes: .competitions[0].notes, h: .competitions[0].competitors[0] | {homeAway, score, t: .team.displayName}})}' | cut -c1-900
-          done
-          echo "== evento chaves"; curl -s "$E/scoreboard?dates=202610&limit=500" | jq -c '.events[0] | keys'
-          echo "== calendario"; curl -s "$E/scoreboard" | jq -c '.leagues[0] | {calendarType, calendar: (.calendar|tostring|.[0:600])}'
           UA="brasileirao-2026 (github.com/goncalvesj081-bit/brasileirao-2026)"
           T="2026_Campeonato_Brasileiro_S%C3%A9rie_B"
-          echo "== en secoes"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=sections&format=json" | jq -c '[.parse.sections[] | .line]'
-          echo "== en intro/format"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=wikitext&section=0&format=json&formatversion=2" | jq -r '.parse.wikitext' | grep -v "^|" | head -c 3000
-          S=$(curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=sections&format=json" | jq -r '[.parse.sections[] | select(.line|test("Format|format|Competition"))][0].index')
-          echo "== en formato secao $S"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=wikitext&section=$S&format=json&formatversion=2" | jq -r '.parse.wikitext' | head -c 2500
+          for S in 6 9 10; do
+            echo "== en secao $S"; curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&page=$T&prop=wikitext&section=$S&format=json&formatversion=2" | jq -r '.parse.wikitext' | grep -v "^|.*cite\|^<ref" | head -c 3500; echo
+          done
+          P="Campeonato_Brasileiro_de_Futebol_de_2026_-_S%C3%A9rie_B"
+          echo "== pt secoes"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=sections&format=json&redirects=1" | jq -c '[.parse.sections[] | {i: .index, l: .line}]'
+          S=$(curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=sections&format=json&redirects=1" | jq -r '[.parse.sections[] | select(.line|test("Regulamento|Formato|Disputa"))][0].index')
+          echo "== pt regulamento $S"; curl -s -A "$UA" "https://pt.wikipedia.org/w/api.php?action=parse&page=$P&prop=wikitext&section=$S&format=json&formatversion=2&redirects=1" | jq -r '.parse.wikitext' | head -c 3000
+          E=https://site.api.espn.com/apis/site/v2/sports/soccer/bra.2
+          echo "== jogos por mes"; for m in 202603 202604 202605 202606 202607 202608 202609 202610 202611 202612; do echo -n "$m "; curl -s "$E/scoreboard?dates=$m&limit=500" | jq -c '[.events|length, ([.events[]|select(.status.type.completed)]|length)]'; done
+          echo "== status distintos"; curl -s "$E/scoreboard?dates=202611&limit=500" | jq -c '[.events[].status.type.name] | unique'
+          echo "== standings notes"; curl -s "https://site.api.espn.com/apis/v2/sports/soccer/bra.2/standings" | jq -c '[.children[0].standings.entries[] | {t: .team.displayName, n: .note}]' | cut -c1-2000
