@@ -1,7 +1,7 @@
 // Conversa com o Firebase. Carregado só quando alguém abre o bolão (o SDK é grande).
 
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut, type User } from "firebase/auth";
+import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut, type User } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, getFirestore, query, serverTimestamp, setDoc, deleteDoc, where } from "firebase/firestore";
 import { FIREBASE } from "../../config/firebase";
 import type { LinhaRanking } from "../modelo/bolao";
@@ -13,13 +13,18 @@ const db = getFirestore(app);
 export type { User };
 export const aoMudarUsuario = (f: (u: User | null) => void) => onAuthStateChanged(auth, f);
 
+/** Quem entrou pela página do Google volta aqui; um erro nessa volta só aparece se alguém perguntar. */
+export const voltaDoGoogle = () => getRedirectResult(auth);
+
 export async function entrar() {
   const prov = new GoogleAuthProvider();
+  prov.setCustomParameters({ prompt: "select_account" });
   try {
     await signInWithPopup(auth, prov);
   } catch (e) {
-    // celulares que bloqueiam a janela: vai pela página do Google e volta
-    if ((e as { code?: string }).code === "auth/popup-blocked") await signInWithRedirect(auth, prov);
+    // janela bloqueada ou sem suporte (app instalado no iPhone): vai pela página do Google e volta
+    const code = (e as { code?: string }).code;
+    if (code === "auth/popup-blocked" || code === "auth/operation-not-supported-in-this-environment") await signInWithRedirect(auth, prov);
     else throw e;
   }
 }

@@ -33,9 +33,11 @@ export function navegacao(r: Rota): Html {
   )}`;
 }
 
+/** Atalho para as páginas dos clubes, em ordem alfabética (posição e pontos já estão na tabela). */
 export function listaClubes(r: Rota): Html {
-  return html`${tabela.map(
-    (t, p) => html`<a href="${linkClube(t.clube)}" aria-current="${r.clube === t.clube ? "page" : "false"}"${favorito() === t.clube ? html` class="fav"` : ""}><small>${p + 1}</small>${escudo(t.clube, 18)}<span>${t.clube}${favorito() === t.clube ? " ★" : ""}</span><em>${t.p}</em></a>`,
+  const clubes = tabela.map((t) => t.clube).sort((a, b) => a.localeCompare(b, "pt-BR"));
+  return html`<h2>Clubes</h2>${clubes.map(
+    (c) => html`<a href="${linkClube(c)}" aria-current="${r.clube === c ? "page" : "false"}"${favorito() === c ? html` class="fav"` : ""}>${escudo(c, 16)}<span>${c}${favorito() === c ? " ★" : ""}</span></a>`,
   )}`;
 }
 
