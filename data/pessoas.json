@@ -16,7 +16,7 @@
    [
     "Gabriel Barbosa",
     "Santos",
-    14
+    15
    ],
    [
     "Carlos Vinícius",
@@ -31,6 +31,11 @@
    [
     "Jonathan Calleri",
     "São Paulo",
+    10
+   ],
+   [
+    "Kaio Jorge",
+    "Cruzeiro",
     10
    ],
    [
@@ -55,11 +60,6 @@
    ],
    [
     "Matheus Pereira",
-    "Cruzeiro",
-    9
-   ],
-   [
-    "Kaio Jorge",
     "Cruzeiro",
     9
    ],
@@ -479,6 +479,11 @@
     3
    ],
    [
+    "Cristian Pavón",
+    "Grêmio",
+    3
+   ],
+   [
     "Alejo Veliz",
     "Bahia",
     3
@@ -531,6 +536,11 @@
    [
     "Gonzalo Plata",
     "Flamengo",
+    2
+   ],
+   [
+    "Philippe Coutinho",
+    "Santos",
     2
    ],
    [
@@ -764,11 +774,6 @@
     2
    ],
    [
-    "Cristian Pavón",
-    "Grêmio",
-    2
-   ],
-   [
     "Bruno Henrique",
     "Flamengo",
     2
@@ -841,11 +846,6 @@
    [
     "Danielzinho",
     "São Paulo",
-    1
-   ],
-   [
-    "Philippe Coutinho",
-    "Vasco",
     1
    ],
    [
