@@ -31,6 +31,10 @@ function carregar() {
   import("../bolao/cliente")
     .then((c) => {
       cli = c;
+      c.voltaDoGoogle().catch((e) => {
+        erro = erroDeLogin(e);
+        redesenhar();
+      });
       c.aoMudarUsuario(async (u) => {
         usuario = u;
         meus = {};
@@ -155,13 +159,25 @@ export function telaBolao(vista: string, numero: number | null): Html {
 
 // ---------- ações (chamadas pelo main) ----------
 
+/** Mensagem do login em português; fechar a janela do Google não é erro. */
+function erroDeLogin(e: unknown): string {
+  const code = (e as { code?: string }).code ?? "";
+  if (code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request" || code === "auth/user-cancelled") return "";
+  if (code === "auth/unauthorized-domain") return `Este endereço (${location.hostname}) ainda não está autorizado no login do Firebase.`;
+  if (code === "auth/network-request-failed") return "Sem conexão com o Google. Confira a internet e tente de novo.";
+  if (code === "auth/operation-not-allowed") return "O login com Google ainda não foi ativado no Firebase.";
+  if (code === "auth/web-storage-unsupported") return "O navegador está bloqueando o armazenamento do site (aba anônima ou cookies bloqueados). Abra numa aba normal.";
+  return `Não deu para entrar (${(e as Error).message}).`;
+}
+
 export async function entrarBolao() {
+  erro = "";
   try {
     await cli?.entrar();
   } catch (e) {
-    erro = `Não deu para entrar (${(e as Error).message}).`;
-    redesenhar();
+    erro = erroDeLogin(e);
   }
+  redesenhar();
 }
 export const sairBolao = () => void cli?.sair();
 export async function salvarNomeBolao() {

@@ -3,8 +3,8 @@
 // Enquanto apiKey estiver vazio, a página do bolão mostra que ele ainda não foi configurado.
 export const FIREBASE = {
   apiKey: "",
-  authDomain: "",
-  projectId: "",
+  authDomain: "brasileirao-2026.firebaseapp.com",
+  projectId: "brasileirao-2026",
   appId: "",
 };
 
