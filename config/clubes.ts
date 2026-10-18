@@ -9,10 +9,14 @@ export interface Clube {
   /** cor principal e secundária (bolinha quando o escudo não carrega) */
   cores: [string, string];
   chaves: string[];
+  /** escudo que vale por cima do da API (quando a API traz uma versão desatualizada) */
+  escudo?: string;
 }
 
 export const CLUBES: Clube[] = [
-  { nome: "Athletico-PR", sigla: "CAP", slug: "athletico-pr", cores: ["#c8102e", "#111111"], chaves: ["paranaense", "athletico"] },
+  { nome: "Athletico-PR", sigla: "CAP", slug: "athletico-pr", cores: ["#c8102e", "#111111"], chaves: ["paranaense", "athletico"],
+    // a API ainda usa o escudo anterior a 2019
+    escudo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Athletico_Paranaense_%28Logo_2019%29.svg/120px-Athletico_Paranaense_%28Logo_2019%29.svg.png" },
   { nome: "Atlético-MG", sigla: "CAM", slug: "atletico-mg", cores: ["#111111", "#f2f2f2"], chaves: ["mineiro", "atletico mg"] },
   { nome: "Bahia", sigla: "BAH", slug: "bahia", cores: ["#0057a8", "#e30613"], chaves: ["bahia"] },
   { nome: "Botafogo", sigla: "BOT", slug: "botafogo", cores: ["#111111", "#f2f2f2"], chaves: ["botafogo"] },
@@ -50,5 +54,6 @@ const POR_SLUG = new Map(CLUBES.map((c) => [c.slug, c]));
 export const clube = (nome: string) => POR_NOME.get(nome);
 export const clubePorSlug = (slug: string) => POR_SLUG.get(slug);
 export const sigla = (nome: string) => POR_NOME.get(nome)?.sigla ?? nome.slice(0, 3).toUpperCase();
+export const escudoFixo = (nome: string) => POR_NOME.get(nome)?.escudo;
 export const cores = (nome: string): [string, string] => POR_NOME.get(nome)?.cores ?? ["#6e757e", "#2b3037"];
 export const slug = (nome: string) => POR_NOME.get(nome)?.slug ?? semAcento(nome).replace(/ /g, "-");

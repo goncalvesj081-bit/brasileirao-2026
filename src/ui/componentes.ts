@@ -1,4 +1,4 @@
-import { cores, sigla, slug } from "../../config/clubes";
+import { cores, escudoFixo, sigla, slug } from "../../config/clubes";
 import { CORTES, faixaDaPosicao, temporada } from "../../config/temporada";
 import { jogosDoClube } from "../modelo/classificacao";
 import { escudos, resultados } from "../dados";
@@ -24,7 +24,7 @@ export const linkClube = (clube: string, aba?: string) => (aba ? link("clube", s
 /** Escudo do clube; enquanto não carrega (ou se falhar), aparecem as duas cores do clube. */
 export function escudo(clube: string, tam = 20): Html {
   const [a, b] = cores(clube);
-  const url = escudos[clube];
+  const url = escudoFixo(clube) ?? escudos[clube];
   return html`<span class="esc" style="--a:${a};--b:${b};--t:${tam}px" aria-hidden="true">${url ? html`<img src="${url}" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">` : ""}</span>`;
 }
 
