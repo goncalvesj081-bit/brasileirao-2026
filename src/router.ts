@@ -26,6 +26,7 @@ export const SECOES: Secao[] = [
     rotulo: "Chances",
     vistas: [
       ["resumo", "Resumo"],
+      ["vagas", "Vagas"],
       ["campeao", "Título"],
       ["libertadores", "Libertadores"],
       ["sul-americana", "Sul-Americana"],

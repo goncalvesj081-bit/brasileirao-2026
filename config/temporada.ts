@@ -7,11 +7,12 @@ export const temporada = {
   rodadas: 38,
   turnoAte: 19,
 
-  // Posições (1 = líder). Podem mudar conforme os campeões da Copa do Brasil e da Libertadores.
+  // Regra básica de 2026, pela tabela (1 = líder). As vagas da Copa do Brasil e dos campeões
+  // continentais que sobram descem na tabela; isso é calculado em src/modelo/copas.ts.
   faixas: {
-    libertadores: [1, 5], // fase de grupos
-    preLibertadores: [6, 7],
-    sulAmericana: [8, 13],
+    libertadores: [1, 4], // fase de grupos
+    preLibertadores: [5, 5],
+    sulAmericana: [6, 11],
     rebaixamento: [17, 20],
   },
 
@@ -24,7 +25,7 @@ export const temporada = {
     jogosEncolhimento: 8,
     mediaGolsPadrao: 1.2,
     // muda este número se mudar o modelo: força o recálculo de todo o histórico
-    versao: 1,
+    versao: 2,
   },
 
   // jogo restante de rodada já passada, sem data ou marcado para depois disto, conta como adiado

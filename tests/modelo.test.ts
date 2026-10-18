@@ -70,16 +70,16 @@ describe("simulação", () => {
     expect(s.clubes[s.pos.findIndex((r) => r[0] === 1)]).toBe(final[0].clube);
   });
 
-  it("faixas: Libertadores 1–7 (5 + 2 pré), Sula 8–13, rebaixamento 17–20", () => {
-    expect(CORTES).toEqual({ libGrupos: 5, lib: 7, sula: 13, rebaixados: 4 });
-    expect(faixaDaPosicao(4)).toBe("libertadores");
-    expect(faixaDaPosicao(5)).toBe("preLibertadores");
-    expect(faixaDaPosicao(12)).toBe("sulAmericana");
-    expect(faixaDaPosicao(13)).toBe(null);
+  it("faixas básicas de 2026: Libertadores 1–4 + 5º na pré, Sula 6–11, rebaixamento 17–20", () => {
+    expect(CORTES).toEqual({ libGrupos: 4, lib: 5, sula: 11, rebaixados: 4 });
+    expect(faixaDaPosicao(3)).toBe("libertadores");
+    expect(faixaDaPosicao(4)).toBe("preLibertadores");
+    expect(faixaDaPosicao(10)).toBe("sulAmericana");
+    expect(faixaDaPosicao(11)).toBe(null);
     expect(faixaDaPosicao(16)).toBe("rebaixamento");
     const linha = Array.from({ length: 20 }, () => 0.05);
     const ch = chancesDaLinha(linha);
-    expect(ch.l).toBeCloseTo(0.35);
+    expect(ch.l).toBeCloseTo(0.25);
     expect(ch.s).toBeCloseTo(0.3);
     expect(ch.r).toBeCloseTo(0.2);
   });

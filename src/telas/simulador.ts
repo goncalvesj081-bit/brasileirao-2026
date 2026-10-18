@@ -4,7 +4,7 @@ import { confronto, jogosAdiados, nomesClubes, porData, resultados, restantes, r
 import { agendarUsuario, limparPlacares, nPlacares, placares, placaresPorId, rascunhos, salvarPlacares, sims } from "../estado";
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
-import { chancesDaLinha } from "../modelo/simular";
+import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
 import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, seletor, type Tom } from "../ui/componentes";
@@ -115,7 +115,7 @@ function htmlChances(): Html {
   const U = sims.usuario,
     R = sims.real;
   const linhas = tabela
-    .map((t, i) => ({ t, a: chancesDaLinha(U.pos[i]), b: chancesDaLinha(R.pos[i]), pts: U.pts[i] }))
+    .map((t, i) => ({ t, a: chancesSim(U, i), b: chancesSim(R, i), pts: U.pts[i] }))
     .sort((x, y) => y.pts - x.pts);
   const cel = (tom: Tom, v: number, base: number) => {
     const d = v - base;
@@ -160,7 +160,7 @@ function htmlAnalise(): Html {
     <div class="kpis">
       <div class="kpi"><small>${a.campeao} campeão</small><b>${pct(a.chanceCampeao)}</b></div>
       <div class="kpi"><small>Esses ${CORTES.rebaixados} rebaixados juntos</small><b>${raro(a.chanceRebaixados)}</b><span class="note">${a.rebaixados.join(", ")}</span></div>
-      <div class="kpi"><small>Esses ${CORTES.lib} na Libertadores</small><b>${raro(a.chanceG7)}</b><span class="note">em qualquer ordem</span></div>
+      <div class="kpi"><small>Esses ${CORTES.lib} na Libertadores</small><b>${raro(a.chanceG7)}</b><span class="note">o mesmo grupo do 1º ao ${CORTES.lib}º, em qualquer ordem</span></div>
     </div>
     <div class="grid2">
       <section><h3>Maiores surpresas na tabela</h3><div class="box"><table class="tab">

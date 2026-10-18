@@ -4,7 +4,7 @@ import { jogosDoClube } from "../modelo/classificacao";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { probResultado } from "../modelo/poisson";
 import { ultimaRodadaComJogo } from "../modelo/rodadas";
-import { chancesDaLinha } from "../modelo/simular";
+import { chancesDaLinha, chancesSim } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { ABAS_CLUBE } from "../router";
 import { calculando, classeFaixa, escudo, forma, linkClube, seletor, vazio } from "../ui/componentes";
@@ -64,7 +64,7 @@ function resumo(clube: string, i: number): Html {
   const res = sims.real;
   if (!res) return calculando();
   const linha = res.pos[i];
-  const ch = chancesDaLinha(linha);
+  const ch = chancesSim(res, i);
   const moda = linha.indexOf(Math.max(...linha));
   const kpi = (rot: string, v: number, cls: string) =>
     html`<div class="kpi ${v < 0.001 ? "zero" : ""}"><small>${rot}</small><b class="${cls}">${pct(v)}</b></div>`;
@@ -94,7 +94,7 @@ function rodadaARodada(clube: string, i: number): Html {
   const s = serie(clube, i);
   if (!s) return calculando();
   return html`<section class="tsec"><h3>Chances depois de cada rodada</h3>
-      <p class="note">Calculadas só com os resultados que existiam até aquela rodada.</p>${evolucaoChances(clube, s)}</section>
+      <p class="note">Calculadas só com os resultados que existiam até aquela rodada, pela regra básica da tabela (Libertadores até o 5º, Sul-Americana do 6º ao 11º), sem as vagas que descem das copas.</p>${evolucaoChances(clube, s)}</section>
     <section class="tsec"><h3>Posição na tabela depois de cada rodada</h3>${evolucaoPosicao(clube, s)}</section>`;
 }
 

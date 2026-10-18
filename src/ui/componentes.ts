@@ -60,11 +60,13 @@ export function seletorLocal(nome: string, opcoes: [string, string][], atual: st
 export function legenda(): Html {
   const f = temporada.faixas;
   const item = (cor: string, txt: string) => html`<span><i style="background:${cor}"></i>${txt}</span>`;
+  const faixa = ([a, b]: readonly [number, number]) => (a === b ? `${a}º` : `${a}º ao ${b}º`);
   return html`<div class="legend">
-    ${item("var(--lib)", `Libertadores ${f.libertadores[0]}–${f.libertadores[1]}`)}
-    ${item("var(--pre)", `Pré-Libertadores ${f.preLibertadores[0]}–${f.preLibertadores[1]}`)}
-    ${item("var(--sula)", `Sul-Americana ${f.sulAmericana[0]}–${f.sulAmericana[1]}`)}
-    ${item("var(--rel)", `Rebaixamento ${f.rebaixamento[0]}–${f.rebaixamento[1]}`)}
+    ${item("var(--lib)", `Libertadores ${faixa(f.libertadores)}`)}
+    ${item("var(--pre)", `Pré-Libertadores ${faixa(f.preLibertadores)}`)}
+    ${item("var(--sula)", `Sul-Americana ${faixa(f.sulAmericana)}`)}
+    ${item("var(--rel)", `Rebaixamento ${faixa(f.rebaixamento)}`)}
+    <a href="${link("chances", "vagas")}">Pode descer com as copas</a>
   </div>`;
 }
 

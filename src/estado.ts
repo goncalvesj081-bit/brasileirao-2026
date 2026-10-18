@@ -1,5 +1,5 @@
 import { temporada } from "../config/temporada";
-import { confronto, restantes, sementeReal, tabela } from "./dados";
+import { confronto, copas, restantes, sementeReal, tabela } from "./dados";
 import type { ResultadoSimulacao } from "./modelo/simular";
 import type { Placar } from "./modelo/tipos";
 import { Cancelado, Simulador } from "./worker/simulador";
@@ -75,7 +75,7 @@ const ignorarCancelado = (e: unknown) => {
 export function simularReal() {
   wReal
     // detalhado: custa ~15% a mais e deixa a análise do simulador pronta, sem uma segunda simulação
-    .executar({ tabela, restantes, n: N, semente: sementeReal, detalhado: true })
+    .executar({ tabela, restantes, n: N, semente: sementeReal, detalhado: true, copas })
     .then((r) => {
       sims.real = r;
       sims.base = r;
@@ -98,7 +98,7 @@ export function agendarUsuario(ms = 350) {
     // com todos os jogos preenchidos não há o que sortear: uma simulação basta
     const n = Object.keys(forcados).length === restantes.length ? 1 : N;
     wUsuario
-      .executar({ tabela, restantes, forcados, n, semente: sementeReal + 1 })
+      .executar({ tabela, restantes, forcados, n, semente: sementeReal + 1, copas })
       .then((r) => {
         sims.usuario = r;
         avisar();
