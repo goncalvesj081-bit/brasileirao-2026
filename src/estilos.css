@@ -482,3 +482,7 @@ td.pos .mov { display: block; font-size: 9.5px; font-weight: 800; line-height: 1
 
 .retro { margin: 0; font-size: 12.5px; color: var(--muted); }
 .retro b { color: var(--ink); font-weight: 650; }
+details.jogo > summary { list-style: none; cursor: pointer; display: grid; gap: 8px; }
+details.jogo > summary::-webkit-details-marker { display: none; }
+details.jogo > summary .quando::after { content: " · ver lances ▾"; color: var(--muted); }
+details.jogo[open] > summary .quando::after { content: " · esconder ▴"; }

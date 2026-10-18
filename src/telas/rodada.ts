@@ -55,6 +55,17 @@ function retroLinha(g: Jogo): Html {
 const ICONE: Record<Lance["tipo"], string> = { gol: "⚽", contra: "⚽", amarelo: "🟨", vermelho: "🟥" };
 
 /** Gols e cartões, em ordem; os do mandante à esquerda, os do visitante à direita. */
+/** Jogos encerrados com os lances abertos (sobrevive ao redesenho a cada minuto do placar ao vivo). */
+const abertos = new Set<string>();
+document.addEventListener(
+  "toggle",
+  (ev) => {
+    const d = ev.target;
+    if (d instanceof HTMLDetailsElement && d.dataset.jogo) d.open ? abertos.add(d.dataset.jogo) : abertos.delete(d.dataset.jogo);
+  },
+  true,
+);
+
 function lancesHtml(lances: Lance[] | undefined): Html {
   if (!lances?.length) return html``;
   return html`<ul class="lances">${lances.map(
@@ -197,13 +208,14 @@ export function telaRodada(numero: number | null): Html {
           ${E ? oQueMuda(g, efeitosRelevantes(g, E)) : ""}
         </article>`;
       })}
-      ${disputados.map(
-        (g) => html`<article class="jogo feito">
-          <div class="quando">${g.provisorio ? "Encerrado, placar da ESPN (a oficial chega na próxima atualização)" : "Encerrado"}</div>
-          <div class="confronto">${lado(g.mandante, "m")}<span class="placar">${g.gm}<i>x</i>${g.gv}</span>${lado(g.visitante, "v")}</div>
-          ${lancesHtml(g.lances)}
-        </article>`,
-      )}
+      ${disputados.map((g) => {
+        const topo = html`<div class="quando">${g.provisorio ? "Encerrado, placar da ESPN" : "Encerrado"}</div>
+          <div class="confronto">${lado(g.mandante, "m")}<span class="placar">${g.gm}<i>x</i>${g.gv}</span>${lado(g.visitante, "v")}</div>`;
+        // encerrado: só o placar; os lances abrem com um toque
+        return g.lances?.length
+          ? html`<details class="jogo feito" data-jogo="${g.id}" ${abertos.has(g.id) ? "open" : ""}><summary>${topo}</summary>${lancesHtml(g.lances)}</details>`
+          : html`<article class="jogo feito">${topo}</article>`;
+      })}
     </div>
     ${disputados.length || faltam.some((g) => g.aoVivo) ? html`<button type="button" class="discreto compartilhar" data-compartilhar-rodada="${r}">Compartilhar a rodada</button>` : ""}
     <p class="note">Barra: chance de vitória do mandante, empate e vitória do visitante. "O que muda" mostra a chance final de cada time em cada resultado, com o resto do campeonato sorteado. Para testar placares, use <a href="#/simular">Simular</a>.</p>`;
