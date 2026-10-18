@@ -31,7 +31,7 @@ export interface Copa {
 
 export interface Copas {
   atualizado: string;
-  /** datas (ISO) dos jogos de copa ainda por disputar; deixam a atualização de 30 em 30 minutos ligada nesses dias */
+  /** datas (ISO) dos jogos de copa ainda por disputar; deixam a atualização de 10 em 10 minutos ligada nesses dias */
   jogos?: string[];
   copaDoBrasil: Copa;
   libertadores: Copa;

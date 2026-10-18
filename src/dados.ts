@@ -7,6 +7,8 @@ import pessoasJson from "../data/pessoas.json";
 import metaJson from "../data/meta.json";
 import escudosJson from "../data/escudos.json";
 import copasJson from "../data/copas.json";
+import cartoesJson from "../data/cartoes.json";
+import publicoJson from "../data/publico.json";
 import { CLUBES } from "../config/clubes";
 import { classificacao } from "./modelo/classificacao";
 import type { Copas } from "./modelo/copas";
@@ -21,6 +23,11 @@ export const pessoas = pessoasJson as unknown as Pessoas;
 export const meta = metaJson as Meta;
 export const escudos = escudosJson as Record<string, string>;
 export const copas = copasJson as unknown as Copas;
+/** [jogador, clube, amarelos, vermelhos, situação] */
+export const cartoes = cartoesJson as unknown as { atualizado: string; lista: [string, string, number, number, "suspenso" | "pendurado" | ""][] };
+/** [público, mandante, placar, visitante, estádio, data, rodada] */
+type LinhaPublico = [number, string, string, string, string, string, number];
+export const publico = publicoJson as unknown as { atualizado: string; maiores: LinhaPublico[]; menores: LinhaPublico[] };
 
 export const nomesClubes = CLUBES.map((c) => c.nome);
 export const tabela: Linha[] = classificacao(nomesClubes, resultados);

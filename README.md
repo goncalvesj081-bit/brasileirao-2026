@@ -28,7 +28,7 @@ FOOTBALL_DATA_KEY=sua-chave npm run update-data
 
 `.github/workflows/atualizar.yml`:
 
-- a cada 30 minutos, só em dia de jogo (jogo marcado para hoje no horário de Brasília, ou em andamento);
+- a cada 10 minutos, só em dia de jogo (jogo marcado para hoje no horário de Brasília, ou em andamento);
 - de 6 em 6 horas, sempre;
 - a cada push na `main`, e manualmente pela aba Actions ("Run workflow").
 

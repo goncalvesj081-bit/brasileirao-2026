@@ -1,8 +1,8 @@
-import { nomesClubes, restantes, resultados, tabela } from "../dados";
+import { nomesClubes, publico, restantes, resultados, tabela } from "../dados";
 import { forcas, golsEsperados } from "../modelo/forcas";
 import { probResultado } from "../modelo/poisson";
 import { classificacao, jogosDoClube, sequencia, type Res } from "../modelo/classificacao";
-import { atrLinha, celClube, forma } from "../ui/componentes";
+import { atrLinha, celClube, escudo, forma } from "../ui/componentes";
 import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
@@ -16,6 +16,7 @@ const SEQ: Record<string, [string, (r: Res) => boolean, string]> = {
 export function telaEstatisticas(vista: string): Html {
   if (vista === "ataque" || vista === "defesa") return gols(vista === "ataque");
   if (vista === "restante") return tabelaQueFalta();
+  if (vista === "publico") return telaPublico();
   const [titulo, teste, unidade] = SEQ[vista] ?? SEQ.vitorias;
   const linhas = nomesClubes
     .map((c) => ({ c, ...sequencia(jogosDoClube(c, resultados), teste) }))
@@ -89,4 +90,17 @@ function tabelaQueFalta(): Html {
       )}</tbody>
     </table></div>
     <p class="note">Adversários: pontos por jogo dos adversários que faltam. Pontos esperados: soma, jogo a jogo, de 3 × chance de vitória + chance de empate, pelo mesmo modelo das chances; já conta a força do próprio time e o mando de campo.</p>`;
+}
+
+function telaPublico(): Html {
+  if (!publico.maiores.length) return html`<p class="empty">Os dados de público chegam na próxima atualização automática.</p>`;
+  const tab = (titulo: string, linhas: typeof publico.maiores) => html`<section class="tsec"><h3>${titulo}</h3>
+    <div class="box"><table class="tab">
+      <thead><tr><th>#</th><th>Público</th><th class="l">Jogo</th><th class="l w">Estádio</th><th class="l w">Data</th><th class="w">Rod.</th></tr></thead>
+      <tbody>${linhas.map(
+        ([n, m, pl, v, est, d, r], k) => html`<tr><td class="pos">${k + 1}</td><td class="big">${n.toLocaleString("pt-BR")}</td><td class="l"><span class="quem">${escudo(m, 16)}${m} ${pl} ${v}${escudo(v, 16)}</span></td><td class="l dim w">${est}</td><td class="l dim w">${d}</td><td class="dim w">${r ? `${r}ª` : ""}</td></tr>`,
+      )}</tbody>
+    </table></div></section>`;
+  return html`${tab("Maiores públicos", publico.maiores)}${tab("Menores públicos", publico.menores)}
+    <p class="note">Público pagante. A fonte só lista os dez maiores e os dez menores do campeonato. Dados da Wikipédia${publico.atualizado ? `, de ${publico.atualizado}` : ""}.</p>`;
 }

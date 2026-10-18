@@ -46,7 +46,11 @@ export function normalizarPartidas(partidas: ApiPartida[], nome: (t: ApiTime) =>
     if ((p.status === "FINISHED" || p.status === "AWARDED") && home != null && away != null) {
       resultados.push({ ...base, data: p.utcDate, gm: home, gv: away });
     } else {
-      if (p.status === "IN_PLAY" || p.status === "PAUSED") aoVivo = true;
+      if (p.status === "IN_PLAY" || p.status === "PAUSED") {
+        aoVivo = true;
+        const min = Number.parseInt(String(p.minute ?? ""), 10);
+        base.aoVivo = { gm: home ?? 0, gv: away ?? 0, minuto: Number.isFinite(min) ? min : null };
+      }
       // SCHEDULED = dia marcado, horário ainda não confirmado (TIMED = confirmado)
       restantes.push(p.status === "SCHEDULED" && base.data ? { ...base, semHora: true } : base);
     }

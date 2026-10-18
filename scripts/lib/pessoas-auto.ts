@@ -43,6 +43,9 @@ export function limpar(s: string): string {
       const n = nome.toLowerCase();
       const pos = args.filter((a) => !/^\w+\s*=/.test(a));
       if (n === "sortname") return pos.slice(0, 2).join(" ");
+      // páginas em português: {{Futebol Flamengo|estado=depois}} e {{formatnum:67251}}
+      if (n.startsWith("futebol ")) return nome.slice(8);
+      if (n.startsWith("formatnum:")) return nome.slice(10).replace(/\D/g, "");
       if (n === "nowrap" || n === "nobr" || n === "small") return pos.join("|");
       return "";
     });

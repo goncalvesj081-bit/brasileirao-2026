@@ -16,6 +16,8 @@ export interface ApiPartida {
   utcDate: string;
   status: "SCHEDULED" | "TIMED" | "IN_PLAY" | "PAUSED" | "FINISHED" | "POSTPONED" | "SUSPENDED" | "CANCELLED" | "AWARDED" | string;
   matchday: number | null;
+  /** minuto do jogo, só enquanto ele está em andamento */
+  minute?: number | string | null;
   homeTeam: ApiTime;
   awayTeam: ApiTime;
   score: { fullTime: { home: number | null; away: number | null } };

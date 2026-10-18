@@ -7,6 +7,8 @@ export interface Jogo {
   data: string | null;
   /** dia definido, horário ainda não */
   semHora?: boolean;
+  /** jogo em andamento: placar parcial e minuto (quando a fonte informa) */
+  aoVivo?: { gm: number; gv: number; minuto: number | null };
 }
 
 export interface Resultado extends Jogo {

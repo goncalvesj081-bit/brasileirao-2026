@@ -2,7 +2,7 @@ name: Atualizar dados e publicar
 
 on:
   schedule:
-    - cron: "*/30 * * * *"      # de 30 em 30 minutos: só segue se for dia de jogo
+    - cron: "*/10 * * * *"      # de 10 em 10 minutos: só segue se for dia de jogo
     - cron: "7 3,9,15,21 * * *" # de 6 em 6 horas (0h07, 6h07, 12h07 e 18h07 em Brasília): segue sempre
   push:
     branches: [main]
@@ -35,7 +35,7 @@ jobs:
       - name: Dia de jogo?
         id: agenda
         run: |
-          if [ "${{ github.event.schedule }}" = "*/30 * * * *" ]; then
+          if [ "${{ github.event.schedule }}" = "*/10 * * * *" ]; then
             npm run --silent deve-rodar >> "$GITHUB_OUTPUT"
           else
             echo "rodar=true" >> "$GITHUB_OUTPUT"
@@ -86,6 +86,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run escudos
+      # para os avisos do app conferirem se há dados novos
+      - run: cp data/meta.json dist/meta.json
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

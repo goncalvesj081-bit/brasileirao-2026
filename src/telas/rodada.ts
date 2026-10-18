@@ -40,6 +40,29 @@ function oQueMuda(g: Jogo, efs: Efeito[]): Html {
     <tbody>${efs.map(linha)}</tbody></table></details>`;
 }
 
+/** Jogo em andamento: como ficam as chances se o placar parcial for o final. */
+function seTerminarAssim(g: Jogo, efs: Efeito[]): Html {
+  const v = g.aoVivo!;
+  const k = v.gm > v.gv ? 0 : v.gm === v.gv ? 1 : 2;
+  if (!efs.length) return html``;
+  const res = sims.real!;
+  return html`<div class="se-assim"><b>Se terminar assim:</b> ${efs.map((e, n) => {
+    const c = tabela[e.clube].clube;
+    const hoje = res.porJogo ? e.se.reduce((s, x, o) => s + x * (porIdN(g.id)?.[o] ?? 0), 0) : 0;
+    const depois = e.se[k];
+    const sobe = e.objetivo === "r" ? depois < hoje : depois > hoje;
+    return html`${n ? " · " : ""}${escudo(c, 14)} ${sigla(c)} ${NOME_OBJ[e.objetivo]} <span class="${TOM_OBJ[e.objetivo]}">${pct(hoje)} → <b>${pct(depois)}</b></span>${sobe ? " ↑" : " ↓"}`;
+  })}</div>`;
+}
+
+/** Fração de simulações com mandante, empate e visitante em um jogo (para a chance "de agora"). */
+function porIdN(id: string): [number, number, number] | null {
+  const E = sims.real?.porJogo?.find((x) => x.id === id);
+  if (!E) return null;
+  const t = E.n[0] + E.n[1] + E.n[2] || 1;
+  return [E.n[0] / t, E.n[1] / t, E.n[2] / t];
+}
+
 /** Os efeitos que interessam num jogo: o maior de cada time do jogo e o maior de um time de fora. */
 function efeitosRelevantes(g: Jogo, E: EfeitoJogo): Efeito[] {
   const todos = efeitosDoJogo(E, tabela.length);
@@ -96,9 +119,11 @@ export function telaRodada(numero: number | null): Html {
       ${faltam.map((g) => {
         const [H, D, A] = probResultado(...golsEsperados(F, g.mandante, g.visitante));
         const E = porId.get(g.id);
-        return html`<article class="jogo">
-          <div class="quando">${quando(g)}</div>
-          <div class="confronto">${lado(g.mandante, "m")}<span class="x">x</span>${lado(g.visitante, "v")}</div>
+        const vivo = g.aoVivo;
+        return html`<article class="jogo ${vivo ? "ao-vivo" : ""}">
+          <div class="quando">${vivo ? html`<span class="live">Ao vivo${vivo.minuto != null ? `, ${vivo.minuto}'` : ""}</span>` : quando(g)}</div>
+          <div class="confronto">${lado(g.mandante, "m")}${vivo ? html`<span class="placar">${vivo.gm}<i>x</i>${vivo.gv}</span>` : html`<span class="x">x</span>`}${lado(g.visitante, "v")}</div>
+          ${vivo && E ? seTerminarAssim(g, efeitosRelevantes(g, E)) : ""}
           <div class="odds" aria-label="Chances: ${g.mandante} ${pct(H)}, empate ${pct(D)}, ${g.visitante} ${pct(A)}">
             <div class="split"><i style="flex:${H}"></i><i style="flex:${D}"></i><i style="flex:${A}"></i></div>
             <div class="nums"><span class="${H > A ? "fav" : ""}">${pct(H)}</span><span>Empate ${pct(D)}</span><span class="${A > H ? "fav" : ""}">${pct(A)}</span></div>

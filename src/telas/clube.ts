@@ -1,4 +1,4 @@
-import { adiado, historico, linhaDe, pessoas, porData, posicao, resultados, restantes, tabela } from "../dados";
+import { adiado, cartoes, historico, linhaDe, pessoas, porData, posicao, resultados, restantes, tabela } from "../dados";
 import { sims } from "../estado";
 import { jogosDoClube } from "../modelo/classificacao";
 import { forcas, golsEsperados } from "../modelo/forcas";
@@ -177,6 +177,12 @@ function destaques(clube: string): Html {
     <div class="coluna"><section class="tsec"><h3>Artilheiros no Brasileirão</h3>
       ${art.length ? lista(art, "gol", "gols") : html`<p class="note">Sem dados atualizados.</p>`}
       ${dataDoDado(pessoas.artilharia)}</section>
+    ${(() => {
+      const c = cartoes.lista.filter((l) => l[1] === clube && l[4]);
+      return c.length
+        ? html`<section class="tsec"><h3>Suspensos e pendurados</h3><ol class="plist">${c.map((l) => html`<li><span>${l[0]}</span><b class="${l[4] === "suspenso" ? "down" : ""}">${l[4] === "suspenso" ? "suspenso no próximo jogo" : `pendurado, ${l[2]} amarelos`}</b></li>`)}</ol><p class="note">Pelos cartões da ESPN, de ${cartoes.atualizado}.</p></section>`
+        : "";
+    })()}
     ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(pessoas.assistencias)}</section>` : ""}
 </div>`;
 }

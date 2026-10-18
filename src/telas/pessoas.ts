@@ -1,4 +1,4 @@
-import { pessoas, tabela } from "../dados";
+import { cartoes, pessoas, tabela } from "../dados";
 import { atrLinha, celClube, celProb, classeFaixa, escudo, linkClube } from "../ui/componentes";
 import { html, type Html } from "../ui/html";
 
@@ -36,6 +36,8 @@ export function telaPessoas(vista: string): Html {
       </table></div>`;
   }
 
+  if (vista === "cartoes") return telaCartoes();
+
   if (vista === "tecnicos") {
     const trocas = (c: string) => pessoas.trocas.lista.filter((t) => t[0] === c).length;
     return html`<h2>Técnicos</h2>${dataDoDado(pessoas.tecnicos)}
@@ -58,4 +60,22 @@ export function telaPessoas(vista: string): Html {
         (t) => html`<tr ${atrLinha(t[0])}><td class="l dim">${t[3]}</td>${celClube(t[0])}<td class="l">${t[1]}</td><td class="l dim">${t[2] || "—"}</td><td class="l">${t[4]}</td></tr>`,
       )}</tbody>
     </table></div>`;
+}
+
+/** Suspensos para o próximo jogo, pendurados e quem mais levou cartão. */
+function telaCartoes(): Html {
+  if (!cartoes.lista.length) return html`<p class="empty">Os cartões chegam na próxima atualização automática.</p>`;
+  const pos = new Map(tabela.map((t, p) => [t.clube, p]));
+  const porClube = (s: string) => cartoes.lista.filter((l) => l[4] === s).sort((a, b) => pos.get(a[1])! - pos.get(b[1])! || a[0].localeCompare(b[0], "pt"));
+  const lista = (ls: typeof cartoes.lista) =>
+    html`<div class="box"><table class="tab"><thead><tr><th class="l">Jogador</th><th class="l">Clube</th><th>Amarelos</th><th>Vermelhos</th></tr></thead><tbody>${ls.map(
+      ([n, c, a, v]) => html`<tr ${atrLinha(c)}><td class="l team">${n}</td><td class="l team dim"><a href="${linkClube(c)}">${escudo(c, 18)}<span>${c}</span></a></td><td><span class="cartao am">${a}</span></td><td>${v ? html`<span class="cartao vm">${v}</span>` : html`<span class="dim">0</span>`}</td></tr>`,
+    )}</tbody></table></div>`;
+  const susp = porClube("suspenso"),
+    pend = porClube("pendurado");
+  return html`<h2>Cartões</h2>${dataDoDado({ atualizado: cartoes.atualizado, fonte: "ESPN" })}
+    <section class="tsec"><h3>Suspensos no próximo jogo</h3>${susp.length ? lista(susp) : html`<p class="note">Ninguém.</p>`}</section>
+    <section class="tsec"><h3>Pendurados</h3><p class="note">Com mais um amarelo, ficam fora do jogo seguinte.</p>${pend.length ? lista(pend) : html`<p class="note">Ninguém.</p>`}</section>
+    <section class="tsec"><h3>Mais cartões</h3>${lista(cartoes.lista.slice(0, 30))}</section>
+    <p class="note">Regra da CBF: a cada 3 amarelos, ou com um vermelho, o jogador cumpre suspensão no jogo seguinte do time. Suspensões maiores dadas pelo tribunal (STJD) não aparecem aqui.</p>`;
 }

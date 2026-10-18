@@ -13,6 +13,7 @@ import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
 import { alternarFavorito } from "./ui/favorito";
+import { guardarFavoritoParaAvisos, ligarAvisos } from "./ui/avisos";
 import {
   atualizarResultadosSimulador,
   cliqueSimulador,
@@ -139,9 +140,18 @@ $("main").addEventListener("click", (e) => {
     desenhar();
     return;
   }
+  const av = alvo.closest<HTMLButtonElement>("button[data-avisos]");
+  if (av) {
+    void ligarAvisos().then((msg) => {
+      av.textContent = msg;
+      setTimeout(desenhar, 2500);
+    });
+    return;
+  }
   const fav = alvo.closest<HTMLButtonElement>("button[data-favorito]");
   if (fav) {
     alternarFavorito(fav.dataset.favorito!);
+    void guardarFavoritoParaAvisos();
     desenhar();
     return;
   }

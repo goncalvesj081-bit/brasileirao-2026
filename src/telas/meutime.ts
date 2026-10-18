@@ -10,6 +10,7 @@ import { escudo, linkClube, modoVagas } from "../ui/componentes";
 import { favorito } from "../ui/favorito";
 import { dataJogo, pct } from "../ui/formato";
 import { html, type Html } from "../ui/html";
+import { botaoAvisos, mudancasDesdeUltimaVisita } from "../ui/avisos";
 
 export function cartaoMeuTime(): Html {
   const c = favorito();
@@ -37,7 +38,8 @@ export function cartaoMeuTime(): Html {
   return html`<section class="meu-time">
     <a class="mt-nome" href="${linkClube(c)}">${escudo(c, 30)}<b>${c}</b><span class="dim">${i + 1}º, ${t.p} pts</span></a>
     ${itens.length ? html`<div class="mt-ch">${itens.map(([r, v, k]) => html`<span><small>${r}</small><b class="${k}">${pct(v)}</b></span>`)}</div>` : ""}
+    ${mudancasDesdeUltimaVisita()}
     ${jogo}
-    <p class="mt-links"><a href="${linkClube(c, "torcida")}">Para quem torcer</a><a href="${linkClube(c, "rodada-a-rodada")}">Rodada a rodada</a></p>
+    <p class="mt-links"><a href="${linkClube(c, "torcida")}">Para quem torcer</a><a href="${linkClube(c, "rodada-a-rodada")}">Rodada a rodada</a>${botaoAvisos()}</p>
   </section>`;
 }

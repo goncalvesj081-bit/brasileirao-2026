@@ -43,7 +43,7 @@ describe("normalização da API", () => {
     const r = normalizarPartidas(
       [
         partida({}),
-        partida({ id: 2, status: "IN_PLAY", score: { fullTime: { home: 0, away: 0 } } }),
+        partida({ id: 2, status: "IN_PLAY", minute: "34", score: { fullTime: { home: 1, away: 0 } } }),
         partida({ id: 3, status: "POSTPONED", score: { fullTime: { home: null, away: null } } }),
         partida({ id: 4, status: "TIMED", score: { fullTime: { home: null, away: null } } }),
       ],
@@ -55,6 +55,7 @@ describe("normalização da API", () => {
     expect(r.restantes.map((g) => g.id)).toEqual(["2", "4", "3"]);
     expect(r.restantes.find((g) => g.id === "3")!.data).toBe(null);
     expect(r.aoVivo).toBe(true);
+    expect(r.restantes.find((g) => g.id === "2")!.aoVivo).toEqual({ gm: 1, gv: 0, minuto: 34 });
   });
 
   it("falha listando os nomes de clube que não reconhece", () => {

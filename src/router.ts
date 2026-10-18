@@ -69,6 +69,7 @@ export const SECOES: Secao[] = [
       ["ataque", "Ataque"],
       ["defesa", "Defesa"],
       ["restante", "Tabela que falta"],
+      ["publico", "Público"],
     ],
   },
   {
@@ -78,6 +79,7 @@ export const SECOES: Secao[] = [
     vistas: [
       ["artilharia", "Artilharia"],
       ["assistencias", "Assistências"],
+      ["cartoes", "Cartões"],
       ["tecnicos", "Técnicos"],
       ["trocas", "Trocas"],
     ],

@@ -13,6 +13,8 @@ import { api, type ApiArtilheiro, type ApiLinha, type ApiPartida, type ApiTime }
 import { atualizarArtilharia, criarTradutor, dataBR, normalizarPartidas, normalizarTabela } from "./lib/normalizar";
 import { buscarAssistencias, buscarTecnicos } from "./lib/pessoas-auto";
 import { buscarSerieB } from "./lib/serieb-espn";
+import { buscarCartoes } from "./lib/cartoes-espn";
+import { buscarPublico } from "./lib/publico-wiki";
 import type { SerieB } from "../src/modelo/serieb";
 import { buscarCopas } from "./lib/copas-espn";
 import type { Copas } from "../src/modelo/copas";
@@ -136,6 +138,20 @@ async function main() {
   } catch (e) {
     console.warn(`Aviso: Série B não atualizada (${(e as Error).message}). Mantendo data/serieb.json.`);
   }
+
+  // cartões (ESPN) e público (Wikipédia): se falharem, mantém o arquivo anterior; a data só muda com o conteúdo
+  const guardar = async (arquivo: string, o: string, f: () => Promise<Record<string, unknown>>) => {
+    try {
+      const novo = await f();
+      const antes = ler<Record<string, unknown> | null>(arquivo, null);
+      const { atualizado: _a, ...semData } = antes ?? {};
+      if (JSON.stringify(semData) !== JSON.stringify(novo)) novos[arquivo] = json({ atualizado: dataBR(new Date()), ...novo });
+    } catch (e) {
+      console.warn(`Aviso: ${o} não atualizado (${(e as Error).message}). Mantendo data/${arquivo}.`);
+    }
+  };
+  await guardar("cartoes.json", "cartões (ESPN)", async () => ({ lista: await buscarCartoes(ano) }));
+  await guardar("publico.json", "público (Wikipédia)", () => buscarPublico(ano));
 
   // copas (ESPN, sem chave): se falhar, mantém o arquivo anterior; a data só muda quando o conteúdo muda
   try {
