@@ -14,6 +14,8 @@ import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from
 import { html, type Html } from "../ui/html";
 import { dataDoDado, fotoTecnico } from "./pessoas";
 import { telaTorcida } from "./torcida";
+import { faixaPossivel, maximos, metaTopK, type Meta } from "../modelo/matematica";
+import { CORTES } from "../../config/temporada";
 import { favorito } from "../ui/favorito";
 
 export function telaClube(clube: string, aba: string): Html {
@@ -79,6 +81,7 @@ function resumo(clube: string, i: number): Html {
       <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p>
       <button type="button" class="discreto compartilhar" data-compartilhar="${clube}">Compartilhar</button></section>
     ${quantoFaltaHtml(clube, i)}
+    ${matematicaHtml(clube, i)}
     <section class="tsec"><h3>Próximos jogos</h3>${tabelaJogos(clube, proximos.filter((g) => !adiado(g)).slice(0, 3))}
       ${proximos.length > 3 ? html`<a class="linkbtn" href="${linkClube(clube, "jogos")}">Ver os ${proximos.length} jogos restantes</a>` : ""}</section></div>
     <section class="tsec"><h3>Onde deve terminar</h3>
@@ -185,4 +188,30 @@ function destaques(clube: string): Html {
     })()}
     ${ast.length ? html`<section class="tsec"><h3>Mais assistências</h3>${lista(ast, "assistência", "assistências")}${dataDoDado(pessoas.assistencias)}</section>` : ""}
 </div>`;
+}
+
+/** O que já está garantido ou impossível, sem probabilidade (empate em pontos conta contra). */
+function matematicaHtml(clube: string, i: number): Html {
+  const max = maximos(tabela, restantes);
+  const n = tabela.length;
+  const jogos = restantes.filter((g) => g.mandante === clube || g.visitante === clube).length;
+  const frase = (m: Meta) =>
+    m.garantido
+      ? html`<b class="up">garantido</b>`
+      : !m.possivel
+        ? html`<b class="down">sem chance</b>`
+        : m.faltam != null
+          ? html`garante com mais <b>${m.faltam}</b> ponto${m.faltam > 1 ? "s" : ""} (de ${3 * jogos} em disputa)`
+          : html`ainda possível, mas depende de outros resultados`;
+  const itens: [string, Meta][] = [
+    ["Título", metaTopK(clube, 1, tabela, max)],
+    [`G${CORTES.libGrupos} (Libertadores, grupos)`, metaTopK(clube, CORTES.libGrupos, tabela, max)],
+    ["Fugir da queda", metaTopK(clube, n - CORTES.rebaixados, tabela, max)],
+  ];
+  const [melhor, pior] = faixaPossivel(clube, tabela, max);
+  const res = sims.real;
+  const vistos = res ? res.pos[i].map((v, p) => [v, p] as const).filter(([v]) => v >= 0.0005).map(([, p]) => p + 1) : [];
+  return html`<section class="tsec"><h3>Matemática</h3>
+    <ul class="falta">${itens.map(([nome, m]) => html`<li><span class="obj">${nome}</span><span>${frase(m)}</span></li>`)}</ul>
+    <p class="note">Pela matemática, pode terminar entre o <b>${melhor}º</b> e o <b>${pior}º</b>${vistos.length ? html`; nas simulações, ficou entre o ${Math.min(...vistos)}º e o ${Math.max(...vistos)}º` : ""}. Conta só pontos, e empate em pontos conta contra, porque o desempate pode não ajudar.</p></section>`;
 }

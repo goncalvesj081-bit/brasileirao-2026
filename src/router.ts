@@ -33,6 +33,7 @@ export const SECOES: Secao[] = [
       ["rebaixamento", "Queda"],
       ["posicoes", "Posições"],
       ["pontos", "Por pontos"],
+      ["acerto", "Acerto do modelo"],
     ],
   },
   { id: "jogos", rotulo: "Jogos", vistas: [] },
@@ -148,7 +149,13 @@ export function lerRota(hash = location.hash): Rota | null {
     return { secao, vista: A, extra: B, numero: null };
   }
   const s = SECOES.find((x) => x.id === secao);
-  if (!s) return null;
+  if (!s) {
+    // endereço curto: #/corinthians (ou #/corinthians/jogos)
+    const c = clubePorSlug(secao);
+    if (!c) return null;
+    const aba = ABAS_CLUBE.some(([k]) => k === a) ? a : "resumo";
+    return { secao: "clube", vista: aba, extra: "", numero: null, clube: c.nome };
+  }
   if (!s.vistas.length) return { secao, vista: "", extra: a, numero: num(a) };
   const vista = s.vistas.some(([k]) => k === a) ? a : s.vistas[0][0];
   return { secao, vista, extra: b, numero: num(b) };

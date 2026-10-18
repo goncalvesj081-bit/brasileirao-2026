@@ -5,11 +5,11 @@ import { forcas, golsEsperados } from "../modelo/forcas";
 import { efeitosDoJogo, maiorEfeito, type Efeito, type ObjetivoJogo } from "../modelo/impacto";
 import { probResultado } from "../modelo/poisson";
 import type { EfeitoJogo } from "../modelo/simular";
-import type { Jogo } from "../modelo/tipos";
+import type { Jogo, Lance } from "../modelo/tipos";
 import { link } from "../router";
 import { escudo, linkClube, vazio } from "../ui/componentes";
 import { dataJogo, pct } from "../ui/formato";
-import { html, type Html } from "../ui/html";
+import { cru, esc, html, type Html } from "../ui/html";
 
 /** Navegação entre rodadas: ‹ 31ª rodada › */
 export function navRodada(R: number[], r: number, href: (x: number) => string, id = ""): Html {
@@ -38,6 +38,57 @@ function oQueMuda(g: Jogo, efs: Efeito[]): Html {
   return html`<details class="muda"><summary>O que muda com o resultado</summary>
     <table><thead><tr><th class="l"></th><th>${sigla(g.mandante)} vence</th><th>Empate</th><th>${sigla(g.visitante)} vence</th></tr></thead>
     <tbody>${efs.map(linha)}</tbody></table></details>`;
+}
+
+const ICONE: Record<Lance["tipo"], string> = { gol: "⚽", contra: "⚽", amarelo: "🟨", vermelho: "🟥" };
+
+/** Gols e cartões, em ordem; os do mandante à esquerda, os do visitante à direita. */
+function lancesHtml(lances: Lance[] | undefined): Html {
+  if (!lances?.length) return html``;
+  return html`<ul class="lances">${lances.map(
+    (l) => html`<li class="${l.lado}"><span class="min">${l.rotulo || `${l.min}'`}</span><span>${ICONE[l.tipo]} ${l.jogador}${l.tipo === "contra" ? " (contra)" : ""}</span></li>`,
+  )}</ul>`;
+}
+
+/**
+ * Chance de um clube ao longo do jogo: em cada minuto, a chance se o placar daquele momento fosse o final.
+ * Usa só os gols (os lances) e o efeito do jogo guardado pela simulação.
+ */
+function chanceDuranteJogo(e: Efeito, lances: Lance[], agora: number): Html {
+  const gols = lances.filter((l) => l.tipo === "gol" || l.tipo === "contra");
+  const fim = Math.max(90, agora, ...gols.map((l) => l.min));
+  const W = 400,
+    H = 120,
+    pl = 50,
+    pr = 46,
+    pt = 10,
+    pb = 22;
+  const x = (m: number) => pl + ((W - pl - pr) * m) / fim;
+  const vals = [...e.se];
+  const lo = Math.min(...vals),
+    hi = Math.max(...vals);
+  const y = (v: number) => pt + (H - pt - pb) * (1 - (hi === lo ? 0.5 : (v - lo) / (hi - lo)));
+  const res = (gm: number, gv: number) => (gm > gv ? 0 : gm === gv ? 1 : 2);
+  let gm = 0,
+    gv = 0;
+  const pontos: [number, number][] = [[0, e.se[1]]];
+  for (const l of gols) {
+    pontos.push([l.min, e.se[res(gm, gv)]]);
+    if (l.lado === "m") gm++;
+    else gv++;
+    pontos.push([l.min, e.se[res(gm, gv)]]);
+  }
+  pontos.push([agora, e.se[res(gm, gv)]]);
+  const c = tabela[e.clube].clube;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Chance de ${esc(c)} durante o jogo">`;
+  for (const v of [lo, hi]) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end">${pct(v)}</text>`;
+  for (const m of [0, 45, 90]) s += `<text x="${x(m)}" y="${H - 6}" text-anchor="middle">${m}'</text>`;
+  const cor = `var(--${e.objetivo === "c" ? "title" : e.objetivo === "l" ? "lib" : "rel"})`;
+  s += `<polyline fill="none" stroke="${cor}" stroke-width="2.5" stroke-linejoin="round" points="${pontos.map(([m, v]) => `${x(m)},${y(v)}`).join(" ")}"/>`;
+  for (const l of gols) s += `<text x="${x(l.min)}" y="${pt + 8}" text-anchor="middle" style="font-size:11px">⚽</text>`;
+  const u = pontos[pontos.length - 1];
+  s += `<circle cx="${x(u[0])}" cy="${y(u[1])}" r="4" fill="${cor}"/><text x="${x(u[0]) + 7}" y="${y(u[1]) + 4}" class="v" style="fill:${cor}">${pct(u[1])}</text>`;
+  return html`<div class="durante"><small>${sigla(c)}, ${NOME_OBJ[e.objetivo]}, se o placar de cada momento fosse o final</small>${cru(s + "</svg>")}</div>`;
 }
 
 /** Jogo em andamento: como ficam as chances se o placar parcial for o final. */
@@ -124,6 +175,8 @@ export function telaRodada(numero: number | null): Html {
           <div class="quando">${vivo ? html`<span class="live">Ao vivo${vivo.rotulo ? `, ${vivo.rotulo}` : vivo.minuto != null ? `, ${vivo.minuto}'` : ""}</span>` : quando(g)}</div>
           <div class="confronto">${lado(g.mandante, "m")}${vivo ? html`<span class="placar">${vivo.gm}<i>x</i>${vivo.gv}</span>` : html`<span class="x">x</span>`}${lado(g.visitante, "v")}</div>
           ${vivo && E ? seTerminarAssim(g, efeitosRelevantes(g, E)) : ""}
+          ${vivo ? lancesHtml(vivo.lances) : ""}
+          ${vivo && E && vivo.lances && efeitosRelevantes(g, E)[0] ? chanceDuranteJogo(efeitosRelevantes(g, E)[0], vivo.lances, vivo.minuto ?? 0) : ""}
           <div class="odds" aria-label="Chances: ${g.mandante} ${pct(H)}, empate ${pct(D)}, ${g.visitante} ${pct(A)}">
             <div class="split"><i style="flex:${H}"></i><i style="flex:${D}"></i><i style="flex:${A}"></i></div>
             <div class="nums"><span class="${H > A ? "fav" : ""}">${pct(H)}</span><span>Empate ${pct(D)}</span><span class="${A > H ? "fav" : ""}">${pct(A)}</span></div>
@@ -135,6 +188,7 @@ export function telaRodada(numero: number | null): Html {
         (g) => html`<article class="jogo feito">
           <div class="quando">${g.provisorio ? "Encerrado, placar da ESPN (a oficial chega na próxima atualização)" : "Encerrado"}</div>
           <div class="confronto">${lado(g.mandante, "m")}<span class="placar">${g.gm}<i>x</i>${g.gv}</span>${lado(g.visitante, "v")}</div>
+          ${lancesHtml(g.lances)}
         </article>`,
       )}
     </div>

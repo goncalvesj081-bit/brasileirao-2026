@@ -14,7 +14,7 @@ import { classificacao } from "./modelo/classificacao";
 import type { Copas } from "./modelo/copas";
 import { chaveDosResultados } from "./modelo/historico";
 import { ehAdiado, inicioDasRodadas } from "./modelo/rodadas";
-import type { EntradaHistorico, Jogo, Linha, Meta, Pessoas, Resultado } from "./modelo/tipos";
+import type { EntradaHistorico, Jogo, Lance, Linha, Meta, Pessoas, Resultado } from "./modelo/tipos";
 
 export const resultados = resultadosJson.jogos as Resultado[];
 export const restantes = jogosJson.jogos as Jogo[];
@@ -75,22 +75,30 @@ export function situacao(): string {
  * Placar ao vivo (ESPN, no navegador): marca o jogo em andamento e, quando ele termina, já o conta como
  * resultado (provisório até a próxima atualização oficial). Devolve se mudou algo e se entrou resultado novo.
  */
-export function aplicarPlacares(ps: { mandante: string; visitante: string; gm: number; gv: number; fim: boolean; minuto: string }[]): { mudou: boolean; resultadoNovo: boolean } {
+export function aplicarPlacares(ps: { mandante: string; visitante: string; gm: number; gv: number; fim: boolean; minuto: string; lances?: Lance[] }[]): { mudou: boolean; resultadoNovo: boolean } {
   let mudou = false,
     resultadoNovo = false;
   for (const p of ps) {
     const k = restantes.findIndex((g) => g.mandante === p.mandante && g.visitante === p.visitante);
-    if (k < 0) continue;
+    if (k < 0) {
+      // já encerrado nesta visita: só atualiza os lances
+      const r = resultados.find((g) => g.provisorio && g.mandante === p.mandante && g.visitante === p.visitante);
+      if (r && p.lances && JSON.stringify(r.lances) !== JSON.stringify(p.lances)) {
+        r.lances = p.lances;
+        mudou = true;
+      }
+      continue;
+    }
     const g = restantes[k];
     if (p.fim) {
       const { aoVivo: _v, ...base } = g;
-      resultados.push({ ...base, data: g.data ?? new Date().toISOString(), gm: p.gm, gv: p.gv, provisorio: true });
+      resultados.push({ ...base, data: g.data ?? new Date().toISOString(), gm: p.gm, gv: p.gv, provisorio: true, lances: p.lances });
       restantes.splice(k, 1);
       mudou = resultadoNovo = true;
       continue;
     }
     const min = Number.parseInt(p.minuto, 10);
-    const novo = { gm: p.gm, gv: p.gv, minuto: Number.isFinite(min) ? min : null, rotulo: p.minuto };
+    const novo = { gm: p.gm, gv: p.gv, minuto: Number.isFinite(min) ? min : null, rotulo: p.minuto, lances: p.lances };
     if (JSON.stringify(g.aoVivo) !== JSON.stringify(novo)) {
       g.aoVivo = novo;
       mudou = true;

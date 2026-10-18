@@ -1,3 +1,12 @@
+/** Gol ou cartão de um jogo (ESPN). `lado`: de quem é o lance (gol contra: o time que ganhou o gol). */
+export interface Lance {
+  min: number;
+  rotulo: string;
+  tipo: "gol" | "contra" | "amarelo" | "vermelho";
+  jogador: string;
+  lado: "m" | "v";
+}
+
 /** Jogo da tabela. `data` em ISO (UTC) ou null quando ainda não tem data. */
 export interface Jogo {
   id: string;
@@ -8,7 +17,7 @@ export interface Jogo {
   /** dia definido, horário ainda não */
   semHora?: boolean;
   /** jogo em andamento: placar parcial e minuto (quando a fonte informa) */
-  aoVivo?: { gm: number; gv: number; minuto: number | null; rotulo?: string };
+  aoVivo?: { gm: number; gv: number; minuto: number | null; rotulo?: string; lances?: Lance[] };
 }
 
 export interface Resultado extends Jogo {
@@ -16,6 +25,8 @@ export interface Resultado extends Jogo {
   gv: number;
   /** placar ao vivo já encerrado, antes da atualização oficial */
   provisorio?: boolean;
+  /** gols e cartões, quando o jogo foi acompanhado ao vivo nesta visita */
+  lances?: Lance[];
 }
 
 export interface Linha {

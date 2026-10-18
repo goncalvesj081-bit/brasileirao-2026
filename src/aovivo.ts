@@ -5,6 +5,9 @@
 import { clubePorNomeApi } from "../config/clubes";
 import { restantes } from "./dados";
 
+import type { Lance } from "./modelo/tipos";
+export type { Lance };
+
 export interface PlacarEspn {
   mandante: string;
   visitante: string;
@@ -13,11 +16,30 @@ export interface PlacarEspn {
   fim: boolean;
   /** "63'", "Intervalo"… */
   minuto: string;
+  lances: Lance[];
 }
 
 interface EventoEspn {
   status: { displayClock?: string; type: { name: string; completed?: boolean } };
-  competitions: { competitors: { homeAway: "home" | "away"; score?: string; team: { displayName: string } }[] }[];
+  competitions: {
+    competitors: { homeAway: "home" | "away"; score?: string; team: { id?: string; displayName: string } }[];
+    details?: { type?: { text?: string }; clock?: { displayValue?: string }; team?: { id?: string }; scoringPlay?: boolean; ownGoal?: boolean; yellowCard?: boolean; redCard?: boolean; athletesInvolved?: { displayName: string }[] }[];
+  }[];
+}
+
+function lerLances(c: EventoEspn["competitions"][number], idM: string | undefined): Lance[] {
+  const out: Lance[] = [];
+  for (const d of c.details ?? []) {
+    const tipo: Lance["tipo"] | null = d.scoringPlay ? (d.ownGoal ? "contra" : "gol") : d.redCard ? "vermelho" : d.yellowCard ? "amarelo" : null;
+    if (!tipo) continue;
+    const rotulo = d.clock?.displayValue ?? "";
+    const min = (rotulo.match(/\d+/g) ?? ["0"]).reduce((s, x) => s + Number(x), 0);
+    let lado: "m" | "v" = d.team?.id === idM ? "m" : "v";
+    // a ESPN marca o gol contra no time de quem fez; o gol vale para o outro
+    if (tipo === "contra") lado = lado === "m" ? "v" : "m";
+    out.push({ min, rotulo, tipo, jogador: d.athletesInvolved?.[0]?.displayName ?? "", lado });
+  }
+  return out.sort((a, b) => a.min - b.min);
 }
 
 /** Só os jogos já começados (em andamento ou encerrados) de clubes da Série A. */
@@ -34,7 +56,7 @@ export function lerPlacares(json: { events?: EventoEspn[] }): PlacarEspn[] {
     if (!m || !v) continue;
     const fim = e.status.type.completed === true || /FULL_TIME|FINAL/.test(st);
     const minuto = /HALFTIME/.test(st) ? "Intervalo" : (e.status.displayClock ?? "");
-    out.push({ mandante: m, visitante: v, gm: Number(h!.score ?? 0), gv: Number(a!.score ?? 0), fim, minuto });
+    out.push({ mandante: m, visitante: v, gm: Number(h!.score ?? 0), gv: Number(a!.score ?? 0), fim, minuto, lances: lerLances(e.competitions[0], h!.team.id) });
   }
   return out;
 }

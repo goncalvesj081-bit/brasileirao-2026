@@ -10,6 +10,7 @@ import { html, type Html } from "../ui/html";
 import { rodadaEmAndamento } from "./andamento";
 import { telaPontuacao } from "./pontuacao";
 import { telaVagas } from "./vagas";
+import { telaAcerto } from "./acerto";
 
 export const ZONAS: Record<string, { chave: keyof Chances; nome: string; tom: Tom; frase: string }> = {
   campeao: { chave: "c", nome: "Título", tom: "c-title", frase: "Chance de ser campeão" },
@@ -29,6 +30,7 @@ export function telaChances(vista: string, extra: string): Html {
   if (vista === "posicoes") corpo = mapaDeCalor(res);
   else if (vista === "vagas") corpo = telaVagas(res);
   else if (vista === "pontos") corpo = telaPontuacao(extra);
+  else if (vista === "acerto") return html`${topo}${telaAcerto()}`;
   else if (ZONAS[vista]) corpo = porZona(res, vista);
   else corpo = resumo(res);
   const comSeletor = vista === "resumo" || vista === "libertadores" || vista === "sul-americana";

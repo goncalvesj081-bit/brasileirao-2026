@@ -469,3 +469,13 @@ td.pos .mov { display: block; font-size: 9.5px; font-weight: 800; line-height: 1
 .sim-jogo.travado .sim-time { grid-template-columns: 22px 1fr auto; }
 .sim-real { font-size: 22px; font-weight: 850; min-width: 44px; text-align: center; }
 .sim-jogo.travado { opacity: 0.92; }
+
+/* lances do jogo */
+.lances { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 13px; }
+.lances li { display: flex; gap: 8px; align-items: baseline; }
+.lances li.v { flex-direction: row-reverse; text-align: right; }
+.lances .min { color: var(--muted); font-size: 12px; min-width: 34px; }
+.lances li.v .min { text-align: right; }
+.durante { display: grid; gap: 2px; }
+.durante small { color: var(--muted); font-size: 12px; }
+.durante svg { max-width: 520px; }
