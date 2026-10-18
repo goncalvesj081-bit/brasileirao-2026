@@ -1,23 +1,56 @@
 import { cores, escudoFixo, sigla, slug } from "../../config/clubes";
-import { CORTES, faixaDaPosicao, temporada } from "../../config/temporada";
+import { CORTES, temporada } from "../../config/temporada";
 import { jogosDoClube } from "../modelo/classificacao";
 import type { ModoVagas } from "../modelo/simular";
 import { escudos, resultados } from "../dados";
+import { nPlacares, sims } from "../estado";
 import { link } from "../router";
 import { pct } from "./formato";
 import { html, type Html } from "./html";
 
 const n0: number = temporada.clubes;
-const CLASSE = { libertadores: "z-lib", preLibertadores: "z-pre", sulAmericana: "z-sula", rebaixamento: "z-rel" } as const;
-const COR = { libertadores: "var(--lib)", preLibertadores: "var(--pre)", sulAmericana: "var(--sula)", rebaixamento: "var(--rel)" } as const;
 
+function maisFrequente(contagem: Record<number, number>, padrao: number): number {
+  let melhor = padrao,
+    vezes = -1;
+  for (const [k, v] of Object.entries(contagem)) if (v > vezes) [melhor, vezes] = [+k, v];
+  return melhor;
+}
+
+/**
+ * Faixas que aparecem nas cores da tabela: 1º ao 4º fase de grupos; depois, até o corte mais provável
+ * da Libertadores (pré e vagas que descem das copas); depois, Sul-Americana até o corte mais provável dela.
+ * Antes da simulação terminar, vale a regra básica.
+ */
+export function faixas(): { grupos: number; lib: number; sula: number; provavel: boolean } {
+  const r = sims.real;
+  if (!r) return { grupos: CORTES.libGrupos, lib: CORTES.lib, sula: CORTES.sula, provavel: false };
+  return { grupos: CORTES.libGrupos, lib: maisFrequente(r.corteLib, CORTES.lib - 1) + 1, sula: maisFrequente(r.corteSula, CORTES.sula - 1) + 1, provavel: true };
+}
+
+type Zona = "lib" | "pre" | "sula" | "rel" | null;
+function zona(p: number, n: number): Zona {
+  const f = faixas();
+  if (p >= n - CORTES.rebaixados) return "rel";
+  if (p < f.grupos) return "lib";
+  if (p < f.lib) return "pre";
+  if (p < f.sula) return "sula";
+  return null;
+}
 export function classeFaixa(p: number, n = n0): string {
-  const f = faixaDaPosicao(p, n);
-  return f ? CLASSE[f] : "";
+  const z = zona(p, n);
+  return z ? `z-${z}` : "";
 }
 export function corFaixa(p: number, n = n0): string {
-  const f = faixaDaPosicao(p, n);
-  return f ? COR[f] : "var(--muted)";
+  const z = zona(p, n);
+  return z ? `var(--${z})` : "var(--muted)";
+}
+
+/** Aviso nas telas de dados reais quando há placares simulados guardados. */
+export function avisoSimulacao(): Html {
+  const n = nPlacares();
+  if (!n) return html``;
+  return html`<p class="aviso">Aqui só entram resultados reais. Seus ${n} placare${n > 1 ? "s" : ""} simulado${n > 1 ? "s" : ""} aparece${n > 1 ? "m" : ""} em <a href="${link("simular", "tabela")}">Simular</a>.</p>`;
 }
 
 export const linkClube = (clube: string, aba?: string) => (aba ? link("clube", slug(clube), aba) : link("clube", slug(clube)));
@@ -59,15 +92,17 @@ export function seletorLocal(nome: string, opcoes: [string, string][], atual: st
 }
 
 export function legenda(): Html {
-  const f = temporada.faixas;
+  const f = faixas();
+  const r = temporada.faixas.rebaixamento;
   const item = (cor: string, txt: string) => html`<span><i style="background:${cor}"></i>${txt}</span>`;
-  const faixa = ([a, b]: readonly [number, number]) => (a === b ? `${a}º` : `${a}º ao ${b}º`);
+  const de = (a: number, b: number) => (a === b ? `${a}º` : `${a}º ao ${b}º`);
+  const prov = f.provavel ? " (mais provável)" : "";
   return html`<div class="legend">
-    ${item("var(--lib)", `Libertadores ${faixa(f.libertadores)}`)}
-    ${item("var(--pre)", `Pré-Libertadores ${faixa(f.preLibertadores)}`)}
-    ${item("var(--sula)", `Sul-Americana ${faixa(f.sulAmericana)}`)}
-    ${item("var(--rel)", `Rebaixamento ${faixa(f.rebaixamento)}`)}
-    <a href="${link("chances", "vagas")}">Pode descer com as copas</a>
+    ${item("var(--lib)", `Libertadores, grupos ${de(1, f.grupos)}`)}
+    ${f.lib > f.grupos ? item("var(--pre)", `Libertadores, pré e vagas das copas ${de(f.grupos + 1, f.lib)}${prov}`) : ""}
+    ${item("var(--sula)", `Sul-Americana ${de(f.lib + 1, f.sula)}${prov}`)}
+    ${item("var(--rel)", `Rebaixamento ${de(r[0], r[1])}`)}
+    <a href="${link("chances", "vagas")}">Por que muda</a>
   </div>`;
 }
 

@@ -1,3 +1,4 @@
+import { sigla } from "../../config/clubes";
 import { tabela } from "../dados";
 import { sims } from "../estado";
 import { link } from "../router";
@@ -47,7 +48,7 @@ export function telaPontuacao(objetivo: string): Html {
     tabela
       .map((t, i) => ({ t, i }))
       .filter((o) => Math.round(res.pts[o.i]) === pts)
-      .map((o) => html`<a class="mini" href="${linkClube(o.t.clube)}" title="${o.t.clube}">${escudo(o.t.clube, 18)}</a>`);
+      .map((o) => html`<a class="mini" href="${linkClube(o.t.clube)}" title="${o.t.clube}">${escudo(o.t.clube, 18)}<span>${sigla(o.t.clube)}</span></a>`);
 
   return html`${topo}
     <div class="marcos">${marcos.map(
@@ -57,5 +58,5 @@ export function telaPontuacao(objetivo: string): Html {
       <thead><tr><th>Pontos</th><th class="l">${rebaix ? "Risco de cair" : "Chance"}</th><th class="l">Projetados</th></tr></thead>
       <tbody>${vistas.map((r) => html`<tr><td class="big">${r.p}</td>${celProb(z.tom, r.pr, "wide")}<td class="l">${projetados(r.p)}</td></tr>`)}</tbody>
     </table></div>
-    <p class="note">Em todas as simulações, com que frequência quem terminou com aquela pontuação conseguiu o objetivo. Projetados: times cuja pontuação esperada é essa.</p>`;
+    <p class="note">Em todas as simulações, com que frequência quem terminou com aquela pontuação conseguiu o objetivo pela posição (as vagas que descem das copas já contam). Projetados: times que devem terminar com essa pontuação.</p>`;
 }

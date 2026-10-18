@@ -16,7 +16,7 @@ function corte(contagem: Record<number, number>, n: number, tom: string): Html {
   const max = Math.max(...linhas.map((l) => l.f));
   return html`<div class="box"><table class="tab">
     <tbody>${linhas.map(
-      (l) => html`<tr class="${l.f === max ? "destaque" : ""}"><td class="l">Até o <b>${l.p + 1}º</b></td><td class="prob ${tom} wide"><span>${pct(l.f)}</span><i style="width:${(l.f * 100).toFixed(1)}%"></i></td></tr>`,
+      (l) => html`<tr class="${l.f === max ? "destaque" : ""}"><td class="l">Do 1º ao <b>${l.p + 1}º</b></td><td class="prob ${tom} wide"><span>${pct(l.f)}</span><i style="width:${(l.f * 100).toFixed(1)}%"></i></td></tr>`,
     )}</tbody>
   </table></div>`;
 }
@@ -52,7 +52,7 @@ export function telaVagas(res: ResultadoSimulacao): Html {
   return html`<h2>Até onde vai a Libertadores</h2>
     <p class="sub">Pela tabela, o Brasileirão dá ${VAGAS.libertadoresLiga} vagas: do 1º ao 4º direto na fase de grupos e o 5º na pré. A Copa do Brasil dá mais ${VAGAS.libertadoresCopa}, e os campeões da Libertadores e da Sul-Americana, se forem brasileiros, mais uma cada. Quando quem ganha essas vagas já está classificado pela tabela, a vaga desce para o próximo colocado.</p>
     ${corte(res.corteLib, res.n, "c-lib")}
-    <p class="note">Em quantos dos ${res.n.toLocaleString("pt-BR")} campeonatos simulados a última vaga pela tabela ficou em cada posição.</p>
+    <p class="note">Em quantos dos ${res.n.toLocaleString("pt-BR")} campeonatos simulados a Libertadores chegou até cada posição. Pela posição, quem ganha uma copa e termina dentro dessa faixa conta como qualquer outro; quem ganha e termina fora dela não conta.</p>
     <h2>Até onde vai a Sul-Americana</h2>
     <p class="sub">São ${VAGAS.sulAmericana} vagas, para os ${VAGAS.sulAmericana} melhores colocados que não foram à Libertadores.</p>
     ${corte(res.corteSula, res.n, "c-sula")}

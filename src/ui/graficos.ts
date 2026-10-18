@@ -2,7 +2,7 @@
 
 import { CORTES } from "../../config/temporada";
 import type { Chances } from "../modelo/tipos";
-import { corFaixa, vazio } from "./componentes";
+import { corFaixa, faixas, vazio } from "./componentes";
 import { pct } from "./formato";
 import { cru, esc, html, type Html } from "./html";
 
@@ -34,8 +34,9 @@ export function barrasPosicao(linha: number[], clube: string): Html {
       x2 = pl + b * bw - 2;
     s += `<rect x="${x1}" y="${H - 16}" width="${x2 - x1}" height="4" fill="${cor}"/><text x="${(x1 + x2) / 2}" y="${H - 1}" text-anchor="middle">${rot}</text>`;
   };
-  faixa(0, CORTES.lib, "var(--lib)", "Libertadores");
-  faixa(CORTES.lib, CORTES.sula, "var(--sula)", "Sula");
+  const fx = faixas();
+  faixa(0, fx.lib, "var(--lib)", "Libertadores");
+  faixa(fx.lib, fx.sula, "var(--sula)", "Sula");
   faixa(n - CORTES.rebaixados, n, "var(--rel)", "Rebaixamento");
   return html`${cru(s + "</svg>")}<p class="note">Números em cima das barras: chance em %.</p>`;
 }
@@ -48,8 +49,8 @@ export interface PontoSerie {
 
 const CURVAS: [keyof Chances, string, string][] = [
   ["c", "var(--title)", "Título"],
-  ["l", "var(--lib)", "Libertadores"],
-  ["s", "var(--sula)", "Sul-Americana"],
+  ["l", "var(--lib)", `Top ${CORTES.lib}`],
+  ["s", "var(--sula)", `${CORTES.lib + 1}º ao ${CORTES.sula}º`],
   ["r", "var(--rel)", "Rebaixamento"],
 ];
 

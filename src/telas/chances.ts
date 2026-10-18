@@ -4,7 +4,7 @@ import { sims } from "../estado";
 import { chancesSim, type ResultadoSimulacao } from "../modelo/simular";
 import type { Chances } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, calculando, celClube, celProb, classeFaixa, corFaixa, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
+import { atrLinha, avisoSimulacao, calculando, celClube, celProb, classeFaixa, corFaixa, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
 import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { telaPontuacao } from "./pontuacao";
@@ -31,7 +31,7 @@ export function telaChances(vista: string, extra: string): Html {
   else if (ZONAS[vista]) corpo = porZona(res, vista);
   else corpo = resumo(res);
   const comSeletor = vista === "resumo" || vista === "libertadores" || vista === "sul-americana";
-  return html`${topo}${comSeletor ? seletorVagas() : ""}${corpo}`;
+  return html`${topo}${avisoSimulacao()}${comSeletor ? seletorVagas() : ""}${corpo}`;
 }
 
 function resumo(res: ResultadoSimulacao): Html {

@@ -5,7 +5,7 @@ import { classificacao, classificacaoUltimos } from "../modelo/classificacao";
 import { chancesSim } from "../modelo/simular";
 import type { Chances, Linha } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, celClube, celProb, classeFaixa, forma, legenda, lerPref, modoVagas, seletor, seletorLocal, seletorVagas, type Tom } from "../ui/componentes";
+import { atrLinha, avisoSimulacao, celClube, celProb, classeFaixa, forma, legenda, lerPref, modoVagas, seletor, seletorLocal, seletorVagas, type Tom } from "../ui/componentes";
 import { saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 
@@ -59,7 +59,7 @@ export function telaClassificacao(vista: string): Html {
       break;
     default: {
       const chance = lerPref("chance", "c") as keyof Chances;
-      return html`${topo}
+      return html`${topo}${avisoSimulacao()}
         <div class="barra-opcoes"><span class="dim">Chance de</span>${seletorLocal("chance", COLUNAS.map(([k, t]) => [k, t]), chance, "Coluna de chance")}</div>
         ${chance === "l" || chance === "s" ? seletorVagas() : ""}
         ${tabelaClassificacao(tabela, true, true, chance)}${legenda()}`;

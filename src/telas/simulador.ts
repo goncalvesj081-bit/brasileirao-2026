@@ -160,7 +160,7 @@ function htmlAnalise(): Html {
     <div class="kpis">
       <div class="kpi"><small>${a.campeao} campeão</small><b>${pct(a.chanceCampeao)}</b></div>
       <div class="kpi"><small>Esses ${CORTES.rebaixados} rebaixados juntos</small><b>${raro(a.chanceRebaixados)}</b><span class="note">${a.rebaixados.join(", ")}</span></div>
-      <div class="kpi"><small>Esses ${CORTES.lib} na Libertadores</small><b>${raro(a.chanceG7)}</b><span class="note">o mesmo grupo do 1º ao ${CORTES.lib}º, em qualquer ordem</span></div>
+      <div class="kpi"><small>Esses ${CORTES.lib} primeiros</small><b>${raro(a.chanceG7)}</b><span class="note">o mesmo grupo do 1º ao ${CORTES.lib}º, em qualquer ordem</span></div>
     </div>
     <div class="grid2">
       <section><h3>Maiores surpresas na tabela</h3><div class="box"><table class="tab">

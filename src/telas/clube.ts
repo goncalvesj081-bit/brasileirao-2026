@@ -93,8 +93,8 @@ function serie(clube: string, i: number): PontoSerie[] | null {
 function rodadaARodada(clube: string, i: number): Html {
   const s = serie(clube, i);
   if (!s) return calculando();
-  return html`<section class="tsec"><h3>Chances depois de cada rodada</h3>
-      <p class="note">Calculadas só com os resultados que existiam até aquela rodada, pela regra básica da tabela (Libertadores até o 5º, Sul-Americana do 6º ao 11º), sem as vagas que descem das copas.</p>${evolucaoChances(clube, s)}</section>
+  return html`<section class="tsec"><h3>Chance de top 5, de 6º ao 11º e de queda, rodada a rodada</h3>
+      <p class="note">Calculadas só com os resultados que existiam até aquela rodada. Aqui as faixas são fixas (top 5 e 6º ao 11º, a regra básica do Brasileirão), sem as vagas que descem das copas; por isso os números podem ser menores que os de Resumo.</p>${evolucaoChances(clube, s)}</section>
     <section class="tsec"><h3>Posição na tabela depois de cada rodada</h3>${evolucaoPosicao(clube, s)}</section>`;
 }
 
