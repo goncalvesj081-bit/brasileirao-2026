@@ -1,7 +1,20 @@
 // Conversa com o Firebase. Carregado só quando alguém abre o bolão (o SDK é grande).
 
 import { initializeApp } from "firebase/app";
-import { getAuth, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut, type User } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  getRedirectResult,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut,
+  updateProfile,
+  type User,
+} from "firebase/auth";
 import { collection, doc, getDoc, getDocs, getFirestore, query, serverTimestamp, setDoc, deleteDoc, where } from "firebase/firestore";
 import { FIREBASE } from "../../config/firebase";
 import type { LinhaRanking } from "../modelo/bolao";
@@ -9,6 +22,7 @@ import type { LinhaRanking } from "../modelo/bolao";
 const app = initializeApp(FIREBASE);
 const auth = getAuth(app);
 const db = getFirestore(app);
+auth.languageCode = "pt-BR";
 
 export type { User };
 export const aoMudarUsuario = (f: (u: User | null) => void) => onAuthStateChanged(auth, f);
@@ -28,6 +42,15 @@ export async function entrar() {
     else throw e;
   }
 }
+export const entrarComEmail = (email: string, senha: string) => signInWithEmailAndPassword(auth, email.trim(), senha);
+
+/** Conta nova por e-mail. O nome no ranking é gravado por quem chama, quando o login é avisado. */
+export async function criarConta(nome: string, email: string, senha: string) {
+  const { user } = await createUserWithEmailAndPassword(auth, email.trim(), senha);
+  await updateProfile(user, { displayName: nome.trim().slice(0, 30) });
+}
+
+export const recuperarSenha = (email: string) => sendPasswordResetEmail(auth, email.trim());
 export const sair = () => signOut(auth);
 
 /** Garante nome e foto no ranking; não sobrescreve o apelido que a pessoa escolheu. */
