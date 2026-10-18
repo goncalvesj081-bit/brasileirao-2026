@@ -8,7 +8,7 @@ import { dividirTopo, limpar } from "./pessoas-auto";
 /** [data (texto da página), mandante, visitante, público] */
 export type JogoPublico = [string, string, string, number];
 
-const LIGA = /s[ée]rie a|brasileir[aã]o|campeonato brasileiro|league/i;
+const LIGA = /s[ée]rie a|brasileir[aã]o|campeonato brasileiro/i;
 const OUTRAS = /copa|cup|libertadores|sudamericana|sul-americana|paulista|carioca|mineiro|ga[uú]cho|baiano|paranaense|catarinense|pernambucano|paraense|state|estadual|friendl/i;
 
 /** Blocos {{football box…}} com o título de seção mais próximo antes deles. */
@@ -67,7 +67,7 @@ export async function buscarPublicoClubes(ano: number): Promise<Record<string, J
   const out: Record<string, JogoPublico[]> = {};
   for (const c of CLUBES) {
     try {
-      const busca = (await (await fetch(`${API}&action=query&list=search&srlimit=3&srsearch=${encodeURIComponent(`${ano} ${c.nome} season`)}`, { headers: UA })).json()) as {
+      const busca = (await (await fetch(`${API}&action=query&list=search&srlimit=10&srsearch=${encodeURIComponent(`${ano} ${c.nome} season`)}`, { headers: UA })).json()) as {
         query: { search: { title: string }[] };
       };
       // a página certa começa com o ano e termina em "season"

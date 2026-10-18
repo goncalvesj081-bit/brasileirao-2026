@@ -105,6 +105,13 @@ describe("público na página do clube", () => {
 |team1=[[CR Flamengo|Flamengo]]
 |team2=[[Cruzeiro EC|Cruzeiro]]
 |attendance=72,481
+}}
+===Campeonato Carioca===
+====League phase====
+{{football box collapsible
+|team1=[[CR Flamengo|Flamengo]]
+|team2=[[Fluminense FC|Fluminense]]
+|attendance=40,000
 }}`;
     expect(lerPublicoDoClube("Flamengo", txt)).toEqual([["", "Flamengo", "Palmeiras", 67251]]);
   });
