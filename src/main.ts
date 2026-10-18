@@ -68,7 +68,27 @@ function fonte(): Html {
   return html`${meta.aoVivo ? html`<span class="live">Jogo em andamento</span>` : ""}<span>${situacao()}</span><span>Atualizado ${dataHora(meta.atualizado)}</span>`;
 }
 
+/** Redesenha sem perder a rolagem lateral das barras de filtro; o filtro escolhido fica à vista. */
+function manterFiltros(redesenhar: () => void) {
+  const chave = (el: Element, i: number) => `${el.getAttribute("aria-label") ?? ""}#${i}`;
+  const antes = new Map([...document.querySelectorAll(".seg")].map((el, i) => [chave(el, i), el.scrollLeft]));
+  redesenhar();
+  document.querySelectorAll<HTMLElement>(".seg").forEach((el, i) => {
+    el.scrollLeft = antes.get(chave(el, i)) ?? 0;
+    const ativo = el.querySelector<HTMLElement>('[aria-current="page"], [aria-pressed="true"]');
+    if (!ativo) return;
+    const ini = ativo.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft,
+      fim = ini + ativo.offsetWidth;
+    if (ini < el.scrollLeft) el.scrollLeft = ini - 16;
+    else if (fim > el.scrollLeft + el.clientWidth) el.scrollLeft = fim - el.clientWidth + 16;
+  });
+}
+
 function desenhar() {
+  manterFiltros(desenharTudo);
+}
+
+function desenharTudo() {
   const titulo = tituloDa(rota);
   document.title = rota.secao === "tabela" ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
   $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : html`${titulo}`);
@@ -110,7 +130,7 @@ $("main").addEventListener("click", (e) => {
   const pref = alvo.closest<HTMLButtonElement>("button[data-pref]");
   if (pref) {
     gravarPref(pref.dataset.pref!, pref.dataset.valor!);
-    $("main").innerHTML = String(conteudo(rota));
+    manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
     return;
   }
   if (alvo.closest("a,button,input")) return;
@@ -133,7 +153,7 @@ const usaSimulacao = (r: Rota) =>
 
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();
-  else if (usaSimulacao(rota)) $("main").innerHTML = String(conteudo(rota));
+  else if (usaSimulacao(rota)) manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
 desenhar();
