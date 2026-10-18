@@ -1,1 +1,1149 @@
-{ "atualizado": "", "clubes": {} }
+{
+ "atualizado": "2026-10-18T20:30:02.855Z",
+ "clubes": {
+  "Atlético-MG": [
+   [
+    "28 January",
+    "Atlético-MG",
+    "Palmeiras",
+    25770
+   ],
+   [
+    "11 February",
+    "Atlético-MG",
+    "Remo",
+    16056
+   ],
+   [
+    "11 March",
+    "Atlético-MG",
+    "Internacional",
+    10132
+   ],
+   [
+    "18 March",
+    "Atlético-MG",
+    "São Paulo",
+    36830
+   ],
+   [
+    "5 April",
+    "Atlético-MG",
+    "Athletico-PR",
+    29356
+   ],
+   [
+    "26 April",
+    "Atlético-MG",
+    "Flamengo",
+    28148
+   ],
+   [
+    "10 May",
+    "Atlético-MG",
+    "Botafogo",
+    33043
+   ],
+   [
+    "16 May",
+    "Atlético-MG",
+    "Mirassol",
+    20027
+   ],
+   [
+    "21 July",
+    "Atlético-MG",
+    "Bahia",
+    31018
+   ],
+   [
+    "16 August",
+    "Atlético-MG",
+    "Grêmio",
+    30126
+   ],
+   [
+    "29 August",
+    "Atlético-MG",
+    "Vitória",
+    23370
+   ],
+   [
+    "12 September",
+    "Atlético-MG",
+    "Fluminense",
+    20073
+   ],
+   [
+    "19 September",
+    "Atlético-MG",
+    "Chapecoense",
+    35844
+   ],
+   [
+    "3 October",
+    "Atlético-MG",
+    "Bragantino",
+    22159
+   ],
+   [
+    "11 October",
+    "Atlético-MG",
+    "Santos",
+    29777
+   ]
+  ],
+  "Bahia": [
+   [
+    "5 February 2026",
+    "Bahia",
+    "Fluminense",
+    40424
+   ],
+   [
+    "11 March 2026",
+    "Bahia",
+    "Vitória",
+    46632
+   ],
+   [
+    "18 March 2026",
+    "Bahia",
+    "Bragantino",
+    27857
+   ],
+   [
+    "1 April 2026",
+    "Bahia",
+    "Athletico-PR",
+    29316
+   ],
+   [
+    "5 April 2026",
+    "Bahia",
+    "Palmeiras",
+    41645
+   ],
+   [
+    "25 April 2026",
+    "Bahia",
+    "Santos",
+    45813
+   ],
+   [
+    "9 May 2026",
+    "Bahia",
+    "Cruzeiro",
+    30423
+   ],
+   [
+    "17 May 2026",
+    "Bahia",
+    "Grêmio",
+    26927
+   ],
+   [
+    "30 May 2026",
+    "Bahia",
+    "Botafogo",
+    25249
+   ],
+   [
+    "17 July 2026",
+    "Bahia",
+    "Chapecoense",
+    29421
+   ],
+   [
+    "26 July 2026",
+    "Bahia",
+    "Corinthians",
+    44576
+   ],
+   [
+    "9 August 2026",
+    "Bahia",
+    "Vasco",
+    40175
+   ],
+   [
+    "14 September 2026",
+    "Bahia",
+    "Remo",
+    34359
+   ]
+  ],
+  "Botafogo": [
+   [
+    "29 January 2026",
+    "Botafogo",
+    "Cruzeiro",
+    16901
+   ],
+   [
+    "14 March 2026",
+    "Botafogo",
+    "Flamengo",
+    16176
+   ],
+   [
+    "1 April 2026",
+    "Botafogo",
+    "Mirassol",
+    6781
+   ]
+  ],
+  "Corinthians": [
+   [
+    "28 January 2026",
+    "Corinthians",
+    "Bahia",
+    13788
+   ],
+   [
+    "12 February 2026",
+    "Corinthians",
+    "Bragantino",
+    26985
+   ],
+   [
+    "11 March 2026",
+    "Corinthians",
+    "Coritiba",
+    35125
+   ],
+   [
+    "22 March 2026",
+    "Corinthians",
+    "Flamengo",
+    41896
+   ],
+   [
+    "5 April 2026",
+    "Corinthians",
+    "Internacional",
+    32437
+   ],
+   [
+    "12 April 2026",
+    "Corinthians",
+    "Palmeiras",
+    46466
+   ],
+   [
+    "26 April 2026",
+    "Corinthians",
+    "Vasco",
+    42352
+   ],
+   [
+    "10 May 2026",
+    "Corinthians",
+    "São Paulo",
+    37791
+   ],
+   [
+    "24 May 2026",
+    "Corinthians",
+    "Atlético-MG",
+    42920
+   ],
+   [
+    "23 July 2026",
+    "Corinthians",
+    "Remo",
+    43970
+   ],
+   [
+    "30 July 2026",
+    "Corinthians",
+    "Athletico-PR",
+    39327
+   ],
+   [
+    "16 August 2026",
+    "Corinthians",
+    "Cruzeiro",
+    38261
+   ],
+   [
+    "30 August 2026",
+    "Corinthians",
+    "Santos",
+    47496
+   ],
+   [
+    "6 September 2026",
+    "Corinthians",
+    "Chapecoense",
+    44588
+   ],
+   [
+    "20 September 2026",
+    "Corinthians",
+    "Fluminense",
+    38686
+   ]
+  ],
+  "Cruzeiro": [
+   [
+    "5 February",
+    "Cruzeiro",
+    "Coritiba",
+    15270
+   ],
+   [
+    "25 February",
+    "Cruzeiro",
+    "Corinthians",
+    20267
+   ],
+   [
+    "15 March",
+    "Cruzeiro",
+    "Vasco",
+    22352
+   ],
+   [
+    "22 March",
+    "Cruzeiro",
+    "Santos",
+    43252
+   ],
+   [
+    "1 April",
+    "Cruzeiro",
+    "Vitória",
+    23907
+   ],
+   [
+    "12 April",
+    "Cruzeiro",
+    "Bragantino",
+    38674
+   ],
+   [
+    "18 April",
+    "Cruzeiro",
+    "Grêmio",
+    28279
+   ],
+   [
+    "2 May",
+    "Cruzeiro",
+    "Atlético-MG",
+    53921
+   ],
+   [
+    "24 May",
+    "Cruzeiro",
+    "Chapecoense",
+    44625
+   ],
+   [
+    "31 May",
+    "Cruzeiro",
+    "Fluminense",
+    29662
+   ],
+   [
+    "26 July",
+    "Cruzeiro",
+    "Botafogo",
+    39294
+   ],
+   [
+    "9 August",
+    "Cruzeiro",
+    "Mirassol",
+    57850
+   ],
+   [
+    "22 August",
+    "Cruzeiro",
+    "Flamengo",
+    34166
+   ],
+   [
+    "6 September",
+    "Cruzeiro",
+    "Athletico-PR",
+    26320
+   ],
+   [
+    "7 October",
+    "Cruzeiro",
+    "São Paulo",
+    18608
+   ]
+  ],
+  "Flamengo": [
+   [
+    "4 February 2026",
+    "Flamengo",
+    "Internacional",
+    56421
+   ],
+   [
+    "11 March 2026",
+    "Flamengo",
+    "Cruzeiro",
+    47214
+   ],
+   [
+    "19 March 2026",
+    "Flamengo",
+    "Remo",
+    62075
+   ],
+   [
+    "5 April 2026",
+    "Flamengo",
+    "Santos",
+    68615
+   ],
+   [
+    "19 April 2026",
+    "Flamengo",
+    "Bahia",
+    64565
+   ],
+   [
+    "3 May 2026",
+    "Flamengo",
+    "Vasco",
+    61872
+   ],
+   [
+    "23 May 2026",
+    "Flamengo",
+    "Palmeiras",
+    71205
+   ],
+   [
+    "30 May 2026",
+    "Flamengo",
+    "Coritiba",
+    51270
+   ],
+   [
+    "26 July 2026",
+    "Flamengo",
+    "São Paulo",
+    70791
+   ],
+   [
+    "9 August 2026",
+    "Flamengo",
+    "Vitória",
+    58226
+   ],
+   [
+    "30 August 2026",
+    "Flamengo",
+    "Botafogo",
+    65970
+   ],
+   [
+    "2 September 2026",
+    "Flamengo",
+    "Mirassol",
+    60155
+   ],
+   [
+    "13 September 2026",
+    "Flamengo",
+    "Corinthians",
+    70112
+   ],
+   [
+    "20 September 2026",
+    "Flamengo",
+    "Bragantino",
+    66053
+   ],
+   [
+    "11 October 2026",
+    "Flamengo",
+    "Fluminense",
+    63300
+   ]
+  ],
+  "Grêmio": [
+   [
+    "4 February",
+    "Grêmio",
+    "Botafogo",
+    18573
+   ],
+   [
+    "25 February",
+    "Grêmio",
+    "Atlético-MG",
+    15714
+   ],
+   [
+    "12 March",
+    "Grêmio",
+    "Bragantino",
+    19472
+   ],
+   [
+    "19 March",
+    "Grêmio",
+    "Vitória",
+    20206
+   ],
+   [
+    "5 April",
+    "Grêmio",
+    "Remo",
+    23543
+   ],
+   [
+    "26 April",
+    "Grêmio",
+    "Coritiba",
+    35443
+   ],
+   [
+    "10 May",
+    "Grêmio",
+    "Flamengo",
+    30891
+   ],
+   [
+    "23 May",
+    "Grêmio",
+    "Santos",
+    37385
+   ],
+   [
+    "30 May",
+    "Grêmio",
+    "Corinthians",
+    42359
+   ],
+   [
+    "26 July",
+    "Grêmio",
+    "Fluminense",
+    23993
+   ],
+   [
+    "8 August",
+    "Grêmio",
+    "São Paulo",
+    34783
+   ],
+   [
+    "30 August",
+    "Grêmio",
+    "Chapecoense",
+    22522
+   ],
+   [
+    "12 September",
+    "Grêmio",
+    "Vasco",
+    34023
+   ],
+   [
+    "20 September",
+    "Grêmio",
+    "Palmeiras",
+    50392
+   ]
+  ],
+  "Internacional": [
+   [
+    "28 January 2026",
+    "Internacional",
+    "Athletico-PR",
+    17059
+   ],
+   [
+    "12 February 2026",
+    "Internacional",
+    "Palmeiras",
+    20082
+   ],
+   [
+    "15 March 2026",
+    "Internacional",
+    "Bahia",
+    16574
+   ],
+   [
+    "22 March 2026",
+    "Internacional",
+    "Chapecoense",
+    16736
+   ],
+   [
+    "1 April 2026",
+    "Internacional",
+    "São Paulo",
+    14780
+   ],
+   [
+    "11 April 2026",
+    "Internacional",
+    "Grêmio",
+    39135
+   ],
+   [
+    "19 April 2026",
+    "Internacional",
+    "Mirassol",
+    30052
+   ],
+   [
+    "3 May 2026",
+    "Internacional",
+    "Fluminense",
+    16173
+   ],
+   [
+    "16 May 2026",
+    "Internacional",
+    "Vasco",
+    21411
+   ],
+   [
+    "22 July 2026",
+    "Internacional",
+    "Cruzeiro",
+    12266
+   ],
+   [
+    "29 July 2026",
+    "Internacional",
+    "Flamengo",
+    18359
+   ],
+   [
+    "17 August 2026",
+    "Internacional",
+    "Remo",
+    29614
+   ],
+   [
+    "22 August 2026",
+    "Internacional",
+    "Atlético-MG",
+    20464
+   ],
+   [
+    "6 September 2026",
+    "Internacional",
+    "Santos",
+    24441
+   ],
+   [
+    "7 October 2026",
+    "Internacional",
+    "Corinthians",
+    27566
+   ]
+  ],
+  "Mirassol": [
+   [
+    "23 May 2026",
+    "Mirassol",
+    "Fluminense",
+    7085
+   ],
+   [
+    "17 July 2026",
+    "Mirassol",
+    "Grêmio",
+    4593
+   ],
+   [
+    "29 July 2026",
+    "Mirassol",
+    "Remo",
+    4519
+   ],
+   [
+    "16 August 2026",
+    "Mirassol",
+    "Flamengo",
+    9914
+   ],
+   [
+    "30 August 2026",
+    "Mirassol",
+    "Palmeiras",
+    10599
+   ],
+   [
+    "13 September 2026",
+    "Mirassol",
+    "Vitória",
+    4393
+   ],
+   [
+    "19 September 2026",
+    "Mirassol",
+    "Botafogo",
+    5899
+   ]
+  ],
+  "Remo": [
+   [
+    "4 February 2026",
+    "Remo",
+    "Mirassol",
+    21118
+   ],
+   [
+    "25 February 2026",
+    "Remo",
+    "Internacional",
+    21687
+   ],
+   [
+    "12 March 2026",
+    "Remo",
+    "Fluminense",
+    26528
+   ],
+   [
+    "22 March 2026",
+    "Remo",
+    "Bahia",
+    22447
+   ],
+   [
+    "11 April 2026",
+    "Remo",
+    "Vasco",
+    35305
+   ],
+   [
+    "25 April 2026",
+    "Remo",
+    "Cruzeiro",
+    12993
+   ],
+   [
+    "10 May 2026",
+    "Remo",
+    "Palmeiras",
+    40629
+   ],
+   [
+    "24 May 2026",
+    "Remo",
+    "Athletico-PR",
+    25290
+   ],
+   [
+    "31 May 2026",
+    "Remo",
+    "São Paulo",
+    25649
+   ],
+   [
+    "26 July 2026",
+    "Remo",
+    "Vitória",
+    13541
+   ],
+   [
+    "8 August 2026",
+    "Remo",
+    "Atlético-MG",
+    15235
+   ],
+   [
+    "31 August 2026",
+    "Remo",
+    "Coritiba",
+    30791
+   ],
+   [
+    "6 September 2026",
+    "Remo",
+    "Flamengo",
+    51567
+   ],
+   [
+    "19 September 2026",
+    "Remo",
+    "Santos",
+    23760
+   ],
+   [
+    "7 October 2026",
+    "Remo",
+    "Grêmio",
+    17944
+   ]
+  ],
+  "Santos": [
+   [
+    "4 February",
+    "Santos",
+    "São Paulo",
+    10280
+   ],
+   [
+    "26 February",
+    "Santos",
+    "Vasco",
+    8808
+   ],
+   [
+    "15 March",
+    "Santos",
+    "Corinthians",
+    15008
+   ],
+   [
+    "18 March",
+    "Santos",
+    "Internacional",
+    10031
+   ],
+   [
+    "2 April",
+    "Santos",
+    "Remo",
+    12242
+   ],
+   [
+    "11 April",
+    "Santos",
+    "Atlético-MG",
+    12175
+   ],
+   [
+    "19 April",
+    "Santos",
+    "Fluminense",
+    14179
+   ],
+   [
+    "10 May",
+    "Santos",
+    "Bragantino",
+    6291
+   ],
+   [
+    "17 May",
+    "Santos",
+    "Coritiba",
+    45662
+   ],
+   [
+    "30 May",
+    "Santos",
+    "Vitória",
+    11172
+   ],
+   [
+    "25 July",
+    "Santos",
+    "Chapecoense",
+    12121
+   ],
+   [
+    "9 August",
+    "Santos",
+    "Athletico-PR",
+    7026
+   ],
+   [
+    "23 August",
+    "Santos",
+    "Mirassol",
+    14751
+   ],
+   [
+    "13 September",
+    "Santos",
+    "Cruzeiro",
+    13877
+   ],
+   [
+    "8 October",
+    "Santos",
+    "Flamengo",
+    16600
+   ]
+  ],
+  "São Paulo": [
+   [
+    "28 January 2026",
+    "São Paulo",
+    "Flamengo",
+    27203
+   ],
+   [
+    "11 February 2026",
+    "São Paulo",
+    "Grêmio",
+    18491
+   ],
+   [
+    "12 March 2026",
+    "São Paulo",
+    "Chapecoense",
+    13490
+   ],
+   [
+    "21 March 2026",
+    "São Paulo",
+    "Palmeiras",
+    54058
+   ],
+   [
+    "4 April 2026",
+    "São Paulo",
+    "Cruzeiro",
+    36650
+   ],
+   [
+    "25 April 2026",
+    "São Paulo",
+    "Mirassol",
+    15706
+   ],
+   [
+    "3 May 2026",
+    "São Paulo",
+    "Bahia",
+    9390
+   ],
+   [
+    "23 May 2026",
+    "São Paulo",
+    "Botafogo",
+    25338
+   ],
+   [
+    "22 July 2026",
+    "São Paulo",
+    "Athletico-PR",
+    6487
+   ],
+   [
+    "15 August 2026",
+    "São Paulo",
+    "Coritiba",
+    44491
+   ],
+   [
+    "29 August 2026",
+    "São Paulo",
+    "Bragantino",
+    34954
+   ],
+   [
+    "5 September 2026",
+    "São Paulo",
+    "Atlético-MG",
+    39068
+   ],
+   [
+    "19 September 2026",
+    "São Paulo",
+    "Internacional",
+    25395
+   ],
+   [
+    "2 October 2026",
+    "São Paulo",
+    "Santos",
+    43398
+   ],
+   [
+    "10 October 2026",
+    "São Paulo",
+    "Vitória",
+    22618
+   ]
+  ],
+  "Vasco": [
+   [
+    "5 February 2026",
+    "Vasco",
+    "Chapecoense",
+    15702
+   ],
+   [
+    "11 February 2026",
+    "Vasco",
+    "Bahia",
+    11477
+   ],
+   [
+    "12 March 2026",
+    "Vasco",
+    "Palmeiras",
+    17291
+   ],
+   [
+    "18 March 2026",
+    "Vasco",
+    "Fluminense",
+    38449
+   ],
+   [
+    "22 March 2026",
+    "Vasco",
+    "Grêmio",
+    20650
+   ],
+   [
+    "4 April 2026",
+    "Vasco",
+    "Botafogo",
+    20072
+   ],
+   [
+    "18 April 2026",
+    "Vasco",
+    "São Paulo",
+    20067
+   ],
+   [
+    "10 May 2026",
+    "Vasco",
+    "Athletico-PR",
+    13917
+   ],
+   [
+    "24 May 2026",
+    "Vasco",
+    "Bragantino",
+    13805
+   ],
+   [
+    "31 May 2026",
+    "Vasco",
+    "Atlético-MG",
+    20133
+   ],
+   [
+    "25 July 2026",
+    "Vasco",
+    "Mirassol",
+    10649
+   ],
+   [
+    "16 August 2026",
+    "Vasco",
+    "Santos",
+    20430
+   ],
+   [
+    "29 August 2026",
+    "Vasco",
+    "Cruzeiro",
+    19021
+   ],
+   [
+    "20 September 2026",
+    "Vasco",
+    "Coritiba",
+    19943
+   ]
+  ],
+  "Vitória": [
+   [
+    "28 January 2026",
+    "Vitória",
+    "Remo",
+    16603
+   ],
+   [
+    "10 February 2026",
+    "Vitória",
+    "Flamengo",
+    27080
+   ],
+   [
+    "14 March 2026",
+    "Vitória",
+    "Atlético-MG",
+    16533
+   ],
+   [
+    "22 March 2026",
+    "Vitória",
+    "Mirassol",
+    17995
+   ],
+   [
+    "11 April 2026",
+    "Vitória",
+    "São Paulo",
+    18102
+   ],
+   [
+    "18 April 2026",
+    "Vitória",
+    "Corinthians",
+    21991
+   ],
+   [
+    "2 May 2026",
+    "Vitória",
+    "Coritiba",
+    18012
+   ],
+   [
+    "23 May 2026",
+    "Vitória",
+    "Internacional",
+    25114
+   ],
+   [
+    "16 July 2026",
+    "Vitória",
+    "Vasco",
+    20112
+   ],
+   [
+    "29 July 2026",
+    "Vitória",
+    "Palmeiras",
+    14818
+   ],
+   [
+    "16 August 2026",
+    "Vitória",
+    "Botafogo",
+    20025
+   ],
+   [
+    "23 August 2026",
+    "Vitória",
+    "Bahia",
+    30553
+   ],
+   [
+    "7 September 2026",
+    "Vitória",
+    "Grêmio",
+    8934
+   ],
+   [
+    "20 September 2026",
+    "Vitória",
+    "Cruzeiro",
+    12952
+   ],
+   [
+    "7 October 2026",
+    "Vitória",
+    "Chapecoense",
+    13934
+   ]
+  ]
+ }
+}
