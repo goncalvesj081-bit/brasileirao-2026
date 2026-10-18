@@ -25,7 +25,7 @@ export const linkClube = (clube: string, aba?: string) => (aba ? link("clube", s
 export function escudo(clube: string, tam = 20): Html {
   const [a, b] = cores(clube);
   const url = escudos[clube];
-  return html`<span class="esc" style="--a:${a};--b:${b};--t:${tam}px" aria-hidden="true">${url ? html`<img src="${url}" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" onerror="this.remove()">` : ""}</span>`;
+  return html`<span class="esc" style="--a:${a};--b:${b};--t:${tam}px" aria-hidden="true">${url ? html`<img src="${url}" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">` : ""}</span>`;
 }
 
 /** Linha de tabela que leva à página do clube (o nome também é link, para teclado e leitor de tela). */

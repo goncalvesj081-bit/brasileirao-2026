@@ -118,9 +118,13 @@ $("main").addEventListener("focusin", (e) => {
   if (inp) inp.select();
 });
 
+/** Telas que mostram a simulação real e precisam ser redesenhadas quando ela termina. */
+const usaSimulacao = (r: Rota) =>
+  r.secao === "chances" || (r.secao === "tabela" && r.vista === "geral") || (r.secao === "clube" && (r.vista === "resumo" || r.vista === "rodada-a-rodada"));
+
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();
-  else $("main").innerHTML = String(conteudo(rota));
+  else if (usaSimulacao(rota)) $("main").innerHTML = String(conteudo(rota));
 });
 
 desenhar();
