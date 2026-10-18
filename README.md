@@ -34,6 +34,12 @@ FOOTBALL_DATA_KEY=sua-chave npm run update-data
 
 Se a validação falhar (pontos diferentes de 3V+E, time sem 38 jogos, clube desconhecido, jogo sumido etc.), o Action fica vermelho e os dados no repositório não mudam. O GitHub manda e-mail avisando.
 
+## Copas e vagas
+
+`data/copas.json` guarda a situação da Copa do Brasil, da Libertadores e da Sul-Americana (fase atual, saldo de cada confronto e o que falta). A cada atualização ele é refeito pela API pública da ESPN (`scripts/lib/copas-espn.ts`, sem chave). Se a ESPN falhar, o arquivo anterior fica. Para ver o que a ESPN está mandando sem gravar nada: `npm run copas`.
+
+Em cada simulação, o que falta das copas é sorteado e as vagas são distribuídas pela regra de 2026 (`src/modelo/copas.ts`): 5 pela tabela, 2 da Copa do Brasil e uma para cada campeão continental brasileiro; vaga de quem já está classificado desce na tabela.
+
 ## Edição manual
 
 Artilharia, assistências, técnicos, trocas e destaques ficam em `data/pessoas.json`. Cada bloco tem `atualizado` (aparece na tela) e `fonte`. Quando a API traz artilheiros, eles substituem a lista manual. Técnicos: o nome exibido é o manual; o script só registra uma troca quando o técnico informado pela API muda.

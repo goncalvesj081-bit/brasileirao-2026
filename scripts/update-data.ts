@@ -11,6 +11,8 @@ import type { EntradaHistorico, Jogo, Meta, Pessoas, Resultado } from "../src/mo
 import { validarDados } from "../src/modelo/validar";
 import { api, type ApiArtilheiro, type ApiLinha, type ApiPartida, type ApiTimeCompleto } from "./lib/api";
 import { atualizarPessoas, criarTradutor, normalizarPartidas, normalizarTabela } from "./lib/normalizar";
+import { buscarCopas } from "./lib/copas-espn";
+import type { Copas } from "../src/modelo/copas";
 
 const DIR = join(import.meta.dirname, "..", "data");
 const arq = (n: string) => join(DIR, n);
@@ -102,6 +104,19 @@ async function main() {
   const escudos = { ...ler<Record<string, string>>("escudos.json", {}) };
   for (const t of times ?? []) if (t.crest?.startsWith("https://")) escudos[tradutor.nome(t)] = t.crest;
   novos["escudos.json"] = json(Object.fromEntries(Object.entries(escudos).filter(([c]) => clubes.includes(c)).sort()));
+
+  // copas (ESPN, sem chave): se falhar, mantém o arquivo anterior; a data só muda quando o conteúdo muda
+  try {
+    const copas = await buscarCopas(ano);
+    const anterior = ler<Copas | null>("copas.json", null);
+    const semData = (c: Copas | null) => (c ? JSON.stringify({ ...c, atualizado: "" }) : "");
+    if (semData(copas) !== semData(anterior)) {
+      novos["copas.json"] = json(copas);
+      console.log("Copas atualizadas.");
+    }
+  } catch (e) {
+    console.warn(`Aviso: copas não atualizadas (${(e as Error).message}). Mantendo data/copas.json.`);
+  }
 
   const mudaram = Object.keys(novos).filter((n) => !existsSync(arq(n)) || readFileSync(arq(n), "utf8") !== novos[n]);
   if (mudaram.length || metaAtual?.aoVivo !== aoVivo || !metaAtual) {
