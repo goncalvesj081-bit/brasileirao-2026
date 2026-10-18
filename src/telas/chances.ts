@@ -7,6 +7,7 @@ import { link, SECOES } from "../router";
 import { atrLinha, avisoSimulacao, calculando, celClube, celProb, classeFaixa, corFaixa, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
 import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
+import { rodadaEmAndamento } from "./andamento";
 import { telaPontuacao } from "./pontuacao";
 import { telaVagas } from "./vagas";
 
@@ -35,7 +36,7 @@ export function telaChances(vista: string, extra: string): Html {
 }
 
 function resumo(res: ResultadoSimulacao): Html {
-  return html`<div class="box"><table class="tab curta">
+  return html`<div class="com-lado"><div class="coluna"><div class="box"><table class="tab curta">
       <thead><tr><th>#</th><th class="l">Clube</th><th class="w">Pts</th><th>Título</th><th>Liberta</th><th>Sula</th><th>Queda</th><th class="w" title="Pontos esperados no fim">Fim</th></tr></thead>
       <tbody>${tabela.map((t, p) => {
         const c = chancesDe(res, p);
@@ -43,7 +44,8 @@ function resumo(res: ResultadoSimulacao): Html {
           ${celProb("c-title", c.c)}${celProb("c-lib", c.l)}${celProb("c-sula", c.s)}${celProb("c-rel", c.r)}<td class="dim w">${dec(res.pts[p], 0)}</td></tr>`;
       })}</tbody>
     </table></div>
-    <p class="note">${modoVagas() === "titulos" ? "Com títulos: conta terminar dentro da faixa ou ganhar a vaga por uma copa." : "Pela posição: conta só terminar dentro da faixa, que desce conforme as vagas das copas."} Veja <a href="${link("chances", "vagas")}">Vagas</a>. ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados com os resultados até agora.</p>`;
+    <p class="note">${modoVagas() === "titulos" ? "Com títulos: conta terminar dentro da faixa ou ganhar a vaga por uma copa." : "Pela posição: conta só terminar dentro da faixa, que desce conforme as vagas das copas."} Veja <a href="${link("chances", "vagas")}">Vagas</a>. ${temporada.modelo.simulacoes.toLocaleString("pt-BR")} campeonatos simulados com os resultados até agora.</p></div>
+    ${rodadaEmAndamento()}</div>`;
 }
 
 function porZona(res: ResultadoSimulacao, vista: string): Html {

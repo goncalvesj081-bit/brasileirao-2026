@@ -2,6 +2,7 @@ import "./estilos.css";
 import { meta, situacao } from "./dados";
 import { aoMudar, agendarUsuario, simularReal } from "./estado";
 import { lerRota, link, redirecionamento, ROTA_INICIAL, SECOES, tituloDa, type Rota } from "./router";
+import { aindaJogam } from "./telas/andamento";
 import { telaChances } from "./telas/chances";
 import { telaClassificacao } from "./telas/classificacao";
 import { telaClube } from "./telas/clube";
@@ -76,7 +77,8 @@ function desenhar() {
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
   $("main").innerHTML = String(conteudo(rota));
-  document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos");
+  const comLado = ((rota.secao === "tabela" && rota.vista === "geral") || (rota.secao === "chances" && rota.vista === "resumo")) && aindaJogam().size > 0;
+  document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado);
 }
 
 const escudoTitulo = (c: string) => escudo(c, 34);

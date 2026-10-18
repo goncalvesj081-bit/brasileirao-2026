@@ -94,7 +94,21 @@ h3 { font-weight: 700; font-size: 15px; }
   .content.larga { max-width: 1480px; }
   .colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 48px; align-items: start; }
   .larga .jogos { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; align-items: start; }
+  .larga .com-lado { grid-template-columns: minmax(0, 1fr) 360px; column-gap: 40px; }
 }
+.com-lado { display: grid; gap: 24px; align-items: start; min-width: 0; }
+
+/* rodada em andamento */
+td i.pend { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: 4px; vertical-align: 2px; }
+.andamento { display: grid; gap: 10px; border-top: 2px solid var(--line-strong); padding-top: 10px; }
+.and-jogo { display: grid; gap: 4px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.and-jogo .quando { font-size: 12.5px; color: var(--muted); }
+.and-jogo .quando b { color: var(--ink); font-weight: 650; }
+.and-jogo table { width: 100%; border-collapse: collapse; }
+.and-jogo th { font-size: 11.5px; color: var(--muted); font-weight: 600; padding: 2px 6px; text-align: right; }
+.and-jogo td { padding: 4px 6px; text-align: right; font-size: 13.5px; white-space: nowrap; }
+.and-jogo td small { display: block; font-size: 12px; font-weight: 650; }
+.and-jogo .l { text-align: left; }
 
 .abas { display: none; }
 
