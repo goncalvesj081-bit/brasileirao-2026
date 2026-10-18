@@ -58,7 +58,7 @@ async function main() {
   // só para os escudos
   const times = await opcional("times", () => api<{ teams: ApiTime[] }>(`/competitions/${C}/teams?season=${ano}`, chave).then((r) => r.teams));
   // técnicos e trocas pela Wikipédia; assistências pela ESPN (a football-data só traz as de quem marcou)
-  const tecnicos = await opcional("técnicos (Wikipédia)", () => buscarTecnicos(ano));
+  const tecnicos = await opcional("técnicos (Wikipédia)", () => buscarTecnicos(ano, pessoasAtual?.tecnicos.lista));
   const assistencias = await opcional("assistências (ESPN)", buscarAssistencias);
 
   const tradutor = criarTradutor();

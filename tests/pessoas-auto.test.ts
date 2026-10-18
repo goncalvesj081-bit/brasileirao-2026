@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { lerData, limpar, lerTabela, tecnicosDaWikipedia } from "../scripts/lib/pessoas-auto";
+import { alvoLink, contratacao, lerData, lerMudancas, limpar, lerTabela, tecnicosDaWikipedia } from "../scripts/lib/pessoas-auto";
 
 // trechos no formato da página "2026 Campeonato Brasileiro Série A" da Wikipédia em inglês
 const PESSOAL = `==Personnel and kits==
@@ -116,5 +116,37 @@ describe("leitura da Wikipédia", () => {
       ["Atlético-MG", "Jorge Sampaoli", "Acordo", "12/02", "Eduardo Domínguez"],
       ["Grêmio", "Luís Castro", "Demitido", "01/10", "Fulano de Tal (interino)"],
     ]);
+  });
+
+  it("guarda a página de cada técnico para a foto", () => {
+    expect(alvoLink("{{flagicon|BRA}} [[Tite (football manager)|Tite]]")).toBe("Tite (football manager)");
+    expect(alvoLink("[[File:x.png]] [[Rogério Ceni]]")).toBe("Rogério Ceni");
+    expect(alvoLink("Fulano")).toBe(null);
+    const t = tecnicosDaWikipedia(PESSOAL, MUDANCAS, 2026);
+    expect(t.paginas["Botafogo"]).toBe("Tite (football manager)");
+    expect(t.paginas["Bahia"]).toBe("Rogério Ceni");
+  });
+
+  it("acha a data de contratação numa temporada anterior", () => {
+    const antiga = `{| class="wikitable"
+|-
+!Team
+!Outgoing head coach
+!Manner of departure
+!Date of vacancy
+!Position in table
+!Incoming head coach
+!Date of appointment
+|-
+|Bahia
+|{{flagicon|BRA}} [[Renato Paiva]]
+|Sacked
+|1 September 2023
+|16th
+|{{flagicon|BRA}} [[Rogério Ceni]]
+|4 September 2023
+|}`;
+    expect(contratacao(lerMudancas(antiga), "Bahia", "Rogério Ceni")).toBe("04/09/2023");
+    expect(contratacao(lerMudancas(antiga), "Bahia", "Outro")).toBe(null);
   });
 });

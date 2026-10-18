@@ -57,8 +57,8 @@ export interface Meta {
 export interface Pessoas {
   artilharia: { atualizado: string; fonte: string; lista: [string, string, number][] };
   assistencias: { atualizado: string; fonte: string; lista: [string, string, number][] };
-  /** lista: clube → [técnico, no cargo desde] */
-  tecnicos: { atualizado: string; fonte: string; lista: Record<string, [string, string]> };
+  /** lista: clube → [técnico, no cargo desde, foto] */
+  tecnicos: { atualizado: string; fonte: string; lista: Record<string, [string, string, string?]> };
   /** [clube, saiu, motivo, data, entrou] */
   trocas: { atualizado: string; fonte: string; lista: [string, string, string, string, string][] };
 }

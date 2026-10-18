@@ -56,9 +56,9 @@ export function limpar(s: string): string {
 }
 
 /** Lê a primeira tabela do wikitext em linhas de células (rowspan expandido). */
-export function lerTabela(wikitext: string): { cab: string[]; linhas: string[][] } {
+export function lerTabela(wikitext: string): { cab: string[]; linhas: string[][]; brutas: string[][] } {
   const ini = wikitext.indexOf("{|");
-  if (ini < 0) return { cab: [], linhas: [] };
+  if (ini < 0) return { cab: [], linhas: [], brutas: [] };
   const fim = wikitext.indexOf("\n|}", ini);
   const corpo = wikitext.slice(ini, fim < 0 ? undefined : fim);
   const blocos = corpo.split(/\n\|-[^\n]*/);
@@ -66,7 +66,8 @@ export function lerTabela(wikitext: string): { cab: string[]; linhas: string[][]
 
   let cab: string[] = [];
   const linhas: string[][] = [];
-  const pendente: { texto: string; restam: number }[] = [];
+  const brutasLinhas: string[][] = [];
+  const pendente: { texto: string; bruto: string; restam: number }[] = [];
   for (const bloco of blocos) {
     // junta continuação de linha na célula anterior
     const brutas: { cab: boolean; txt: string }[] = [];
@@ -84,17 +85,19 @@ export function lerTabela(wikitext: string): { cab: string[]; linhas: string[][]
       const atr = temAtr ? partes[0] : "";
       const texto = temAtr ? partes.slice(1).join("|") : b.txt;
       const rs = Number(/rowspan\s*=\s*"?(\d+)/.exec(atr)?.[1] ?? 1);
-      return { texto: limpar(texto), rs, cab: b.cab };
+      return { texto: limpar(texto), bruto: texto, rs, cab: b.cab };
     });
     if (celulas.every((c) => c.cab)) {
       cab = celulas.map((c) => c.texto);
       continue;
     }
-    const linha: string[] = [];
+    const linha: string[] = [],
+      bruta: string[] = [];
     let col = 0;
     const ocupar = () => {
       while (pendente[col]?.restam > 0) {
         linha[col] = pendente[col].texto;
+        bruta[col] = pendente[col].bruto;
         pendente[col].restam--;
         col++;
       }
@@ -102,13 +105,15 @@ export function lerTabela(wikitext: string): { cab: string[]; linhas: string[][]
     for (const c of celulas) {
       ocupar();
       linha[col] = c.texto;
-      if (c.rs > 1) pendente[col] = { texto: c.texto, restam: c.rs - 1 };
+      bruta[col] = c.bruto;
+      if (c.rs > 1) pendente[col] = { texto: c.texto, bruto: c.bruto, restam: c.rs - 1 };
       col++;
     }
     ocupar();
     linhas.push(linha);
+    brutasLinhas.push(bruta);
   }
-  return { cab, linhas };
+  return { cab, linhas, brutas: brutasLinhas };
 }
 
 const MESES = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
@@ -143,27 +148,28 @@ function motivo(m: string): string {
 
 const coluna = (cab: string[], re: RegExp) => cab.findIndex((c) => re.test(c));
 
-export interface Tecnicos {
-  lista: Record<string, [string, string]>;
-  trocas: Troca[];
+/** Página da Wikipédia do primeiro link da célula: "[[Tite (football manager)|Tite]]" → "Tite (football manager)". */
+export function alvoLink(bruto: string): string | null {
+  for (const m of bruto.matchAll(/\[\[([^\]|#]+)(?:[|#][^\]]*)?\]\]/g)) if (!/^(file|image|arquivo):/i.test(m[1])) return m[1].trim();
+  return null;
 }
 
-/**
- * Monta técnicos atuais e trocas do ano a partir das seções "Personnel and kits" e "Coaching changes".
- * Interinos não contam como troca: A → interino → B vira uma troca só, de A para B.
- */
-export function tecnicosDaWikipedia(pessoal: string, mudancas: string, ano: number): Tecnicos {
-  const P = lerTabela(pessoal);
-  const cTime = coluna(P.cab, /^team|club/i),
-    cTec = coluna(P.cab, /coach|manager/i);
-  const atuais = new Map<string, string>();
-  if (cTime >= 0 && cTec >= 0)
-    for (const l of P.linhas) {
-      const c = clubePorNomeApi(l[cTime]);
-      if (c && l[cTec]) atuais.set(c.nome, l[cTec]);
-    }
+type Data = [number, number, number];
+const dataBR = (d: Data) => `${dois(d[0])}/${dois(d[1])}/${d[2]}`;
 
-  const M = lerTabela(mudancas);
+interface Mudanca {
+  clube: string;
+  sai: string;
+  mot: string;
+  vaga: Data | null;
+  entra: string;
+  nomeado: Data | null;
+  usada?: boolean;
+}
+
+/** Linhas da tabela de trocas, com as passagens de interino juntadas (A → interino → B vira A → B). */
+export function lerMudancas(wikitext: string): Mudanca[] {
+  const M = lerTabela(wikitext);
   const k = {
     time: coluna(M.cab, /^team|club/i),
     sai: coluna(M.cab, /outgoing/i),
@@ -172,15 +178,13 @@ export function tecnicosDaWikipedia(pessoal: string, mudancas: string, ano: numb
     entra: coluna(M.cab, /incoming/i),
     nomeado: coluna(M.cab, /appointment/i),
   };
-  interface Mud { clube: string; sai: string; mot: string; vaga: [number, number, number] | null; entra: string; nomeado: [number, number, number] | null; usada?: boolean }
-  const muds: Mud[] = [];
+  const muds: Mudanca[] = [];
   if (Object.values(k).every((x) => x >= 0))
     for (const l of M.linhas) {
       const c = clubePorNomeApi(l[k.time]);
       if (!c) continue;
       muds.push({ clube: c.nome, sai: l[k.sai] ?? "", mot: l[k.mot] ?? "", vaga: lerData(l[k.vaga] ?? ""), entra: l[k.entra] ?? "", nomeado: lerData(l[k.nomeado] ?? "") });
     }
-  // junta passagens de interino
   for (const m of muds) {
     if (m.usada) continue;
     while (ehInterino(m.entra)) {
@@ -191,19 +195,51 @@ export function tecnicosDaWikipedia(pessoal: string, mudancas: string, ano: numb
       m.nomeado = prox.nomeado;
     }
   }
-  const validas = muds.filter((m) => !m.usada && m.sai && !ehInterino(m.sai));
-  const nomeExib = (n: string) => (ehInterino(n) ? `${semInterino(n)} (interino)` : n);
+  return muds.filter((m) => !m.usada && m.sai && !ehInterino(m.sai));
+}
 
-  const lista: Record<string, [string, string]> = {};
-  for (const [clube, tec] of atuais) {
-    const ult = [...validas].reverse().find((m) => m.clube === clube && igual(m.entra, tec));
-    const d = ult?.nomeado ?? ult?.vaga;
-    lista[clube] = [nomeExib(tec), d ? `${dois(d[0])}/${dois(d[1])}/${d[2]}` : `antes de ${ano}`];
-  }
+/** Data em que o técnico assumiu o clube, pela última troca da tabela que o tem como sucessor. */
+export function contratacao(muds: Mudanca[], clube: string, tecnico: string): string | null {
+  const ult = [...muds].reverse().find((m) => m.clube === clube && igual(m.entra, tecnico));
+  const d = ult?.nomeado ?? ult?.vaga;
+  return d ? dataBR(d) : null;
+}
+
+export interface Tecnicos {
+  /** clube → [técnico, no cargo desde, foto] */
+  lista: Record<string, [string, string, string?]>;
+  trocas: Troca[];
+  /** clube → página do técnico na Wikipédia (para a foto) */
+  paginas: Record<string, string>;
+}
+
+/**
+ * Monta técnicos atuais e trocas do ano a partir das seções "Personnel and kits" e "Coaching changes".
+ * Quem já estava no cargo antes da temporada fica "antes de <ano>"; buscarTecnicos procura a data nas anteriores.
+ */
+export function tecnicosDaWikipedia(pessoal: string, mudancas: string, ano: number): Tecnicos {
+  const P = lerTabela(pessoal);
+  const cTime = coluna(P.cab, /^team|club/i),
+    cTec = coluna(P.cab, /coach|manager/i);
+  const atuais = new Map<string, string>();
+  const paginas: Record<string, string> = {};
+  if (cTime >= 0 && cTec >= 0)
+    P.linhas.forEach((l, i) => {
+      const c = clubePorNomeApi(l[cTime]);
+      if (!c || !l[cTec]) return;
+      atuais.set(c.nome, l[cTec]);
+      const alvo = alvoLink(P.brutas[i][cTec] ?? "");
+      if (alvo) paginas[c.nome] = alvo;
+    });
+
+  const validas = lerMudancas(mudancas);
+  const nomeExib = (n: string) => (ehInterino(n) ? `${semInterino(n)} (interino)` : n);
+  const lista: Tecnicos["lista"] = {};
+  for (const [clube, tec] of atuais) lista[clube] = [nomeExib(tec), contratacao(validas, clube, tec) ?? `antes de ${ano}`];
   const trocas: Troca[] = validas
     .filter((m) => m.vaga && m.vaga[2] >= ano)
     .map((m) => [m.clube, m.sai, motivo(m.mot), `${dois(m.vaga![0])}/${dois(m.vaga![1])}`, nomeExib(m.entra)]);
-  return { lista, trocas };
+  return { lista, trocas, paginas };
 }
 
 // ---------- busca ----------
@@ -216,18 +252,77 @@ async function json<T>(url: string): Promise<T> {
   return (await r.json()) as T;
 }
 
-/** Baixa as duas seções da página da temporada na Wikipédia em inglês. */
-export async function buscarTecnicos(ano: number): Promise<Tecnicos> {
-  const pagina = encodeURIComponent(`${ano} Campeonato Brasileiro Série A`);
-  const W = `https://en.wikipedia.org/w/api.php?action=parse&format=json&formatversion=2&redirects=1&page=${pagina}`;
+const API_W = "https://en.wikipedia.org/w/api.php?format=json&formatversion=2&redirects=1";
+
+/** Wikitext da seção cujo título casa com `re` na página `pagina`. */
+async function secaoWiki(pagina: string, re: RegExp): Promise<string> {
+  const W = `${API_W}&action=parse&page=${encodeURIComponent(pagina)}`;
   const { parse } = await json<{ parse: { sections: { index: string; line: string }[] } }>(`${W}&prop=sections`);
-  const secao = async (re: RegExp) => {
-    const s = parse.sections.find((x) => re.test(x.line));
-    if (!s) throw new Error(`seção ${re} não encontrada na Wikipédia`);
-    return (await json<{ parse: { wikitext: string } }>(`${W}&prop=wikitext&section=${s.index}`)).parse.wikitext;
+  const s = parse.sections.find((x) => re.test(x.line));
+  if (!s) throw new Error(`seção ${re} não encontrada em ${pagina}`);
+  return (await json<{ parse: { wikitext: string } }>(`${W}&prop=wikitext&section=${s.index}`)).parse.wikitext;
+}
+const TROCAS_RE = /coaching changes|managerial changes/i;
+
+/** Foto (miniatura) do artigo de cada página, em lote. */
+async function fotos(paginas: string[]): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  if (!paginas.length) return out;
+  const r = await json<{ query: { pages: { title: string; thumbnail?: { source: string } }[]; redirects?: { from: string; to: string }[]; normalized?: { from: string; to: string }[] } }>(
+    `${API_W}&action=query&prop=pageimages&piprop=thumbnail&pithumbsize=240&titles=${encodeURIComponent(paginas.join("|"))}`,
+  );
+  const destino = new Map<string, string>();
+  for (const x of [...(r.query.normalized ?? []), ...(r.query.redirects ?? [])]) destino.set(x.from, x.to);
+  const final = (t: string) => {
+    let a = t;
+    for (let k = 0; k < 3 && destino.has(a); k++) a = destino.get(a)!;
+    return a;
   };
-  const t = tecnicosDaWikipedia(await secao(/personnel/i), await secao(/coaching changes|managerial changes/i), ano);
+  const porTitulo = new Map(r.query.pages.map((p) => [p.title, p.thumbnail?.source]));
+  for (const p of paginas) {
+    const src = porTitulo.get(final(p));
+    if (src) out.set(p, src);
+  }
+  return out;
+}
+
+/**
+ * Técnicos e trocas pela página da temporada na Wikipédia em inglês. Para quem assumiu antes da temporada,
+ * procura a data nas tabelas de trocas das temporadas anteriores (Série A e B). `anterior` evita repetir a busca.
+ */
+export async function buscarTecnicos(ano: number, anterior: Record<string, [string, string, string?]> = {}): Promise<Tecnicos> {
+  const pagina = `${ano} Campeonato Brasileiro Série A`;
+  const t = tecnicosDaWikipedia(await secaoWiki(pagina, /personnel/i), await secaoWiki(pagina, TROCAS_RE), ano);
   if (Object.keys(t.lista).length < 18) throw new Error(`só ${Object.keys(t.lista).length} técnicos reconhecidos na Wikipédia`);
+
+  const antes = `antes de ${ano}`;
+  const falta = new Set<string>();
+  for (const [clube, [nome, desde]] of Object.entries(t.lista)) {
+    if (desde !== antes) continue;
+    const a = anterior[clube];
+    if (a && igual(a[0], nome) && !a[1].startsWith("antes de")) t.lista[clube][1] = a[1];
+    else falta.add(clube);
+  }
+  for (let y = ano - 1; y >= ano - 12 && falta.size; y--)
+    for (const serie of ["A", "B"]) {
+      if (!falta.size) break;
+      const muds = await secaoWiki(`${y} Campeonato Brasileiro Série ${serie}`, TROCAS_RE)
+        .then(lerMudancas)
+        .catch(() => []);
+      for (const clube of [...falta]) {
+        const d = contratacao(muds, clube, t.lista[clube][0]);
+        if (d) {
+          t.lista[clube][1] = d;
+          falta.delete(clube);
+        }
+      }
+    }
+
+  const f = await fotos([...new Set(Object.values(t.paginas))]).catch(() => new Map<string, string>());
+  for (const [clube, pag] of Object.entries(t.paginas)) {
+    const src = f.get(pag);
+    if (src) t.lista[clube][2] = src;
+  }
   return t;
 }
 

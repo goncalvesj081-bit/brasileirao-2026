@@ -364,3 +364,11 @@ details.muda td.forte { font-weight: 850; }
 .falta b { color: var(--accent); }
 @media (max-width: 480px) { .falta li { grid-template-columns: 1fr; } }
 button.compartilhar { justify-self: start; }
+
+/* técnico */
+.foto-tec { border-radius: 50%; object-fit: cover; object-position: 50% 20%; background: var(--raise); flex: 0 0 auto; }
+.tecnico { display: flex; align-items: center; gap: 14px; }
+.tecnico p { margin: 0; }
+.quem-tec { display: inline-flex; align-items: center; gap: 8px; }
+.tab-tec td.team { min-width: 76px; }
+.tab-tec .quem-tec { white-space: normal; line-height: 1.25; }

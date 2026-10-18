@@ -2,6 +2,10 @@ import { pessoas, tabela } from "../dados";
 import { atrLinha, celClube, celProb, classeFaixa, escudo, linkClube } from "../ui/componentes";
 import { html, type Html } from "../ui/html";
 
+/** Foto do técnico (da Wikipédia); sem foto, nada. */
+export const fotoTecnico = (t: [string, string, string?], tam: number) =>
+  t[2] ? html`<img class="foto-tec" src="${t[2]}" alt="" width="${tam}" height="${tam}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
+
 /** "Dados de 17/10/2026, ESPN." */
 export const dataDoDado = (d: { atualizado: string; fonte?: string }) =>
   html`<p class="note">Dados de ${d.atualizado || "data desconhecida"}${d.fonte ? `, ${d.fonte}` : ""}.</p>`;
@@ -36,11 +40,11 @@ export function telaPessoas(vista: string): Html {
     const trocas = (c: string) => pessoas.trocas.lista.filter((t) => t[0] === c).length;
     return html`<h2>Técnicos</h2>${dataDoDado(pessoas.tecnicos)}
       <p class="note">Técnico atual de cada clube, na ordem da classificação. Trocas conta as mudanças durante 2026.</p>
-      <div class="box"><table class="tab">
+      <div class="box"><table class="tab curta tab-tec">
         <thead><tr><th>#</th><th class="l">Clube</th><th class="l">Técnico</th><th class="l">No cargo desde</th><th>Trocas</th></tr></thead>
         <tbody>${tabela.map((t, p) => {
-          const c = pessoas.tecnicos.lista[t.clube] ?? ["—", ""];
-          return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="l">${c[0]}</td><td class="l dim">${c[1]}</td><td class="dim">${trocas(t.clube) || "—"}</td></tr>`;
+          const c: [string, string, string?] = pessoas.tecnicos.lista[t.clube] ?? ["—", ""];
+          return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="l"><span class="quem-tec">${fotoTecnico(c, 28)}${c[0]}</span></td><td class="l dim">${c[1]}</td><td class="dim">${trocas(t.clube) || "—"}</td></tr>`;
         })}</tbody>
       </table></div>`;
   }

@@ -12,7 +12,7 @@ import { pct, saldo } from "../ui/formato";
 import { comoSomar, quantoFalta, type Objetivo, type ObjetivosPorPontos } from "../modelo/quantofalta";
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
-import { dataDoDado } from "./pessoas";
+import { dataDoDado, fotoTecnico } from "./pessoas";
 
 export function telaClube(clube: string, aba: string): Html {
   const i = posicao(clube);
@@ -165,7 +165,9 @@ function destaques(clube: string): Html {
   const lista = (rows: [string, number][], un: string, plural: string) =>
     html`<ol class="plist">${rows.map(([n, v]) => html`<li><span>${n}</span><b>${v} ${v > 1 ? plural : un}</b></li>`)}</ol>`;
   return html`<div class="coluna"><section class="tsec"><h3>Técnico</h3>
-      ${tec ? html`<p class="big-line">${tec[0]}</p><p class="note">No cargo desde ${tec[1]}.</p>` : html`<p class="note">Sem informação.</p>`}
+      ${tec
+        ? html`<div class="tecnico">${fotoTecnico(tec, 76)}<div><p class="big-line">${tec[0]}</p><p class="note">No cargo desde ${tec[1]}.</p></div></div>`
+        : html`<p class="note">Sem informação.</p>`}
       <p class="note">${trocas.length ? `Trocas em 2026: ${trocas.map((t) => `${t[1]} saiu em ${t[3]}, entrou ${t[4]}`).join("; ")}.` : "Sem trocas de técnico em 2026."}</p>
       ${dataDoDado(pessoas.tecnicos)}</section></div>
     <div class="coluna"><section class="tsec"><h3>Artilheiros no Brasileirão</h3>
