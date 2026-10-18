@@ -412,3 +412,12 @@ table.cmp td { width: 33%; font-weight: 650; }
 table.cmp td.forte { color: var(--accent); font-weight: 850; }
 table.cmp thead a { display: grid; justify-items: center; gap: 6px; font-weight: 800; }
 .clubs a.fav span { color: var(--title); }
+
+.titulo-b { display: flex; align-items: center; gap: 10px; font-size: 26px; }
+.sim-b { display: grid; border-top: 2px solid var(--line-strong); }
+.sim-b-jogo { display: grid; gap: 4px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.sim-b-linha { display: grid; grid-template-columns: minmax(0, 1fr) 42px auto 42px minmax(0, 1fr); align-items: center; gap: 8px; }
+.sim-b-linha .nm { display: flex; align-items: center; gap: 6px; font-weight: 650; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sim-b-linha .nm.v { justify-content: flex-end; }
+.sim-b-linha input { width: 42px; text-align: center; font: inherit; font-weight: 800; font-size: 16px; background: var(--raise); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 6px; padding: 6px 0; }
+@media (min-width: 1360px) { #sb-res { position: sticky; top: 16px; } }

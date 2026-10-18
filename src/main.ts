@@ -10,7 +10,7 @@ import { telaEstatisticas } from "./telas/estatisticas";
 import { telaMais, telaSobre } from "./telas/mais";
 import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
-import { aoCalcularSerieB, telaSerieB } from "./telas/serieb";
+import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
 import { alternarFavorito } from "./ui/favorito";
 import {
@@ -64,7 +64,7 @@ function conteudo(r: Rota): Html {
     case "clube":
       return telaClube(r.clube!, r.vista);
     case "serie-b":
-      return telaSerieB(r.vista);
+      return telaSerieB(r.vista, r.extra);
     case "comparar":
       return telaComparar(r.vista, r.extra);
   }
@@ -105,7 +105,7 @@ function desenharTudo() {
   $("abas").innerHTML = String(abasInferiores(rota));
   $("main").innerHTML = String(conteudo(rota));
   const comLado = ((rota.secao === "tabela" && rota.vista === "geral") || (rota.secao === "chances" && rota.vista === "resumo")) && aindaJogam().size > 0;
-  document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado);
+  document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado || (rota.secao === "serie-b" && (rota.vista === "clube" || rota.vista === "simular")));
 }
 
 const escudoTitulo = (c: string) => escudo(c, 34);
@@ -134,6 +134,11 @@ $("main").addEventListener("click", (e) => {
     void compartilhar(comp.dataset.compartilhar!, comp);
     return;
   }
+  if (alvo.closest("button[data-sb-limpar]")) {
+    limparSerieB();
+    desenhar();
+    return;
+  }
   const fav = alvo.closest<HTMLButtonElement>("button[data-favorito]");
   if (fav) {
     alternarFavorito(fav.dataset.favorito!);
@@ -160,6 +165,8 @@ $("main").addEventListener("change", (e) => {
 $("main").addEventListener("input", (e) => {
   const inp = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-s]");
   if (inp) digitacaoSimulador(inp);
+  const inpB = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-sb]");
+  if (inpB) digitacaoSerieB(inpB);
 });
 $("main").addEventListener("focusin", (e) => {
   const inp = (e.target as HTMLElement).closest?.<HTMLInputElement>("input[data-s]");
@@ -176,7 +183,7 @@ aoMudar(() => {
 });
 
 aoCalcularSerieB(() => {
-  if (rota.secao === "serie-b") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
+  if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
 desenhar();

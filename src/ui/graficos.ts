@@ -154,3 +154,58 @@ export function duasPosicoes(a: { nome: string; cor: string; serie: { r: number;
   }
   return html`${cru(s + "</svg>")}<div class="legend"><span><i style="background:${a.cor}"></i>${a.nome}</span><span><i style="background:${b.cor}"></i>${b.nome}</span></div>`;
 }
+
+/** Curvas de chance (0 a 1) por rodada, com o valor final escrito na ponta. Genérico (usado na Série B). */
+export function curvasPorRodada(rotulo: string, curvas: { nome: string; cor: string; vals: { r: number; v: number }[] }[]): Html {
+  const pontos = curvas.flatMap((c) => c.vals);
+  if (pontos.length < 2) return vazio("Ainda não há rodadas suficientes.");
+  const W = 400,
+    H = 210,
+    pl = 42,
+    pr = 52,
+    pt = 12,
+    pb = 26;
+  const r0 = Math.min(...pontos.map((p) => p.r)),
+    r1 = Math.max(...pontos.map((p) => p.r));
+  const x = (r: number) => pl + ((W - pl - pr) * (r - r0)) / Math.max(1, r1 - r0);
+  const y = (v: number) => pt + (H - pt - pb) * (1 - v);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(rotulo)}">`;
+  for (const t of [0, 0.5, 1])
+    s += `<line x1="${pl}" x2="${W - pr}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"${t === 0.5 ? ' stroke-dasharray="3 4"' : ""}/><text x="${pl - 6}" y="${y(t) + 4}" text-anchor="end">${t * 100}%</text>`;
+  s += eixoRodadas(r0, r1, x, H - 6);
+  const pontas: { y: number; cor: string; txt: string }[] = [];
+  for (const c of curvas) {
+    if (c.vals.length < 2) continue;
+    s += `<polyline fill="none" stroke="${c.cor}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="${c.vals.map((p) => `${x(p.r)},${y(p.v)}`).join(" ")}"/>`;
+    const u = c.vals[c.vals.length - 1];
+    s += `<circle cx="${x(u.r)}" cy="${y(u.v)}" r="4" fill="${c.cor}"/>`;
+    pontas.push({ y: y(u.v), cor: c.cor, txt: pct(u.v) });
+  }
+  pontas.sort((a, b) => a.y - b.y);
+  for (let i = 1; i < pontas.length; i++) if (pontas[i].y - pontas[i - 1].y < 15) pontas[i].y = pontas[i - 1].y + 15;
+  for (const p of pontas) s += `<text x="${x(r1) + 8}" y="${p.y + 4}" class="v" style="fill:${p.cor}">${p.txt}</text>`;
+  return html`${cru(s + "</svg>")}<div class="legend">${curvas.map((c) => html`<span><i style="background:${c.cor}"></i>${c.nome}</span>`)}</div>`;
+}
+
+/** Posição por rodada com faixas dadas (posições 1-based, inclusivas). Genérico (usado na Série B). */
+export function posicaoPorRodada(rotulo: string, serie: { r: number; pos: number }[], faixasPos: [number, number, string][], n = 20): Html {
+  if (serie.length < 2) return html``;
+  const W = 400,
+    H = 170,
+    pl = 32,
+    pr = 40,
+    pt = 10,
+    pb = 26;
+  const r0 = serie[0].r,
+    r1 = serie[serie.length - 1].r;
+  const x = (r: number) => pl + ((W - pl - pr) * (r - r0)) / Math.max(1, r1 - r0);
+  const y = (p: number) => pt + ((H - pt - pb) * (p - 1)) / (n - 1);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(rotulo)}">`;
+  for (const [a, b, cor] of faixasPos) s += `<rect x="${pl}" y="${y(a) - 3}" width="${W - pl - pr}" height="${y(b) - y(a) + 6}" fill="${cor}" opacity=".13"/>`;
+  for (const p of [1, 5, 10, 15, 20]) s += `<text x="${pl - 6}" y="${y(p) + 4}" text-anchor="end">${p}º</text>`;
+  s += eixoRodadas(r0, r1, x, H - 6);
+  s += `<polyline fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" points="${serie.map((p) => `${x(p.r)},${y(p.pos)}`).join(" ")}"/>`;
+  const u = serie[serie.length - 1];
+  s += `<circle cx="${x(u.r)}" cy="${y(u.pos)}" r="4" fill="var(--ink)"/><text x="${x(u.r) + 8}" y="${y(u.pos) + 4}" class="v">${u.pos}º</text>`;
+  return cru(s + "</svg>");
+}

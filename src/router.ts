@@ -54,6 +54,7 @@ export const SECOES: Secao[] = [
       ["tabela", "Tabela"],
       ["chances", "Chances"],
       ["jogos", "Jogos"],
+      ["simular", "Simular"],
     ],
   },
   {
@@ -128,6 +129,7 @@ export function lerRota(hash = location.hash): Rota | null {
     const aba = ABAS_CLUBE.some(([k]) => k === b) ? b : "resumo";
     return { secao, vista: aba, extra: "", numero: null, clube: c.nome };
   }
+  if (secao === "serie-b" && a === "clube") return { secao, vista: "clube", extra: b, numero: null };
   if (secao === "comparar") {
     const A = clubePorSlug(a)?.nome ?? "",
       B = clubePorSlug(b)?.nome ?? "";
