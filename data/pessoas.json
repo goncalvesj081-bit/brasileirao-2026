@@ -1,0 +1,867 @@
+{
+ "artilharia": {
+  "atualizado": "17/10/2026",
+  "fonte": "edição manual",
+  "lista": [
+   [
+    "Kevin Viveros",
+    "Athletico-PR",
+    21
+   ],
+   [
+    "Pedro",
+    "Flamengo",
+    16
+   ],
+   [
+    "Gabigol",
+    "Santos",
+    14
+   ],
+   [
+    "Danilo",
+    "Botafogo",
+    10
+   ],
+   [
+    "Jonathan Calleri",
+    "São Paulo",
+    10
+   ],
+   [
+    "Luciano Juba",
+    "Bahia",
+    10
+   ],
+   [
+    "Carlos Vinícius",
+    "Grêmio",
+    10
+   ],
+   [
+    "John Kennedy",
+    "Fluminense",
+    9
+   ],
+   [
+    "Luciano",
+    "São Paulo",
+    9
+   ],
+   [
+    "Flaco López",
+    "Palmeiras",
+    9
+   ],
+   [
+    "Matheus Pereira",
+    "Cruzeiro",
+    9
+   ],
+   [
+    "Samuel Lino",
+    "Flamengo",
+    9
+   ],
+   [
+    "Neymar",
+    "Santos",
+    8
+   ],
+   [
+    "Renê",
+    "Vitória",
+    8
+   ],
+   [
+    "Kaio Jorge",
+    "Cruzeiro",
+    8
+   ],
+   [
+    "Breno Lopes",
+    "Coritiba",
+    8
+   ],
+   [
+    "Pedro Rocha",
+    "Coritiba",
+    8
+   ],
+   [
+    "Carlos Eduardo",
+    "Mirassol",
+    7
+   ],
+   [
+    "Hulk",
+    "Fluminense",
+    7
+   ],
+   [
+    "Arthur Cabral",
+    "Botafogo",
+    7
+   ],
+   [
+    "Maurício",
+    "Palmeiras",
+    7
+   ],
+   [
+    "Johan Carbonero",
+    "Internacional",
+    7
+   ],
+   [
+    "Lucas Paquetá",
+    "Flamengo",
+    6
+   ],
+   [
+    "Jajá",
+    "Remo",
+    6
+   ],
+   [
+    "Jorge Carrascal",
+    "Flamengo",
+    6
+   ],
+   [
+    "Isidro Pitta",
+    "Bragantino",
+    6
+   ],
+   [
+    "Jefferson Savarino",
+    "Fluminense",
+    6
+   ],
+   [
+    "Lucas Barbosa",
+    "Bragantino",
+    6
+   ],
+   [
+    "Matheuzinho",
+    "Vitória",
+    6
+   ],
+   [
+    "Vitor Roque",
+    "Palmeiras",
+    5
+   ]
+  ]
+ },
+ "assistencias": {
+  "atualizado": "17/10/2026",
+  "fonte": "edição manual; até 17/10 para quem está entre os 30 artilheiros; os demais, até meados de setembro",
+  "lista": [
+   [
+    "Josué",
+    "Coritiba",
+    11
+   ],
+   [
+    "Andreas Pereira",
+    "Palmeiras",
+    10
+   ],
+   [
+    "Jorge Carrascal",
+    "Flamengo",
+    8
+   ],
+   [
+    "Samuel Lino",
+    "Flamengo",
+    7
+   ],
+   [
+    "Pedro",
+    "Flamengo",
+    7
+   ],
+   [
+    "Rodrigo Garro",
+    "Corinthians",
+    6
+   ],
+   [
+    "Igor Formiga",
+    "Mirassol",
+    5
+   ],
+   [
+    "Erick",
+    "Vitória",
+    5
+   ],
+   [
+    "João Cruz",
+    "Athletico-PR",
+    5
+   ],
+   [
+    "Gastón Benavídez",
+    "Athletico-PR",
+    5
+   ],
+   [
+    "Lucas Esquivel",
+    "Athletico-PR",
+    5
+   ],
+   [
+    "Giovanni Augusto",
+    "Chapecoense",
+    5
+   ],
+   [
+    "Álvaro Montoro",
+    "Botafogo",
+    5
+   ],
+   [
+    "Matheus Pereira",
+    "Cruzeiro",
+    5
+   ],
+   [
+    "Hulk",
+    "Fluminense",
+    5
+   ],
+   [
+    "Flaco López",
+    "Palmeiras",
+    4
+   ],
+   [
+    "Johan Carbonero",
+    "Internacional",
+    4
+   ],
+   [
+    "Matheuzinho",
+    "Vitória",
+    4
+   ]
+  ]
+ },
+ "tecnicos": {
+  "atualizado": "17/10/2026",
+  "fonte": "edição manual",
+  "lista": {
+   "Athletico-PR": [
+    "Odair Hellmann",
+    "antes de 2026"
+   ],
+   "Atlético-MG": [
+    "Eduardo Domínguez",
+    "24/02/2026"
+   ],
+   "Bahia": [
+    "Rogério Ceni",
+    "antes de 2026"
+   ],
+   "Botafogo": [
+    "Tite",
+    "setembro de 2026"
+   ],
+   "Chapecoense": [
+    "Rafael Lacerda",
+    "26/05/2026"
+   ],
+   "Corinthians": [
+    "Clarence Seedorf",
+    "11/10/2026"
+   ],
+   "Coritiba": [
+    "Fernando Seabra",
+    "08/12/2025"
+   ],
+   "Cruzeiro": [
+    "Artur Jorge",
+    "22/03/2026"
+   ],
+   "Flamengo": [
+    "Leonardo Jardim",
+    "04/03/2026"
+   ],
+   "Fluminense": [
+    "Marcão",
+    "13/08/2026 (efetivado até o fim do ano)"
+   ],
+   "Grêmio": [
+    "Renato Gaúcho",
+    "14/09/2026"
+   ],
+   "Internacional": [
+    "Eduardo Baptista",
+    "23/09/2026"
+   ],
+   "Mirassol": [
+    "Rafael Guanaes",
+    "antes de 2026"
+   ],
+   "Palmeiras": [
+    "Abel Ferreira",
+    "antes de 2026"
+   ],
+   "Bragantino": [
+    "Vagner Mancini",
+    "antes de 2026"
+   ],
+   "Remo": [
+    "Thiago Carpini",
+    "16/09/2026"
+   ],
+   "Santos": [
+    "Cuca",
+    "19/03/2026"
+   ],
+   "São Paulo": [
+    "Dorival Júnior",
+    "15/05/2026"
+   ],
+   "Vasco": [
+    "Pedro Emanuel",
+    "10/07/2026"
+   ],
+   "Vitória": [
+    "Jair Ventura",
+    "antes de 2026"
+   ]
+  }
+ },
+ "trocas": {
+  "atualizado": "17/10/2026",
+  "lista": [
+   [
+    "Atlético-MG",
+    "Jorge Sampaoli",
+    "Acordo",
+    "12/02",
+    "Eduardo Domínguez"
+   ],
+   [
+    "Vasco",
+    "Fernando Diniz",
+    "Demitido",
+    "22/02",
+    "Renato Gaúcho"
+   ],
+   [
+    "Remo",
+    "Juan Carlos Osorio",
+    "Demitido",
+    "01/03",
+    "Léo Condé"
+   ],
+   [
+    "Flamengo",
+    "Filipe Luís",
+    "Saiu",
+    "03/03",
+    "Leonardo Jardim"
+   ],
+   [
+    "São Paulo",
+    "Hernán Crespo",
+    "Demitido",
+    "09/03",
+    "Roger Machado"
+   ],
+   [
+    "Cruzeiro",
+    "Tite",
+    "Saiu",
+    "15/03",
+    "Artur Jorge"
+   ],
+   [
+    "Santos",
+    "Juan Pablo Vojvoda",
+    "Saiu",
+    "19/03",
+    "Cuca"
+   ],
+   [
+    "Botafogo",
+    "Martín Anselmi",
+    "Demitido",
+    "março",
+    "Franclim Carvalho"
+   ],
+   [
+    "Chapecoense",
+    "Gilmar Dal Pozzo",
+    "Demitido",
+    "03/04",
+    "Fábio Matias"
+   ],
+   [
+    "Corinthians",
+    "Dorival Júnior",
+    "Demitido",
+    "abril",
+    "Fernando Diniz"
+   ],
+   [
+    "São Paulo",
+    "Roger Machado",
+    "Saiu",
+    "13/05",
+    "Dorival Júnior"
+   ],
+   [
+    "Chapecoense",
+    "Fábio Matias",
+    "Saiu",
+    "25/05",
+    "Rafael Lacerda"
+   ],
+   [
+    "Vasco",
+    "Renato Gaúcho",
+    "Acordo",
+    "18/06",
+    "Pedro Emanuel"
+   ],
+   [
+    "Fluminense",
+    "Luis Zubeldía",
+    "Demitido",
+    "13/08",
+    "Marcão"
+   ],
+   [
+    "Botafogo",
+    "Franclim Carvalho",
+    "Saiu",
+    "18/08",
+    "Tite"
+   ],
+   [
+    "Grêmio",
+    "Luís Castro",
+    "Saiu",
+    "13/09",
+    "Renato Gaúcho"
+   ],
+   [
+    "Remo",
+    "Léo Condé",
+    "Saiu",
+    "15/09",
+    "Thiago Carpini"
+   ],
+   [
+    "Internacional",
+    "Paulo Pezzolano",
+    "Demitido",
+    "setembro",
+    "Eduardo Baptista"
+   ],
+   [
+    "Corinthians",
+    "Fernando Diniz",
+    "Demitido",
+    "07/10",
+    "Clarence Seedorf"
+   ]
+  ]
+ },
+ "destaques": {
+  "atualizado": "17/10/2026",
+  "porClube": {
+   "Palmeiras": {
+    "art": [
+     [
+      "Flaco López",
+      9
+     ],
+     [
+      "Maurício",
+      7
+     ],
+     [
+      "Vitor Roque",
+      5
+     ]
+    ],
+    "ast": [
+     [
+      "Andreas Pereira",
+      10
+     ],
+     [
+      "Flaco López",
+      4
+     ]
+    ],
+    "obs": ""
+   },
+   "Flamengo": {
+    "art": [
+     [
+      "Pedro",
+      16
+     ],
+     [
+      "Samuel Lino",
+      9
+     ],
+     [
+      "Lucas Paquetá",
+      6
+     ]
+    ],
+    "ast": [
+     [
+      "Jorge Carrascal",
+      8
+     ],
+     [
+      "Samuel Lino",
+      7
+     ]
+    ],
+    "obs": ""
+   },
+   "Athletico-PR": {
+    "art": [
+     [
+      "Kevin Viveros",
+      21
+     ]
+    ],
+    "ast": [
+     [
+      "João Cruz",
+      5
+     ],
+     [
+      "Gastón Benavídez",
+      5
+     ]
+    ],
+    "obs": ""
+   },
+   "Fluminense": {
+    "art": [
+     [
+      "John Kennedy",
+      9
+     ],
+     [
+      "Hulk",
+      7
+     ],
+     [
+      "Jefferson Savarino",
+      6
+     ]
+    ],
+    "ast": [
+     [
+      "Hulk",
+      5
+     ],
+     [
+      "Jefferson Savarino",
+      2
+     ]
+    ],
+    "obs": ""
+   },
+   "Atlético-MG": {
+    "art": [
+     [
+      "Tomás Cuello",
+      4
+     ],
+     [
+      "Victor Hugo",
+      4
+     ]
+    ],
+    "ast": [],
+    "obs": "Gols do Atlético-MG até 09/09 (nenhum jogador do time está entre os 30 artilheiros)."
+   },
+   "Bahia": {
+    "art": [
+     [
+      "Luciano Juba",
+      10
+     ]
+    ],
+    "ast": [
+     [
+      "Luciano Juba",
+      1
+     ]
+    ],
+    "obs": ""
+   },
+   "Cruzeiro": {
+    "art": [
+     [
+      "Matheus Pereira",
+      9
+     ],
+     [
+      "Kaio Jorge",
+      8
+     ]
+    ],
+    "ast": [
+     [
+      "Matheus Pereira",
+      5
+     ],
+     [
+      "Kaio Jorge",
+      2
+     ]
+    ],
+    "obs": ""
+   },
+   "São Paulo": {
+    "art": [
+     [
+      "Jonathan Calleri",
+      10
+     ],
+     [
+      "Luciano",
+      9
+     ]
+    ],
+    "ast": [
+     [
+      "Jonathan Calleri",
+      1
+     ],
+     [
+      "Luciano",
+      1
+     ]
+    ],
+    "obs": ""
+   },
+   "Santos": {
+    "art": [
+     [
+      "Gabigol",
+      14
+     ],
+     [
+      "Neymar",
+      8
+     ]
+    ],
+    "ast": [
+     [
+      "Gabigol",
+      3
+     ],
+     [
+      "Neymar",
+      3
+     ]
+    ],
+    "obs": ""
+   },
+   "Bragantino": {
+    "art": [
+     [
+      "Isidro Pitta",
+      6
+     ],
+     [
+      "Lucas Barbosa",
+      6
+     ]
+    ],
+    "ast": [
+     [
+      "Isidro Pitta",
+      2
+     ],
+     [
+      "Lucas Barbosa",
+      2
+     ]
+    ],
+    "obs": ""
+   },
+   "Botafogo": {
+    "art": [
+     [
+      "Danilo",
+      10
+     ],
+     [
+      "Arthur Cabral",
+      7
+     ]
+    ],
+    "ast": [
+     [
+      "Álvaro Montoro",
+      5
+     ],
+     [
+      "Danilo",
+      2
+     ]
+    ],
+    "obs": ""
+   },
+   "Coritiba": {
+    "art": [
+     [
+      "Breno Lopes",
+      8
+     ],
+     [
+      "Pedro Rocha",
+      8
+     ]
+    ],
+    "ast": [
+     [
+      "Josué",
+      11
+     ],
+     [
+      "Breno Lopes",
+      2
+     ]
+    ],
+    "obs": ""
+   },
+   "Vitória": {
+    "art": [
+     [
+      "Renê",
+      8
+     ],
+     [
+      "Matheuzinho",
+      6
+     ]
+    ],
+    "ast": [
+     [
+      "Erick",
+      5
+     ],
+     [
+      "Matheuzinho",
+      4
+     ]
+    ],
+    "obs": ""
+   },
+   "Mirassol": {
+    "art": [
+     [
+      "Carlos Eduardo",
+      7
+     ]
+    ],
+    "ast": [
+     [
+      "Igor Formiga",
+      5
+     ]
+    ],
+    "obs": ""
+   },
+   "Vasco": {
+    "art": [
+     [
+      "Thiago Mendes",
+      5
+     ],
+     [
+      "Andrés Gómez",
+      4
+     ]
+    ],
+    "ast": [],
+    "obs": "Gols do Vasco até 15/09 (nenhum jogador do time está entre os 30 artilheiros)."
+   },
+   "Corinthians": {
+    "art": [],
+    "ast": [
+     [
+      "Rodrigo Garro",
+      6
+     ]
+    ],
+    "obs": "Não encontrei a artilharia atualizada do Corinthians; nenhum jogador do time está entre os 30 artilheiros."
+   },
+   "Internacional": {
+    "art": [
+     [
+      "Johan Carbonero",
+      7
+     ]
+    ],
+    "ast": [
+     [
+      "Johan Carbonero",
+      4
+     ]
+    ],
+    "obs": ""
+   },
+   "Grêmio": {
+    "art": [
+     [
+      "Carlos Vinícius",
+      10
+     ]
+    ],
+    "ast": [
+     [
+      "Carlos Vinícius",
+      1
+     ]
+    ],
+    "obs": ""
+   },
+   "Remo": {
+    "art": [
+     [
+      "Jajá",
+      6
+     ]
+    ],
+    "ast": [
+     [
+      "Jajá",
+      1
+     ]
+    ],
+    "obs": ""
+   },
+   "Chapecoense": {
+    "art": [],
+    "ast": [
+     [
+      "Giovanni Augusto",
+      5
+     ]
+    ],
+    "obs": "Não encontrei a artilharia atualizada da Chapecoense; nenhum jogador do time está entre os 30 artilheiros."
+   }
+  }
+ }
+}

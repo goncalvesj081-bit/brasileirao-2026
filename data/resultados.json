@@ -1,0 +1,2741 @@
+{
+ "temporada": 2026,
+ "jogos": [
+  {
+   "id": "p1-CAM-PAL",
+   "rodada": 1,
+   "mandante": "Atlético-MG",
+   "visitante": "Palmeiras",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p1-CFC-RBB",
+   "rodada": 1,
+   "mandante": "Coritiba",
+   "visitante": "Bragantino",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p1-INT-CAP",
+   "rodada": 1,
+   "mandante": "Internacional",
+   "visitante": "Athletico-PR",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p1-VIT-REM",
+   "rodada": 1,
+   "mandante": "Vitória",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p1-FLU-GRE",
+   "rodada": 1,
+   "mandante": "Fluminense",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p1-CHA-SAN",
+   "rodada": 1,
+   "mandante": "Chapecoense",
+   "visitante": "Santos",
+   "gm": 4,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p1-COR-BAH",
+   "rodada": 1,
+   "mandante": "Corinthians",
+   "visitante": "Bahia",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p1-SAO-FLA",
+   "rodada": 1,
+   "mandante": "São Paulo",
+   "visitante": "Flamengo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p1-MIR-VAS",
+   "rodada": 1,
+   "mandante": "Mirassol",
+   "visitante": "Vasco",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p1-BOT-CRU",
+   "rodada": 1,
+   "mandante": "Botafogo",
+   "visitante": "Cruzeiro",
+   "gm": 4,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p2-RBB-CAM",
+   "rodada": 2,
+   "mandante": "Bragantino",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p2-FLA-INT",
+   "rodada": 2,
+   "mandante": "Flamengo",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p2-REM-MIR",
+   "rodada": 2,
+   "mandante": "Remo",
+   "visitante": "Mirassol",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p2-SAN-SAO",
+   "rodada": 2,
+   "mandante": "Santos",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p2-GRE-BOT",
+   "rodada": 2,
+   "mandante": "Grêmio",
+   "visitante": "Botafogo",
+   "gm": 5,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p2-PAL-VIT",
+   "rodada": 2,
+   "mandante": "Palmeiras",
+   "visitante": "Vitória",
+   "gm": 5,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p2-BAH-FLU",
+   "rodada": 2,
+   "mandante": "Bahia",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p2-VAS-CHA",
+   "rodada": 2,
+   "mandante": "Vasco",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p2-CRU-CFC",
+   "rodada": 2,
+   "mandante": "Cruzeiro",
+   "visitante": "Coritiba",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p2-CAP-COR",
+   "rodada": 2,
+   "mandante": "Athletico-PR",
+   "visitante": "Corinthians",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p3-VIT-FLA",
+   "rodada": 3,
+   "mandante": "Vitória",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p3-CHA-CFC",
+   "rodada": 3,
+   "mandante": "Chapecoense",
+   "visitante": "Coritiba",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p3-MIR-CRU",
+   "rodada": 3,
+   "mandante": "Mirassol",
+   "visitante": "Cruzeiro",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p3-CAM-REM",
+   "rodada": 3,
+   "mandante": "Atlético-MG",
+   "visitante": "Remo",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p3-SAO-GRE",
+   "rodada": 3,
+   "mandante": "São Paulo",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p3-VAS-BAH",
+   "rodada": 3,
+   "mandante": "Vasco",
+   "visitante": "Bahia",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p3-CAP-SAN",
+   "rodada": 3,
+   "mandante": "Athletico-PR",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p3-FLU-BOT",
+   "rodada": 3,
+   "mandante": "Fluminense",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p3-COR-RBB",
+   "rodada": 3,
+   "mandante": "Corinthians",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p3-INT-PAL",
+   "rodada": 3,
+   "mandante": "Internacional",
+   "visitante": "Palmeiras",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p4-RBB-CAP",
+   "rodada": 4,
+   "mandante": "Bragantino",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-REM-INT",
+   "rodada": 4,
+   "mandante": "Remo",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-CFC-SAO",
+   "rodada": 4,
+   "mandante": "Coritiba",
+   "visitante": "São Paulo",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-CRU-COR",
+   "rodada": 4,
+   "mandante": "Cruzeiro",
+   "visitante": "Corinthians",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-GRE-CAM",
+   "rodada": 4,
+   "mandante": "Grêmio",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-PAL-FLU",
+   "rodada": 4,
+   "mandante": "Palmeiras",
+   "visitante": "Fluminense",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-SAN-VAS",
+   "rodada": 4,
+   "mandante": "Santos",
+   "visitante": "Vasco",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p4-BAH-CHA",
+   "rodada": 4,
+   "mandante": "Bahia",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p4-BOT-VIT",
+   "rodada": 4,
+   "mandante": "Botafogo",
+   "visitante": "Vitória",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p4-FLA-MIR",
+   "rodada": 4,
+   "mandante": "Flamengo",
+   "visitante": "Mirassol",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p5-MIR-SAN",
+   "rodada": 5,
+   "mandante": "Mirassol",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p5-CAM-INT",
+   "rodada": 5,
+   "mandante": "Atlético-MG",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p5-BAH-VIT",
+   "rodada": 5,
+   "mandante": "Bahia",
+   "visitante": "Vitória",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p5-COR-CFC",
+   "rodada": 5,
+   "mandante": "Corinthians",
+   "visitante": "Coritiba",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p5-FLA-CRU",
+   "rodada": 5,
+   "mandante": "Flamengo",
+   "visitante": "Cruzeiro",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p5-REM-FLU",
+   "rodada": 5,
+   "mandante": "Remo",
+   "visitante": "Fluminense",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p5-VAS-PAL",
+   "rodada": 5,
+   "mandante": "Vasco",
+   "visitante": "Palmeiras",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p5-SAO-CHA",
+   "rodada": 5,
+   "mandante": "São Paulo",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p5-GRE-RBB",
+   "rodada": 5,
+   "mandante": "Grêmio",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p5-CAP-BOT",
+   "rodada": 5,
+   "mandante": "Athletico-PR",
+   "visitante": "Botafogo",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p6-VIT-CAM",
+   "rodada": 6,
+   "mandante": "Vitória",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p6-BOT-FLA",
+   "rodada": 6,
+   "mandante": "Botafogo",
+   "visitante": "Flamengo",
+   "gm": 0,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p6-FLU-CAP",
+   "rodada": 6,
+   "mandante": "Fluminense",
+   "visitante": "Athletico-PR",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p6-INT-BAH",
+   "rodada": 6,
+   "mandante": "Internacional",
+   "visitante": "Bahia",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p6-SAN-COR",
+   "rodada": 6,
+   "mandante": "Santos",
+   "visitante": "Corinthians",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p6-CFC-REM",
+   "rodada": 6,
+   "mandante": "Coritiba",
+   "visitante": "Remo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p6-PAL-MIR",
+   "rodada": 6,
+   "mandante": "Palmeiras",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p6-RBB-SAO",
+   "rodada": 6,
+   "mandante": "Bragantino",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p6-CRU-VAS",
+   "rodada": 6,
+   "mandante": "Cruzeiro",
+   "visitante": "Vasco",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p6-CHA-GRE",
+   "rodada": 6,
+   "mandante": "Chapecoense",
+   "visitante": "Grêmio",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p7-BAH-RBB",
+   "rodada": 7,
+   "mandante": "Bahia",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p7-PAL-BOT",
+   "rodada": 7,
+   "mandante": "Palmeiras",
+   "visitante": "Botafogo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p7-CAP-CRU",
+   "rodada": 7,
+   "mandante": "Athletico-PR",
+   "visitante": "Cruzeiro",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p7-CAM-SAO",
+   "rodada": 7,
+   "mandante": "Atlético-MG",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p7-MIR-CFC",
+   "rodada": 7,
+   "mandante": "Mirassol",
+   "visitante": "Coritiba",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p7-SAN-INT",
+   "rodada": 7,
+   "mandante": "Santos",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p7-VAS-FLU",
+   "rodada": 7,
+   "mandante": "Vasco",
+   "visitante": "Fluminense",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p7-GRE-VIT",
+   "rodada": 7,
+   "mandante": "Grêmio",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p7-FLA-REM",
+   "rodada": 7,
+   "mandante": "Flamengo",
+   "visitante": "Remo",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p7-CHA-COR",
+   "rodada": 7,
+   "mandante": "Chapecoense",
+   "visitante": "Corinthians",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-RBB-BOT",
+   "rodada": 8,
+   "mandante": "Bragantino",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p8-FLU-CAM",
+   "rodada": 8,
+   "mandante": "Fluminense",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-SAO-PAL",
+   "rodada": 8,
+   "mandante": "São Paulo",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p8-CAP-CFC",
+   "rodada": 8,
+   "mandante": "Athletico-PR",
+   "visitante": "Coritiba",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-CRU-SAN",
+   "rodada": 8,
+   "mandante": "Cruzeiro",
+   "visitante": "Santos",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-REM-BAH",
+   "rodada": 8,
+   "mandante": "Remo",
+   "visitante": "Bahia",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p8-VAS-GRE",
+   "rodada": 8,
+   "mandante": "Vasco",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p8-INT-CHA",
+   "rodada": 8,
+   "mandante": "Internacional",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-VIT-MIR",
+   "rodada": 8,
+   "mandante": "Vitória",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p8-COR-FLA",
+   "rodada": 8,
+   "mandante": "Corinthians",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p9-BOT-MIR",
+   "rodada": 9,
+   "mandante": "Botafogo",
+   "visitante": "Mirassol",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p9-INT-SAO",
+   "rodada": 9,
+   "mandante": "Internacional",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p9-BAH-CAP",
+   "rodada": 9,
+   "mandante": "Bahia",
+   "visitante": "Athletico-PR",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p9-CRU-VIT",
+   "rodada": 9,
+   "mandante": "Cruzeiro",
+   "visitante": "Vitória",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p9-CFC-VAS",
+   "rodada": 9,
+   "mandante": "Coritiba",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p9-FLU-COR",
+   "rodada": 9,
+   "mandante": "Fluminense",
+   "visitante": "Corinthians",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p9-CHA-CAM",
+   "rodada": 9,
+   "mandante": "Chapecoense",
+   "visitante": "Atlético-MG",
+   "gm": 0,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p9-SAN-REM",
+   "rodada": 9,
+   "mandante": "Santos",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p9-RBB-FLA",
+   "rodada": 9,
+   "mandante": "Bragantino",
+   "visitante": "Flamengo",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p9-PAL-GRE",
+   "rodada": 9,
+   "mandante": "Palmeiras",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-SAO-CRU",
+   "rodada": 10,
+   "mandante": "São Paulo",
+   "visitante": "Cruzeiro",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-CFC-FLU",
+   "rodada": 10,
+   "mandante": "Coritiba",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-VAS-BOT",
+   "rodada": 10,
+   "mandante": "Vasco",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p10-CHA-VIT",
+   "rodada": 10,
+   "mandante": "Chapecoense",
+   "visitante": "Vitória",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-CAM-CAP",
+   "rodada": 10,
+   "mandante": "Atlético-MG",
+   "visitante": "Athletico-PR",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-FLA-SAN",
+   "rodada": 10,
+   "mandante": "Flamengo",
+   "visitante": "Santos",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-BAH-PAL",
+   "rodada": 10,
+   "mandante": "Bahia",
+   "visitante": "Palmeiras",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p10-COR-INT",
+   "rodada": 10,
+   "mandante": "Corinthians",
+   "visitante": "Internacional",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-MIR-RBB",
+   "rodada": 10,
+   "mandante": "Mirassol",
+   "visitante": "Bragantino",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p10-GRE-REM",
+   "rodada": 10,
+   "mandante": "Grêmio",
+   "visitante": "Remo",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-REM-VAS",
+   "rodada": 11,
+   "mandante": "Remo",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p11-VIT-SAO",
+   "rodada": 11,
+   "mandante": "Vitória",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-MIR-BAH",
+   "rodada": 11,
+   "mandante": "Mirassol",
+   "visitante": "Bahia",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p11-SAN-CAM",
+   "rodada": 11,
+   "mandante": "Santos",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-INT-GRE",
+   "rodada": 11,
+   "mandante": "Internacional",
+   "visitante": "Grêmio",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-CAP-CHA",
+   "rodada": 11,
+   "mandante": "Athletico-PR",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-BOT-CFC",
+   "rodada": 11,
+   "mandante": "Botafogo",
+   "visitante": "Coritiba",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p11-FLU-FLA",
+   "rodada": 11,
+   "mandante": "Fluminense",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p11-COR-PAL",
+   "rodada": 11,
+   "mandante": "Corinthians",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p11-CRU-RBB",
+   "rodada": 11,
+   "mandante": "Cruzeiro",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p12-CHA-BOT",
+   "rodada": 12,
+   "mandante": "Chapecoense",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p12-VAS-SAO",
+   "rodada": 12,
+   "mandante": "Vasco",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p12-VIT-COR",
+   "rodada": 12,
+   "mandante": "Vitória",
+   "visitante": "Corinthians",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p12-CRU-GRE",
+   "rodada": 12,
+   "mandante": "Cruzeiro",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p12-INT-MIR",
+   "rodada": 12,
+   "mandante": "Internacional",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p12-CFC-CAM",
+   "rodada": 12,
+   "mandante": "Coritiba",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p12-SAN-FLU",
+   "rodada": 12,
+   "mandante": "Santos",
+   "visitante": "Fluminense",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p12-RBB-REM",
+   "rodada": 12,
+   "mandante": "Bragantino",
+   "visitante": "Remo",
+   "gm": 4,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p12-PAL-CAP",
+   "rodada": 12,
+   "mandante": "Palmeiras",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p12-FLA-BAH",
+   "rodada": 12,
+   "mandante": "Flamengo",
+   "visitante": "Bahia",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p13-BAH-SAN",
+   "rodada": 13,
+   "mandante": "Bahia",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p13-BOT-INT",
+   "rodada": 13,
+   "mandante": "Botafogo",
+   "visitante": "Internacional",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p13-REM-CRU",
+   "rodada": 13,
+   "mandante": "Remo",
+   "visitante": "Cruzeiro",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p13-SAO-MIR",
+   "rodada": 13,
+   "mandante": "São Paulo",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p13-COR-VAS",
+   "rodada": 13,
+   "mandante": "Corinthians",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p13-GRE-CFC",
+   "rodada": 13,
+   "mandante": "Grêmio",
+   "visitante": "Coritiba",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p13-CAP-VIT",
+   "rodada": 13,
+   "mandante": "Athletico-PR",
+   "visitante": "Vitória",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p13-RBB-PAL",
+   "rodada": 13,
+   "mandante": "Bragantino",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p13-CAM-FLA",
+   "rodada": 13,
+   "mandante": "Atlético-MG",
+   "visitante": "Flamengo",
+   "gm": 0,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p13-FLU-CHA",
+   "rodada": 13,
+   "mandante": "Fluminense",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p14-BOT-REM",
+   "rodada": 14,
+   "mandante": "Botafogo",
+   "visitante": "Remo",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p14-PAL-SAN",
+   "rodada": 14,
+   "mandante": "Palmeiras",
+   "visitante": "Santos",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p14-VIT-CFC",
+   "rodada": 14,
+   "mandante": "Vitória",
+   "visitante": "Coritiba",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p14-CAP-GRE",
+   "rodada": 14,
+   "mandante": "Athletico-PR",
+   "visitante": "Grêmio",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p14-CRU-CAM",
+   "rodada": 14,
+   "mandante": "Cruzeiro",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p14-FLA-VAS",
+   "rodada": 14,
+   "mandante": "Flamengo",
+   "visitante": "Vasco",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p14-SAO-BAH",
+   "rodada": 14,
+   "mandante": "São Paulo",
+   "visitante": "Bahia",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p14-CHA-RBB",
+   "rodada": 14,
+   "mandante": "Chapecoense",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p14-INT-FLU",
+   "rodada": 14,
+   "mandante": "Internacional",
+   "visitante": "Fluminense",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p14-MIR-COR",
+   "rodada": 14,
+   "mandante": "Mirassol",
+   "visitante": "Corinthians",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p15-CFC-INT",
+   "rodada": 15,
+   "mandante": "Coritiba",
+   "visitante": "Internacional",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p15-FLU-VIT",
+   "rodada": 15,
+   "mandante": "Fluminense",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p15-BAH-CRU",
+   "rodada": 15,
+   "mandante": "Bahia",
+   "visitante": "Cruzeiro",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p15-CAM-BOT",
+   "rodada": 15,
+   "mandante": "Atlético-MG",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p15-REM-PAL",
+   "rodada": 15,
+   "mandante": "Remo",
+   "visitante": "Palmeiras",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p15-COR-SAO",
+   "rodada": 15,
+   "mandante": "Corinthians",
+   "visitante": "São Paulo",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p15-MIR-CHA",
+   "rodada": 15,
+   "mandante": "Mirassol",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p15-SAN-RBB",
+   "rodada": 15,
+   "mandante": "Santos",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p15-GRE-FLA",
+   "rodada": 15,
+   "mandante": "Grêmio",
+   "visitante": "Flamengo",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p15-VAS-CAP",
+   "rodada": 15,
+   "mandante": "Vasco",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p16-CAM-MIR",
+   "rodada": 16,
+   "mandante": "Atlético-MG",
+   "visitante": "Mirassol",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-INT-VAS",
+   "rodada": 16,
+   "mandante": "Internacional",
+   "visitante": "Vasco",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-FLU-SAO",
+   "rodada": 16,
+   "mandante": "Fluminense",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-PAL-CRU",
+   "rodada": 16,
+   "mandante": "Palmeiras",
+   "visitante": "Cruzeiro",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-SAN-CFC",
+   "rodada": 16,
+   "mandante": "Santos",
+   "visitante": "Coritiba",
+   "gm": 0,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p16-BAH-GRE",
+   "rodada": 16,
+   "mandante": "Bahia",
+   "visitante": "Grêmio",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-BOT-COR",
+   "rodada": 16,
+   "mandante": "Botafogo",
+   "visitante": "Corinthians",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p16-RBB-VIT",
+   "rodada": 16,
+   "mandante": "Bragantino",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p16-CHA-REM",
+   "rodada": 16,
+   "mandante": "Chapecoense",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p16-CAP-FLA",
+   "rodada": 16,
+   "mandante": "Athletico-PR",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p17-SAO-BOT",
+   "rodada": 17,
+   "mandante": "São Paulo",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p17-VIT-INT",
+   "rodada": 17,
+   "mandante": "Vitória",
+   "visitante": "Internacional",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p17-GRE-SAN",
+   "rodada": 17,
+   "mandante": "Grêmio",
+   "visitante": "Santos",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p17-MIR-FLU",
+   "rodada": 17,
+   "mandante": "Mirassol",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p17-FLA-PAL",
+   "rodada": 17,
+   "mandante": "Flamengo",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p17-CRU-CHA",
+   "rodada": 17,
+   "mandante": "Cruzeiro",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p17-REM-CAP",
+   "rodada": 17,
+   "mandante": "Remo",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p17-COR-CAM",
+   "rodada": 17,
+   "mandante": "Corinthians",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p17-VAS-RBB",
+   "rodada": 17,
+   "mandante": "Vasco",
+   "visitante": "Bragantino",
+   "gm": 0,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p17-CFC-BAH",
+   "rodada": 17,
+   "mandante": "Coritiba",
+   "visitante": "Bahia",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p18-CAP-MIR",
+   "rodada": 18,
+   "mandante": "Athletico-PR",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p18-FLA-CFC",
+   "rodada": 18,
+   "mandante": "Flamengo",
+   "visitante": "Coritiba",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p18-BAH-BOT",
+   "rodada": 18,
+   "mandante": "Bahia",
+   "visitante": "Botafogo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p18-GRE-COR",
+   "rodada": 18,
+   "mandante": "Grêmio",
+   "visitante": "Corinthians",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p18-SAN-VIT",
+   "rodada": 18,
+   "mandante": "Santos",
+   "visitante": "Vitória",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p18-RBB-INT",
+   "rodada": 18,
+   "mandante": "Bragantino",
+   "visitante": "Internacional",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p18-PAL-CHA",
+   "rodada": 18,
+   "mandante": "Palmeiras",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p18-VAS-CAM",
+   "rodada": 18,
+   "mandante": "Vasco",
+   "visitante": "Atlético-MG",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p18-CRU-FLU",
+   "rodada": 18,
+   "mandante": "Cruzeiro",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p18-REM-SAO",
+   "rodada": 18,
+   "mandante": "Remo",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p19-BOT-SAN",
+   "rodada": 19,
+   "mandante": "Botafogo",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p19-VIT-VAS",
+   "rodada": 19,
+   "mandante": "Vitória",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p19-FLU-RBB",
+   "rodada": 19,
+   "mandante": "Fluminense",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p19-MIR-GRE",
+   "rodada": 19,
+   "mandante": "Mirassol",
+   "visitante": "Grêmio",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p19-CAM-BAH",
+   "rodada": 19,
+   "mandante": "Atlético-MG",
+   "visitante": "Bahia",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p19-CFC-PAL",
+   "rodada": 19,
+   "mandante": "Coritiba",
+   "visitante": "Palmeiras",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p19-CHA-FLA",
+   "rodada": 19,
+   "mandante": "Chapecoense",
+   "visitante": "Flamengo",
+   "gm": 0,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p19-INT-CRU",
+   "rodada": 19,
+   "mandante": "Internacional",
+   "visitante": "Cruzeiro",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p19-SAO-CAP",
+   "rodada": 19,
+   "mandante": "São Paulo",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p19-COR-REM",
+   "rodada": 19,
+   "mandante": "Corinthians",
+   "visitante": "Remo",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p20-CAP-INT",
+   "rodada": 20,
+   "mandante": "Athletico-PR",
+   "visitante": "Internacional",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p20-SAN-CHA",
+   "rodada": 20,
+   "mandante": "Santos",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p20-VAS-MIR",
+   "rodada": 20,
+   "mandante": "Vasco",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p20-BAH-COR",
+   "rodada": 20,
+   "mandante": "Bahia",
+   "visitante": "Corinthians",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p20-CRU-BOT",
+   "rodada": 20,
+   "mandante": "Cruzeiro",
+   "visitante": "Botafogo",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p20-RBB-CFC",
+   "rodada": 20,
+   "mandante": "Bragantino",
+   "visitante": "Coritiba",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p20-FLA-SAO",
+   "rodada": 20,
+   "mandante": "Flamengo",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p20-GRE-FLU",
+   "rodada": 20,
+   "mandante": "Grêmio",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p20-PAL-CAM",
+   "rodada": 20,
+   "mandante": "Palmeiras",
+   "visitante": "Atlético-MG",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p20-REM-VIT",
+   "rodada": 20,
+   "mandante": "Remo",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p21-INT-FLA",
+   "rodada": 21,
+   "mandante": "Internacional",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p21-MIR-REM",
+   "rodada": 21,
+   "mandante": "Mirassol",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p21-FLU-BAH",
+   "rodada": 21,
+   "mandante": "Fluminense",
+   "visitante": "Bahia",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p21-VIT-PAL",
+   "rodada": 21,
+   "mandante": "Vitória",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p21-COR-CAP",
+   "rodada": 21,
+   "mandante": "Corinthians",
+   "visitante": "Athletico-PR",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p21-CFC-CRU",
+   "rodada": 21,
+   "mandante": "Coritiba",
+   "visitante": "Cruzeiro",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p21-BOT-GRE",
+   "rodada": 21,
+   "mandante": "Botafogo",
+   "visitante": "Grêmio",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p21-SAO-SAN",
+   "rodada": 21,
+   "mandante": "São Paulo",
+   "visitante": "Santos",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p21-CAM-RBB",
+   "rodada": 21,
+   "mandante": "Atlético-MG",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p22-GRE-SAO",
+   "rodada": 22,
+   "mandante": "Grêmio",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p22-REM-CAM",
+   "rodada": 22,
+   "mandante": "Remo",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p22-CFC-CHA",
+   "rodada": 22,
+   "mandante": "Coritiba",
+   "visitante": "Chapecoense",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p22-BOT-FLU",
+   "rodada": 22,
+   "mandante": "Botafogo",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p22-CRU-MIR",
+   "rodada": 22,
+   "mandante": "Cruzeiro",
+   "visitante": "Mirassol",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p22-BAH-VAS",
+   "rodada": 22,
+   "mandante": "Bahia",
+   "visitante": "Vasco",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p22-PAL-INT",
+   "rodada": 22,
+   "mandante": "Palmeiras",
+   "visitante": "Internacional",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p22-RBB-COR",
+   "rodada": 22,
+   "mandante": "Bragantino",
+   "visitante": "Corinthians",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p22-SAN-CAP",
+   "rodada": 22,
+   "mandante": "Santos",
+   "visitante": "Athletico-PR",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p22-FLA-VIT",
+   "rodada": 22,
+   "mandante": "Flamengo",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p23-FLU-PAL",
+   "rodada": 23,
+   "mandante": "Fluminense",
+   "visitante": "Palmeiras",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p23-CAP-RBB",
+   "rodada": 23,
+   "mandante": "Athletico-PR",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p23-SAO-CFC",
+   "rodada": 23,
+   "mandante": "São Paulo",
+   "visitante": "Coritiba",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p23-CHA-BAH",
+   "rodada": 23,
+   "mandante": "Chapecoense",
+   "visitante": "Bahia",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p23-CAM-GRE",
+   "rodada": 23,
+   "mandante": "Atlético-MG",
+   "visitante": "Grêmio",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p23-VAS-SAN",
+   "rodada": 23,
+   "mandante": "Vasco",
+   "visitante": "Santos",
+   "gm": 0,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p23-MIR-FLA",
+   "rodada": 23,
+   "mandante": "Mirassol",
+   "visitante": "Flamengo",
+   "gm": 1,
+   "gv": 5,
+   "data": null
+  },
+  {
+   "id": "p23-VIT-BOT",
+   "rodada": 23,
+   "mandante": "Vitória",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p23-COR-CRU",
+   "rodada": 23,
+   "mandante": "Corinthians",
+   "visitante": "Cruzeiro",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p23-INT-REM",
+   "rodada": 23,
+   "mandante": "Internacional",
+   "visitante": "Remo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-FLU-REM",
+   "rodada": 24,
+   "mandante": "Fluminense",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-INT-CAM",
+   "rodada": 24,
+   "mandante": "Internacional",
+   "visitante": "Atlético-MG",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p24-CRU-FLA",
+   "rodada": 24,
+   "mandante": "Cruzeiro",
+   "visitante": "Flamengo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-RBB-GRE",
+   "rodada": 24,
+   "mandante": "Bragantino",
+   "visitante": "Grêmio",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p24-PAL-VAS",
+   "rodada": 24,
+   "mandante": "Palmeiras",
+   "visitante": "Vasco",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-VIT-BAH",
+   "rodada": 24,
+   "mandante": "Vitória",
+   "visitante": "Bahia",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p24-CHA-SAO",
+   "rodada": 24,
+   "mandante": "Chapecoense",
+   "visitante": "São Paulo",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p24-SAN-MIR",
+   "rodada": 24,
+   "mandante": "Santos",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-CFC-COR",
+   "rodada": 24,
+   "mandante": "Coritiba",
+   "visitante": "Corinthians",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p24-BOT-CAP",
+   "rodada": 24,
+   "mandante": "Botafogo",
+   "visitante": "Athletico-PR",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p25-CAM-VIT",
+   "rodada": 25,
+   "mandante": "Atlético-MG",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-SAO-RBB",
+   "rodada": 25,
+   "mandante": "São Paulo",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-VAS-CRU",
+   "rodada": 25,
+   "mandante": "Vasco",
+   "visitante": "Cruzeiro",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-CAP-FLU",
+   "rodada": 25,
+   "mandante": "Athletico-PR",
+   "visitante": "Fluminense",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p25-COR-SAN",
+   "rodada": 25,
+   "mandante": "Corinthians",
+   "visitante": "Santos",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-FLA-BOT",
+   "rodada": 25,
+   "mandante": "Flamengo",
+   "visitante": "Botafogo",
+   "gm": 3,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p25-GRE-CHA",
+   "rodada": 25,
+   "mandante": "Grêmio",
+   "visitante": "Chapecoense",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-MIR-PAL",
+   "rodada": 25,
+   "mandante": "Mirassol",
+   "visitante": "Palmeiras",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p25-BAH-INT",
+   "rodada": 25,
+   "mandante": "Bahia",
+   "visitante": "Internacional",
+   "gm": 3,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p25-REM-CFC",
+   "rodada": 25,
+   "mandante": "Remo",
+   "visitante": "Coritiba",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p26-RBB-BAH",
+   "rodada": 26,
+   "mandante": "Bragantino",
+   "visitante": "Bahia",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p26-SAO-CAM",
+   "rodada": 26,
+   "mandante": "São Paulo",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p26-FLU-VAS",
+   "rodada": 26,
+   "mandante": "Fluminense",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p26-CFC-MIR",
+   "rodada": 26,
+   "mandante": "Coritiba",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p26-CRU-CAP",
+   "rodada": 26,
+   "mandante": "Cruzeiro",
+   "visitante": "Athletico-PR",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p26-INT-SAN",
+   "rodada": 26,
+   "mandante": "Internacional",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p26-REM-FLA",
+   "rodada": 26,
+   "mandante": "Remo",
+   "visitante": "Flamengo",
+   "gm": 0,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p26-BOT-PAL",
+   "rodada": 26,
+   "mandante": "Botafogo",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p26-COR-CHA",
+   "rodada": 26,
+   "mandante": "Corinthians",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p26-VIT-GRE",
+   "rodada": 26,
+   "mandante": "Vitória",
+   "visitante": "Grêmio",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p27-CFC-CAP",
+   "rodada": 27,
+   "mandante": "Coritiba",
+   "visitante": "Athletico-PR",
+   "gm": 3,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p27-CAM-FLU",
+   "rodada": 27,
+   "mandante": "Atlético-MG",
+   "visitante": "Fluminense",
+   "gm": 3,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p27-GRE-VAS",
+   "rodada": 27,
+   "mandante": "Grêmio",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p27-CHA-INT",
+   "rodada": 27,
+   "mandante": "Chapecoense",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p27-PAL-SAO",
+   "rodada": 27,
+   "mandante": "Palmeiras",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p27-BOT-RBB",
+   "rodada": 27,
+   "mandante": "Botafogo",
+   "visitante": "Bragantino",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p27-SAN-CRU",
+   "rodada": 27,
+   "mandante": "Santos",
+   "visitante": "Cruzeiro",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p27-MIR-VIT",
+   "rodada": 27,
+   "mandante": "Mirassol",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p27-FLA-COR",
+   "rodada": 27,
+   "mandante": "Flamengo",
+   "visitante": "Corinthians",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p27-BAH-REM",
+   "rodada": 27,
+   "mandante": "Bahia",
+   "visitante": "Remo",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p28-CAM-CHA",
+   "rodada": 28,
+   "mandante": "Atlético-MG",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p28-MIR-BOT",
+   "rodada": 28,
+   "mandante": "Mirassol",
+   "visitante": "Botafogo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p28-REM-SAN",
+   "rodada": 28,
+   "mandante": "Remo",
+   "visitante": "Santos",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p28-VAS-CFC",
+   "rodada": 28,
+   "mandante": "Vasco",
+   "visitante": "Coritiba",
+   "gm": 5,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p28-SAO-INT",
+   "rodada": 28,
+   "mandante": "São Paulo",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p28-GRE-PAL",
+   "rodada": 28,
+   "mandante": "Grêmio",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p28-COR-FLU",
+   "rodada": 28,
+   "mandante": "Corinthians",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p28-VIT-CRU",
+   "rodada": 28,
+   "mandante": "Vitória",
+   "visitante": "Cruzeiro",
+   "gm": 1,
+   "gv": 3,
+   "data": null
+  },
+  {
+   "id": "p28-FLA-RBB",
+   "rodada": 28,
+   "mandante": "Flamengo",
+   "visitante": "Bragantino",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p28-CAP-BAH",
+   "rodada": 28,
+   "mandante": "Athletico-PR",
+   "visitante": "Bahia",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p29-RBB-MIR",
+   "rodada": 29,
+   "mandante": "Bragantino",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p29-INT-COR",
+   "rodada": 29,
+   "mandante": "Internacional",
+   "visitante": "Corinthians",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p29-REM-GRE",
+   "rodada": 29,
+   "mandante": "Remo",
+   "visitante": "Grêmio",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p29-VIT-CHA",
+   "rodada": 29,
+   "mandante": "Vitória",
+   "visitante": "Chapecoense",
+   "gm": 4,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p29-BOT-VAS",
+   "rodada": 29,
+   "mandante": "Botafogo",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p29-CRU-SAO",
+   "rodada": 29,
+   "mandante": "Cruzeiro",
+   "visitante": "São Paulo",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p29-SAN-FLA",
+   "rodada": 29,
+   "mandante": "Santos",
+   "visitante": "Flamengo",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p29-CAP-CAM",
+   "rodada": 29,
+   "mandante": "Athletico-PR",
+   "visitante": "Atlético-MG",
+   "gm": 2,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p29-FLU-CFC",
+   "rodada": 29,
+   "mandante": "Fluminense",
+   "visitante": "Coritiba",
+   "gm": 4,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p29-PAL-BAH",
+   "rodada": 29,
+   "mandante": "Palmeiras",
+   "visitante": "Bahia",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p30-VAS-REM",
+   "rodada": 30,
+   "mandante": "Vasco",
+   "visitante": "Remo",
+   "gm": 0,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p30-SAO-VIT",
+   "rodada": 30,
+   "mandante": "São Paulo",
+   "visitante": "Vitória",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p30-CAM-SAN",
+   "rodada": 30,
+   "mandante": "Atlético-MG",
+   "visitante": "Santos",
+   "gm": 2,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p30-FLA-FLU",
+   "rodada": 30,
+   "mandante": "Flamengo",
+   "visitante": "Fluminense",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p30-GRE-INT",
+   "rodada": 30,
+   "mandante": "Grêmio",
+   "visitante": "Internacional",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p30-PAL-COR",
+   "rodada": 30,
+   "mandante": "Palmeiras",
+   "visitante": "Corinthians",
+   "gm": 4,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p30-BAH-MIR",
+   "rodada": 30,
+   "mandante": "Bahia",
+   "visitante": "Mirassol",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p30-CFC-BOT",
+   "rodada": 30,
+   "mandante": "Coritiba",
+   "visitante": "Botafogo",
+   "gm": 1,
+   "gv": 1,
+   "data": null
+  },
+  {
+   "id": "p30-CHA-CAP",
+   "rodada": 30,
+   "mandante": "Chapecoense",
+   "visitante": "Athletico-PR",
+   "gm": 1,
+   "gv": 4,
+   "data": null
+  },
+  {
+   "id": "p30-RBB-CRU",
+   "rodada": 30,
+   "mandante": "Bragantino",
+   "visitante": "Cruzeiro",
+   "gm": 4,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p31-MIR-INT",
+   "rodada": 31,
+   "mandante": "Mirassol",
+   "visitante": "Internacional",
+   "gm": 2,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p31-BOT-CHA",
+   "rodada": 31,
+   "mandante": "Botafogo",
+   "visitante": "Chapecoense",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p31-CAM-CFC",
+   "rodada": 31,
+   "mandante": "Atlético-MG",
+   "visitante": "Coritiba",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  },
+  {
+   "id": "p31-CAP-PAL",
+   "rodada": 31,
+   "mandante": "Athletico-PR",
+   "visitante": "Palmeiras",
+   "gm": 0,
+   "gv": 2,
+   "data": null
+  },
+  {
+   "id": "p31-SAO-VAS",
+   "rodada": 31,
+   "mandante": "São Paulo",
+   "visitante": "Vasco",
+   "gm": 1,
+   "gv": 0,
+   "data": null
+  }
+ ]
+}
