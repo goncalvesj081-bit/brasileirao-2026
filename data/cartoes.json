@@ -16,6 +16,13 @@
    "pendurado"
   ],
   [
+   "Erick Pulgar",
+   "Flamengo",
+   8,
+   1,
+   "pendurado"
+  ],
+  [
    "Matheus Pereira",
    "Cruzeiro",
    11,
@@ -32,13 +39,6 @@
   [
    "Alexander Bernabei",
    "Internacional",
-   7,
-   1,
-   ""
-  ],
-  [
-   "Erick Pulgar",
-   "Flamengo",
    7,
    1,
    ""
@@ -310,6 +310,13 @@
    ""
   ],
   [
+   "Léo Pereira",
+   "Flamengo",
+   7,
+   0,
+   ""
+  ],
+  [
    "Luan Peres",
    "Santos",
    4,
@@ -492,6 +499,13 @@
    ""
   ],
   [
+   "Jean Lucas",
+   "Bahia",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "João Victor",
    "Mirassol",
    3,
@@ -515,13 +529,6 @@
   [
    "Kevin Viveros",
    "Athletico-PR",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Léo Pereira",
-   "Flamengo",
    6,
    0,
    ""
@@ -699,13 +706,6 @@
    "Remo",
    2,
    1,
-   "pendurado"
-  ],
-  [
-   "Jean Lucas",
-   "Bahia",
-   5,
-   0,
    "pendurado"
   ],
   [
@@ -930,6 +930,13 @@
    "Mirassol",
    1,
    1,
+   ""
+  ],
+  [
+   "Cristian Olivera",
+   "Bahia",
+   4,
+   0,
    ""
   ],
   [
@@ -1278,13 +1285,6 @@
   [
    "Carlos Miguel",
    "Palmeiras",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Cristian Olivera",
-   "Bahia",
    3,
    0,
    ""
@@ -1680,6 +1680,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Román Gómez",
+   "Bahia",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Rony",
@@ -2424,13 +2431,6 @@
    "pendurado"
   ],
   [
-   "Román Gómez",
-   "Bahia",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Ronaldo",
    "Internacional",
    2,
@@ -3161,6 +3161,13 @@
   [
    "Luciano Rodríguez",
    "Cruzeiro",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Marco Moreno",
+   "Bahia",
    1,
    0,
    ""

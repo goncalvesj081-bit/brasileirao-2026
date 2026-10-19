@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-18T22:38:39.108Z",
+ "atualizado": "2026-10-19T00:28:34.372Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3055,16 +3055,18 @@
    "data": "2026-10-18T19:00Z",
    "gm": 0,
    "gv": 1
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860396",
    "rodada": 34,
    "mandante": "Vila Nova",
    "visitante": "Novorizontino",
-   "data": "2026-10-18T21:00Z"
-  },
+   "data": "2026-10-18T21:00Z",
+   "gm": 2,
+   "gv": 2
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860401",
    "rodada": 34,

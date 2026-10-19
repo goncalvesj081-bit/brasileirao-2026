@@ -9,25 +9,13 @@
    "data": null
   },
   {
-   "id": "555042",
-   "rodada": 31,
-   "mandante": "Bahia",
-   "visitante": "Flamengo",
-   "data": "2026-10-18T21:30:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555048",
    "rodada": 31,
    "mandante": "Remo",
    "visitante": "Bragantino",
    "data": "2026-10-18T22:30:00Z",
    "aoVivo": {
-    "gm": 0,
+    "gm": 1,
     "gv": 1,
     "minuto": null
    }
