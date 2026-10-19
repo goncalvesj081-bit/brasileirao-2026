@@ -13,7 +13,7 @@ import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
-import { abrirMeusDados, aoMudarBolao, digitacaoBolao, entrarBolao, enviarLoginBolao, sairBolao, salvarPerfilBolao, telaBolao, trocarModoLogin } from "./telas/bolao";
+import { abrirMeusDados, aoMudarBolao, aoMudarConta, carregar as carregarConta, contaTopo, foraDoBolao, digitacaoBolao, entrarBolao, enviarLoginBolao, sairBolao, salvarPerfilBolao, telaBolao, trocarModoLogin } from "./telas/bolao";
 import { mascaraWhatsapp } from "./modelo/perfil";
 import { alternarFavorito } from "./ui/favorito";
 import { guardarFavoritoParaAvisos, ligarAvisos } from "./ui/avisos";
@@ -110,7 +110,9 @@ function desenharTudo() {
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
+  if (rota.secao !== "bolao") foraDoBolao();
   $("main").innerHTML = String(conteudo(rota));
+  $("conta").innerHTML = String(contaTopo());
   const comLado = ((rota.secao === "tabela" && rota.vista === "geral") || (rota.secao === "chances" && rota.vista === "resumo")) && aindaJogam().size > 0;
   document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado || (rota.secao === "serie-b" && (rota.vista === "clube" || rota.vista === "simular")));
 }
@@ -150,7 +152,6 @@ $("main").addEventListener("click", (e) => {
   if (alvo.closest("button[data-bolao-sair]")) return sairBolao();
   const modoLogin = alvo.closest<HTMLButtonElement>("button[data-bolao-modo]");
   if (modoLogin) return trocarModoLogin(modoLogin.dataset.bolaoModo!, document.querySelector<HTMLFormElement>("form[data-bolao-form]"));
-  if (alvo.closest("button[data-bolao-meus-dados]")) return abrirMeusDados(true);
   if (alvo.closest("button[data-bolao-cancelar-perfil]")) return abrirMeusDados(false);
   if (alvo.closest("button[data-sb-limpar]")) {
     limparSerieB();
@@ -217,6 +218,28 @@ const usaSimulacao = (r: Rota) =>
 aoMudar(() => {
   if (rota.secao === "simular") atualizarResultadosSimulador();
   else if (usaSimulacao(rota)) manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
+});
+
+aoMudarConta(() => ($("conta").innerHTML = String(contaTopo())));
+// cantinho do usuário: carrega o Firebase depois que a página já apareceu
+setTimeout(carregarConta, 800);
+$("conta").addEventListener("click", (e) => {
+  const alvo = e.target as HTMLElement;
+  const menu = alvo.closest("details");
+  if (alvo.closest("[data-conta-fechar]")) menu?.removeAttribute("open");
+  else if (alvo.closest("button[data-conta-dados]")) {
+    menu?.removeAttribute("open");
+    abrirMeusDados(true);
+    location.hash = link("bolao", "palpites");
+  } else if (alvo.closest("button[data-bolao-sair]")) {
+    menu?.removeAttribute("open");
+    sairBolao();
+  }
+});
+// clique fora fecha o menu da conta
+document.addEventListener("click", (e) => {
+  const menu = document.querySelector<HTMLDetailsElement>(".conta-menu[open]");
+  if (menu && !menu.contains(e.target as Node)) menu.open = false;
 });
 
 aoMudarBolao(() => {
