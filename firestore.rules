@@ -4,6 +4,8 @@ rules_version = '2';
 // - palpites: cada um mexe só nos seus, e só até o jogo começar; ninguém lê os dos outros
 //   (os palpites aparecem para todos depois que o jogo começa, em "publico", escritos pelo script).
 // - usuarios: nome e foto para o ranking; cada um edita só o seu.
+// - perfis: nome completo, nascimento e WhatsApp, para falar com quem ganhar; só o dono lê e
+//   edita (e quem administra o projeto, pelo console do Firebase). Sem cadastro, não há palpite.
 // - publico: ranking e palpites revelados, escritos só pelo script.
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -27,7 +29,8 @@ service cloud.firestore {
         && id == request.auth.uid + "_" + request.resource.data.jogo
         && request.resource.data.keys().hasOnly(["uid", "jogo", "gm", "gv", "rodada", "em"])
         && placarValido(request.resource.data)
-        && antesDoJogo(request.resource.data.jogo);
+        && antesDoJogo(request.resource.data.jogo)
+        && exists(/databases/$(database)/documents/perfis/$(request.auth.uid));
       allow delete: if request.auth != null && resource.data.uid == request.auth.uid && antesDoJogo(resource.data.jogo);
     }
 
@@ -36,6 +39,17 @@ service cloud.firestore {
       allow write: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(["nome", "foto"])
         && request.resource.data.nome is string && request.resource.data.nome.size() > 0 && request.resource.data.nome.size() <= 30;
+    }
+
+    match /perfis/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(["nome", "nascimento", "whatsapp", "aceite", "em"])
+        && request.resource.data.nome is string && request.resource.data.nome.size() >= 3 && request.resource.data.nome.size() <= 60
+        && request.resource.data.nascimento is string && request.resource.data.nascimento.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.whatsapp is string && request.resource.data.whatsapp.matches('^55[1-9][0-9]{9,10}$')
+        && request.resource.data.aceite == true;
+      allow delete: if false;
     }
 
     match /publico/{doc} {

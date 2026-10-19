@@ -13,7 +13,8 @@ import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
-import { aoMudarBolao, digitacaoBolao, entrarBolao, sairBolao, salvarNomeBolao, telaBolao } from "./telas/bolao";
+import { abrirMeusDados, aoMudarBolao, digitacaoBolao, entrarBolao, enviarLoginBolao, sairBolao, salvarPerfilBolao, telaBolao, trocarModoLogin } from "./telas/bolao";
+import { mascaraWhatsapp } from "./modelo/perfil";
 import { alternarFavorito } from "./ui/favorito";
 import { guardarFavoritoParaAvisos, ligarAvisos } from "./ui/avisos";
 import {
@@ -147,7 +148,10 @@ $("main").addEventListener("click", (e) => {
   }
   if (alvo.closest("button[data-bolao-entrar]")) return void entrarBolao();
   if (alvo.closest("button[data-bolao-sair]")) return sairBolao();
-  if (alvo.closest("button[data-bolao-salvar-nome]")) return void salvarNomeBolao();
+  const modoLogin = alvo.closest<HTMLButtonElement>("button[data-bolao-modo]");
+  if (modoLogin) return trocarModoLogin(modoLogin.dataset.bolaoModo!, document.querySelector<HTMLFormElement>("form[data-bolao-form]"));
+  if (alvo.closest("button[data-bolao-meus-dados]")) return abrirMeusDados(true);
+  if (alvo.closest("button[data-bolao-cancelar-perfil]")) return abrirMeusDados(false);
   if (alvo.closest("button[data-sb-limpar]")) {
     limparSerieB();
     desenhar();
@@ -179,6 +183,12 @@ $("main").addEventListener("click", (e) => {
   const tr = alvo.closest<HTMLElement>("tr[data-href]");
   if (tr) location.hash = tr.dataset.href!;
 });
+$("main").addEventListener("submit", (e) => {
+  const form = (e.target as HTMLElement).closest<HTMLFormElement>("form[data-bolao-form], form[data-bolao-perfil]");
+  if (!form) return;
+  e.preventDefault();
+  void ("bolaoPerfil" in form.dataset ? salvarPerfilBolao(form) : enviarLoginBolao(form));
+});
 $("main").addEventListener("change", (e) => {
   const sel = (e.target as HTMLElement).closest<HTMLSelectElement>("select[data-comparar]");
   if (!sel) return;
@@ -190,6 +200,8 @@ $("main").addEventListener("input", (e) => {
   if (inp) digitacaoSimulador(inp);
   const inpB = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-sb]");
   if (inpB) digitacaoSerieB(inpB);
+  const whats = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-whats]");
+  if (whats) whats.value = mascaraWhatsapp(whats.value);
   const inpP = (e.target as HTMLElement).closest<HTMLInputElement>("input[data-bp]");
   if (inpP) digitacaoBolao(inpP);
 });
@@ -224,8 +236,8 @@ iniciarAoVivo((ps) => {
   if (resultadoNovo) simularReal();
   // simulador: jogo em andamento entra com o placar real; encerrado sai dos placares simulados
   if (sincronizarComJogosReais()) agendarUsuario(0);
-  // não redesenha enquanto alguém digita (perderia o que está sendo escrito)
-  const digitando = document.activeElement instanceof HTMLInputElement;
+  // não redesenha enquanto alguém digita ou preenche o login/cadastro (perderia o que está sendo escrito)
+  const digitando = document.activeElement instanceof HTMLInputElement || !!document.querySelector("form[data-bolao-form], form[data-bolao-perfil]");
   if ((mudou || meta.aoVivo) && !digitando) desenhar();
 });
 
