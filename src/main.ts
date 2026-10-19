@@ -72,7 +72,7 @@ function conteudo(r: Rota): Html {
     case "comparar":
       return telaComparar(r.vista, r.extra);
     case "bolao":
-      return telaBolao(r.vista, r.numero);
+      return telaBolao(r.vista, r.numero, r.extra);
   }
   return html``;
 }

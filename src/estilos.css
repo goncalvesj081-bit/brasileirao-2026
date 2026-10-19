@@ -505,6 +505,19 @@ table.cmp thead a { display: grid; justify-items: center; gap: 6px; font-weight:
 .mt-links button { padding: 4px 10px; font-size: 13px; }
 
 /* bolão */
+/* ranking do bolão */
+nav.seg.seg-sub { gap: 18px; box-shadow: none; }
+nav.seg.seg-sub a { font-size: 13.5px; padding: 4px 0 6px; }
+div.seg a.seg-botao { flex: 0 0 auto; white-space: nowrap; padding: 4px 10px; border-radius: 5px; font-size: 12.5px; font-weight: 550; color: var(--muted); }
+div.seg a.seg-botao:hover { color: var(--ink); }
+div.seg a.seg-botao[aria-pressed="true"] { background: var(--line-strong); color: var(--ink); }
+.ranking-topo { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 20px; }
+.ranking-topo .note b { color: var(--title); font-weight: 650; }
+.ranking-topo .round-nav { width: 100%; max-width: 320px; }
+.ranking-eu { margin: 0; font-size: 14px; padding: 8px 12px; border-radius: 6px; background: var(--accent-soft); }
+.ranking-eu b { color: var(--accent); }
+.regulamento ul { margin: 0 0 6px; padding-left: 20px; color: #c4c9cf; line-height: 1.6; }
+
 /* tela de entrada */
 .login { display: grid; gap: 14px; justify-items: center; padding: clamp(8px, 4vh, 40px) 0 8px; }
 .login > .note { text-align: center; }
