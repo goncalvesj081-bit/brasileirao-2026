@@ -2763,6 +2763,15 @@
    "data": "2026-10-18T21:30:00Z",
    "gm": 0,
    "gv": 3
+  },
+  {
+   "id": "555048",
+   "rodada": 31,
+   "mandante": "Remo",
+   "visitante": "Bragantino",
+   "data": "2026-10-18T22:30:00Z",
+   "gm": 1,
+   "gv": 1
   }
  ]
 }

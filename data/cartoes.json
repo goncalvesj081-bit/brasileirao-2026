@@ -1,5 +1,5 @@
 {
- "atualizado": "18/10/2026",
+ "atualizado": "19/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -1213,6 +1213,13 @@
    ""
   ],
   [
+   "Zé Ivaldo",
+   "Remo",
+   4,
+   0,
+   ""
+  ],
+  [
    "Zé Vitor",
    "Vitória",
    4,
@@ -1386,6 +1393,13 @@
    0,
    1,
    ""
+  ],
+  [
+   "Gabriel Taliari",
+   "Remo",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Guga",
@@ -1567,7 +1581,7 @@
    "Remo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Marcinho",
@@ -1659,6 +1673,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Ramires",
+   "Bragantino",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Renato Marques",
@@ -1792,13 +1813,6 @@
    3,
    0,
    ""
-  ],
-  [
-   "Zé Ivaldo",
-   "Remo",
-   3,
-   0,
-   "suspenso"
   ],
   [
    "Adonis Frias",
@@ -2006,13 +2020,6 @@
   [
    "Gabriel Rojas",
    "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Gabriel Taliari",
-   "Remo",
    2,
    0,
    "pendurado"
@@ -2405,13 +2412,6 @@
   [
    "Rafael Cavalheira",
    "Chapecoense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Ramires",
-   "Bragantino",
    2,
    0,
    "pendurado"
