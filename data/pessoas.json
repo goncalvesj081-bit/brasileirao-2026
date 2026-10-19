@@ -1461,7 +1461,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "18/10/2026",
+  "atualizado": "19/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1475,18 +1475,23 @@
     10
    ],
    [
+    "Samuel Lino",
+    "Flamengo",
+    8
+   ],
+   [
     "Jorge Carrascal",
     "Flamengo",
     8
    ],
    [
-    "Samuel Lino",
-    "Flamengo",
-    7
-   ],
-   [
     "Pedro",
     "Flamengo",
+    6
+   ],
+   [
+    "Matheus Pereira",
+    "Cruzeiro",
     6
    ],
    [
@@ -1507,11 +1512,6 @@
    [
     "José Manuel López",
     "Palmeiras",
-    5
-   ],
-   [
-    "Matheus Pereira",
-    "Cruzeiro",
     5
    ],
    [
@@ -1575,6 +1575,11 @@
     4
    ],
    [
+    "Gerson",
+    "Cruzeiro",
+    4
+   ],
+   [
     "Matheus",
     "Vitória",
     4
@@ -1585,13 +1590,18 @@
     4
    ],
    [
+    "Rodrigo Nestor",
+    "Bahia",
+    4
+   ],
+   [
     "Alerrando",
     "Internacional",
     4
    ],
    [
-    "Rodrigo Nestor",
-    "Bahia",
+    "Guillermo Varela",
+    "Flamengo",
     4
    ],
    [
@@ -1610,6 +1620,11 @@
     4
    ],
    [
+    "Éverton Ribeiro",
+    "Bahia",
+    4
+   ],
+   [
     "Cuiabano",
     "Vasco",
     4
@@ -1617,11 +1632,6 @@
    [
     "Fagner",
     "Cruzeiro",
-    4
-   ],
-   [
-    "Éverton Ribeiro",
-    "Bahia",
     4
    ],
    [
@@ -1650,6 +1660,16 @@
     3
    ],
    [
+    "Jean Lucas",
+    "Bahia",
+    3
+   ],
+   [
+    "Gabriel Bontempo",
+    "Santos",
+    3
+   ],
+   [
     "Isidro Pitta",
     "Bragantino",
     3
@@ -1660,28 +1680,8 @@
     3
    ],
    [
-    "Gerson",
-    "Cruzeiro",
-    3
-   ],
-   [
-    "Jean Lucas",
-    "Bahia",
-    3
-   ],
-   [
-    "Jhon Arias",
-    "Palmeiras",
-    3
-   ],
-   [
     "Francis Amuzu",
     "Grêmio",
-    3
-   ],
-   [
-    "Bernard",
-    "Atlético-MG",
     3
    ],
    [
@@ -1690,13 +1690,18 @@
     3
    ],
    [
-    "Jorginho",
-    "Flamengo",
+    "Jhon Arias",
+    "Palmeiras",
     3
    ],
    [
-    "Yannick Bolasie",
-    "Chapecoense",
+    "Bernard",
+    "Atlético-MG",
+    3
+   ],
+   [
+    "Jorginho",
+    "Flamengo",
     3
    ],
    [
@@ -1705,13 +1710,8 @@
     3
    ],
    [
-    "Martinelli",
-    "Fluminense",
-    3
-   ],
-   [
-    "Guillermo Varela",
-    "Flamengo",
+    "Gabriel Barbosa",
+    "Santos",
     3
    ]
   ]
