@@ -19,6 +19,21 @@ export function condicional(E: EfeitoJogo, clube: number, obj: ObjetivoJogo): [n
   return [0, 1, 2].map((o) => (E.n[o] ? E[obj][o][clube] / E.n[o] : 0)) as [number, number, number];
 }
 
+/**
+ * A diferença entre o melhor e o pior resultado vai além do acaso da simulação? Cada resultado só tem
+ * os campeonatos sorteados em que ele saiu (poucos milhares), então diferenças pequenas aparecem até
+ * em jogos que não mexem no clube. Exige 3 desvios-padrão da diferença entre as duas proporções.
+ */
+export function significativo(E: EfeitoJogo, se: readonly number[]): boolean {
+  const a = se.indexOf(Math.max(...se)),
+    b = se.indexOf(Math.min(...se));
+  const na = E.n[a],
+    nb = E.n[b];
+  if (!na || !nb) return false;
+  const p = (se[a] * na + se[b] * nb) / (na + nb);
+  return se[a] - se[b] > 3 * Math.sqrt(p * (1 - p) * (1 / na + 1 / nb));
+}
+
 /** Todos os efeitos relevantes de um jogo (peso mínimo em pontos percentuais), do maior para o menor. */
 export function efeitosDoJogo(E: EfeitoJogo, nClubes: number, minimo = 0.02): Efeito[] {
   const lista: Efeito[] = [];
@@ -26,7 +41,7 @@ export function efeitosDoJogo(E: EfeitoJogo, nClubes: number, minimo = 0.02): Ef
     for (const obj of ["c", "l", "r"] as const) {
       const se = condicional(E, i, obj);
       const peso = Math.max(...se) - Math.min(...se);
-      if (peso >= minimo) lista.push({ clube: i, objetivo: obj, se, peso });
+      if (peso >= minimo && significativo(E, se)) lista.push({ clube: i, objetivo: obj, se, peso });
     }
   }
   return lista.sort((a, b) => b.peso - a.peso);
@@ -38,7 +53,7 @@ export function maiorEfeito(E: EfeitoJogo, nClubes: number, obj: ObjetivoJogo): 
   for (let i = 0; i < nClubes; i++) {
     const se = condicional(E, i, obj);
     const peso = Math.max(...se) - Math.min(...se);
-    if (!melhor || peso > melhor.peso) melhor = { clube: i, objetivo: obj, se, peso };
+    if ((!melhor || peso > melhor.peso) && significativo(E, se)) melhor = { clube: i, objetivo: obj, se, peso };
   }
   return melhor;
 }

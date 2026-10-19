@@ -3,7 +3,7 @@
 
 import { adiado, porData, posicao, proximaRodada, restantes, rodadasAbertas } from "../dados";
 import { sims } from "../estado";
-import { condicional, type ObjetivoJogo } from "../modelo/impacto";
+import { condicional, significativo, type ObjetivoJogo } from "../modelo/impacto";
 import { chancesDaLinha } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { calculando, escudo, linkClube, vazio } from "../ui/componentes";
@@ -42,10 +42,11 @@ export function torcidaDoClube(clube: string, obj: ObjetivoJogo, rodadas = 2): T
       let se = condicional(E, i, obj);
       if (obj === "r") se = se.map((x) => 1 - x) as [number, number, number];
       const melhor = se.indexOf(Math.max(...se)) as 0 | 1 | 2;
-      return { jogo: g, se, melhor, peso: Math.max(...se) - Math.min(...se), proprio: g.mandante === clube || g.visitante === clube };
+      const peso = Math.max(...se) - Math.min(...se);
+      return { jogo: g, se, melhor, peso, proprio: g.mandante === clube || g.visitante === clube, real: peso >= MINIMO && significativo(E, se) };
     })
-    // abaixo de 1,5 ponto a diferença se confunde com o acaso da simulação (cada resultado tem poucos milhares de casos)
-    .filter((x): x is Torcida => !!x && (x.proprio || x.peso >= MINIMO))
+    // só os jogos cuja diferença vai além do acaso da simulação (e os do próprio clube)
+    .filter((x): x is Torcida & { real: boolean } => !!x && (x.proprio || x.real))
     .sort((a, b) => porData(a.jogo, b.jogo));
 }
 
@@ -76,7 +77,7 @@ export function telaTorcida(clube: string): Html {
     const base = chanceNoObjetivo(clube, obj);
     const atual = obj === "r" ? 1 - base : base;
     return html`<section class="tsec"><h3>Para ${NOME[obj]}</h3>
-      <p class="note">Hoje: ${pct1(atual)}${obj === "r" ? " de ficar na Série A" : ""}. Jogos das próximas rodadas${proximaRodada ? ` (a partir da ${proximaRodada}ª)` : ""} que mudam essa chance em pelo menos 1,5 ponto (e os do próprio clube), por data:</p>
+      <p class="note">Hoje: ${pct1(atual)}${obj === "r" ? " de ficar na Série A" : ""}. Jogos das próximas rodadas${proximaRodada ? ` (a partir da ${proximaRodada}ª)` : ""} que mudam essa chance de verdade, além do acaso da simulação (e os do próprio clube), por data:</p>
       ${lista.length
         ? html`<ul class="torcida">${lista.map((t) => {
             const g = t.jogo;
@@ -88,7 +89,7 @@ export function telaTorcida(clube: string): Html {
                 <span class="dim">· pior: ${res(g, pior as 0 | 1 | 2)}, ${pct1(t.se[pior])} · diferença de ${pontos(t.peso)}</span></div>
             </li>`;
           })}</ul>`
-        : vazio("Nenhum jogo das próximas rodadas muda essa chance em 1,5 ponto ou mais: o resultado dos outros quase não importa.")}
+        : vazio("Nenhum jogo das próximas rodadas muda essa chance além do acaso da simulação: o resultado dos outros quase não importa.")}
     </section>`;
   })}
   <p class="note">Chance do ${clube} em cada resultado, nos campeonatos simulados em que aquele jogo terminou assim. O resto do campeonato continua sorteado.</p></div>`;
