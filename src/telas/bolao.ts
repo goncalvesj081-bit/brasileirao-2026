@@ -433,15 +433,17 @@ export async function salvarPerfilBolao(form: HTMLFormElement) {
 /** Saiu da seção do bolão: o Firebase continua carregado, mas não redesenha a tela à toa. */
 export const foraDoBolao = () => (vistaAtual = "");
 
-/** Cantinho do usuário no topo de todas as telas. */
-export function contaTopo(): Html {
+/** Conta do usuário: na barra lateral (computador, `lado`) ou ao lado do título (celular). */
+export function contaTopo(lado = false): Html {
   if (!bolaoConfigurado() || !authPronto) return html``;
-  if (!usuario) return html`<a class="conta-entrar" href="${link("bolao", "palpites")}">${ICONE_PESSOA}Entrar</a>`;
+  if (!usuario) return html`<a class="conta-entrar" href="${link("bolao", "palpites")}">${ICONE_PESSOA}${lado ? "Entrar no bolão" : "Entrar"}</a>`;
   const primeiro = nome.split(/\s+/)[0] || "Você";
   return html`<details class="conta-menu">
-    <summary aria-label="Sua conta">${avatar(36)}<span class="conta-nome">${primeiro}</span></summary>
+    <summary aria-label="Sua conta">${avatar(36)}${lado
+      ? html`<span class="conta-quem-lado"><b>${nome}</b><small>${usuario.email ?? ""}</small></span><i aria-hidden="true">▾</i>`
+      : html`<span class="conta-nome">${primeiro}</span>`}</summary>
     <div class="conta-pop">
-      <div class="conta-quem"><b>${nome}</b><small>${usuario.email ?? ""}</small></div>
+      ${lado ? "" : html`<div class="conta-quem"><b>${nome}</b><small>${usuario.email ?? ""}</small></div>`}
       <a href="${link("bolao", "palpites")}" data-conta-fechar>Meus palpites</a>
       <a href="${link("bolao", "ranking")}" data-conta-fechar>Ranking</a>
       <button type="button" data-conta-dados>Meus dados</button>

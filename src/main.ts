@@ -112,7 +112,7 @@ function desenharTudo() {
   $("abas").innerHTML = String(abasInferiores(rota));
   if (rota.secao !== "bolao") foraDoBolao();
   $("main").innerHTML = String(conteudo(rota));
-  $("conta").innerHTML = String(contaTopo());
+  desenharConta();
   const comLado = ((rota.secao === "tabela" && rota.vista === "geral") || (rota.secao === "chances" && rota.vista === "resumo")) && aindaJogam().size > 0;
   document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado || (rota.secao === "serie-b" && (rota.vista === "clube" || rota.vista === "simular")));
 }
@@ -220,10 +220,14 @@ aoMudar(() => {
   else if (usaSimulacao(rota)) manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 
-aoMudarConta(() => ($("conta").innerHTML = String(contaTopo())));
+function desenharConta() {
+  $("conta").innerHTML = String(contaTopo());
+  $("sideConta").innerHTML = String(contaTopo(true));
+}
+aoMudarConta(desenharConta);
 // cantinho do usuário: carrega o Firebase depois que a página já apareceu
 setTimeout(carregarConta, 800);
-$("conta").addEventListener("click", (e) => {
+function cliqueConta(e: MouseEvent) {
   const alvo = e.target as HTMLElement;
   const menu = alvo.closest("details");
   if (alvo.closest("[data-conta-fechar]")) menu?.removeAttribute("open");
@@ -235,7 +239,9 @@ $("conta").addEventListener("click", (e) => {
     menu?.removeAttribute("open");
     sairBolao();
   }
-});
+}
+$("conta").addEventListener("click", cliqueConta);
+$("sideConta").addEventListener("click", cliqueConta);
 // clique fora fecha o menu da conta
 document.addEventListener("click", (e) => {
   const menu = document.querySelector<HTMLDetailsElement>(".conta-menu[open]");
