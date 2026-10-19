@@ -82,6 +82,40 @@ h3 { font-weight: 700; font-size: 15px; }
 
 .content { min-width: 0; max-width: 980px; padding: 28px clamp(16px, 4vw, 44px) 64px; display: grid; gap: 16px; align-content: start; }
 .page-head { display: grid; gap: 4px; }
+.titulo-linha { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; }
+.titulo-linha h1 { min-width: 0; }
+
+/* cantinho do usuário */
+.conta { flex: 0 0 auto; position: relative; }
+.conta-entrar {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--line-strong); font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.conta-entrar:hover { border-color: var(--muted); }
+.conta-menu summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px;
+  padding: 3px 12px 3px 3px; border-radius: 999px; border: 1px solid var(--line-strong); font-size: 14px; font-weight: 600;
+}
+.conta-menu summary::-webkit-details-marker { display: none; }
+.conta-menu summary:hover, .conta-menu[open] summary { border-color: var(--muted); }
+.conta-menu summary .avatar { width: 30px; height: 30px; flex-basis: 30px; font-size: 12px; }
+.avatar { border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+span.avatar { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.conta-pop {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; min-width: 220px;
+  display: grid; padding: 6px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--raise);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.conta-quem { display: grid; padding: 8px 10px 10px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.conta-quem b { font-weight: 650; }
+.conta-quem small { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 240px; }
+.conta-pop a, .conta-pop button {
+  display: block; width: 100%; text-align: left; padding: 8px 10px; border-radius: 6px;
+  background: none; border: 0; font: inherit; font-size: 14px; color: var(--ink); cursor: pointer;
+}
+.conta-pop a:hover, .conta-pop button:hover { background: var(--hover); }
+.conta-pop button[data-bolao-sair] { color: var(--muted); }
+@media (max-width: 599px) { .conta-nome { display: none; } .conta-menu summary { padding: 2px; } .conta-entrar { padding: 6px 10px; } }
 .fonte { font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 14px; }
 .live { color: var(--rel); font-weight: 650; display: inline-flex; align-items: center; gap: 6px; }
 .fonte .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
@@ -504,12 +538,6 @@ button.link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .login-form label.login-aceite { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--muted); font-size: 12.5px; line-height: 1.45; cursor: pointer; }
 .login-form .login-aceite input { width: 18px; height: 18px; min-height: 0; flex: 0 0 18px; margin: 1px 0 0; padding: 0; accent-color: var(--accent); }
 
-.bolao-eu { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.bolao-eu img, .bolao-eu .avatar { border-radius: 50%; width: 36px; height: 36px; flex: 0 0 36px; }
-.bolao-eu .avatar { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px; }
-.bolao-nome { display: grid; margin-right: auto; min-width: 0; line-height: 1.25; }
-.bolao-nome b { font-weight: 650; }
-.bolao-nome small { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bolao-jogos { display: grid; border-top: 1px solid var(--line-strong); }
 .bp-jogo { display: grid; gap: 6px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .bp-linha { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); align-items: center; gap: 8px; }

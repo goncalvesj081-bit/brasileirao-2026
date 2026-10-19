@@ -51,7 +51,25 @@ export const aoMudarBolao = (f: () => void) =>
     f();
   });
 
-function carregar() {
+let avisarConta: () => void = () => {};
+/** Chamado quando muda quem está conectado ou o nome dele (para o cantinho do usuário no topo). */
+export const aoMudarConta = (f: () => void) => (avisarConta = f);
+
+let pedindoRanking = false;
+function pedirRanking() {
+  if (!cli || rank || pedindoRanking) return;
+  pedindoRanking = true;
+  void cli
+    .ranking()
+    .then((r) => {
+      rank = r;
+      if (vistaAtual === "ranking") redesenhar();
+    })
+    .finally(() => (pedindoRanking = false));
+}
+
+/** Carrega o Firebase (também fora do bolão, para o topo saber se há alguém conectado). */
+export function carregar() {
   if (cli || carregando || !bolaoConfigurado()) return;
   carregando = true;
   import("../bolao/cliente")
@@ -84,16 +102,14 @@ function carregar() {
             erro = `Não deu para carregar seus palpites (${(e as Error).message}).`;
           }
         }
-        redesenhar();
+        avisarConta();
+        if (vistaAtual) redesenhar();
       });
-      return c.ranking().then((r) => {
-        rank = r;
-        if (vistaAtual === "ranking") redesenhar();
-      });
+      if (vistaAtual === "ranking") pedirRanking();
     })
     .catch((e) => {
       erro = `Não deu para abrir o bolão (${(e as Error).message}).`;
-      redesenhar();
+      if (vistaAtual) redesenhar();
     });
 }
 
@@ -202,14 +218,6 @@ const iniciais = (n: string) =>
     .map((p) => p[0]!.toUpperCase())
     .join("") || "?";
 
-function cabecalhoUsuario(): Html {
-  if (!usuario) return html``;
-  return html`<div class="bolao-eu">
-    ${usuario.photoURL ? html`<img src="${usuario.photoURL}" alt="" width="36" height="36" referrerpolicy="no-referrer">` : html`<span class="avatar" aria-hidden="true">${iniciais(nome)}</span>`}
-    <span class="bolao-nome"><b>${nome}</b><small>${usuario.email ?? ""}</small></span>
-    <button type="button" class="discreto" data-bolao-meus-dados>Meus dados</button>
-    <button type="button" class="discreto" data-bolao-sair>Sair</button></div>`;
-}
 
 function telaPalpites(numero: number | null): Html {
   const R = rodadasComJogo.length ? [...new Set([...resultados.map((g) => g.rodada), ...rodadasComJogo])].sort((a, b) => a - b) : [];
@@ -223,8 +231,7 @@ function telaPalpites(numero: number | null): Html {
   const rev = revelados.get(r) ?? {};
   const totalRodada = jogos.reduce((s, g) => s + ("gm" in g && meus[g.id] ? pontosDoPalpite({ gm: meus[g.id][0], gv: meus[g.id][1] }, g) : 0), 0);
 
-  return html`${cabecalhoUsuario()}
-    ${navRodada(R, r, (x) => link("bolao", "palpites", x))}
+  return html`    ${navRodada(R, r, (x) => link("bolao", "palpites", x))}
     ${usuario && jogos.some((g) => "gm" in g) ? html`<p class="note">Seus pontos nesta rodada: <b>${totalRodada}</b>.</p>` : ""}
     <div class="bolao-jogos">${jogos.map((g) => {
       const meu = meus[g.id];
@@ -252,6 +259,7 @@ function telaPalpites(numero: number | null): Html {
 }
 
 function telaRanking(): Html {
+  pedirRanking();
   if (!rank) return html`<p class="empty carregando">Carregando o ranking</p>`;
   if (!rank.linhas.length) return vazio("O ranking aparece depois do primeiro jogo com palpites.");
   const ultima = Math.max(0, ...rank.linhas.flatMap((l) => Object.keys(l.rodadas).map(Number)));
@@ -411,6 +419,7 @@ export async function salvarPerfilBolao(form: HTMLFormElement) {
     if (apelido !== nome) await cli.mudarNome(usuario, apelido);
     perfil = p;
     nome = apelido;
+    avisarConta();
     editandoPerfil = false;
     form.remove();
     rascunho = { ...RASCUNHO_VAZIO };
@@ -419,6 +428,36 @@ export async function salvarPerfilBolao(form: HTMLFormElement) {
   }
   enviando = false;
   redesenhar();
+}
+
+/** Saiu da seção do bolão: o Firebase continua carregado, mas não redesenha a tela à toa. */
+export const foraDoBolao = () => (vistaAtual = "");
+
+/** Cantinho do usuário no topo de todas as telas. */
+export function contaTopo(): Html {
+  if (!bolaoConfigurado() || !authPronto) return html``;
+  if (!usuario) return html`<a class="conta-entrar" href="${link("bolao", "palpites")}">${ICONE_PESSOA}Entrar</a>`;
+  const primeiro = nome.split(/\s+/)[0] || "Você";
+  return html`<details class="conta-menu">
+    <summary aria-label="Sua conta">${avatar(36)}<span class="conta-nome">${primeiro}</span></summary>
+    <div class="conta-pop">
+      <div class="conta-quem"><b>${nome}</b><small>${usuario.email ?? ""}</small></div>
+      <a href="${link("bolao", "palpites")}" data-conta-fechar>Meus palpites</a>
+      <a href="${link("bolao", "ranking")}" data-conta-fechar>Ranking</a>
+      <button type="button" data-conta-dados>Meus dados</button>
+      <button type="button" data-bolao-sair>Sair</button>
+    </div>
+  </details>`;
+}
+
+const ICONE_PESSOA = cru(
+  `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.5-4 4-5.5 7-5.5s5.5 1.5 7 5.5"/></svg>`,
+);
+
+function avatar(tam: number): Html {
+  return usuario?.photoURL
+    ? html`<img class="avatar" src="${usuario.photoURL}" alt="" width="${tam}" height="${tam}" referrerpolicy="no-referrer">`
+    : html`<span class="avatar" aria-hidden="true">${iniciais(nome)}</span>`;
 }
 
 export function abrirMeusDados(abrir: boolean) {
