@@ -3,7 +3,9 @@
 
 import { bolaoConfigurado } from "../../config/firebase";
 import { porData, proximaRodada, restantes, resultados, rodadasComJogo } from "../dados";
-import { PONTOS, pontosDoPalpite, type LinhaRanking } from "../modelo/bolao";
+import { bolao as CONFIG } from "../../config/bolao";
+import { temporada } from "../../config/temporada";
+import { PONTOS, pontosDoPalpite, rankingDoPeriodo, type LinhaRanking } from "../modelo/bolao";
 import { normalizarWhatsapp, problemaNoPerfil, whatsappParaTela, type Perfil } from "../modelo/perfil";
 import type { Jogo, Resultado } from "../modelo/tipos";
 import { link, SECOES } from "../router";
@@ -161,7 +163,7 @@ function telaLogin(): Html {
         ? html`Ainda não tem conta? <button type="button" class="link" data-bolao-modo="criar">Criar conta</button>`
         : html`Já tem conta? <button type="button" class="link" data-bolao-modo="entrar">Entrar</button>`}</p>
     </div>
-    <p class="note">Sem entrar, dá para ver o <a href="${link("bolao", "ranking")}">ranking</a> e as <a href="${link("bolao", "regras")}">regras</a>.</p>
+    <p class="note">Sem entrar, dá para ver o <a href="${link("bolao", "ranking")}">ranking</a> e o <a href="${link("bolao", "regras")}">regulamento</a>.</p>
   </div>`;
 }
 
@@ -258,34 +260,125 @@ function telaPalpites(numero: number | null): Html {
     <p class="note">O palpite salva sozinho quando os dois placares estão preenchidos, e fecha na hora do jogo. Os palpites de todos aparecem depois que o jogo começa (com até uns 10 minutos de atraso).</p>`;
 }
 
-function telaRanking(): Html {
-  pedirRanking();
-  if (!rank) return html`<p class="empty carregando">Carregando o ranking</p>`;
-  if (!rank.linhas.length) return vazio("O ranking aparece depois do primeiro jogo com palpites.");
-  const ultima = Math.max(0, ...rank.linhas.flatMap((l) => Object.keys(l.rodadas).map(Number)));
-  return html`<div class="box"><table class="tab">
-      <thead><tr><th>#</th><th class="l">Participante</th><th>Pontos</th><th>Exatos</th><th class="w">Palpites</th>${ultima ? html`<th>${ultima}ª</th>` : ""}</tr></thead>
-      <tbody>${rank.linhas.map(
-        (l, k) => html`<tr class="${l.uid === usuario?.uid ? "eu" : ""}"><td class="pos">${k + 1}</td><td class="l"><span class="quem-tec">${l.foto ? html`<img class="foto-tec" src="${l.foto}" alt="" width="24" height="24" referrerpolicy="no-referrer">` : ""}${l.nome}</span></td><td class="big">${l.pontos}</td><td>${l.exatos}</td><td class="w dim">${l.palpites}</td>${ultima ? html`<td class="dim">${l.rodadas[ultima] ?? 0}</td>` : ""}</tr>`,
-      )}</tbody>
-    </table></div>
-    <p class="note">Desempate: mais placares exatos, depois menos palpites. ${rank.atualizado ? `Atualizado ${dataHora(rank.atualizado.toISOString())}.` : ""}</p>`;
+type Periodo = { tipo: "temporada" } | { tipo: "turno"; n: 1 | 2 } | { tipo: "rodada"; n: number };
+
+/** "" = temporada; "turno1"/"turno2"; número = rodada. */
+function lerPeriodo(extra: string, ultimaRodada: number): Periodo {
+  if (extra === "turno1" || extra === "turno2") return { tipo: "turno", n: extra === "turno1" ? 1 : 2 };
+  if (extra === "turno") return { tipo: "turno", n: ultimaRodada > temporada.turnoAte ? 2 : 1 };
+  if (extra === "rodada") return { tipo: "rodada", n: ultimaRodada };
+  if (/^\d+$/.test(extra)) return { tipo: "rodada", n: +extra };
+  return { tipo: "temporada" };
 }
 
+const noPeriodo = (p: Periodo) => (r: number) =>
+  p.tipo === "temporada" ? true : p.tipo === "rodada" ? r === p.n : p.n === 1 ? r <= temporada.turnoAte : r > temporada.turnoAte;
+
+const premioDe = (p: Periodo) => CONFIG.premios[p.tipo] || "a definir";
+
+function telaRanking(extra: string): Html {
+  pedirRanking();
+  if (!rank) return html`<p class="empty carregando">Carregando o ranking</p>`;
+  // última rodada com jogo encerrado e palpite
+  const comPontos = rank.linhas.flatMap((l) => Object.keys(l.porRodada ?? l.rodadas ?? {}).map(Number));
+  const ultima = comPontos.length ? Math.max(...comPontos) : (proximaRodada ?? 1);
+  const p = lerPeriodo(extra, ultima);
+  const atual = p.tipo === "temporada" ? "" : p.tipo === "turno" ? "turno" : "rodada";
+  const abas = html`<nav class="seg seg-sub" aria-label="Período do ranking">${(
+    [
+      ["", "Temporada"],
+      ["turno", "Turno"],
+      ["rodada", "Rodada"],
+    ] as const
+  ).map(([k, t]) => html`<a href="${k ? link("bolao", "ranking", k) : link("bolao", "ranking")}" aria-current="${k === atual ? "page" : "false"}">${t}</a>`)}</nav>`;
+
+  let escolha: Html | string = "";
+  if (p.tipo === "turno")
+    escolha = html`<div class="seg" role="group" aria-label="Turno">${([1, 2] as const).map(
+      (n) => html`<a class="seg-botao" href="${link("bolao", "ranking", `turno${n}`)}" aria-pressed="${p.n === n}">${n}º turno</a>`,
+    )}</div>`;
+  if (p.tipo === "rodada") {
+    const R = Array.from({ length: temporada.rodadas }, (_, k) => k + 1);
+    escolha = navRodada(R, p.n, (x) => link("bolao", "ranking", String(x)));
+  }
+
+  const titulo =
+    p.tipo === "temporada" ? `Temporada ${temporada.ano}` : p.tipo === "turno" ? `${p.n}º turno (rodadas ${p.n === 1 ? `1 a ${temporada.turnoAte}` : `${temporada.turnoAte + 1} a ${temporada.rodadas}`})` : "Ranking da rodada";
+  const linhas = rankingDoPeriodo(rank.linhas, noPeriodo(p));
+  const minha = usuario ? linhas.findIndex((l) => l.uid === usuario!.uid) : -1;
+
+  const tabela = linhas.length
+    ? html`<div class="box"><table class="tab">
+      <thead><tr><th>#</th><th class="l">Participante</th><th>Pontos</th><th>Exatos</th><th class="w">Saldos</th><th class="w">Palpites</th></tr></thead>
+      <tbody>${linhas.map(
+        (l, k) => html`<tr class="${l.uid === usuario?.uid ? "eu" : ""}"><td class="pos">${k + 1}</td><td class="l"><span class="quem-tec">${l.foto ? html`<img class="foto-tec" src="${l.foto}" alt="" width="24" height="24" referrerpolicy="no-referrer">` : ""}${l.nome}</span></td><td class="big">${l.pontos}</td><td>${l.exatos}</td><td class="w dim">${l.saldos}</td><td class="w dim">${l.palpites}</td></tr>`,
+      )}</tbody>
+    </table></div>`
+    : vazio(p.tipo === "rodada" ? "Ainda não há pontos nesta rodada: o ranking aparece quando o primeiro jogo dela terminar." : "Ainda não há pontos neste período.");
+
+  return html`${abas}
+    <div class="ranking-topo">
+      <div><h2>${titulo}</h2><p class="note">Prêmio: <b>${premioDe(p)}</b></p></div>
+      ${escolha}
+    </div>
+    ${minha >= 0 ? html`<p class="ranking-eu">Você está em <b>${minha + 1}º</b> de ${linhas.length}, com <b>${linhas[minha].pontos}</b> pontos.</p>` : ""}
+    ${tabela}
+    <p class="note">Desempate: mais placares exatos, depois mais acertos de saldo, depois quem se cadastrou antes. Jogo adiado conta na rodada original. ${rank.atualizado ? `Atualizado ${dataHora(rank.atualizado.toISOString())}.` : ""}</p>`;
+}
+
+/** Regulamento: o texto usa os prêmios e dados de config/bolao.ts. */
 function telaRegras(): Html {
-  return html`<div class="texto">
-    <h2>Como funciona</h2>
-    <p>Entre com o Google ou com e-mail e senha, complete o cadastro e dê seu palpite de placar para os jogos da Série A. Dá para mudar quantas vezes quiser até a hora marcada do jogo; depois disso o palpite fecha.</p>
-    <h2>Pontos</h2>
-    <p><b>${PONTOS.exato} pontos</b>: placar exato. <b>${PONTOS.saldo} pontos</b>: acertou o vencedor e o saldo de gols (palpite 3 x 1, deu 2 x 0). <b>${PONTOS.resultado} pontos</b>: acertou só o vencedor, ou acertou que seria empate. <b>0</b>: errou o resultado.</p>
-    <h2>Ranking</h2>
-    <p>Um ranking só, com todo mundo. Soma os pontos dos jogos encerrados; desempata quem tem mais placares exatos e, depois, quem fez menos palpites. Os palpites de cada jogo ficam visíveis para todos depois que ele começa.</p>
-    <h2>Jogo adiado</h2>
-    <p>Sem data, o palpite fica fechado. Quando o jogo ganha data nova, ele abre de novo até a nova hora; o palpite que você já tinha continua valendo.</p>
+  const org = CONFIG.organizador || "a organização do site";
+  const t = temporada.turnoAte;
+  const premio = (txt: string) => txt || "a definir e anunciado no site antes do início do período";
+  return html`<div class="texto regulamento">
+    <p class="note">Regulamento do Bolão Brasileirão ${temporada.ano}. Ao participar, você concorda com estas regras.</p>
+
+    <h2>1. Participação</h2>
+    <p>O bolão é <b>gratuito</b>. Não há taxa de inscrição, compra ou pagamento de qualquer tipo para participar, palpitar ou concorrer aos prêmios, e nenhum pagamento dá vantagem na pontuação.</p>
+    <p>Para participar é preciso criar uma conta (com Google ou e-mail e senha) e preencher o cadastro com nome completo, data de nascimento e WhatsApp. É permitida <b>uma conta por pessoa</b>.</p>
+
+    <h2>2. Palpites</h2>
+    <p>Você dá o placar de cada jogo da Série A. Dá para mudar quantas vezes quiser até a <b>hora marcada do início do jogo</b>; depois disso o palpite fecha. Os palpites de todos ficam visíveis depois que o jogo começa.</p>
+    <p>Jogo adiado sem data fica fechado para palpites; quando ganha data nova, reabre até a nova hora, e o palpite que você já tinha continua valendo. Ele conta sempre na <b>rodada original</b>.</p>
+
+    <h2>3. Pontuação</h2>
+    <ul>
+      <li><b>${PONTOS.exato} pontos</b>: placar exato.</li>
+      <li><b>${PONTOS.saldo} pontos</b>: acertou o vencedor e o saldo de gols (palpite 3 x 1, deu 2 x 0).</li>
+      <li><b>${PONTOS.resultado} pontos</b>: acertou só o vencedor, ou que seria empate.</li>
+      <li><b>0</b>: errou o resultado.</li>
+    </ul>
+    <p>Vale o placar oficial ao fim do tempo regulamentar, como publicado pela CBF.</p>
+
+    <h2>4. Rankings e prêmios</h2>
+    <p>Os mesmos palpites valem para três rankings:</p>
+    <ul>
+      <li><b>Rodada</b>: os jogos de cada rodada. Prêmio: ${premio(CONFIG.premios.rodada)}.</li>
+      <li><b>Turno</b>: 1º turno (rodadas 1 a ${t}) e 2º turno (rodadas ${t + 1} a ${temporada.rodadas}). Prêmio: ${premio(CONFIG.premios.turno)}.</li>
+      <li><b>Temporada</b>: as ${temporada.rodadas} rodadas. Prêmio: ${premio(CONFIG.premios.temporada)}.</li>
+    </ul>
+    <p>A mesma pessoa pode ganhar em mais de um ranking. Os prêmios são oferecidos por ${org} e não vêm de dinheiro dos participantes.</p>
+
+    <h2>5. Desempate</h2>
+    <p>Na mesma pontuação, fica à frente quem tiver: 1) mais placares exatos; 2) mais acertos de saldo; 3) a conta criada há mais tempo.</p>
+
+    <h2>6. Resultado e entrega dos prêmios</h2>
+    <p>O ranking de um período fica definitivo quando o último jogo dele termina. Quem ganhar é avisado pelo WhatsApp do cadastro e tem <b>${CONFIG.prazoResgate} dias</b> para responder.</p>
+    <p>Para receber, é preciso ter <b>${CONFIG.idadeMinima} anos ou mais</b> e enviar documento com foto e CPF, com o mesmo nome do cadastro. Se a pessoa não responder no prazo, não cumprir estas condições ou não puder receber, o prêmio passa para a próxima colocada.</p>
+
+    <h2>7. Desclassificação</h2>
+    <p>É desclassificado quem usar mais de uma conta, dados falsos ou qualquer forma de fraude. Os palpites dessa pessoa deixam de contar em todos os rankings.</p>
+
+    <h2>8. Seus dados</h2>
+    <p>Nome completo, data de nascimento e WhatsApp só servem para conferir quem ganhou e entrar em contato, e não aparecem no site. No ranking aparece só o nome que você escolher. Você pode corrigir seus dados em <b>Meus dados</b> e pedir a exclusão da conta${CONFIG.contato ? html` pelo contato <b>${CONFIG.contato}</b>` : " pelo contato da organização"}.</p>
+
+    <h2>9. Mudanças</h2>
+    <p>Este regulamento pode ser ajustado; mudanças valem a partir da rodada seguinte à publicação e nunca alteram pontos já conquistados.</p>
   </div>`;
 }
 
-export function telaBolao(vista: string, numero: number | null): Html {
+export function telaBolao(vista: string, numero: number | null, extra = ""): Html {
   const topo = seletor(SECOES.find((s) => s.id === "bolao")!.vistas, vista, (k) => link("bolao", k), "Bolão");
   if (!bolaoConfigurado())
     return html`${topo}${vista === "regras" ? telaRegras() : vazio("O bolão está quase pronto: falta ligar o projeto do Firebase (login com Google e o banco de palpites).")}`;
@@ -294,7 +387,7 @@ export function telaBolao(vista: string, numero: number | null): Html {
   // sem login, o erro aparece dentro da própria tela de entrada
   const aviso = erro && (usuario || vista !== "palpites") ? html`<p class="aviso">${erro}</p>` : "";
   if (!cli || (!authPronto && vista === "palpites")) return html`${topo}${aviso}<p class="empty carregando">Abrindo o bolão</p>`;
-  const corpo = vista === "ranking" ? telaRanking() : vista === "regras" ? telaRegras() : telaPalpites(numero);
+  const corpo = vista === "ranking" ? telaRanking(extra) : vista === "regras" ? telaRegras() : telaPalpites(numero);
   return html`${topo}${aviso}${corpo}`;
 }
 

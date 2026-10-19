@@ -54,7 +54,7 @@ export const SECOES: Secao[] = [
     vistas: [
       ["palpites", "Palpites"],
       ["ranking", "Ranking"],
-      ["regras", "Regras"],
+      ["regras", "Regulamento"],
     ],
   },
   {

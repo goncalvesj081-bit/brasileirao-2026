@@ -8,6 +8,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { cert, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
 import { getSecurityRules } from "firebase-admin/security-rules";
 import { montarRanking, type Palpite } from "../src/modelo/bolao";
@@ -15,6 +16,8 @@ import { hash } from "../src/modelo/rng";
 import type { Jogo, Resultado } from "../src/modelo/tipos";
 
 const RAIZ = join(import.meta.dirname, "..");
+// muda este número quando o formato do ranking mudar: força o recálculo
+const VERSAO_RANKING = 2;
 const ler = <T>(n: string) => JSON.parse(readFileSync(join(RAIZ, n), "utf8")) as T;
 
 async function main() {
@@ -80,7 +83,7 @@ async function main() {
   if (comecaram.length) console.log(`Bolão: palpites revelados em ${comecaram.length} jogo(s).`);
 
   // 4) ranking, quando há jogo novo revelado ou resultado novo
-  const hRes = hash(JSON.stringify(resultados.map((r) => [r.id, r.gm, r.gv])));
+  const hRes = hash(JSON.stringify([VERSAO_RANKING, resultados.map((r) => [r.id, r.gm, r.gv])]));
   if (comecaram.length || estado.resultados !== hRes) {
     const publico = await db.collection("publico").get();
     const palpites: Palpite[] = [];
@@ -88,8 +91,14 @@ async function main() {
       const jogos = (d.data().jogos ?? {}) as Record<string, [string, number, number][]>;
       for (const [jogo, lista] of Object.entries(jogos)) for (const [uid, gm, gv] of lista) palpites.push({ uid, jogo, gm, gv });
     }
-    const usuarios: Record<string, { nome: string; foto?: string }> = {};
+    const usuarios: Record<string, { nome: string; foto?: string; desde?: number }> = {};
     for (const d of (await db.collection("usuarios").get()).docs) usuarios[d.id] = d.data() as { nome: string; foto?: string };
+    // data do cadastro (último critério de desempate), de quem tem palpite
+    const uids = [...new Set(palpites.map((p) => p.uid))];
+    for (let i = 0; i < uids.length; i += 100) {
+      const { users } = await getAuth(app).getUsers(uids.slice(i, i + 100).map((uid) => ({ uid })));
+      for (const u of users) (usuarios[u.uid] ??= { nome: "Sem nome" }).desde = Date.parse(u.metadata.creationTime) || 0;
+    }
     const linhas = montarRanking(palpites, resultados, usuarios);
     await db.doc("publico/ranking").set({ atualizado: FieldValue.serverTimestamp(), linhas });
     novo.resultados = hRes;
