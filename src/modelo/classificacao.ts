@@ -17,7 +17,7 @@ export function somarJogo(l: Linha, pro: number, contra: number): void {
   } else l.d++;
 }
 
-/** Critérios da CBF usados aqui: pontos, vitórias, saldo, gols pró. Depois, ordem alfabética só para a tela ficar estável. */
+/** Critérios da CBF: pontos, vitórias, saldo, gols pró (o confronto direto vem em `classificacao`). Depois, ordem alfabética só para a tela ficar estável. */
 export function compararLinhas(a: Linha, b: Linha): number {
   return (
     b.p - a.p ||
@@ -53,7 +53,37 @@ export function classificacao(
     if (filtro(r, "m")) somarJogo(linha(r.mandante), r.gm, r.gv);
     if (filtro(r, "v")) somarJogo(linha(r.visitante), r.gv, r.gm);
   }
-  return ordenar([...T.values()]);
+  return confrontoDireto(ordenar([...T.values()]), resultados);
+}
+
+const empatados = (a: Linha, b: Linha) => a.p === b.p && a.v === b.v && a.gp - a.gc === b.gp - b.gc && a.gp === b.gp;
+
+/**
+ * 5º critério da CBF: confronto direto, só quando exatamente dois clubes empatam em tudo antes
+ * (pontos e depois saldo nos jogos entre os dois). Cartões não entram: não há o total por clube.
+ */
+function confrontoDireto(t: Linha[], resultados: Resultado[]): Linha[] {
+  for (let i = 0; i + 1 < t.length; i++) {
+    const a = t[i],
+      b = t[i + 1];
+    if (!empatados(a, b) || (i > 0 && empatados(t[i - 1], a)) || (i + 2 < t.length && empatados(b, t[i + 2]))) continue;
+    let pa = 0,
+      pb = 0,
+      sa = 0;
+    for (const r of resultados) {
+      const ab = r.mandante === a.clube && r.visitante === b.clube,
+        ba = r.mandante === b.clube && r.visitante === a.clube;
+      if (!ab && !ba) continue;
+      const ga = ab ? r.gm : r.gv,
+        gb = ab ? r.gv : r.gm;
+      sa += ga - gb;
+      if (ga > gb) pa += 3;
+      else if (ga < gb) pb += 3;
+      else (pa++, pb++);
+    }
+    if (pb > pa || (pb === pa && sa < 0)) [t[i], t[i + 1]] = [b, a];
+  }
+  return t;
 }
 
 export type Res = "V" | "E" | "D";

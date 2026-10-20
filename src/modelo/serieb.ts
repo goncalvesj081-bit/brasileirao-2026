@@ -3,7 +3,7 @@
 
 import { classificacao } from "./classificacao";
 import { forcas, golsEsperados } from "./forcas";
-import { sortearPoissonExp } from "./poisson";
+import { sortearPlacar } from "./poisson";
 import type { Jogo, Linha, Resultado } from "./tipos";
 
 export interface SerieB {
@@ -41,11 +41,11 @@ export function simularSerieB(d: Pick<SerieB, "clubes" | "resultados" | "restant
     .filter((g) => idx.has(g.mandante) && idx.has(g.visitante))
     .map((g) => {
       const [lm, lv] = golsEsperados(F, g.mandante, g.visitante);
-      return { m: idx.get(g.mandante)!, v: idx.get(g.visitante)!, em: Math.exp(-lm), ev: Math.exp(-lv) };
+      return { m: idx.get(g.mandante)!, v: idx.get(g.visitante)!, lm, lv, em: Math.exp(-lm), ev: Math.exp(-lv) };
     });
   const ida = (casa: number, fora: number): [number, number] => {
     const [lc, lf] = golsEsperados(F, tabela[casa].clube, tabela[fora].clube);
-    return [sortearPoissonExp(Math.exp(-lc), rand), sortearPoissonExp(Math.exp(-lf), rand)];
+    return sortearPlacar(lc, lf, Math.exp(-lc), Math.exp(-lf), rand);
   };
 
   const pos = Array.from({ length: N }, () => new Array<number>(N).fill(0));
@@ -68,8 +68,7 @@ export function simularSerieB(d: Pick<SerieB, "clubes" | "resultados" | "restant
       sorteio[i] = rand();
     }
     for (const g of jogos) {
-      const a = sortearPoissonExp(g.em, rand),
-        b = sortearPoissonExp(g.ev, rand);
+      const [a, b] = sortearPlacar(g.lm, g.lv, g.em, g.ev, rand);
       gp[g.m] += a;
       gp[g.v] += b;
       sg[g.m] += a - b;

@@ -134,3 +134,12 @@ describe("sequências", () => {
     expect(sequencia(jogos, (r) => r !== "V")).toMatchObject({ atual: 2, atualDesde: 6 });
   });
 });
+
+describe("confronto direto", () => {
+  it("desempata dois clubes iguais em pontos, vitórias, saldo e gols pró", () => {
+    const r = (mandante: string, visitante: string, gm: number, gv: number, id: string) => ({ id, rodada: 1, mandante, visitante, data: null, gm, gv });
+    // A e B: 1 vitória, 1 derrota, saldo 0, 2 gols pró; B venceu o confronto direto
+    const t = classificacao(["A", "B", "C"], [r("A", "B", 0, 1, "1"), r("A", "C", 2, 1, "2"), r("C", "B", 2, 1, "3")]);
+    expect(t.map((l) => l.clube)).toEqual(["C", "B", "A"]);
+  });
+});

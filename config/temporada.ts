@@ -24,8 +24,11 @@ export const temporada = {
     pesoMax: 0.6,
     jogosEncolhimento: 8,
     mediaGolsPadrao: 1.2,
+    // correção de Dixon-Coles nos placares baixos (0x0, 1x0, 0x1, 1x1): o Poisson puro dá empates de menos.
+    // -0,1 acerta a taxa de empates de 2026 (27,8% reais; o Poisson puro previa 24,9%) e melhora a previsão jogo a jogo
+    rhoEmpates: -0.1,
     // muda este número se mudar o modelo: força o recálculo de todo o histórico
-    versao: 2,
+    versao: 3,
   },
 
   // jogo restante de rodada já passada, sem data ou marcado para depois disto, conta como adiado

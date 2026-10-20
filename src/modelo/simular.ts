@@ -1,7 +1,7 @@
 import { CORTES } from "../../config/temporada";
 import { distribuirVagas, golsPelasForcas, sortearTitulos, type Copas, type Titulos } from "./copas";
 import { forcas, golsEsperados } from "./forcas";
-import { sortearPoissonExp } from "./poisson";
+import { sortearPlacar } from "./poisson";
 import type { Chances, Jogo, Linha, Placar } from "./tipos";
 
 export interface EntradaSimulacao {
@@ -144,10 +144,7 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
       const G = jogos[g];
       let gh: number, ga: number;
       if (G.f) [gh, ga] = G.f;
-      else {
-        gh = sortearPoissonExp(G.E[0], e.rand);
-        ga = sortearPoissonExp(G.E[1], e.rand);
-      }
+      else [gh, ga] = sortearPlacar(G.L[0], G.L[1], G.E[0], G.E[1], e.rand);
       gp[G.h] += gh;
       gc[G.h] += ga;
       gp[G.a] += ga;
