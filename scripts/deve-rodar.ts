@@ -1,4 +1,4 @@
-// Usado pelo agendamento de 10 em 10 minutos: imprime rodar=true só em dia de jogo.
+// Usado pelo agendamento de 10 em 10 minutos (o do GitHub e o do cron-job.org): imprime rodar=true só em dia de jogo.
 // (O agendamento de 6 em 6 horas roda sempre e não passa por aqui.)
 
 import { readFileSync } from "node:fs";

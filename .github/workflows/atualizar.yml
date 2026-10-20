@@ -7,6 +7,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      agenda:
+        description: "Chamada de 10 em 10 minutos de fora (cron-job.org): só segue se for dia de jogo"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,7 +26,7 @@ jobs:
   dados:
     runs-on: ubuntu-latest
     outputs:
-      publicar: ${{ steps.commit.outputs.mudou == 'true' || github.event_name != 'schedule' }}
+      publicar: ${{ steps.commit.outputs.mudou == 'true' || (github.event_name != 'schedule' && !inputs.agenda) }}
     steps:
       - uses: actions/checkout@v5
 
@@ -35,7 +40,7 @@ jobs:
       - name: Dia de jogo?
         id: agenda
         run: |
-          if [ "${{ github.event.schedule }}" = "*/10 * * * *" ]; then
+          if [ "${{ github.event.schedule }}" = "*/10 * * * *" ] || [ "${{ inputs.agenda }}" = "true" ]; then
             npm run --silent deve-rodar >> "$GITHUB_OUTPUT"
           else
             echo "rodar=true" >> "$GITHUB_OUTPUT"
