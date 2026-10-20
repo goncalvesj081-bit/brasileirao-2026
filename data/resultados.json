@@ -2772,6 +2772,15 @@
    "data": "2026-10-18T22:30:00Z",
    "gm": 1,
    "gv": 1
+  },
+  {
+   "id": "555044",
+   "rodada": 31,
+   "mandante": "Corinthians",
+   "visitante": "Vitória",
+   "data": "2026-10-19T23:00:00Z",
+   "gm": 1,
+   "gv": 1
   }
  ]
 }

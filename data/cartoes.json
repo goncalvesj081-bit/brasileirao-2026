@@ -1,5 +1,5 @@
 {
- "atualizado": "19/10/2026",
+ "atualizado": "20/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -58,6 +58,13 @@
    ""
   ],
   [
+   "Rodrigo Garro",
+   "Corinthians",
+   10,
+   0,
+   ""
+  ],
+  [
    "Alix Vinicius",
    "Bragantino",
    6,
@@ -76,7 +83,7 @@
    "Vitória",
    6,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Gabriel Mercado",
@@ -88,13 +95,6 @@
   [
    "Nicolás Acevedo",
    "Bahia",
-   9,
-   0,
-   ""
-  ],
-  [
-   "Rodrigo Garro",
-   "Corinthians",
    9,
    0,
    ""
@@ -1623,7 +1623,7 @@
    "Corinthians",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Natanael",
@@ -1687,6 +1687,13 @@
    0,
    1,
    ""
+  ],
+  [
+   "Renê",
+   "Vitória",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Riquelme Freitas",
@@ -2412,13 +2419,6 @@
   [
    "Rafael Cavalheira",
    "Chapecoense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Renê",
-   "Vitória",
    2,
    0,
    "pendurado"
