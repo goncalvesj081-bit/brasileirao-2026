@@ -79,6 +79,8 @@ function lancesHtml(lances: Lance[] | undefined): Html {
  */
 function chanceDuranteJogo(e: Efeito, lances: Lance[], agora: number): Html {
   const gols = lances.filter((l) => l.tipo === "gol" || l.tipo === "contra");
+  // o relógio da ESPN pode vir sem minuto (intervalo) ou atrás do último gol: a linha nunca volta no tempo
+  agora = Math.max(agora, ...gols.map((l) => l.min));
   const fim = Math.max(90, agora, ...gols.map((l) => l.min));
   const W = 400,
     H = 120,
@@ -199,7 +201,7 @@ export function telaRodada(numero: number | null): Html {
           <div class="confronto">${lado(g.mandante, "m")}${vivo ? html`<span class="placar">${vivo.gm}<i>x</i>${vivo.gv}</span>` : html`<span class="x">x</span>`}${lado(g.visitante, "v")}</div>
           ${vivo && E ? seTerminarAssim(g, efeitosRelevantes(g, E)) : ""}
           ${vivo ? lancesHtml(vivo.lances) : ""}
-          ${vivo && E && vivo.lances && efeitosRelevantes(g, E)[0] ? chanceDuranteJogo(efeitosRelevantes(g, E)[0], vivo.lances, vivo.minuto ?? 0) : ""}
+          ${vivo && E && vivo.lances && efeitosRelevantes(g, E)[0] ? chanceDuranteJogo(efeitosRelevantes(g, E)[0], vivo.lances, vivo.minuto ?? (vivo.rotulo === "Intervalo" ? 45 : 0)) : ""}
           <div class="odds" aria-label="Chances: ${g.mandante} ${pct(H)}, empate ${pct(D)}, ${g.visitante} ${pct(A)}">
             <div class="split"><i style="flex:${H}"></i><i style="flex:${D}"></i><i style="flex:${A}"></i></div>
             <div class="nums"><span class="${H > A ? "fav" : ""}">${pct(H)}</span><span>Empate ${pct(D)}</span><span class="${A > H ? "fav" : ""}">${pct(A)}</span></div>
