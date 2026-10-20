@@ -13,7 +13,12 @@
    "rodada": 31,
    "mandante": "Corinthians",
    "visitante": "Vitória",
-   "data": "2026-10-19T23:00:00Z"
+   "data": "2026-10-19T23:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 1,
+    "minuto": null
+   }
   },
   {
    "id": "555052",
