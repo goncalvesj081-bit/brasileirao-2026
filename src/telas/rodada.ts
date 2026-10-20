@@ -83,11 +83,11 @@ function chanceDuranteJogo(e: Efeito, lances: Lance[], agora: number): Html {
   agora = Math.max(agora, ...gols.map((l) => l.min));
   const fim = Math.max(90, agora, ...gols.map((l) => l.min));
   const W = 400,
-    H = 120,
+    H = 138,
     pl = 50,
     pr = 46,
     pt = 10,
-    pb = 22;
+    pb = 40;
   const x = (m: number) => pl + ((W - pl - pr) * m) / fim;
   const vals = [...e.se];
   const lo = Math.min(...vals),
@@ -107,10 +107,11 @@ function chanceDuranteJogo(e: Efeito, lances: Lance[], agora: number): Html {
   const c = tabela[e.clube].clube;
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Chance de ${esc(c)} durante o jogo">`;
   for (const v of [lo, hi]) s += `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end">${pct(v)}</text>`;
-  for (const m of [0, 45, 90]) s += `<text x="${x(m)}" y="${H - 6}" text-anchor="middle">${m}'</text>`;
+  for (const m of [0, 45, 90]) s += `<text x="${x(m)}" y="${H - 4}" text-anchor="middle">${m}'</text>`;
   const cor = `var(--${e.objetivo === "c" ? "title" : e.objetivo === "l" ? "lib" : "rel"})`;
   s += `<polyline fill="none" stroke="${cor}" stroke-width="2.5" stroke-linejoin="round" points="${pontos.map(([m, v]) => `${x(m)},${y(v)}`).join(" ")}"/>`;
-  for (const l of gols) s += `<text x="${x(l.min)}" y="${pt + 8}" text-anchor="middle" style="font-size:11px">⚽</text>`;
+  // as bolinhas dos gols ficam numa faixa própria, embaixo do gráfico, para não cobrir a linha nem o ponto final
+  for (const l of gols) s += `<text x="${x(l.min)}" y="${H - pb + 17}" text-anchor="middle" style="font-size:11px">⚽</text>`;
   const u = pontos[pontos.length - 1];
   s += `<circle cx="${x(u[0])}" cy="${y(u[1])}" r="4" fill="${cor}"/><text x="${x(u[0]) + 7}" y="${y(u[1]) + 4}" class="v" style="fill:${cor}">${pct(u[1])}</text>`;
   return html`<div class="durante"><small>${sigla(c)}, ${NOME_OBJ[e.objetivo]}, se o placar de cada momento fosse o final</small>${cru(s + "</svg>")}</div>`;
