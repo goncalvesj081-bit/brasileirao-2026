@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-20T00:37:22.712Z",
+ "atualizado": "2026-10-21T00:44:14.423Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3073,16 +3073,18 @@
    "data": "2026-10-19T22:30Z",
    "gm": 0,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860397",
    "rodada": 34,
    "mandante": "Londrina",
    "visitante": "Cuiabá",
-   "data": "2026-10-20T22:30Z"
-  },
+   "data": "2026-10-20T22:30Z",
+   "gm": 1,
+   "gv": 0
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860410",
    "rodada": 35,
