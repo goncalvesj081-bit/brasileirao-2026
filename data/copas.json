@@ -1,7 +1,6 @@
 {
- "atualizado": "21/10/2026",
+ "atualizado": "22/10/2026",
  "jogos": [
-  "2026-10-22T00:30Z",
   "2026-10-23T00:30Z",
   "2026-11-01T19:00Z",
   "2026-11-01T21:30Z",
@@ -42,10 +41,8 @@
    {
     "a": "Fluminense",
     "b": "Palmeiras",
-    "saldoA": -1,
-    "faltam": [
-     "b"
-    ]
+    "saldoA": 0,
+    "faltam": []
    },
    {
     "a": "Estudiantes de La Plata",
