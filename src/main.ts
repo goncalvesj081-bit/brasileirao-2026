@@ -29,6 +29,7 @@ import { dataHora } from "./ui/formato";
 import { html, type Html } from "./ui/html";
 import { abasInferiores, listaClubes, navegacao } from "./ui/lateral";
 import { compartilhar, compartilharRodada } from "./ui/compartilhar";
+import { vigiarVersao } from "./versao";
 
 const $ = (id: string) => document.getElementById(id)!;
 
@@ -257,6 +258,7 @@ aoCalcularSerieB(() => {
 
 sincronizarComJogosReais();
 desenhar();
+vigiarVersao();
 simularReal();
 
 // placar ao vivo de minuto em minuto (ESPN); jogo encerrado já conta na tabela e nas chances

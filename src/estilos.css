@@ -606,3 +606,5 @@ details.jogo > summary::-webkit-details-marker { display: none; }
 details.jogo > summary .quando::after { content: "Ver lances"; margin-left: 10px; color: var(--accent); }
 details.jogo[open] > summary .quando::after { content: "Esconder lances"; }
 #simAnalysis > section, #simAnalysis > .grid2 { margin-top: 24px; }
+#versao-nova { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(76px + env(safe-area-inset-bottom)); z-index: 50; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--accent); background: var(--raise); color: var(--ink); font: inherit; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.4); cursor: pointer; max-width: calc(100% - 32px); }
+@media (min-width: 900px) { #versao-nova { bottom: 24px; } }
