@@ -170,7 +170,7 @@ function htmlAnalise(): Html {
   const final = tabelaSimulada();
   const a = analisar(final, tabela, restantes, placaresPorId(), B);
   const [nome, cor, frase] = VEREDITOS[a.veredito];
-  const umEm = (p: number) => (p <= 0 ? `menos de 1 em ${milhar(B.n)}` : p >= 0.5 ? pct(p) : `1 em ${milhar(Math.round(1 / p))}`);
+  const umEm = (p: number) => (p < 0.0005 ? "<0,1%" : pct(p));
   const raro = (p: number) => (p ? pct(p) : "<0,01%");
   const txt = (z: (typeof a.zebras)[number]) =>
     z.resultado === 0 ? `${z.jogo.mandante} vence ${z.jogo.visitante}` : z.resultado === 2 ? `${z.jogo.visitante} vence ${z.jogo.mandante} fora` : `${z.jogo.mandante} empata com ${z.jogo.visitante}`;
