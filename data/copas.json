@@ -59,18 +59,12 @@
   "finalUnica": true,
   "confrontos": [
    {
-    "a": "Boca Juniors",
-    "b": "Vasco",
-    "saldoA": 1,
-    "faltam": [],
-    "vencedor": "Boca Juniors"
-   },
-   {
     "a": "Atlético-MG",
-    "b": "Montevideo City Torque",
-    "saldoA": 1,
-    "faltam": [],
-    "vencedor": "Atlético-MG"
+    "b": "Boca Juniors",
+    "saldoA": 0,
+    "faltam": [
+     "neutro"
+    ]
    }
   ]
  }
