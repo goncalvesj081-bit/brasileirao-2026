@@ -182,11 +182,13 @@ function htmlAnalise(): Html {
       <div class="kpi"><small>Esses ${CORTES.lib} primeiros</small><b>${raro(a.chanceG7)}</b><span class="note">o mesmo grupo do 1º ao ${CORTES.lib}º, em qualquer ordem</span></div>
     </div>
     <section><h3>Sua tabela final</h3><div class="box"><table class="tab">
-      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th><th title="Pontos que o modelo esperava para o clube">Esperado</th><th class="w">Pos. esperada</th><th title="Chance de o clube terminar exatamente nessa posição">Posição exata</th></tr></thead>
+      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th><th class="w" title="Pontos que o modelo esperava para o clube">Pts esperados</th><th title="Posição em que o clube mais termina nos campeonatos do computador, e em quantos deles">Mais provável</th><th class="w" title="Em quantos campeonatos do computador o clube termina exatamente na posição da sua tabela">Nessa posição</th></tr></thead>
       <tbody>${final.map((t, p) => {
         const s = porClube.get(t.clube)!;
         const d = t.p - s.ptsEsperados;
-        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w dim">${t.gp}</td><td class="w dim">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td><td class="${d >= 4 ? "up" : d <= -4 ? "down" : "dim"}">${dec(s.ptsEsperados, 0)}</td><td class="dim w">${dec(s.posEsperada)}º</td><td>${umEm(s.exata)}</td></tr>`;
+        const dist = B.pos[B.clubes.indexOf(t.clube)];
+        const moda = dist.indexOf(Math.max(...dist));
+        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w dim">${t.gp}</td><td class="w dim">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td><td class="w ${d >= 4 ? "up" : d <= -4 ? "down" : "dim"}">${dec(s.ptsEsperados, 0)}</td><td><b class="${moda === p ? "" : "dim"}">${moda + 1}º</b> <small class="dim">${umEm(dist[moda])}</small></td><td class="w ${moda === p ? "" : "dim"}">${umEm(s.exata)}</td></tr>`;
       })}</tbody>
     </table></div>${legenda()}</section>
     <div class="grid2">
@@ -201,7 +203,7 @@ function htmlAnalise(): Html {
         <tbody>${a.zebras.slice(0, 8).map((z) => html`<tr><td class="l quebra">${txt(z)}</td><td class="dim">${z.placar[0]} x ${z.placar[1]}</td><td>${pct(z.chance)}</td></tr>`)}</tbody>
       </table></div></section>
     </div>
-    <p class="note">O veredito olha só vitória, empate ou derrota de cada jogo, não o placar exato. Uma tabela final exata, com as 20 posições na ordem, é sempre raríssima; por isso a análise olha grupos e a posição de cada time.</p>`;
+    <p class="note">"Mais provável" é a posição em que o clube mais termina nos ${milhar(B.n)} campeonatos do computador; "Nessa posição", em quantos deles ele termina exatamente onde ficou na sua tabela. O veredito olha só vitória, empate ou derrota de cada jogo, não o placar exato. Uma tabela final exata, com as 20 posições na ordem, é sempre raríssima; por isso a análise olha grupos e a posição de cada time.</p>`;
 }
 
 // ---------- projeção do computador ----------
