@@ -179,6 +179,14 @@ function htmlAnalise(): Html {
       <div class="kpi"><small>Esses ${CORTES.rebaixados} rebaixados juntos</small><b>${raro(a.chanceRebaixados)}</b><span class="note">${a.rebaixados.join(", ")}</span></div>
       <div class="kpi"><small>Esses ${CORTES.lib} primeiros</small><b>${raro(a.chanceG7)}</b><span class="note">o mesmo grupo do 1º ao ${CORTES.lib}º, em qualquer ordem</span></div>
     </div>
+    <section><h3>Sua tabela final</h3><div class="box"><table class="tab">
+      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th>SG</th><th title="Pontos que o modelo esperava para o clube">Esperado</th><th class="w">Pos. esperada</th><th title="Chance de o clube terminar exatamente nessa posição">Posição exata</th></tr></thead>
+      <tbody>${final.map((t, p) => {
+        const s = porClube.get(t.clube)!;
+        const d = t.p - s.ptsEsperados;
+        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="w">${t.v}</td><td class="w">${t.e}</td><td class="w">${t.d}</td><td class="w dim">${t.gp}</td><td class="w dim">${t.gc}</td><td class="dim">${saldo(t.gp - t.gc)}</td><td class="${d >= 4 ? "up" : d <= -4 ? "down" : "dim"}">${dec(s.ptsEsperados, 0)}</td><td class="dim w">${dec(s.posEsperada)}º</td><td>${umEm(s.exata)}</td></tr>`;
+      })}</tbody>
+    </table></div>${legenda()}</section>
     <div class="grid2">
       <section><h3>Maiores surpresas na tabela</h3><div class="box"><table class="tab">
         <thead><tr><th class="l">Clube</th><th>Ficou</th><th>Esperado</th><th>Chance</th></tr></thead>
@@ -191,14 +199,6 @@ function htmlAnalise(): Html {
         <tbody>${a.zebras.slice(0, 8).map((z) => html`<tr><td class="l quebra">${txt(z)}</td><td class="dim">${z.placar[0]} x ${z.placar[1]}</td><td>${pct(z.chance)}</td></tr>`)}</tbody>
       </table></div></section>
     </div>
-    <section><h3>Cada time na sua tabela</h3><div class="box"><table class="tab">
-      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th>Esperado</th><th class="w">Pos. esperada</th><th>Posição exata</th></tr></thead>
-      <tbody>${final.map((t, p) => {
-        const s = porClube.get(t.clube)!;
-        const d = t.p - s.ptsEsperados;
-        return html`<tr ${atrLinha(t.clube, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.clube)}<td class="big">${t.p}</td><td class="${d >= 4 ? "up" : d <= -4 ? "down" : "dim"}">${dec(s.ptsEsperados, 0)}</td><td class="dim w">${dec(s.posEsperada)}º</td><td>${umEm(s.exata)}</td></tr>`;
-      })}</tbody>
-    </table></div></section>
     <p class="note">O veredito olha só vitória, empate ou derrota de cada jogo, não o placar exato. Uma tabela final exata, com as 20 posições na ordem, é sempre raríssima; por isso a análise olha grupos e a posição de cada time.</p>`;
 }
 

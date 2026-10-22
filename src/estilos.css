@@ -605,3 +605,4 @@ details.jogo > summary { list-style: none; cursor: pointer; display: grid; gap: 
 details.jogo > summary::-webkit-details-marker { display: none; }
 details.jogo > summary .quando::after { content: "Ver lances"; margin-left: 10px; color: var(--accent); }
 details.jogo[open] > summary .quando::after { content: "Esconder lances"; }
+#simAnalysis > section, #simAnalysis > .grid2 { margin-top: 24px; }
