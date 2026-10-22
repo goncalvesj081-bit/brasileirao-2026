@@ -5,7 +5,8 @@ import { agendarUsuario, editaveis, limparPlacares, nPlacares, nSimulados, placa
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
 import { forcas, golsEsperados } from "../modelo/forcas";
-import { probResultado, sortearPlacar } from "../modelo/poisson";
+import { campeonatoMaisProvavel } from "../modelo/maisprovavel";
+import { probResultado } from "../modelo/poisson";
 import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
@@ -245,7 +246,7 @@ function htmlComputador(): Html {
     .sort((a, b) => b.pts - a.pts || a.posMedia - b.posMedia);
   const r0 = (x: number) => Math.round(x);
   return html`<p class="note">Como o campeonato termina para o computador, sem nenhum palpite seu: a média de ${milhar(R.n)} campeonatos sorteados com o modelo. Por ser média, os pontos têm casa decimal.</p>
-    <p><button type="button" class="discreto" data-act="sortear">Deixar o computador sortear os jogos que faltam</button> <span class="note">Preenche com um placar sorteado cada jogo que você ainda não simulou; os seus ficam como estão.</span></p>
+    <p><button type="button" class="discreto" data-act="sortear">Preencher com o campeonato mais provável</button> <span class="note">O computador sorteia 3.000 campeonatos e preenche os jogos que você ainda não simulou com o placar daquele em que a tabela final é a mais provável; os seus jogos ficam como estão.</span></p>
     <div class="box"><table class="tab">
       <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th class="w">SG</th><th class="w" title="Posição média nas simulações">Pos. média</th><th>Título</th><th>Liberta</th><th>Queda</th></tr></thead>
       <tbody>${linhas.map(
@@ -361,13 +362,17 @@ export function cliqueSimulador(alvo: HTMLElement, redesenhar: () => void): bool
     return true;
   }
   if (alvo.closest("button[data-act='sortear']")) {
-    const F = forcas(tabela);
-    for (const g of editaveis()) {
-      const k = confronto(g);
-      if (placares[k]) continue;
-      const [lm, lv] = golsEsperados(F, g.mandante, g.visitante);
-      placares[k] = sortearPlacar(lm, lv, Math.exp(-lm), Math.exp(-lv), Math.random);
-      delete rascunhos[k];
+    const R = sims.usuario ?? sims.real;
+    if (!R) return true;
+    const base = tabelaSimulada();
+    const pos = base.map((t) => R.pos[R.clubes.indexOf(t.clube)]);
+    const abertos = editaveis().filter((g) => !placares[confronto(g)]);
+    const escolhidos = campeonatoMaisProvavel(base, abertos, pos, 3000, Math.random);
+    for (const g of abertos) {
+      const pl = escolhidos.get(g.id);
+      if (!pl) continue;
+      placares[confronto(g)] = pl;
+      delete rascunhos[confronto(g)];
     }
     salvarPlacares();
     agendarUsuario(0);

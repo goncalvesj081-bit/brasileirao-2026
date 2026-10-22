@@ -63,6 +63,8 @@ export function sortearPoissonExp(expMenosL: number, rand: () => number): number
  * chance proporcional ao ajuste). `em` e `ev` são e^(-lm) e e^(-lv), já calculados.
  */
 export function sortearPlacar(lm: number, lv: number, em: number, ev: number, rand: () => number): [number, number] {
+  // média inválida (liga ainda sem gols): sem ajuste, para o laço abaixo nunca travar
+  if (!(lm >= 0 && lv >= 0)) return [sortearPoissonExp(em, rand), sortearPoissonExp(ev, rand)];
   const teto = Math.max(1, 1 - lm * lv * RHO, 1 - RHO, 1 + lm * RHO, 1 + lv * RHO);
   for (;;) {
     const a = sortearPoissonExp(em, rand),
