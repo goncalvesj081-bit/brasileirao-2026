@@ -45,6 +45,7 @@ export const SECOES: Secao[] = [
       ["tabela", "Tabela"],
       ["chances", "Chances"],
       ["analise", "Análise"],
+      ["computador", "Computador"],
     ],
   },
   {

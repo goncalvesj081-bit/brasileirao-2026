@@ -4,6 +4,8 @@ import { confronto, jogosAdiados, nomesClubes, porData, resultados, restantes, r
 import { agendarUsuario, editaveis, limparPlacares, nPlacares, nSimulados, placares, placaresPorId, rascunhos, salvarPlacares, sims, sincronizarComJogosReais } from "../estado";
 import { analisar } from "../modelo/analise";
 import { classificacao } from "../modelo/classificacao";
+import { forcas, golsEsperados } from "../modelo/forcas";
+import { probResultado, sortearPlacar } from "../modelo/poisson";
 import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
@@ -202,6 +204,55 @@ function htmlAnalise(): Html {
     <p class="note">O veredito olha só vitória, empate ou derrota de cada jogo, não o placar exato. Uma tabela final exata, com as 20 posições na ordem, é sempre raríssima; por isso a análise olha grupos e a posição de cada time.</p>`;
 }
 
+// ---------- projeção do computador ----------
+
+/** Tabela final que o computador espera: pontos médios das simulações e vitórias, empates e gols esperados jogo a jogo. */
+function htmlComputador(): Html {
+  const R = sims.real;
+  if (!R) return html`<p class="empty carregando">Calculando</p>`;
+  const F = forcas(tabela);
+  const esp = new Map(tabela.map((t) => [t.clube, { v: t.v, e: t.e, d: t.d, gp: t.gp, gc: t.gc }]));
+  for (const g of restantes) {
+    const [lm, lv] = golsEsperados(F, g.mandante, g.visitante);
+    const [H, D, A] = probResultado(lm, lv);
+    const m = esp.get(g.mandante),
+      v = esp.get(g.visitante);
+    if (!m || !v) continue;
+    m.v += H;
+    m.e += D;
+    m.d += A;
+    m.gp += lm;
+    m.gc += lv;
+    v.v += A;
+    v.e += D;
+    v.d += H;
+    v.gp += lv;
+    v.gc += lm;
+  }
+  const N = R.clubes.length;
+  const linhas = R.clubes
+    .map((c, i) => ({
+      c,
+      pts: R.pts[i],
+      posMedia: R.pos[i].reduce((s, x, p) => s + x * (p + 1), 0),
+      titulo: R.pos[i][0],
+      lib: R.vagaLib[i],
+      queda: R.pos[i].slice(N - CORTES.rebaixados).reduce((a, b) => a + b, 0),
+      ...esp.get(c)!,
+    }))
+    .sort((a, b) => b.pts - a.pts || a.posMedia - b.posMedia);
+  const r0 = (x: number) => Math.round(x);
+  return html`<p class="note">Como o campeonato termina para o computador, sem nenhum palpite seu: a média de ${milhar(R.n)} campeonatos sorteados com o modelo. Por ser média, os pontos têm casa decimal.</p>
+    <p><button type="button" class="discreto" data-act="sortear">Deixar o computador sortear os jogos que faltam</button> <span class="note">Preenche com um placar sorteado cada jogo que você ainda não simulou; os seus ficam como estão.</span></p>
+    <div class="box"><table class="tab">
+      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="w">V</th><th class="w">E</th><th class="w">D</th><th class="w">GP</th><th class="w">GC</th><th class="w">SG</th><th class="w" title="Posição média nas simulações">Pos. média</th><th>Título</th><th>Liberta</th><th>Queda</th></tr></thead>
+      <tbody>${linhas.map(
+        (t, p) => html`<tr ${atrLinha(t.c, classeFaixa(p))}><td class="pos">${p + 1}</td>${celClube(t.c)}<td class="big">${dec(t.pts)}</td><td class="w">${r0(t.v)}</td><td class="w">${r0(t.e)}</td><td class="w">${r0(t.d)}</td><td class="w dim">${r0(t.gp)}</td><td class="w dim">${r0(t.gc)}</td><td class="dim w">${saldo(r0(t.gp - t.gc))}</td><td class="dim w">${dec(t.posMedia)}º</td>${celProb("c-title", t.titulo)}${celProb("c-lib", t.lib)}${celProb("c-rel", t.queda)}</tr>`,
+      )}</tbody>
+    </table></div>${legenda()}
+    <p class="note">Vitórias, empates, derrotas e gols: os atuais mais a chance de cada resultado e os gols esperados em cada jogo que falta, arredondados.</p>`;
+}
+
 // ---------- tela ----------
 
 export function telaSimulador(vista: string, numero: number | null): Html {
@@ -210,6 +261,7 @@ export function telaSimulador(vista: string, numero: number | null): Html {
   if (vista === "tabela") corpo = html`<div class="box" id="simTable">${htmlTabela()}</div>${legenda()}`;
   else if (vista === "chances") corpo = html`${seletorVagas()}<div id="simProbs">${htmlChances()}</div>`;
   else if (vista === "analise") corpo = html`<div id="simAnalysis">${htmlAnalise()}</div>`;
+  else if (vista === "computador") corpo = html`<div id="simComputador">${htmlComputador()}</div>`;
   else corpo = vistaJogos(numero);
   return html`${seletor(sec.vistas, vista, (k) => link("simular", k), "Parte do simulador")}
     <div class="sim-topo"><div id="simResumo" class="sim-resumo">${htmlResumo()}</div><button type="button" class="discreto" data-act="limpar">Limpar</button></div>
@@ -244,6 +296,8 @@ export function atualizarResultadosSimulador(atrasoAnalise = 0) {
   if (r) r.innerHTML = String(htmlResumo());
   const p = $("simProbs");
   if (p) p.innerHTML = String(htmlChances());
+  const c = $("simComputador");
+  if (c && c.querySelector(".carregando")) c.innerHTML = String(htmlComputador());
   clearTimeout(esperaAnalise);
   esperaAnalise = setTimeout(() => {
     const a = $("simAnalysis");
@@ -302,6 +356,20 @@ export function cliqueSimulador(alvo: HTMLElement, redesenhar: () => void): bool
     salvarPlacares();
     agendarUsuario();
     redesenhar();
+    return true;
+  }
+  if (alvo.closest("button[data-act='sortear']")) {
+    const F = forcas(tabela);
+    for (const g of editaveis()) {
+      const k = confronto(g);
+      if (placares[k]) continue;
+      const [lm, lv] = golsEsperados(F, g.mandante, g.visitante);
+      placares[k] = sortearPlacar(lm, lv, Math.exp(-lm), Math.exp(-lv), Math.random);
+      delete rascunhos[k];
+    }
+    salvarPlacares();
+    agendarUsuario(0);
+    location.hash = link("simular", "analise");
     return true;
   }
   if (alvo.closest("button[data-act='limpar']")) {
