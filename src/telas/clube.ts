@@ -6,13 +6,14 @@ import { probResultado } from "../modelo/poisson";
 import { ultimaRodadaComJogo } from "../modelo/rodadas";
 import { chancesDaLinha, chancesSim } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
-import { ABAS_CLUBE } from "../router";
-import { calculando, classeFaixa, escudo, forma, linkClube, modoVagas, seletor, seletorVagas, vazio } from "../ui/componentes";
+import { slug } from "../../config/clubes";
+import { ABAS_CLUBE, link } from "../router";
+import { calculando, classeFaixa, escudo, forma, linkClube, modoVagas, seletor, vazio } from "../ui/componentes";
 import { pct, saldo } from "../ui/formato";
 import { comoSomar, quantoFalta, type Objetivo, type ObjetivosPorPontos } from "../modelo/quantofalta";
 import { barrasPosicao, evolucaoChances, evolucaoPosicao, type PontoSerie } from "../ui/graficos";
 import { html, type Html } from "../ui/html";
-import { dataDoDado, fotoTecnico } from "./pessoas";
+import { dataDoDado, fotoTecnico } from "./numeros";
 import { telaTorcida } from "./torcida";
 import { faixaPossivel, maximos, metaTopK, type Meta } from "../modelo/matematica";
 import { CORTES } from "../../config/temporada";
@@ -34,16 +35,15 @@ export function telaClube(clube: string, aba: string): Html {
       <div><dt>Últimos 5</dt><dd>${forma(clube)}</dd></div>
     </dl>
     ${tec ? html`<p class="note ficha-tec">Técnico <b>${tec[0]}</b>, desde ${tec[1]}</p>` : ""}
-    <button type="button" class="discreto favorito" data-favorito="${clube}" aria-pressed="${favorito() === clube}">${favorito() === clube ? "★ Meu time" : "☆ Marcar como meu time"}</button>
+    <div class="ficha-acoes"><button type="button" class="discreto favorito" data-favorito="${clube}" aria-pressed="${favorito() === clube}">${favorito() === clube ? "★ Meu time" : "☆ Marcar como meu time"}</button><a class="discreto" href="${link("comparar", slug(clube))}">Comparar com outro time</a></div>
   </div>`;
   const abas = seletor(ABAS_CLUBE, aba, (k) => linkClube(clube, k), "Seções do clube");
 
   let corpo: Html;
   if (aba === "rodada-a-rodada") corpo = rodadaARodada(clube, i);
   else if (aba === "jogos") corpo = jogos(clube);
-  else if (aba === "destaques") corpo = destaques(clube);
   else if (aba === "torcida") corpo = telaTorcida(clube);
-  else corpo = resumo(clube, i);
+  else corpo = html`${resumo(clube, i)}${destaques(clube)}`;
   return html`${ficha}${abas}<div class="colunas">${corpo}</div>`;
 }
 
@@ -76,7 +76,7 @@ function resumo(clube: string, i: number): Html {
   const kpi = (rot: string, v: number, cls: string) =>
     html`<div class="kpi ${v < 0.001 ? "zero" : ""}"><small>${rot}</small><b class="${cls}">${pct(v)}</b></div>`;
   const proximos = jogosRestantes(clube);
-  return html`<div class="coluna"><section class="tsec"><h3>Chances no fim do campeonato</h3>${seletorVagas()}
+  return html`<div class="coluna"><section class="tsec"><h3>Chances no fim do campeonato</h3>
       <div class="kpis">${kpi("Título", ch.c, "t-title")}${kpi("Libertadores", ch.l, "t-lib")}${kpi("Sul-Americana", ch.s, "t-sula")}${kpi("Rebaixamento", ch.r, "t-rel")}</div>
       <p class="note">Deve terminar com cerca de ${Math.round(res.pts[i])} pontos.</p>
       <button type="button" class="discreto compartilhar" data-compartilhar="${clube}">Compartilhar</button></section>

@@ -10,7 +10,7 @@ import { probResultado } from "../modelo/poisson";
 import { chancesSim } from "../modelo/simular";
 import type { Jogo, Linha, Placar } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
+import { atrLinha, celClube, celProb, classeFaixa, escudo, legenda, modoVagas, seletor, type Tom } from "../ui/componentes";
 import { dataJogo, dec, difPP, milhar, pct, saldo } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { navRodada } from "./rodada";
@@ -59,7 +59,7 @@ function htmlResumo(): Html {
       R = sims.real;
     const i = U.pos.reduce((m, r, k) => (r[0] > U.pos[m][0] ? k : m), 0);
     const d = U.pos[i][0] - R.pos[i][0];
-    destaque = html`<a class="efeito" href="${link("simular", "chances")}">${escudo(U.clubes[i], 18)}<span>${U.clubes[i]} campeão</span><b>${pct(U.pos[i][0])}</b>${Math.abs(d) >= 0.001 ? html`<small class="${d > 0 ? "up" : "down"}">${difPP(d)}</small>` : ""}</a>`;
+    destaque = html`<a class="efeito" href="${link("simular", "resultado")}">${escudo(U.clubes[i], 18)}<span>${U.clubes[i]} campeão</span><b>${pct(U.pos[i][0])}</b>${Math.abs(d) >= 0.001 ? html`<small class="${d > 0 ? "up" : "down"}">${difPP(d)}</small>` : ""}</a>`;
   }
   return html`<div class="progresso"><span><b>${n}</b> de ${total} jogos simulados</span><i style="width:${total ? (100 * n) / total : 100}%"></i></div>${destaque}`;
 }
@@ -163,7 +163,7 @@ const VEREDITOS = [
 function htmlAnalise(): Html {
   const abertos = restantes.length - nPlacares();
   if (abertos > 0)
-    return html`<p class="empty">A análise aparece quando todos os jogos tiverem placar. ${abertos === 1 ? "Falta 1 jogo" : `Faltam ${abertos} jogos`}; use os botões de rodada inteira na aba <a href="${link("simular", "jogos")}">Jogos</a> para ir mais rápido.</p>`;
+    return html`<p class="empty">A análise aparece quando todos os jogos tiverem placar. ${abertos === 1 ? "Falta 1 jogo" : `Faltam ${abertos} jogos`}; use os botões de rodada inteira em <a href="${link("simular", "jogos")}">Palpites</a> para ir mais rápido.</p>`;
   if (!sims.base) {
     return html`<p class="empty carregando">Comparando sua tabela com ${milhar(temporada.modelo.simulacoes)} campeonatos</p>`;
   }
@@ -261,8 +261,9 @@ function htmlComputador(): Html {
 export function telaSimulador(vista: string, numero: number | null): Html {
   const sec = SECOES.find((s) => s.id === "simular")!;
   let corpo: Html;
-  if (vista === "tabela") corpo = html`<div class="box" id="simTable">${htmlTabela()}</div>${legenda()}`;
-  else if (vista === "chances") corpo = html`${seletorVagas()}<div id="simProbs">${htmlChances()}</div>`;
+  if (vista === "resultado")
+    corpo = html`<section><h2>Tabela com seus palpites</h2><div class="box" id="simTable">${htmlTabela()}</div>${legenda()}</section>
+      <section><h2>Chances com seus palpites</h2><div id="simProbs">${htmlChances()}</div></section>`;
   else if (vista === "analise") corpo = html`<div id="simAnalysis">${htmlAnalise()}</div>`;
   else if (vista === "computador") corpo = html`<div id="simComputador">${htmlComputador()}</div>`;
   else corpo = vistaJogos(numero);

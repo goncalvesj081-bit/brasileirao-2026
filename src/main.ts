@@ -7,9 +7,8 @@ import { aindaJogam } from "./telas/andamento";
 import { telaChances } from "./telas/chances";
 import { telaClassificacao } from "./telas/classificacao";
 import { telaClube } from "./telas/clube";
-import { telaEstatisticas } from "./telas/estatisticas";
+import { telaNumeros } from "./telas/numeros";
 import { telaMais, telaSobre } from "./telas/mais";
-import { telaPessoas } from "./telas/pessoas";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
@@ -58,10 +57,8 @@ function conteudo(r: Rota): Html {
       return telaRodada(r.numero);
     case "simular":
       return telaSimulador(r.vista, r.numero);
-    case "estatisticas":
-      return html`${topoDe("estatisticas", r.vista)}${telaEstatisticas(r.vista)}`;
-    case "pessoas":
-      return html`${topoDe("pessoas", r.vista)}${telaPessoas(r.vista)}`;
+    case "numeros":
+      return html`${topoDe("numeros", r.vista)}${telaNumeros(r.vista)}`;
     case "mais":
       return telaMais();
     case "sobre":
@@ -105,8 +102,9 @@ function desenhar() {
 
 function desenharTudo() {
   const titulo = tituloDa(rota);
-  document.title = rota.secao === "tabela" ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
-  $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : html`${titulo}`);
+  const inicio = rota.secao === "tabela" && rota.vista === "geral";
+  document.title = inicio ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
+  $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : inicio ? html`Brasileirão <span>2026</span>` : html`${titulo}`);
   $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" ? "" : String(fonte());
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
@@ -114,7 +112,7 @@ function desenharTudo() {
   if (rota.secao !== "bolao") foraDoBolao();
   $("main").innerHTML = String(conteudo(rota));
   desenharConta();
-  const comLado = ((rota.secao === "tabela" && rota.vista === "geral") || (rota.secao === "chances" && rota.vista === "resumo")) && aindaJogam().size > 0;
+  const comLado = rota.secao === "tabela" && rota.vista === "geral" && aindaJogam().size > 0;
   document.querySelector(".content")?.classList.toggle("larga", rota.secao === "clube" || rota.secao === "jogos" || comLado || (rota.secao === "serie-b" && (rota.vista === "clube" || rota.vista === "simular")));
 }
 

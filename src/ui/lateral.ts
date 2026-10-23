@@ -1,5 +1,5 @@
 import { tabela } from "../dados";
-import { abaInferior, link, SECOES, type Rota } from "../router";
+import { abaInferior, link, SECOES, secaoAtiva, type Rota } from "../router";
 import { escudo, linkClube } from "./componentes";
 import { favorito } from "./favorito";
 import { cru, html, type Html } from "./html";
@@ -17,19 +17,17 @@ const ICONES: Record<string, string> = {
   simular: '<path d="M6 4v16M18 4v16M12 4v16"/><circle cx="6" cy="9" r="2"/><circle cx="12" cy="15" r="2"/><circle cx="18" cy="8" r="2"/>',
   bolao: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM5 5h3M16 5h3M5 5c0 3 1.5 4 3 4M19 5c0 3-1.5 4-3 4M12 13v4M8 20h8"/>',
   "serie-b": '<path d="M7 4h6.5a3.5 3.5 0 0 1 0 7H7zM7 11h7.5a3.5 3.5 0 0 1 0 7H7zM7 4v14"/>',
-  comparar: '<path d="M8 4v16M16 4v16M4 8h8M12 16h8"/>',
-  estatisticas: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',
-  pessoas: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.5-4 4-5.5 7-5.5s5.5 1.5 7 5.5"/>',
-  sobre: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
+  numeros: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',
   mais: '<circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/>',
 };
 const icone = (k: string) =>
   cru(`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONES[k]}</svg>`);
 
-/** Barra lateral do computador: todas as seções, sem subitens (eles ficam no topo de cada tela). */
+/** Barra lateral do computador: as seções, sem subitens (eles ficam no topo de cada tela). */
 export function navegacao(r: Rota): Html {
-  return html`${SECOES.filter((s) => s.id !== "mais").map(
-    (s) => html`<a class="sec" href="${destino(s.id)}" aria-current="${r.secao === s.id ? "page" : "false"}">${icone(s.id)}<span>${s.rotulo}</span></a>`,
+  const ativa = secaoAtiva(r);
+  return html`${SECOES.filter((s) => !s.oculta).map(
+    (s) => html`<a class="sec" href="${destino(s.id)}" aria-current="${ativa === s.id && !r.clube ? "page" : "false"}">${icone(s.id)}<span>${s.rotulo}</span></a>`,
   )}`;
 }
 
@@ -44,7 +42,7 @@ export function listaClubes(r: Rota): Html {
 /** Abas fixas embaixo, no celular. */
 export function abasInferiores(r: Rota): Html {
   const ativa = abaInferior(r);
-  return html`${["tabela", "chances", "jogos", "simular", "mais"].map(
+  return html`${["tabela", "jogos", "simular", "bolao", "mais"].map(
     (id) => html`<a href="${destino(id)}" aria-current="${ativa === id ? "page" : "false"}">${icone(id)}<span>${SECOES.find((s) => s.id === id)!.rotulo}</span></a>`,
   )}`;
 }

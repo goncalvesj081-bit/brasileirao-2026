@@ -50,7 +50,7 @@ export function corFaixa(p: number, n = n0): string {
 export function avisoSimulacao(): Html {
   const n = nSimulados();
   if (!n) return html``;
-  return html`<p class="aviso">Aqui só entram resultados reais. Seus ${n} placare${n > 1 ? "s" : ""} simulado${n > 1 ? "s" : ""} aparece${n > 1 ? "m" : ""} em <a href="${link("simular", "tabela")}">Simular</a>.</p>`;
+  return html`<p class="aviso">Aqui só entram resultados reais. Seus ${n} placare${n > 1 ? "s" : ""} simulado${n > 1 ? "s" : ""} aparece${n > 1 ? "m" : ""} em <a href="${link("simular", "resultado")}">Simular</a>.</p>`;
 }
 
 export const linkClube = (clube: string, aba?: string) => (aba ? link("clube", slug(clube), aba) : link("clube", slug(clube)));
@@ -102,7 +102,7 @@ export function legenda(): Html {
     ${f.lib > f.grupos ? item("var(--pre)", `Libertadores, pré e vagas das copas ${de(f.grupos + 1, f.lib)}${prov}`) : ""}
     ${item("var(--sula)", `Sul-Americana ${de(f.lib + 1, f.sula)}${prov}`)}
     ${item("var(--rel)", `Rebaixamento ${de(r[0], r[1])}`)}
-    <a href="${link("chances", "vagas")}">Por que muda</a>
+    <a href="${link("chances", "vagas")}">Por que a faixa muda</a>
   </div>`;
 }
 

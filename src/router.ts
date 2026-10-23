@@ -4,8 +4,10 @@ export interface Secao {
   id: string;
   rotulo: string;
   vistas: [string, string][];
-  /** na barra de baixo do celular, cai em "Mais" */
+  /** no celular, fica dentro de "Mais" em vez de ter aba própria embaixo */
   emMais?: boolean;
+  /** fora da navegação (só por link) */
+  oculta?: boolean;
 }
 
 export const SECOES: Secao[] = [
@@ -14,36 +16,30 @@ export const SECOES: Secao[] = [
     rotulo: "Tabela",
     vistas: [
       ["geral", "Geral"],
-      ["ultimas-10", "Últimos 10 jogos"],
-      ["mandante", "Mandante"],
-      ["visitante", "Visitante"],
-      ["turno", "Turno"],
-      ["returno", "Returno"],
-    ],
-  },
-  {
-    id: "chances",
-    rotulo: "Chances",
-    vistas: [
-      ["resumo", "Resumo"],
-      ["vagas", "Vagas"],
-      ["campeao", "Título"],
-      ["libertadores", "Libertadores"],
-      ["sul-americana", "Sul-Americana"],
-      ["rebaixamento", "Queda"],
-      ["posicoes", "Posições"],
-      ["pontos", "Por pontos"],
-      ["acerto", "Acerto do modelo"],
+      ["ultimas-10", "Últimos 10"],
+      ["mandante", "Em casa"],
+      ["visitante", "Fora"],
     ],
   },
   { id: "jogos", rotulo: "Jogos", vistas: [] },
   {
+    id: "chances",
+    rotulo: "Chances",
+    emMais: true,
+    vistas: [
+      ["posicoes", "Posição final"],
+      ["pontos", "Pontos necessários"],
+      ["restante", "Tabela que falta"],
+      ["vagas", "Vagas e copas"],
+      ["acerto", "Acerto do modelo"],
+    ],
+  },
+  {
     id: "simular",
     rotulo: "Simular",
     vistas: [
-      ["jogos", "Jogos"],
-      ["tabela", "Tabela"],
-      ["chances", "Chances"],
+      ["jogos", "Palpites"],
+      ["resultado", "Resultado"],
       ["analise", "Análise"],
       ["computador", "Computador"],
     ],
@@ -51,11 +47,23 @@ export const SECOES: Secao[] = [
   {
     id: "bolao",
     rotulo: "Bolão",
-    emMais: true,
     vistas: [
       ["palpites", "Palpites"],
       ["ranking", "Ranking"],
       ["regras", "Regulamento"],
+    ],
+  },
+  {
+    id: "numeros",
+    rotulo: "Números",
+    emMais: true,
+    vistas: [
+      ["artilharia", "Gols e assistências"],
+      ["cartoes", "Cartões"],
+      ["gols", "Ataque e defesa"],
+      ["sequencias", "Sequências"],
+      ["tecnicos", "Técnicos"],
+      ["publico", "Público"],
     ],
   },
   {
@@ -69,44 +77,16 @@ export const SECOES: Secao[] = [
       ["simular", "Simular"],
     ],
   },
-  {
-    id: "estatisticas",
-    rotulo: "Estatísticas",
-    emMais: true,
-    vistas: [
-      ["vitorias", "Vitórias seguidas"],
-      ["invencibilidade", "Invencibilidade"],
-      ["derrotas", "Derrotas seguidas"],
-      ["sem-vitorias", "Sem vencer"],
-      ["ataque", "Ataque"],
-      ["defesa", "Defesa"],
-      ["restante", "Tabela que falta"],
-      ["publico", "Público"],
-    ],
-  },
-  {
-    id: "pessoas",
-    rotulo: "Jogadores e técnicos",
-    emMais: true,
-    vistas: [
-      ["artilharia", "Artilharia"],
-      ["assistencias", "Assistências"],
-      ["cartoes", "Cartões"],
-      ["tecnicos", "Técnicos"],
-      ["trocas", "Trocas"],
-    ],
-  },
-  { id: "comparar", rotulo: "Comparar times", emMais: true, vistas: [] },
-  { id: "sobre", rotulo: "Como calculamos", emMais: true, vistas: [] },
-  { id: "mais", rotulo: "Mais", vistas: [] },
+  { id: "comparar", rotulo: "Comparar times", emMais: true, oculta: true, vistas: [] },
+  { id: "sobre", rotulo: "Como calculamos", emMais: true, oculta: true, vistas: [] },
+  { id: "mais", rotulo: "Mais", oculta: true, vistas: [] },
 ];
 
 export const ABAS_CLUBE: [string, string][] = [
   ["resumo", "Resumo"],
-  ["rodada-a-rodada", "Rodada a rodada"],
-  ["jogos", "Jogos"],
   ["torcida", "Para quem torcer"],
-  ["destaques", "Destaques"],
+  ["jogos", "Jogos"],
+  ["rodada-a-rodada", "Evolução"],
 ];
 
 export interface Rota {
@@ -126,11 +106,28 @@ const ANTIGAS: Record<string, (a: string, b: string) => string> = {
   classificacao: (a) => `#/tabela/${a === "ultimas-10" ? a : a || "geral"}`,
   rodada: (_, b) => `#/jogos${b ? "/" + b : ""}`,
   pontuacao: (a) => `#/chances/pontos/${a || "campeao"}`,
+  estatisticas: (a) =>
+    a === "restante" ? "#/chances/restante" : `#/numeros/${a === "ataque" || a === "defesa" ? "gols" : a === "publico" ? "publico" : "sequencias"}`,
+  pessoas: (a) => `#/numeros/${a === "trocas" ? "tecnicos" : a === "assistencias" ? "artilharia" : a || "artilharia"}`,
+};
+/** Vistas que saíram de uma seção que continua existindo. */
+const VISTAS_ANTIGAS: Record<string, string> = {
+  "tabela/turno": ROTA_INICIAL,
+  "tabela/returno": ROTA_INICIAL,
+  "chances/resumo": ROTA_INICIAL,
+  "chances/campeao": ROTA_INICIAL,
+  "chances/libertadores": ROTA_INICIAL,
+  "chances/sul-americana": ROTA_INICIAL,
+  "chances/rebaixamento": ROTA_INICIAL,
+  "simular/tabela": "#/simular/resultado",
+  "simular/chances": "#/simular/resultado",
 };
 
 export function redirecionamento(hash = location.hash): string | null {
   const [s = "", a = "", b = ""] = hash.replace(/^#\/?/, "").split("/");
-  return ANTIGAS[s] ? ANTIGAS[s](a, b) : null;
+  if (ANTIGAS[s]) return ANTIGAS[s](a, b);
+  if (s === "clube" && b === "destaques") return `#/clube/${a}`;
+  return VISTAS_ANTIGAS[`${s}/${a}`] ?? null;
 }
 
 /** Lê o endereço; devolve null quando não é uma rota conhecida. */
@@ -168,6 +165,9 @@ export function tituloDa(r: Rota): string {
   if (r.clube) return r.clube;
   return SECOES.find((s) => s.id === r.secao)?.rotulo ?? "";
 }
+
+/** Seção que fica acesa na barra lateral (o clube fica sob a Tabela). */
+export const secaoAtiva = (r: Rota) => (r.secao === "clube" ? "tabela" : r.secao);
 
 /** Seção que fica acesa na barra de baixo do celular. */
 export function abaInferior(r: Rota): string {

@@ -155,9 +155,9 @@ function efeitosRelevantes(g: Jogo, E: EfeitoJogo): Efeito[] {
   return escolhidos;
 }
 
-/** "O que mais pesa nesta rodada": para título, Libertadores e queda, o jogo que mais mexe. */
-function destaques(jogos: Jogo[], porId: Map<string, EfeitoJogo>): Html {
-  const itens = (["c", "l", "r"] as const)
+/** Para título, Libertadores e queda, o jogo da lista que mais mexe na chance de alguém. */
+export function jogosQueMaisPesam(jogos: Jogo[], porId: Map<string, EfeitoJogo>) {
+  return (["c", "l", "r"] as const)
     .map((obj) => {
       let melhor: { g: Jogo; e: Efeito } | null = null;
       for (const g of jogos) {
@@ -168,14 +168,22 @@ function destaques(jogos: Jogo[], porId: Map<string, EfeitoJogo>): Html {
       return melhor && melhor.e.peso >= 0.03 ? { obj, ...melhor } : null;
     })
     .filter((x) => x !== null);
+}
+
+/** "Grêmio x Vitória: Grêmio vai de 12% a 40%, conforme o resultado." */
+export function fraseDoPeso(obj: ObjetivoJogo, g: Jogo, e: Efeito): Html {
+  const c = tabela[e.clube].clube;
+  const [lo, hi] = [Math.min(...e.se), Math.max(...e.se)];
+  return html`<small>${NOME_OBJ[obj][0].toUpperCase() + NOME_OBJ[obj].slice(1)}</small>
+    <span><b>${g.mandante} x ${g.visitante}</b>: ${escudo(c, 16)} ${c} vai de <b class="${TOM_OBJ[obj]}">${pct(lo)}</b> a <b class="${TOM_OBJ[obj]}">${pct(hi)}</b>, conforme o resultado.</span>`;
+}
+
+/** "O que mais pesa nesta rodada". */
+function destaques(jogos: Jogo[], porId: Map<string, EfeitoJogo>): Html {
+  const itens = jogosQueMaisPesam(jogos, porId);
   if (!itens.length) return html``;
   return html`<section class="pesa"><h2>O que mais pesa nesta rodada</h2>
-    <ul>${itens.map(({ obj, g, e }) => {
-      const c = tabela[e.clube].clube;
-      const [lo, hi] = [Math.min(...e.se), Math.max(...e.se)];
-      return html`<li><small>${NOME_OBJ[obj][0].toUpperCase() + NOME_OBJ[obj].slice(1)}</small>
-        <span><b>${g.mandante} x ${g.visitante}</b>: ${escudo(c, 16)} ${c} vai de <b class="${TOM_OBJ[obj]}">${pct(lo)}</b> a <b class="${TOM_OBJ[obj]}">${pct(hi)}</b>, conforme o resultado.</span></li>`;
-    })}</ul></section>`;
+    <ul>${itens.map(({ obj, g, e }) => html`<li>${fraseDoPeso(obj, g, e)}</li>`)}</ul></section>`;
 }
 
 export function telaRodada(numero: number | null): Html {
@@ -221,5 +229,5 @@ export function telaRodada(numero: number | null): Html {
       })}
     </div>
     ${disputados.length || faltam.some((g) => g.aoVivo) ? html`<button type="button" class="discreto compartilhar" data-compartilhar-rodada="${r}">Compartilhar a rodada</button>` : ""}
-    <p class="note">Barra: chance de vitória do mandante, empate e vitória do visitante. "O que muda" mostra a chance final de cada time em cada resultado, com o resto do campeonato sorteado. Para testar placares, use <a href="#/simular">Simular</a>.</p>`;
+    <p class="note">Barra: chance de vitória do mandante, empate e vitória do visitante. "O que muda" mostra a chance final de cada time em cada resultado, com o resto do campeonato sorteado. Para testar placares, use <a href="${link("simular")}">Simular</a>.</p>`;
 }
