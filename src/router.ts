@@ -29,6 +29,10 @@ export const SECOES: Secao[] = [
     // sem o bolão, Chances volta para a barra de baixo do celular
     emMais: bolao.visivel,
     vistas: [
+      ["campeao", "Título"],
+      ["libertadores", "Libertadores"],
+      ["sul-americana", "Sul-Americana"],
+      ["rebaixamento", "Queda"],
       ["posicoes", "Posição final"],
       ["pontos", "Pontos necessários"],
       ["restante", "Tabela que falta"],
@@ -118,10 +122,6 @@ const VISTAS_ANTIGAS: Record<string, string> = {
   "tabela/turno": ROTA_INICIAL,
   "tabela/returno": ROTA_INICIAL,
   "chances/resumo": ROTA_INICIAL,
-  "chances/campeao": ROTA_INICIAL,
-  "chances/libertadores": ROTA_INICIAL,
-  "chances/sul-americana": ROTA_INICIAL,
-  "chances/rebaixamento": ROTA_INICIAL,
   "simular/tabela": "#/simular/resultado",
   "simular/chances": "#/simular/resultado",
 };

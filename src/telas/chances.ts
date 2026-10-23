@@ -1,9 +1,9 @@
 import { tabela } from "../dados";
 import { sims } from "../estado";
-import type { ResultadoSimulacao } from "../modelo/simular";
+import { chancesSim, type ResultadoSimulacao } from "../modelo/simular";
 import type { Chances } from "../modelo/tipos";
 import { link, SECOES } from "../router";
-import { atrLinha, avisoSimulacao, calculando, celClube, corFaixa, seletor, seletorVagas, type Tom } from "../ui/componentes";
+import { atrLinha, avisoSimulacao, calculando, celClube, celProb, classeFaixa, corFaixa, modoVagas, seletor, seletorVagas, type Tom } from "../ui/componentes";
 import { dec } from "../ui/formato";
 import { html, type Html } from "../ui/html";
 import { telaPontuacao } from "./pontuacao";
@@ -25,8 +25,26 @@ export function telaChances(vista: string, extra: string): Html {
   if (vista === "restante") return html`${topo}${tabelaQueFalta()}`;
   const res = sims.real;
   if (!res) return html`${topo}${calculando()}`;
-  const corpo = vista === "vagas" ? html`${seletorVagas()}${telaVagas(res)}` : vista === "pontos" ? telaPontuacao(extra) : mapaDeCalor(res);
+  let corpo: Html;
+  if (ZONAS[vista]) corpo = html`${vista === "libertadores" || vista === "sul-americana" ? seletorVagas() : ""}${porZona(res, vista)}`;
+  else if (vista === "vagas") corpo = html`${seletorVagas()}${telaVagas(res)}`;
+  else if (vista === "pontos") corpo = telaPontuacao(extra);
+  else corpo = mapaDeCalor(res);
   return html`${topo}${avisoSimulacao()}${corpo}`;
+}
+
+/** Os 20 clubes, do mais para o menos provável num objetivo (título, Libertadores, Sul-Americana ou queda). */
+function porZona(res: ResultadoSimulacao, vista: string): Html {
+  const z = ZONAS[vista];
+  const linhas = tabela.map((t, i) => ({ t, i, p: chancesSim(res, i, modoVagas())[z.chave] })).sort((a, b) => b.p - a.p || a.i - b.i);
+  return html`<h2>${z.frase}</h2>
+    <div class="box"><table class="tab">
+      <thead><tr><th>#</th><th class="l">Clube</th><th>Pts</th><th class="l">Chance</th></tr></thead>
+      <tbody>${linhas.map(
+        (r) => html`<tr ${atrLinha(r.t.clube, classeFaixa(r.i))}><td class="pos">${r.i + 1}</td>${celClube(r.t.clube)}<td class="big">${r.t.p}</td>${celProb(z.tom, r.p, "wide")}</tr>`,
+      )}</tbody>
+    </table></div>
+    <p class="note">O número à esquerda é a posição de hoje.</p>`;
 }
 
 function mapaDeCalor(res: ResultadoSimulacao): Html {
