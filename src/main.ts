@@ -258,8 +258,9 @@ document.addEventListener("click", (e) => {
 aoMudarBolao(() => {
   if (rota.secao === "bolao") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
+// redesenha tudo: entrar ou sair muda também o atalho do menu
 aoMudarAdmin(() => {
-  if (rota.secao === "admin") $("main").innerHTML = String(conteudo(rota));
+  if (rota.secao === "admin") desenhar();
 });
 aoCalcularSerieB(() => {
   if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));

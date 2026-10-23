@@ -3,6 +3,7 @@ import { bolao } from "../../config/bolao";
 import { abaInferior, link, SECOES, secaoAtiva, type Rota } from "../router";
 import { escudo, linkClube } from "./componentes";
 import { favorito } from "./favorito";
+import { mostrarAtalhoAdmin } from "./atalho-admin";
 import { cru, html, type Html } from "./html";
 
 const destino = (id: string) => {
@@ -19,6 +20,7 @@ const ICONES: Record<string, string> = {
   bolao: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM5 5h3M16 5h3M5 5c0 3 1.5 4 3 4M19 5c0 3-1.5 4-3 4M12 13v4M8 20h8"/>',
   "serie-b": '<path d="M7 4h6.5a3.5 3.5 0 0 1 0 7H7zM7 11h7.5a3.5 3.5 0 0 1 0 7H7zM7 4v14"/>',
   numeros: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',
+  admin: '<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
   mais: '<circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/>',
 };
 const icone = (k: string) =>
@@ -29,7 +31,7 @@ export function navegacao(r: Rota): Html {
   const ativa = secaoAtiva(r);
   return html`${SECOES.filter((s) => !s.oculta).map(
     (s) => html`<a class="sec" href="${destino(s.id)}" aria-current="${ativa === s.id && !r.clube ? "page" : "false"}">${icone(s.id)}<span>${s.rotulo}</span></a>`,
-  )}`;
+  )}${mostrarAtalhoAdmin() ? html`<a class="sec" href="${link("admin")}" aria-current="${r.secao === "admin" ? "page" : "false"}">${icone("admin")}<span>Admin</span></a>` : ""}`;
 }
 
 /** Atalho para as páginas dos clubes, em ordem alfabética (posição e pontos já estão na tabela). */

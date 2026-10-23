@@ -3,11 +3,12 @@ import { meta, tabela } from "../dados";
 import { link, SECOES } from "../router";
 import { escudo, linkClube } from "../ui/componentes";
 import { dataHora } from "../ui/formato";
+import { mostrarAtalhoAdmin } from "../ui/atalho-admin";
 import { html, type Html } from "../ui/html";
 
 /** Tela "Mais" do celular: o que não cabe nas abas de baixo, e os 20 clubes. */
 export function telaMais(): Html {
-  const itens = SECOES.filter((s) => s.emMais);
+  const itens = SECOES.filter((s) => s.emMais || (s.id === "admin" && mostrarAtalhoAdmin()));
   return html`<nav class="lista-links" aria-label="Outras seções">${itens.map(
     (s) => html`<a href="${s.vistas.length ? link(s.id, s.vistas[0][0]) : link(s.id)}"><span>${s.rotulo}</span><i aria-hidden="true">›</i></a>`,
   )}</nav>

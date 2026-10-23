@@ -4,6 +4,7 @@ import { ADMINS } from "../../config/admin";
 import { diaDeBrasilia, somarDias, type Dia } from "../modelo/visitas";
 import { SECOES } from "../router";
 import { dec } from "../ui/formato";
+import { lembrarAdmin } from "../ui/atalho-admin";
 import { cru, html, type Html } from "../ui/html";
 
 type Cliente = typeof import("../admin/cliente");
@@ -26,6 +27,8 @@ function carregar() {
         authPronto = true;
         dias = null;
         erro = "";
+        // o atalho no menu aparece só neste aparelho, e some quando o admin sai
+        lembrarAdmin(!!u && ADMINS.includes(u.uid));
         if (u && ADMINS.includes(u.uid)) atualizar();
         redesenhar();
       });
