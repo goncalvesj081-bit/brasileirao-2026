@@ -38,16 +38,12 @@
   "finalUnica": true,
   "confrontos": [
    {
-    "a": "Fluminense",
-    "b": "Palmeiras",
+    "a": "Palmeiras",
+    "b": "Estudiantes de La Plata",
     "saldoA": 0,
-    "faltam": []
-   },
-   {
-    "a": "Estudiantes de La Plata",
-    "b": "Flamengo",
-    "saldoA": 0,
-    "faltam": []
+    "faltam": [
+     "neutro"
+    ]
    }
   ]
  },
