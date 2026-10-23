@@ -50,7 +50,7 @@ export function corFaixa(p: number, n = n0): string {
 export function avisoSimulacao(): Html {
   const n = nSimulados();
   if (!n) return html``;
-  return html`<p class="aviso">Aqui só entram resultados reais. Seus ${n} placare${n > 1 ? "s" : ""} simulado${n > 1 ? "s" : ""} aparece${n > 1 ? "m" : ""} em <a href="${link("simular", "resultado")}">Simular</a>.</p>`;
+  return html`<p class="aviso">Aqui só entram resultados reais. ${n > 1 ? `Seus ${n} placares simulados aparecem` : "Seu placar simulado aparece"} em <a href="${link("simular", "resultado")}">Simular</a>.</p>`;
 }
 
 export const linkClube = (clube: string, aba?: string) => (aba ? link("clube", slug(clube), aba) : link("clube", slug(clube)));

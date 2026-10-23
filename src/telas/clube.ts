@@ -116,7 +116,7 @@ function quantoFaltaHtml(clube: string, i: number): Html {
       else if (r.tipo === "nao-alcanca")
         txt = html`nem vencendo os ${jogos} jogos a chance chega a ${pct(ALVO)} (no máximo ${pct(r.chanceMaxima)}). Depende de tropeços dos outros.`;
       else
-        txt = html`chegar a <b>${r.meta.pontos} pontos</b>: faltam ${r.meta.faltam} em ${jogos} jogo${jogos > 1 ? "s" : ""} (${comoSomar(r.meta.faltam)}).`;
+        txt = html`chegar a <b>${r.meta.pontos} pontos</b>: falta${r.meta.faltam > 1 ? "m" : ""} ${r.meta.faltam} em ${jogos} jogo${jogos > 1 ? "s" : ""} (${comoSomar(r.meta.faltam)}).`;
       return html`<li><span class="obj">${nome}</span><span>${txt}</span></li>`;
     });
   if (!linhas.length) return html``;
