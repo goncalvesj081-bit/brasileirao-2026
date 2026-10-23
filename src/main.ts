@@ -10,6 +10,8 @@ import { telaClassificacao } from "./telas/classificacao";
 import { telaClube } from "./telas/clube";
 import { telaNumeros } from "./telas/numeros";
 import { telaMais, telaSobre } from "./telas/mais";
+import { aoMudarAdmin, cliqueAdmin, telaAdmin } from "./telas/admin";
+import { contarTela, iniciarContador } from "./contador";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
@@ -64,6 +66,8 @@ function conteudo(r: Rota): Html {
       return telaMais();
     case "sobre":
       return telaSobre();
+    case "admin":
+      return telaAdmin();
     case "clube":
       return telaClube(r.clube!, r.vista);
     case "serie-b":
@@ -106,7 +110,7 @@ function desenharTudo() {
   const inicio = rota.secao === "tabela" && rota.vista === "geral";
   document.title = inicio ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
   $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : inicio ? html`Brasileirão <span>2026</span>` : html`${titulo}`);
-  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" ? "" : String(fonte());
+  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" || rota.secao === "admin" ? "" : String(fonte());
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
@@ -123,6 +127,7 @@ window.addEventListener("hashchange", () => {
   const anterior = rota;
   rota = rotaAtual();
   const mesmaTela = anterior.secao === rota.secao && anterior.clube === rota.clube;
+  contarTela(rota.secao);
   desenhar();
   if (!mesmaTela) window.scrollTo({ top: 0 });
   else if (document.activeElement?.closest?.(".seg, .round-nav")) {
@@ -138,6 +143,7 @@ document.addEventListener("keydown", (e) => {
 $("main").addEventListener("click", (e) => {
   const alvo = e.target as HTMLElement;
   if (rota.secao === "simular" && cliqueSimulador(alvo, desenhar)) return;
+  if (rota.secao === "admin" && alvo.closest("button[data-admin-entrar], button[data-admin-sair], button[data-admin-atualizar]")) return void cliqueAdmin(alvo);
   const compR = alvo.closest<HTMLButtonElement>("button[data-compartilhar-rodada]");
   if (compR) {
     void compartilharRodada(Number(compR.dataset.compartilharRodada), compR);
@@ -252,6 +258,9 @@ document.addEventListener("click", (e) => {
 aoMudarBolao(() => {
   if (rota.secao === "bolao") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
+aoMudarAdmin(() => {
+  if (rota.secao === "admin") $("main").innerHTML = String(conteudo(rota));
+});
 aoCalcularSerieB(() => {
   if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
@@ -271,6 +280,12 @@ iniciarAoVivo((ps) => {
   const digitando = document.activeElement instanceof HTMLInputElement || !!document.querySelector("form[data-bolao-form], form[data-bolao-perfil]");
   if ((mudou || meta.aoVivo) && !digitando) desenhar();
 });
+
+// contagem anônima de visitas (só no site publicado, para o desenvolvimento não entrar nos números)
+if (import.meta.env.PROD && rota.secao !== "admin") {
+  iniciarContador();
+  contarTela(rota.secao);
+}
 
 // app instalável e uso sem internet (só no site publicado; no desenvolvimento atrapalharia o recarregamento)
 if (import.meta.env.PROD && "serviceWorker" in navigator) {

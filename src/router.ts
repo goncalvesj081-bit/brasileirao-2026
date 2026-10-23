@@ -87,6 +87,7 @@ export const SECOES: Secao[] = [
   { id: "comparar", rotulo: "Comparar times", emMais: true, oculta: true, vistas: [] },
   { id: "sobre", rotulo: "Como calculamos", emMais: true, oculta: true, vistas: [] },
   { id: "mais", rotulo: "Mais", oculta: true, vistas: [] },
+  { id: "admin", rotulo: "Admin", oculta: true, vistas: [] },
 ];
 
 export const ABAS_CLUBE: [string, string][] = [
