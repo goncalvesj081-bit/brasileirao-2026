@@ -2,6 +2,8 @@
 // Prêmio vazio ("") aparece como "a definir".
 
 export const bolao = {
+  /** false: o bolão some do site (menu, botão de entrar e endereço), mas segue configurado e a atualização automática continua */
+  visivel: false,
   /** quem organiza e responde pelo bolão (aparece no regulamento) */
   organizador: "",
   /** contato para dúvidas e para quem ganhar (e-mail ou WhatsApp) */

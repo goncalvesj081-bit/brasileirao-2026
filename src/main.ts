@@ -1,4 +1,5 @@
 import "./estilos.css";
+import { bolao } from "../config/bolao";
 import { aplicarPlacares, meta, situacao } from "./dados";
 import { iniciarAoVivo, ultimaBusca } from "./aovivo";
 import { aoMudar, agendarUsuario, simularReal, sincronizarComJogosReais } from "./estado";
@@ -220,12 +221,13 @@ aoMudar(() => {
 });
 
 function desenharConta() {
+  if (!bolao.visivel) return;
   $("conta").innerHTML = String(contaTopo());
   $("sideConta").innerHTML = String(contaTopo(true));
 }
 aoMudarConta(desenharConta);
 // cantinho do usuário: carrega o Firebase depois que a página já apareceu
-setTimeout(carregarConta, 800);
+if (bolao.visivel) setTimeout(carregarConta, 800);
 function cliqueConta(e: MouseEvent) {
   const alvo = e.target as HTMLElement;
   const menu = alvo.closest("details");

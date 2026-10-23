@@ -1,4 +1,5 @@
 import { tabela } from "../dados";
+import { bolao } from "../../config/bolao";
 import { abaInferior, link, SECOES, secaoAtiva, type Rota } from "../router";
 import { escudo, linkClube } from "./componentes";
 import { favorito } from "./favorito";
@@ -42,7 +43,7 @@ export function listaClubes(r: Rota): Html {
 /** Abas fixas embaixo, no celular. */
 export function abasInferiores(r: Rota): Html {
   const ativa = abaInferior(r);
-  return html`${["tabela", "jogos", "simular", "bolao", "mais"].map(
+  return html`${["tabela", "jogos", bolao.visivel ? "bolao" : "chances", "simular", "mais"].map(
     (id) => html`<a href="${destino(id)}" aria-current="${ativa === id ? "page" : "false"}">${icone(id)}<span>${SECOES.find((s) => s.id === id)!.rotulo}</span></a>`,
   )}`;
 }

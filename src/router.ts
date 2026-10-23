@@ -1,3 +1,4 @@
+import { bolao } from "../config/bolao";
 import { clubePorSlug } from "../config/clubes";
 
 export interface Secao {
@@ -25,7 +26,8 @@ export const SECOES: Secao[] = [
   {
     id: "chances",
     rotulo: "Chances",
-    emMais: true,
+    // sem o bolão, Chances volta para a barra de baixo do celular
+    emMais: bolao.visivel,
     vistas: [
       ["posicoes", "Posição final"],
       ["pontos", "Pontos necessários"],
@@ -47,6 +49,7 @@ export const SECOES: Secao[] = [
   {
     id: "bolao",
     rotulo: "Bolão",
+    oculta: !bolao.visivel,
     vistas: [
       ["palpites", "Palpites"],
       ["ranking", "Ranking"],
@@ -147,6 +150,7 @@ export function lerRota(hash = location.hash): Rota | null {
     return { secao, vista: A, extra: B, numero: null };
   }
   const s = SECOES.find((x) => x.id === secao);
+  if (secao === "bolao" && !bolao.visivel) return null;
   if (!s) {
     // endereço curto: #/corinthians (ou #/corinthians/jogos)
     const c = clubePorSlug(secao);
