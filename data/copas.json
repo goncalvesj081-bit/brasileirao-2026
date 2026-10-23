@@ -1,7 +1,6 @@
 {
- "atualizado": "22/10/2026",
+ "atualizado": "23/10/2026",
  "jogos": [
-  "2026-10-23T00:30Z",
   "2026-11-01T19:00Z",
   "2026-11-01T21:30Z",
   "2026-11-07T21:00Z",
@@ -48,9 +47,7 @@
     "a": "Estudiantes de La Plata",
     "b": "Flamengo",
     "saldoA": 0,
-    "faltam": [
-     "b"
-    ]
+    "faltam": []
    }
   ]
  },
