@@ -67,7 +67,7 @@ service cloud.firestore {
     // Contagem anônima de visitas (só números, um documento por dia). Quem visita só consegue somar
     // um pouco a cada escrita; só quem administra lê. A lista de admins é a mesma de config/admin.ts.
     function admin() {
-      return request.auth != null && request.auth.uid in [];
+      return request.auth != null && request.auth.uid in ["ug6pZd4qdhaoV7N0VQTyO9zzcj83"];
     }
     function contadorOk(k, antes) {
       return !(k in request.resource.data)
