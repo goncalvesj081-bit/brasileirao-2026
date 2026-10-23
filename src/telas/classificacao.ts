@@ -1,3 +1,4 @@
+import { sigla } from "../../config/clubes";
 import { temporada } from "../../config/temporada";
 import { nomesClubes, posicao, proximaRodada, restantes, resultados, tabela } from "../dados";
 import { sims } from "../estado";
@@ -70,7 +71,7 @@ export function telaClassificacao(vista: string): Html {
 }
 
 /** Um cartão do panorama: até `max` clubes com a chance em `chave`. */
-function cartao(res: ResultadoSimulacao, titulo: string, chave: keyof Chances, tom: Tom, filtro: (p: number) => boolean, max: number, vazio: string): Html {
+function cartao(res: ResultadoSimulacao, titulo: string, chave: keyof Chances, tom: Tom, filtro: (p: number) => boolean, max: number, vazio: string, rodape = ""): Html {
   const linhas = tabela
     .map((t, i) => ({ clube: t.clube, p: chancesSim(res, i, modoVagas())[chave] }))
     .filter((x) => filtro(x.p))
@@ -80,7 +81,7 @@ function cartao(res: ResultadoSimulacao, titulo: string, chave: keyof Chances, t
     ? html`<ol>${linhas.map(
         (x) => html`<li><a href="${linkClube(x.clube)}">${escudo(x.clube, 20)}<span>${x.clube}</span><b>${pct(x.p)}</b></a><i style="width:${(x.p * 100).toFixed(1)}%"></i></li>`,
       )}</ol>`
-    : html`<p class="note">${vazio}</p>`}</section>`;
+    : html`<p class="note">${vazio}</p>`}${rodape ? html`<p class="note">${rodape}</p>` : ""}</section>`;
 }
 
 /** Topo da tela inicial: as três brigas do campeonato e o jogo que mais pesa na próxima rodada. */
@@ -91,10 +92,12 @@ function panorama(): Html {
   const porId = new Map((res.porJogo ?? []).map((E) => [E.id, E]));
   const daRodada = proximaRodada != null ? restantes.filter((g) => g.rodada === proximaRodada) : [];
   const peso = jogosQueMaisPesam(daRodada, porId).sort((a, b) => b.e.peso - a.e.peso)[0];
+  // na Libertadores, quem já passou de 97% sai da lista da briga e aparece numa linha embaixo
+  const garantidos = tabela.filter((_, i) => chancesSim(res, i, modoVagas()).l > 0.97).map((t) => sigla(t.clube));
   return html`<div class="panorama">
-      ${cartao(res, lider > 0.995 ? "Campeão" : "Briga pelo título", "c", "c-title", (p) => p >= 0.005, 3, "")}
-      ${cartao(res, "Briga pela Libertadores", "l", "c-lib", (p) => p >= 0.05 && p <= 0.95, 4, "Os classificados já estão praticamente definidos.")}
-      ${cartao(res, "Risco de queda", "r", "c-rel", (p) => p >= 0.01, 5, "Ninguém corre risco real.")}
+      ${cartao(res, lider > 0.995 ? "Campeão" : "Briga pelo título", "c", "c-title", (p) => p >= 0.005, 6, "")}
+      ${cartao(res, "Briga pela Libertadores", "l", "c-lib", (p) => p >= 0.03 && p <= 0.97, 10, "Os classificados já estão praticamente definidos.", garantidos.length ? `Praticamente garantidos: ${garantidos.join(", ")}` : "")}
+      ${cartao(res, "Risco de queda", "r", "c-rel", (p) => p >= 0.03, 10, "Ninguém corre risco real.")}
     </div>
     ${peso ? html`<a class="peso" href="${link("jogos")}"><em>Jogo que mais pesa na ${proximaRodada}ª rodada</em><span class="pesa-frase">${fraseDoPeso(peso.obj, peso.g, peso.e)}</span><i aria-hidden="true">›</i></a>` : ""}`;
 }
