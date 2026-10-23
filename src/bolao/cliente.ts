@@ -17,7 +17,7 @@ import {
 } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, getFirestore, query, serverTimestamp, setDoc, deleteDoc, where } from "firebase/firestore";
 import { FIREBASE } from "../../config/firebase";
-import type { LinhaRanking } from "../modelo/bolao";
+import { fotoSegura, type LinhaRanking } from "../modelo/bolao";
 import type { Perfil } from "../modelo/perfil";
 
 const app = initializeApp(FIREBASE);
@@ -58,10 +58,10 @@ export const sair = () => signOut(auth);
 export async function registrar(u: User) {
   const ref = doc(db, "usuarios", u.uid);
   const atual = await getDoc(ref);
-  if (!atual.exists()) await setDoc(ref, { nome: (u.displayName ?? "Torcedor").slice(0, 30), foto: u.photoURL ?? "" });
+  if (!atual.exists()) await setDoc(ref, { nome: (u.displayName ?? "Torcedor").slice(0, 30), foto: fotoSegura(u.photoURL) });
   return (atual.data()?.nome as string | undefined) ?? (u.displayName ?? "Torcedor").slice(0, 30);
 }
-export const mudarNome = (u: User, nome: string) => setDoc(doc(db, "usuarios", u.uid), { nome: nome.trim().slice(0, 30), foto: u.photoURL ?? "" });
+export const mudarNome = (u: User, nome: string) => setDoc(doc(db, "usuarios", u.uid), { nome: nome.trim().slice(0, 30), foto: fotoSegura(u.photoURL) });
 
 /** Cadastro privado (nome completo, nascimento, WhatsApp): só o dono lê. */
 export async function lerPerfil(uid: string): Promise<Perfil | null> {

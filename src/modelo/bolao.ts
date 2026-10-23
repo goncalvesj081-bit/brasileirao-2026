@@ -58,6 +58,10 @@ export function compararLinhas(
 }
 
 /** Ranking pelos jogos já encerrados (a temporada inteira). */
+/** Só fotos do Google entram no ranking: um endereço qualquer faria o navegador de todo mundo buscar uma imagem de fora. */
+export const fotoSegura = (url: string | null | undefined) =>
+  url && url.length <= 500 && /^https:\/\/[a-z0-9.-]+\.googleusercontent\.com\//.test(url) ? url : "";
+
 export function montarRanking(
   palpites: Palpite[],
   resultados: { id: string; rodada: number; gm: number; gv: number }[],

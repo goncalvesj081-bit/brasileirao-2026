@@ -5,7 +5,7 @@ import { bolaoConfigurado } from "../../config/firebase";
 import { porData, proximaRodada, restantes, resultados, rodadasComJogo } from "../dados";
 import { bolao as CONFIG } from "../../config/bolao";
 import { temporada } from "../../config/temporada";
-import { PONTOS, pontosDoPalpite, rankingDoPeriodo, type LinhaRanking } from "../modelo/bolao";
+import { fotoSegura, PONTOS, pontosDoPalpite, rankingDoPeriodo, type LinhaRanking } from "../modelo/bolao";
 import { normalizarWhatsapp, problemaNoPerfil, whatsappParaTela, type Perfil } from "../modelo/perfil";
 import type { Jogo, Resultado } from "../modelo/tipos";
 import { link, SECOES } from "../router";
@@ -311,7 +311,7 @@ function telaRanking(extra: string): Html {
     ? html`<div class="box"><table class="tab">
       <thead><tr><th>#</th><th class="l">Participante</th><th>Pontos</th><th>Exatos</th><th class="w">Saldos</th><th class="w">Palpites</th></tr></thead>
       <tbody>${linhas.map(
-        (l, k) => html`<tr class="${l.uid === usuario?.uid ? "eu" : ""}"><td class="pos">${k + 1}</td><td class="l"><span class="quem-tec">${l.foto ? html`<img class="foto-tec" src="${l.foto}" alt="" width="24" height="24" referrerpolicy="no-referrer">` : ""}${l.nome}</span></td><td class="big">${l.pontos}</td><td>${l.exatos}</td><td class="w dim">${l.saldos}</td><td class="w dim">${l.palpites}</td></tr>`,
+        (l, k) => html`<tr class="${l.uid === usuario?.uid ? "eu" : ""}"><td class="pos">${k + 1}</td><td class="l"><span class="quem-tec">${fotoSegura(l.foto) ? html`<img class="foto-tec" src="${fotoSegura(l.foto)}" alt="" width="24" height="24" referrerpolicy="no-referrer">` : ""}${l.nome}</span></td><td class="big">${l.pontos}</td><td>${l.exatos}</td><td class="w dim">${l.saldos}</td><td class="w dim">${l.palpites}</td></tr>`,
       )}</tbody>
     </table></div>`
     : vazio(p.tipo === "rodada" ? "Ainda não há pontos nesta rodada: o ranking aparece quando o primeiro jogo dela terminar." : "Ainda não há pontos neste período.");

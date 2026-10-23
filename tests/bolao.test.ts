@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { montarRanking, pontosDoPalpite, rankingDoPeriodo } from "../src/modelo/bolao";
+import { fotoSegura, montarRanking, pontosDoPalpite, rankingDoPeriodo } from "../src/modelo/bolao";
 
 describe("pontos do bolão", () => {
   it("10 / 7 / 5 / 0", () => {
@@ -86,5 +86,15 @@ describe("pontos do bolão", () => {
     // ranking gravado no formato antigo (sem porRodada) ainda funciona
     const antigo = r.map(({ porRodada: _, ...l }) => l) as unknown as typeof r;
     expect(rankingDoPeriodo(antigo, (x) => x === 20).map((l) => [l.nome, l.pontos])).toEqual([["Bia", 10]]);
+  });
+});
+
+describe("foto do ranking", () => {
+  it("aceita só foto do Google", () => {
+    expect(fotoSegura("https://lh3.googleusercontent.com/a/ACg8ocK=s96-c")).toBe("https://lh3.googleusercontent.com/a/ACg8ocK=s96-c");
+    expect(fotoSegura("https://exemplo.com/rastreio.png")).toBe("");
+    expect(fotoSegura("https://googleusercontent.com.exemplo.com/x.png")).toBe("");
+    expect(fotoSegura("javascript:alert(1)")).toBe("");
+    expect(fotoSegura(null)).toBe("");
   });
 });

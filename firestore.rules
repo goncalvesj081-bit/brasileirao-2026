@@ -28,17 +28,23 @@ service cloud.firestore {
         && request.resource.data.uid == request.auth.uid
         && id == request.auth.uid + "_" + request.resource.data.jogo
         && request.resource.data.keys().hasOnly(["uid", "jogo", "gm", "gv", "rodada", "em"])
+        && request.resource.data.rodada is int
+        && request.resource.data.em == request.time
         && placarValido(request.resource.data)
         && antesDoJogo(request.resource.data.jogo)
         && exists(/databases/$(database)/documents/perfis/$(request.auth.uid));
       allow delete: if request.auth != null && resource.data.uid == request.auth.uid && antesDoJogo(resource.data.jogo);
     }
 
+    // foto: vazia ou do Google (um endereço qualquer seria buscado pelo navegador de quem abre o ranking)
     match /usuarios/{uid} {
       allow read: if true;
       allow write: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(["nome", "foto"])
-        && request.resource.data.nome is string && request.resource.data.nome.size() > 0 && request.resource.data.nome.size() <= 30;
+        && request.resource.data.nome is string && request.resource.data.nome.size() > 0 && request.resource.data.nome.size() <= 30
+        && (!("foto" in request.resource.data) || request.resource.data.foto == ""
+          || (request.resource.data.foto is string && request.resource.data.foto.size() <= 500
+            && request.resource.data.foto.matches('^https://[a-z0-9.-]+[.]googleusercontent[.]com/.*$')));
     }
 
     match /perfis/{uid} {
