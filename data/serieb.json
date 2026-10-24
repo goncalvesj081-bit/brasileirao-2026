@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T21:39:32.472Z",
+ "atualizado": "2026-10-24T23:42:43.445Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3127,23 +3127,27 @@
    "data": "2026-10-24T19:30Z",
    "gm": 3,
    "gv": 2
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860402",
    "rodada": 35,
    "mandante": "CRB",
    "visitante": "Londrina",
-   "data": "2026-10-24T21:30Z"
+   "data": "2026-10-24T21:30Z",
+   "gm": 2,
+   "gv": 1
   },
   {
    "id": "b401860409",
    "rodada": 35,
    "mandante": "Ponte Preta",
    "visitante": "Fortaleza",
-   "data": "2026-10-24T21:30Z"
-  },
+   "data": "2026-10-24T21:30Z",
+   "gm": 2,
+   "gv": 2
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860405",
    "rodada": 35,

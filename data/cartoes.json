@@ -37,8 +37,22 @@
    "pendurado"
   ],
   [
+   "Rodrigo Garro",
+   "Corinthians",
+   11,
+   0,
+   "pendurado"
+  ],
+  [
    "Agustín Canobbio",
    "Fluminense",
+   7,
+   1,
+   ""
+  ],
+  [
+   "Alix Vinicius",
+   "Bragantino",
    7,
    1,
    ""
@@ -55,20 +69,6 @@
    "Flamengo",
    4,
    2,
-   ""
-  ],
-  [
-   "Rodrigo Garro",
-   "Corinthians",
-   10,
-   0,
-   ""
-  ],
-  [
-   "Alix Vinicius",
-   "Bragantino",
-   6,
-   1,
    ""
   ],
   [
@@ -217,6 +217,13 @@
    5,
    1,
    "pendurado"
+  ],
+  [
+   "Agustín Giay",
+   "Palmeiras",
+   7,
+   0,
+   ""
   ],
   [
    "Agustín Sant'Anna",
@@ -394,13 +401,6 @@
    "suspenso"
   ],
   [
-   "Agustín Giay",
-   "Palmeiras",
-   6,
-   0,
-   ""
-  ],
-  [
    "Alan Franco",
    "Atlético-MG",
    6,
@@ -433,7 +433,7 @@
    "Palmeiras",
    3,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Arthur Cabral",
@@ -469,6 +469,13 @@
    0,
    2,
    ""
+  ],
+  [
+   "Gabriel",
+   "Bragantino",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Gastón Benavídez",
@@ -688,13 +695,6 @@
    "pendurado"
   ],
   [
-   "Gabriel",
-   "Bragantino",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Gabriel Brazão",
    "Santos",
    5,
@@ -732,6 +732,13 @@
   [
    "Johan Carbonero",
    "Internacional",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "José Herrera",
+   "Bragantino",
    5,
    0,
    "pendurado"
@@ -996,6 +1003,13 @@
    ""
   ],
   [
+   "Fabrizio Angileri",
+   "Corinthians",
+   4,
+   0,
+   ""
+  ],
+  [
    "Gabriel Baralhas",
    "Vitória",
    4,
@@ -1012,6 +1026,13 @@
   [
    "Guillermo Varela",
    "Flamengo",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Gustavo Gómez",
+   "Palmeiras",
    4,
    0,
    ""
@@ -1061,13 +1082,6 @@
   [
    "José Enamorado",
    "Grêmio",
-   4,
-   0,
-   ""
-  ],
-  [
-   "José Herrera",
-   "Bragantino",
    4,
    0,
    ""
@@ -1360,13 +1374,6 @@
    ""
   ],
   [
-   "Fabrizio Angileri",
-   "Corinthians",
-   3,
-   0,
-   ""
-  ],
-  [
    "Fagner",
    "Cruzeiro",
    3,
@@ -1437,13 +1444,6 @@
    ""
   ],
   [
-   "Gustavo Gómez",
-   "Palmeiras",
-   3,
-   0,
-   ""
-  ],
-  [
    "Hércules",
    "Fluminense",
    3,
@@ -1479,6 +1479,13 @@
    ""
   ],
   [
+   "Jesse Lingard",
+   "Corinthians",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "João",
    "Remo",
    3,
@@ -1511,7 +1518,7 @@
    "Palmeiras",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Johan Rojas",
@@ -1700,7 +1707,7 @@
    "Bragantino",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Renato Marques",
@@ -1778,6 +1785,13 @@
    0,
    1,
    ""
+  ],
+  [
+   "Tiago Volpi",
+   "Bragantino",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Tomás Cuello",
@@ -2144,13 +2158,6 @@
    "pendurado"
   ],
   [
-   "Jesse Lingard",
-   "Corinthians",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "João Pedro",
    "Remo",
    2,
@@ -2475,13 +2482,6 @@
   [
    "Thaciano",
    "Santos",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Tiago Volpi",
-   "Bragantino",
    2,
    0,
    "pendurado"
@@ -3182,6 +3182,13 @@
   [
    "Marco Moreno",
    "Bahia",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Marino Hinestroza",
+   "Vasco",
    1,
    0,
    ""
