@@ -1,5 +1,5 @@
 {
- "atualizado": "20/10/2026",
+ "atualizado": "23/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -870,6 +870,13 @@
    "pendurado"
   ],
   [
+   "Zé Ivaldo",
+   "Remo",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Alan Saldivia",
    "Vasco",
    4,
@@ -1094,6 +1101,13 @@
    ""
   ],
   [
+   "Marcelinho",
+   "Remo",
+   4,
+   0,
+   ""
+  ],
+  [
    "Marllon",
    "Remo",
    4,
@@ -1208,13 +1222,6 @@
   [
    "Yannick Bolasie",
    "Chapecoense",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Zé Ivaldo",
-   "Remo",
    4,
    0,
    ""
@@ -1399,7 +1406,7 @@
    "Remo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Guga",
@@ -1567,13 +1574,6 @@
    "Coritiba",
    0,
    1,
-   ""
-  ],
-  [
-   "Marcelinho",
-   "Remo",
-   3,
-   0,
    ""
   ],
   [
@@ -3259,6 +3259,13 @@
   [
    "Nicolás Fonseca",
    "Coritiba",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Patrick",
+   "Remo",
    1,
    0,
    ""
