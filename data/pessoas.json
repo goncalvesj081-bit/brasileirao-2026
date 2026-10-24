@@ -1466,7 +1466,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "20/10/2026",
+  "atualizado": "24/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1490,6 +1490,11 @@
     8
    ],
    [
+    "Matheus Pereira",
+    "Corinthians",
+    7
+   ],
+   [
     "Pedro",
     "Flamengo",
     6
@@ -1497,11 +1502,6 @@
    [
     "Erick",
     "Vitória",
-    6
-   ],
-   [
-    "Matheus Pereira",
-    "Corinthians",
     6
    ],
    [
@@ -1575,6 +1575,11 @@
     4
    ],
    [
+    "Gerson",
+    "Cruzeiro",
+    4
+   ],
+   [
     "Cristian Pavón",
     "Grêmio",
     4
@@ -1582,11 +1587,6 @@
    [
     "Matheus",
     "Vitória",
-    4
-   ],
-   [
-    "Gerson",
-    "Cruzeiro",
     4
    ],
    [
@@ -1620,6 +1620,11 @@
     4
    ],
    [
+    "Fagner",
+    "Cruzeiro",
+    4
+   ],
+   [
     "José Luis Rodríguez",
     "Vasco",
     4
@@ -1632,11 +1637,6 @@
    [
     "Cuiabano",
     "Vasco",
-    4
-   ],
-   [
-    "Fagner",
-    "Cruzeiro",
     4
    ],
    [
@@ -1710,13 +1710,13 @@
     3
    ],
    [
-    "Bruno Henrique",
-    "Flamengo",
+    "Vitor Bueno",
+    "Remo",
     3
    ],
    [
-    "Gabriel Barbosa",
-    "Santos",
+    "Bruno Henrique",
+    "Flamengo",
     3
    ]
   ]
