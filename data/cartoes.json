@@ -9,6 +9,13 @@
    ""
   ],
   [
+   "Alexander Bernabei",
+   "Internacional",
+   8,
+   1,
+   "pendurado"
+  ],
+  [
    "Álvaro Barreal",
    "Santos",
    8,
@@ -32,13 +39,6 @@
   [
    "Agustín Canobbio",
    "Fluminense",
-   7,
-   1,
-   ""
-  ],
-  [
-   "Alexander Bernabei",
-   "Internacional",
    7,
    1,
    ""
@@ -146,13 +146,6 @@
    "Cruzeiro",
    8,
    0,
-   "pendurado"
-  ],
-  [
-   "Fernando Marçal",
-   "Botafogo",
-   5,
-   1,
    "pendurado"
   ],
   [
@@ -298,6 +291,13 @@
   [
    "Evertton",
    "Flamengo",
+   4,
+   1,
+   ""
+  ],
+  [
+   "Fernando Marçal",
+   "Botafogo",
    4,
    1,
    ""

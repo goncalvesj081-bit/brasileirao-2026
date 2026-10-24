@@ -34,7 +34,12 @@
    "rodada": 32,
    "mandante": "Palmeiras",
    "visitante": "Bragantino",
-   "data": "2026-10-24T21:30:00Z"
+   "data": "2026-10-24T21:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555058",
@@ -48,7 +53,12 @@
    "rodada": 32,
    "mandante": "Chapecoense",
    "visitante": "Fluminense",
-   "data": "2026-10-24T22:30:00Z"
+   "data": "2026-10-24T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555057",
