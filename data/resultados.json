@@ -2781,6 +2781,15 @@
    "data": "2026-10-19T23:00:00Z",
    "gm": 1,
    "gv": 1
+  },
+  {
+   "id": "555052",
+   "rodada": 32,
+   "mandante": "Cruzeiro",
+   "visitante": "Remo",
+   "data": "2026-10-23T23:00:00Z",
+   "gm": 1,
+   "gv": 0
   }
  ]
 }

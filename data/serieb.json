@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T01:02:02.410Z",
+ "atualizado": "2026-10-24T05:44:13.140Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3091,16 +3091,18 @@
    "data": "2026-10-23T22:30Z",
    "gm": 1,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860408",
    "rodada": 35,
    "mandante": "Sport",
    "visitante": "Criciúma",
-   "data": "2026-10-24T00:00Z"
-  },
+   "data": "2026-10-24T00:00Z",
+   "gm": 2,
+   "gv": 1
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860403",
    "rodada": 35,

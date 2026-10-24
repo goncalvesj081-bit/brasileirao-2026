@@ -9,18 +9,6 @@
    "data": null
   },
   {
-   "id": "555052",
-   "rodada": 32,
-   "mandante": "Cruzeiro",
-   "visitante": "Remo",
-   "data": "2026-10-23T23:00:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555054",
    "rodada": 32,
    "mandante": "Internacional",
