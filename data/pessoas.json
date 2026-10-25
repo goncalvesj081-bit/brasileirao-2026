@@ -54,11 +54,6 @@
     9
    ],
    [
-    "Mauricio",
-    "Palmeiras",
-    9
-   ],
-   [
     "John Kennedy",
     "Fluminense",
     9
@@ -77,6 +72,11 @@
     "Carlos Renê",
     "Vitória",
     9
+   ],
+   [
+    "Mauricio",
+    "Palmeiras",
+    8
    ],
    [
     "Breno Lopes",
@@ -159,11 +159,6 @@
     5
    ],
    [
-    "Renato Kayzer",
-    "Vitória",
-    5
-   ],
-   [
     "Luciano Acosta",
     "Fluminense",
     5
@@ -214,11 +209,6 @@
     5
    ],
    [
-    "Alexandro Bernabei",
-    "Internacional",
-    5
-   ],
-   [
     "Carlos Gómez",
     "Vasco",
     5
@@ -236,6 +226,11 @@
    [
     "Victor Hugo Gomes",
     "Atlético-MG",
+    4
+   ],
+   [
+    "Renato Kayzer",
+    "Vitória",
     4
    ],
    [
@@ -281,11 +276,6 @@
    [
     "Vitor Bueno",
     "Remo",
-    4
-   ],
-   [
-    "Bidu",
-    "Corinthians",
     4
    ],
    [
@@ -359,6 +349,11 @@
     4
    ],
    [
+    "Alexandro Bernabei",
+    "Internacional",
+    4
+   ],
+   [
     "Benjamín Rollheiser",
     "Santos",
     4
@@ -376,11 +371,6 @@
    [
     "Vitinho",
     "Internacional",
-    4
-   ],
-   [
-    "Gustavo Henrique",
-    "Corinthians",
     4
    ],
    [
@@ -409,11 +399,6 @@
     3
    ],
    [
-    "José Rodríguez",
-    "Vasco",
-    3
-   ],
-   [
     "Yago Pikachu",
     "Remo",
     3
@@ -421,6 +406,11 @@
    [
     "Julimar",
     "Athletico-PR",
+    3
+   ],
+   [
+    "Bidu",
+    "Corinthians",
     3
    ],
    [
@@ -509,6 +499,11 @@
     3
    ],
    [
+    "Gustavo Henrique",
+    "Corinthians",
+    3
+   ],
+   [
     "Facundo Colidio",
     "Vasco",
     3
@@ -526,11 +521,6 @@
    [
     "Erick",
     "Bahia",
-    3
-   ],
-   [
-    "Agustin Giay",
-    "Palmeiras",
     3
    ],
    [
@@ -576,6 +566,11 @@
    [
     "Murilo Cerqueira",
     "Palmeiras",
+    2
+   ],
+   [
+    "José Rodríguez",
+    "Vasco",
     2
    ],
    [
@@ -724,11 +719,6 @@
     2
    ],
    [
-    "Yannick Bolasie",
-    "Chapecoense",
-    2
-   ],
-   [
     "Raniele",
     "Corinthians",
     2
@@ -844,8 +834,8 @@
     2
    ],
    [
-    "Marino Hinestroza",
-    "Vasco",
+    "Agustin Giay",
+    "Palmeiras",
     2
    ],
    [
@@ -1096,6 +1086,11 @@
    [
     "Hugo Moura",
     "Vasco",
+    1
+   ],
+   [
+    "Yannick Bolasie",
+    "Chapecoense",
     1
    ],
    [
@@ -1466,26 +1461,6 @@
    [
     "Fabrício Bruno",
     "Cruzeiro",
-    1
-   ],
-   [
-    "Matheus Bahia",
-    "Internacional",
-    1
-   ],
-   [
-    "Juninho",
-    "Internacional",
-    1
-   ],
-   [
-    "Pedro Lima",
-    "São Paulo",
-    1
-   ],
-   [
-    "Guga",
-    "Fluminense",
     1
    ]
   ]

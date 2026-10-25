@@ -2790,6 +2790,60 @@
    "data": "2026-10-23T23:00:00Z",
    "gm": 1,
    "gv": 0
+  },
+  {
+   "id": "555054",
+   "rodada": 32,
+   "mandante": "Internacional",
+   "visitante": "Botafogo",
+   "data": "2026-10-24T19:30:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "555055",
+   "rodada": 32,
+   "mandante": "Mirassol",
+   "visitante": "São Paulo",
+   "data": "2026-10-24T19:30:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "555059",
+   "rodada": 32,
+   "mandante": "Vitória",
+   "visitante": "Athletico-PR",
+   "data": "2026-10-24T19:30:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "555056",
+   "rodada": 32,
+   "mandante": "Palmeiras",
+   "visitante": "Bragantino",
+   "data": "2026-10-24T21:30:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "555058",
+   "rodada": 32,
+   "mandante": "Vasco",
+   "visitante": "Corinthians",
+   "data": "2026-10-24T21:30:00Z",
+   "gm": 3,
+   "gv": 2
+  },
+  {
+   "id": "555050",
+   "rodada": 32,
+   "mandante": "Chapecoense",
+   "visitante": "Fluminense",
+   "data": "2026-10-24T22:30:00Z",
+   "gm": 2,
+   "gv": 1
   }
  ]
 }
