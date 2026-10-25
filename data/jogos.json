@@ -9,18 +9,6 @@
    "data": null
   },
   {
-   "id": "555057",
-   "rodada": 32,
-   "mandante": "Santos",
-   "visitante": "Bahia",
-   "data": "2026-10-25T01:00:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555051",
    "rodada": 32,
    "mandante": "Coritiba",

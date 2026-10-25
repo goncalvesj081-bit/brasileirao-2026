@@ -1,5 +1,5 @@
 {
- "atualizado": "24/10/2026",
+ "atualizado": "25/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -37,6 +37,13 @@
    "pendurado"
   ],
   [
+   "Neymar",
+   "Santos",
+   8,
+   1,
+   "suspenso"
+  ],
+  [
    "Rodrigo Garro",
    "Corinthians",
    11,
@@ -72,6 +79,13 @@
    ""
   ],
   [
+   "Nicolás Acevedo",
+   "Bahia",
+   10,
+   0,
+   ""
+  ],
+  [
    "Andrés Gómez",
    "Vasco",
    9,
@@ -95,13 +109,6 @@
   [
    "Gabriel Mercado",
    "Internacional",
-   9,
-   0,
-   ""
-  ],
-  [
-   "Nicolás Acevedo",
-   "Bahia",
    9,
    0,
    ""
@@ -186,13 +193,6 @@
   [
    "Neto Moura",
    "Mirassol",
-   8,
-   0,
-   "pendurado"
-  ],
-  [
-   "Neymar",
-   "Santos",
    8,
    0,
    "pendurado"
@@ -524,7 +524,7 @@
    "Bahia",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "João Victor",
@@ -725,6 +725,13 @@
   [
    "Jhon Arias",
    "Palmeiras",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "João Schmidt",
+   "Santos",
    5,
    0,
    "pendurado"
@@ -1061,13 +1068,6 @@
   [
    "João Marcelo",
    "Cruzeiro",
-   4,
-   0,
-   ""
-  ],
-  [
-   "João Schmidt",
-   "Santos",
    4,
    0,
    ""
@@ -1570,6 +1570,13 @@
    ""
   ],
   [
+   "Kanu",
+   "Bahia",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Kauan",
    "Chapecoense",
    3,
@@ -1742,7 +1749,7 @@
    "Bahia",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Rony",
@@ -2230,13 +2237,6 @@
   [
    "Kaio Jorge",
    "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Kanu",
-   "Bahia",
    2,
    0,
    "pendurado"

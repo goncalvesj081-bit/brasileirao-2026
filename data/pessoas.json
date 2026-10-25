@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "24/10/2026",
+  "atualizado": "25/10/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -29,6 +29,11 @@
     11
    ],
    [
+    "Luciano Juba",
+    "Bahia",
+    11
+   ],
+   [
     "Danilo dos Santos de Oliveira",
     "Botafogo",
     10
@@ -39,11 +44,6 @@
     10
    ],
    [
-    "Luciano Juba",
-    "Bahia",
-    10
-   ],
-   [
     "José Manuel López",
     "Palmeiras",
     9
@@ -51,6 +51,11 @@
    [
     "Luciano",
     "São Paulo",
+    9
+   ],
+   [
+    "Mauricio",
+    "Palmeiras",
     9
    ],
    [
@@ -72,11 +77,6 @@
     "Carlos Renê",
     "Vitória",
     9
-   ],
-   [
-    "Mauricio",
-    "Palmeiras",
-    8
    ],
    [
     "Breno Lopes",
@@ -159,6 +159,11 @@
     5
    ],
    [
+    "Renato Kayzer",
+    "Vitória",
+    5
+   ],
+   [
     "Luciano Acosta",
     "Fluminense",
     5
@@ -209,6 +214,11 @@
     5
    ],
    [
+    "Alexandro Bernabei",
+    "Internacional",
+    5
+   ],
+   [
     "Carlos Gómez",
     "Vasco",
     5
@@ -226,11 +236,6 @@
    [
     "Victor Hugo Gomes",
     "Atlético-MG",
-    4
-   ],
-   [
-    "Renato Kayzer",
-    "Vitória",
     4
    ],
    [
@@ -276,6 +281,11 @@
    [
     "Vitor Bueno",
     "Remo",
+    4
+   ],
+   [
+    "Bidu",
+    "Corinthians",
     4
    ],
    [
@@ -349,11 +359,6 @@
     4
    ],
    [
-    "Alexandro Bernabei",
-    "Internacional",
-    4
-   ],
-   [
     "Benjamín Rollheiser",
     "Santos",
     4
@@ -371,6 +376,11 @@
    [
     "Vitinho",
     "Internacional",
+    4
+   ],
+   [
+    "Gustavo Henrique",
+    "Corinthians",
     4
    ],
    [
@@ -399,6 +409,11 @@
     3
    ],
    [
+    "José Rodríguez",
+    "Vasco",
+    3
+   ],
+   [
     "Yago Pikachu",
     "Remo",
     3
@@ -406,11 +421,6 @@
    [
     "Julimar",
     "Athletico-PR",
-    3
-   ],
-   [
-    "Bidu",
-    "Corinthians",
     3
    ],
    [
@@ -499,11 +509,6 @@
     3
    ],
    [
-    "Gustavo Henrique",
-    "Corinthians",
-    3
-   ],
-   [
     "Facundo Colidio",
     "Vasco",
     3
@@ -521,6 +526,11 @@
    [
     "Erick",
     "Bahia",
+    3
+   ],
+   [
+    "Agustin Giay",
+    "Palmeiras",
     3
    ],
    [
@@ -566,11 +576,6 @@
    [
     "Murilo Cerqueira",
     "Palmeiras",
-    2
-   ],
-   [
-    "José Rodríguez",
-    "Vasco",
     2
    ],
    [
@@ -719,6 +724,11 @@
     2
    ],
    [
+    "Yannick Bolasie",
+    "Chapecoense",
+    2
+   ],
+   [
     "Raniele",
     "Corinthians",
     2
@@ -794,8 +804,18 @@
     2
    ],
    [
+    "Giovanni Augusto",
+    "Chapecoense",
+    2
+   ],
+   [
     "Túlio Oliveira",
     "Chapecoense",
+    2
+   ],
+   [
+    "Luan Peres",
+    "Santos",
     2
    ],
    [
@@ -834,8 +854,8 @@
     2
    ],
    [
-    "Agustin Giay",
-    "Palmeiras",
+    "Marino Hinestroza",
+    "Vasco",
     2
    ],
    [
@@ -1089,11 +1109,6 @@
     1
    ],
    [
-    "Yannick Bolasie",
-    "Chapecoense",
-    1
-   ],
-   [
     "Carlos Eduardo",
     "Mirassol",
     1
@@ -1274,22 +1289,12 @@
     1
    ],
    [
-    "Giovanni Augusto",
-    "Chapecoense",
-    1
-   ],
-   [
     "Nicolás Acevedo",
     "Bahia",
     1
    ],
    [
     "Willian Arão",
-    "Santos",
-    1
-   ],
-   [
-    "Luan Peres",
     "Santos",
     1
    ],
@@ -1462,11 +1467,31 @@
     "Fabrício Bruno",
     "Cruzeiro",
     1
+   ],
+   [
+    "Matheus Bahia",
+    "Internacional",
+    1
+   ],
+   [
+    "Juninho",
+    "Internacional",
+    1
+   ],
+   [
+    "Pedro Lima",
+    "São Paulo",
+    1
+   ],
+   [
+    "Guga",
+    "Fluminense",
+    1
    ]
   ]
  },
  "assistencias": {
-  "atualizado": "24/10/2026",
+  "atualizado": "25/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1505,18 +1530,23 @@
     6
    ],
    [
+    "José Manuel López",
+    "Palmeiras",
+    6
+   ],
+   [
     "Rodrigo Garro",
     "Corinthians",
     6
    ],
    [
-    "Igor Marques",
-    "Mirassol",
-    5
+    "Giovanni Augusto",
+    "Chapecoense",
+    6
    ],
    [
-    "José Manuel López",
-    "Palmeiras",
+    "Igor Marques",
+    "Mirassol",
     5
    ],
    [
@@ -1535,6 +1565,11 @@
     5
    ],
    [
+    "Alerrando",
+    "Internacional",
+    5
+   ],
+   [
     "João Cruz",
     "Athletico-PR",
     5
@@ -1545,23 +1580,18 @@
     5
    ],
    [
-    "Giovanni Augusto",
-    "Chapecoense",
-    5
-   ],
-   [
     "Lucas Esquivel",
     "Athletico-PR",
     5
    ],
    [
-    "Johan Carbonero",
-    "Internacional",
+    "Kevin Serna",
+    "Fluminense",
     4
    ],
    [
-    "Kevin Serna",
-    "Fluminense",
+    "Johan Carbonero",
+    "Internacional",
     4
    ],
    [
@@ -1575,6 +1605,11 @@
     4
    ],
    [
+    "Matheus",
+    "Vitória",
+    4
+   ],
+   [
     "Gerson",
     "Cruzeiro",
     4
@@ -1582,11 +1617,6 @@
    [
     "Cristian Pavón",
     "Grêmio",
-    4
-   ],
-   [
-    "Matheus",
-    "Vitória",
     4
    ],
    [
@@ -1600,18 +1630,23 @@
     4
    ],
    [
-    "Alerrando",
-    "Internacional",
-    4
-   ],
-   [
     "Guillermo Varela",
     "Flamengo",
     4
    ],
    [
+    "José Luis Rodríguez",
+    "Vasco",
+    4
+   ],
+   [
     "Henry Mosquera",
     "Bragantino",
+    4
+   ],
+   [
+    "Cuiabano",
+    "Vasco",
     4
    ],
    [
@@ -1625,29 +1660,14 @@
     4
    ],
    [
-    "José Luis Rodríguez",
-    "Vasco",
-    4
-   ],
-   [
     "Éverton Ribeiro",
     "Bahia",
-    4
-   ],
-   [
-    "Cuiabano",
-    "Vasco",
     4
    ],
    [
     "Joaquín Piquerez",
     "Palmeiras",
     4
-   ],
-   [
-    "Vitinho",
-    "Internacional",
-    3
    ],
    [
     "Kevin Viveros",
@@ -1660,13 +1680,8 @@
     3
    ],
    [
-    "Alef Manga",
-    "Remo",
-    3
-   ],
-   [
-    "Jean Lucas",
-    "Bahia",
+    "Vitinho",
+    "Internacional",
     3
    ],
    [
@@ -1675,13 +1690,33 @@
     3
    ],
    [
+    "Alef Manga",
+    "Remo",
+    3
+   ],
+   [
     "Isidro Pitta",
     "Bragantino",
     3
    ],
    [
+    "Jean Lucas",
+    "Bahia",
+    3
+   ],
+   [
+    "Benjamín Rollheiser",
+    "Santos",
+    3
+   ],
+   [
     "Renan Lodi",
     "Atlético-MG",
+    3
+   ],
+   [
+    "Jhon Arias",
+    "Palmeiras",
     3
    ],
    [
@@ -1695,27 +1730,17 @@
     3
    ],
    [
-    "Jhon Arias",
-    "Palmeiras",
-    3
-   ],
-   [
     "Bernard",
     "Atlético-MG",
     3
    ],
    [
+    "Gabriel Barbosa",
+    "Santos",
+    3
+   ],
+   [
     "Jorginho",
-    "Flamengo",
-    3
-   ],
-   [
-    "Vitor Bueno",
-    "Remo",
-    3
-   ],
-   [
-    "Bruno Henrique",
     "Flamengo",
     3
    ]

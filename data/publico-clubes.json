@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T21:40:36.054Z",
+ "atualizado": "2026-10-25T23:11:41.480Z",
  "clubes": {
   "Atlético-MG": [
    [
@@ -695,6 +695,12 @@
     "Mirassol",
     "Botafogo",
     5899
+   ],
+   [
+    "16 October 2026",
+    "Mirassol",
+    "Internacional",
+    5931
    ]
   ],
   "Remo": [
@@ -1063,6 +1069,12 @@
     "Vasco",
     "Coritiba",
     19943
+   ],
+   [
+    "24 October 2026",
+    "Vasco",
+    "Corinthians",
+    19048
    ]
   ],
   "Vitória": [
@@ -1247,6 +1259,12 @@
     "Palmeiras",
     "Corinthians",
     30112
+   ],
+   [
+    "",
+    "Palmeiras",
+    "Bragantino",
+    26021
    ]
   ]
  }
