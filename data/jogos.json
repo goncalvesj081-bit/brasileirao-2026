@@ -13,14 +13,24 @@
    "rodada": 32,
    "mandante": "Coritiba",
    "visitante": "Grêmio",
-   "data": "2026-10-26T22:30:00Z"
+   "data": "2026-10-26T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555053",
    "rodada": 32,
    "mandante": "Flamengo",
    "visitante": "Atlético-MG",
-   "data": "2026-10-26T23:00:00Z"
+   "data": "2026-10-26T23:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 1,
+    "minuto": null
+   }
   },
   {
    "id": "555062",
