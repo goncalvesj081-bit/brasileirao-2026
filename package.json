@@ -14,7 +14,8 @@
     "validar": "tsx scripts/validar-dados.ts",
     "copas": "tsx scripts/buscar-copas.ts",
     "escudos": "tsx scripts/baixar-escudos.ts",
-    "bolao": "tsx scripts/bolao.ts"
+    "bolao": "tsx scripts/bolao.ts",
+    "historia": "tsx scripts/buscar-historia.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

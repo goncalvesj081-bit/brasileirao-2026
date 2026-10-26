@@ -15,6 +15,7 @@ import { contarTela, iniciarContador } from "./contador";
 import { telaRodada } from "./telas/rodada";
 import { aoCalcularSerieB, digitacaoSerieB, limparSerieB, telaSerieB } from "./telas/serieb";
 import { telaComparar } from "./telas/comparar";
+import { aoCarregarHistoria, telaHistoria } from "./telas/historia";
 import { abrirMeusDados, aoMudarBolao, aoMudarConta, carregar as carregarConta, contaTopo, foraDoBolao, digitacaoBolao, entrarBolao, enviarLoginBolao, sairBolao, salvarPerfilBolao, telaBolao, trocarModoLogin } from "./telas/bolao";
 import { mascaraWhatsapp } from "./modelo/perfil";
 import { alternarFavorito } from "./ui/favorito";
@@ -72,6 +73,8 @@ function conteudo(r: Rota): Html {
       return telaClube(r.clube!, r.vista);
     case "serie-b":
       return telaSerieB(r.vista, r.extra);
+    case "historia":
+      return html`${r.vista === "clube" ? "" : topoDe("historia", r.vista)}${telaHistoria(r.vista, r.extra)}`;
     case "comparar":
       return telaComparar(r.vista, r.extra);
     case "bolao":
@@ -110,7 +113,7 @@ function desenharTudo() {
   const inicio = rota.secao === "tabela" && rota.vista === "geral";
   document.title = inicio ? "Brasileirão 2026" : `${titulo}, Brasileirão 2026`;
   $("pageTitle").innerHTML = String(rota.clube ? html`${escudoTitulo(rota.clube)}${titulo}` : inicio ? html`Brasileirão <span>2026</span>` : html`${titulo}`);
-  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" || rota.secao === "admin" ? "" : String(fonte());
+  $("fonte").innerHTML = rota.clube || rota.secao === "mais" || rota.secao === "sobre" || rota.secao === "serie-b" || rota.secao === "historia" || rota.secao === "admin" ? "" : String(fonte());
   $("sideNav").innerHTML = String(navegacao(rota));
   $("sideClubs").innerHTML = String(listaClubes(rota));
   $("abas").innerHTML = String(abasInferiores(rota));
@@ -261,6 +264,9 @@ aoMudarBolao(() => {
 // redesenha tudo: entrar ou sair muda também o atalho do menu
 aoMudarAdmin(() => {
   if (rota.secao === "admin") desenhar();
+});
+aoCarregarHistoria(() => {
+  if (rota.secao === "historia") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));
 });
 aoCalcularSerieB(() => {
   if (rota.secao === "serie-b" && rota.vista !== "simular") manterFiltros(() => ($("main").innerHTML = String(conteudo(rota))));

@@ -35,7 +35,7 @@ export function telaClube(clube: string, aba: string): Html {
       <div><dt>Últimos 5</dt><dd>${forma(clube)}</dd></div>
     </dl>
     ${tec ? html`<p class="note ficha-tec">Técnico <b>${tec[0]}</b>, desde ${tec[1]}</p>` : ""}
-    <div class="ficha-acoes"><button type="button" class="discreto favorito" data-favorito="${clube}" aria-pressed="${favorito() === clube}">${favorito() === clube ? "★ Meu time" : "☆ Marcar como meu time"}</button><a class="discreto" href="${link("comparar", slug(clube))}">Comparar com outro time</a></div>
+    <div class="ficha-acoes"><button type="button" class="discreto favorito" data-favorito="${clube}" aria-pressed="${favorito() === clube}">${favorito() === clube ? "★ Meu time" : "☆ Marcar como meu time"}</button><a class="discreto" href="${link("comparar", slug(clube))}">Comparar com outro time</a><a class="discreto" href="${link("historia", "clube", slug(clube))}">História desde 2003</a></div>
   </div>`;
   const abas = seletor(ABAS_CLUBE, aba, (k) => linkClube(clube, k), "Seções do clube");
 

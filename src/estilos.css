@@ -667,3 +667,29 @@ a.peso > i { grid-column: 2; grid-row: 1 / span 2; font-style: normal; font-size
 /* ---------- admin ---------- */
 .admin-topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
 .id-admin { font-size: 13px; padding: 2px 6px; border-radius: 4px; background: var(--wash); border: 1px solid var(--line); user-select: all; word-break: break-all; }
+
+/* ---------- história ---------- */
+tr.z-campeao td.pos { border-left-color: var(--title); }
+td.pos a { color: inherit; }
+.clube-h { display: inline-flex; align-items: center; gap: 7px; min-width: 0; font-weight: 600; }
+.clube-h span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.titulos-h { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 2px 18px; }
+.titulos-h a { display: grid; grid-template-columns: 30px 1fr auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center; padding: 8px 4px; border-bottom: 1px solid var(--line); }
+.titulos-h .esc { grid-row: span 2; }
+.titulos-h .nome { font-weight: 650; }
+.titulos-h b { grid-row: span 2; font-size: 24px; font-weight: 750; color: var(--title); }
+.titulos-h small { color: var(--muted); font-size: 12px; }
+.lista-h { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line-strong); }
+.lista-h li { display: flex; align-items: center; gap: 10px; padding: 8px 2px; border-bottom: 1px solid var(--line); min-width: 0; font-size: 14px; }
+.lista-h li > b { margin-left: auto; font-weight: 700; white-space: nowrap; }
+.lista-h .quem { font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lista-h .quem + .clube-h { color: var(--muted); font-weight: 500; font-size: 13px; }
+.lista-h .ano-h { color: var(--muted); font-weight: 650; font-size: 13px; width: 36px; flex: 0 0 36px; }
+.jogos-h .jogo-h { display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap; }
+.placar-h { font-weight: 750; white-space: nowrap; }
+.duas-h { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 18px 32px; align-items: start; }
+.cabeca-h { display: flex; align-items: center; gap: 14px; }
+sup.aj { font-size: 10px; font-weight: 600; color: var(--rel); margin-left: 2px; }
+details.note summary { cursor: pointer; }
+details.note ul { margin: 6px 0 0; padding-left: 18px; }
+.artilheiro-h { min-width: 190px; }

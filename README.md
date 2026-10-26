@@ -50,6 +50,19 @@ Tudo em `data/pessoas.json`, preenchido pelo script, sem edição manual. Cada b
 
 Se uma fonte falhar, o bloco anterior é mantido.
 
+## História (desde 2003)
+
+`data/historia.json` tem todas as edições da Série A por pontos corridos, de 2003 até a temporada anterior: tabela final (com as faixas de Libertadores, Sul-Americana e rebaixamento de cada ano e os pontos mudados no tribunal), o placar de cada confronto e os artilheiros. A seção História (`#/historia`) baixa esse arquivo só quando é aberta.
+
+Temporada passada não muda, então o arquivo não é refeito pelo Action. Para refazer (por exemplo, quando 2026 terminar): `npm run historia`. O script (`scripts/buscar-historia.ts`) lê a Wikipédia em inglês e confere com a versão em português:
+
+- placar diferente entre as duas: fica o que fecha com a tabela final;
+- dois clubes que não fecham por causa de um único jogo entre eles: o placar desse jogo é acertado pela tabela (cada correção aparece no fim do script e na tela da edição);
+- o que nenhuma das duas resolve fica listado em `CONFRONTOS_DIFEREM`, com uma nota na tela;
+- erro de digitação na tabela em inglês, conferido na em português: `TABELA_CORRIGIDA`.
+
+Se alguma edição não passar na validação (jogos de cada clube, ordem por pontos, confrontos que fecham com a tabela), nada é gravado. Clube que nunca apareceu antes na Série A: acrescente em `config/clubes-historicos.ts`. 2004 não tem os placares jogo a jogo na fonte; fica só com a tabela final.
+
 ## Mudanças de regra
 
 - Faixas (Libertadores, Sul-Americana, rebaixamento): `config/temporada.ts`.

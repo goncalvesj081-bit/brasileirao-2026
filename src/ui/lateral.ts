@@ -20,6 +20,7 @@ const ICONES: Record<string, string> = {
   bolao: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM5 5h3M16 5h3M5 5c0 3 1.5 4 3 4M19 5c0 3-1.5 4-3 4M12 13v4M8 20h8"/>',
   "serie-b": '<path d="M7 4h6.5a3.5 3.5 0 0 1 0 7H7zM7 11h7.5a3.5 3.5 0 0 1 0 7H7zM7 4v14"/>',
   numeros: '<path d="M4 19h16M6 15l4-4 3 3 5-6"/>',
+  historia: '<path d="M5 4.5h10.5A3.5 3.5 0 0 1 19 8v11.5H8.5A3.5 3.5 0 0 1 5 16z"/><path d="M5 16a3.5 3.5 0 0 1 3.5-3.5H19M9 8h6"/>',
   admin: '<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
   mais: '<circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/>',
 };

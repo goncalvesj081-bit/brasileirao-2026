@@ -74,6 +74,18 @@ export const SECOES: Secao[] = [
     ],
   },
   {
+    id: "historia",
+    rotulo: "História",
+    emMais: true,
+    vistas: [
+      ["campeoes", "Campeões"],
+      ["temporadas", "Edição por edição"],
+      ["geral", "Tabela de todos os tempos"],
+      ["recordes", "Recordes"],
+      ["clubes", "Clubes"],
+    ],
+  },
+  {
     id: "serie-b",
     rotulo: "Série B",
     emMais: true,
@@ -145,6 +157,7 @@ export function lerRota(hash = location.hash): Rota | null {
     return { secao, vista: aba, extra: "", numero: null, clube: c.nome };
   }
   if (secao === "serie-b" && a === "clube") return { secao, vista: "clube", extra: b, numero: null };
+  if (secao === "historia" && a === "clube") return { secao, vista: "clube", extra: b, numero: null };
   if (secao === "comparar") {
     const A = clubePorSlug(a)?.nome ?? "",
       B = clubePorSlug(b)?.nome ?? "";
