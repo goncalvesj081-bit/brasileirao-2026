@@ -1,5 +1,5 @@
 {
- "atualizado": "18/10/2026",
+ "atualizado": "26/10/2026",
  "maiores": [
   [
    67251,
@@ -148,6 +148,15 @@
    26
   ],
   [
+   3210,
+   "Chapecoense",
+   "2-1",
+   "Fluminense",
+   "Arena Condá",
+   "24 de outubro",
+   32
+  ],
+  [
    3456,
    "Bragantino",
    "1-0",
@@ -173,15 +182,6 @@
    "Campos Maia",
    "5 de abril",
    10
-  ],
-  [
-   3872,
-   "Bragantino",
-   "4-2",
-   "Cruzeiro",
-   "Cícero de Souza Marques",
-   "12 de outubro",
-   30
   ]
  ]
 }

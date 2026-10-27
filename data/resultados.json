@@ -2853,6 +2853,24 @@
    "data": "2026-10-25T01:00:00Z",
    "gm": 1,
    "gv": 1
+  },
+  {
+   "id": "555051",
+   "rodada": 32,
+   "mandante": "Coritiba",
+   "visitante": "Grêmio",
+   "data": "2026-10-26T22:30:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "555053",
+   "rodada": 32,
+   "mandante": "Flamengo",
+   "visitante": "Atlético-MG",
+   "data": "2026-10-26T23:00:00Z",
+   "gm": 3,
+   "gv": 2
   }
  ]
 }

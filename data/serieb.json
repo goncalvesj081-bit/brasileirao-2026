@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T23:42:43.445Z",
+ "atualizado": "2026-10-27T02:23:50.750Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3145,23 +3145,27 @@
    "data": "2026-10-24T21:30Z",
    "gm": 2,
    "gv": 2
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860405",
    "rodada": 35,
    "mandante": "América Mineiro",
    "visitante": "Cuiabá",
-   "data": "2026-10-26T22:30Z"
+   "data": "2026-10-26T22:30Z",
+   "gm": 1,
+   "gv": 0
   },
   {
    "id": "b401860411",
    "rodada": 35,
    "mandante": "Juventude",
    "visitante": "Náutico",
-   "data": "2026-10-26T23:30Z"
-  },
+   "data": "2026-10-26T23:30Z",
+   "gm": 4,
+   "gv": 0
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860406",
    "rodada": 35,

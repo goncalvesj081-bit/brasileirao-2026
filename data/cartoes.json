@@ -114,11 +114,18 @@
    ""
   ],
   [
+   "Jorge Carrascal",
+   "Flamengo",
+   3,
+   2,
+   "suspenso"
+  ],
+  [
    "Thiago Santos",
    "Coritiba",
    9,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Victor Gabriel",
@@ -170,17 +177,17 @@
    "pendurado"
   ],
   [
-   "Jorge Carrascal",
-   "Flamengo",
-   2,
-   2,
-   "pendurado"
-  ],
-  [
    "Keny Arroyo",
    "Cruzeiro",
    5,
    1,
+   "pendurado"
+  ],
+  [
+   "Léo Pereira",
+   "Flamengo",
+   8,
+   0,
    "pendurado"
   ],
   [
@@ -324,13 +331,6 @@
    ""
   ],
   [
-   "Léo Pereira",
-   "Flamengo",
-   7,
-   0,
-   ""
-  ],
-  [
    "Luan Peres",
    "Santos",
    4,
@@ -398,7 +398,7 @@
    "Grêmio",
    4,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Alan Franco",
@@ -1822,6 +1822,13 @@
    ""
   ],
   [
+   "Vitor Hugo",
+   "Atlético-MG",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Wallace",
    "Grêmio",
    3,
@@ -2517,13 +2524,6 @@
   [
    "Vitor Bueno",
    "Remo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Vitor Hugo",
-   "Atlético-MG",
    2,
    0,
    "pendurado"
@@ -3420,6 +3420,13 @@
   [
    "Thiago Silva",
    "Fluminense",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Tinga",
+   "Coritiba",
    1,
    0,
    ""
