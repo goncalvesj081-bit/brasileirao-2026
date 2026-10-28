@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-28T02:09:53.844Z",
+ "atualizado": "2026-10-28T15:17:11.640Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3194,7 +3194,7 @@
    "rodada": 36,
    "mandante": "Vila Nova",
    "visitante": "Juventude",
-   "data": "2026-10-31T21:00Z"
+   "data": "2026-10-31T20:30Z"
   },
   {
    "id": "b401860421",
@@ -3250,7 +3250,7 @@
    "rodada": 37,
    "mandante": "Botafogo-SP",
    "visitante": "Londrina",
-   "data": "2026-11-06T22:30Z"
+   "data": "2026-11-05T22:30Z"
   },
   {
    "id": "b401860425",
@@ -3258,13 +3258,6 @@
    "mandante": "Operário PR",
    "visitante": "Sport",
    "data": "2026-11-06T22:30Z"
-  },
-  {
-   "id": "b401860429",
-   "rodada": 37,
-   "mandante": "Cuiabá",
-   "visitante": "Juventude",
-   "data": "2026-11-07T00:30Z"
   },
   {
    "id": "b401860423",
@@ -3279,6 +3272,13 @@
    "mandante": "Novorizontino",
    "visitante": "Fortaleza",
    "data": "2026-11-07T19:10Z"
+  },
+  {
+   "id": "b401860429",
+   "rodada": 37,
+   "mandante": "Cuiabá",
+   "visitante": "Juventude",
+   "data": "2026-11-07T23:00Z"
   },
   {
    "id": "b401860424",

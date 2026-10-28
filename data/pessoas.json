@@ -1757,7 +1757,7 @@
   ]
  },
  "tecnicos": {
-  "atualizado": "18/10/2026",
+  "atualizado": "28/10/2026",
   "fonte": "Wikipédia (en)",
   "lista": {
    "Athletico-PR": [
@@ -1791,8 +1791,8 @@
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Clarence_Seedorf_Introductory_Press_Conferences%2C_2_June_2025_-_40_%28cropped%29.jpg/250px-Clarence_Seedorf_Introductory_Press_Conferences%2C_2_June_2025_-_40_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Coritiba": [
-    "Fernando Seabra",
-    "08/12/2025"
+    "Guilherme Bossle (interino)",
+    "27/10/2026"
    ],
    "Cruzeiro": [
     "Artur Jorge",
@@ -1861,7 +1861,7 @@
   }
  },
  "trocas": {
-  "atualizado": "18/10/2026",
+  "atualizado": "28/10/2026",
   "fonte": "Wikipédia (en)",
   "lista": [
    [
@@ -1996,6 +1996,13 @@
     "Demitido",
     "07/10",
     "Clarence Seedorf"
+   ],
+   [
+    "Coritiba",
+    "Fernando Seabra",
+    "Demitido",
+    "27/10",
+    "Guilherme Bossle (interino)"
    ]
   ]
  }
