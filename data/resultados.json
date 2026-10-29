@@ -2898,6 +2898,24 @@
    "data": "2026-10-28T22:30:00Z",
    "gm": 0,
    "gv": 0
+  },
+  {
+   "id": "555061",
+   "rodada": 33,
+   "mandante": "Bahia",
+   "visitante": "São Paulo",
+   "data": "2026-10-29T00:30:00Z",
+   "gm": 3,
+   "gv": 2
+  },
+  {
+   "id": "555067",
+   "rodada": 33,
+   "mandante": "Remo",
+   "visitante": "Botafogo",
+   "data": "2026-10-29T00:30:00Z",
+   "gm": 2,
+   "gv": 1
   }
  ]
 }

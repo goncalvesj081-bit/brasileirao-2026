@@ -1,5 +1,5 @@
 {
- "atualizado": "28/10/2026",
+ "atualizado": "29/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -447,7 +447,7 @@
    "Botafogo",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Andreas Pereira",
@@ -669,6 +669,13 @@
   [
    "Carlos Vinícius",
    "Grêmio",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "David Duarte",
+   "Bahia",
    5,
    0,
    "pendurado"
@@ -991,13 +998,6 @@
   [
    "Cuiabano",
    "Vasco",
-   4,
-   0,
-   ""
-  ],
-  [
-   "David Duarte",
-   "Bahia",
    4,
    0,
    ""
@@ -1462,7 +1462,7 @@
    "São Paulo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Iván Román",
@@ -1574,7 +1574,7 @@
    "Bahia",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Kauan",
@@ -1757,6 +1757,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Sabino",
+   "São Paulo",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Samuel Lino",
@@ -2144,6 +2151,13 @@
    "pendurado"
   ],
   [
+   "Gustavo Santana",
+   "São Paulo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Guzmán Rodríguez",
    "Bragantino",
    2,
@@ -2494,13 +2508,6 @@
    "pendurado"
   ],
   [
-   "Sabino",
-   "São Paulo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Shaylon",
    "Mirassol",
    2,
@@ -2802,6 +2809,13 @@
    ""
   ],
   [
+   "Domingos",
+   "Botafogo",
+   1,
+   0,
+   ""
+  ],
+  [
    "Dória",
    "São Paulo",
    1,
@@ -2930,13 +2944,6 @@
   [
    "Gustavo Cazonatti",
    "Mirassol",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Gustavo Santana",
-   "São Paulo",
    1,
    0,
    ""
@@ -3173,6 +3180,13 @@
    ""
   ],
   [
+   "Lucas Moura",
+   "São Paulo",
+   1,
+   0,
+   ""
+  ],
+  [
    "Lucas Taverna",
    "Coritiba",
    1,
@@ -3188,6 +3202,13 @@
   ],
   [
    "Marco Moreno",
+   "Bahia",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Marcos Victor",
    "Bahia",
    1,
    0,

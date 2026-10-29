@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "28/10/2026",
+  "atualizado": "29/10/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -184,6 +184,11 @@
     5
    ],
    [
+    "Edenilson",
+    "Botafogo",
+    5
+   ],
+   [
     "Joaquín Lavega",
     "Coritiba",
     5
@@ -271,11 +276,6 @@
    [
     "Igor Formiga",
     "Mirassol",
-    4
-   ],
-   [
-    "Edenilson",
-    "Botafogo",
     4
    ],
    [
@@ -436,6 +436,11 @@
    [
     "Rodrigo Garro",
     "Corinthians",
+    3
+   ],
+   [
+    "Leonel Picco",
+    "Remo",
     3
    ],
    [
@@ -604,13 +609,13 @@
     2
    ],
    [
-    "Thaciano",
-    "Santos",
+    "Lucas Moura",
+    "São Paulo",
     2
    ],
    [
-    "Leonel Picco",
-    "Remo",
+    "Thaciano",
+    "Santos",
     2
    ],
    [
@@ -926,11 +931,6 @@
    [
     "Rubens Tadeu",
     "Chapecoense",
-    1
-   ],
-   [
-    "Lucas Moura",
-    "São Paulo",
     1
    ],
    [
@@ -1506,6 +1506,16 @@
    [
     "Henry Mosquera",
     "Bragantino",
+    1
+   ],
+   [
+    "Damian Bobadilla",
+    "São Paulo",
+    1
+   ],
+   [
+    "Marcos Victor",
+    "Bahia",
     1
    ]
   ]
