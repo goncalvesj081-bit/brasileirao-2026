@@ -124,9 +124,19 @@
     7
    ],
    [
+    "Jája Silva",
+    "Remo",
+    7
+   ],
+   [
     "Lucas Paquetá",
     "Flamengo",
     7
+   ],
+   [
+    "Luciano Acosta",
+    "Fluminense",
+    6
    ],
    [
     "Matheuzinho",
@@ -136,11 +146,6 @@
    [
     "Alan Patrick",
     "Internacional",
-    6
-   ],
-   [
-    "Jája Silva",
-    "Remo",
     6
    ],
    [
@@ -166,11 +171,6 @@
    [
     "Renato Kayzer",
     "Vitória",
-    5
-   ],
-   [
-    "Luciano Acosta",
-    "Fluminense",
     5
    ],
    [
@@ -309,6 +309,11 @@
     4
    ],
    [
+    "Hércules",
+    "Fluminense",
+    4
+   ],
+   [
     "Luiz Gustavo",
     "Athletico-PR",
     4
@@ -394,6 +399,11 @@
     4
    ],
    [
+    "Erick",
+    "Bahia",
+    4
+   ],
+   [
     "Juninho Capixaba",
     "Bragantino",
     3
@@ -431,11 +441,6 @@
    [
     "Cauan Lucas",
     "Vasco",
-    3
-   ],
-   [
-    "Hércules",
-    "Fluminense",
     3
    ],
    [
@@ -521,11 +526,6 @@
    [
     "Gustavo Martins",
     "Grêmio",
-    3
-   ],
-   [
-    "Erick",
-    "Bahia",
     3
    ],
    [
@@ -756,6 +756,11 @@
    [
     "Braian Aguirre",
     "Internacional",
+    2
+   ],
+   [
+    "Rodrigo Nestor",
+    "Bahia",
     2
    ],
    [
@@ -1219,11 +1224,6 @@
     1
    ],
    [
-    "Rodrigo Nestor",
-    "Bahia",
-    1
-   ],
-   [
     "Román Gómez",
     "Bahia",
     1
@@ -1501,6 +1501,11 @@
    [
     "Renan Lodi",
     "Atlético-MG",
+    1
+   ],
+   [
+    "Henry Mosquera",
+    "Bragantino",
     1
    ]
   ]

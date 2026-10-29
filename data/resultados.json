@@ -2871,6 +2871,33 @@
    "data": "2026-10-26T23:00:00Z",
    "gm": 3,
    "gv": 2
+  },
+  {
+   "id": "555062",
+   "rodada": 33,
+   "mandante": "Bragantino",
+   "visitante": "Chapecoense",
+   "data": "2026-10-28T22:30:00Z",
+   "gm": 3,
+   "gv": 0
+  },
+  {
+   "id": "555065",
+   "rodada": 33,
+   "mandante": "Fluminense",
+   "visitante": "Internacional",
+   "data": "2026-10-28T22:30:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "555068",
+   "rodada": 33,
+   "mandante": "Santos",
+   "visitante": "Palmeiras",
+   "data": "2026-10-28T22:30:00Z",
+   "gm": 0,
+   "gv": 0
   }
  ]
 }

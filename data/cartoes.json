@@ -1,5 +1,5 @@
 {
- "atualizado": "27/10/2026",
+ "atualizado": "28/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -41,7 +41,7 @@
    "Santos",
    8,
    1,
-   "suspenso"
+   "pendurado"
   ],
   [
    "Rodrigo Garro",
@@ -104,7 +104,7 @@
    "Chapecoense",
    9,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gabriel Mercado",
@@ -133,6 +133,13 @@
    6,
    1,
    ""
+  ],
+  [
+   "Agustín Giay",
+   "Palmeiras",
+   8,
+   0,
+   "pendurado"
   ],
   [
    "André",
@@ -226,13 +233,6 @@
    "pendurado"
   ],
   [
-   "Agustín Giay",
-   "Palmeiras",
-   7,
-   0,
-   ""
-  ],
-  [
    "Agustín Sant'Anna",
    "Bragantino",
    4,
@@ -324,6 +324,13 @@
    ""
   ],
   [
+   "Ignácio",
+   "Fluminense",
+   7,
+   0,
+   ""
+  ],
+  [
    "José Aldo",
    "Mirassol",
    7,
@@ -335,6 +342,13 @@
    "Santos",
    4,
    1,
+   ""
+  ],
+  [
+   "Marlon Freitas",
+   "Palmeiras",
+   7,
+   0,
    ""
   ],
   [
@@ -408,6 +422,13 @@
    ""
   ],
   [
+   "Alexander Barboza",
+   "Palmeiras",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "Allan",
    "Corinthians",
    3,
@@ -475,7 +496,7 @@
    "Bragantino",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gastón Benavídez",
@@ -487,13 +508,6 @@
   [
    "Gustavo Martins",
    "Grêmio",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Ignácio",
-   "Fluminense",
    6,
    0,
    ""
@@ -525,6 +539,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "João Schmidt",
+   "Santos",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "João Victor",
@@ -576,13 +597,6 @@
    ""
   ],
   [
-   "Marlon Freitas",
-   "Palmeiras",
-   6,
-   0,
-   ""
-  ],
-  [
    "Murilo",
    "Palmeiras",
    3,
@@ -608,13 +622,6 @@
    "Flamengo",
    5,
    0,
-   "pendurado"
-  ],
-  [
-   "Alexander Barboza",
-   "Palmeiras",
-   2,
-   1,
    "pendurado"
   ],
   [
@@ -725,13 +732,6 @@
   [
    "Jhon Arias",
    "Palmeiras",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "João Schmidt",
-   "Santos",
    5,
    0,
    "pendurado"
@@ -968,6 +968,13 @@
    ""
   ],
   [
+   "Brian Aguirre",
+   "Internacional",
+   4,
+   0,
+   ""
+  ],
+  [
    "Carlos Cuesta",
    "Vasco",
    1,
@@ -1024,6 +1031,13 @@
    ""
   ],
   [
+   "Gabriel Bontempo",
+   "Santos",
+   4,
+   0,
+   ""
+  ],
+  [
    "Gabriel Justino",
    "Botafogo",
    4,
@@ -1075,6 +1089,13 @@
   [
    "Joaquín Lavega",
    "Coritiba",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Joaquín Piquerez",
+   "Palmeiras",
    4,
    0,
    ""
@@ -1318,13 +1339,6 @@
    ""
   ],
   [
-   "Brian Aguirre",
-   "Internacional",
-   3,
-   0,
-   ""
-  ],
-  [
    "Bruno Leonardo",
    "Chapecoense",
    3,
@@ -1397,13 +1411,6 @@
   [
    "Félix Torres",
    "Internacional",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Gabriel Bontempo",
-   "Santos",
    3,
    0,
    ""
@@ -1509,13 +1516,6 @@
   [
    "Joaquín Correa",
    "Botafogo",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Joaquín Piquerez",
-   "Palmeiras",
    3,
    0,
    ""
@@ -1798,7 +1798,7 @@
    "Bragantino",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Tomás Cuello",
@@ -1861,7 +1861,7 @@
    "Chapecoense",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Yuri",
@@ -1886,6 +1886,13 @@
   ],
   [
    "Alan Patrick",
+   "Internacional",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Alerrando",
    "Internacional",
    2,
    0,
@@ -2452,6 +2459,13 @@
    "pendurado"
   ],
   [
+   "René",
+   "Fluminense",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Rodrigo Castillo",
    "Fluminense",
    2,
@@ -2566,13 +2580,6 @@
   [
    "Alef Manga",
    "Remo",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Alerrando",
-   "Internacional",
    1,
    0,
    ""
@@ -3313,6 +3320,13 @@
    ""
   ],
   [
+   "Philippe Coutinho",
+   "Santos",
+   1,
+   0,
+   ""
+  ],
+  [
    "Rafael",
    "São Paulo",
    1,
@@ -3329,13 +3343,6 @@
   [
    "Reiner",
    "Atlético-MG",
-   1,
-   0,
-   ""
-  ],
-  [
-   "René",
-   "Fluminense",
    1,
    0,
    ""
