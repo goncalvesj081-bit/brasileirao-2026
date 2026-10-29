@@ -13,21 +13,36 @@
    "rodada": 33,
    "mandante": "Bragantino",
    "visitante": "Chapecoense",
-   "data": "2026-10-28T22:30:00Z"
+   "data": "2026-10-28T22:30:00Z",
+   "aoVivo": {
+    "gm": 2,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555065",
    "rodada": 33,
    "mandante": "Fluminense",
    "visitante": "Internacional",
-   "data": "2026-10-28T22:30:00Z"
+   "data": "2026-10-28T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 1,
+    "minuto": null
+   }
   },
   {
    "id": "555068",
    "rodada": 33,
    "mandante": "Santos",
    "visitante": "Palmeiras",
-   "data": "2026-10-28T22:30:00Z"
+   "data": "2026-10-28T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555061",

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-28T15:17:57.105Z",
+ "atualizado": "2026-10-29T00:10:07.127Z",
  "clubes": {
   "Atlético-MG": [
    [
@@ -91,6 +91,12 @@
     "Atlético-MG",
     "Santos",
     29777
+   ],
+   [
+    "17 October",
+    "Atlético-MG",
+    "Coritiba",
+    25085
    ]
   ],
   "Bahia": [
@@ -381,6 +387,12 @@
     "Cruzeiro",
     "São Paulo",
     18608
+   ],
+   [
+    "23 October",
+    "Cruzeiro",
+    "Remo",
+    29516
    ]
   ],
   "Flamengo": [
@@ -669,9 +681,63 @@
     "Internacional",
     "Corinthians",
     27566
+   ],
+   [
+    "24 October 2026",
+    "Internacional",
+    "Botafogo",
+    34287
    ]
   ],
   "Mirassol": [
+   [
+    "29 January 2026",
+    "Mirassol",
+    "Vasco",
+    5883
+   ],
+   [
+    "11 February 2026",
+    "Mirassol",
+    "Cruzeiro",
+    5134
+   ],
+   [
+    "10 March 2026",
+    "Mirassol",
+    "Santos",
+    8152
+   ],
+   [
+    "18 March 2026",
+    "Mirassol",
+    "Coritiba",
+    4129
+   ],
+   [
+    "5 April 2026",
+    "Mirassol",
+    "Bragantino",
+    3597
+   ],
+   [
+    "11 April 2026",
+    "Mirassol",
+    "Bahia",
+    4276
+   ],
+   [
+    "3 May 2026",
+    "Mirassol",
+    "Corinthians",
+    9943
+   ],
+   [
+    "10 May 2026",
+    "Mirassol",
+    "Chapecoense",
+    2343
+   ],
    [
     "23 May 2026",
     "Mirassol",
@@ -719,6 +785,12 @@
     "Mirassol",
     "Internacional",
     5931
+   ],
+   [
+    "24 October 2026",
+    "Mirassol",
+    "São Paulo",
+    8393
    ]
   ],
   "Remo": [
@@ -909,6 +981,12 @@
     "Santos",
     "Flamengo",
     16600
+   ],
+   [
+    "24 October",
+    "Santos",
+    "Bahia",
+    14656
    ]
   ],
   "São Paulo": [
@@ -1001,6 +1079,12 @@
     "São Paulo",
     "Vitória",
     22618
+   ],
+   [
+    "17 October 2026",
+    "São Paulo",
+    "Vasco",
+    31501
    ]
   ],
   "Vasco": [
