@@ -9,102 +9,28 @@
    "data": null
   },
   {
-   "id": "555054",
-   "rodada": 32,
-   "mandante": "Internacional",
-   "visitante": "Botafogo",
-   "data": "2026-10-24T19:30:00Z"
-  },
-  {
-   "id": "555055",
-   "rodada": 32,
-   "mandante": "Mirassol",
-   "visitante": "São Paulo",
-   "data": "2026-10-24T19:30:00Z"
-  },
-  {
-   "id": "555059",
-   "rodada": 32,
-   "mandante": "Vitória",
-   "visitante": "Athletico-PR",
-   "data": "2026-10-24T19:30:00Z"
-  },
-  {
-   "id": "555056",
-   "rodada": 32,
-   "mandante": "Palmeiras",
-   "visitante": "Bragantino",
-   "data": "2026-10-24T21:30:00Z"
-  },
-  {
-   "id": "555058",
-   "rodada": 32,
-   "mandante": "Vasco",
-   "visitante": "Corinthians",
-   "data": "2026-10-24T21:30:00Z"
-  },
-  {
-   "id": "555050",
-   "rodada": 32,
-   "mandante": "Chapecoense",
-   "visitante": "Fluminense",
-   "data": "2026-10-24T22:30:00Z"
-  },
-  {
-   "id": "555057",
-   "rodada": 32,
-   "mandante": "Santos",
-   "visitante": "Bahia",
-   "data": "2026-10-25T01:00:00Z"
-  },
-  {
-   "id": "555051",
-   "rodada": 32,
-   "mandante": "Coritiba",
-   "visitante": "Grêmio",
-   "data": "2026-10-26T22:30:00Z"
-  },
-  {
-   "id": "555053",
-   "rodada": 32,
-   "mandante": "Flamengo",
-   "visitante": "Atlético-MG",
-   "data": "2026-10-26T23:00:00Z"
-  },
-  {
-   "id": "555062",
-   "rodada": 33,
-   "mandante": "Bragantino",
-   "visitante": "Chapecoense",
-   "data": "2026-10-28T22:30:00Z"
-  },
-  {
-   "id": "555065",
-   "rodada": 33,
-   "mandante": "Fluminense",
-   "visitante": "Internacional",
-   "data": "2026-10-28T22:30:00Z"
-  },
-  {
-   "id": "555068",
-   "rodada": 33,
-   "mandante": "Santos",
-   "visitante": "Palmeiras",
-   "data": "2026-10-28T22:30:00Z"
-  },
-  {
    "id": "555061",
    "rodada": 33,
    "mandante": "Bahia",
    "visitante": "São Paulo",
-   "data": "2026-10-29T00:30:00Z"
+   "data": "2026-10-29T00:30:00Z",
+   "aoVivo": {
+    "gm": 1,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555067",
    "rodada": 33,
    "mandante": "Remo",
    "visitante": "Botafogo",
-   "data": "2026-10-29T00:30:00Z"
+   "data": "2026-10-29T00:30:00Z",
+   "aoVivo": {
+    "gm": 1,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555060",
