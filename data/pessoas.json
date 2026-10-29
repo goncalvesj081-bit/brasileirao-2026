@@ -1521,7 +1521,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "27/10/2026",
+  "atualizado": "29/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1555,13 +1555,13 @@
     6
    ],
    [
-    "Erick",
-    "Vitória",
+    "José Manuel López",
+    "Palmeiras",
     6
    ],
    [
-    "José Manuel López",
-    "Palmeiras",
+    "Erick",
+    "Vitória",
     6
    ],
    [
@@ -1625,6 +1625,11 @@
     4
    ],
    [
+    "Alex Telles",
+    "Botafogo",
+    4
+   ],
+   [
     "Johan Carbonero",
     "Internacional",
     4
@@ -1632,11 +1637,6 @@
    [
     "Reinaldo",
     "Mirassol",
-    4
-   ],
-   [
-    "Alex Telles",
-    "Botafogo",
     4
    ],
    [
@@ -1655,6 +1655,11 @@
     4
    ],
    [
+    "Jean Lucas",
+    "Bahia",
+    4
+   ],
+   [
     "Francis Amuzu",
     "Grêmio",
     4
@@ -1670,6 +1675,11 @@
     4
    ],
    [
+    "Henry Mosquera",
+    "Bragantino",
+    4
+   ],
+   [
     "Giorgian de Arrascaeta",
     "Flamengo",
     4
@@ -1680,8 +1690,8 @@
     4
    ],
    [
-    "Henry Mosquera",
-    "Bragantino",
+    "Éverton Ribeiro",
+    "Bahia",
     4
    ],
    [
@@ -1695,18 +1705,13 @@
     4
    ],
    [
-    "Éverton Ribeiro",
-    "Bahia",
-    4
-   ],
-   [
     "Joaquín Piquerez",
     "Palmeiras",
     4
    ],
    [
-    "Kevin Viveros",
-    "Athletico-PR",
+    "Lucas Barbosa",
+    "Bragantino",
     3
    ],
    [
@@ -1720,13 +1725,13 @@
     3
    ],
    [
-    "Gabriel Bontempo",
-    "Santos",
+    "Kevin Viveros",
+    "Athletico-PR",
     3
    ],
    [
-    "Alef Manga",
-    "Remo",
+    "Gabriel Bontempo",
+    "Santos",
     3
    ],
    [
@@ -1735,18 +1740,8 @@
     3
    ],
    [
-    "Renan Lodi",
-    "Atlético-MG",
-    3
-   ],
-   [
-    "Jean Lucas",
-    "Bahia",
-    3
-   ],
-   [
-    "José Enamorado",
-    "Grêmio",
+    "Alef Manga",
+    "Remo",
     3
    ],
    [
@@ -1755,8 +1750,18 @@
     3
    ],
    [
+    "Renan Lodi",
+    "Atlético-MG",
+    3
+   ],
+   [
     "Jhon Arias",
     "Palmeiras",
+    3
+   ],
+   [
+    "José Enamorado",
+    "Grêmio",
     3
    ],
    [
@@ -1765,13 +1770,8 @@
     3
    ],
    [
-    "Jorginho",
-    "Flamengo",
-    3
-   ],
-   [
-    "Bruno Henrique",
-    "Flamengo",
+    "Gabriel Barbosa",
+    "Santos",
     3
    ]
   ]
