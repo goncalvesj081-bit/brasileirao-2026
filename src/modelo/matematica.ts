@@ -1,7 +1,8 @@
 // Contas "matemáticas" (sem probabilidade): o que já está garantido, o que é impossível e quantos pontos
 // faltam para garantir. Conservador: empate em pontos conta contra (o desempate pode não ajudar).
 
-import type { Jogo, Linha } from "./tipos";
+import { VAGAS } from "./copas";
+import type { Chances, Jogo, Linha } from "./tipos";
 
 export interface Meta {
   /** já não depende de ninguém */
@@ -37,4 +38,40 @@ export function faixaPossivel(clube: string, tabela: Linha[], max: Map<string, n
   const eu = tabela.find((t) => t.clube === clube)!;
   const outros = tabela.filter((t) => t.clube !== clube);
   return [1 + outros.filter((t) => t.p > max.get(clube)!).length, 1 + outros.filter((t) => max.get(t.clube)! >= eu.p).length];
+}
+
+/**
+ * Até que posição a última vaga pode descer quando as copas mandam vagas para a tabela: as 5 da liga,
+ * mais as 2 da Copa do Brasil e os 2 campeões continentais; a Sul-Americana vem logo depois.
+ */
+export const ULTIMA_LIB = VAGAS.libertadoresLiga + VAGAS.libertadoresCopa + 2;
+export const ULTIMA_SULA = ULTIMA_LIB + VAGAS.sulAmericana;
+
+export type Objetivo = keyof Chances;
+/** Por objetivo e por clube (na ordem da tabela): já garantido pela matemática, e ainda possível. */
+export type Certezas = Record<Objetivo, { garantido: boolean[]; possivel: boolean[] }>;
+
+/**
+ * O que as contas garantem ou descartam, para a simulação nunca dizer 100% ou 0% do que ainda pode mudar.
+ * Libertadores e Sul-Americana pela posição: o corte pode descer até ULTIMA_LIB e ULTIMA_SULA.
+ */
+export function certezas(tabela: Linha[], restantes: Jogo[], rebaixados: number): Certezas {
+  const max = maximos(tabela, restantes);
+  const n = tabela.length;
+  const out = Object.fromEntries((["c", "l", "s", "r"] as const).map((k) => [k, { garantido: [] as boolean[], possivel: [] as boolean[] }])) as Certezas;
+  for (const t of tabela) {
+    const meta = (k: number) => metaTopK(t.clube, Math.min(k, n), tabela, max);
+    const titulo = meta(1),
+      fica = meta(n - rebaixados),
+      g5 = meta(VAGAS.libertadoresLiga);
+    const marca = (o: Objetivo, garantido: boolean, possivel: boolean) => {
+      out[o].garantido.push(garantido);
+      out[o].possivel.push(possivel);
+    };
+    marca("c", titulo.garantido, titulo.possivel);
+    marca("l", g5.garantido, meta(ULTIMA_LIB).possivel);
+    marca("s", false, !g5.garantido && fica.possivel && meta(ULTIMA_SULA).possivel);
+    marca("r", !fica.possivel, !fica.garantido);
+  }
+  return out;
 }

@@ -232,17 +232,11 @@ function htmlComputador(): Html {
     v.gp += lv;
     v.gc += lm;
   }
-  const N = R.clubes.length;
   const linhas = R.clubes
-    .map((c, i) => ({
-      c,
-      pts: R.pts[i],
-      posMedia: R.pos[i].reduce((s, x, p) => s + x * (p + 1), 0),
-      titulo: R.pos[i][0],
-      lib: R.vagaLib[i],
-      queda: R.pos[i].slice(N - CORTES.rebaixados).reduce((a, b) => a + b, 0),
-      ...esp.get(c)!,
-    }))
+    .map((c, i) => {
+      const ch = chancesSim(R, i, "titulos");
+      return { c, pts: R.pts[i], posMedia: R.pos[i].reduce((s, x, p) => s + x * (p + 1), 0), titulo: ch.c, lib: ch.l, queda: ch.r, ...esp.get(c)! };
+    })
     .sort((a, b) => b.pts - a.pts || a.posMedia - b.posMedia);
   const r0 = (x: number) => Math.round(x);
   return html`<p class="note">Como o campeonato termina para o computador, sem nenhum palpite seu: a média de ${milhar(R.n)} campeonatos sorteados com o modelo. Por ser média, os pontos têm casa decimal.</p>

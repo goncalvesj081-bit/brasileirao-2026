@@ -1,6 +1,7 @@
 import { CORTES } from "../../config/temporada";
 import { distribuirVagas, golsPelasForcas, sortearTitulos, type Copas, type Titulos } from "./copas";
 import { forcas, golsEsperados } from "./forcas";
+import { certezas, type Certezas } from "./matematica";
 import { sortearPlacar } from "./poisson";
 import type { Chances, Jogo, Linha, Placar } from "./tipos";
 
@@ -45,6 +46,8 @@ export interface ResultadoSimulacao {
    * posição e caiu. Permite dizer "se o Bahia vencer, o Flamengo cai para X%".
    */
   porJogo?: EfeitoJogo[];
+  /** o que a matemática já garante ou descarta (sem isso, um resultado em todas as simulações viraria "100%") */
+  certezas?: Certezas;
   /** Só no modo detalhado. Por clube: pontos finais → [vezes, campeão, Libertadores, Sul-Americana, rebaixado], pela posição. */
   objetivosPorPontos?: Record<number, [number, number, number, number, number]>[];
 }
@@ -221,6 +224,7 @@ export function simular(e: EntradaSimulacao): ResultadoSimulacao {
   return {
     n: e.n,
     clubes: T.map((t) => t.clube),
+    certezas: certezasDaEntrada(e),
     pos: Array.from(pos, (r) => Array.from(r, (x) => x / e.n)),
     pts: Array.from(ptsSoma, (x) => x / e.n),
     porPontos: [...porPontos.values()].sort((a, b) => b[0] - a[0]),
@@ -271,6 +275,33 @@ export function chancesDaLinha(r: number[]): Chances {
   return { c: r[0], l: somar(r, 0, CORTES.lib), s: somar(r, CORTES.lib, CORTES.sula), r: somar(r, n - CORTES.rebaixados, n) };
 }
 
+/** Matemática com os placares fixados pelo usuário já contados como jogados. */
+function certezasDaEntrada(e: EntradaSimulacao): Certezas {
+  const pts = new Map(e.tabela.map((t) => [t.clube, t.p]));
+  const restantes = e.restantes.filter((g) => {
+    const f = e.forcados?.[g.id];
+    if (!f) return true;
+    pts.set(g.mandante, (pts.get(g.mandante) ?? 0) + (f[0] > f[1] ? 3 : f[0] === f[1] ? 1 : 0));
+    pts.set(g.visitante, (pts.get(g.visitante) ?? 0) + (f[1] > f[0] ? 3 : f[0] === f[1] ? 1 : 0));
+    return false;
+  });
+  return certezas(
+    e.tabela.map((t) => ({ ...t, p: pts.get(t.clube)! })),
+    restantes,
+    CORTES.rebaixados,
+  );
+}
+
+/** Chance que ainda pode mudar nunca aparece como 100% nem 0%: fica em ">99,9%" ou "<0,1%". */
+export const QUASE_CERTO = 0.9995;
+export const QUASE_IMPOSSIVEL = 0.0004;
+
+function conferir(p: number, garantido: boolean, possivel: boolean): number {
+  if (garantido) return 1;
+  if (!possivel) return 0;
+  return Math.min(QUASE_CERTO, Math.max(QUASE_IMPOSSIVEL, p));
+}
+
 export type ModoVagas = "posicao" | "titulos";
 
 /**
@@ -281,5 +312,11 @@ export function chancesSim(res: ResultadoSimulacao, i: number, modo: ModoVagas =
   const r = res.pos[i];
   const n = r.length;
   const [l, s] = modo === "titulos" ? [res.vagaLib[i], res.vagaSula[i]] : [res.posLib[i], res.posSula[i]];
-  return { c: r[0], l, s, r: somar(r, n - CORTES.rebaixados, n) };
+  const bruto: Chances = { c: r[0], l, s, r: somar(r, n - CORTES.rebaixados, n) };
+  const m = res.certezas;
+  if (!m) return bruto;
+  const k = (o: keyof Chances, possivel = m[o].possivel[i]) => conferir(bruto[o], m[o].garantido[i], possivel);
+  // com os títulos, quem está fora do alcance pela tabela ainda vai às copas se a simulação viu ele ganhar uma
+  const porTitulo = (o: "l" | "s") => m[o].possivel[i] || (modo === "titulos" && bruto[o] > 0);
+  return { c: k("c"), l: k("l", porTitulo("l")), s: k("s", porTitulo("s")), r: k("r") };
 }

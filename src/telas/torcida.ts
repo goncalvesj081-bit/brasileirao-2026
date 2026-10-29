@@ -4,7 +4,7 @@
 import { adiado, porData, posicao, proximaRodada, restantes, rodadasAbertas } from "../dados";
 import { sims } from "../estado";
 import { condicional, significativo, type ObjetivoJogo } from "../modelo/impacto";
-import { chancesDaLinha } from "../modelo/simular";
+import { chancesDaLinha, chancesSim } from "../modelo/simular";
 import type { Jogo } from "../modelo/tipos";
 import { calculando, escudo, linkClube, vazio } from "../ui/componentes";
 import { dataJogo, pct } from "../ui/formato";
@@ -66,12 +66,26 @@ export function objetivosAbertos(clube: string): ObjetivoJogo[] {
   });
 }
 
+const NOME_OBJ: Record<ObjetivoJogo, string> = { c: "o título", l: "a Libertadores", r: "a queda" };
+
+/** Nenhum objetivo entre 1% e 99%: diz se a matemática já fechou tudo ou se ainda falta confirmar algo. */
+function semNadaEmAberto(clube: string): string {
+  const res = sims.real!;
+  const i = posicao(clube);
+  const ch = chancesSim(res, i);
+  const m = res.certezas;
+  const faltam = (["c", "l", "r"] as const).filter((o) => m && !m[o].garantido[i] && m[o].possivel[i]);
+  if (!faltam.length) return `Nada mais em aberto para o ${clube}: a matemática já definiu tudo.`;
+  const lista = faltam.map((o) => `${NOME_OBJ[o]} (${pct(ch[o])})`).join(", ").replace(/, ([^,]*)$/, " e $1");
+  return `Nenhum jogo muda de forma visível as chances do ${clube}, mas ainda não está tudo confirmado pela matemática: ${lista}.`;
+}
+
 const res = (g: Jogo, k: 0 | 1 | 2) => (k === 1 ? "empate" : `vitória do ${k === 0 ? g.mandante : g.visitante}`);
 
 export function telaTorcida(clube: string): Html {
   if (!sims.real) return calculando();
   const objs = objetivosAbertos(clube);
-  if (!objs.length) return vazio(`Nada mais em aberto para o ${clube}: as chances já estão definidas.`);
+  if (!objs.length) return vazio(semNadaEmAberto(clube));
   return html`<div class="coluna">${objs.map((obj) => {
     const lista = torcidaDoClube(clube, obj);
     const base = chanceNoObjetivo(clube, obj);
