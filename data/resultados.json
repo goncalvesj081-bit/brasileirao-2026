@@ -2934,6 +2934,15 @@
    "data": "2026-10-29T23:00:00Z",
    "gm": 1,
    "gv": 4
+  },
+  {
+   "id": "555066",
+   "rodada": 33,
+   "mandante": "Grêmio",
+   "visitante": "Athletico-PR",
+   "data": "2026-10-30T00:30:00Z",
+   "gm": 2,
+   "gv": 0
   }
  ]
 }

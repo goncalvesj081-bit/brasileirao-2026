@@ -9,18 +9,6 @@
    "data": null
   },
   {
-   "id": "555066",
-   "rodada": 33,
-   "mandante": "Grêmio",
-   "visitante": "Athletico-PR",
-   "data": "2026-10-30T00:30:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555063",
    "rodada": 33,
    "mandante": "Corinthians",

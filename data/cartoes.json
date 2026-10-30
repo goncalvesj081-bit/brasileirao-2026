@@ -1,5 +1,5 @@
 {
- "atualizado": "29/10/2026",
+ "atualizado": "30/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -149,6 +149,13 @@
    "pendurado"
   ],
   [
+   "Bruno Zapelli",
+   "Athletico-PR",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Eduardo Doma",
    "Chapecoense",
    5,
@@ -256,13 +263,6 @@
   [
    "Bruno Melo",
    "Coritiba",
-   4,
-   1,
-   ""
-  ],
-  [
-   "Bruno Zapelli",
-   "Athletico-PR",
    4,
    1,
    ""
@@ -471,6 +471,13 @@
    ""
   ],
   [
+   "Carlos Vinícius",
+   "Grêmio",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "Denilson",
    "Mirassol",
    6,
@@ -483,6 +490,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "Erick Noriega",
+   "Grêmio",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Fabinho",
@@ -531,7 +545,7 @@
    "Athletico-PR",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Jean Lucas",
@@ -674,13 +688,6 @@
    "pendurado"
   ],
   [
-   "Carlos Vinícius",
-   "Grêmio",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "David Duarte",
    "Bahia",
    5,
@@ -697,13 +704,6 @@
   [
    "Edson Carioca",
    "Mirassol",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Erick Noriega",
-   "Grêmio",
    5,
    0,
    "pendurado"
@@ -765,6 +765,13 @@
    "pendurado"
   ],
   [
+   "José Enamorado",
+   "Grêmio",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "José Herrera",
    "Bragantino",
    5,
@@ -781,6 +788,13 @@
   [
    "Juan Freytes",
    "Fluminense",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Juan Portilla",
+   "Athletico-PR",
    5,
    0,
    "pendurado"
@@ -1103,20 +1117,6 @@
   [
    "Joaquín Piquerez",
    "Palmeiras",
-   4,
-   0,
-   ""
-  ],
-  [
-   "José Enamorado",
-   "Grêmio",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Juan Portilla",
-   "Athletico-PR",
    4,
    0,
    ""
@@ -1462,7 +1462,7 @@
    "Athletico-PR",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gonzalo Plata",
@@ -1862,6 +1862,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Weverton",
+   "Grêmio",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Willian Arão",
@@ -2557,13 +2564,6 @@
    "pendurado"
   ],
   [
-   "Weverton",
-   "Grêmio",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Yuri Alberto",
    "Corinthians",
    2,
@@ -3140,6 +3140,13 @@
   [
    "Léo Jardim",
    "Vasco",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Leonardo Derik",
+   "Athletico-PR",
    1,
    0,
    ""
