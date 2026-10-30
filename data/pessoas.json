@@ -1526,7 +1526,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "29/10/2026",
+  "atualizado": "30/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1575,6 +1575,11 @@
     6
    ],
    [
+    "Guillermo Varela",
+    "Flamengo",
+    6
+   ],
+   [
     "Giovanni Augusto",
     "Chapecoense",
     6
@@ -1595,6 +1600,11 @@
     5
    ],
    [
+    "Keny Arroyo",
+    "Cruzeiro",
+    5
+   ],
+   [
     "Luciano Acosta",
     "Fluminense",
     5
@@ -1607,11 +1617,6 @@
    [
     "João Cruz",
     "Athletico-PR",
-    5
-   ],
-   [
-    "Guillermo Varela",
-    "Flamengo",
     5
    ],
    [
@@ -1645,6 +1650,11 @@
     4
    ],
    [
+    "Gerson",
+    "Cruzeiro",
+    4
+   ],
+   [
     "Cristian Pavón",
     "Grêmio",
     4
@@ -1652,11 +1662,6 @@
    [
     "Matheus",
     "Vitória",
-    4
-   ],
-   [
-    "Gerson",
-    "Cruzeiro",
     4
    ],
    [
@@ -1670,18 +1675,8 @@
     4
    ],
    [
-    "Keny Arroyo",
-    "Cruzeiro",
-    4
-   ],
-   [
     "Rodrigo Nestor",
     "Bahia",
-    4
-   ],
-   [
-    "Henry Mosquera",
-    "Bragantino",
     4
    ],
    [
@@ -1695,13 +1690,18 @@
     4
    ],
    [
-    "Éverton Ribeiro",
-    "Bahia",
+    "Henry Mosquera",
+    "Bragantino",
     4
    ],
    [
     "Cuiabano",
     "Vasco",
+    4
+   ],
+   [
+    "Éverton Ribeiro",
+    "Bahia",
     4
    ],
    [
@@ -1713,6 +1713,11 @@
     "Joaquín Piquerez",
     "Palmeiras",
     4
+   ],
+   [
+    "Kevin Viveros",
+    "Athletico-PR",
+    3
    ],
    [
     "Lucas Barbosa",
@@ -1730,11 +1735,6 @@
     3
    ],
    [
-    "Kevin Viveros",
-    "Athletico-PR",
-    3
-   ],
-   [
     "Gabriel Bontempo",
     "Santos",
     3
@@ -1745,23 +1745,13 @@
     3
    ],
    [
-    "Alef Manga",
-    "Remo",
-    3
-   ],
-   [
-    "Benjamín Rollheiser",
-    "Santos",
-    3
-   ],
-   [
     "Renan Lodi",
     "Atlético-MG",
     3
    ],
    [
-    "Jhon Arias",
-    "Palmeiras",
+    "Alef Manga",
+    "Remo",
     3
    ],
    [
@@ -1770,13 +1760,23 @@
     3
    ],
    [
+    "Benjamín Rollheiser",
+    "Santos",
+    3
+   ],
+   [
+    "Jhon Arias",
+    "Palmeiras",
+    3
+   ],
+   [
     "Bernard",
     "Atlético-MG",
     3
    ],
    [
-    "Gabriel Barbosa",
-    "Santos",
+    "Jorginho",
+    "Flamengo",
     3
    ]
   ]
