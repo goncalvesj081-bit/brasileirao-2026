@@ -11,7 +11,7 @@
    [
     "Pedro",
     "Flamengo",
-    16
+    18
    ],
    [
     "Gabriel Barbosa",
@@ -19,18 +19,23 @@
     15
    ],
    [
+    "Kaio Jorge",
+    "Cruzeiro",
+    12
+   ],
+   [
     "Carlos Vinícius",
     "Grêmio",
     11
    ],
    [
-    "Kaio Jorge",
-    "Cruzeiro",
+    "Luciano Juba",
+    "Bahia",
     11
    ],
    [
-    "Luciano Juba",
-    "Bahia",
+    "Samuel Lino",
+    "Flamengo",
     11
    ],
    [
@@ -66,11 +71,6 @@
    [
     "Matheus Pereira",
     "Cruzeiro",
-    9
-   ],
-   [
-    "Samuel Lino",
-    "Flamengo",
     9
    ],
    [
@@ -534,6 +534,11 @@
     3
    ],
    [
+    "Alan Lescano",
+    "Vasco",
+    3
+   ],
+   [
     "Agustin Giay",
     "Palmeiras",
     3
@@ -851,11 +856,6 @@
    [
     "Bruno Henrique",
     "Internacional",
-    2
-   ],
-   [
-    "Alan Lescano",
-    "Vasco",
     2
    ],
    [

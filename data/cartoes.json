@@ -9,6 +9,13 @@
    ""
   ],
   [
+   "Matheus Pereira",
+   "Cruzeiro",
+   12,
+   0,
+   "suspenso"
+  ],
+  [
    "Alexander Bernabei",
    "Internacional",
    8,
@@ -27,13 +34,6 @@
    "Flamengo",
    8,
    1,
-   "pendurado"
-  ],
-  [
-   "Matheus Pereira",
-   "Cruzeiro",
-   11,
-   0,
    "pendurado"
   ],
   [
@@ -618,6 +618,13 @@
    ""
   ],
   [
+   "William",
+   "Cruzeiro",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "Alex Sandro",
    "Flamengo",
    5,
@@ -746,6 +753,13 @@
   [
    "Johan Carbonero",
    "Internacional",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Jonathan Jesus",
+   "Cruzeiro",
    5,
    0,
    "pendurado"
@@ -895,13 +909,6 @@
    "São Paulo",
    5,
    0,
-   "pendurado"
-  ],
-  [
-   "William",
-   "Cruzeiro",
-   2,
-   1,
    "pendurado"
   ],
   [
@@ -1101,13 +1108,6 @@
    ""
   ],
   [
-   "Jonathan Jesus",
-   "Cruzeiro",
-   4,
-   0,
-   ""
-  ],
-  [
    "José Enamorado",
    "Grêmio",
    4,
@@ -1206,8 +1206,22 @@
    ""
   ],
   [
+   "Matheus Henrique",
+   "Cruzeiro",
+   4,
+   0,
+   ""
+  ],
+  [
    "Michel Araújo",
    "Bahia",
+   1,
+   1,
+   ""
+  ],
+  [
+   "Natanael",
+   "Atlético-MG",
    1,
    1,
    ""
@@ -1633,13 +1647,6 @@
    ""
   ],
   [
-   "Matheus Henrique",
-   "Cruzeiro",
-   3,
-   0,
-   ""
-  ],
-  [
    "Matheus Piauí",
    "Remo",
    3,
@@ -1658,13 +1665,6 @@
    "Corinthians",
    3,
    0,
-   ""
-  ],
-  [
-   "Natanael",
-   "Atlético-MG",
-   0,
-   1,
    ""
   ],
   [
@@ -1833,7 +1833,7 @@
    "Atlético-MG",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Wallace",
@@ -2580,6 +2580,13 @@
   [
    "Aitor Cantalapiedra",
    "Vitória",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Alan Minda",
+   "Atlético-MG",
    1,
    0,
    ""
@@ -3581,6 +3588,13 @@
   [
    "Zé Ivaldo",
    "Santos",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Zé Lucas",
+   "Cruzeiro",
    1,
    0,
    ""
