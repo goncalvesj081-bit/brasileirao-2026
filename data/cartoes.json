@@ -118,7 +118,7 @@
    "Flamengo",
    3,
    2,
-   "suspenso"
+   ""
   ],
   [
    "Thiago Santos",
@@ -1276,6 +1276,13 @@
    ""
   ],
   [
+   "Samuel Lino",
+   "Flamengo",
+   4,
+   0,
+   ""
+  ],
+  [
    "Sebastián Gómez",
    "Coritiba",
    4,
@@ -1453,6 +1460,13 @@
   [
    "Gilberto",
    "Athletico-PR",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
+   "Gonzalo Plata",
+   "Flamengo",
    3,
    0,
    "suspenso"
@@ -1764,13 +1778,6 @@
    3,
    0,
    "suspenso"
-  ],
-  [
-   "Samuel Lino",
-   "Flamengo",
-   3,
-   0,
-   ""
   ],
   [
    "Santiago Ramos",
@@ -2125,13 +2132,6 @@
   [
    "Giovanni Augusto",
    "Chapecoense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Gonzalo Plata",
-   "Flamengo",
    2,
    0,
    "pendurado"
