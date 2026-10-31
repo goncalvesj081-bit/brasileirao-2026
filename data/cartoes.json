@@ -1,5 +1,5 @@
 {
- "atualizado": "30/10/2026",
+ "atualizado": "31/10/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -601,7 +601,7 @@
    "Vitória",
    3,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Luciano",
@@ -1182,7 +1182,7 @@
    "Vitória",
    1,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Marllon",
@@ -1421,6 +1421,13 @@
    0,
    1,
    ""
+  ],
+  [
+   "Emanuel Britez",
+   "Vitória",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Fagner",
@@ -2011,13 +2018,6 @@
    "pendurado"
   ],
   [
-   "Emanuel Britez",
-   "Vitória",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Ênio",
    "Chapecoense",
    2,
@@ -2531,6 +2531,13 @@
   [
    "Thaciano",
    "Santos",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Tissi",
+   "Coritiba",
    2,
    0,
    "pendurado"
@@ -3483,13 +3490,6 @@
   [
    "Tiquinho Soares",
    "Mirassol",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Tissi",
-   "Coritiba",
    1,
    0,
    ""

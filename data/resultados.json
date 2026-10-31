@@ -2952,6 +2952,15 @@
    "data": "2026-10-30T23:00:00Z",
    "gm": 2,
    "gv": 0
+  },
+  {
+   "id": "555064",
+   "rodada": 33,
+   "mandante": "Coritiba",
+   "visitante": "Vitória",
+   "data": "2026-10-31T19:00:00Z",
+   "gm": 2,
+   "gv": 0
   }
  ]
 }

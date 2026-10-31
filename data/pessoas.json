@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "30/10/2026",
+  "atualizado": "31/10/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -74,17 +74,17 @@
     9
    ],
    [
+    "Pedro Rocha",
+    "Coritiba",
+    9
+   ],
+   [
     "Carlos Renê",
     "Vitória",
     9
    ],
    [
     "Breno Lopes",
-    "Coritiba",
-    8
-   ],
-   [
-    "Pedro Rocha",
     "Coritiba",
     8
    ],
@@ -1521,6 +1521,11 @@
    [
     "Fabián Balbuena",
     "Grêmio",
+    1
+   ],
+   [
+    "Tinga",
+    "Coritiba",
     1
    ]
   ]

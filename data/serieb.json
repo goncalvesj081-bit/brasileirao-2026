@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-31T00:42:59.694Z",
+ "atualizado": "2026-10-31T22:08:22.215Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3181,16 +3181,18 @@
    "data": "2026-10-30T22:30Z",
    "gm": 2,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860413",
    "rodada": 36,
    "mandante": "Botafogo-SP",
    "visitante": "Sport",
-   "data": "2026-10-31T19:00Z"
-  },
+   "data": "2026-10-31T19:00Z",
+   "gm": 1,
+   "gv": 1
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860416",
    "rodada": 36,
