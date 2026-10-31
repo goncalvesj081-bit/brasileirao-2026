@@ -1526,7 +1526,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "30/10/2026",
+  "atualizado": "31/10/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1555,6 +1555,11 @@
     7
    ],
    [
+    "Rodrigo Garro",
+    "Corinthians",
+    7
+   ],
+   [
     "Pedro",
     "Flamengo",
     6
@@ -1567,11 +1572,6 @@
    [
     "Erick",
     "Vitória",
-    6
-   ],
-   [
-    "Rodrigo Garro",
-    "Corinthians",
     6
    ],
    [
@@ -1590,13 +1590,13 @@
     5
    ],
    [
-    "Álvaro Montoro",
-    "Botafogo",
+    "Alesson",
+    "Mirassol",
     5
    ],
    [
-    "Alesson",
-    "Mirassol",
+    "Álvaro Montoro",
+    "Botafogo",
     5
    ],
    [
@@ -1635,6 +1635,11 @@
     4
    ],
    [
+    "Reinaldo",
+    "Mirassol",
+    4
+   ],
+   [
     "Alex Telles",
     "Botafogo",
     4
@@ -1642,11 +1647,6 @@
    [
     "Johan Carbonero",
     "Internacional",
-    4
-   ],
-   [
-    "Reinaldo",
-    "Mirassol",
     4
    ],
    [
@@ -1750,6 +1750,11 @@
     3
    ],
    [
+    "Mateuzinho",
+    "Corinthians",
+    3
+   ],
+   [
     "Alef Manga",
     "Remo",
     3
@@ -1772,11 +1777,6 @@
    [
     "Bernard",
     "Atlético-MG",
-    3
-   ],
-   [
-    "Jorginho",
-    "Flamengo",
     3
    ]
   ]
