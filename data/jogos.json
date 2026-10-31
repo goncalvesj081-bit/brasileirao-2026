@@ -13,7 +13,12 @@
    "rodada": 33,
    "mandante": "Coritiba",
    "visitante": "Vitória",
-   "data": "2026-10-31T19:00:00Z"
+   "data": "2026-10-31T19:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555072",
