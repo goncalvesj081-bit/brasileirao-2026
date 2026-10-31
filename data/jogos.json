@@ -9,18 +9,6 @@
    "data": null
   },
   {
-   "id": "555063",
-   "rodada": 33,
-   "mandante": "Corinthians",
-   "visitante": "Mirassol",
-   "data": "2026-10-30T23:00:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555064",
    "rodada": 33,
    "mandante": "Coritiba",

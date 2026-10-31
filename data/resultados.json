@@ -2943,6 +2943,15 @@
    "data": "2026-10-30T00:30:00Z",
    "gm": 2,
    "gv": 0
+  },
+  {
+   "id": "555063",
+   "rodada": 33,
+   "mandante": "Corinthians",
+   "visitante": "Mirassol",
+   "data": "2026-10-30T23:00:00Z",
+   "gm": 2,
+   "gv": 0
   }
  ]
 }

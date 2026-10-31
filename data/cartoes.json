@@ -205,6 +205,13 @@
    "pendurado"
   ],
   [
+   "Mateuzinho",
+   "Corinthians",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Nahuel Ferraresi",
    "Botafogo",
    8,
@@ -352,13 +359,6 @@
    ""
   ],
   [
-   "Mateuzinho",
-   "Corinthians",
-   4,
-   1,
-   ""
-  ],
-  [
    "Matheus Bahia",
    "Internacional",
    4,
@@ -483,6 +483,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "Edson Carioca",
+   "Mirassol",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Erick",
@@ -653,6 +660,13 @@
    "pendurado"
   ],
   [
+   "André Ramalho",
+   "Corinthians",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Breno Bidon",
    "Corinthians",
    5,
@@ -699,13 +713,6 @@
    "Vitória",
    2,
    1,
-   "pendurado"
-  ],
-  [
-   "Edson Carioca",
-   "Mirassol",
-   5,
-   0,
    "pendurado"
   ],
   [
@@ -969,13 +976,6 @@
   ],
   [
    "André Carrillo",
-   "Corinthians",
-   4,
-   0,
-   ""
-  ],
-  [
-   "André Ramalho",
    "Corinthians",
    4,
    0,
@@ -1374,6 +1374,13 @@
    ""
   ],
   [
+   "Bruno Santos",
+   "Mirassol",
+   0,
+   1,
+   "suspenso"
+  ],
+  [
    "Carlos Miguel",
    "Palmeiras",
    3,
@@ -1518,7 +1525,7 @@
    "Corinthians",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "João",
