@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-01T01:06:39.605Z",
+ "atualizado": "2026-11-01T22:44:44.779Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3208,16 +3208,18 @@
    "data": "2026-10-31T22:30Z",
    "gm": 1,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860418",
    "rodada": 36,
    "mandante": "Londrina",
    "visitante": "América Mineiro",
-   "data": "2026-11-01T19:00Z"
-  },
+   "data": "2026-11-01T19:00Z",
+   "gm": 1,
+   "gv": 3
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860415",
    "rodada": 36,
