@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-01T00:02:44.821Z",
+ "atualizado": "2026-11-01T01:06:39.605Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3199,16 +3199,18 @@
    "data": "2026-10-31T20:30Z",
    "gm": 2,
    "gv": 2
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860421",
    "rodada": 36,
    "mandante": "Náutico",
    "visitante": "Avaí",
-   "data": "2026-10-31T22:30Z"
-  },
+   "data": "2026-10-31T22:30Z",
+   "gm": 1,
+   "gv": 0
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860418",
    "rodada": 36,
