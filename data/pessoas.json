@@ -1531,7 +1531,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "01/11/2026",
+  "atualizado": "03/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1625,6 +1625,11 @@
     5
    ],
    [
+    "Henry Mosquera",
+    "Bragantino",
+    5
+   ],
+   [
     "Gastón Benavídez",
     "Athletico-PR",
     5
@@ -1680,6 +1685,11 @@
     4
    ],
    [
+    "Gabriel Barbosa",
+    "Santos",
+    4
+   ],
+   [
     "Rodrigo Nestor",
     "Bahia",
     4
@@ -1692,11 +1702,6 @@
    [
     "José Luis Rodríguez",
     "Vasco",
-    4
-   ],
-   [
-    "Henry Mosquera",
-    "Bragantino",
     4
    ],
    [
@@ -1720,13 +1725,13 @@
     4
    ],
    [
-    "Kevin Viveros",
-    "Athletico-PR",
+    "Lucas Barbosa",
+    "Bragantino",
     3
    ],
    [
-    "Lucas Barbosa",
-    "Bragantino",
+    "Kevin Viveros",
+    "Athletico-PR",
     3
    ],
    [
@@ -1750,6 +1755,11 @@
     3
    ],
    [
+    "Benjamín Rollheiser",
+    "Santos",
+    3
+   ],
+   [
     "Renan Lodi",
     "Atlético-MG",
     3
@@ -1770,18 +1780,8 @@
     3
    ],
    [
-    "Benjamín Rollheiser",
-    "Santos",
-    3
-   ],
-   [
     "Jhon Arias",
     "Palmeiras",
-    3
-   ],
-   [
-    "Bernard",
-    "Atlético-MG",
     3
    ]
   ]
