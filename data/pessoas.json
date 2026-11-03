@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "31/10/2026",
+  "atualizado": "02/11/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -419,6 +419,11 @@
     3
    ],
    [
+    "Philippe Coutinho",
+    "Santos",
+    3
+   ],
+   [
     "José Rodríguez",
     "Vasco",
     3
@@ -549,6 +554,11 @@
     3
    ],
    [
+    "Yan",
+    "Bragantino",
+    3
+   ],
+   [
     "Gabriel Baralhas",
     "Vitória",
     2
@@ -566,11 +576,6 @@
    [
     "Bidon",
     "Corinthians",
-    2
-   ],
-   [
-    "Philippe Coutinho",
-    "Santos",
     2
    ],
    [
@@ -871,11 +876,6 @@
    [
     "Marino Hinestroza",
     "Vasco",
-    2
-   ],
-   [
-    "Yan",
-    "Bragantino",
     2
    ],
    [

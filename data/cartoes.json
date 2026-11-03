@@ -1,6 +1,13 @@
 {
- "atualizado": "01/11/2026",
+ "atualizado": "02/11/2026",
  "lista": [
+  [
+   "Álvaro Barreal",
+   "Santos",
+   9,
+   1,
+   "suspenso"
+  ],
   [
    "Juninho Capixaba",
    "Bragantino",
@@ -18,13 +25,6 @@
   [
    "Alexander Bernabei",
    "Internacional",
-   8,
-   1,
-   "pendurado"
-  ],
-  [
-   "Álvaro Barreal",
-   "Santos",
    8,
    1,
    "pendurado"
@@ -205,6 +205,13 @@
    "pendurado"
   ],
   [
+   "Luan Peres",
+   "Santos",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Mateuzinho",
    "Corinthians",
    5,
@@ -342,13 +349,6 @@
    "Mirassol",
    7,
    0,
-   ""
-  ],
-  [
-   "Luan Peres",
-   "Santos",
-   4,
-   1,
    ""
   ],
   [
@@ -566,7 +566,7 @@
    "Santos",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "João Victor",
@@ -602,6 +602,13 @@
    3,
    1,
    ""
+  ],
+  [
+   "Lucas Barbosa",
+   "Bragantino",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Luciano",
@@ -802,13 +809,6 @@
   [
    "Juan Portilla",
    "Athletico-PR",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Lucas Barbosa",
-   "Bragantino",
    5,
    0,
    "pendurado"
@@ -3014,6 +3014,13 @@
   [
    "Jefté",
    "Palmeiras",
+   1,
+   0,
+   ""
+  ],
+  [
+   "João Alencar",
+   "Santos",
    1,
    0,
    ""
