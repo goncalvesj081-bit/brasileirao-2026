@@ -1787,7 +1787,7 @@
   ]
  },
  "tecnicos": {
-  "atualizado": "28/10/2026",
+  "atualizado": "03/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": {
    "Athletico-PR": [
@@ -1884,14 +1884,13 @@
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Pedro_Emanuel_13981122001725637170554605776108.jpg/250px-Pedro_Emanuel_13981122001725637170554605776108.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Vitória": [
-    "Jair Ventura",
-    "24/09/2025",
-    "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Jair_Ventura_2025.png/250px-Jair_Ventura_2025.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "Cleber dos Santos (interino)",
+    "02/11/2026"
    ]
   }
  },
  "trocas": {
-  "atualizado": "28/10/2026",
+  "atualizado": "03/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": [
    [
@@ -2033,6 +2032,13 @@
     "Demitido",
     "27/10",
     "Guilherme Bossle (interino)"
+   ],
+   [
+    "Vitória",
+    "Jair Ventura",
+    "Demitido",
+    "02/11",
+    "Cleber dos Santos (interino)"
    ]
   ]
  }
