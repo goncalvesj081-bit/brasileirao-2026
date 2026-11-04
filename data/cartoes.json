@@ -1,5 +1,5 @@
 {
- "atualizado": "03/11/2026",
+ "atualizado": "04/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -156,6 +156,13 @@
    "pendurado"
   ],
   [
+   "Bruno Melo",
+   "Coritiba",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Bruno Zapelli",
    "Athletico-PR",
    5,
@@ -247,6 +254,13 @@
    "pendurado"
   ],
   [
+   "Tiago",
+   "Coritiba",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Zé Ricardo",
    "Remo",
    5,
@@ -272,13 +286,6 @@
    "Athletico-PR",
    7,
    0,
-   ""
-  ],
-  [
-   "Bruno Melo",
-   "Coritiba",
-   4,
-   1,
    ""
   ],
   [
@@ -401,17 +408,17 @@
    ""
   ],
   [
-   "Tiago",
-   "Coritiba",
+   "Viery",
+   "Grêmio",
    4,
    1,
    ""
   ],
   [
-   "Viery",
-   "Grêmio",
-   4,
-   1,
+   "Vitinho",
+   "Internacional",
+   7,
+   0,
    ""
   ],
   [
@@ -639,13 +646,6 @@
    ""
   ],
   [
-   "Vitinho",
-   "Internacional",
-   6,
-   0,
-   ""
-  ],
-  [
    "William",
    "Cruzeiro",
    3,
@@ -742,6 +742,13 @@
    5,
    0,
    "pendurado"
+  ],
+  [
+   "Guillermo Maripán",
+   "Internacional",
+   2,
+   1,
+   "suspenso"
   ],
   [
    "Henry Mosquera",
@@ -2151,13 +2158,6 @@
    "pendurado"
   ],
   [
-   "Guillermo Maripán",
-   "Internacional",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Gustavo Marques",
    "Bragantino",
    2,
@@ -2440,6 +2440,13 @@
   [
    "Newton",
    "Botafogo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Nicolás Fonseca",
+   "Coritiba",
    2,
    0,
    "pendurado"
@@ -3033,6 +3040,13 @@
    ""
   ],
   [
+   "João Bezerra",
+   "Internacional",
+   1,
+   0,
+   ""
+  ],
+  [
    "João Paulo",
    "Bahia",
    1,
@@ -3334,13 +3348,6 @@
    ""
   ],
   [
-   "Nicolás Fonseca",
-   "Coritiba",
-   1,
-   0,
-   ""
-  ],
-  [
    "Patrick",
    "Remo",
    1,
@@ -3432,6 +3439,13 @@
    ""
   ],
   [
+   "Rodrigo Moledo",
+   "Coritiba",
+   1,
+   0,
+   ""
+  ],
+  [
    "Ronald",
    "Vitória",
    1,
@@ -3476,6 +3490,13 @@
   [
    "Thiago Borbas",
    "Atlético-MG",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Thiago Maia",
+   "Internacional",
    1,
    0,
    ""
