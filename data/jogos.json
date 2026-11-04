@@ -9,18 +9,16 @@
    "data": "2026-11-14T23:30:00Z"
   },
   {
-   "id": "555073",
-   "rodada": 34,
-   "mandante": "Chapecoense",
-   "visitante": "Mirassol",
-   "data": "2026-11-03T22:30:00Z"
-  },
-  {
    "id": "555076",
    "rodada": 34,
    "mandante": "Internacional",
    "visitante": "Coritiba",
-   "data": "2026-11-04T00:30:00Z"
+   "data": "2026-11-04T00:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555070",

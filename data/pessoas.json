@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "02/11/2026",
+  "atualizado": "03/11/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -819,6 +819,11 @@
     2
    ],
    [
+    "Reinaldo",
+    "Mirassol",
+    2
+   ],
+   [
     "Bruno Henrique",
     "Flamengo",
     2
@@ -1264,11 +1269,6 @@
     1
    ],
    [
-    "Reinaldo",
-    "Mirassol",
-    1
-   ],
-   [
     "Wesley Gassova",
     "Cruzeiro",
     1
@@ -1526,6 +1526,11 @@
    [
     "Tinga",
     "Coritiba",
+    1
+   ],
+   [
+    "Kauan Gomes",
+    "Chapecoense",
     1
    ]
   ]

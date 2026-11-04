@@ -1,5 +1,5 @@
 {
- "atualizado": "02/11/2026",
+ "atualizado": "03/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -65,6 +65,13 @@
    ""
   ],
   [
+   "Camilo",
+   "Chapecoense",
+   10,
+   0,
+   ""
+  ],
+  [
    "Gabriel Barbosa",
    "Santos",
    7,
@@ -100,11 +107,11 @@
    ""
   ],
   [
-   "Camilo",
+   "Eduardo Doma",
    "Chapecoense",
-   9,
-   0,
-   ""
+   6,
+   1,
+   "suspenso"
   ],
   [
    "Gabriel Mercado",
@@ -151,13 +158,6 @@
   [
    "Bruno Zapelli",
    "Athletico-PR",
-   5,
-   1,
-   "pendurado"
-  ],
-  [
-   "Eduardo Doma",
-   "Chapecoense",
    5,
    1,
    "pendurado"
@@ -298,6 +298,13 @@
   [
    "Cristian Pavón",
    "Grêmio",
+   7,
+   0,
+   ""
+  ],
+  [
+   "Denilson",
+   "Mirassol",
    7,
    0,
    ""
@@ -478,18 +485,11 @@
    "suspenso"
   ],
   [
-   "Denilson",
-   "Mirassol",
-   6,
-   0,
-   ""
-  ],
-  [
    "Edson Carioca",
    "Mirassol",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Erick",
@@ -1003,6 +1003,13 @@
    ""
   ],
   [
+   "Bruno Pacheco",
+   "Chapecoense",
+   4,
+   0,
+   ""
+  ],
+  [
    "Carlos Cuesta",
    "Vasco",
    1,
@@ -1367,18 +1374,11 @@
    ""
   ],
   [
-   "Bruno Pacheco",
-   "Chapecoense",
-   3,
-   0,
-   ""
-  ],
-  [
    "Bruno Santos",
    "Mirassol",
    0,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Carlos Miguel",
