@@ -9,32 +9,28 @@
    "data": "2026-11-14T23:30:00Z"
   },
   {
-   "id": "555070",
-   "rodada": 34,
-   "mandante": "Athletico-PR",
-   "visitante": "Vasco",
-   "data": "2026-11-04T22:30:00Z"
-  },
-  {
-   "id": "555075",
-   "rodada": 34,
-   "mandante": "Flamengo",
-   "visitante": "Grêmio",
-   "data": "2026-11-04T22:30:00Z"
-  },
-  {
    "id": "555071",
    "rodada": 34,
    "mandante": "Botafogo",
    "visitante": "Atlético-MG",
-   "data": "2026-11-05T00:30:00Z"
+   "data": "2026-11-05T00:30:00Z",
+   "aoVivo": {
+    "gm": 1,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555078",
    "rodada": 34,
    "mandante": "São Paulo",
    "visitante": "Corinthians",
-   "data": "2026-11-05T00:30:00Z"
+   "data": "2026-11-05T00:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555077",

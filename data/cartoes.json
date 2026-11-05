@@ -128,6 +128,13 @@
    ""
   ],
   [
+   "Kevin Viveros",
+   "Athletico-PR",
+   6,
+   1,
+   "suspenso"
+  ],
+  [
    "Thiago Santos",
    "Coritiba",
    9,
@@ -153,6 +160,13 @@
    "Corinthians",
    2,
    2,
+   "pendurado"
+  ],
+  [
+   "Arthur Dias",
+   "Athletico-PR",
+   8,
+   0,
    "pendurado"
   ],
   [
@@ -261,6 +275,13 @@
    "pendurado"
   ],
   [
+   "Wálter Kannemann",
+   "Grêmio",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Zé Ricardo",
    "Remo",
    5,
@@ -279,13 +300,6 @@
    "Botafogo",
    4,
    1,
-   ""
-  ],
-  [
-   "Arthur Dias",
-   "Athletico-PR",
-   7,
-   0,
    ""
   ],
   [
@@ -359,6 +373,13 @@
    ""
   ],
   [
+   "Jádson",
+   "Athletico-PR",
+   7,
+   0,
+   ""
+  ],
+  [
    "José Aldo",
    "Mirassol",
    7,
@@ -422,13 +443,6 @@
    ""
   ],
   [
-   "Wálter Kannemann",
-   "Grêmio",
-   4,
-   1,
-   ""
-  ],
-  [
    "Alan Franco",
    "Atlético-MG",
    6,
@@ -489,7 +503,7 @@
    "Grêmio",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Edson Carioca",
@@ -510,7 +524,7 @@
    "Grêmio",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Fabinho",
@@ -555,13 +569,6 @@
    ""
   ],
   [
-   "Jádson",
-   "Athletico-PR",
-   6,
-   0,
-   ""
-  ],
-  [
    "Jean Lucas",
    "Bahia",
    6,
@@ -592,13 +599,6 @@
   [
    "José Welison",
    "Remo",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Kevin Viveros",
-   "Athletico-PR",
    6,
    0,
    ""
@@ -1227,6 +1227,13 @@
    ""
   ],
   [
+   "Mathías Villasanti",
+   "Grêmio",
+   4,
+   0,
+   ""
+  ],
+  [
    "Michel Araújo",
    "Bahia",
    1,
@@ -1409,6 +1416,13 @@
    ""
   ],
   [
+   "Dantas",
+   "Athletico-PR",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Dell",
    "Bahia",
    0,
@@ -1490,7 +1504,7 @@
    "Flamengo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Guga",
@@ -1689,13 +1703,6 @@
    ""
   ],
   [
-   "Mathías Villasanti",
-   "Grêmio",
-   3,
-   0,
-   ""
-  ],
-  [
    "Memphis Depay",
    "Corinthians",
    3,
@@ -1889,7 +1896,7 @@
    "Grêmio",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Willian Arão",
@@ -1985,13 +1992,6 @@
   [
    "Danilo Santos",
    "Botafogo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Dantas",
-   "Athletico-PR",
    2,
    0,
    "pendurado"
@@ -2601,6 +2601,13 @@
   [
    "Aitor Cantalapiedra",
    "Vitória",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Alan Lescano",
+   "Vasco",
    1,
    0,
    ""

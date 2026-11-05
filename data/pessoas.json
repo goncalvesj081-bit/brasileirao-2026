@@ -11,7 +11,7 @@
    [
     "Pedro",
     "Flamengo",
-    18
+    20
    ],
    [
     "Gabriel Barbosa",
@@ -24,6 +24,11 @@
     12
    ],
    [
+    "Samuel Lino",
+    "Flamengo",
+    12
+   ],
+   [
     "Carlos Vinícius",
     "Grêmio",
     11
@@ -31,11 +36,6 @@
    [
     "Luciano Juba",
     "Bahia",
-    11
-   ],
-   [
-    "Samuel Lino",
-    "Flamengo",
     11
    ],
    [
@@ -134,8 +134,18 @@
     7
    ],
    [
+    "Stiven Mendoza",
+    "Athletico-PR",
+    6
+   ],
+   [
     "Luciano Acosta",
     "Fluminense",
+    6
+   ],
+   [
+    "Edenilson",
+    "Botafogo",
     6
    ],
    [
@@ -164,11 +174,6 @@
     5
    ],
    [
-    "Stiven Mendoza",
-    "Athletico-PR",
-    5
-   ],
-   [
     "Renato Kayzer",
     "Vitória",
     5
@@ -181,11 +186,6 @@
    [
     "Alef Manga",
     "Remo",
-    5
-   ],
-   [
-    "Edenilson",
-    "Botafogo",
     5
    ],
    [
@@ -664,6 +664,11 @@
     2
    ],
    [
+    "Francis Amuzu",
+    "Grêmio",
+    2
+   ],
+   [
     "Luiz Araújo",
     "Flamengo",
     2
@@ -874,6 +879,11 @@
     2
    ],
    [
+    "Bruno Duarte",
+    "Vasco",
+    2
+   ],
+   [
     "zé Lucas",
     "Cruzeiro",
     2
@@ -1026,11 +1036,6 @@
    [
     "Claudio Spinelli",
     "Vasco",
-    1
-   ],
-   [
-    "Francis Amuzu",
-    "Grêmio",
     1
    ],
    [
@@ -1399,11 +1404,6 @@
     1
    ],
    [
-    "Bruno Duarte",
-    "Vasco",
-    1
-   ],
-   [
     "Ramon Rique",
     "Vasco",
     1
@@ -1531,6 +1531,11 @@
    [
     "Kauan Gomes",
     "Chapecoense",
+    1
+   ],
+   [
+    "Gabriel Pereira",
+    "Vasco",
     1
    ]
   ]
