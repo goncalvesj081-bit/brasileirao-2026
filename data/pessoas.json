@@ -1541,7 +1541,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "04/11/2026",
+  "atualizado": "05/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1562,15 +1562,15 @@
    [
     "Jorge Carrascal",
     "Flamengo",
-    8
+    9
    ],
    [
-    "Matheus Pereira",
+    "Rodrigo Garro",
     "Corinthians",
     7
    ],
    [
-    "Rodrigo Garro",
+    "Matheus Pereira",
     "Corinthians",
     7
    ],
@@ -1635,11 +1635,6 @@
     5
    ],
    [
-    "Henry Mosquera",
-    "Bragantino",
-    5
-   ],
-   [
     "Gastón Benavídez",
     "Athletico-PR",
     5
@@ -1648,6 +1643,21 @@
     "Lucas Esquivel",
     "Athletico-PR",
     5
+   ],
+   [
+    "José Luis Rodríguez",
+    "Vasco",
+    5
+   ],
+   [
+    "Henry Mosquera",
+    "Bragantino",
+    5
+   ],
+   [
+    "Vitinho",
+    "Botafogo",
+    4
    ],
    [
     "Kevin Serna",
@@ -1660,13 +1670,13 @@
     4
    ],
    [
-    "Johan Carbonero",
-    "Internacional",
+    "Alex Telles",
+    "Botafogo",
     4
    ],
    [
-    "Alex Telles",
-    "Botafogo",
+    "Johan Carbonero",
+    "Internacional",
     4
    ],
    [
@@ -1685,13 +1695,13 @@
     4
    ],
    [
-    "Jean Lucas",
-    "Bahia",
+    "Francis Amuzu",
+    "Grêmio",
     4
    ],
    [
-    "Francis Amuzu",
-    "Grêmio",
+    "Jean Lucas",
+    "Bahia",
     4
    ],
    [
@@ -1707,11 +1717,6 @@
    [
     "Giorgian de Arrascaeta",
     "Flamengo",
-    4
-   ],
-   [
-    "José Luis Rodríguez",
-    "Vasco",
     4
    ],
    [
@@ -1735,6 +1740,11 @@
     4
    ],
    [
+    "Kevin Viveros",
+    "Athletico-PR",
+    3
+   ],
+   [
     "Lucas Barbosa",
     "Bragantino",
     3
@@ -1745,16 +1755,6 @@
     3
    ],
    [
-    "Kevin Viveros",
-    "Athletico-PR",
-    3
-   ],
-   [
-    "Vitinho",
-    "Botafogo",
-    3
-   ],
-   [
     "Gabriel Bontempo",
     "Santos",
     3
@@ -1762,6 +1762,11 @@
    [
     "Isidro Pitta",
     "Bragantino",
+    3
+   ],
+   [
+    "José Enamorado",
+    "Grêmio",
     3
    ],
    [
@@ -1785,13 +1790,8 @@
     3
    ],
    [
-    "José Enamorado",
-    "Grêmio",
-    3
-   ],
-   [
-    "Jhon Arias",
-    "Palmeiras",
+    "Jorginho",
+    "Flamengo",
     3
    ]
   ]
