@@ -1,5 +1,5 @@
 {
- "atualizado": "04/11/2026",
+ "atualizado": "05/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -184,6 +184,13 @@
    "pendurado"
   ],
   [
+   "Cristian Medina",
+   "Botafogo",
+   5,
+   1,
+   "pendurado"
+  ],
+  [
    "Emmanuel Martínez",
    "Vitória",
    8,
@@ -195,6 +202,13 @@
    "Cruzeiro",
    8,
    0,
+   "pendurado"
+  ],
+  [
+   "Fernando Marçal",
+   "Botafogo",
+   5,
+   1,
    "pendurado"
   ],
   [
@@ -310,13 +324,6 @@
    ""
   ],
   [
-   "Cristian Medina",
-   "Botafogo",
-   4,
-   1,
-   ""
-  ],
-  [
    "Cristian Pavón",
    "Grêmio",
    7,
@@ -352,13 +359,6 @@
    ""
   ],
   [
-   "Fernando Marçal",
-   "Botafogo",
-   4,
-   1,
-   ""
-  ],
-  [
    "Gabriel Paulista",
    "Corinthians",
    7,
@@ -382,6 +382,13 @@
   [
    "José Aldo",
    "Mirassol",
+   7,
+   0,
+   ""
+  ],
+  [
+   "Luciano",
+   "São Paulo",
    7,
    0,
    ""
@@ -476,6 +483,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "André Ramalho",
+   "Corinthians",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Andreas Pereira",
@@ -618,13 +632,6 @@
    "suspenso"
   ],
   [
-   "Luciano",
-   "São Paulo",
-   6,
-   0,
-   ""
-  ],
-  [
    "Luciano Acosta",
    "Fluminense",
    6,
@@ -646,6 +653,13 @@
    ""
   ],
   [
+   "Tomás Pérez",
+   "Atlético-MG",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "William",
    "Cruzeiro",
    3,
@@ -662,13 +676,6 @@
   [
    "André Oliveira",
    "São Paulo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "André Ramalho",
-   "Corinthians",
    5,
    0,
    "pendurado"
@@ -711,6 +718,13 @@
   [
    "David Duarte",
    "Bahia",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Djhordney Ferreira",
+   "São Paulo",
    5,
    0,
    "pendurado"
@@ -870,6 +884,13 @@
    "pendurado"
   ],
   [
+   "Matheus Pereira",
+   "Corinthians",
+   2,
+   1,
+   "suspenso"
+  ],
+  [
    "Paulo Henrique",
    "Vasco",
    5,
@@ -912,13 +933,6 @@
    "pendurado"
   ],
   [
-   "Tomás Pérez",
-   "Atlético-MG",
-   2,
-   1,
-   "pendurado"
-  ],
-  [
    "Victor Hugo",
    "Botafogo",
    5,
@@ -952,6 +966,13 @@
    2,
    1,
    "pendurado"
+  ],
+  [
+   "Yuri Alberto",
+   "Corinthians",
+   2,
+   1,
+   "suspenso"
   ],
   [
    "Zé Ivaldo",
@@ -1040,13 +1061,6 @@
   [
    "Diego Tarzia",
    "Vitória",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Djhordney Ferreira",
-   "São Paulo",
    4,
    0,
    ""
@@ -1229,6 +1243,13 @@
   [
    "Mathías Villasanti",
    "Grêmio",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Memphis Depay",
+   "Corinthians",
    4,
    0,
    ""
@@ -1472,6 +1493,13 @@
    ""
   ],
   [
+   "Ferreira",
+   "São Paulo",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Gabriel Mec",
    "Grêmio",
    3,
@@ -1703,13 +1731,6 @@
    ""
   ],
   [
-   "Memphis Depay",
-   "Corinthians",
-   3,
-   0,
-   ""
-  ],
-  [
    "Nathan",
    "Vitória",
    3,
@@ -1805,7 +1826,7 @@
    "São Paulo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Santiago Ramos",
@@ -2088,13 +2109,6 @@
    "pendurado"
   ],
   [
-   "Ferreira",
-   "São Paulo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Filipinho",
    "Athletico-PR",
    2,
@@ -2291,6 +2305,13 @@
    "pendurado"
   ],
   [
+   "Kauã Pascini",
+   "Atlético-MG",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Kauê Camargo",
    "Corinthians",
    2,
@@ -2405,13 +2426,6 @@
   [
    "Matheus Martins",
    "Botafogo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Matheus Pereira",
-   "Corinthians",
    2,
    0,
    "pendurado"
@@ -2580,13 +2594,6 @@
   [
    "Wesley Ribeiro",
    "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Yuri Alberto",
-   "Corinthians",
    2,
    0,
    "pendurado"
@@ -3110,13 +3117,6 @@
    ""
   ],
   [
-   "Kauã Pascini",
-   "Atlético-MG",
-   1,
-   0,
-   ""
-  ],
-  [
    "Kauan",
    "Internacional",
    1,
@@ -3355,6 +3355,13 @@
    ""
   ],
   [
+   "Newton",
+   "São Paulo",
+   1,
+   0,
+   ""
+  ],
+  [
    "Patrick",
    "Remo",
    1,
@@ -3369,8 +3376,22 @@
    ""
   ],
   [
+   "Pedro Lima",
+   "São Paulo",
+   1,
+   0,
+   ""
+  ],
+  [
    "Pedro Luccas",
    "Coritiba",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Pedro Milans",
+   "Corinthians",
    1,
    0,
    ""
