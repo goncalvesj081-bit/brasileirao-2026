@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-06T02:51:51.966Z",
+ "atualizado": "2026-11-06T17:32:40.259Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3338,6 +3338,13 @@
    "data": "2026-11-08T22:15Z"
   },
   {
+   "id": "b401860435",
+   "rodada": 38,
+   "mandante": "Londrina",
+   "visitante": "Náutico",
+   "data": "2026-11-11T22:00Z"
+  },
+  {
    "id": "b401860432",
    "rodada": 38,
    "mandante": "América Mineiro",
@@ -3377,13 +3384,6 @@
    "rodada": 38,
    "mandante": "Juventude",
    "visitante": "Botafogo-SP",
-   "data": "2026-11-14T19:30Z"
-  },
-  {
-   "id": "b401860435",
-   "rodada": 38,
-   "mandante": "Londrina",
-   "visitante": "Náutico",
    "data": "2026-11-14T19:30Z"
   },
   {
