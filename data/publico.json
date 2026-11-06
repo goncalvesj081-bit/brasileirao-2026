@@ -1,5 +1,5 @@
 {
- "atualizado": "29/10/2026",
+ "atualizado": "06/11/2026",
  "maiores": [
   [
    67251,
@@ -36,6 +36,15 @@
    "Maracanã",
    "5 de abril",
    10
+  ],
+  [
+   62818,
+   "Flamengo",
+   "3-1",
+   "Grêmio",
+   "Maracanã",
+   "4 de novembro",
+   34
   ],
   [
    62324,
@@ -81,15 +90,6 @@
    "Maracanã",
    "28 de outubro",
    32
-  ],
-  [
-   57516,
-   "Flamengo",
-   "2-2",
-   "Vasco",
-   "Maracanã",
-   "3 de maio",
-   14
   ]
  ],
  "menores": [

@@ -1546,7 +1546,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "05/11/2026",
+  "atualizado": "06/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1570,6 +1570,11 @@
     9
    ],
    [
+    "José Manuel López",
+    "Palmeiras",
+    7
+   ],
+   [
     "Rodrigo Garro",
     "Corinthians",
     7
@@ -1577,6 +1582,11 @@
    [
     "Matheus Pereira",
     "Corinthians",
+    7
+   ],
+   [
+    "Keny Arroyo",
+    "Cruzeiro",
     7
    ],
    [
@@ -1592,11 +1602,6 @@
    [
     "Erick",
     "Vitória",
-    6
-   ],
-   [
-    "José Manuel López",
-    "Palmeiras",
     6
    ],
    [
@@ -1620,13 +1625,13 @@
     5
    ],
    [
-    "Keny Arroyo",
-    "Cruzeiro",
+    "Luciano Acosta",
+    "Fluminense",
     5
    ],
    [
-    "Luciano Acosta",
-    "Fluminense",
+    "Rodrigo Nestor",
+    "Bahia",
     5
    ],
    [
@@ -1685,22 +1690,17 @@
     4
    ],
    [
-    "Matheus",
-    "Vitória",
-    4
-   ],
-   [
     "Gerson",
     "Cruzeiro",
     4
    ],
    [
-    "Cristian Pavón",
-    "Grêmio",
+    "Matheus",
+    "Vitória",
     4
    ],
    [
-    "Francis Amuzu",
+    "Cristian Pavón",
     "Grêmio",
     4
    ],
@@ -1710,13 +1710,18 @@
     4
    ],
    [
+    "Francis Amuzu",
+    "Grêmio",
+    4
+   ],
+   [
     "Gabriel Barbosa",
     "Santos",
     4
    ],
    [
-    "Rodrigo Nestor",
-    "Bahia",
+    "Lucas Romero",
+    "Cruzeiro",
     4
    ],
    [
@@ -1790,13 +1795,8 @@
     3
    ],
    [
-    "Alef Manga",
-    "Remo",
-    3
-   ],
-   [
-    "Jorginho",
-    "Flamengo",
+    "Jhon Arias",
+    "Palmeiras",
     3
    ]
   ]
