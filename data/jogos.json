@@ -9,25 +9,6 @@
    "data": "2026-11-14T23:30:00Z"
   },
   {
-   "id": "555077",
-   "rodada": 34,
-   "mandante": "Palmeiras",
-   "visitante": "Remo",
-   "data": "2026-11-05T22:30:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
-   "id": "555074",
-   "rodada": 34,
-   "mandante": "Cruzeiro",
-   "visitante": "Bahia",
-   "data": "2026-11-06T00:30:00Z"
-  },
-  {
    "id": "555079",
    "rodada": 34,
    "mandante": "Vitória",

@@ -3024,6 +3024,24 @@
    "data": "2026-11-05T00:30:00Z",
    "gm": 0,
    "gv": 0
+  },
+  {
+   "id": "555077",
+   "rodada": 34,
+   "mandante": "Palmeiras",
+   "visitante": "Remo",
+   "data": "2026-11-05T22:30:00Z",
+   "gm": 6,
+   "gv": 1
+  },
+  {
+   "id": "555074",
+   "rodada": 34,
+   "mandante": "Cruzeiro",
+   "visitante": "Bahia",
+   "data": "2026-11-06T00:30:00Z",
+   "gm": 3,
+   "gv": 2
   }
  ]
 }

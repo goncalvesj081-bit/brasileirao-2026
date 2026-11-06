@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-05T17:21:07.262Z",
+ "atualizado": "2026-11-06T02:52:48.151Z",
  "clubes": {
   "Atlético-MG": [
    [
@@ -405,6 +405,12 @@
     "Cruzeiro",
     "Remo",
     29516
+   ],
+   [
+    "5 November",
+    "Cruzeiro",
+    "Bahia",
+    19166
    ]
   ],
   "Flamengo": [
@@ -1421,6 +1427,12 @@
     "Palmeiras",
     "Bragantino",
     26021
+   ],
+   [
+    "",
+    "Palmeiras",
+    "Remo",
+    33520
    ]
   ]
  }

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-03T08:17:52.843Z",
+ "atualizado": "2026-11-06T02:51:51.966Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3262,16 +3262,18 @@
    "data": "2026-11-02T23:30Z",
    "gm": 2,
    "gv": 1
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860431",
    "rodada": 37,
    "mandante": "Botafogo-SP",
    "visitante": "Londrina",
-   "data": "2026-11-05T22:30Z"
-  },
+   "data": "2026-11-05T22:30Z",
+   "gm": 4,
+   "gv": 0
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860425",
    "rodada": 37,

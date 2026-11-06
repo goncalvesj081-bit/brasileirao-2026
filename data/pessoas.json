@@ -21,7 +21,7 @@
    [
     "Kaio Jorge",
     "Cruzeiro",
-    12
+    14
    ],
    [
     "Samuel Lino",
@@ -39,6 +39,11 @@
     11
    ],
    [
+    "José Manuel López",
+    "Palmeiras",
+    10
+   ],
+   [
     "Danilo dos Santos de Oliveira",
     "Botafogo",
     10
@@ -49,18 +54,13 @@
     10
    ],
    [
-    "José Manuel López",
+    "Mauricio",
     "Palmeiras",
-    9
+    10
    ],
    [
     "Luciano",
     "São Paulo",
-    9
-   ],
-   [
-    "Mauricio",
-    "Palmeiras",
     9
    ],
    [
@@ -159,6 +159,11 @@
     6
    ],
    [
+    "Jhon Arias",
+    "Palmeiras",
+    6
+   ],
+   [
     "Isidro Pitta",
     "Bragantino",
     6
@@ -216,11 +221,6 @@
    [
     "Christian",
     "Cruzeiro",
-    5
-   ],
-   [
-    "Jhon Arias",
-    "Palmeiras",
     5
    ],
    [
@@ -399,6 +399,11 @@
     4
    ],
    [
+    "Alejo Veliz",
+    "Bahia",
+    4
+   ],
+   [
     "Gustavo Henrique",
     "Corinthians",
     4
@@ -494,6 +499,11 @@
     3
    ],
    [
+    "Felipe Anderson",
+    "Palmeiras",
+    3
+   ],
+   [
     "Fernando",
     "Bragantino",
     3
@@ -521,11 +531,6 @@
    [
     "Cristian Pavón",
     "Grêmio",
-    3
-   ],
-   [
-    "Alejo Veliz",
-    "Bahia",
     3
    ],
    [
@@ -596,6 +601,11 @@
    [
     "Murilo Cerqueira",
     "Palmeiras",
+    2
+   ],
+   [
+    "Cristian Olivera",
+    "Bahia",
     2
    ],
    [
@@ -764,11 +774,6 @@
     2
    ],
    [
-    "Felipe Anderson",
-    "Palmeiras",
-    2
-   ],
-   [
     "Tiago Volpi",
     "Bragantino",
     2
@@ -854,6 +859,11 @@
     2
    ],
    [
+    "Bruno Rodrigues",
+    "Cruzeiro",
+    2
+   ],
+   [
     "João Victor",
     "Athletico-PR",
     2
@@ -931,11 +941,6 @@
    [
     "Dudu",
     "Vitória",
-    1
-   ],
-   [
-    "Cristian Olivera",
-    "Bahia",
     1
    ],
    [
@@ -1309,11 +1314,6 @@
     1
    ],
    [
-    "Bruno Rodrigues",
-    "Cruzeiro",
-    1
-   ],
-   [
     "Gustavo Marques",
     "Bragantino",
     1
@@ -1536,6 +1536,11 @@
    [
     "Gabriel Pereira",
     "Vasco",
+    1
+   ],
+   [
+    "Jose Welison",
+    "Remo",
     1
    ]
   ]

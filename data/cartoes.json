@@ -20,7 +20,7 @@
    "Cruzeiro",
    12,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Alexander Bernabei",
@@ -41,6 +41,13 @@
    "Santos",
    8,
    1,
+   "pendurado"
+  ],
+  [
+   "Nicolás Acevedo",
+   "Bahia",
+   11,
+   0,
    "pendurado"
   ],
   [
@@ -83,13 +90,6 @@
    "Flamengo",
    4,
    2,
-   ""
-  ],
-  [
-   "Nicolás Acevedo",
-   "Bahia",
-   10,
-   0,
    ""
   ],
   [
@@ -461,7 +461,7 @@
    "Palmeiras",
    3,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Allan",
@@ -611,6 +611,13 @@
    ""
   ],
   [
+   "Jonathan Jesus",
+   "Cruzeiro",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "José Welison",
    "Remo",
    6,
@@ -664,6 +671,13 @@
    "Cruzeiro",
    3,
    1,
+   ""
+  ],
+  [
+   "Zé Ivaldo",
+   "Remo",
+   6,
+   0,
    "suspenso"
   ],
   [
@@ -793,13 +807,6 @@
    "pendurado"
   ],
   [
-   "Jonathan Jesus",
-   "Cruzeiro",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "José Enamorado",
    "Grêmio",
    5,
@@ -860,6 +867,20 @@
    "Atlético-MG",
    2,
    1,
+   "pendurado"
+  ],
+  [
+   "Marcelinho",
+   "Remo",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Marllon",
+   "Remo",
+   5,
+   0,
    "pendurado"
   ],
   [
@@ -975,13 +996,6 @@
    "suspenso"
   ],
   [
-   "Zé Ivaldo",
-   "Remo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Alan Saldivia",
    "Vasco",
    4,
@@ -1063,6 +1077,13 @@
    "Vitória",
    4,
    0,
+   ""
+  ],
+  [
+   "Edson Fernando",
+   "Remo",
+   1,
+   1,
    ""
   ],
   [
@@ -1199,24 +1220,10 @@
    ""
   ],
   [
-   "Marcelinho",
-   "Remo",
-   4,
-   0,
-   ""
-  ],
-  [
    "Marinho",
    "Vitória",
    1,
    1,
-   ""
-  ],
-  [
-   "Marllon",
-   "Remo",
-   4,
-   0,
    ""
   ],
   [
@@ -1458,13 +1465,6 @@
    ""
   ],
   [
-   "Edson Fernando",
-   "Remo",
-   0,
-   1,
-   ""
-  ],
-  [
    "Emanuel Britez",
    "Vitória",
    3,
@@ -1666,6 +1666,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Kauã Moraes Silva",
+   "Cruzeiro",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Kauan",
@@ -1997,6 +2004,13 @@
    "pendurado"
   ],
   [
+   "Caio Alexandre",
+   "Bahia",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Carlos Eduardo",
    "Mirassol",
    2,
@@ -2292,13 +2306,6 @@
   ],
   [
    "Kaio Jorge",
-   "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Kauã Moraes Silva",
    "Cruzeiro",
    2,
    0,
@@ -2718,8 +2725,8 @@
    ""
   ],
   [
-   "Caio Alexandre",
-   "Bahia",
+   "Bruno Rodrigues",
+   "Cruzeiro",
    1,
    0,
    ""
