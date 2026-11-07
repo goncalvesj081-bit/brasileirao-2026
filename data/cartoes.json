@@ -1,5 +1,5 @@
 {
- "atualizado": "05/11/2026",
+ "atualizado": "06/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -1469,7 +1469,7 @@
    "Vitória",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Fagner",
@@ -2347,6 +2347,13 @@
    "pendurado"
   ],
   [
+   "Lucas",
+   "Vitória",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Lucas Monzón",
    "Botafogo",
    2,
@@ -2433,6 +2440,13 @@
   [
    "Matheus Martins",
    "Botafogo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Matheusinho",
+   "Vitória",
    2,
    0,
    "pendurado"
@@ -3215,13 +3229,6 @@
    ""
   ],
   [
-   "Lucas",
-   "Vitória",
-   1,
-   0,
-   ""
-  ],
-  [
    "Lucas Arcanjo",
    "Vitória",
    1,
@@ -3322,13 +3329,6 @@
   [
    "Matheus Cunha Queiroz",
    "Cruzeiro",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Matheusinho",
-   "Vitória",
    1,
    0,
    ""

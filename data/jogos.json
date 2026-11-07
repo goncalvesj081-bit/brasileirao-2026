@@ -9,18 +9,6 @@
    "data": "2026-11-14T23:30:00Z"
   },
   {
-   "id": "555079",
-   "rodada": 34,
-   "mandante": "Vitória",
-   "visitante": "Fluminense",
-   "data": "2026-11-06T23:00:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 2,
-    "minuto": null
-   }
-  },
-  {
    "id": "555085",
    "rodada": 35,
    "mandante": "Mirassol",

@@ -3042,6 +3042,15 @@
    "data": "2026-11-06T00:30:00Z",
    "gm": 3,
    "gv": 2
+  },
+  {
+   "id": "555079",
+   "rodada": 34,
+   "mandante": "Vitória",
+   "visitante": "Fluminense",
+   "data": "2026-11-06T23:00:00Z",
+   "gm": 0,
+   "gv": 3
   }
  ]
 }
