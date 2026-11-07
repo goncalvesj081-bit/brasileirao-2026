@@ -13,7 +13,12 @@
    "rodada": 34,
    "mandante": "Vitória",
    "visitante": "Fluminense",
-   "data": "2026-11-06T23:00:00Z"
+   "data": "2026-11-06T23:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 2,
+    "minuto": null
+   }
   },
   {
    "id": "555085",

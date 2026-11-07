@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-06T17:32:40.259Z",
+ "atualizado": "2026-11-07T00:51:44.397Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3271,16 +3271,18 @@
    "data": "2026-11-05T22:30Z",
    "gm": 4,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860425",
    "rodada": 37,
    "mandante": "Operário PR",
    "visitante": "Sport",
-   "data": "2026-11-06T22:30Z"
-  },
+   "data": "2026-11-06T22:30Z",
+   "gm": 3,
+   "gv": 2
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860423",
    "rodada": 37,
