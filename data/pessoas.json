@@ -1546,7 +1546,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "06/11/2026",
+  "atualizado": "07/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1620,13 +1620,13 @@
     5
    ],
    [
-    "Álvaro Montoro",
-    "Botafogo",
+    "Luciano Acosta",
+    "Fluminense",
     5
    ],
    [
-    "Luciano Acosta",
-    "Fluminense",
+    "Álvaro Montoro",
+    "Botafogo",
     5
    ],
    [
@@ -1665,13 +1665,13 @@
     5
    ],
    [
-    "Vitinho",
-    "Botafogo",
+    "Kevin Serna",
+    "Fluminense",
     4
    ],
    [
-    "Kevin Serna",
-    "Fluminense",
+    "Vitinho",
+    "Botafogo",
     4
    ],
    [
@@ -1690,13 +1690,13 @@
     4
    ],
    [
-    "Gerson",
-    "Cruzeiro",
+    "Matheus",
+    "Vitória",
     4
    ],
    [
-    "Matheus",
-    "Vitória",
+    "Gerson",
+    "Cruzeiro",
     4
    ],
    [
@@ -1717,6 +1717,11 @@
    [
     "Gabriel Barbosa",
     "Santos",
+    4
+   ],
+   [
+    "Agustín Canobbio",
+    "Fluminense",
     4
    ],
    [
@@ -1792,11 +1797,6 @@
    [
     "Mateuzinho",
     "Corinthians",
-    3
-   ],
-   [
-    "Jhon Arias",
-    "Palmeiras",
     3
    ]
   ]
