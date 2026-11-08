@@ -1,7 +1,6 @@
 {
- "atualizado": "01/11/2026",
+ "atualizado": "07/11/2026",
  "jogos": [
-  "2026-11-07T21:00Z",
   "2026-11-08T20:00Z",
   "2026-11-21T22:30Z",
   "2026-11-28T20:00Z",
@@ -23,9 +22,8 @@
     "a": "Grêmio",
     "b": "Atlético-MG",
     "saldoA": 2,
-    "faltam": [
-     "b"
-    ]
+    "faltam": [],
+    "vencedor": "Grêmio"
    }
   ]
  },
