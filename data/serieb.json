@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-08T01:59:32.663Z",
+ "atualizado": "2026-11-08T08:46:36.516Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3316,16 +3316,18 @@
    "data": "2026-11-07T23:00Z",
    "gm": 1,
    "gv": 0
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860426",
    "rodada": 37,
    "mandante": "Náutico",
    "visitante": "CRB",
-   "data": "2026-11-08T00:30Z"
-  },
+   "data": "2026-11-08T00:30Z",
+   "gm": 0,
+   "gv": 3
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860422",
    "rodada": 37,
