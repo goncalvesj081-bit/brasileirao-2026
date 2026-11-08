@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-07T22:54:47.695Z",
+ "atualizado": "2026-11-08T01:59:32.663Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3298,23 +3298,27 @@
    "data": "2026-11-07T19:10Z",
    "gm": 2,
    "gv": 1
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860429",
    "rodada": 37,
    "mandante": "Cuiabá",
    "visitante": "Juventude",
-   "data": "2026-11-07T23:00Z"
+   "data": "2026-11-07T23:00Z",
+   "gm": 1,
+   "gv": 2
   },
   {
    "id": "b401860424",
    "rodada": 37,
    "mandante": "Vila Nova",
    "visitante": "Criciúma",
-   "data": "2026-11-07T23:00Z"
-  },
+   "data": "2026-11-07T23:00Z",
+   "gm": 1,
+   "gv": 0
+  }
+ ],
+ "restantes": [
   {
    "id": "b401860426",
    "rodada": 37,
