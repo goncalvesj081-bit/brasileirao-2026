@@ -1,5 +1,5 @@
 {
- "atualizado": "08/11/2026",
+ "atualizado": "09/11/2026",
  "jogos": [
   "2026-11-21T22:30Z",
   "2026-11-28T20:00Z",
@@ -10,17 +10,12 @@
   "finalUnica": true,
   "confrontos": [
    {
-    "a": "Palmeiras",
-    "b": "Vasco",
-    "saldoA": 0,
-    "faltam": []
-   },
-   {
     "a": "Grêmio",
-    "b": "Atlético-MG",
-    "saldoA": 2,
-    "faltam": [],
-    "vencedor": "Grêmio"
+    "b": "Palmeiras",
+    "saldoA": 0,
+    "faltam": [
+     "neutro"
+    ]
    }
   ]
  },
