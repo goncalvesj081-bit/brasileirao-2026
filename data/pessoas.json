@@ -1802,7 +1802,7 @@
   ]
  },
  "tecnicos": {
-  "atualizado": "03/11/2026",
+  "atualizado": "10/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": {
    "Athletico-PR": [
@@ -1826,9 +1826,8 @@
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Tite_850_0231.jpg/250px-20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Tite_850_0231.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Chapecoense": [
-    "Rafael Lacerda",
-    "26/05/2026",
-    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Rafael_Lacerda_2024.png/250px-Rafael_Lacerda_2024.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "Rodrigo Chipp (interino)",
+    "09/11/2026"
    ],
    "Corinthians": [
     "Clarence Seedorf",
@@ -1899,13 +1898,14 @@
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Pedro_Emanuel_13981122001725637170554605776108.jpg/250px-Pedro_Emanuel_13981122001725637170554605776108.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Vitória": [
-    "Cleber dos Santos (interino)",
-    "02/11/2026"
+    "Rafael Lacerda",
+    "10/11/2026",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Rafael_Lacerda_2024.png/250px-Rafael_Lacerda_2024.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ]
   }
  },
  "trocas": {
-  "atualizado": "03/11/2026",
+  "atualizado": "10/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": [
    [
@@ -2053,7 +2053,14 @@
     "Jair Ventura",
     "Demitido",
     "02/11",
-    "Cleber dos Santos (interino)"
+    "Rafael Lacerda"
+   ],
+   [
+    "Chapecoense",
+    "Rafael Lacerda",
+    "Pediu demissão",
+    "09/11",
+    "Rodrigo Chipp (interino)"
    ]
   ]
  }
