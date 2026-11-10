@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-09T00:46:44.892Z",
+ "atualizado": "2026-11-10T11:00:39.072Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3363,6 +3363,13 @@
    "data": "2026-11-11T22:00Z"
   },
   {
+   "id": "b401860434",
+   "rodada": 38,
+   "mandante": "Ponte Preta",
+   "visitante": "Operário PR",
+   "data": "2026-11-12T22:00Z"
+  },
+  {
    "id": "b401860432",
    "rodada": 38,
    "mandante": "América Mineiro",
@@ -3402,13 +3409,6 @@
    "rodada": 38,
    "mandante": "Juventude",
    "visitante": "Botafogo-SP",
-   "data": "2026-11-14T19:30Z"
-  },
-  {
-   "id": "b401860434",
-   "rodada": 38,
-   "mandante": "Ponte Preta",
-   "visitante": "Operário PR",
    "data": "2026-11-14T19:30Z"
   },
   {
