@@ -1,5 +1,5 @@
 {
- "atualizado": "08/11/2026",
+ "atualizado": "14/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -107,6 +107,13 @@
    ""
   ],
   [
+   "Edson Carioca",
+   "Mirassol",
+   6,
+   1,
+   "suspenso"
+  ],
+  [
    "Eduardo Doma",
    "Chapecoense",
    6,
@@ -132,6 +139,13 @@
    "Athletico-PR",
    6,
    1,
+   "suspenso"
+  ],
+  [
+   "Neto Moura",
+   "Mirassol",
+   9,
+   0,
    "suspenso"
   ],
   [
@@ -226,6 +240,13 @@
    "pendurado"
   ],
   [
+   "José Aldo",
+   "Mirassol",
+   8,
+   0,
+   "pendurado"
+  ],
+  [
    "Keny Arroyo",
    "Cruzeiro",
    5,
@@ -256,13 +277,6 @@
   [
    "Nahuel Ferraresi",
    "Botafogo",
-   8,
-   0,
-   "pendurado"
-  ],
-  [
-   "Neto Moura",
-   "Mirassol",
    8,
    0,
    "pendurado"
@@ -375,13 +389,6 @@
   [
    "Jádson",
    "Athletico-PR",
-   7,
-   0,
-   ""
-  ],
-  [
-   "José Aldo",
-   "Mirassol",
    7,
    0,
    ""
@@ -515,13 +522,6 @@
   [
    "Carlos Vinícius",
    "Grêmio",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Edson Carioca",
-   "Mirassol",
    6,
    0,
    ""
@@ -664,7 +664,7 @@
    "Atlético-MG",
    3,
    1,
-   "suspenso"
+   ""
   ],
   [
    "William",
@@ -912,6 +912,13 @@
    "suspenso"
   ],
   [
+   "Natanael",
+   "Atlético-MG",
+   2,
+   1,
+   "pendurado"
+  ],
+  [
    "Paulo Henrique",
    "Vasco",
    5,
@@ -998,6 +1005,13 @@
   [
    "Alan Saldivia",
    "Vasco",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Alesson",
+   "Mirassol",
    4,
    0,
    ""
@@ -1269,13 +1283,6 @@
    ""
   ],
   [
-   "Natanael",
-   "Atlético-MG",
-   1,
-   1,
-   ""
-  ],
-  [
    "Negueba",
    "Mirassol",
    4,
@@ -1376,13 +1383,6 @@
   [
    "Alan Franco",
    "São Paulo",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Alesson",
-   "Mirassol",
    3,
    0,
    ""

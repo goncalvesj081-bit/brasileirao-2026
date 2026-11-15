@@ -6,14 +6,12 @@
    "rodada": 21,
    "mandante": "Chapecoense",
    "visitante": "Vasco",
-   "data": "2026-11-14T23:30:00Z"
-  },
-  {
-   "id": "555085",
-   "rodada": 35,
-   "mandante": "Mirassol",
-   "visitante": "Atlético-MG",
-   "data": "2026-11-14T21:30:00Z"
+   "data": "2026-11-14T23:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 1,
+    "minuto": null
+   }
   },
   {
    "id": "555081",

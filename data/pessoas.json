@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "06/11/2026",
+  "atualizado": "14/11/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -549,6 +549,11 @@
     3
    ],
    [
+    "Bruno Duarte",
+    "Vasco",
+    3
+   ],
+   [
     "Alan Lescano",
     "Vasco",
     3
@@ -886,11 +891,6 @@
    [
     "Bruno Henrique",
     "Internacional",
-    2
-   ],
-   [
-    "Bruno Duarte",
-    "Vasco",
     2
    ],
    [
@@ -1802,7 +1802,7 @@
   ]
  },
  "tecnicos": {
-  "atualizado": "10/11/2026",
+  "atualizado": "14/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": {
    "Athletico-PR": [
@@ -1826,8 +1826,9 @@
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Tite_850_0231.jpg/250px-20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Tite_850_0231.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Chapecoense": [
-    "Rodrigo Chipp (interino)",
-    "09/11/2026"
+    "Vinícius Bergantin",
+    "13/11/2026",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/ViniciusP1000180.JPG/250px-ViniciusP1000180.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
    ],
    "Corinthians": [
     "Clarence Seedorf",
@@ -1905,7 +1906,7 @@
   }
  },
  "trocas": {
-  "atualizado": "10/11/2026",
+  "atualizado": "14/11/2026",
   "fonte": "Wikipédia (en)",
   "lista": [
    [
@@ -2060,7 +2061,7 @@
     "Rafael Lacerda",
     "Pediu demissão",
     "09/11",
-    "Rodrigo Chipp (interino)"
+    "Vinícius Bergantin"
    ]
   ]
  }
