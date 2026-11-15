@@ -1546,7 +1546,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "07/11/2026",
+  "atualizado": "15/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1645,6 +1645,11 @@
     5
    ],
    [
+    "José Luis Rodríguez",
+    "Vasco",
+    5
+   ],
+   [
     "Gastón Benavídez",
     "Athletico-PR",
     5
@@ -1652,11 +1657,6 @@
    [
     "Lucas Esquivel",
     "Athletico-PR",
-    5
-   ],
-   [
-    "José Luis Rodríguez",
-    "Vasco",
     5
    ],
    [
@@ -1670,13 +1670,13 @@
     4
    ],
    [
-    "Vitinho",
-    "Botafogo",
+    "Reinaldo",
+    "Mirassol",
     4
    ],
    [
-    "Reinaldo",
-    "Mirassol",
+    "Vitinho",
+    "Botafogo",
     4
    ],
    [
@@ -1730,13 +1730,13 @@
     4
    ],
    [
-    "Giorgian de Arrascaeta",
-    "Flamengo",
+    "Cuiabano",
+    "Vasco",
     4
    ],
    [
-    "Cuiabano",
-    "Vasco",
+    "Giorgian de Arrascaeta",
+    "Flamengo",
     4
    ],
    [
@@ -1770,6 +1770,11 @@
     3
    ],
    [
+    "Andrés Gómez",
+    "Vasco",
+    3
+   ],
+   [
     "Gabriel Bontempo",
     "Santos",
     3
@@ -1780,6 +1785,11 @@
     3
    ],
    [
+    "Renan Lodi",
+    "Atlético-MG",
+    3
+   ],
+   [
     "José Enamorado",
     "Grêmio",
     3
@@ -1787,16 +1797,6 @@
    [
     "Benjamín Rollheiser",
     "Santos",
-    3
-   ],
-   [
-    "Renan Lodi",
-    "Atlético-MG",
-    3
-   ],
-   [
-    "Mateuzinho",
-    "Corinthians",
     3
    ]
   ]
