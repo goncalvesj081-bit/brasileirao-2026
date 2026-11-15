@@ -1,5 +1,5 @@
 {
- "atualizado": "14/11/2026",
+ "atualizado": "15/11/2026",
  "lista": [
   [
    "Álvaro Barreal",
@@ -27,6 +27,13 @@
    "Internacional",
    8,
    1,
+   "pendurado"
+  ],
+  [
+   "Camilo",
+   "Chapecoense",
+   11,
+   0,
    "pendurado"
   ],
   [
@@ -72,13 +79,6 @@
    ""
   ],
   [
-   "Camilo",
-   "Chapecoense",
-   10,
-   0,
-   ""
-  ],
-  [
    "Gabriel Barbosa",
    "Santos",
    7,
@@ -118,7 +118,7 @@
    "Chapecoense",
    6,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Gabriel Mercado",
@@ -716,6 +716,13 @@
    "pendurado"
   ],
   [
+   "Bruno Pacheco",
+   "Chapecoense",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Caique",
    "Vitória",
    5,
@@ -947,6 +954,13 @@
    "pendurado"
   ],
   [
+   "Robert",
+   "Vasco",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Rodrigo Villagra",
    "Internacional",
    5,
@@ -1054,13 +1068,6 @@
   [
    "Brian Aguirre",
    "Internacional",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Bruno Pacheco",
-   "Chapecoense",
    4,
    0,
    ""
@@ -1313,13 +1320,6 @@
   [
    "Renato Kayzer",
    "Vitória",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Robert",
-   "Vasco",
    4,
    0,
    ""
@@ -2888,6 +2888,13 @@
   [
    "Duplexe Tchamba",
    "Remo",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Dylan Borrero",
+   "Chapecoense",
    1,
    0,
    ""

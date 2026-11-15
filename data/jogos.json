@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "554942",
-   "rodada": 21,
-   "mandante": "Chapecoense",
-   "visitante": "Vasco",
-   "data": "2026-11-14T23:30:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555081",
    "rodada": 35,
    "mandante": "Coritiba",
