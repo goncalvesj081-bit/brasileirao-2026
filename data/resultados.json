@@ -3069,6 +3069,42 @@
    "data": "2026-11-14T21:30:00Z",
    "gm": 0,
    "gv": 0
+  },
+  {
+   "id": "555081",
+   "rodada": 35,
+   "mandante": "Coritiba",
+   "visitante": "Santos",
+   "data": "2026-11-18T22:30:00Z",
+   "gm": 0,
+   "gv": 1
+  },
+  {
+   "id": "555086",
+   "rodada": 35,
+   "mandante": "Remo",
+   "visitante": "Chapecoense",
+   "data": "2026-11-18T23:00:00Z",
+   "gm": 2,
+   "gv": 0
+  },
+  {
+   "id": "555082",
+   "rodada": 35,
+   "mandante": "Cruzeiro",
+   "visitante": "Palmeiras",
+   "data": "2026-11-18T23:30:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "555083",
+   "rodada": 35,
+   "mandante": "Flamengo",
+   "visitante": "Athletico-PR",
+   "data": "2026-11-18T23:30:00Z",
+   "gm": 2,
+   "gv": 1
   }
  ]
 }

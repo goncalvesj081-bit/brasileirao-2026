@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "15/11/2026",
+  "atualizado": "18/11/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -16,7 +16,7 @@
    [
     "Gabriel Barbosa",
     "Santos",
-    15
+    16
    ],
    [
     "Kaio Jorge",
@@ -59,6 +59,11 @@
     10
    ],
    [
+    "Matheus Pereira",
+    "Cruzeiro",
+    10
+   ],
+   [
     "Luciano",
     "São Paulo",
     9
@@ -66,11 +71,6 @@
    [
     "John Kennedy",
     "Fluminense",
-    9
-   ],
-   [
-    "Matheus Pereira",
-    "Cruzeiro",
     9
    ],
    [
@@ -94,6 +94,16 @@
     8
    ],
    [
+    "Jorge Carrascal",
+    "Flamengo",
+    8
+   ],
+   [
+    "Jája Silva",
+    "Remo",
+    8
+   ],
+   [
     "Carlos Eduardo",
     "Mirassol",
     7
@@ -109,11 +119,6 @@
     7
    ],
    [
-    "Jorge Carrascal",
-    "Flamengo",
-    7
-   ],
-   [
     "Johan Carbonero",
     "Internacional",
     7
@@ -121,11 +126,6 @@
    [
     "Lucas Barbosa",
     "Bragantino",
-    7
-   ],
-   [
-    "Jája Silva",
-    "Remo",
     7
    ],
    [
@@ -184,6 +184,11 @@
     6
    ],
    [
+    "Kaio César",
+    "Corinthians",
+    6
+   ],
+   [
     "Vítor Roque",
     "Palmeiras",
     5
@@ -201,6 +206,11 @@
    [
     "Alef Manga",
     "Remo",
+    5
+   ],
+   [
+    "Ramón Sosa",
+    "Palmeiras",
     5
    ],
    [
@@ -299,11 +309,6 @@
     4
    ],
    [
-    "Ramón Sosa",
-    "Palmeiras",
-    4
-   ],
-   [
     "Vitor Bueno",
     "Remo",
     4
@@ -376,6 +381,11 @@
    [
     "Tiago",
     "Coritiba",
+    4
+   ],
+   [
+    "Jorginho",
+    "Flamengo",
     4
    ],
    [
@@ -474,11 +484,6 @@
     3
    ],
    [
-    "Jorginho",
-    "Flamengo",
-    3
-   ],
-   [
     "David Duarte",
     "Bahia",
     3
@@ -514,11 +519,6 @@
     3
    ],
    [
-    "Kaio César",
-    "Corinthians",
-    3
-   ],
-   [
     "Vitor Hugo",
     "Atlético-MG",
     3
@@ -536,6 +536,11 @@
    [
     "Cristian Pavón",
     "Grêmio",
+    3
+   ],
+   [
+    "Kerwin Vargas",
+    "Athletico-PR",
     3
    ],
    [
@@ -671,6 +676,11 @@
    [
     "Léo Pereira",
     "Flamengo",
+    2
+   ],
+   [
+    "Memphis Depay",
+    "Corinthians",
     2
    ],
    [
@@ -844,11 +854,6 @@
     2
    ],
    [
-    "Kerwin Vargas",
-    "Athletico-PR",
-    2
-   ],
-   [
     "Giovanni Augusto",
     "Chapecoense",
     2
@@ -1001,11 +1006,6 @@
    [
     "Guilherme Arana",
     "Fluminense",
-    1
-   ],
-   [
-    "Memphis Depay",
-    "Corinthians",
     1
    ],
    [
@@ -1542,11 +1542,16 @@
     "Jose Welison",
     "Remo",
     1
+   ],
+   [
+    "Patrick",
+    "Remo",
+    1
    ]
   ]
  },
  "assistencias": {
-  "atualizado": "15/11/2026",
+  "atualizado": "18/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1581,7 +1586,7 @@
    ],
    [
     "Matheus Pereira",
-    "Corinthians",
+    "Cruzeiro",
     7
    ],
    [

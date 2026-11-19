@@ -1,9 +1,23 @@
 {
- "atualizado": "15/11/2026",
+ "atualizado": "18/11/2026",
  "lista": [
+  [
+   "Matheus Pereira",
+   "Cruzeiro",
+   13,
+   0,
+   ""
+  ],
   [
    "Álvaro Barreal",
    "Santos",
+   9,
+   1,
+   ""
+  ],
+  [
+   "Erick Pulgar",
+   "Flamengo",
    9,
    1,
    "suspenso"
@@ -11,13 +25,6 @@
   [
    "Juninho Capixaba",
    "Bragantino",
-   12,
-   0,
-   ""
-  ],
-  [
-   "Matheus Pereira",
-   "Cruzeiro",
    12,
    0,
    ""
@@ -34,13 +41,6 @@
    "Chapecoense",
    11,
    0,
-   "pendurado"
-  ],
-  [
-   "Erick Pulgar",
-   "Flamengo",
-   8,
-   1,
    "pendurado"
   ],
   [
@@ -79,6 +79,13 @@
    ""
   ],
   [
+   "Eduardo Doma",
+   "Chapecoense",
+   7,
+   1,
+   ""
+  ],
+  [
    "Gabriel Barbosa",
    "Santos",
    7,
@@ -90,6 +97,13 @@
    "Flamengo",
    4,
    2,
+   ""
+  ],
+  [
+   "Thiago Santos",
+   "Coritiba",
+   10,
+   0,
    ""
   ],
   [
@@ -114,18 +128,18 @@
    "suspenso"
   ],
   [
-   "Eduardo Doma",
-   "Chapecoense",
-   6,
-   1,
-   ""
-  ],
-  [
    "Gabriel Mercado",
    "Internacional",
    9,
    0,
    ""
+  ],
+  [
+   "Gustavo Henrique",
+   "Santos",
+   6,
+   1,
+   "suspenso"
   ],
   [
    "Jorge Carrascal",
@@ -139,6 +153,13 @@
    "Athletico-PR",
    6,
    1,
+   ""
+  ],
+  [
+   "Léo Pereira",
+   "Flamengo",
+   9,
+   0,
    "suspenso"
   ],
   [
@@ -147,13 +168,6 @@
    9,
    0,
    "suspenso"
-  ],
-  [
-   "Thiago Santos",
-   "Coritiba",
-   9,
-   0,
-   ""
   ],
   [
    "Victor Gabriel",
@@ -233,13 +247,6 @@
    "pendurado"
   ],
   [
-   "Gustavo Henrique",
-   "Santos",
-   5,
-   1,
-   "pendurado"
-  ],
-  [
    "José Aldo",
    "Mirassol",
    8,
@@ -251,13 +258,6 @@
    "Cruzeiro",
    5,
    1,
-   "pendurado"
-  ],
-  [
-   "Léo Pereira",
-   "Flamengo",
-   8,
-   0,
    "pendurado"
   ],
   [
@@ -331,6 +331,13 @@
    ""
   ],
   [
+   "Alexander Barboza",
+   "Palmeiras",
+   4,
+   1,
+   ""
+  ],
+  [
    "Cauan Barros",
    "Vasco",
    4,
@@ -380,10 +387,24 @@
    ""
   ],
   [
+   "Gastón Benavídez",
+   "Athletico-PR",
+   7,
+   0,
+   ""
+  ],
+  [
    "Ignácio",
    "Fluminense",
    7,
    0,
+   ""
+  ],
+  [
+   "Jacy Maranhão",
+   "Coritiba",
+   4,
+   1,
    ""
   ],
   [
@@ -461,13 +482,6 @@
    "Atlético-MG",
    6,
    0,
-   ""
-  ],
-  [
-   "Alexander Barboza",
-   "Palmeiras",
-   3,
-   1,
    ""
   ],
   [
@@ -555,11 +569,11 @@
    ""
   ],
   [
-   "Gastón Benavídez",
-   "Athletico-PR",
+   "Gerson",
+   "Cruzeiro",
    6,
    0,
-   ""
+   "suspenso"
   ],
   [
    "Gustavo Martins",
@@ -573,13 +587,6 @@
    "Bragantino",
    6,
    0,
-   ""
-  ],
-  [
-   "Jacy Maranhão",
-   "Coritiba",
-   3,
-   1,
    ""
   ],
   [
@@ -615,7 +622,7 @@
    "Cruzeiro",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "José Welison",
@@ -678,7 +685,7 @@
    "Remo",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Alex Sandro",
@@ -767,13 +774,6 @@
   [
    "Gabriel Brazão",
    "Santos",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Gerson",
-   "Cruzeiro",
    5,
    0,
    "pendurado"
@@ -912,6 +912,13 @@
    "pendurado"
   ],
   [
+   "Matheus Henrique",
+   "Cruzeiro",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Matheus Pereira",
    "Corinthians",
    2,
@@ -947,6 +954,13 @@
    "pendurado"
   ],
   [
+   "Ramón Sosa",
+   "Palmeiras",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Reinaldo",
    "Mirassol",
    5,
@@ -970,6 +984,13 @@
   [
    "Samuel Xavier",
    "Fluminense",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Sebastián Gómez",
+   "Coritiba",
    5,
    0,
    "pendurado"
@@ -1136,6 +1157,13 @@
    ""
   ],
   [
+   "Gabriel Taliari",
+   "Remo",
+   4,
+   0,
+   ""
+  ],
+  [
    "Guilherme Arana",
    "Fluminense",
    4,
@@ -1262,13 +1290,6 @@
    ""
   ],
   [
-   "Matheus Henrique",
-   "Cruzeiro",
-   4,
-   0,
-   ""
-  ],
-  [
    "Mathías Villasanti",
    "Grêmio",
    4,
@@ -1311,13 +1332,6 @@
    ""
   ],
   [
-   "Ramón Sosa",
-   "Palmeiras",
-   4,
-   0,
-   ""
-  ],
-  [
    "Renato Kayzer",
    "Vitória",
    4,
@@ -1334,13 +1348,6 @@
   [
    "Samuel Lino",
    "Flamengo",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Sebastián Gómez",
-   "Coritiba",
    4,
    0,
    ""
@@ -1409,6 +1416,13 @@
    ""
   ],
   [
+   "Antonio Galeano",
+   "Remo",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Bruno Leonardo",
    "Chapecoense",
    3,
@@ -1448,7 +1462,7 @@
    "Athletico-PR",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Dell",
@@ -1514,18 +1528,18 @@
    ""
   ],
   [
-   "Gabriel Taliari",
-   "Remo",
-   3,
-   0,
-   ""
-  ],
-  [
    "Gilberto",
    "Athletico-PR",
    3,
    0,
    ""
+  ],
+  [
+   "Giovanni Augusto",
+   "Chapecoense",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Gonzalo Plata",
@@ -1654,6 +1668,13 @@
    ""
   ],
   [
+   "Kaio Jorge",
+   "Cruzeiro",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Kaique Kenji",
    "Cruzeiro",
    3,
@@ -1672,7 +1693,7 @@
    "Cruzeiro",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Kauan",
@@ -1687,6 +1708,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Leonel Picco",
+   "Remo",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Lucas Romero",
@@ -1757,6 +1785,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Nicolás Fonseca",
+   "Coritiba",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Nuno Moreira",
@@ -1976,13 +2011,6 @@
    "pendurado"
   ],
   [
-   "Antonio Galeano",
-   "Remo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Artur",
    "São Paulo",
    2,
@@ -2179,13 +2207,6 @@
    "pendurado"
   ],
   [
-   "Giovanni Augusto",
-   "Chapecoense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Gustavo Marques",
    "Bragantino",
    2,
@@ -2263,6 +2284,13 @@
    "pendurado"
   ],
   [
+   "Jorge Rivaldo",
+   "Athletico-PR",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "José Hurtado",
    "Bragantino",
    2,
@@ -2305,13 +2333,6 @@
    "pendurado"
   ],
   [
-   "Kaio Jorge",
-   "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Kauã Pascini",
    "Atlético-MG",
    2,
@@ -2328,13 +2349,6 @@
   [
    "Kevin Castaño",
    "Atlético-MG",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Leonel Picco",
-   "Remo",
    2,
    0,
    "pendurado"
@@ -2480,13 +2494,6 @@
    "pendurado"
   ],
   [
-   "Nicolás Fonseca",
-   "Coritiba",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Otávio",
    "Fluminense",
    2,
@@ -2531,6 +2538,13 @@
   [
    "René",
    "Fluminense",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Rodinei",
+   "Santos",
    2,
    0,
    "pendurado"
@@ -2608,6 +2622,13 @@
   [
    "Vitor Bueno",
    "Remo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Vitor Roque",
+   "Palmeiras",
    2,
    0,
    "pendurado"
@@ -2718,6 +2739,13 @@
    ""
   ],
   [
+   "Brian Ocampo",
+   "Coritiba",
+   1,
+   0,
+   ""
+  ],
+  [
    "Bruno",
    "Chapecoense",
    1,
@@ -2727,6 +2755,13 @@
   [
    "Bruno Baldini",
    "Athletico-PR",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Bruno Fuchs",
+   "Palmeiras",
    1,
    0,
    ""
@@ -2839,6 +2874,13 @@
   [
    "Danielzinho",
    "São Paulo",
+   1,
+   0,
+   ""
+  ],
+  [
+   "David David",
+   "Chapecoense",
    1,
    0,
    ""
@@ -3119,13 +3161,6 @@
   [
    "Joaquin Freitas",
    "Flamengo",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Jorge Rivaldo",
-   "Athletico-PR",
    1,
    0,
    ""
@@ -3467,13 +3502,6 @@
    ""
   ],
   [
-   "Rodinei",
-   "Santos",
-   1,
-   0,
-   ""
-  ],
-  [
    "Rodrigo",
    "Coritiba",
    1,
@@ -3518,6 +3546,13 @@
   [
    "Sergio Rochet",
    "Internacional",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Stiven Mendoza",
+   "Athletico-PR",
    1,
    0,
    ""
@@ -3623,13 +3658,6 @@
   [
    "Vitor Ramon",
    "Grêmio",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Vitor Roque",
-   "Palmeiras",
    1,
    0,
    ""

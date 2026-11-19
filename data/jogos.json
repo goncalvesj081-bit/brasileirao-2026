@@ -2,46 +2,28 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555081",
-   "rodada": 35,
-   "mandante": "Coritiba",
-   "visitante": "Santos",
-   "data": "2026-11-18T22:30:00Z"
-  },
-  {
-   "id": "555086",
-   "rodada": 35,
-   "mandante": "Remo",
-   "visitante": "Chapecoense",
-   "data": "2026-11-18T23:00:00Z"
-  },
-  {
-   "id": "555082",
-   "rodada": 35,
-   "mandante": "Cruzeiro",
-   "visitante": "Palmeiras",
-   "data": "2026-11-18T23:30:00Z"
-  },
-  {
-   "id": "555083",
-   "rodada": 35,
-   "mandante": "Flamengo",
-   "visitante": "Athletico-PR",
-   "data": "2026-11-18T23:30:00Z"
-  },
-  {
    "id": "555080",
    "rodada": 35,
    "mandante": "Corinthians",
    "visitante": "Botafogo",
-   "data": "2026-11-19T00:30:00Z"
+   "data": "2026-11-19T00:30:00Z",
+   "aoVivo": {
+    "gm": 3,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555084",
    "rodada": 35,
    "mandante": "Grêmio",
    "visitante": "Bahia",
-   "data": "2026-11-19T00:30:00Z"
+   "data": "2026-11-19T00:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555088",
