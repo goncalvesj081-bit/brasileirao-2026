@@ -6,14 +6,24 @@
    "rodada": 35,
    "mandante": "Vasco",
    "visitante": "Internacional",
-   "data": "2026-11-19T22:30:00Z"
+   "data": "2026-11-19T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555089",
    "rodada": 35,
    "mandante": "Vitória",
    "visitante": "Bragantino",
-   "data": "2026-11-19T22:30:00Z"
+   "data": "2026-11-19T22:30:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555087",
