@@ -3105,6 +3105,24 @@
    "data": "2026-11-18T23:30:00Z",
    "gm": 2,
    "gv": 1
+  },
+  {
+   "id": "555080",
+   "rodada": 35,
+   "mandante": "Corinthians",
+   "visitante": "Botafogo",
+   "data": "2026-11-19T00:30:00Z",
+   "gm": 4,
+   "gv": 0
+  },
+  {
+   "id": "555084",
+   "rodada": 35,
+   "mandante": "Grêmio",
+   "visitante": "Bahia",
+   "data": "2026-11-19T00:30:00Z",
+   "gm": 0,
+   "gv": 0
   }
  ]
 }

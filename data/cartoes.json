@@ -1,5 +1,5 @@
 {
- "atualizado": "18/11/2026",
+ "atualizado": "19/11/2026",
  "lista": [
   [
    "Matheus Pereira",
@@ -289,6 +289,13 @@
    "pendurado"
   ],
   [
+   "Raniele",
+   "Corinthians",
+   8,
+   0,
+   "pendurado"
+  ],
+  [
    "Thiago Mendes",
    "Vasco",
    8,
@@ -443,13 +450,6 @@
    ""
   ],
   [
-   "Raniele",
-   "Corinthians",
-   7,
-   0,
-   ""
-  ],
-  [
    "Renan Lodi",
    "Atlético-MG",
    4,
@@ -510,7 +510,7 @@
    "Corinthians",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Andreas Pereira",
@@ -625,6 +625,13 @@
    ""
   ],
   [
+   "José Enamorado",
+   "Grêmio",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "José Welison",
    "Remo",
    6,
@@ -674,6 +681,13 @@
    ""
   ],
   [
+   "Victor Hugo",
+   "Botafogo",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "William",
    "Cruzeiro",
    3,
@@ -690,6 +704,20 @@
   [
    "Alex Sandro",
    "Flamengo",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Alex Telles",
+   "Botafogo",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "André Carrillo",
+   "Corinthians",
    5,
    0,
    "pendurado"
@@ -814,13 +842,6 @@
    "pendurado"
   ],
   [
-   "José Enamorado",
-   "Grêmio",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "José Herrera",
    "Bragantino",
    5,
@@ -923,7 +944,7 @@
    "Corinthians",
    2,
    1,
-   "suspenso"
+   "pendurado"
   ],
   [
    "Natanael",
@@ -996,13 +1017,6 @@
    "pendurado"
   ],
   [
-   "Victor Hugo",
-   "Botafogo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Wallison Luiz",
    "Mirassol",
    2,
@@ -1035,7 +1049,7 @@
    "Corinthians",
    2,
    1,
-   "suspenso"
+   "pendurado"
   ],
   [
    "Alan Saldivia",
@@ -1052,22 +1066,8 @@
    ""
   ],
   [
-   "Alex Telles",
-   "Botafogo",
-   4,
-   0,
-   ""
-  ],
-  [
    "Allan",
    "Botafogo",
-   4,
-   0,
-   ""
-  ],
-  [
-   "André Carrillo",
-   "Corinthians",
    4,
    0,
    ""
@@ -1224,6 +1224,20 @@
    "Cruzeiro",
    1,
    1,
+   ""
+  ],
+  [
+   "Kaio",
+   "Corinthians",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Kanu",
+   "Bahia",
+   4,
+   0,
    ""
   ],
   [
@@ -1619,6 +1633,13 @@
    ""
   ],
   [
+   "João Pedro",
+   "Grêmio",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Joaquín Correa",
    "Botafogo",
    3,
@@ -1661,13 +1682,6 @@
    ""
   ],
   [
-   "Kaio",
-   "Corinthians",
-   3,
-   0,
-   ""
-  ],
-  [
    "Kaio Jorge",
    "Cruzeiro",
    3,
@@ -1677,13 +1691,6 @@
   [
    "Kaique Kenji",
    "Cruzeiro",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Kanu",
-   "Bahia",
    3,
    0,
    ""
@@ -2270,13 +2277,6 @@
    "pendurado"
   ],
   [
-   "João Pedro",
-   "Grêmio",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "João Pedro Chermont",
    "Coritiba",
    2,
@@ -2671,6 +2671,13 @@
   [
    "Alef Manga",
    "Remo",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Alejo Veliz",
+   "Bahia",
    1,
    0,
    ""

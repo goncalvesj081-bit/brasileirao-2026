@@ -1551,7 +1551,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "18/11/2026",
+  "atualizado": "19/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1580,18 +1580,23 @@
     7
    ],
    [
-    "Rodrigo Garro",
-    "Corinthians",
-    7
-   ],
-   [
     "Matheus Pereira",
     "Cruzeiro",
     7
    ],
    [
+    "Rodrigo Garro",
+    "Corinthians",
+    7
+   ],
+   [
     "Keny Arroyo",
     "Cruzeiro",
+    7
+   ],
+   [
+    "Guillermo Varela",
+    "Flamengo",
     7
    ],
    [
@@ -1607,11 +1612,6 @@
    [
     "Erick",
     "Vitória",
-    6
-   ],
-   [
-    "Guillermo Varela",
-    "Flamengo",
     6
    ],
    [
@@ -1640,18 +1640,13 @@
     5
    ],
    [
-    "Alerrando",
-    "Internacional",
-    5
-   ],
-   [
     "João Cruz",
     "Athletico-PR",
     5
    ],
    [
-    "José Luis Rodríguez",
-    "Vasco",
+    "Alerrando",
+    "Internacional",
     5
    ],
    [
@@ -1665,9 +1660,19 @@
     5
    ],
    [
+    "José Luis Rodríguez",
+    "Vasco",
+    5
+   ],
+   [
     "Henry Mosquera",
     "Bragantino",
     5
+   ],
+   [
+    "Vitinho",
+    "Botafogo",
+    4
    ],
    [
     "Kevin Serna",
@@ -1680,13 +1685,13 @@
     4
    ],
    [
-    "Vitinho",
+    "Alex Telles",
     "Botafogo",
     4
    ],
    [
-    "Alex Telles",
-    "Botafogo",
+    "Gerson",
+    "Cruzeiro",
     4
    ],
    [
@@ -1697,11 +1702,6 @@
    [
     "Matheus",
     "Vitória",
-    4
-   ],
-   [
-    "Gerson",
-    "Cruzeiro",
     4
    ],
    [
@@ -1725,23 +1725,23 @@
     4
    ],
    [
-    "Agustín Canobbio",
-    "Fluminense",
-    4
-   ],
-   [
     "Lucas Romero",
     "Cruzeiro",
     4
    ],
    [
-    "Cuiabano",
-    "Vasco",
+    "Agustín Canobbio",
+    "Fluminense",
     4
    ],
    [
     "Giorgian de Arrascaeta",
     "Flamengo",
+    4
+   ],
+   [
+    "Cuiabano",
+    "Vasco",
     4
    ],
    [
@@ -1757,6 +1757,11 @@
    [
     "Joaquín Piquerez",
     "Palmeiras",
+    4
+   ],
+   [
+    "Vitinho",
+    "Corinthians",
     4
    ],
    [
@@ -1790,18 +1795,13 @@
     3
    ],
    [
-    "Renan Lodi",
-    "Atlético-MG",
-    3
-   ],
-   [
     "José Enamorado",
     "Grêmio",
     3
    ],
    [
-    "Benjamín Rollheiser",
-    "Santos",
+    "Lucas Evangelista",
+    "Palmeiras",
     3
    ]
   ]
