@@ -2,6 +2,13 @@
  "atualizado": "19/11/2026",
  "lista": [
   [
+   "Juninho Capixaba",
+   "Bragantino",
+   13,
+   0,
+   ""
+  ],
+  [
    "Matheus Pereira",
    "Cruzeiro",
    13,
@@ -21,13 +28,6 @@
    9,
    1,
    "suspenso"
-  ],
-  [
-   "Juninho Capixaba",
-   "Bragantino",
-   12,
-   0,
-   ""
   ],
   [
    "Alexander Bernabei",
@@ -79,6 +79,13 @@
    ""
   ],
   [
+   "Andrés Gómez",
+   "Vasco",
+   10,
+   0,
+   ""
+  ],
+  [
    "Eduardo Doma",
    "Chapecoense",
    7,
@@ -90,6 +97,13 @@
    "Santos",
    7,
    1,
+   ""
+  ],
+  [
+   "Gabriel Mercado",
+   "Internacional",
+   10,
+   0,
    ""
   ],
   [
@@ -107,13 +121,6 @@
    ""
   ],
   [
-   "Andrés Gómez",
-   "Vasco",
-   9,
-   0,
-   ""
-  ],
-  [
    "Cacá",
    "Vitória",
    6,
@@ -126,13 +133,6 @@
    6,
    1,
    "suspenso"
-  ],
-  [
-   "Gabriel Mercado",
-   "Internacional",
-   9,
-   0,
-   ""
   ],
   [
    "Gustavo Henrique",
@@ -310,6 +310,13 @@
    "pendurado"
   ],
   [
+   "Vitinho",
+   "Internacional",
+   8,
+   0,
+   "pendurado"
+  ],
+  [
    "Wálter Kannemann",
    "Grêmio",
    5,
@@ -384,6 +391,13 @@
    "Flamengo",
    4,
    1,
+   ""
+  ],
+  [
+   "Fabinho",
+   "Bragantino",
+   1,
+   2,
    ""
   ],
   [
@@ -471,13 +485,6 @@
    ""
   ],
   [
-   "Vitinho",
-   "Internacional",
-   7,
-   0,
-   ""
-  ],
-  [
    "Alan Franco",
    "Atlético-MG",
    6,
@@ -552,13 +559,6 @@
    "Grêmio",
    6,
    0,
-   ""
-  ],
-  [
-   "Fabinho",
-   "Bragantino",
-   0,
-   2,
    ""
   ],
   [
@@ -650,7 +650,7 @@
    "Bragantino",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Luciano Acosta",
@@ -672,6 +672,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "Rodrigo Villagra",
+   "Internacional",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Tomás Pérez",
@@ -811,7 +818,7 @@
    "Internacional",
    2,
    1,
-   "suspenso"
+   "pendurado"
   ],
   [
    "Henry Mosquera",
@@ -991,13 +998,6 @@
   [
    "Robert",
    "Vasco",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Rodrigo Villagra",
-   "Internacional",
    5,
    0,
    "pendurado"
@@ -1374,6 +1374,13 @@
    ""
   ],
   [
+   "Wallace Yan",
+   "Bragantino",
+   1,
+   1,
+   ""
+  ],
+  [
    "Walter",
    "Mirassol",
    4,
@@ -1407,6 +1414,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Alan Patrick",
+   "Internacional",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Alisson",
@@ -1521,6 +1535,13 @@
    ""
   ],
   [
+   "Fernando",
+   "Bragantino",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Ferreira",
    "São Paulo",
    3,
@@ -1568,6 +1589,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Gustavo Marques",
+   "Bragantino",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Hércules",
@@ -1766,11 +1794,25 @@
    ""
   ],
   [
+   "Matheus Fernandes",
+   "Bragantino",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Matheus Piauí",
    "Remo",
    3,
    0,
    ""
+  ],
+  [
+   "Matheusinho",
+   "Vitória",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Nathan",
@@ -1948,13 +1990,6 @@
    ""
   ],
   [
-   "Wallace Yan",
-   "Bragantino",
-   0,
-   1,
-   ""
-  ],
-  [
    "Wallison Luiz",
    "Coritiba",
    3,
@@ -1999,13 +2034,6 @@
   [
    "Adonis Frias",
    "Santos",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Alan Patrick",
-   "Internacional",
    2,
    0,
    "pendurado"
@@ -2145,13 +2173,6 @@
   ],
   [
    "Fernando",
-   "Bragantino",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Fernando",
    "Chapecoense",
    2,
    0,
@@ -2209,13 +2230,6 @@
   [
    "Giorgian de Arrascaeta",
    "Flamengo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Gustavo Marques",
-   "Bragantino",
    2,
    0,
    "pendurado"
@@ -2438,6 +2452,13 @@
    "pendurado"
   ],
   [
+   "Marino Hinestroza",
+   "Vasco",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Mateo Sanabria",
    "Bahia",
    2,
@@ -2445,22 +2466,8 @@
    "pendurado"
   ],
   [
-   "Matheus Fernandes",
-   "Bragantino",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Matheus Martins",
    "Botafogo",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Matheusinho",
-   "Vitória",
    2,
    0,
    "pendurado"
@@ -2767,6 +2774,13 @@
    ""
   ],
   [
+   "Bruno Duarte",
+   "Vasco",
+   1,
+   0,
+   ""
+  ],
+  [
    "Bruno Fuchs",
    "Palmeiras",
    1,
@@ -3035,6 +3049,13 @@
   [
    "Gabriel Pereira",
    "Vasco",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Gean",
+   "Vitória",
    1,
    0,
    ""
@@ -3329,13 +3350,6 @@
   [
    "Marcos Victor",
    "Bahia",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Marino Hinestroza",
-   "Vasco",
    1,
    0,
    ""

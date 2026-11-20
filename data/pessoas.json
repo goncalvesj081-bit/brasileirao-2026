@@ -64,6 +64,11 @@
     10
    ],
    [
+    "Carlos Renê",
+    "Vitória",
+    10
+   ],
+   [
     "Luciano",
     "São Paulo",
     9
@@ -76,11 +81,6 @@
    [
     "Pedro Rocha",
     "Coritiba",
-    9
-   ],
-   [
-    "Carlos Renê",
-    "Vitória",
     9
    ],
    [
@@ -229,8 +229,18 @@
     5
    ],
    [
+    "Thiago Mendes",
+    "Vasco",
+    5
+   ],
+   [
     "Erick",
     "Vitória",
+    5
+   ],
+   [
+    "Hércules",
+    "Fluminense",
     5
    ],
    [
@@ -311,16 +321,6 @@
    [
     "Vitor Bueno",
     "Remo",
-    4
-   ],
-   [
-    "Thiago Mendes",
-    "Vasco",
-    4
-   ],
-   [
-    "Hércules",
-    "Fluminense",
     4
    ],
    [
@@ -416,6 +416,11 @@
    [
     "Gustavo Henrique",
     "Corinthians",
+    4
+   ],
+   [
+    "Facundo Colidio",
+    "Vasco",
     4
    ],
    [
@@ -541,11 +546,6 @@
    [
     "Kerwin Vargas",
     "Athletico-PR",
-    3
-   ],
-   [
-    "Facundo Colidio",
-    "Vasco",
     3
    ],
    [
@@ -904,8 +904,18 @@
     2
    ],
    [
+    "Juninho",
+    "Internacional",
+    2
+   ],
+   [
     "Marino Hinestroza",
     "Vasco",
+    2
+   ],
+   [
+    "Henry Mosquera",
+    "Bragantino",
     2
    ],
    [
@@ -1479,11 +1489,6 @@
     1
    ],
    [
-    "Juninho",
-    "Internacional",
-    1
-   ],
-   [
     "Pedro Lima",
     "São Paulo",
     1
@@ -1501,11 +1506,6 @@
    [
     "Renan Lodi",
     "Atlético-MG",
-    1
-   ],
-   [
-    "Henry Mosquera",
-    "Bragantino",
     1
    ],
    [

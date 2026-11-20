@@ -3123,6 +3123,24 @@
    "data": "2026-11-19T00:30:00Z",
    "gm": 0,
    "gv": 0
+  },
+  {
+   "id": "555088",
+   "rodada": 35,
+   "mandante": "Vasco",
+   "visitante": "Internacional",
+   "data": "2026-11-19T22:30:00Z",
+   "gm": 2,
+   "gv": 1
+  },
+  {
+   "id": "555089",
+   "rodada": 35,
+   "mandante": "Vitória",
+   "visitante": "Bragantino",
+   "data": "2026-11-19T22:30:00Z",
+   "gm": 2,
+   "gv": 1
   }
  ]
 }
