@@ -3141,6 +3141,15 @@
    "data": "2026-11-19T22:30:00Z",
    "gm": 2,
    "gv": 1
+  },
+  {
+   "id": "555087",
+   "rodada": 35,
+   "mandante": "São Paulo",
+   "visitante": "Fluminense",
+   "data": "2026-11-20T00:30:00Z",
+   "gm": 0,
+   "gv": 1
   }
  ]
 }

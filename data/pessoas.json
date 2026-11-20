@@ -1556,7 +1556,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "19/11/2026",
+  "atualizado": "20/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1578,6 +1578,11 @@
     "Jorge Carrascal",
     "Flamengo",
     9
+   ],
+   [
+    "Erick",
+    "Vitória",
+    7
    ],
    [
     "José Manuel López",
@@ -1615,11 +1620,6 @@
     6
    ],
    [
-    "Erick",
-    "Vitória",
-    6
-   ],
-   [
     "Igor Marques",
     "Mirassol",
     5
@@ -1645,13 +1645,18 @@
     5
    ],
    [
+    "Alerrando",
+    "Internacional",
+    5
+   ],
+   [
     "João Cruz",
     "Athletico-PR",
     5
    ],
    [
-    "Alerrando",
-    "Internacional",
+    "José Luis Rodríguez",
+    "Vasco",
     5
    ],
    [
@@ -1665,23 +1670,18 @@
     5
    ],
    [
-    "José Luis Rodríguez",
-    "Vasco",
-    5
-   ],
-   [
     "Henry Mosquera",
     "Bragantino",
     5
    ],
    [
-    "Vitinho",
-    "Botafogo",
+    "Kevin Serna",
+    "Fluminense",
     4
    ],
    [
-    "Kevin Serna",
-    "Fluminense",
+    "Vitinho",
+    "Botafogo",
     4
    ],
    [
@@ -1695,11 +1695,6 @@
     4
    ],
    [
-    "Gerson",
-    "Cruzeiro",
-    4
-   ],
-   [
     "Johan Carbonero",
     "Internacional",
     4
@@ -1707,6 +1702,16 @@
    [
     "Matheus",
     "Vitória",
+    4
+   ],
+   [
+    "Andrés Gómez",
+    "Vasco",
+    4
+   ],
+   [
+    "Gerson",
+    "Cruzeiro",
     4
    ],
    [
@@ -1740,13 +1745,13 @@
     4
    ],
    [
-    "Giorgian de Arrascaeta",
-    "Flamengo",
+    "Cuiabano",
+    "Vasco",
     4
    ],
    [
-    "Cuiabano",
-    "Vasco",
+    "Giorgian de Arrascaeta",
+    "Flamengo",
     4
    ],
    [
@@ -1765,9 +1770,19 @@
     4
    ],
    [
+    "Hulk",
+    "Fluminense",
+    4
+   ],
+   [
     "Vitinho",
     "Corinthians",
     4
+   ],
+   [
+    "Vitinho",
+    "Internacional",
+    3
    ],
    [
     "Kevin Viveros",
@@ -1777,16 +1792,6 @@
    [
     "Lucas Barbosa",
     "Bragantino",
-    3
-   ],
-   [
-    "Vitinho",
-    "Internacional",
-    3
-   ],
-   [
-    "Andrés Gómez",
-    "Vasco",
     3
    ],
    [
@@ -1802,11 +1807,6 @@
    [
     "José Enamorado",
     "Grêmio",
-    3
-   ],
-   [
-    "Lucas Evangelista",
-    "Palmeiras",
     3
    ]
   ]

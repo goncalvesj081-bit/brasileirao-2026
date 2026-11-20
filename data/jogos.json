@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555087",
-   "rodada": 35,
-   "mandante": "São Paulo",
-   "visitante": "Fluminense",
-   "data": "2026-11-20T00:30:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555098",
    "rodada": 36,
    "mandante": "Palmeiras",

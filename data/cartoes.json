@@ -1,5 +1,5 @@
 {
- "atualizado": "19/11/2026",
+ "atualizado": "20/11/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -443,6 +443,13 @@
    ""
   ],
   [
+   "Luciano Acosta",
+   "Fluminense",
+   7,
+   0,
+   ""
+  ],
+  [
    "Marlon Freitas",
    "Palmeiras",
    7,
@@ -648,13 +655,6 @@
   [
    "Lucas Barbosa",
    "Bragantino",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Luciano Acosta",
-   "Fluminense",
    6,
    0,
    ""
@@ -1332,6 +1332,13 @@
    ""
   ],
   [
+   "Pablo Maia",
+   "São Paulo",
+   4,
+   0,
+   ""
+  ],
+  [
    "Patrick de Paula",
    "Remo",
    4,
@@ -1546,7 +1553,7 @@
    "São Paulo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gabriel Mec",
@@ -1845,13 +1852,6 @@
   [
    "Nuno Moreira",
    "Vasco",
-   3,
-   0,
-   ""
-  ],
-  [
-   "Pablo Maia",
-   "São Paulo",
    3,
    0,
    ""
