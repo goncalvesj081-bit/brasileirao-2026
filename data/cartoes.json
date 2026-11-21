@@ -1,6 +1,13 @@
 {
- "atualizado": "20/11/2026",
+ "atualizado": "21/11/2026",
  "lista": [
+  [
+   "Nicolás Acevedo",
+   "Bahia",
+   11,
+   1,
+   "suspenso"
+  ],
   [
    "Juninho Capixaba",
    "Bragantino",
@@ -27,7 +34,7 @@
    "Flamengo",
    9,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Alexander Bernabei",
@@ -48,13 +55,6 @@
    "Santos",
    8,
    1,
-   "pendurado"
-  ],
-  [
-   "Nicolás Acevedo",
-   "Bahia",
-   11,
-   0,
    "pendurado"
   ],
   [
@@ -160,7 +160,7 @@
    "Flamengo",
    9,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Neto Moura",
@@ -352,6 +352,20 @@
    ""
   ],
   [
+   "Andreas Pereira",
+   "Palmeiras",
+   4,
+   1,
+   ""
+  ],
+  [
+   "Breno",
+   "Coritiba",
+   4,
+   1,
+   ""
+  ],
+  [
    "Cauan Barros",
    "Vasco",
    4,
@@ -436,6 +450,13 @@
    ""
   ],
   [
+   "Jean Lucas",
+   "Bahia",
+   7,
+   0,
+   ""
+  ],
+  [
    "Luciano",
    "São Paulo",
    7,
@@ -499,6 +520,13 @@
    ""
   ],
   [
+   "Alex Sandro",
+   "Flamengo",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "Allan",
    "Corinthians",
    3,
@@ -527,22 +555,8 @@
    ""
   ],
   [
-   "Andreas Pereira",
-   "Palmeiras",
-   3,
-   1,
-   ""
-  ],
-  [
    "Arthur Cabral",
    "Botafogo",
-   3,
-   1,
-   ""
-  ],
-  [
-   "Breno",
-   "Coritiba",
    3,
    1,
    ""
@@ -592,13 +606,6 @@
   [
    "Ignacio Sosa",
    "Bragantino",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Jean Lucas",
-   "Bahia",
    6,
    0,
    ""
@@ -709,13 +716,6 @@
    ""
   ],
   [
-   "Alex Sandro",
-   "Flamengo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Alex Telles",
    "Botafogo",
    5,
@@ -734,6 +734,13 @@
    "São Paulo",
    5,
    0,
+   "pendurado"
+  ],
+  [
+   "Arthur Gabriel",
+   "Palmeiras",
+   2,
+   1,
    "pendurado"
   ],
   [
@@ -837,6 +844,13 @@
   [
    "Jhon Arias",
    "Palmeiras",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
+   "Joaquín Lavega",
+   "Coritiba",
    5,
    0,
    "pendurado"
@@ -1003,6 +1017,13 @@
    "pendurado"
   ],
   [
+   "Samuel Lino",
+   "Flamengo",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Samuel Xavier",
    "Fluminense",
    5,
@@ -1080,13 +1101,6 @@
    ""
   ],
   [
-   "Arthur Gabriel",
-   "Palmeiras",
-   1,
-   1,
-   ""
-  ],
-  [
    "Brian Aguirre",
    "Internacional",
    4,
@@ -1098,6 +1112,13 @@
    "Vasco",
    1,
    1,
+   ""
+  ],
+  [
+   "Carlos Miguel",
+   "Palmeiras",
+   4,
+   0,
    ""
   ],
   [
@@ -1201,13 +1222,6 @@
   [
    "João Marcelo",
    "Cruzeiro",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Joaquín Lavega",
-   "Coritiba",
    4,
    0,
    ""
@@ -1367,13 +1381,6 @@
    ""
   ],
   [
-   "Samuel Lino",
-   "Flamengo",
-   4,
-   0,
-   ""
-  ],
-  [
    "Wagner Leonardo",
    "Grêmio",
    1,
@@ -1469,13 +1476,6 @@
    "Mirassol",
    0,
    1,
-   ""
-  ],
-  [
-   "Carlos Miguel",
-   "Palmeiras",
-   3,
-   0,
    ""
   ],
   [
@@ -1847,7 +1847,7 @@
    "Coritiba",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Nuno Moreira",
@@ -2377,6 +2377,13 @@
   [
    "Lucas",
    "Vitória",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Lucas Evangelista",
+   "Palmeiras",
    2,
    0,
    "pendurado"
@@ -3301,13 +3308,6 @@
   [
    "Lucas Arcanjo",
    "Vitória",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Lucas Evangelista",
-   "Palmeiras",
    1,
    0,
    ""

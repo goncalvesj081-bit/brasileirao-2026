@@ -3150,6 +3150,24 @@
    "data": "2026-11-20T00:30:00Z",
    "gm": 0,
    "gv": 1
+  },
+  {
+   "id": "555098",
+   "rodada": 36,
+   "mandante": "Palmeiras",
+   "visitante": "Flamengo",
+   "data": "2026-11-21T19:30:00Z",
+   "gm": 1,
+   "gv": 1
+  },
+  {
+   "id": "555092",
+   "rodada": 36,
+   "mandante": "Bahia",
+   "visitante": "Coritiba",
+   "data": "2026-11-21T20:30:00Z",
+   "gm": 0,
+   "gv": 1
   }
  ]
 }

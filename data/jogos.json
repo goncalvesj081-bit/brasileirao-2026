@@ -2,30 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555098",
-   "rodada": 36,
-   "mandante": "Palmeiras",
-   "visitante": "Flamengo",
-   "data": "2026-11-21T19:30:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
-   "id": "555092",
-   "rodada": 36,
-   "mandante": "Bahia",
-   "visitante": "Coritiba",
-   "data": "2026-11-21T20:30:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555095",
    "rodada": 36,
    "mandante": "Chapecoense",
