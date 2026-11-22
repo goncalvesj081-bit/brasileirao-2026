@@ -457,6 +457,13 @@
    ""
   ],
   [
+   "José Welison",
+   "Remo",
+   7,
+   0,
+   ""
+  ],
+  [
    "Luciano",
    "São Paulo",
    7,
@@ -510,6 +517,13 @@
    "Grêmio",
    4,
    1,
+   ""
+  ],
+  [
+   "Zé Ivaldo",
+   "Remo",
+   7,
+   0,
    ""
   ],
   [
@@ -611,6 +625,13 @@
    ""
   ],
   [
+   "Jajá",
+   "Remo",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "João Schmidt",
    "Santos",
    6,
@@ -646,13 +667,6 @@
    "suspenso"
   ],
   [
-   "José Welison",
-   "Remo",
-   6,
-   0,
-   ""
-  ],
-  [
    "Luan Cândido",
    "Vitória",
    3,
@@ -665,6 +679,13 @@
    6,
    0,
    ""
+  ],
+  [
+   "Marllon",
+   "Remo",
+   6,
+   0,
+   "suspenso"
   ],
   [
    "Murilo",
@@ -706,13 +727,6 @@
    "Cruzeiro",
    3,
    1,
-   ""
-  ],
-  [
-   "Zé Ivaldo",
-   "Remo",
-   6,
-   0,
    ""
   ],
   [
@@ -807,6 +821,13 @@
    "pendurado"
   ],
   [
+   "Edson Fernando",
+   "Remo",
+   2,
+   1,
+   "pendurado"
+  ],
+  [
    "Erick Pulga",
    "Bahia",
    5,
@@ -832,13 +853,6 @@
    "Bragantino",
    5,
    0,
-   "pendurado"
-  ],
-  [
-   "Jajá",
-   "Remo",
-   2,
-   1,
    "pendurado"
   ],
   [
@@ -891,6 +905,13 @@
    "pendurado"
   ],
   [
+   "Lucas Esquivel",
+   "Athletico-PR",
+   2,
+   1,
+   "pendurado"
+  ],
+  [
    "Lucas Silva",
    "Cruzeiro",
    5,
@@ -920,13 +941,6 @@
   ],
   [
    "Marcelinho",
-   "Remo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Marllon",
    "Remo",
    5,
    0,
@@ -1136,17 +1150,17 @@
    ""
   ],
   [
-   "Diego Tarzia",
-   "Vitória",
+   "Dantas",
+   "Athletico-PR",
    4,
    0,
    ""
   ],
   [
-   "Edson Fernando",
-   "Remo",
-   1,
-   1,
+   "Diego Tarzia",
+   "Vitória",
+   4,
+   0,
    ""
   ],
   [
@@ -1259,13 +1273,6 @@
    "Palmeiras",
    4,
    0,
-   ""
-  ],
-  [
-   "Lucas Esquivel",
-   "Athletico-PR",
-   1,
-   1,
    ""
   ],
   [
@@ -1462,7 +1469,7 @@
    "Remo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Bruno Leonardo",
@@ -1490,13 +1497,6 @@
    "Flamengo",
    0,
    1,
-   ""
-  ],
-  [
-   "Dantas",
-   "Athletico-PR",
-   3,
-   0,
    ""
   ],
   [
@@ -1756,7 +1756,7 @@
    "Remo",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Lucas Romero",
@@ -2111,6 +2111,13 @@
   [
    "Diego Caito",
    "Grêmio",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Duplexe Tchamba",
+   "Remo",
    2,
    0,
    "pendurado"
@@ -2606,6 +2613,13 @@
    "pendurado"
   ],
   [
+   "Stiven Mendoza",
+   "Athletico-PR",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Thaciano",
    "Santos",
    2,
@@ -2951,13 +2965,6 @@
   [
    "Dória",
    "São Paulo",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Duplexe Tchamba",
-   "Remo",
    1,
    0,
    ""
@@ -3581,13 +3588,6 @@
   [
    "Sergio Rochet",
    "Internacional",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Stiven Mendoza",
-   "Athletico-PR",
    1,
    0,
    ""
