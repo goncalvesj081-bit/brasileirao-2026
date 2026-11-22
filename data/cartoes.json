@@ -1,5 +1,5 @@
 {
- "atualizado": "21/11/2026",
+ "atualizado": "22/11/2026",
  "lista": [
   [
    "Nicolás Acevedo",
@@ -594,7 +594,7 @@
    "Cruzeiro",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gustavo Martins",
@@ -1581,7 +1581,7 @@
    "Chapecoense",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Gonzalo Plata",
@@ -1721,7 +1721,7 @@
    "Cruzeiro",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Kaique Kenji",
@@ -1960,6 +1960,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Victor Caetano",
+   "Chapecoense",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Vini Paulista",
@@ -2608,13 +2615,6 @@
   [
    "Tissi",
    "Coritiba",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Victor Caetano",
-   "Chapecoense",
    2,
    0,
    "pendurado"
@@ -3362,6 +3362,13 @@
    ""
   ],
   [
+   "Marquinhos",
+   "Cruzeiro",
+   1,
+   0,
+   ""
+  ],
+  [
    "Mateo Casierra",
    "Atlético-MG",
    1,
@@ -3392,6 +3399,13 @@
   [
    "Matheus Cunha Queiroz",
    "Cruzeiro",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Max",
+   "Chapecoense",
    1,
    0,
    ""

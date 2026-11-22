@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555095",
-   "rodada": 36,
-   "mandante": "Chapecoense",
-   "visitante": "Cruzeiro",
-   "data": "2026-11-22T00:00:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555090",
    "rodada": 36,
    "mandante": "Athletico-PR",
