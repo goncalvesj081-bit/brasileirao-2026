@@ -1,7 +1,6 @@
 {
- "atualizado": "09/11/2026",
+ "atualizado": "21/11/2026",
  "jogos": [
-  "2026-11-21T22:30Z",
   "2026-11-28T20:00Z",
   "2026-12-06T20:00Z"
  ],
@@ -40,11 +39,12 @@
    {
     "a": "Atlético-MG",
     "b": "Boca Juniors",
-    "saldoA": 0,
-    "faltam": [
-     "neutro"
-    ]
+    "saldoA": -2,
+    "faltam": [],
+    "vencedor": "Boca Juniors"
    }
-  ]
+  ],
+  "campeao": "Boca Juniors",
+  "vice": "Atlético-MG"
  }
 }
