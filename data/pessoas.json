@@ -1556,7 +1556,7 @@
   ]
  },
  "assistencias": {
-  "atualizado": "20/11/2026",
+  "atualizado": "22/11/2026",
   "fonte": "ESPN",
   "lista": [
    [
@@ -1635,13 +1635,13 @@
     5
    ],
    [
-    "Álvaro Montoro",
-    "Botafogo",
+    "Rodrigo Nestor",
+    "Bahia",
     5
    ],
    [
-    "Rodrigo Nestor",
-    "Bahia",
+    "Álvaro Montoro",
+    "Botafogo",
     5
    ],
    [
@@ -1715,13 +1715,13 @@
     4
    ],
    [
-    "Cristian Pavón",
-    "Grêmio",
+    "Jean Lucas",
+    "Bahia",
     4
    ],
    [
-    "Jean Lucas",
-    "Bahia",
+    "Cristian Pavón",
+    "Grêmio",
     4
    ],
    [
@@ -1730,8 +1730,18 @@
     4
    ],
    [
+    "Bruno Henrique",
+    "Flamengo",
+    4
+   ],
+   [
     "Gabriel Barbosa",
     "Santos",
+    4
+   ],
+   [
+    "Giorgian de Arrascaeta",
+    "Flamengo",
     4
    ],
    [
@@ -1747,11 +1757,6 @@
    [
     "Cuiabano",
     "Vasco",
-    4
-   ],
-   [
-    "Giorgian de Arrascaeta",
-    "Flamengo",
     4
    ],
    [
@@ -1795,18 +1800,13 @@
     3
    ],
    [
+    "Lucas Evangelista",
+    "Palmeiras",
+    3
+   ],
+   [
     "Gabriel Bontempo",
     "Santos",
-    3
-   ],
-   [
-    "Isidro Pitta",
-    "Bragantino",
-    3
-   ],
-   [
-    "José Enamorado",
-    "Grêmio",
     3
    ]
   ]
