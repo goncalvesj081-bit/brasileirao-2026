@@ -132,7 +132,7 @@
    "Mirassol",
    6,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Gustavo Henrique",
@@ -167,7 +167,7 @@
    "Mirassol",
    9,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Victor Gabriel",
@@ -723,6 +723,13 @@
    "suspenso"
   ],
   [
+   "Wallison Luiz",
+   "Mirassol",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "William",
    "Cruzeiro",
    3,
@@ -1049,13 +1056,6 @@
    "Coritiba",
    5,
    0,
-   "pendurado"
-  ],
-  [
-   "Wallison Luiz",
-   "Mirassol",
-   2,
-   1,
    "pendurado"
   ],
   [
@@ -2249,6 +2249,13 @@
    "pendurado"
   ],
   [
+   "Gustavo Cazonatti",
+   "Mirassol",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Gustavo Santana",
    "São Paulo",
    2,
@@ -2565,6 +2572,13 @@
   ],
   [
    "René",
+   "Fluminense",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Riquelme",
    "Fluminense",
    2,
    0,
@@ -3096,13 +3110,6 @@
    ""
   ],
   [
-   "Gustavo Cazonatti",
-   "Mirassol",
-   1,
-   0,
-   ""
-  ],
-  [
    "Higor Matheus Meritão",
    "Chapecoense",
    1,
@@ -3525,13 +3532,6 @@
   [
    "Reiner",
    "Atlético-MG",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Riquelme",
-   "Fluminense",
    1,
    0,
    ""

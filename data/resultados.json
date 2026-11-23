@@ -3177,6 +3177,24 @@
    "data": "2026-11-22T00:00:00Z",
    "gm": 1,
    "gv": 2
+  },
+  {
+   "id": "555090",
+   "rodada": 36,
+   "mandante": "Athletico-PR",
+   "visitante": "Remo",
+   "data": "2026-11-22T19:00:00Z",
+   "gm": 4,
+   "gv": 2
+  },
+  {
+   "id": "555096",
+   "rodada": 36,
+   "mandante": "Fluminense",
+   "visitante": "Mirassol",
+   "data": "2026-11-22T21:30:00Z",
+   "gm": 1,
+   "gv": 0
   }
  ]
 }

@@ -2,30 +2,16 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555090",
-   "rodada": 36,
-   "mandante": "Athletico-PR",
-   "visitante": "Remo",
-   "data": "2026-11-22T19:00:00Z",
-   "aoVivo": {
-    "gm": 4,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
-   "id": "555096",
-   "rodada": 36,
-   "mandante": "Fluminense",
-   "visitante": "Mirassol",
-   "data": "2026-11-22T21:30:00Z"
-  },
-  {
    "id": "555094",
    "rodada": 36,
    "mandante": "Bragantino",
    "visitante": "Vasco",
-   "data": "2026-11-22T22:30:00Z"
+   "data": "2026-11-22T22:30:00Z",
+   "aoVivo": {
+    "gm": 1,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555097",
