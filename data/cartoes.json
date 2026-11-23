@@ -2,18 +2,18 @@
  "atualizado": "22/11/2026",
  "lista": [
   [
+   "Juninho Capixaba",
+   "Bragantino",
+   14,
+   0,
+   "pendurado"
+  ],
+  [
    "Nicolás Acevedo",
    "Bahia",
    11,
    1,
    "suspenso"
-  ],
-  [
-   "Juninho Capixaba",
-   "Bragantino",
-   13,
-   0,
-   ""
   ],
   [
    "Matheus Pereira",
@@ -44,6 +44,13 @@
    "pendurado"
   ],
   [
+   "Alix Vinicius",
+   "Bragantino",
+   8,
+   1,
+   "pendurado"
+  ],
+  [
    "Camilo",
    "Chapecoense",
    11,
@@ -67,13 +74,6 @@
   [
    "Agustín Canobbio",
    "Fluminense",
-   7,
-   1,
-   ""
-  ],
-  [
-   "Alix Vinicius",
-   "Bragantino",
    7,
    1,
    ""
@@ -181,6 +181,13 @@
    "Palmeiras",
    8,
    0,
+   "pendurado"
+  ],
+  [
+   "Agustín Sant'Anna",
+   "Bragantino",
+   5,
+   1,
    "pendurado"
   ],
   [
@@ -296,6 +303,13 @@
    "pendurado"
   ],
   [
+   "Robert",
+   "Vasco",
+   5,
+   1,
+   "suspenso"
+  ],
+  [
    "Thiago Mendes",
    "Vasco",
    8,
@@ -329,13 +343,6 @@
    5,
    1,
    "pendurado"
-  ],
-  [
-   "Agustín Sant'Anna",
-   "Bragantino",
-   4,
-   1,
-   ""
   ],
   [
    "Alexander Barboza",
@@ -702,6 +709,13 @@
    ""
   ],
   [
+   "Paulo Henrique",
+   "Vasco",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "Rodrigo Villagra",
    "Internacional",
    6,
@@ -996,13 +1010,6 @@
    "pendurado"
   ],
   [
-   "Paulo Henrique",
-   "Vasco",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Pedro Rocha",
    "Coritiba",
    2,
@@ -1031,13 +1038,6 @@
    "pendurado"
   ],
   [
-   "Robert",
-   "Vasco",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Samuel Lino",
    "Flamengo",
    5,
@@ -1056,6 +1056,13 @@
    "Coritiba",
    5,
    0,
+   "pendurado"
+  ],
+  [
+   "Wallace Yan",
+   "Bragantino",
+   2,
+   1,
    "pendurado"
   ],
   [
@@ -1395,13 +1402,6 @@
    ""
   ],
   [
-   "Wallace Yan",
-   "Bragantino",
-   1,
-   1,
-   ""
-  ],
-  [
    "Walter",
    "Mirassol",
    4,
@@ -1546,7 +1546,7 @@
    "Bragantino",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Ferreira",
@@ -1602,7 +1602,7 @@
    "Bragantino",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Hércules",
@@ -1805,7 +1805,7 @@
    "Bragantino",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Matheus Piauí",
@@ -2216,6 +2216,13 @@
   [
    "Gabriel Menino",
    "Santos",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Gabriel Pereira",
+   "Vasco",
    2,
    0,
    "pendurado"
@@ -3070,13 +3077,6 @@
   [
    "Gabriel",
    "Mirassol",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Gabriel Pereira",
-   "Vasco",
    1,
    0,
    ""

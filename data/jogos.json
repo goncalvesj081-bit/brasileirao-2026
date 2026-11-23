@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555094",
-   "rodada": 36,
-   "mandante": "Bragantino",
-   "visitante": "Vasco",
-   "data": "2026-11-22T22:30:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 0,
-    "minuto": null
-   }
-  },
-  {
    "id": "555097",
    "rodada": 36,
    "mandante": "Internacional",

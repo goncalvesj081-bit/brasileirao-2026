@@ -3195,6 +3195,15 @@
    "data": "2026-11-22T21:30:00Z",
    "gm": 1,
    "gv": 0
+  },
+  {
+   "id": "555094",
+   "rodada": 36,
+   "mandante": "Bragantino",
+   "visitante": "Vasco",
+   "data": "2026-11-22T22:30:00Z",
+   "gm": 1,
+   "gv": 0
   }
  ]
 }
