@@ -3204,6 +3204,24 @@
    "data": "2026-11-22T22:30:00Z",
    "gm": 1,
    "gv": 0
+  },
+  {
+   "id": "555097",
+   "rodada": 36,
+   "mandante": "Internacional",
+   "visitante": "Vitória",
+   "data": "2026-11-23T22:30:00Z",
+   "gm": 2,
+   "gv": 5
+  },
+  {
+   "id": "555093",
+   "rodada": 36,
+   "mandante": "Botafogo",
+   "visitante": "São Paulo",
+   "data": "2026-11-23T23:00:00Z",
+   "gm": 1,
+   "gv": 1
   }
  ]
 }

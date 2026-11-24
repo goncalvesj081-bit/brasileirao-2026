@@ -1,6 +1,6 @@
 {
  "artilharia": {
-  "atualizado": "22/11/2026",
+  "atualizado": "23/11/2026",
   "fonte": "football-data.org",
   "lista": [
    [
@@ -44,6 +44,11 @@
     11
    ],
    [
+    "Carlos Renê",
+    "Vitória",
+    11
+   ],
+   [
     "José Manuel López",
     "Palmeiras",
     10
@@ -61,11 +66,6 @@
    [
     "Mauricio",
     "Palmeiras",
-    10
-   ],
-   [
-    "Carlos Renê",
-    "Vitória",
     10
    ],
    [
@@ -149,6 +149,11 @@
     7
    ],
    [
+    "Renato Kayzer",
+    "Vitória",
+    6
+   ],
+   [
     "Luciano Acosta",
     "Fluminense",
     6
@@ -196,11 +201,6 @@
    [
     "Vítor Roque",
     "Palmeiras",
-    5
-   ],
-   [
-    "Renato Kayzer",
-    "Vitória",
     5
    ],
    [
@@ -254,6 +254,11 @@
     5
    ],
    [
+    "Alerrandro",
+    "Internacional",
+    5
+   ],
+   [
     "Bernard",
     "Atlético-MG",
     5
@@ -271,6 +276,11 @@
    [
     "Marcinho",
     "Chapecoense",
+    5
+   ],
+   [
+    "Vitinho",
+    "Internacional",
     5
    ],
    [
@@ -359,11 +369,6 @@
     4
    ],
    [
-    "Alerrandro",
-    "Internacional",
-    4
-   ],
-   [
     "André Luiz",
     "Corinthians",
     4
@@ -404,11 +409,6 @@
     4
    ],
    [
-    "Vitinho",
-    "Internacional",
-    4
-   ],
-   [
     "Kerwin Vargas",
     "Athletico-PR",
     4
@@ -441,6 +441,11 @@
    [
     "Juninho Capixaba",
     "Bragantino",
+    3
+   ],
+   [
+    "Gabriel Baralhas",
+    "Vitória",
     3
    ],
    [
@@ -489,8 +494,18 @@
     3
    ],
    [
+    "Ramon",
+    "Vitória",
+    3
+   ],
+   [
     "Neizer Villarreal",
     "Cruzeiro",
+    3
+   ],
+   [
+    "Francis Amuzu",
+    "Grêmio",
     3
    ],
    [
@@ -501,6 +516,11 @@
    [
     "André Luis",
     "Mirassol",
+    3
+   ],
+   [
+    "Diego Tarzia",
+    "Vitória",
     3
    ],
    [
@@ -577,11 +597,6 @@
     "Yan",
     "Bragantino",
     3
-   ],
-   [
-    "Gabriel Baralhas",
-    "Vitória",
-    2
    ],
    [
     "Jean Carlos",
@@ -664,11 +679,6 @@
     2
    ],
    [
-    "Ramon",
-    "Vitória",
-    2
-   ],
-   [
     "Cuiabano",
     "Vasco",
     2
@@ -691,11 +701,6 @@
    [
     "José Herrera",
     "Bragantino",
-    2
-   ],
-   [
-    "Francis Amuzu",
-    "Grêmio",
     2
    ],
    [
@@ -766,11 +771,6 @@
    [
     "Gabriel Mec",
     "Grêmio",
-    2
-   ],
-   [
-    "Diego Tarzia",
-    "Vitória",
     2
    ],
    [
@@ -919,13 +919,28 @@
     2
    ],
    [
+    "Tiquinho Soares",
+    "Botafogo",
+    2
+   ],
+   [
     "Juninho",
     "Internacional",
     2
    ],
    [
+    "Pedro Lima",
+    "São Paulo",
+    2
+   ],
+   [
     "Marino Hinestroza",
     "Vasco",
+    2
+   ],
+   [
+    "Martin Braithwaite",
+    "Grêmio",
     2
    ],
    [
@@ -1474,11 +1489,6 @@
     1
    ],
    [
-    "Tiquinho Soares",
-    "Botafogo",
-    1
-   ],
-   [
     "Joaquín Piquerez",
     "Palmeiras",
     1
@@ -1494,18 +1504,8 @@
     1
    ],
    [
-    "Pedro Lima",
-    "São Paulo",
-    1
-   ],
-   [
     "Guga",
     "Fluminense",
-    1
-   ],
-   [
-    "Martin Braithwaite",
-    "Grêmio",
     1
    ],
    [

@@ -2,25 +2,16 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555097",
-   "rodada": 36,
-   "mandante": "Internacional",
-   "visitante": "Vitória",
-   "data": "2026-11-23T22:30:00Z"
-  },
-  {
-   "id": "555093",
-   "rodada": 36,
-   "mandante": "Botafogo",
-   "visitante": "São Paulo",
-   "data": "2026-11-23T23:00:00Z"
-  },
-  {
    "id": "555099",
    "rodada": 36,
    "mandante": "Santos",
    "visitante": "Grêmio",
-   "data": "2026-11-24T00:00:00Z"
+   "data": "2026-11-24T00:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 2,
+    "minuto": null
+   }
   },
   {
    "id": "555091",

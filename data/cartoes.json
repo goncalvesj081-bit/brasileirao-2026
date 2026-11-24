@@ -1,5 +1,5 @@
 {
- "atualizado": "22/11/2026",
+ "atualizado": "23/11/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -56,6 +56,13 @@
    11,
    0,
    "pendurado"
+  ],
+  [
+   "Fernando Marçal",
+   "Botafogo",
+   5,
+   2,
+   "suspenso"
   ],
   [
    "Neymar",
@@ -135,11 +142,18 @@
    ""
   ],
   [
+   "Emmanuel Martínez",
+   "Vitória",
+   9,
+   0,
+   "suspenso"
+  ],
+  [
    "Gustavo Henrique",
    "Santos",
    6,
    1,
-   "suspenso"
+   ""
   ],
   [
    "Jorge Carrascal",
@@ -161,6 +175,13 @@
    9,
    0,
    ""
+  ],
+  [
+   "Nahuel Ferraresi",
+   "Botafogo",
+   9,
+   0,
+   "suspenso"
   ],
   [
    "Neto Moura",
@@ -226,24 +247,10 @@
    "pendurado"
   ],
   [
-   "Emmanuel Martínez",
-   "Vitória",
-   8,
-   0,
-   "pendurado"
-  ],
-  [
    "Fabrício Bruno",
    "Cruzeiro",
    8,
    0,
-   "pendurado"
-  ],
-  [
-   "Fernando Marçal",
-   "Botafogo",
-   5,
-   1,
    "pendurado"
   ],
   [
@@ -282,10 +289,10 @@
    "pendurado"
   ],
   [
-   "Nahuel Ferraresi",
-   "Botafogo",
-   8,
-   0,
+   "Matheus Bahia",
+   "Internacional",
+   5,
+   1,
    "pendurado"
   ],
   [
@@ -336,6 +343,13 @@
    5,
    1,
    "pendurado"
+  ],
+  [
+   "Wendell",
+   "São Paulo",
+   5,
+   1,
+   "suspenso"
   ],
   [
    "Zé Ricardo",
@@ -396,6 +410,13 @@
   [
    "Enzo Díaz",
    "São Paulo",
+   7,
+   0,
+   ""
+  ],
+  [
+   "Erick Noriega",
+   "Grêmio",
    7,
    0,
    ""
@@ -489,13 +510,6 @@
    "Palmeiras",
    7,
    0,
-   ""
-  ],
-  [
-   "Matheus Bahia",
-   "Internacional",
-   4,
-   1,
    ""
   ],
   [
@@ -597,13 +611,6 @@
    ""
   ],
   [
-   "Erick Noriega",
-   "Grêmio",
-   6,
-   0,
-   ""
-  ],
-  [
    "Gabriel",
    "Bragantino",
    6,
@@ -671,7 +678,7 @@
    "Grêmio",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Luan Cândido",
@@ -720,7 +727,7 @@
    "Internacional",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Tomás Pérez",
@@ -734,7 +741,7 @@
    "Botafogo",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Wallison Luiz",
@@ -856,6 +863,13 @@
    "pendurado"
   ],
   [
+   "Gabriel Baralhas",
+   "Vitória",
+   5,
+   0,
+   "pendurado"
+  ],
+  [
    "Gabriel Brazão",
    "Santos",
    5,
@@ -944,6 +958,13 @@
    "Santos",
    5,
    0,
+   "pendurado"
+  ],
+  [
+   "Luis Osorio",
+   "São Paulo",
+   2,
+   1,
    "pendurado"
   ],
   [
@@ -1066,13 +1087,6 @@
    "pendurado"
   ],
   [
-   "Wendell",
-   "São Paulo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Willian Machado",
    "Mirassol",
    5,
@@ -1091,6 +1105,13 @@
    "Corinthians",
    2,
    1,
+   "pendurado"
+  ],
+  [
+   "Zé Vitor",
+   "Vitória",
+   5,
+   0,
    "pendurado"
   ],
   [
@@ -1173,13 +1194,6 @@
   [
    "Fabrizio Angileri",
    "Corinthians",
-   4,
-   0,
-   ""
-  ],
-  [
-   "Gabriel Baralhas",
-   "Vitória",
    4,
    0,
    ""
@@ -1304,13 +1318,6 @@
    ""
   ],
   [
-   "Luis Osorio",
-   "São Paulo",
-   1,
-   1,
-   ""
-  ],
-  [
    "Marinho",
    "Vitória",
    1,
@@ -1409,15 +1416,15 @@
    ""
   ],
   [
-   "Yannick Bolasie",
-   "Chapecoense",
+   "Willian Arão",
+   "Santos",
    4,
    0,
    ""
   ],
   [
-   "Zé Vitor",
-   "Vitória",
+   "Yannick Bolasie",
+   "Chapecoense",
    4,
    0,
    ""
@@ -1438,6 +1445,13 @@
   ],
   [
    "Alan Patrick",
+   "Internacional",
+   3,
+   0,
+   ""
+  ],
+  [
+   "Alerrando",
    "Internacional",
    3,
    0,
@@ -1672,7 +1686,7 @@
    "Grêmio",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Joaquín Correa",
@@ -1819,7 +1833,7 @@
    "Vitória",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Nathan",
@@ -2011,13 +2025,6 @@
    ""
   ],
   [
-   "Willian Arão",
-   "Santos",
-   3,
-   0,
-   ""
-  ],
-  [
    "Yago Felipe",
    "Chapecoense",
    3,
@@ -2046,13 +2053,6 @@
    "pendurado"
   ],
   [
-   "Alerrando",
-   "Internacional",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Artur",
    "São Paulo",
    2,
@@ -2076,6 +2076,13 @@
   [
    "Caio Alexandre",
    "Bahia",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Caio Paulista",
+   "Grêmio",
    2,
    0,
    "pendurado"
@@ -2305,8 +2312,22 @@
    "pendurado"
   ],
   [
+   "Jamerson",
+   "Vitória",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Jean",
    "Chapecoense",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "João Alencar",
+   "Santos",
    2,
    0,
    "pendurado"
@@ -2536,6 +2557,13 @@
    "pendurado"
   ],
   [
+   "Newton",
+   "São Paulo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Otávio",
    "Fluminense",
    2,
@@ -2559,6 +2587,20 @@
   [
    "Pedro",
    "Flamengo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Pedro Lima",
+   "São Paulo",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
+   "Rafael",
+   "São Paulo",
    2,
    0,
    "pendurado"
@@ -2839,13 +2881,6 @@
   [
    "Bruno Rodrigues",
    "Cruzeiro",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Caio Paulista",
-   "Grêmio",
    1,
    0,
    ""
@@ -3145,22 +3180,8 @@
    ""
   ],
   [
-   "Jamerson",
-   "Vitória",
-   1,
-   0,
-   ""
-  ],
-  [
    "Jefté",
    "Palmeiras",
-   1,
-   0,
-   ""
-  ],
-  [
-   "João Alencar",
-   "Santos",
    1,
    0,
    ""
@@ -3224,6 +3245,13 @@
   [
    "Julio Fidelis",
    "Fluminense",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Juninho",
+   "Internacional",
    1,
    0,
    ""
@@ -3453,13 +3481,6 @@
    ""
   ],
   [
-   "Newton",
-   "São Paulo",
-   1,
-   0,
-   ""
-  ],
-  [
    "Patrick",
    "Remo",
    1,
@@ -3469,13 +3490,6 @@
   [
    "Paulinho",
    "Palmeiras",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Pedro Lima",
-   "São Paulo",
    1,
    0,
    ""
@@ -3511,13 +3525,6 @@
   [
    "Philippe Coutinho",
    "Santos",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Rafael",
-   "São Paulo",
    1,
    0,
    ""
@@ -3721,6 +3728,13 @@
   [
    "Ythallo",
    "Botafogo",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Yuri Sena",
+   "Vitória",
    1,
    0,
    ""
