@@ -30,6 +30,13 @@
    ""
   ],
   [
+   "Camilo",
+   "Chapecoense",
+   12,
+   0,
+   "suspenso"
+  ],
+  [
    "Erick Pulgar",
    "Flamengo",
    9,
@@ -48,13 +55,6 @@
    "Bragantino",
    8,
    1,
-   "pendurado"
-  ],
-  [
-   "Camilo",
-   "Chapecoense",
-   11,
-   0,
    "pendurado"
   ],
   [
@@ -597,6 +597,13 @@
    ""
   ],
   [
+   "Bruno Pacheco",
+   "Chapecoense",
+   6,
+   0,
+   "suspenso"
+  ],
+  [
    "Carlos Vinícius",
    "Grêmio",
    6,
@@ -802,13 +809,6 @@
   [
    "Bruno Henrique",
    "Flamengo",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
-   "Bruno Pacheco",
-   "Chapecoense",
    5,
    0,
    "pendurado"
@@ -1980,7 +1980,7 @@
    "Chapecoense",
    3,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Vini Paulista",
@@ -3455,6 +3455,20 @@
   [
    "Mayke",
    "Santos",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Miguel Bilong",
+   "Palmeiras",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Miguel Carvalho",
+   "Chapecoense",
    1,
    0,
    ""

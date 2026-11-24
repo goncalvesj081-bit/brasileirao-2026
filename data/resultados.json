@@ -3231,6 +3231,15 @@
    "data": "2026-11-24T00:00:00Z",
    "gm": 0,
    "gv": 2
+  },
+  {
+   "id": "555102",
+   "rodada": 37,
+   "mandante": "Chapecoense",
+   "visitante": "Palmeiras",
+   "data": "2026-11-24T21:00:00Z",
+   "gm": 3,
+   "gv": 0
   }
  ]
 }

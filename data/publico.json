@@ -1,5 +1,5 @@
 {
- "atualizado": "23/11/2026",
+ "atualizado": "24/11/2026",
  "maiores": [
   [
    67251,
@@ -166,6 +166,15 @@
    32
   ],
   [
+   3226,
+   "Chapecoense",
+   "1-2",
+   "Cruzeiro",
+   "Arena Condá",
+   "21 de novembro",
+   36
+  ],
+  [
    3456,
    "Bragantino",
    "1-0",
@@ -173,15 +182,6 @@
    "Cícero de Souza Marques",
    "4 de fevereiro",
    2
-  ],
-  [
-   3558,
-   "Chapecoense",
-   "1-4",
-   "Athletico-PR",
-   "Arena Condá",
-   "12 de outubro",
-   30
   ]
  ]
 }
