@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555099",
-   "rodada": 36,
-   "mandante": "Santos",
-   "visitante": "Grêmio",
-   "data": "2026-11-24T00:00:00Z",
-   "aoVivo": {
-    "gm": 0,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555091",
    "rodada": 36,
    "mandante": "Atlético-MG",
