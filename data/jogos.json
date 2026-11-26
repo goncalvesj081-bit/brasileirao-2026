@@ -6,7 +6,12 @@
    "rodada": 37,
    "mandante": "São Paulo",
    "visitante": "Remo",
-   "data": "2026-11-26T23:00:00Z"
+   "data": "2026-11-26T23:00:00Z",
+   "aoVivo": {
+    "gm": 0,
+    "gv": 0,
+    "minuto": null
+   }
   },
   {
    "id": "555105",
