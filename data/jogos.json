@@ -2,18 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555091",
-   "rodada": 36,
-   "mandante": "Atlético-MG",
-   "visitante": "Corinthians",
-   "data": "2026-11-25T23:00:00Z",
-   "aoVivo": {
-    "gm": 1,
-    "gv": 1,
-    "minuto": null
-   }
-  },
-  {
    "id": "555108",
    "rodada": 37,
    "mandante": "São Paulo",
