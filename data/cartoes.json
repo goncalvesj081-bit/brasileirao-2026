@@ -1,5 +1,5 @@
 {
- "atualizado": "24/11/2026",
+ "atualizado": "25/11/2026",
  "lista": [
   [
    "Juninho Capixaba",
@@ -317,6 +317,13 @@
    "suspenso"
   ],
   [
+   "Ruan",
+   "Atlético-MG",
+   8,
+   0,
+   "pendurado"
+  ],
+  [
    "Thiago Mendes",
    "Vasco",
    8,
@@ -527,10 +534,10 @@
    ""
   ],
   [
-   "Ruan",
+   "Tomás Pérez",
    "Atlético-MG",
-   7,
-   0,
+   4,
+   1,
    ""
   ],
   [
@@ -734,13 +741,6 @@
    "Internacional",
    6,
    0,
-   ""
-  ],
-  [
-   "Tomás Pérez",
-   "Atlético-MG",
-   3,
-   1,
    ""
   ],
   [
@@ -1402,6 +1402,13 @@
    ""
   ],
   [
+   "Thiago Borbas",
+   "Atlético-MG",
+   1,
+   1,
+   "suspenso"
+  ],
+  [
    "Wagner Leonardo",
    "Grêmio",
    1,
@@ -2053,6 +2060,13 @@
    "pendurado"
   ],
   [
+   "Alexsander",
+   "Atlético-MG",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Artur",
    "São Paulo",
    2,
@@ -2599,6 +2613,13 @@
    "pendurado"
   ],
   [
+   "Pedro Milans",
+   "Corinthians",
+   2,
+   0,
+   "pendurado"
+  ],
+  [
    "Rafael",
    "São Paulo",
    2,
@@ -2783,13 +2804,6 @@
   [
    "Alexis Duarte",
    "Santos",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Alexsander",
-   "Atlético-MG",
    1,
    0,
    ""
@@ -3516,13 +3530,6 @@
    ""
   ],
   [
-   "Pedro Milans",
-   "Corinthians",
-   1,
-   0,
-   ""
-  ],
-  [
    "Pedro Rangel",
    "Coritiba",
    1,
@@ -3616,13 +3623,6 @@
   [
    "Tetê",
    "São Paulo",
-   1,
-   0,
-   ""
-  ],
-  [
-   "Thiago Borbas",
-   "Atlético-MG",
    1,
    0,
    ""
