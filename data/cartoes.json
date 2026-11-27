@@ -356,7 +356,7 @@
    "São Paulo",
    5,
    1,
-   "suspenso"
+   "pendurado"
   ],
   [
    "Zé Ricardo",
@@ -618,6 +618,13 @@
    ""
   ],
   [
+   "Edson Fernando",
+   "Remo",
+   3,
+   1,
+   "suspenso"
+  ],
+  [
    "Erick",
    "Bahia",
    6,
@@ -657,7 +664,7 @@
    "Remo",
    3,
    1,
-   "suspenso"
+   ""
   ],
   [
    "João Schmidt",
@@ -713,7 +720,7 @@
    "Remo",
    6,
    0,
-   "suspenso"
+   ""
   ],
   [
    "Murilo",
@@ -844,13 +851,6 @@
   [
    "Edenilson",
    "Vitória",
-   2,
-   1,
-   "pendurado"
-  ],
-  [
-   "Edson Fernando",
-   "Remo",
    2,
    1,
    "pendurado"
@@ -1138,6 +1138,13 @@
   [
    "Ángelo Preciado",
    "Atlético-MG",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Antonio Galeano",
+   "Remo",
    4,
    0,
    ""
@@ -1486,13 +1493,6 @@
    ""
   ],
   [
-   "Antonio Galeano",
-   "Remo",
-   3,
-   0,
-   ""
-  ],
-  [
    "Bruno Leonardo",
    "Chapecoense",
    3,
@@ -1533,6 +1533,13 @@
    3,
    0,
    ""
+  ],
+  [
+   "Duplexe Tchamba",
+   "Remo",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Emanuel Britez",
@@ -2132,13 +2139,6 @@
   [
    "Diego Caito",
    "Grêmio",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Duplexe Tchamba",
-   "Remo",
    2,
    0,
    "pendurado"
@@ -3385,6 +3385,13 @@
   [
    "Lucas Taverna",
    "Coritiba",
+   1,
+   0,
+   ""
+  ],
+  [
+   "Lucca Marques",
+   "São Paulo",
    1,
    0,
    ""
