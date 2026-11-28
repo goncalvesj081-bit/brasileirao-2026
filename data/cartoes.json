@@ -156,6 +156,13 @@
    ""
   ],
   [
+   "Jonathan Jesus",
+   "Cruzeiro",
+   6,
+   1,
+   "suspenso"
+  ],
+  [
    "Jorge Carrascal",
    "Flamengo",
    3,
@@ -282,6 +289,13 @@
    "pendurado"
   ],
   [
+   "Luciano Acosta",
+   "Fluminense",
+   8,
+   0,
+   "pendurado"
+  ],
+  [
    "Mateuzinho",
    "Corinthians",
    5,
@@ -322,6 +336,13 @@
    8,
    0,
    "pendurado"
+  ],
+  [
+   "Samuel Xavier",
+   "Fluminense",
+   5,
+   1,
+   "suspenso"
   ],
   [
    "Thiago Mendes",
@@ -506,13 +527,6 @@
    ""
   ],
   [
-   "Luciano Acosta",
-   "Fluminense",
-   7,
-   0,
-   ""
-  ],
-  [
    "Marlon Freitas",
    "Palmeiras",
    7,
@@ -683,13 +697,6 @@
   [
    "Jonathan Calleri",
    "São Paulo",
-   6,
-   0,
-   ""
-  ],
-  [
-   "Jonathan Jesus",
-   "Cruzeiro",
    6,
    0,
    ""
@@ -1066,13 +1073,6 @@
    "pendurado"
   ],
   [
-   "Samuel Xavier",
-   "Fluminense",
-   5,
-   0,
-   "pendurado"
-  ],
-  [
    "Sebastián Gómez",
    "Coritiba",
    5,
@@ -1292,6 +1292,13 @@
   [
    "Kanu",
    "Bahia",
+   4,
+   0,
+   ""
+  ],
+  [
+   "Kauã Moraes Silva",
+   "Cruzeiro",
    4,
    0,
    ""
@@ -1759,13 +1766,6 @@
    ""
   ],
   [
-   "Kauã Moraes Silva",
-   "Cruzeiro",
-   3,
-   0,
-   ""
-  ],
-  [
    "Kauan",
    "Chapecoense",
    3,
@@ -1885,6 +1885,13 @@
    ""
   ],
   [
+   "Otávio Costa",
+   "Cruzeiro",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Rafael Tolói",
    "São Paulo",
    3,
@@ -1913,11 +1920,25 @@
    ""
   ],
   [
+   "Riquelme",
+   "Fluminense",
+   3,
+   0,
+   "suspenso"
+  ],
+  [
    "Riquelme Freitas",
    "Grêmio",
    0,
    1,
    ""
+  ],
+  [
+   "Rodrigo Castillo",
+   "Fluminense",
+   3,
+   0,
+   "suspenso"
   ],
   [
    "Rodriguinho",
@@ -2585,13 +2606,6 @@
    "pendurado"
   ],
   [
-   "Otávio Costa",
-   "Cruzeiro",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Paulo Roberto",
    "Coritiba",
    2,
@@ -2648,22 +2662,8 @@
    "pendurado"
   ],
   [
-   "Riquelme",
-   "Fluminense",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
    "Rodinei",
    "Santos",
-   2,
-   0,
-   "pendurado"
-  ],
-  [
-   "Rodrigo Castillo",
-   "Fluminense",
    2,
    0,
    "pendurado"

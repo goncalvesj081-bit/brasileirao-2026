@@ -2,13 +2,6 @@
  "temporada": 2026,
  "jogos": [
   {
-   "id": "555105",
-   "rodada": 37,
-   "mandante": "Fluminense",
-   "visitante": "Cruzeiro",
-   "data": "2026-11-27T23:00:00Z"
-  },
-  {
    "id": "555101",
    "rodada": 37,
    "mandante": "Botafogo",

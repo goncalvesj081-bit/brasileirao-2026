@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T02:57:29.870Z",
+ "atualizado": "2026-11-28T02:14:14.816Z",
  "clubes": [
   "América Mineiro",
   "Athletic",
@@ -3379,59 +3379,72 @@
    "data": "2026-11-12T23:00Z",
    "gm": 2,
    "gv": 2
-  }
- ],
- "restantes": [
+  },
   {
    "id": "b401860432",
    "rodada": 38,
    "mandante": "América Mineiro",
    "visitante": "Avaí",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 0,
+   "gv": 2
   },
   {
    "id": "b401860440",
    "rodada": 38,
    "mandante": "Atlético Goianiense",
    "visitante": "Cuiabá",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 1,
+   "gv": 0
   },
   {
    "id": "b401860439",
    "rodada": 38,
    "mandante": "CRB",
    "visitante": "Ceará",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 1,
+   "gv": 1
   },
   {
    "id": "b401860438",
    "rodada": 38,
    "mandante": "Criciúma",
    "visitante": "Novorizontino",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 0,
+   "gv": 1
   },
   {
    "id": "b401860437",
    "rodada": 38,
    "mandante": "Fortaleza",
    "visitante": "Vila Nova",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 1,
+   "gv": 0
   },
   {
    "id": "b401860441",
    "rodada": 38,
    "mandante": "Juventude",
    "visitante": "Botafogo-SP",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 2,
+   "gv": 0
   },
   {
    "id": "b401860433",
    "rodada": 38,
    "mandante": "Sport",
    "visitante": "Goiás",
-   "data": "2026-11-14T19:30Z"
+   "data": "2026-11-14T19:30Z",
+   "gm": 3,
+   "gv": 0
   }
  ],
+ "restantes": [],
  "escudos": {
   "Vila Nova": "https://a.espncdn.com/i/teamlogos/soccer/500/9973.png",
   "CRB": "https://a.espncdn.com/i/teamlogos/soccer/500/9970.png",
